@@ -6,6 +6,7 @@ Signer
     message Signer {
         optional bytes SignerCertificate = 1;
         optional SignerDetails SignerDetails = 2;
+        optional string SignerCertificateThumbprint = 3;
     }
 
     message SignerDetails {
@@ -23,6 +24,8 @@ Signer
 -  SignerCertificate - :rfc:`X.509 <5280>` сертификат подписанта в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__ - кодировке.
 
 -  SignerDetails - реквизиты подписанта в виде структуры данных SignerDetails.
+
+-  SignerCertificateThumbprint - отпечаток сертификата подписанта.
 
 Одно из полей SignerCertificate или SignerDetails должно быть обязательно заполнено. Если заполнено поле SignerCertificate, то реквизиты подписанта извлекаются из сертификата. Если заполнены оба поля SignerCertificate и SignerDetails, то используется поле SignerDetails.
 

@@ -29,6 +29,9 @@ MessageToPost
         repeated ContractAttachment Contracts = 23;
         repeated Torg13Attachment Torg13Documents = 24;
         repeated ServiceDetailsAttachment ServiceDetailsDocuments = 25;
+        optional string ProxyBoxId = 26;
+        optional string ProxyDepartmentId = 27;
+        repeated EncryptedInvoiceAttachment EncryptedInvoices = 28;
     }
         
 
@@ -75,6 +78,8 @@ MessageToPost
 -  :doc:`Torg13Documents <Torg13Attachment>` - список накладных ТОРГ-13 в отправляемом сообщении.
 
 -  :doc:`ServiceDetailsDocuments <ServiceDetailsAttachment>` - список детализаций в отправляемом сообщении.
+   
+-  :doc:`EncryptedInvoices <EncryptedInvoiceAttachment>` - список зашифрованных счетов-фактур в отправляемом сообщении.
 
 -  *IsDraft* - флаг, показывающий, что данное сообщение является черновиком (возможно, содержит неподписанные документы), и не подлежит отправке. Для добавления подписей к черновику и его отправки следует использовать метод :doc:`../http/SendDraft`.
 

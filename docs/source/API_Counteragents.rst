@@ -16,6 +16,7 @@ HTTP-интерфейс
    http/BreakWithCounteragent
    http/GetCounteragent
    http/GetCounteragents
+   http/GetCounteragentCertificates
    
 
 Структуры данных

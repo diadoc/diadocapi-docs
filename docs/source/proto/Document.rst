@@ -51,6 +51,7 @@ Document
         optional string PacketId = 45;
         optional DocumentDirection DocumentDirection = 46 [default = UnknownDocumentDirection];
         optional sfixed64 LastModificationTimestampTicks = 47;
+        optional bool IsEncryptedContent = 48;
     }
 
     enum RevocationStatus {
@@ -120,6 +121,8 @@ Document
 -  *ToDepartmentId* - идентификатор подразделения, в которое отправляется документ.
 
 -  *CustomDocumentId* - идентификатор документа, определяемый внешней системой.
+   
+-  *IsEncryptedContent* - флаг, показывающий, что контент передаваемого документа зашифрован.
 
 -  :doc:`NonformalizedDocumentMetadata` - дополнительные атрибуты специфичные для неформализованных документов.
 

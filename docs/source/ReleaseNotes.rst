@@ -1,6 +1,31 @@
 История изменений API
 =====================
 
+v1.26 - 10.08.2015
+------------------
+
+-  Добавилась возможность отправлять зашифрованные счета-фактуры. Для этого были внесены следующие изменения:
+	
+	-  появились структуры :doc:`CounteragentCertificateList <proto/Counteragent>` и :doc:`Certificate <proto/Counteragent>` для описания списка сертификатов контрагента
+	
+	-  в структурах :doc:`proto/Document` и :doc:`proto/Entity message` появился флаг *IsEncryptedContent*, этот флаг указывается для передачи контента в зашифрованном виде
+	
+	-  появились структуры :doc:`proto/EncryptedInvoiceAttachment`, :doc:`EncryptedDocumentMetadata <proto/EncryptedInvoiceAttachment>`, :doc:`EncryptedInvoiceMetadata <proto/EncryptedInvoiceAttachment>`, :doc:`EncryptedInvoiceCorrectionMetadata <proto/EncryptedInvoiceAttachment>` для передачи зашифрованных счетов-фактур, и метаданных для исправлений и корректировок.
+	
+	-  в структуре :doc:`proto/MessageToPost` добавилось поле *EncryptedInvoices*, для передачи зашифрованных счетов-фактур
+	
+	-  в структуре :doc:`proto/MessagePatchToPost` добавилось поле *SignatureVerifications*, для передачи резльтатов проверки подписей на стороне получателя
+
+	-  появился метод :doc:`http/GetCounteragentCertificates` для запроса списка сертификатов контрагента
+	
+	-  в структуре :doc:`proto/Signer` добавилося отпечаток сертификата *SignerCertificateThumbprint*
+
+-  Добавилась возможность изменения подписанта в неотправленных исходящих документах:
+
+	-  появилась структура :doc:`DocumentToPatch <proto/PrepareDocumentsToSignRequest>` представляюшая изменение исходящего неотправленного документа
+	
+	-  изменились структуры :doc:`proto/DocumentSignature`, :doc:`proto/PrepareDocumentsToSignRequest` - в них добавилась возможность ссылаться на изменение исходящего неотправленного документа
+
 v1.25 - 28.05.2015
 ------------------
 

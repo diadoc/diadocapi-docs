@@ -26,6 +26,14 @@ Counteragent
         IsRejectedByMe = 6;
         NotInCounteragentList = 7;
     }
+
+    message CounteragentCertificateList {
+        repeated Certificate Certificates = 1;
+    }
+
+    message Certificate {
+        required bytes RawCertificateData = 1;
+    }
         
 
 Структура данных *CounteragentList* представляет собой список контрагентов *Counteragent*, возвращаемый методом :doc:`../http/GetCounteragents`. Поле *CounteragentList.TotalCount* содержит общее количество контрагентов, удовлетворяющих фильтру.
@@ -57,3 +65,9 @@ Counteragent
 -  *MessageFromCounteragent* - текст последнего комментария, полученного от контрагента, из истории взаимодействия ним.
 
 -  *MessageToCounteragent* - текст последнего комментария, отправленного контрагенту, из истории взаимодействия ним.
+
+Структура данных *CounteragentCertificateList* представляет собой список сертификатов контрагента представленных в виде структуры *Certificate*.
+
+Структура *Certificate* представляет собой один сертификат:
+
+-  *RawCertificateData* - сам сертификат, сериализованный в массив байтов в DER-кодировке.
