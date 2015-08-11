@@ -50,6 +50,8 @@ MessageToPost
 
 -  :doc:`TrustConnectionRequest <TrustConnectionRequestAttachment>` - запрос на инициацию канала обмена документами через Диадок в отправляемом сообщении.
 
+-  :doc:`TrustConnectionRequest <TrustConnectionRequestAttachment>` - запрос на инициацию канала обмена документами через Диадок в отправляемом сообщении.
+
 -  :doc:`ProformaInvoices <BasicDocumentAttachment>` - список счетов на оплату в отправляемом сообщении.
 
 -  :doc:`Torg12Documents <BasicDocumentAttachment>` - список товарных накладных ТОРГ-12 в отправляемом сообщении.
