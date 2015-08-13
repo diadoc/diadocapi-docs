@@ -16,6 +16,7 @@ ResolutionRequest
     enum ResolutionRequestType {
         ApprovementRequest = 0;
         SignatureRequest = 1;
+        ApprovementSignatureRequest = 2;
     }
 
     message ResolutionRequestAttachment {
@@ -38,6 +39,8 @@ ResolutionRequest
    -  *ApprovementRequest* - запрос на согласование документа.
 
    -  *SignatureRequest* - запрос на подпись документа.
+   
+   -  *ApprovementSignatureRequest* - запрос на согласующую подпись под документом.
 
 -  *Author* - ФИО инициатора запроса.
 

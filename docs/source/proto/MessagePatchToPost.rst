@@ -21,6 +21,7 @@ MessagePatchToPost
         repeated XmlSignatureRejectionAttachment XmlSignatureRejections = 15;
         repeated CustomDataPatch CustomDataPatches = 16;
         repeated ResolutionChainAssignment ResolutionChainAssignments = 17;
+        repeated SignatureVerification SignatureVerifications = 18;
     }
 
     message ReceiptAttachment {
@@ -52,6 +53,12 @@ MessagePatchToPost
     message XmlSignatureRejectionAttachment {
         required string ParentEntityId = 1;
         required SignedContent SignedContent = 2;
+    }
+
+    message SignatureVerification {
+        required string InitialDocumentId = 1;
+        required bool IsValid = 2;
+        optional string ErrorMessage = 3;
     }
         
 
@@ -126,3 +133,11 @@ MessagePatchToPost
 -   *ChainId* - идентификатор цепочки согласования, на которую нужно поставить документ;
 
 -   *Comment* - текстовый комментарий;
+
+Структура *SignatureVerification* представляет собой результат провреки подписи на стороне получателя зашифрованного документа. Нужна для того, чтобы сообщить результат проверки подписи для зашифрованных документов:
+
+-  *InitialDocumentId* - идентификатор документа
+
+-  *IsValid* - флаг, показывающий результат проверки подписи на валидность,
+
+-  *ErrorMessage* - текст ошибки, в случае если подпись не валидна

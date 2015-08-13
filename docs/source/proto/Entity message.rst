@@ -20,6 +20,7 @@ Entity
         optional ResolutionRequestInfo ResolutionRequestInfo = 15;  // заполняется только для вложений с типом AttachmentType.ResolutionRequest
         optional ResolutionRequestDenialInfo ResolutionRequestDenialInfo = 16;  // заполняется только для вложений с типом AttachmentType.ResolutionRequestDenial
         optional bool IsApprovementSignature = 19 [default = false];   // заполняется только для вложений с типом EntityType.Signature
+        optional bool IsEncryptedContent = 20 [default = false];
     }
 
     enum EntityType {
@@ -199,8 +200,10 @@ Entity
 
 -  *SignerDepartmentId* - для сущности типа Signature это идентификатор подразделения в котором лежала сущность в момент подписания. Для остальных типов сущностей это поле не заполняется.
 
--  ResolutionRequestInfo - информация о запросе согласования в виде структуры данных :doc:`ResolutionRequestInfo <ResolutionRequest>`.
+-  *ResolutionRequestInfo* - информация о запросе согласования в виде структуры данных :doc:`ResolutionRequestInfo <ResolutionRequest>`.
 
--  ResolutionRequestDenialInfo - информация об отказе в запросе подписи в виде структуры данных :doc:`ResolutionRequestDenialInfo <ResolutionRequestDenial>`.
+-  *ResolutionRequestDenialInfo* - информация об отказе в запросе подписи в виде структуры данных :doc:`ResolutionRequestDenialInfo <ResolutionRequestDenial>`.
 
--  IsApprovementSignature - является ли подпись согласующей или обычной; заполняется только для сущностей типа Signature. Подробнее про согласующие подписи см. :doc:`DocumentSignature <DocumentSignature>`.
+-  *IsApprovementSignature* - является ли подпись согласующей или обычной; заполняется только для сущностей типа Signature. Подробнее про согласующие подписи см. :doc:`DocumentSignature <DocumentSignature>`.
+
+-  *IsEncryptedContent* - флаг, указывающий зашифрован ли контент документа.

@@ -9,6 +9,7 @@ SignedContent
         optional bool SignByAttorney = 3 [default = false];
         optional string NameOnShelf = 4;
         optional bool SignWithTestSignature = 5 [default = false];
+        optional string SignatureNameOnShelf = 6;
     }
         
 
@@ -23,6 +24,8 @@ SignedContent
 -  *SignByAttorney* - флаг, который позволяет запросить формирование ЭЦП под пересылаемыми данными «по доверенности».
 
 -  *SignWithTestSignature* - флаг, который позволяет запросить формирование тестовой ЭЦП под пересылаемыми данными.
+
+-  *SignatureNameOnShelf* - имя подписи на «полке документов».
 
 Значения полей в данной структуре обязаны быть согласованы следующим образом:
 
