@@ -4,16 +4,21 @@ ResolutionRequest
 .. code-block:: protobuf
 
     message ResolutionRequestInfo {
-        required ResolutionRequestType RequestType = 1;
+        optional ResolutionRequestType RequestType = 1 [default = UnknownResolutionRequestType];
         required string Author = 2;
-        optional string TargetDepartment = 3;
-        optional string TargetDepartmentId = 4;
-        optional string TargetUser = 5;
-        optional string TargetUserId = 6;
-        optional string ResolvedWith = 7;
+        optional ResolutionTarget Target = 3;
+        optional string ResolvedWith = 4;
+    }
+    
+    message ResolutionTarget {
+    	optional string Department = 1;
+    	optional string DepartmentId = 2;
+    	optional string User = 3;
+    	optional string UserId = 4;
     }
 
     enum ResolutionRequestType {
+        UnknownResolutionRequestType = -1;
         ApprovementRequest = 0;
         SignatureRequest = 1;
         ApprovementSignatureRequest = 2;
@@ -44,6 +49,13 @@ ResolutionRequest
 
 -  *Author* - ФИО инициатора запроса.
 
+-  *ResolutionTarget* - информация о том, кому направлен запрос.
+
+-  *ResolvedWith* - идентификатор ответного действия (положительное/отрицательное согласование, отказ в запросе подписи).
+
+
+Структура данных *ResolutionRequestInfo* :
+
 -  *TargetDepartment* - название подразделения, в которое направлен запрос.
 
 -  *TargetDepartmentId* - идентификатор подразделения, в которое направлен запрос.
@@ -52,7 +64,6 @@ ResolutionRequest
 
 -  *TargetUserId* - идентификатор пользователя, которому направлен запрос.
 
--  *ResolvedWith* - идентификатор ответного действия (положительное/отрицательное согласование, отказ в запросе подписи).
 
 Структура данных *ResolutionRequestAttachment* содержит информацию для отправки запроса на согласование (или подпись) документа в методе :doc:`../http/PostMessagePatch`
 
