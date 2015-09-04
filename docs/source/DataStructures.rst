@@ -40,9 +40,9 @@ JSON
 
 Для передачи структур в формате JSON, нужно передать следующий заголовки запроса:
 
-- ``Accept: application/json``
+- Заголовок ``Accept: application/json`` - указывается для получения структур в формате JSON в теле ответа, 
 
-- ``Content-Type: application/json charset=utf-8``
+- Заголовок ``Content-Type: application/json charset=utf-8`` - указывается для передачи структур в формате JSON в теле запроса,
   
 По умолчанию, состав всех структур в обоих форматах одинаков, если не сказано обратного.
 
@@ -80,10 +80,8 @@ JSON
 
    {  
        "QueryString": "example",
-       "Count": "100",
-       "FirstIndex": "1",
-       "SearchScope": {  
-          "SearchScopeIncoming": "0"
-       },
-       "InjectEntityContent": "false"
+       "Count": 100,
+       "FirstIndex": 1,
+       "Scope": 0,
+       "InjectEntityContent": false
    }
