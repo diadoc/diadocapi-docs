@@ -52,6 +52,7 @@ Document
         optional DocumentDirection DocumentDirection = 46 [default = UnknownDocumentDirection];
         optional sfixed64 LastModificationTimestampTicks = 47;
         optional bool IsEncryptedContent = 48;
+        optional SenderSignatureStatus SenderSignatureStatus = 49 [default = UnknownSenderSignatureStatus];
     }
 
     enum RevocationStatus {
@@ -68,6 +69,14 @@ Document
         NotificationStatusNone = 1;
         NotificationStatusSuccess = 2;
         NotificationStatusError = 3;
+    }
+
+    enum SenderSignatureStatus {
+	    UnknownSenderSignatureStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
+    	WaitingForSenderSignature = 1;
+	    SenderSignatureUnchecked = 2;
+    	SenderSignatureCheckedAndValid = 3;
+	    SenderSignatureCheckedAndInvalid = 4;
     }
 
 Структура данных *Document* содержит инфофрмацию об одном документе в Диадоке, которую можно получить, например, при помощи метода :doc:`../http/GetDocument`:
