@@ -15,13 +15,6 @@ EncryptedInvoiceAttachment
 	    optional EncryptedInvoiceCorrectionMetadata InvoiceCorrectionMetadata = 10;
     }
 
-    message EncryptedDocumentMetadata {
-	    required string FileId = 1;
-	    required string BuyerFnsParticipantId = 2;
-	    required string SenderFnsParticipantId = 3;
-	    required DocumentDateAndNumber DocumentDateAndNumber = 4;
-    }
-
     message EncryptedInvoiceMetadata {
 	    optional DocumentDateAndNumber RevisionDateAndNumber = 1;
     }
@@ -51,21 +44,11 @@ EncryptedInvoiceAttachment
 
 -  *CustomData* - список пар вида "ключ-значение", содержащих произвольные данные по документу. Каждая пара задается структурой :doc:`CustomDataItem <CustomDataItem>`.
    
--  *Metadata* - метаданные зашифрованного документа в отправляемом сообщении :doc:`MessageToPost`, представленные структурой *EncryptedDocumentMetadata*.
+-  *Metadata* - метаданные зашифрованного документа в отправляемом сообщении :doc:`MessageToPost`, представленные структурой :doc:`EncryptedDocumentMetadata`.
    
 -  *InvoiceMetadata* - метаданные исправления зашифрованного счета-фактуры в отправляемом сообщении :doc:`MessageToPost`, представленные структурой *EncryptedInvoiceMetadata*. Заполняется в случае, если передается исправление счет-фактуры (ИСФ) и содержит номер и дату исправления.
    
 -  *InvoiceCorrectionMetadata* - метаданные корректировки зашифрованного счета-фактуры (корректировки исправления счета-фактуры) в отправляемом сообщении :doc:`MessageToPost`, представленные структурой *InvoiceCorrectionMetadata*
-
-Структура данных *EncryptedDocumentMetadata* представляет метаднные зашифрованного документа в отправляемом сообщении :doc:`MessageToPost`:
-
--  *FileId* - идентификатор файла, представленный в виде строки.
-
--  *BuyerFnsParticipantId* - идентифиткатор участника ЭДО покупателя.
-
--  *SenderFnsParticipantId* - идентифиткатор участника ЭДО продавца.
-
--  *DocumentDateAndNumber* - дата и номер счета-фактуры, представленные в виде структуры :doc:`DocumentDateAndNumber`.
 
 Структура *EncryptedInvoiceMetadata* представляет метаданные исправления зашифрованного счета-фактуры в отправляемом сообщении :doc:`MessageToPost`:
 
