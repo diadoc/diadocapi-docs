@@ -2,6 +2,7 @@ EncryptedXmlDocumentAttachment
 ==============================
 
 .. code-block:: protobuf
+
    message EncryptedXmlDocumentAttachment {
        required SignedContent SignedContent = 1;
        optional string Comment = 3;
@@ -17,6 +18,7 @@ EncryptedXmlDocumentAttachment
        required string FormationDate = 1;
        required string FormationTime = 2;
    }
+
 
 
 Структура данных *EncryptedXmlDocumentAttachment* представляет зашифрованный формализованный документ (накладную ТОРГ-12 или акт) в отправляемом сообщении :doc:`MessageToPost`:
