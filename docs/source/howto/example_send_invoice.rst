@@ -5,7 +5,7 @@
 
 #. Продавец должен сформировать счет-фактуру, подписать и направить Покупателю.
 
-#. Диадок должен сормировать подтверждение оператора о дате отправки счета-фактуры, подписать его и направить Продавцу.
+#. Диадок должен сформировать подтверждение оператора о дате отправки счета-фактуры, подписать его и направить Продавцу.
 
 #. Продавец должен получить подтверждение оператора и отправить в ответ подписанное извещение о получении подтверждения.
 
@@ -17,7 +17,7 @@
 
 Если на стороне интеграционного решения не предусмотрено функциональности для формирования XML-документов, соответствущих утвержденным форматам, то продавец должен сгенерировать СФ/ИСФ/КСФ/ИКСФ, используя команду :doc:`../http/GenerateInvoiceXml`.
 
-Для формирования СФ в GET-параметр ``invoiceType`` нужно передать значение ``Invoice``.
+Для формирования СФ/ИСФ/КСФ/ИКСФ в GET-параметр ``invoiceType`` нужно передать значение ``Invoice``.
 	   
 В теле запроса должны содержаться данные для изготовления СФ/ИСФ/КСФ/ИКСФ:
 	
@@ -70,7 +70,7 @@
 	
 	-  сам XML-файла нужна передать в атрибут *Content*, подпись продавца в атрибут *Signature*
 	   
-Описание структур, используемых при отправке СФ:
+Описание структур, используемых при отправке СФ/ИСФ/КСФ/ИКСФ:
 
 .. code-block:: protobuf
 
@@ -95,13 +95,13 @@
 Получение подтверждения
 -----------------------
 
-После успешной отправки СФ необходимо получить подтверждение оператора :doc:`InvoiceConfirmation <../proto/Entity message>`.
+После успешной отправки СФ/ИСФ/КСФ/ИКСФ необходимо получить подтверждение оператора :doc:`InvoiceConfirmation <../proto/Entity message>`.
 
-Подтверждение оператора представляется структуру :doc:`Entity <../proto/Entity message>`, где значение полей ``EntityType`` и ``AttachmentType`` должно быть *Attachment/InvoiceConfirmation*.
+Подтверждение оператора представляется структурой :doc:`Entity <../proto/Entity message>`, где значение полей ``EntityType`` и ``AttachmentType`` должно быть *Attachment/InvoiceConfirmation*.
 
 Чтобы получить подтверждение оператора нужно вызвать метод :doc:`../http/GetMessage` и указать нужные GET-параметры ``boxId``, ``messageId``, ``entityId``.
 
-``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ, ``entityId`` - идентификатор счета-фактуры. Их можно взять из структуры :doc:`../proto/Message`
+``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``entityId`` - идентификатор счета-фактуры. Их можно взять из структуры :doc:`../proto/Message`
 
 Например HTTP-запрос для получения сообщения выглядит следующим образом:
 
@@ -134,9 +134,140 @@
        "IsEncryptedContent": false
    }
 
-Формирование извещения
-----------------------
+Формирование извещения о получении подтверждения оператора
+----------------------------------------------------------
 
-После успешной отправки необходимо получить подтверждение оператора :doc:`InvoiceConfirmation <../proto/Entity message>` и отправить в ответ извещение о получении данного подтверждения :doc:`InvoiceReceipt <../proto/Entity message>`.
+После того, как продавец получил подтверждение оператора, он должен отправить в ответ подписанное извещение :doc:`InvoiceReceipt  <../proto/Entity message>` о получении подтверждения.
 
-Извещение о получении данного подтверждения представляется структуру :doc:`Entity <../proto/Entity message>`, где  значение полей ``EntityType`` и ``AttachmentType`` должно быть *Attachment/InvoiceReceipt*.
+Извещение о получении подтверждения оператора представляется структурой :doc:`Entity <../proto/Entity message>`, где значение полей ``EntityType`` и ``AttachmentType`` должно быть *Attachment/InvoiceReceipt*.
+
+В API Диадока есть метод, который позволяет сформировать извещение о получении подтверждения оператора - :doc:`../http/GenerateInvoiceDocumentReceiptXml`, при вызове этого метода нужно корректно указать GET-параметры ``boxId``, ``messageId``, ``attachmentId`` и передать в тело запроса данные о подписанте генерируемого извещения в виде сериализованной структуры :doc:`../proto/Signer`.
+
+``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``attachmentId`` - идентификатор подтверждение оператора. Их можно взять из структуры :doc:`../proto/Message`.
+
+Например HTTP-запрос для формирования извещение о получении подтверждения оператора выглядит следующим образом:
+
+::
+
+    POST /GenerateInvoiceDocumentReceiptXml?boxId=db32772b-9256-49a8-a133-fda593fda38a&messageId=a9093c56-7c48-4ab1-bc87-efb04e7d4400&attachmentId=f80738a3-b0bc-426a-aadf-6967ec1b53df HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Content-Type: application/json charset=utf-8
+    Accept: application/json
+    Authorization: DiadocAuth ddauth_api_client_id=supportTest-ed207c36-6d9b-4772-85dd-56df8dac69d5
+
+Пример структуры в теле запроса, содержащей данные о подписанте генерируемого извещения :doc:`../proto/Signer`:
+
+.. code-block:: json
+
+   {
+       "SignerCertificate": "",
+       "SignerDetails ": {
+        "Surname": "Иванов",
+        "FirstName": "Иван",
+        "Patronymic": "Иванович",
+        "JobTitle": "QA",
+        "Inn": "1234567",
+        "SoleProprietorRegistrationCertificate": "",
+       },
+   }
+
+В теле ответа содержится XML-файл с извещением о получении документа ``attachmentId`` из сообщения ``messageId`` в ящике ``boxId``.
+
+Отправка извещения о получении подтверждения оператора
+------------------------------------------------------
+
+Полученное на предидущем этапе извещение нужно подписать и отправить. Подписание извещения происходит на стороне клиента, после того как извещение подписано, его нужно отправить вместе с файлом подписи воспользовавшись методом :doc:`../http/PostMessagePatch`.
+
+Для этого нужно подготовить структуру :doc:`../proto/MessagePatchToPost` следующим образом:
+
+-  в значение атрибута *BoxId* указываем идентификатор ящика отправителя,
+
+-  в значение атрибута *MessageId* указываем идентификатор модифицируемого сообщения,
+
+-  для передачи XML-файла извещения нужно использовать атрибут *Receipts*, описываемый структурой *ReceiptAttachment*
+
+  -  внутри структуры *ReceiptAttachment* находится вложенная структура *SignedContent*,
+  
+  -  сам XML-файла нужна передать в атрибут *Content*, подпись продавца в атрибут *Signature*
+
+.. code-block:: protobuf
+
+    message MessagePatchToPost {
+        required string BoxId = 1;
+        required string MessageId = 2;
+        repeated ReceiptAttachment Receipts = 3;
+    }
+
+    message ReceiptAttachment  {
+        required string ParentEntityId  = 1;
+        required SignedContent SignedContent = 2;
+
+    }
+
+    message SignedContent {
+        optional bytes Content = 1;
+        optional bytes Signature = 2;
+    }
+
+Пример структуры в теле запроса, содержащей данные о передаваемом извщении :doc:`../proto/MessagePatchToPost`:
+
+.. code-block:: json
+
+    {
+      "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+      "MessageId": "a9093c56-7c48-4ab1-bc87-efb04e7d4400",
+      "Receipts":
+      [
+        {
+          "ParentEntityId":"f80738a3-b0bc-426a-aadf-6967ec1b53df",
+          "SignedContent":
+            {
+              "Content": "...",
+              "Signature": "...",
+            },
+          "Comment": "Подписание извщения о получении подтверждения оператора",
+        }
+     ]
+    }
+
+Получение извещения о получении счета-фактуры
+---------------------------------------------
+
+После того, как все действия со стороны продавца сделаны, нужно получить извещение о получении счета-фактуры со стороны покупателя :doc:`InvoiceReceipt <../proto/Entity message>`.
+
+Извещение о получении счета-фактуры представляется структурой :doc:`Entity <../proto/Entity message>`, где значение полей ``EntityType`` и ``AttachmentType`` должно быть *Attachment/InvoiceReceipt*.
+
+Чтобы получить подтверждение оператора нужно вызвать метод :doc:`../http/GetMessage` и указать нужные GET-параметры ``boxId``, ``messageId``, ``entityId``.
+
+``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``entityId`` - идентификатор счета-фактуры. Их можно взять из структуры :doc:`../proto/Message`
+
+Например HTTP-запрос для получения сообщения выглядит следующим образом:
+
+::
+
+    GET /V3/GetMessage?messageId=8971177a-8c38-49f7-97d3-0f51fbe134c5&entityId=736aa0c4-12f5-4412-bfea-1de59948b904&boxId=96339010-4c66-462d-a917-7f31bb8d80c4 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Content-Type: application/json; charset=utf-8
+    Accept: application/json
+    Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
+
+Пример структуры извещения о получении счета-фактуры :doc:`InvoiceReceipt <../proto/Entity message>` в теле ответа:
+
+.. code-block:: json
+
+   {
+       "EntityType": "Attachment",
+       "EntityId": "1d7b2e96-9945-41ab-aeea-2f310382bfad",
+       "ParentEntityId": "45d16c54-8700-4882-afaf-97678d6ed135",
+       "Content": "lores ipsum",
+       "AttachmentType": "InvoiceReceipt",
+       "FileName": "DP_IZVPOL_2BM-9610384428-961001000-201510080625090688235_2BM-9653544919-965301000-201508270726013081470_20151008_6bbfab54-4e9f-4ca1-99eb-37f34880a784.xml",
+       "NeedRecipientSignature": false,
+       "SignerBoxId": "",
+       "NotDeliveredEventId": "",
+       "RawCreationDate": 635798950114653648,
+       "SignerDepartmentId": "",
+       "NeedReceipt": false,
+       "IsApprovementSignature": false,
+       "IsEncryptedContent": false
+   }
