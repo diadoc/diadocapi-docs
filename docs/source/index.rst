@@ -28,6 +28,14 @@
    Дополнительные функции API <MiscellaneousApiFeatures>   
 
 .. toctree::
+   :name: examples
+   :maxdepth: 1
+   :caption: Примеры использования
+   
+   Как авторизоваться в системе <howto/example_authorization>
+   Как отправить счет-фактуру <howto/example_send_invoice>
+
+.. toctree::
    :name: work
    :maxdepth: 1
    :caption: Техническая документация
@@ -58,7 +66,7 @@
      http_methods
      protos
      lists
-   
+
 .. toctree::
    :name: others
    :caption: История изменений
