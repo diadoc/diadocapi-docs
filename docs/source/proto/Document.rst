@@ -53,6 +53,7 @@ Document
         optional sfixed64 LastModificationTimestampTicks = 47;
         optional bool IsEncryptedContent = 48;
         optional SenderSignatureStatus SenderSignatureStatus = 49 [default = UnknownSenderSignatureStatus];
+        optional BilateralDocument.SupplementaryAgreementMetadata SupplementaryAgreementMetadata = 50;
     }
 
     enum RevocationStatus {
@@ -167,38 +168,40 @@ Document
 
 -  :doc:`Torg13Metadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для накладных ТОРГ-13.
 
+-  :doc:`SupplementaryAgreementMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для типа документа дополнительное соглашение к договору.
+
 -  :doc:`ResolutionStatus <ResolutionStatus>` - текущий статус согласования данного документа.
 
 -  :doc:`ServiceDetailsMetadata <UnilateralDocumentMetadata>` - дополнительные атрибуты специфичные для детализаций.
 
--  RevocationStatus - статус аннулирования документа. Возможные значения:
+-  *RevocationStatus* - статус аннулирования документа. Возможные значения:
 
-   -  RevocationStatusNone (документ не аннулирован, и не было предложений об аннулировании)
+   -  *RevocationStatusNone* (документ не аннулирован, и не было предложений об аннулировании)
 
-   -  RevocationIsRequestedByMe (отправлено исходящее предложение об аннулировании документа)
+   -  *RevocationIsRequestedByMe* (отправлено исходящее предложение об аннулировании документа)
 
-   -  RequestsMyRevocation (получено входящее предложение об аннулировании документа)
+   -  *RequestsMyRevocation* (получено входящее предложение об аннулировании документа)
 
-   -  RevocationAccepted (документ аннулирован)
+   -  *RevocationAccepted* (документ аннулирован)
 
-   -  RevocationRejected (получен или отправлен отказ от предложения об аннулировании документа)
+   -  *RevocationRejected* (получен или отправлен отказ от предложения об аннулировании документа)
 
-   -  UnknownRevocationStatus (неизвестный статус аннулирования документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать статус аннулирования документа, переданный сервером)
+   -  *UnknownRevocationStatus* (неизвестный статус аннулирования документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать статус аннулирования документа, переданный сервером)
 
--  SendTimestampTicks - Необязательная :doc:`метка времени <Timestamp>` отправки данного документа.
+-  *SendTimestampTicks* - Необязательная :doc:`метка времени <Timestamp>` отправки данного документа.
 
--  DeliveryTimestampTicks - Необязательная :doc:`метка времени <Timestamp>` доставки данного документа.
+-  *DeliveryTimestampTicks* - Необязательная :doc:`метка времени <Timestamp>` доставки данного документа.
 
--  ForwardDocumentEvents - Список :doc:`событий пересылки <ForwardDocumentEvent>` данного документа третьей стороне. Документ может быть переслан нескольким получателям, а также - несколько раз одному получаетлю.
+-  *ForwardDocumentEvents* - Список :doc:`событий пересылки <ForwardDocumentEvent>` данного документа третьей стороне. Документ может быть переслан нескольким получателям, а также - несколько раз одному получаетлю.
 
--  RoamingNotificationStatus - статус доставки в роуминг. Возможные значения:
+-  *RoamingNotificationStatus* - статус доставки в роуминг. Возможные значения:
 
-   -  RoamingNotificationStatusNone (документ не роуминговый, или документ без подтверждения доставки в роуминг)
+   -  *RoamingNotificationStatusNone* (документ не роуминговый, или документ без подтверждения доставки в роуминг)
 
-   -  RoamingNotificationStatusSuccess (документ с подтверждением успешной доставки в роуминг)
+   -  *RoamingNotificationStatusSuccess* (документ с подтверждением успешной доставки в роуминг)
 
-   -  RoamingNotificationStatusError (документ с ошибкой доставки в роуминг)
+   -  *RoamingNotificationStatusError* (документ с ошибкой доставки в роуминг)
    
-   -  UnknownRoamingNotificationStatus (неизвестный роуминговый статус документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать роуминговый статус документа, переданный сервером)
+   -  *UnknownRoamingNotificationStatus* (неизвестный роуминговый статус документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать роуминговый статус документа, переданный сервером)
 
--  HasCustomPrintForm - флаг, показывающий, что данный документ имеет нестандартную печатную форму. Скачать печатную форму документа можно при помощи метода :doc:`../http/GeneratePrintForm`.
+-  *HasCustomPrintForm* - флаг, показывающий, что данный документ имеет нестандартную печатную форму. Скачать печатную форму документа можно при помощи метода :doc:`../http/GeneratePrintForm`.

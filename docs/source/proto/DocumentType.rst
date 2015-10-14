@@ -24,26 +24,47 @@ DocumentType
         Contract = 36;
         Torg13 = 37;
         ServiceDetails = 38;
+        SupplementaryAgreement = 40;
     }
 
 Представляет тип документа.
 
 -  *Nonformalized* - неформализованный документ.
+
 -  *Invoice* - счет-фактура.
+
 -  *InvoiceRevision* - исправление счета-фактуры.
+
 -  *InvoiceCorrection* - корректировочный счет-фактура.
+
 -  *InvoiceCorrectionRevision* - исправление корректировочного счета-фактуры.
+
 -  *TrustConnectionRequest* - запрос на инициацию канала обмена документами через Диадок.
+
 -  *Torg12* - товарная накладная ТОРГ-12.
+
 -  *AcceptanceCertificate* - акт о выполении работ / оказании услуг.
+
 -  *ProformaInvoice* - счет на оплату.
+
 -  *XmlTorg12* - товарная накладная ТОРГ-12 в XML-формате.
+
 -  *XmlAcceptanceCertificate* - акт о выполении работ / оказании услуг в XML-формате.
+
 -  *PriceList* - ценовой лист.
+
 -  *PriceListAgreement* - протокол согласования цены.
+
 -  *CertificateRegistry* - реестр сертификатов.
+
 -  *ReconciliationAct* - акт сверки.
+
 -  *Contract* - договор.
+
 -  *Torg13* - накладная ТОРГ-13.
+
 -  *ServiceDetails* - детализация.
+
+-  *SupplementaryAgreement* - дополнительное соглашение к договору.
+
 -  *UnknownDocumentType* - неизвестный тип документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать тип документа, переданный сервером.

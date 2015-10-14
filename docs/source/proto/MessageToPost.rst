@@ -34,6 +34,7 @@ MessageToPost
         repeated EncryptedInvoiceAttachment EncryptedInvoices = 28;
         repeated EncryptedXmlDocumentAttachment EncryptedXmlTorg12SellerTitles = 29;
         repeated EncryptedXmlDocumentAttachment EncryptedXmlAcceptanceCertificateSellerTitles = 30;
+        repeated SupplementaryAgreementAttachment SupplementaryAgreements = 31;
     }
         
 
@@ -86,6 +87,8 @@ MessageToPost
 -  :doc:`EncryptedXmlTorg12SellerTitles <EncryptedXmlDocumentAttachment>` - список зашифрованных формализованных накладных ТОРГ-12 в отправляемом сообщении.
 
 -  :doc:`EncryptedXmlAcceptanceCertificateSellerTitles <EncryptedXmlDocumentAttachment>` - список зашифрованных формализованных актов о выполнении работ (оказании услуг) в отправляемом сообщении.
+
+-  :doc:`SupplementaryAgreements <SupplementaryAgreementAttachment>` - список дополнительных соглашанеий к договорам в отправляемом сообщении.
 
 -  *ProxyBoxId* - идентификатор ящика, промежуточного получателя. Если указан ящик промежуточного получателя, то документа доставится конечному получателя только после того, как промежуточный получатель поставит подпись под документом. Если промежуточный получатель отклонит документ, то в ящик конечного получателя он не будет доставлен.
 

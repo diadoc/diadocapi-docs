@@ -66,6 +66,7 @@ Entity
         Torg13 = 37;
         ServiceDetails = 38;
         RoamingNotification = 39;
+        SupplementaryAgreement = 40;
         CustomData = 64;
         //Неизвестные типы должны обрабатываться как Nonformalized
     }
@@ -155,6 +156,8 @@ Entity
    -  *RevocationRequest* (предложение об аннулировании).
    
    -  *RoamingNotification* (роуминговая квитанция).
+   
+   -  *SupplementaryAgreement* (дополнительное соглашение к договору).
    
    -  *CustomData* (произвольные данные к документу).
 

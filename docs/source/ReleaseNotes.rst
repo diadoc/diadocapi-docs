@@ -1,5 +1,24 @@
 История изменений API
 =====================
+
+v1.29 - 14.10.2015
+------------------
+
+-  Появилась возможность отправлять новый тип документа "Дополнтиельное соглашение к договору".
+
+	-  в структуре :doc:`proto/MessageToPost` добавилась стуктура :doc:`proto/SupplementaryAgreementAttachment` для передачи дополнительного соглашения к договору
+	
+	-  в структуре :doc:`proto/Entity message` и :doc:`proto/DocumentType` появился новый тип для дополнительного соглашения к договору
+	
+	-  в структуре :doc:`proto/Document` появилась вложенная структура для описания метаданных дополнительного соглашения к договору - :doc:`SupplementaryAgreementMetadata <proto/BilateralDocumentMetadata>`
+	
+	-  в структуре :doc:`proto/DocumentInfo` появилась вложенная структура для описания метаданных дополнительного соглашения к договору - :doc:`SupplementaryAgreementInfo <proto/SupplementaryAgreementDocumentInfo>`
+
+
+
+v1.28 - 10.08.2015
+------------------
+
 v1.27 - 10.08.2015
 ------------------
 

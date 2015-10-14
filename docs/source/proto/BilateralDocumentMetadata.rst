@@ -23,15 +23,15 @@ BilateralDocumentMetadata
     }
 
     message ContractMetadata {
-        required BilateralDocumentStatus DocumentStatus = 1 [default = UnknownBilateralDocumentStatus];
+        optional BilateralDocumentStatus DocumentStatus = 1 [default = UnknownBilateralDocumentStatus];
         optional string ContractPrice = 2;
         optional string ContractType = 3;
-        required ReceiptStatus ReceiptStatus = 4 [default = UnknownReceiptStatus];
+        optional ReceiptStatus ReceiptStatus = 4 [default = UnknownReceiptStatus];
     }
 
     message BilateralDocumentMetadata {
-        required BilateralDocumentStatus DocumentStatus = 1 [default = UnknownBilateralDocumentStatus];
-        required ReceiptStatus ReceiptStatus = 2 [default = UnknownReceiptStatus];
+        optional BilateralDocumentStatus DocumentStatus = 1 [default = UnknownBilateralDocumentStatus];
+        optional ReceiptStatus ReceiptStatus = 2 [default = UnknownReceiptStatus];
     }
 
     enum BilateralDocumentStatus {
@@ -90,6 +90,15 @@ BilateralDocumentMetadata
         InternalInvalidRecipientSignature = 15;
         InternalNoRecipientSignatureRequest = 18;
     }
+
+    message SupplementaryAgreementMetadata {
+        optional BilateralDocumentStatus DocumentStatus = 1 [default = UnknownBilateralDocumentStatus];
+        optional string Total = 2;
+        optional string ContractType = 3;
+        required string ContractNumber = 4;
+        required string ContractDate = 5;
+        optional ReceiptStatus ReceiptStatus = 6 [default = UnknownReceiptStatus];
+    }
         
 
 Структура *BasicDocumentMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для двусторонних первичных бухгалтерских документов (например, для товарных накладных ТОРГ-12):
@@ -104,54 +113,83 @@ BilateralDocumentMetadata
 
 Структура *TrustConnectionRequestMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для документов типа *TrustConnectionRequest*:
 
--  TrustConnectionRequestStatus определяет состояние, в котором находится данный документ; принимает одно из значений перечисления BilateralDocumentStatus.
+-  *TrustConnectionRequestStatus* определяет состояние, в котором находится данный документ; принимает одно из значений перечисления BilateralDocumentStatus.
 
-Структура PriceListMetadata содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для ценовых листов:
+Структура *PriceListMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для ценовых листов:
 
--  DocumentStatus определяет состояние, в котором находится данный ценовой лист; принимает одно из значений перечисления BilateralDocumentStatus.
+-  *DocumentStatus* определяет состояние, в котором находится данный ценовой лист; принимает одно из значений перечисления BilateralDocumentStatus.
 
--  PriceListEffectiveDate - дата вступления в силу ценового листа в формате ДД.ММ.ГГГГ.
+-  *PriceListEffectiveDate* - дата вступления в силу ценового листа в формате ДД.ММ.ГГГГ.
 
--  ContractDocumentDate - дата составления договора, к которому относится ценовой лист, в формате ДД.ММ.ГГГГ.
+-  *ContractDocumentDate* - дата составления договора, к которому относится ценовой лист, в формате ДД.ММ.ГГГГ.
 
--  ContractDocumentNumber - номер договора, к которому относится ценовой лист.
+-  *ContractDocumentNumber* - номер договора, к которому относится ценовой лист.
 
-Структура BilateralDocumentMetadata содержит дополнительные атрибуты документа (в структуре :doc:`Document`):
+Структура *BilateralDocumentMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`):
 
--  DocumentStatus определяет состояние, в котором находится данный документ; принимает одно из значений перечисления BilateralDocumentStatus.
+-  *DocumentStatus* определяет состояние, в котором находится данный документ; принимает одно из значений перечисления BilateralDocumentStatus.
 
-Структура ContractMetadata содержит дополнительные атрибуты документа (в структуре :doc:`Document`), специфичные для договоров:
+Структура *ContractMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`), специфичные для договоров:
 
--  DocumentStatus определяет состояние, в котором находится данный документ; принимает одно из значений перечисления BilateralDocumentStatus.
+-  *DocumentStatus* определяет состояние, в котором находится данный документ; принимает одно из значений перечисления BilateralDocumentStatus.
 
--  ContractType - тип договора.
+-  *ContractType* - тип договора.
 
--  ContractPrice - цена, указанная в договоре.
+-  *ContractPrice* - цена, указанная в договоре.
 
-Перечисление BilateralDocumentStatus задает возможные варианты состояний, в которых может находиться двусторонний документ (например, товарная накладная):
+Структура *SupplementaryAgreementMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`), специфичные для дополнительного соглашения к договору:
 
--  UnknownBilateralDocumentStatus (неизвестное состояние документа, может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать состояние документа, переданное сервером),
--  OutboundWaitingForRecipientSignature (документ исходящий, ответная подпись, либо отказ от ее формирования еще не получены),
--  OutboundWithRecipientSignature (документ исходящий, ответная подпись получена),
--  OutboundRecipientSignatureRequestRejected (документ исходящий, получен отказ от формирования ответной подписи),
--  OutboundWaitingForSenderSignature (документ исходящий, документ не отправлен, поскольку не подписан отправителем),
--  OutboundInvalidSenderSignature (документ исходящий, документ не отправлен, поскольку подпись отправителя не является корректной),
--  InboundWaitingForRecipientSignature (документ входящий, ответная подпись, либо отказ от ее формирования еще не отправлены),
--  InboundWithRecipientSignature (документ входящий, ответная подпись поставлена),
--  InboundRecipientSignatureRequestRejected (документ входящий, отправлен отказ от формирования ответной подписи),
--  InboundInvalidRecipientSignature (документ входящий, документооборот не завершен, поскольку подпись отправителя не является корректной),
--  InternalWaitingForRecipientSignature (документ внутренний, ответная подпись, либо отказ от ее формирования еще не отправлены),
--  InternalWithRecipientSignature (документ внутренний, ответная подпись поставлена),
--  InternalRecipientSignatureRequestRejected (документ внутренний, отправлен отказ от формирования ответной подписи),
--  InternalWaitingForSenderSignature (документ внутренний, документ не отправлен, поскольку не подписан отправителем),
--  InternalInvalidSenderSignature (документ внутренний, документ не отправлен, поскольку подпись отправителя не является корректной),
--  InternalInvalidRecipientSignature (документ внутренний, документооборот не завершен, поскольку подпись получателя не
+-  *DocumentStatus* определяет состояние, в котором находится данный документ; принимает одно из значений перечисления *BilateralDocumentStatus*.
+
+-  *Total* - цена дополнительного соглашения к договору.
+
+-  *ContractType* - тип договора.
+
+-  *ContractNumber* - номер договора.
+
+-  *ContractDate* - дата договора.
+
+Перечисление *BilateralDocumentStatus* задает возможные варианты состояний, в которых может находиться двусторонний документ (например, товарная накладная):
+
+-  *UnknownBilateralDocumentStatus* (неизвестное состояние документа, может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать состояние документа, переданное сервером),
+
+-  *OutboundWaitingForRecipientSignature* (документ исходящий, ответная подпись, либо отказ от ее формирования еще не получены),
+
+-  *OutboundWithRecipientSignature* (документ исходящий, ответная подпись получена),
+
+-  *OutboundRecipientSignatureRequestRejected* (документ исходящий, получен отказ от формирования ответной подписи),
+
+-  *OutboundWaitingForSenderSignature* (документ исходящий, документ не отправлен, поскольку не подписан отправителем),
+
+-  *OutboundInvalidSenderSignature* (документ исходящий, документ не отправлен, поскольку подпись отправителя не является корректной),
+
+-  *InboundWaitingForRecipientSignature* (документ входящий, ответная подпись, либо отказ от ее формирования еще не отправлены),
+
+-  *InboundWithRecipientSignature* (документ входящий, ответная подпись поставлена),
+
+-  *InboundRecipientSignatureRequestRejected* (документ входящий, отправлен отказ от формирования ответной подписи),
+
+-  *InboundInvalidRecipientSignature* (документ входящий, документооборот не завершен, поскольку подпись отправителя не является корректной),
+
+-  *InternalWaitingForRecipientSignature* (документ внутренний, ответная подпись, либо отказ от ее формирования еще не отправлены),
+
+-  *InternalWithRecipientSignature* (документ внутренний, ответная подпись поставлена),
+
+-  *InternalRecipientSignatureRequestRejected* (документ внутренний, отправлен отказ от формирования ответной подписи),
+
+-  *InternalWaitingForSenderSignature* (документ внутренний, документ не отправлен, поскольку не подписан отправителем),
+
+-  *InternalInvalidSenderSignature* (документ внутренний, документ не отправлен, поскольку подпись отправителя не является корректной),
+
+-  *InternalInvalidRecipientSignature* (документ внутренний, документооборот не завершен, поскольку подпись получателя не
    является корректной).
 
-Структура AcceptanceCertificateMetadata содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для актов о выполнении работ / оказании услуг. Описание полей - аналогично структуре BasicDocumentMetadata, отличается только тип поля DocumentStatus (см. описание перечисления AcceptanceCertificateDocumentMetadata).
+Структура *AcceptanceCertificateMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для актов о выполнении работ / оказании услуг. Описание полей - аналогично структуре *BasicDocumentMetadata*, отличается только тип поля *DocumentStatus* (см. описание перечисления AcceptanceCertificateDocumentMetadata).
 
-Перечисление AcceptanceCertificateDocumentStatus задает возможные варианты состояний, в которых может находиться акт о выполнении работ/оказании услуг. Содержит все значения из перечисления BilateralDocumentStatus и дополнительно еще несколько возможных значений:
+Перечисление *AcceptanceCertificateDocumentStatus* задает возможные варианты состояний, в которых может находиться акт о выполнении работ/оказании услуг. Содержит все значения из перечисления BilateralDocumentStatus и дополнительно еще несколько возможных значений:
 
--  OutboundNoRecipientSignatureRequest (документ исходящий, ответная подпись не запрошена),
--  InboundNoRecipientSignatureRequest (документ входящий, ответная подпись не запрошена),
--  InternalNoRecipientSignatureRequest (документ внутренний, ответная подпись не запрошена).
+-  *OutboundNoRecipientSignatureRequest* (документ исходящий, ответная подпись не запрошена),
+
+-  *InboundNoRecipientSignatureRequest* (документ входящий, ответная подпись не запрошена),
+
+-  *InternalNoRecipientSignatureRequest* (документ внутренний, ответная подпись не запрошена).
