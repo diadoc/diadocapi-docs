@@ -34,6 +34,7 @@
    
    Как авторизоваться в системе <howto/example_authorization>
    Как отправить счет-фактуру <howto/example_send_invoice>
+   Как получить счет-фактуру <howto/example_receive_invoice>
 
 .. toctree::
    :name: work
