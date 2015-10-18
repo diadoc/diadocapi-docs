@@ -153,7 +153,7 @@
     Host: diadoc-api.kontur.ru
     Content-Type: application/json charset=utf-8
     Accept: application/json
-    Authorization: DiadocAuth ddauth_api_client_id=supportTest-ed207c36-6d9b-4772-85dd-56df8dac69d5
+    Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
 
 Пример структуры в теле запроса, содержащей данные о подписанте генерируемого извещения :doc:`../proto/Signer`:
 

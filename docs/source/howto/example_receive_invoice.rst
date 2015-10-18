@@ -33,7 +33,7 @@
     Host: diadoc-api.kontur.ru
     Accept: application/json
     Content-Type: application/json charset=utf-8
-    Authorization: DiadocAuth ddauth_api_client_id=supportTest-ed207c36-6d9b-4772-85dd-56df8dac69d5
+    Authorization: DiadocAuth ddauth_api_client_id=testClient-87e1638deae84c86b8e2069955c2825a0987
 
 В теле ответа вернется список документов в виде структуры *DocumentList* с вложенной структурой *Document*. Для каждого из этих документов запоминаем: *MessageId*, *EntityId*.
 
@@ -107,7 +107,7 @@
     Host: diadoc-api.kontur.ru
     Accept: application/json
     Content-Type: application/json charset=utf-8
-    Authorization: DiadocAuth ddauth_api_client_id=supportTest-ed207c36-6d9b-4772-85dd-56df8dac69d5
+    Authorization: DiadocAuth ddauth_api_client_id=testClient-87e1638deae84c86b8e2069955c2825a0987
 
 Пример структуры подтверждения оператора :doc:`InvoiceConfirmation <../proto/Entity message>` в теле ответа:
 
@@ -151,7 +151,7 @@
     Host: diadoc-api.kontur.ru
     Content-Type: application/json charset=utf-8
     Accept: application/json
-    Authorization: DiadocAuth ddauth_api_client_id=supportTest-ed207c36-6d9b-4772-85dd-56df8dac69d5
+    Authorization: DiadocAuth ddauth_api_client_id=testClient-87e1638deae84c86b8e2069955c2825a0987
 
 Пример структуры в теле запроса, содержащей данные о подписанте генерируемого извещения :doc:`../proto/Signer`:
 
