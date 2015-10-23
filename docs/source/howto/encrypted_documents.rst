@@ -90,7 +90,7 @@
 
 -  в значение атрибуте ``MessageId`` указываем идентификатор сообщения для соответствующего счета-фактуры (этот ``MessageId`` был получен в ответе на вызов :doc:`../http/GetDocuments`)
 
--  для передачи результата проверки подписи используется атрибут ``SignatureVerifications``, описываемый структурой :doc:`../proto/SignatureVerification`
+-  для передачи результата проверки подписи используется атрибут ``SignatureVerifications``, описываемый структурой :doc:`SignatureVerification <../proto/MessagePatchToPost>`
 
 -  в значение атрибута ``InitialDocumentId`` указываем идентификатор документа для соответствующего счета-фактуры (этот ``EntityId`` был получен в ответе на вызов :doc:`../http/GetDocuments`)
 
