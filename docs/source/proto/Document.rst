@@ -54,6 +54,7 @@ Document
         optional bool IsEncryptedContent = 48;
         optional SenderSignatureStatus SenderSignatureStatus = 49 [default = UnknownSenderSignatureStatus];
         optional BilateralDocument.SupplementaryAgreementMetadata SupplementaryAgreementMetadata = 50;
+        optional bool IsRead = 51 [default = false];
     }
 
     enum RevocationStatus {
@@ -205,3 +206,5 @@ Document
    -  *UnknownRoamingNotificationStatus* (неизвестный роуминговый статус документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать роуминговый статус документа, переданный сервером)
 
 -  *HasCustomPrintForm* - флаг, показывающий, что данный документ имеет нестандартную печатную форму. Скачать печатную форму документа можно при помощи метода :doc:`../http/GeneratePrintForm`.
+
+- *IsRead* - флаг, указывающий на то, что документ был прочитан сотрудником организации.
