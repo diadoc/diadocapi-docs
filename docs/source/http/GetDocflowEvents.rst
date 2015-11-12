@@ -46,18 +46,20 @@ SDK
 
 .. code-block:: csharp
 
-    byte[] indexKey = null;
-    while (true)
+    var request = new GetDocflowEventsRequest
     {
-        var request = new GetDocflowEventsRequest
+        Filter = new TimeBasedFilter 
         {
             FromTimestamp = new Timestamp(new DateTime(2013, 11, 13).Ticks), // может отсутствовать
             ToTimestamp = new Timestamp(new DateTime(2013, 11, 20).Ticks), // может отсутствовать
-            AfterIndexKey = indexKey
-        };
+        },
+        AfterIndexKey = null
+    };
+    while (true)
+    {
         var response = api.GetDocflowEvents(token, boxId, request);
         if (!response.Events.Any())
             break;
         Console.Out.WriteLine("Events count: {0} (of total {1})", response.Events.Count, response.TotalCount);
-        indexKey = response.Events.Last().IndexKey;
+        request.AfterIndexKey = response.Events.Last().IndexKey;
     }
