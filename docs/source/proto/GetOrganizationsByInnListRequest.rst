@@ -28,10 +28,10 @@ GetOrganizationsByInnListRequest
 
 Структура данных *GetOrganizationsByInnListRequest* содержит список ИНН организаций, который передается в тело запроса метода :doc:`../http/GetOrganizationsByInnList`:
 
--  *InnList* - ИНН организации
+-  *InnList* - ИНН организации.
 
 Структура данных *GetOrganizationsByInnListResponse* содержит список организаций, найденных по списку ИНН методом :doc:`../http/GetOrganizationsByInnList`:
 
--  :doc:`Organization` - содержит информацию об одной организации в Диадоке,
+-  :doc:`Organization` - содержит информацию об одной организации в Диадоке;
 
--  *CounteragentStatus* - статус контрагента для данной организации
+-  *CounteragentStatus* - статус контрагента для данной организации.

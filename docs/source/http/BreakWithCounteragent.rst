@@ -3,7 +3,7 @@ BreakWithCounteragent
 
 Имя ресурса: **/BreakWithCounteragent**
 
-HTTP метод: **POST**
+HTTP-метод: **POST**
 
 Параметры строки запроса:
 

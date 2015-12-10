@@ -3,7 +3,7 @@ MoveDocuments
 
 Имя ресурса: **/MoveDocuments**
 
-HTTP метод: **POST**
+HTTP-метод: **POST**
 
 Параметры строки запроса: НЕТ
 

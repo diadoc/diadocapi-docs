@@ -3,11 +3,11 @@ GetForwardedDocuments
 
 Имя ресурса: **/V2/GetForwardedDocuments**
 
-HTTP метод: **POST**
+HTTP-метод: **POST**
 
 Параметры строки запроса:
 
--  *boxId* - идентификатор ящика;
+-  *boxId* - идентификатор ящика.
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 

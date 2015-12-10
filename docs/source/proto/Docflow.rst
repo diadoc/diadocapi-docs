@@ -42,19 +42,19 @@ Docflow
 
 -  Поля, заполняющиеся в зависимости от типа документа:
 
-   -  :doc:`InboundInvoiceDocflow` - документооборот входящего счёта-фактуры (для документов типа *Invoice*, *InvoiceRevision*, *InvoiceCorrection*, *InvoiceCorrectionRevision*).
+   -  :doc:`InboundInvoiceDocflow` - документооборот входящего счёта-фактуры (для документов типа *Invoice*, *InvoiceRevision*, *InvoiceCorrection*, *InvoiceCorrectionRevision*);
 
-   -  :doc:`OutboundInvoiceDocflow` - документооборот исходящего счёта-фактуры (для документов типа *Invoice*, *InvoiceRevision*, *InvoiceCorrection*, *InvoiceCorrectionRevision*).
+   -  :doc:`OutboundInvoiceDocflow` - документооборот исходящего счёта-фактуры (для документов типа *Invoice*, *InvoiceRevision*, *InvoiceCorrection*, *InvoiceCorrectionRevision*);
 
-   -  :doc:`XmlBilateralDocflow` - документооборот двустороннего формализованного документа (для документов типа *XmlTorg12* или *XmlAcceptanceCertificate*).
+   -  :doc:`XmlBilateralDocflow` - документооборот двустороннего формализованного документа (для документов типа *XmlTorg12* или *XmlAcceptanceCertificate*);
 
-   -  :doc:`BilateralDocflow` - документооборот двустороннего неформализованного документа (для документов типа *Nonformalized*, *Torg12*, *AcceptanceCertificate*, *TrustConnectionRequest*, *PriceList*, *PriceListAgreement*, *CertificateRegistry*, *ReconciliationAct*, *Contract*, *Torg13*).
+   -  :doc:`BilateralDocflow` - документооборот двустороннего неформализованного документа (для документов типа *Nonformalized*, *Torg12*, *AcceptanceCertificate*, *TrustConnectionRequest*, *PriceList*, *PriceListAgreement*, *CertificateRegistry*, *ReconciliationAct*, *Contract*, *Torg13*);
 
    -  :doc:`UnilateralDocflow` - документооборот одностороннего неформализованного документа (для документов типа *ProformaInvoice*, *ServiceDetails*).
 
 -  :doc:`RevocationDocflow` - данные об отзыве и аннулировании документа.
 
--  :doc:`ResolutionDocflow` - данные о согласовании документа.
+-  *ResolutionDocflow* - данные о согласовании документа.
 
 -  *CanDocumentBeRevokedUnilaterallyBySender* - признак того, что документ может быть отозван отправителем в одностороннем порядке.
 

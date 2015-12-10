@@ -14,6 +14,6 @@ Content_v2
 
 -  *Content* - данные, как массив байтов.
 
--  *NameOnShelf* - Имя файла на полке. Подробнее в описании метода :doc:`../http/ShelfUpload`.
+-  *NameOnShelf* - имя файла на полке. Подробнее в описании метода :doc:`../http/ShelfUpload`.
 
--  *PatchedContentId* - Идентификатор документа "подготовленного к отправке" методом :doc:`../http/PrepareDocumentsToSign`.
+-  *PatchedContentId* - идентификатор документа "подготовленного к отправке" методом :doc:`../http/PrepareDocumentsToSign`.

@@ -3,7 +3,7 @@ GetOrganizationsByInnKpp
 
 Имя ресурса: **/GetOrganizationsByInnKpp**
 
-HTTP метод: **GET**
+HTTP-метод: **GET**
 
 Параметры строки запроса:
 
@@ -11,7 +11,7 @@ HTTP метод: **GET**
 
 -  *kpp*: КПП организации (может отсутствовать);
 
--  *outputFormat*: формат вывода данных, может отсутствовать. Возможные значения: xml, protobuf (по-умолчанию - protobuf).
+-  *outputFormat*: формат вывода данных (может отсутствовать). Возможные значения: xml, protobuf (по умолчанию - protobuf).
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 
@@ -26,7 +26,7 @@ HTTP метод: **GET**
        <Organizations>
          <Organization id="orgId1" inn="1234567890" kpp="123456789" fullName="ООО Яблоко" shortName="ООО Яблоко" joinedDiadocTreaty="true">
            <Boxes>
-             <Box id="boxId1" title="Ящик для счетов фактур" />
+             <Box id="boxId1" title="Ящик для счетов-фактур" />
              <Box id="boxId2" title="Тестовый ящик" />
            </Boxes>
          </Organization>

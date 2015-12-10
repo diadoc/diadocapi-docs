@@ -3,11 +3,11 @@ GetOrganizationUsers
 
 Имя ресурса: **/GetOrganizationUsers**
 
-HTTP метод: **GET**
+HTTP-метод: **GET**
 
 Параметры строки запроса:
 
--  *orgId*: идентификатор организации
+-  *orgId*: идентификатор организации.
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 

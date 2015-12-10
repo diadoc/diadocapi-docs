@@ -23,7 +23,7 @@ DocumentInfo
 
 Структура представляет данные документа, которые не меняются в течение его жизненного цикла (метаданные). Как часть структуры :doc:`DocumentWithDocflow`, возвращается методами :doc:`../http/GetDocflows`, :doc:`../http/GetDocflowsByPacketId`, :doc:`../http/SearchDocflows`.
 
--  :doc:`DocumentType` - типа документа.
+-  :doc:`DocumentType` - тип документа.
 
 -  :doc:`DocumentDirection` - направление документа относительно данного ящика (например, исходящий).
 
@@ -41,14 +41,14 @@ DocumentInfo
 
 -  Поля, содержащие метаданные документа. В зависимости от типа документа заполняется только одно из полей:
 
-   -  :doc:`BasicDocumentInfo` - для документов XmlTorg12, XmlAcceptanceCertificate, Torg12, AcceptanceCertificate, ProformaInvoice, Torg13.
+   -  :doc:`BasicDocumentInfo` - для документов XmlTorg12, XmlAcceptanceCertificate, Torg12, AcceptanceCertificate, ProformaInvoice, Torg13;
    
-   -  :doc:`InvoiceInfo <InvoiceDocumentInfo>` - для документов Invoice или InvoiceRevision.
+   -  :doc:`InvoiceInfo <InvoiceDocumentInfo>` - для документов Invoice или InvoiceRevision;
    
-   -  :doc:`InvoiceCorrectionInfo <InvoiceCorrectionDocumentInfo>` - для документов InvoiceCorrection или InvoiceCorrectionRevision.
+   -  :doc:`InvoiceCorrectionInfo <InvoiceCorrectionDocumentInfo>` - для документов InvoiceCorrection или InvoiceCorrectionRevision;
    
-   -  :doc:`PriceListInfo <PriceListDocumentInfo>` - для документов PriceList.
+   -  :doc:`PriceListInfo <PriceListDocumentInfo>` - для документов PriceList;
    
-   -  :doc:`ContractInfo <ContractDocumentInfo>` - для документов Contract.
+   -  :doc:`ContractInfo <ContractDocumentInfo>` - для документов Contract;
    
    -  :doc:`SupplementaryAgreementInfo <SupplementaryAgreementDocumentInfo>` - для документов SupplementaryAgreement.

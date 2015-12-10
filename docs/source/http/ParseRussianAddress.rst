@@ -3,7 +3,7 @@ ParseRussianAddress
 
 Имя ресурса: **/ParseRussianAddress**
 
-HTTP метод: **GET**
+HTTP-метод: **GET**
 
 Параметры строки запроса:
 

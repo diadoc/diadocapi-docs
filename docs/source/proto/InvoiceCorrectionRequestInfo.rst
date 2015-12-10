@@ -11,6 +11,6 @@ InvoiceCorrectionRequestInfo
 
 Структура данных InvoiceCorrectionRequestInfo представляет исходные данные для формирования уведомления об уточнении счета-фактуры при помощи метода :doc:`../http/GenerateInvoiceCorrectionRequestXml`:
 
--  *ErrorMessage* - обязательный текст уведомления об уточнении.
+-  *ErrorMessage* - обязательный текст уведомления об уточнении;
 
 -  *Signer* - обязательная информация о подписанте уведомления в виде структуры данных :doc:`Signer`.

@@ -3,7 +3,7 @@ RecycleDraft
 
 Имя ресурса: **/RecycleDraft**
 
-HTTP метод: **POST**
+HTTP-метод: **POST**
 
 Параметры строки запроса:
 

@@ -16,10 +16,10 @@ OrganizationUser
 
 Структура данных *OrganizationUser* содержит информацию о пользователе организации.
 
--  *Id* - идентификатор пользователя
+-  *Id* - идентификатор пользователя;
 
--  *Name* - ФИО пользователя
+-  *Name* - ФИО пользователя;
 
--  *Permissions* - права пользователя в организации в виде структуры :doc:`OrganizationUserPermissions`
+-  *Permissions* - права пользователя в организации в виде структуры :doc:`OrganizationUserPermissions`.
 
 Структура данных *OrganizationUsersList* представляет собой список записей :doc:`OrganizationUser`, возвращаемый методом :doc:`../http/GetOrganizationUsers`.

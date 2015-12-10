@@ -3,7 +3,7 @@ Authenticate
 
 Имя ресурса: **/Authenticate**
 
-HTTP метод: **POST**
+HTTP-метод: **POST**
 
 Параметры строки запроса:
 

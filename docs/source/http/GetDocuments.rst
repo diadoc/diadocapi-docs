@@ -3,7 +3,7 @@ GetDocuments
 
 Имя ресурса: **/V3/GetDocuments**
 
-HTTP метод: **GET**
+HTTP-метод: **GET**
 
 Параметры строки запроса:
 
@@ -29,7 +29,7 @@ HTTP метод: **GET**
 
 -  *afterIndexKey*: уникальный ключ документа, позволяющий итерироваться по всему списку документов, удовлетворяющих фильтру (может отсутствовать);
 
--  *sortDirection*: задает порядок сортировки документов в выдаче, принимает одно из значений "Ascending", или "Descending" (может отсутствовать, значение по умолчанию - "Ascending");
+-  *sortDirection*: задает порядок сортировки документов в выдаче, принимает одно из значений "Ascending", или "Descending" (может отсутствовать, значение по умолчанию - "Ascending").
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 
@@ -45,69 +45,69 @@ HTTP метод: **GET**
 
 Первая часть этой строки задает тип документа и может принимать либо одно из значений перечисления :doc:`../proto/DocumentType`, либо одно из специальных значений:
 
--  *AnyInvoiceDocumentType* - соответствует набору из четырех типов документов СФ/ИСФ/КСФ/ИКСФ (Invoice, InvoiceRevision, InvoiceCorrection, InvoiceCorrectionRevision),
+-  *AnyInvoiceDocumentType* - соответствует набору из четырех типов документов СФ/ИСФ/КСФ/ИКСФ (Invoice, InvoiceRevision, InvoiceCorrection, InvoiceCorrectionRevision);
 
--  *AnyBilateralDocumentType* - соответствует любому типу двусторонних документов (Nonformalized, Torg12, AcceptanceCertificate, XmlTorg12, XmlAcceptanceCertificate, TrustConnectionRequest, PriceList, PriceListAgreement, CertificateRegistry, ReconciliationAct, Contract, Torg13),
+-  *AnyBilateralDocumentType* - соответствует любому типу двусторонних документов (Nonformalized, Torg12, AcceptanceCertificate, XmlTorg12, XmlAcceptanceCertificate, TrustConnectionRequest, PriceList, PriceListAgreement, CertificateRegistry, ReconciliationAct, Contract, Torg13);
 
--  *AnyUnilateralDocumentType* - соответствует любому типу односторонних документов (ProformaInvoice, ServiceDetails),
+-  *AnyUnilateralDocumentType* - соответствует любому типу односторонних документов (ProformaInvoice, ServiceDetails);
 
 -  *Any* - соответствует любому типу документа.
 
 Строка *DocumentClass* задает класс документа и может принимать следующие значения:
 
--  *Inbound* (входящий документ),
+-  *Inbound* (входящий документ);
 
--  *Outbound* (исходящий документ),
+-  *Outbound* (исходящий документ);
 
--  *Internal* (внутренний документ)
+-  *Internal* (внутренний документ).
 
 Строка *DocumentStatus* задает статус документа и может принимать следующие значения:
 
--  Пустое значение (любой документ указанного класса Class),
+-  пустое значение (любой документ указанного класса Class);
 
--  *NotRead* (документ не прочитан),
+-  *NotRead* (документ не прочитан);
 
--  *NoRecipientSignatureRequest* (документ без запроса ответной подписи),
+-  *NoRecipientSignatureRequest* (документ без запроса ответной подписи);
 
--  *WaitingForRecipientSignature* (документ в ожидании ответной подписи), 
+-  *WaitingForRecipientSignature* (документ в ожидании ответной подписи);
 
--  *WithRecipientSignature* (документ с ответной подписью),
+-  *WithRecipientSignature* (документ с ответной подписью);
 
--  *RecipientSignatureRequestRejected* (документ с отказом от формирования ответной подписи),
+-  *RecipientSignatureRequestRejected* (документ с отказом от формирования ответной подписи);
 
--  *WaitingForSenderSignature* (документ, требующий подписания и отправки),
+-  *WaitingForSenderSignature* (документ, требующий подписания и отправки);
 
--  *InvalidSenderSignature* (документ с невалидной подписью отправителя, требующий повторного подписания и отправки),
+-  *InvalidSenderSignature* (документ с невалидной подписью отправителя, требующий повторного подписания и отправки);
 
--  *Approved* (согласованный документ),
+-  *Approved* (согласованный документ);
 
--  *Disapproved* (документ с отказом согласования),
+-  *Disapproved* (документ с отказом согласования);
 
--  *WaitingForResolution* (документ, находящийся на согласовании или подписи),
+-  *WaitingForResolution* (документ, находящийся на согласовании или подписи);
 
--  *SignatureRequestRejected* (документ с отказом в запросе подписи сотруднику),
+-  *SignatureRequestRejected* (документ с отказом в запросе подписи сотруднику);
 
--  *Finished* (документ с завершенным документооборотом),
+-  *Finished* (документ с завершенным документооборотом);
 
--  *NotFinished* (документ с незавершенным документооборотом),
+-  *NotFinished* (документ с незавершенным документооборотом);
 
--  *InvoiceAmendmentRequested* (имеет смысл только для счетов-фактур; документ, по которому было запрошено уточнение),
+-  *InvoiceAmendmentRequested* (имеет смысл только для счетов-фактур; документ, по которому было запрошено уточнение);
 
--  *RevocationIsRequestedByMe* (документ, по которому было запрошено аннулирование),
+-  *RevocationIsRequestedByMe* (документ, по которому было запрошено аннулирование);
 
--  *RequestsMyRevocation* (документ, по которому контрагент запросил аннулирование),
+-  *RequestsMyRevocation* (документ, по которому контрагент запросил аннулирование);
 
--  *RevocationAccepted* (аннулированный документ),
+-  *RevocationAccepted* (аннулированный документ);
 
--  *RevocationRejected* (документ, запрос на аннулирование которого был отклонен),
+-  *RevocationRejected* (документ, запрос на аннулирование которого был отклонен);
 
--  *NotRevoked* (неаннулированный документ)
+-  *NotRevoked* (неаннулированный документ).
 
 Примеры строки *filterCategory*:
 
--  *AnyUnilateralDocumentType.InboundNotRevoked* (все входящие односторонние неаннулированные документы),
+-  *AnyUnilateralDocumentType.InboundNotRevoked* (все входящие односторонние неаннулированные документы);
 
--  *XmlTorg12.OutboundWithRecipientSignature* (все исходящие формализованные ТОРГ-12, подписанные контрагентом),
+-  *XmlTorg12.OutboundWithRecipientSignature* (все исходящие формализованные ТОРГ-12, подписанные контрагентом);
 
 -  *InvoiceCorrection.OutboundInvoiceAmendmentRequested* (все исходящие КСФ, по которым контрагент запросил уточнение).
 

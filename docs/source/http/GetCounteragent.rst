@@ -3,7 +3,7 @@ GetCounteragent
 
 Имя ресурса: **/GetCounteragent**
 
-HTTP метод: **GET**
+HTTP-метод: **GET**
 
 Параметры строки запроса:
 

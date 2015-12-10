@@ -3,7 +3,7 @@ ForwardDocument
 
 Имя ресурса: **/V2/ForwardDocument**
 
-HTTP метод: **POST**
+HTTP-метод: **POST**
 
 Параметры строки запроса:
 

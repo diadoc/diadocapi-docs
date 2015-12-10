@@ -3,7 +3,7 @@ ParseSignatureRejectionXml
 
 Имя ресурса: **/ParseSignatureRejectionXml**
 
-HTTP метод: **POST**
+HTTP-метод: **POST**
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 

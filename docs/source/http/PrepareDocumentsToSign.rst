@@ -3,7 +3,7 @@ PrepareDocumentsToSign
 
 Имя ресурса: **/PrepareDocumentsToSign**
 
-HTTP метод: POST
+HTTP-метод: POST
 
 Параметры строки запроса: НЕТ
 
