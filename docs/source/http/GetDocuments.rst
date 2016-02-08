@@ -69,6 +69,10 @@ HTTP метод: **GET**
 
 -  *NoRecipientSignatureRequest* (документ без запроса ответной подписи),
 
+-  *HaveToCreateReceipt* (*Inbound*-документы в ожидании извещения о получении),
+
+-  *WaitingForInvoiceReceipt* (*Outbound*-документы в ожидании извещения о получении),
+
 -  *WaitingForRecipientSignature* (документ в ожидании ответной подписи), 
 
 -  *WithRecipientSignature* (документ с ответной подписью),
