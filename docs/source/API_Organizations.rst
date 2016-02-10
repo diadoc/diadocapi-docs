@@ -12,6 +12,7 @@ HTTP-интерфейс
    :titlesonly:
 
    http/GetBox
+   http/GetDepartment
    http/GetMyOrganizations
    http/GetMyPermissions
    http/GetMyUser

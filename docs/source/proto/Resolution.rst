@@ -10,7 +10,7 @@ Resolution
     }
 
     enum ResolutionType {
-        Undefined = 0;
+        UndefinedResolutionType = 0;
         Approve = 1;
         Disapprove = 2;
         UnknownResolutionType = 3;
@@ -27,7 +27,7 @@ Resolution
 
 -  ResolutionType - тип действия по согласованию.
 
-   -  Undefined - отменить последнее согласование текущего пользователя.
+   -  UndefinedResolutionType - отменить последнее согласование текущего пользователя.
 
    -  Approve - согласовать документ.
 
