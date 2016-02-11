@@ -3,11 +3,11 @@ Recognize
 
 Имя ресурса: **/Recognize**
 
-HTTP метод: **POST**
+HTTP-метод: **POST**
 
 Параметры строки запроса:
 
--  *filename* - имя файла;
+-  *filename* - имя файла.
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 

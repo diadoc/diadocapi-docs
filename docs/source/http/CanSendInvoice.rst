@@ -3,7 +3,7 @@ CanSendInvoice
 
 Имя ресурса: **/CanSendInvoice**
 
-HTTP метод: **POST**
+HTTP-метод: **POST**
 
 Параметры строки запроса:
 

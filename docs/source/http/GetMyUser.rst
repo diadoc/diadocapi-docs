@@ -3,7 +3,7 @@ GetMyUser
 
 Имя ресурса: **/GetMyUser**
 
-HTTP метод: **GET**
+HTTP-метод: **GET**
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 

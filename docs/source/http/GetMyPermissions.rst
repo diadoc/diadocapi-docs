@@ -3,7 +3,7 @@ GetMyPermissions
 
 Имя ресурса: **/GetMyPermissions**
 
-HTTP метод: **GET**
+HTTP-метод: **GET**
 
 Параметры строки запроса:
 

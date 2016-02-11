@@ -5,7 +5,7 @@ GenerateDocumentZip
 
 Имя ресурса: **/GenerateDocumentZip**
 
-HTTP метод: **GET**
+HTTP-метод: **GET**
 
 Параметры строки запроса:
 

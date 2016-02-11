@@ -68,145 +68,145 @@ Entity
         RoamingNotification = 39;
         SupplementaryAgreement = 40;
         CustomData = 64;
-        //Неизвестные типы должны обрабатываться как Nonformalized
+        //неизвестные типы должны обрабатываться как Nonformalized
     }
 
 Структура данных *Entity* представляет одну сущность, входящую в сообщение или в дополнение к сообщению:
 
 -  *EntityType* определяет тип сущности; возможные варианты:
 
-   -  *Attachment* (файл-вложение в сообщении),
+   -  *Attachment* (файл-вложение в сообщении);
    
    -  *Signature* (ЭЦП под вложенеим).
 
--  *EntityId* - уникальный идентификатор сущности.
+-  *EntityId* - уникальный идентификатор сущности;
 
--  *ParentEntityId* - идентификатор родительской сущности. Например, для сущности *Signature* это будет идентификатор соответсвующей сущности *Attachment*.
+-  *ParentEntityId* - идентификатор родительской сущности; например для сущности *Signature* это будет идентификатор соответсвующей сущности *Attachment*;
 
 -  *AttachmentType* определяет тип вложения (имеет смысл только для сущностей типа *Attachment*), возможные варианты:
 
-   -  *UnknownAttachmentType* (неизвестный тип документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать тип документа, переданный сервером),
+   -  *UnknownAttachmentType* (неизвестный тип документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать тип документа, переданный сервером);
 
-   -  *Nonformalized* (неформализованный документ),
+   -  *Nonformalized* (неформализованный документ);
    
-   -  *Invoice* (счет-фактура),
+   -  *Invoice* (счет-фактура);
    
-   -  *InvoiceRevision* (исправление счета-фактуры),
+   -  *InvoiceRevision* (исправление счета-фактуры);
    
-   -  *InvoiceCorrection* (корректировочный счет-фактура),
+   -  *InvoiceCorrection* (корректировочный счет-фактура);
    
-   -  *InvoiceCorrectionRevision* (исправление корректировочного счета-фактуры),
+   -  *InvoiceCorrectionRevision* (исправление корректировочного счета-фактуры);
    
-   -  *InvoiceReceipt* (извещение о получении счета-фактуры, подтверждения оператора электронного документооборота или уведомления об уточнении счета-фактуры),
+   -  *InvoiceReceipt* (извещение о получении счета-фактуры, подтверждения оператора электронного документооборота или уведомления об уточнении счета-фактуры);
    
-   -  *InvoiceConfirmation* (подтверждение оператора электронного документооборота),
+   -  *InvoiceConfirmation* (подтверждение оператора электронного документооборота);
    
-   -  *InvoiceCorrectionRequest* (уведомление об уточнении счета-фактуры),
+   -  *InvoiceCorrectionRequest* (уведомление об уточнении счета-фактуры);
    
-   -  *AttachmentComment* (текстовый комментарий к другой сущности-вложению),
+   -  *AttachmentComment* (текстовый комментарий к другой сущности-вложению);
    
-   -  *DeliveryFailureNotification* (уведомление о невозможности доставки сообщения),
+   -  *DeliveryFailureNotification* (уведомление о невозможности доставки сообщения);
    
-   -  *SignatureRequestRejection* (отказ в формировании запрошенной подписи),
+   -  *SignatureRequestRejection* (отказ в формировании запрошенной подписи);
    
-   -  *SignatureVerificationReport* (протокол проверки подписи, сформированный Диадоком),
+   -  *SignatureVerificationReport* (протокол проверки подписи, сформированный Диадоком);
    
-   -  *TrustConnectionRequest* (запрос на инициацию канала обмена документами через Диадок),
+   -  *TrustConnectionRequest* (запрос на инициацию канала обмена документами через Диадок);
    
-   -  *ProformaInvoice* (счет на оплату),
+   -  *ProformaInvoice* (счет на оплату);
    
-   -  *Torg12* (товарная накладная ТОРГ-12),
+   -  *Torg12* (товарная накладная ТОРГ-12);
    
-   -  *AcceptanceCertificate* (акт о выполнении работ / оказании услуг),
+   -  *AcceptanceCertificate* (акт о выполнении работ / оказании услуг);
    
-   -  *XmlTorg12* (товарная накладная ТОРГ-12 в XML-формате, титул продавца),
+   -  *XmlTorg12* (товарная накладная ТОРГ-12 в XML-формате, титул продавца);
    
-   -  *XmlTorg12BuyerTitle* (товарная накладная ТОРГ-12 в XML-формате, титул покупателя),
+   -  *XmlTorg12BuyerTitle* (товарная накладная ТОРГ-12 в XML-формате, титул покупателя);
    
-   -  *XmlAcceptanceCertificate* (акт о выполнении работ / оказании услуг в XML-формате, титул исполнителя),
+   -  *XmlAcceptanceCertificate* (акт о выполнении работ / оказании услуг в XML-формате, титул исполнителя);
    
-   -  *XmlAcceptanceCertificateBuyerTitle* (акт о выполнении работ / оказании услуг в XML-формате, титул заказчика),
+   -  *XmlAcceptanceCertificateBuyerTitle* (акт о выполнении работ / оказании услуг в XML-формате, титул заказчика);
    
-   -  *StructuredData* (произвольный файл со структурированными данными, описывающими тот или иной документ, представленный в виде печатной формы),
+   -  *StructuredData* (произвольный файл со структурированными данными, описывающими тот или иной документ, представленный в виде печатной формы);
    
-   -  *Resolution* (информация о статусе согласования документа),
+   -  *Resolution* (информация о статусе согласования документа);
    
-   -  *ResolutionRequest* (запрос согласования документа),
+   -  *ResolutionRequest* (запрос согласования документа);
    
-   -  *ResolutionRequestDenial* (отказ в запросе подписи документа),
+   -  *ResolutionRequestDenial* (отказ в запросе подписи документа);
    
-   -  *PriceList* (ценовой лист),
+   -  *PriceList* (ценовой лист);
    
-   -  *PriceListAgreement* (протокол согласования цены),
+   -  *PriceListAgreement* (протокол согласования цены);
    
-   -  *CertificateRegistry* (реестр сертификатов),
+   -  *CertificateRegistry* (реестр сертификатов);
    
-   -  *ReconciliationAct* (акт сверки),
+   -  *ReconciliationAct* (акт сверки);
    
-   -  *Contract* (договор),
+   -  *Contract* (договор);
    
-   -  *Torg13* (накладная ТОРГ-13),
+   -  *Torg13* (накладная ТОРГ-13);
    
-   -  *ServiceDetails* (детализация),
+   -  *ServiceDetails* (детализация);
    
-   -  *Receipt* (извещение о получении),
+   -  *Receipt* (извещение о получении);
    
-   -  *XmlSignatureRejection* (формализованный отказ в подписи),
+   -  *XmlSignatureRejection* (формализованный отказ в подписи);
    
-   -  *RevocationRequest* (предложение об аннулировании).
+   -  *RevocationRequest* (предложение об аннулировании);
    
-   -  *RoamingNotification* (роуминговая квитанция).
+   -  *RoamingNotification* (роуминговая квитанция);
    
-   -  *SupplementaryAgreement* (дополнительное соглашение к договору).
+   -  *SupplementaryAgreement* (дополнительное соглашение к договору);
    
    -  *CustomData* (произвольные данные к документу).
 
--  *Content* - содержимое сущности (подробнее см. описание структуры :doc:`Content`).
+-  *Content* - содержимое сущности (подробнее см. описание структуры :doc:`Content`):
    
-   -  Поле Content.Size определяет размер содержимого в байтах,
+   -  поле Content.Size определяет размер содержимого в байтах;
    
-   -  Поле Content.Data, если присутствует, содержит собственно данные. Этот массив байтов следует интерпретировать в зависимости от типа сущности *EntityType* и типа вложения *AttachmentType*:
-
-   -  Содержимое сущности типа *Signature* представляет собой ЭЦП в формате CMS SignedData в DER-кодировке,
+   -  поле Content.Data, если присутствует, содержит собственно данные. Этот массив байтов следует интерпретировать в зависимости от типа сущности *EntityType* и типа вложения *AttachmentType*;
    
-   -  Для сущностей типа *Attachment/Nonformalized*, *Attachment/ProformaInvoice*, *Attachment/Torg12*, *Attachment/AcceptanceCertificate*, *Attachment/StructuredData*, *Attachment/PriceList* - это просто двоичное содержимое исходного файла,
+   -  содержимое сущности типа *Signature* представляет собой ЭЦП в формате CMS SignedData в DER-кодировке;
    
-   -  Сущности типа *Attachment* с типами вложений *Invoice*, *InvoiceRevision*, *InvoiceCorrection*, *InvoiceCorrectionRevision*, *InvoiceReceipt*, *InvoiceConfirmation*, *InvoiceCorrectionRequest* представляют собой XML-файлы, которыми продавец и покупатель обмениваются в ходе выставления/получения электронных счетов-фактур согласно порядка, утвержденного Минфином России,
+   -  для сущностей типа *Attachment/Nonformalized*, *Attachment/ProformaInvoice*, *Attachment/Torg12*, *Attachment/AcceptanceCertificate*, *Attachment/StructuredData*, *Attachment/PriceList* - это просто двоичное содержимое исходного файла;
    
-   -  Сущности типа *Attachment* с типами вложений *XmlTorg12*, *XmlTorg12BuyerTitle*, *XmlAcceptanceCertificate*, *XmlAcceptanceCertificateBuyerTitle* представляют собой XML-файлы накладных и актов в формате, утвержденном ФНС России,
+   -  cущности типа *Attachment* с типами вложений *Invoice*, *InvoiceRevision*, *InvoiceCorrection*, *InvoiceCorrectionRevision*, *InvoiceReceipt*, *InvoiceConfirmation*, *InvoiceCorrectionRequest* представляют собой XML-файлы, которыми продавец и покупатель обмениваются в ходе выставления/получения электронных счетов-фактур согласно порядка, утвержденного Минфином России;
    
-   -  Содержимое сущности типа *Attachment/TrustConnectionRequest* представляет собой XML-файл в формате *TrustConnectionRequestAttachment*,
+   -  сущности типа *Attachment* с типами вложений *XmlTorg12*, *XmlTorg12BuyerTitle*, *XmlAcceptanceCertificate*, *XmlAcceptanceCertificateBuyerTitle* представляют собой XML-файлы накладных и актов в формате, утвержденном ФНС России;
    
-   -  Содержимое сущности типа *Attachment/RevocationRequest* представляет собой XML-файл (формат файла),
+   -  содержимое сущности типа *Attachment/TrustConnectionRequest* представляет собой XML-файл в формате *TrustConnectionRequestAttachment*;
    
-   -  Содержимое сущности типа *Attachment/XmlSignatureRejection* представляет собой XML-файл (формат файла),
+   -  содержимое сущности типа *Attachment/RevocationRequest* представляет собой XML-файл (формат файла);
    
-   -  Содержимое сущности типа *Attachment/RoamingNotification* представляет собой сериализованную в протобуфер структуру *RoamingNotification*,
+   -  содержимое сущности типа *Attachment/XmlSignatureRejection* представляет собой XML-файл (формат файла);
    
-   -  Для сущностей типа *Attachment* и типов вложениий *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8,
+   -  содержимое сущности типа *Attachment/RoamingNotification* представляет собой сериализованную в протобуфер структуру *RoamingNotification*;
    
-   -  Наконец, у сущности типа *Attachment/SignatureVerificationReport* массив байтов Content.Data представляет собой сериализованную в протобуфер структуру *SignatureVerificationResult*.
+   -  для сущностей типа *Attachment* и типов вложениий *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8;
+   
+   -  наконец, у сущности типа *Attachment/SignatureVerificationReport* массив байтов Content.Data представляет собой сериализованную в протобуфер структуру *SignatureVerificationResult*.
 
--  *FileName* - для сущности типа *Attachment* это исходное имя файла. Для остальных типов сущностей это поле не заполняется.
+-  *FileName* - для сущности типа *Attachment* это исходное имя файла; для остальных типов сущностей это поле не заполняется;
 
--  *NeedRecipientSignature* - флаг, обозначающий запрос подписи получателя под данной сущностью; имеет смысл только для сущностей типа Attachment с типом вложения Nonformalized.
+-  *NeedRecipientSignature* - флаг, обозначающий запрос подписи получателя под данной сущностью; имеет смысл только для сущностей типа Attachment с типом вложения Nonformalized;
 
--  *SignerBoxId* - для сущности типа Signature это идентификатор ящика автора данной подписи. Для остальных типов сущностей это поле не заполняется.
+-  *SignerBoxId* - для сущности типа Signature это идентификатор ящика автора данной подписи; для остальных типов сущностей это поле не заполняется;
 
--  *NotDeliveredEventId* - это идентификатор сообщения или патча, который не удалось доставить (например, из-за некорректности одной или нескольких подписей в нем). Получить недоставленный кусок сообщения можно при помощи метода :doc:`../http/GetEvent`, передав ему в качестве параметра eventId значение *NotDeliveredEventId*. Данное поле заполняется только у сущности типа Attachment с типом вложения *DeliveryFailureNotification*.
+-  *NotDeliveredEventId* - это идентификатор сообщения или патча, который не удалось доставить (например, из-за некорректности одной или нескольких подписей в нем). Получить недоставленный кусок сообщения можно при помощи метода :doc:`../http/GetEvent`, передав ему в качестве параметра eventId значение *NotDeliveredEventId*. Данное поле заполняется только у сущности типа Attachment с типом вложения *DeliveryFailureNotification*;
 
--  *DocumentInfo* - для сущности типа Attachment содержит расширенную информацию о документе, представляемом данной сущностью, в виде структуры данных :doc:`Document`. Заполняется только у сущностей типа *Attachment/Nonformalized*, *Attachment/Invoice*, *Attachment/InvoiceRevision*, *Attachment/InvoiceCorrection*, *Attachment/InvoiceCorrectionRevision*, *Attachment/TrustConnectionRequest*, *Attachment/ProformaInvoice*, *Attachment/Torg12*, *Attachment/AcceptanceCertificate*, *Attachment/XmlTorg12*, *Attachment/XmlAcceptanceCertificate*, *Attachment/PriceList*, *Attachment/PriceListAgreement*, *Attachment/CertificateRegistry*, *Attachment/ReconciliationAct*, *Attachment/Contract*, *Attachment/Torg13*, *Attachment/ServiceDetails*
+-  *DocumentInfo* - для сущности типа Attachment содержит расширенную информацию о документе, представляемом данной сущностью, в виде структуры данных :doc:`Document`. Заполняется только у сущностей типа *Attachment/Nonformalized*, *Attachment/Invoice*, *Attachment/InvoiceRevision*, *Attachment/InvoiceCorrection*, *Attachment/InvoiceCorrectionRevision*, *Attachment/TrustConnectionRequest*, *Attachment/ProformaInvoice*, *Attachment/Torg12*, *Attachment/AcceptanceCertificate*, *Attachment/XmlTorg12*, *Attachment/XmlAcceptanceCertificate*, *Attachment/PriceList*, *Attachment/PriceListAgreement*, *Attachment/CertificateRegistry*, *Attachment/ReconciliationAct*, *Attachment/Contract*, *Attachment/Torg13*, *Attachment/ServiceDetails*;
 
--  *RawCreationDate* - :doc:`метка времени <Timestamp>` создания сущности.
+-  *RawCreationDate* - :doc:`метка времени <Timestamp>` создания сущности;
 
--  *ResolutionInfo* - информация о согласовании в виде структуры данных :doc:`ResolutionInfo <Resolution>`.
+-  *ResolutionInfo* - информация о согласовании в виде структуры данных :doc:`ResolutionInfo <Resolution>`;
 
--  *SignerDepartmentId* - для сущности типа Signature это идентификатор подразделения в котором лежала сущность в момент подписания. Для остальных типов сущностей это поле не заполняется.
+-  *SignerDepartmentId* - для сущности типа Signature это идентификатор подразделения, в котором лежала сущность в момент подписания; для остальных типов сущностей это поле не заполняется;
 
--  *ResolutionRequestInfo* - информация о запросе согласования в виде структуры данных :doc:`ResolutionRequestInfo <ResolutionRequest>`.
+-  *ResolutionRequestInfo* - информация о запросе согласования в виде структуры данных :doc:`ResolutionRequestInfo <ResolutionRequest>`;
 
--  *ResolutionRequestDenialInfo* - информация об отказе в запросе подписи в виде структуры данных :doc:`ResolutionRequestDenialInfo <ResolutionRequestDenial>`.
+-  *ResolutionRequestDenialInfo* - информация об отказе в запросе подписи в виде структуры данных :doc:`ResolutionRequestDenialInfo <ResolutionRequestDenial>`;
 
--  *IsApprovementSignature* - является ли подпись согласующей или обычной; заполняется только для сущностей типа Signature. Подробнее про согласующие подписи см. :doc:`DocumentSignature <DocumentSignature>`.
+-  *IsApprovementSignature* - является ли подпись согласующей или обычной; заполняется только для сущностей типа Signature; подробнее про согласующие подписи см. :doc:`DocumentSignature <DocumentSignature>`;
 
 -  *IsEncryptedContent* - флаг, указывающий зашифрован ли контент документа.

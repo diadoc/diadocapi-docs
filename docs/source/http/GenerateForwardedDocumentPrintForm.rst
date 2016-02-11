@@ -3,7 +3,7 @@ GenerateForwardedDocumentPrintForm
 
 Имя ресурса: **/GenerateForwardedDocumentPrintForm**
 
-HTTP метод: **GET**
+HTTP-метод: **GET**
 
 Параметры строки запроса:
 
@@ -15,7 +15,7 @@ HTTP метод: **GET**
 
 -  *documentId*: идентификатор сущности документа;
 
--  *forwardEventId*: идентификатор события пересылки документа;
+-  *forwardEventId*: идентификатор события пересылки документа.
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 
