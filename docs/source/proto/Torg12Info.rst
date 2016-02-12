@@ -78,28 +78,28 @@ Torg12Info
     }
         
 
-Структура данных Torg12SellerTitleInfo представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForSeller`.
+Структура данных *Torg12SellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForSeller`.
 
-При заполнении структуры Torg12SellerTitleInfo нужно иметь в виду:
+При заполнении структуры *Torg12SellerTitleInfo* нужно иметь в виду:
 
--  Обязательные поля Torg12SellerTitleInfo.SellerDocflowParticipant и Torg12SellerTitleInfo.BuyerDocflowParticipant позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`DocflowParticipant <OrganizationInfo>`.
+-  Обязательные поля *Torg12SellerTitleInfo.SellerDocflowParticipant* и *Torg12SellerTitleInfo.BuyerDocflowParticipant* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`DocflowParticipant <OrganizationInfo>`.
 
--  Реквизиты грузоотправителя Torg12SellerTitleInfo.Shipper, грузополучателя Torg12SellerTitleInfo.Consignee, поставщика Torg12SellerTitleInfo.Supplier и плательщика Torg12SellerTitleInfo.Payer заполняются в виде структуры данных :doc:`OrganizationInfo`.
+-  Реквизиты грузоотправителя *Torg12SellerTitleInfo.Shipper*, грузополучателя *Torg12SellerTitleInfo.Consignee*, поставщика *Torg12SellerTitleInfo.Supplier* и плательщика *Torg12SellerTitleInfo.Payer* заполняются в виде структуры данных :doc:`OrganizationInfo`.
 
--  Реквизиты подписанта накладной Torg12SellerTitleInfo.Signer заполняются в виде структуры данных :doc:`Signer`.
+-  Реквизиты подписанта накладной *Torg12SellerTitleInfo.Signer* заполняются в виде структуры данных :doc:`Signer`.
 
--  Реквизиты должностных лиц Torg12SellerTitleInfo.SupplyAllowedBy, Torg12SellerTitleInfo.SupplyPerformedBy и Torg12SellerTitleInfo.ChiefAccountant заполняются в виде структуры данных :doc:`Official`.
+-  Реквизиты должностных лиц *Torg12SellerTitleInfo.SupplyAllowedBy*, *Torg12SellerTitleInfo.SupplyPerformedBy* и *Torg12SellerTitleInfo.ChiefAccountant* заполняются в виде структуры данных :doc:`Official`.
 
--  Правила заполнения структуры Torg12SellerTitleInfo повторяют требования формата ФНС, зафиксированные в следующей `XML-схеме <https://diadoc.kontur.ru/sdk/xsd/DP_OTORG12_1_986_00_05_01_01.xsd>`__.
+-  Правила заполнения структуры *Torg12SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей `XML-схеме <https://diadoc.kontur.ru/sdk/xsd/DP_OTORG12_1_986_00_05_01_02.xsd>`__.
 
-Структура данных Torg12BuyerTitleInfo представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForBuyer`.
+Структура данных *Torg12BuyerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForBuyer`.
 
-При заполнении структуры Torg12BuyerTitleInfo нужно иметь в виду:
+При заполнении структуры *Torg12BuyerTitleInfo* нужно иметь в виду:
 
--  Реквизиты подписанта накладной Torg12BuyerTitleInfo.Signer заполняются в виде структуры данных :doc:`Signer`.
+-  Реквизиты подписанта накладной *Torg12BuyerTitleInfo.Signer* заполняются в виде структуры данных :doc:`Signer`.
 
--  Реквизиты должностных лиц Torg12BuyerTitleInfo.AcceptedBy и Torg12BuyerTitleInfo.ReceivedBy заполняются в виде структуры данных :doc:`Official`.
+-  Реквизиты должностных лиц *Torg12BuyerTitleInfo.AcceptedBy* и *Torg12BuyerTitleInfo.ReceivedBy* заполняются в виде структуры данных :doc:`Official`.
 
--  Реквизиты доверенности Torg12BuyerTitleInfo.Attorney заполняются в виде структуры данных :doc:`Attorney <Official>`.
+-  Реквизиты доверенности *Torg12BuyerTitleInfo.Attorney* заполняются в виде структуры данных :doc:`Attorney <Official>`.
 
--  Правила заполнения структуры Torg12BuyerTitleInfo повторяют требования формата ФНС, зафиксированные в следующей `XML-схеме <https://diadoc.kontur.ru/sdk/xsd/DP_PTORG12_1_989_00_05_01_01.xsd>`__.
+-  Правила заполнения структуры *Torg12BuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей `XML-схеме <https://diadoc.kontur.ru/sdk/xsd/DP_PTORG12_1_989_00_05_01_02.xsd>`__.
