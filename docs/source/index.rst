@@ -35,6 +35,8 @@
    Как авторизоваться в системе <howto/example_authorization>
    Как отправить счет-фактуру <howto/example_send_invoice>
    Как получить счет-фактуру <howto/example_receive_invoice>
+   Как получить и отправить товарную накладную ТОРГ-12 <howto/example_TORG12>
+   Как получить и отправить акт о выполнении работ/оказании услуг <howto/example_AcceptanceCertificate>
 
 .. toctree::
    :name: work
