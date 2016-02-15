@@ -45,7 +45,7 @@
 
    Структуры данных <DataStructures>
    Авторизация <Authorization>   
-   Работа с организацями <API_Organizations>
+   Работа с организациями <API_Organizations>
    Работа с контрагентами <API_Counteragents>
    Работа с сообщениями <API_Messages>
    Работа с документами <API_Documents>

@@ -1,0 +1,34 @@
+SendFnsRegistrationMessage
+--------------------------
+
+Имя ресурса: **SendFnsRegistrationMessage**
+
+HTTP метод: POST
+
+В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
+
+Тело запроса должно содержать сериализованный протобуфер *FnsRegistrationMessageInfo*, содержащий  сертификаты, сериализованные в массивы байтов в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__-кодировке:
+
+.. code-block:: protobuf
+
+	message FnsRegistrationMessageInfo
+	{
+		repeated bytes Certificates = 1;
+	}
+
+
+Возможные HTTP-коды возврата:
+
+-  200 (OK) - операция успешно завершена;
+
+-  400 (Bad Request) - данные в запросе имеют неверный формат или отсутствуют обязательные параметры;
+
+-  401 (Unauthorized) - в запросе отсутствует HTTP-заголовок ``Authorization``, или в этом заголовке содержатся некорректные авторизационные данные;
+
+-  403 (Forbidden) - доступ к ящику с предоставленным авторизационным токеном запрещен;
+
+-  405 (Method not allowed) - используется неподходящий HTTP-метод;
+
+-  409 (Conflict) - в свойствах организации не указаны поля: ОГРН, код ИФНС, код региона;
+
+-  500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.
