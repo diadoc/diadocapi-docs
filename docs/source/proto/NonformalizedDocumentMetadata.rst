@@ -45,7 +45,7 @@ NonformalizedDocumentMetadata
    -  InboundWaitingForRecipientSignature (документ входящий, ответная подпись, либо отказ от ее формирования еще не отправлены),
    -  InboundWithRecipientSignature (документ входящий, ответная подпись поставлена),
    -  InboundRecipientSignatureRequestRejected (документ входящий, отправлен отказ от формирования ответной подписи).
-   -  InboundInvalidRecipientSignature (документ входящий, документооборот не завершен, поскольку подпись отправителя не является корректной),
+   -  InboundInvalidRecipientSignature (документ входящий, документооборот не завершен, поскольку подпись получателя не является корректной),
    -  InternalNoRecipientSignatureRequest (документ внутренний, без запроса ответной подписи),
    -  InternalWaitingForRecipientSignature (документ внутренний, ответная подпись, либо отказ от ее формирования еще не отправлены),
    -  InternalWithRecipientSignature (документ внутренний, ответная подпись поставлена),
