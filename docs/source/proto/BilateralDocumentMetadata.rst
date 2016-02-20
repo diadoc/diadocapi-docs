@@ -169,7 +169,7 @@ BilateralDocumentMetadata
 
 -  *InboundRecipientSignatureRequestRejected* (документ входящий, отправлен отказ от формирования ответной подписи),
 
--  *InboundInvalidRecipientSignature* (документ входящий, документооборот не завершен, поскольку подпись отправителя не является корректной),
+-  *InboundInvalidRecipientSignature* (документ входящий, документооборот не завершен, поскольку подпись полуателя не является корректной),
 
 -  *InternalWaitingForRecipientSignature* (документ внутренний, ответная подпись, либо отказ от ее формирования еще не отправлены),
 
