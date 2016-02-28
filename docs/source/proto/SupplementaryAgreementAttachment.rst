@@ -13,8 +13,8 @@ SupplementaryAgreementAttachment
 	   required string DocumentDate = 7;
 	   required string DocumentNumber = 8;
 	   optional string Total = 9;
-	   optional string ContractNumber = 10;
-	   optional string ContractDate = 11;
+	   required string ContractNumber = 10;
+	   required string ContractDate = 11;
 	   optional string ContractType = 12;
 	   optional bool NeedReceipt = 13 [default = false];
 	   repeated CustomDataItem CustomData = 14;
@@ -39,15 +39,15 @@ SupplementaryAgreementAttachment
 
 -  *CustomDocumentId* - необязательный идентификатор документа во внешней системе, уникальный в рамках структуры :doc:`MessageToPost`; используется для выстраивания связей между документами внутри отправляемого сообщения. В дальнейшем его можно получить через *Document.CustomDocumentId*.
 
--  *DocumentDate* - дата формирования документа в формате ДД.ММ.ГГГГ (может отсутствовать).
+-  *DocumentDate* - дата формирования документа в формате ДД.ММ.ГГГГ.
 
--  *DocumentNumber* - номер документа (может отсутствовать).
+-  *DocumentNumber* - номер документа.
 
--  *Total* - цена дополнительного соглашения к договору,
+-  *Total* - цена дополнительного соглашения к договору.
 
--  *ContractNumber* - номер договора,
+-  *ContractNumber* - номер договора.
 
--  *ContractDate* - дата договора в формате ДД.ММ.ГГГГ (может отсутствовать).
+-  *ContractDate* - дата договора в формате ДД.ММ.ГГГГ.
 
 -  *ContractType* - тип договора (может отсутствовать).
 

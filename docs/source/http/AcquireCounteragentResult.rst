@@ -19,7 +19,7 @@ HTTP
 .. code-block:: protobuf
 
     message AcquireCounteragentResult {
-        optional string taskId = 1;
+        optional string orgId = 1;
     }
 
 AcquireCounteragentResult:
@@ -34,6 +34,8 @@ AcquireCounteragentResult:
 **Возможные HTTP-коды возврата:**
 
 -  *200 (OK)* - операция успешно завершена.
+
+-  *204 (No Content) * - операция еще выполняется на сервере. В этом случае в ответе будет HTTP-заголовок Retry-After, содержащий примерное количество секунд, через которое операция завершится.
 
 -  *400 (Bad Request)* - данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
 
