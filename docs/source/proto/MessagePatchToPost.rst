@@ -22,6 +22,7 @@ MessagePatchToPost
         repeated CustomDataPatch CustomDataPatches = 16;
         repeated ResolutionChainAssignment ResolutionChainAssignments = 17;
         repeated SignatureVerification SignatureVerifications = 18;
+        repeated EditDocumentPacketCommand EditDocumentPacketCommands = 19;
     }
 
     message ReceiptAttachment {
@@ -60,6 +61,12 @@ MessagePatchToPost
         required bool IsValid = 2;
         optional string ErrorMessage = 3;
     }
+
+    message EditDocumentPacketCommand {
+        required string DocumentId = 1;
+        repeated DocumentId AddDocumentsToPacket = 2;
+        repeated DocumentId RemoveDocumentsFromPacket = 3;
+    }
         
 
 Структура данных *MessagePatchToPost* представляет дополнение к сообщению, подлежащее отправке через Диадок при помощи метода :doc:`../http/PostMessagePatch`:
@@ -94,7 +101,9 @@ MessagePatchToPost
 
 -  *XmlSignatureRejections* - список действий по отказу от предложений об аннулировании, а также действий по отказу от подписи документов. Каждый элемент представляется структурой *XmlSignatureRejectionAttachment*.
 
--  *CustomDataPatches* - список операций по изменению пользовательских данных у документов в исходном сообщении. Каждый элемент представляется труктурой :doc:`CustomDataPatch <CustomDataPatch>`.
+-  *CustomDataPatches* - список операций по изменению пользовательских данных у документов в исходном сообщении. Каждый элемент представляется структурой :doc:`CustomDataPatch <CustomDataPatch>`.
+
+-  *EditDocumentPacketCommands* - список операций по изменению состава пакета у документов в исходном сообщении. Каждый элемент представляется структурой :doc:`EditDocumentPacketCommand <EditDocumentPacketCommand>`.
 
 Структура данных *ReceiptAttachment* представляет одно извещение о получении документа в отправляемом патче:
 
@@ -134,10 +143,18 @@ MessagePatchToPost
 
 -   *Comment* - текстовый комментарий;
 
-Структура *SignatureVerification* представляет собой результат провреки подписи на стороне получателя зашифрованного документа. Нужна для того, чтобы сообщить результат проверки подписи для зашифрованных документов:
+Структура *SignatureVerification* представляет собой результат проверки подписи на стороне получателя зашифрованного документа. Нужна для того, чтобы сообщить результат проверки подписи для зашифрованных документов:
 
 -  *InitialDocumentId* - идентификатор документа
 
 -  *IsValid* - флаг, показывающий результат проверки подписи на валидность,
 
 -  *ErrorMessage* - текст ошибки, в случае если подпись не валидна
+
+Структура данных *EditDocumentPacketCommand* представляет собой действие по редактированию состава пакета одного из документов в сообщении:
+
+-  *DocumentId* - идентификатор документа, пакет которого редактируется,
+
+-  *AddDocumentsToPacket* - список идентификаторов документов, которые нужно добавить в пакет к заданному документу. Каждый идентификатор представляется структурой :doc:`DocumentId <DocumentId>`. Каждый идентификатор должен соответствовать некоторому документу, уже существующему в том же ящике, что и редактируемый документ. Если добавляемый документ уже является частью другого пакета, то в редактируемый пакет вместе с добавляемым документом попадут и все остальные документы из его старого пакета, то есть пакеты объединяются целиком. Если такое поведение нежелательно, то необходимо предварительно удалить из второго пакета лишние документы при помощи RemoveDocumentsFromPacket (см. ниже).
+
+-  *RemoveDocumentsFromPacket* - список идентификаторов документов, которые нужно удалить из пакета заданного документа. Если в пакете существует документ с таким идентификатором, то он удаляется из пакета и образует новый пакет, состоящий из одного документа. Если в пакете нет документа с таким идентификатором (например, он уже является частью другого пакета), то ничего не происходит.
