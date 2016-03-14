@@ -25,7 +25,7 @@
 
   -  параметр *filterCategory* задается в виде строки, в данном примере ``AnyInvoiceDocumentType.InboundNotFinished``
 
-Пример запроса на получение счета-фактуры вглядит следующим образом:
+Пример запроса на получение счета-фактуры выглядит следующим образом:
 
 ::
 
@@ -239,21 +239,21 @@
 
 Извещение о получении СФ представляется структурой :doc:`Entity <../proto/Entity message>` как и извещение о получении подтверждения оператора.
 
-Последовательность действий для формирования извещения о получении СФ аналогична последователности действий для формирования извещения о получении подтверждения оператора (см. :ref:`create_receipt`).
+Последовательность действий для формирования извещения о получении СФ аналогична последовательности действий для формирования извещения о получении подтверждения оператора (см. :ref:`create_receipt`).
 
 За исключением того, что в ``attachmentId`` нужно указать идентификатор полученного счета-фактуры.
 
 Отправка извещения о получении счета-фактуры
 --------------------------------------------
 
-Последовательность действий для отправки сформированного извещения о получении СФ аналогична последователности действий для отправки сформированного извещения о получении подтверждения оператора.
+Последовательность действий для отправки сформированного извещения о получении СФ аналогична последовательности действий для отправки сформированного извещения о получении подтверждения оператора.
 
 За исключением того, что в в поле *ParentEntityId* нужно указать идентификатор (*EntityId*) СФ, полученного на предыдущем шаге (см. :ref:`send_receipt`).
 
 Подтверждения оператора о дате отправки извещения о получении счета-фактуры
 ---------------------------------------------------------------------------
 
-После того, как покупатель сформировал и отправил извещение о дате получении СФ, оператор в ответ должен сформровать подтверждение оператора о дате отправки извещения о получении СФ.
+После того, как покупатель сформировал и отправил извещение о дате получении СФ, оператор в ответ должен сформировать подтверждение оператора о дате отправки извещения о получении СФ.
 
 Это подтверждение покупатель должен получить, затем сформировать извещение о получении подтверждения оператора, подписать его и отправить.
 
@@ -279,3 +279,148 @@
 -  *ParentEntityId* - идентификатор СФ/ИСФ/КСФ/ИКСФ, к которому относится данное уведомление. Это идентификатор соответствующей сущности из родительского сообщения (поле *EntityId* в структуре :doc:`Entity <../proto/Entity message>`).
  
 -  *SignedContent* - содержимое файла уведомления вместе с ЭЦП под ним в виде структуры SignedContent.
+
+SDK
+---
+
+Пример кода на C# для получения счета фактуры:
+
+.. code-block:: csharp
+
+	//находим все счета-фактуры, по которым не завершен документооборот
+	private Document SearchInvoiceDocuments()
+	{
+		var boxId = "идентификатор ящика, в котором следует выполнить поиск входящих документов";
+			
+		//статус и тип документа
+		var filterCategory = "AnyInvoiceDocumentType.InboundNotFinished"; 
+		var counteragentBoxId = "идентификатор ящика контрагента";
+			
+		DocumentList documents = api.GetDocuments(authToken, boxId, filterCategory, counteragentBoxId);
+			
+		return documents.Documents.First(); //возвращаем первый документ из списка
+	}
+		
+	//получение счета-фактуры 
+	private void GetInvoiceAndInvoiceConfirmation()
+	{
+		var invoiceDocument = SearchInvoiceDocuments ();
+		
+		//получаем счет-фактуру
+		var invoiceConfirmation = api.GetMessage(authToken, boxId, invoiceDocument.MessageId, invoiceDocument.EntityId);
+	}
+	
+	//получение подтверждения оператора, формирование и отправка извещения о получении подтверждения
+	private void GetInvoiceConfirmationAndSendInvoiceReceipt()
+	{
+		var invoiceDocument = SearchInvoiceDocuments ();
+		var boxId = "идентификатор ящика получателя";
+		var signer = new Signer
+		{
+			SignerCertificate = new byte[0] /*подпись получателя*/,
+			SignerCertificateThumbprint = "отпечаток сертификата",
+			SignerDetails =
+			{
+				FirstName = "Имя",
+				Surname = "Фамилия",
+				Patronymic = "Отчество",
+				Inn = "ИНН",
+				JobTitle = "Должность",
+				SoleProprietorRegistrationCertificate = "Св-во о регистрации ИП"
+			}
+		};
+			
+		//получение подтверждения оператора
+		var invoiceConfirmation = api.GetMessage(authToken, boxId, invoiceDocument.MessageId, invoiceDocument.EntityId); 
+			
+		//формирование извещения о получении подтверждения
+		var invoiceReceipt = api.GenerateInvoiceDocumentReceiptXml(authToken, invoiceDocument.MessageId, invoiceConfirmation.AttachmentId, signer);
+		
+		//отправка извещения
+		var messagePatchToPost = new MessagePatchToPost
+		{
+			BoxId = boxId,
+			MessageId = messageWithInvoice.MessageId,
+			ReceiptAttachment =
+			{
+				new ReceiptAttachment
+				{
+					ParentEntityId = messageWithInvoice.EntityId,
+					SignedContent = new SignedContent //файл подписи
+					{
+						Content = messageWithInvoice.Content,
+						Signature = new byte[0] //подпись продавца
+					}
+				}
+			}
+		};
+
+		api.PostMessagePatch(authToken, messagePatchToPost);
+	}
+	
+	//формирование и отправка извещения о получении счета-фактуры
+	private void GetInvoiceReceiptAndSendinvoiceReceipt()
+	{
+		//аналогично GetInvoiceConfirmationAndSendInvoiceReceipt()
+	}
+	
+Пример кода на C# для отправки уточнения/корректировки счета-фактуры:
+
+.. code-block:: csharp
+	
+	//отправка уточнения/корректировки счета-фактуры
+	private void SendInvoiceCorrectionRequest ()
+	{
+		var invoiceDocument = "счет-фактура, к которому отправляется корректировка";
+		
+		var fileToSend = GetInvoiceCorrectionInfo();
+		
+		var messagePatchToPost = new MessagePatchToPost
+		{
+			MessageId = invoiceDocument.MessageId,
+			CorrectionRequests =
+			{
+				new CorrectionRequestAttachment
+				{
+					ParentEntityId = invoiceDocument.EntityId,
+					SignedContent = new SignedContent //файл подписи
+					{
+						Content = fileToSend.Content,
+						Signature = new byte[0] //подпись заказчика
+					}
+				}
+			}
+		};
+		
+		api.PostMessagePatch(authToken, messagePatchToPost);
+	}
+	
+	//формирование и генерация уточнения/корректировки счета-фактуры
+	private GeneratedDocument GetInvoiceCorrectionInfo () 
+	{
+		var signer = new Signer
+		{
+			SignerCertificate = new byte[0] /*подпись получателя*/,
+			SignerCertificateThumbprint = "отпечаток сертификата",
+			SignerDetails =
+			{
+				FirstName = "Имя",
+				Surname = "Фамилия",
+				Patronymic = "Отчество",
+				Inn = "ИНН",
+				JobTitle = "Должность",
+				SoleProprietorRegistrationCertificate = "Св-во о регистрации ИП"
+			}
+		};
+		
+		var invoiceCorrectionRequestInfo = new InvoiceCorrectionRequestInfo 
+		{
+			ErrorMessage = "Текст уведомления об уточнении",
+			signer
+		};
+		
+		var boxId = "идентификатор ящика получателя";
+		var invoiceDocument = "счет-фактура, к которому отправляется корректировка";
+		
+		return api.GenerateInvoiceCorrectionRequestXml (authToken, boxId, invoiceDocument.MessageId, invoiceDocument.AttachmentId, invoiceDocument);
+	}

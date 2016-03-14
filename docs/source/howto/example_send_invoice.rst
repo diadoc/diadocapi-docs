@@ -15,7 +15,7 @@
 Формирование счета-фактуры
 --------------------------
 
-Если на стороне интеграционного решения не предусмотрено функциональности для формирования XML-документов, соответствущих утвержденным форматам, то продавец может сгенерировать СФ/ИСФ/КСФ/ИКСФ, используя команду :doc:`../http/GenerateInvoiceXml`.
+Если на стороне интеграционного решения не предусмотрено функциональности для формирования XML-документов, соответствующих утвержденным форматам, то продавец может сгенерировать СФ/ИСФ/КСФ/ИКСФ, используя команду :doc:`../http/GenerateInvoiceXml`.
 
 Для формирования СФ/ИСФ/КСФ/ИКСФ в GET-параметр ``invoiceType`` нужно передать значение ``Invoice``.
 	   
@@ -25,7 +25,7 @@
 	
 	-  в виде сериализованной структуры :doc:`../proto/InvoiceCorrectionInfo` для типов документов ``InvoiceCorrection`` или ``InvoiceCorrectionRevision``.
 	   
-Например HTTP-запрос для генерации СФ выглядит следующим образом:
+Например, HTTP-запрос для генерации СФ выглядит следующим образом:
 
 ::
 
@@ -103,7 +103,7 @@
 
 ``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``entityId`` - идентификатор счета-фактуры. Их можно взять из структуры :doc:`../proto/Message`
 
-Например HTTP-запрос для получения сообщения выглядит следующим образом:
+Например, HTTP-запрос для получения сообщения выглядит следующим образом:
 
 ::
 
@@ -145,7 +145,7 @@
 
 ``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``attachmentId`` - идентификатор подтверждение оператора. Их можно взять из структуры :doc:`../proto/Message`.
 
-Например HTTP-запрос для формирования извещение о получении подтверждения оператора выглядит следующим образом:
+Например, HTTP-запрос для формирования извещение о получении подтверждения оператора выглядит следующим образом:
 
 ::
 
@@ -211,7 +211,7 @@
         optional bytes Signature = 2;
     }
 
-Пример структуры в теле запроса, содержащей данные о передаваемом извщении :doc:`../proto/MessagePatchToPost`:
+Пример структуры в теле запроса, содержащей данные о передаваемом извещении :doc:`../proto/MessagePatchToPost`:
 
 .. code-block:: json
 
@@ -227,7 +227,7 @@
               "Content": "...",
               "Signature": "...",
             },
-          "Comment": "Подписание извщения о получении подтверждения оператора",
+          "Comment": "Подписание извещения о получении подтверждения оператора",
         }
      ]
     }
@@ -243,7 +243,7 @@
 
 ``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``entityId`` - идентификатор счета-фактуры. Их можно взять из структуры :doc:`../proto/Message`
 
-Например HTTP-запрос для получения сообщения выглядит следующим образом:
+Например, HTTP-запрос для получения сообщения выглядит следующим образом:
 
 ::
 
@@ -273,3 +273,100 @@
        "IsApprovementSignature": false,
        "IsEncryptedContent": false
    }
+
+SDK
+---
+
+Пример кода на C# для отправки счета-фактуры:
+
+.. code-block:: csharp
+
+	// формирование счета-фактуры
+	private GeneratedFile GenerateinvoiceXml()
+	{
+		var content = new InvoiceInfo()
+		{
+			// заполняем согласно структуре InvoiceInfo
+		};
+		return api.GenerateInvoiceXml(authToken, content);
+	}
+		
+	// отправка счета-фактуры
+	private void SendInvoiceXml()
+	{
+		var fileToSend = GenerateInvoiceXml();
+
+		var messageAttachment = new XmlDocumentAttachment
+		{
+			SignedContent = new SignedContent //файл подписи
+			{
+				Content = fileToSend.Content,
+				Signature = new byte[0] //подпись отправителя
+			}
+		};
+
+		var messageToPost = new MessageToPost
+		{
+			FromBoxId = "идентификатор ящика отправителя",
+			ToBoxId = "идентификатор ящика получателя",
+			Invoices = { messageAttachment }
+		};
+
+		api.PostMessage(authToken, messageToPost); //см. "Как авторизоваться в системе"
+	}
+	
+	//получение подтверждения оператора, формирование и отправка извещения о получении подтверждения
+	private void GetInvoiceConfirmationAndSendInvoiceReceipt()
+	{
+		var invoiceDocument = /*счет-фактура, по которому надо получить подтверждение*/;
+		var boxId = "идентификатор ящика отправителя";
+		var signer = new Signer
+		{
+			SignerCertificate = new byte[0] /*подпись отправителя*/,
+			SignerCertificateThumbprint = "отпечаток сертификата",
+			SignerDetails =
+			{
+				FirstName = "Имя",
+				Surname = "Фамилия",
+				Patronymic = "Отчество",
+				Inn = "ИНН",
+				JobTitle = "Должность",
+				SoleProprietorRegistrationCertificate = "Св-во о регистрации ИП"
+			}
+		};
+			
+		//получение подтверждения оператора
+		var invoiceConfirmation = api.GetMessage(authToken, boxId, invoiceDocument.MessageId, invoiceDocument.EntityId); 
+			
+		//формирование извещения о получении подтверждения
+		var invoiceReceipt = api.GenerateInvoiceDocumentReceiptXml(authToken, invoiceDocument.MessageId, invoiceConfirmation.AttachmentId, signer);
+		
+		//отправка извещения
+		var messagePatchToPost = new MessagePatchToPost
+		{
+			BoxId = boxId,
+			MessageId = invoiceDocument.MessageId,
+			ReceiptAttachment =
+			{
+				new ReceiptAttachment
+				{
+					ParentEntityId = invoiceDocument.EntityId,
+					SignedContent = new SignedContent //файл подписи
+					{
+						Content = invoiceDocument.Content,
+						Signature = new byte[0] //подпись продавца
+					}
+				}
+			}
+		};
+
+		api.PostMessagePatch(authToken, messagePatchToPost);
+	}
+	
+	//получение извещения о получении счета-фактуры
+	private void GetInvoiceReceipt()
+	{
+		var invoiceDocument = /*счет-фактура, по которому надо получить подтверждение*/;
+		var boxId = "идентификатор ящика отправителя";
+		var invoiceConfirmation = api.GetMessage(authToken, boxId, invoiceDocument.MessageId, invoiceDocument.EntityId); 
+	}

@@ -95,7 +95,7 @@ HTTP-запрос для генерации файла титула исполн
 
   -  в параметр *filterCategory* указываем статус и тип документа: ``XmlAcceptanceCertificate.InboundNotFinished``.
 
-Пример запроса на получение акта о выполнении работ/оказании услуг вглядит следующим образом:
+Пример запроса на получение акта о выполнении работ/оказании услуг выглядит следующим образом:
 
 ::
 
@@ -239,9 +239,9 @@ SDK
 	private GeneratedFile GenerateAcceptanceCertificateSellerTitle()
 	{
 		var content = new AcceptanceCertificateSellerTitleInfo()
-			{
-				// заполняем согласно структуре AcceptanceCertificateSellerTitleInfo
-			};
+		{
+			// заполняем согласно структуре AcceptanceCertificateSellerTitleInfo
+		};
 		return api.GenerateAcceptanceCertificateXmlForSeller(authToken, content);
 	}
 		
