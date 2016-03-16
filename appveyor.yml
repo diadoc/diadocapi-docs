@@ -1,0 +1,12 @@
+version: 1.{build}
+environment:
+  PYTHON: "c:/Python27"
+install:
+  - "%PYTHON%/Scripts/pip.exe install -r requirements.txt"
+  - pushd docs
+  - make.bat html
+build: none
+artifacts:
+  - path: docs/build/html
+    name: diadoc-api-docs
+    type: zip
