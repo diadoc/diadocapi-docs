@@ -19,5 +19,5 @@
 
 Зелеными прямоугольниками на схемах изображены сущности, которые формирует отправитель сообщения, а синими – сущности, которые формирует получатель.
 
-.. |image0| image:: _static/img/diadoc-api-data-model-nonformalized.png
-.. |image1| image:: _static/img/diadoc-api-data-model-nonformalized-cosign.png
+.. |image0| image:: static/img/diadoc-api-data-model-nonformalized.png
+.. |image1| image:: static/img/diadoc-api-data-model-nonformalized-cosign.png

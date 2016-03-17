@@ -3,6 +3,12 @@
 
 |image0|
 
+.. uml::
+
+   Foo -> Bar
+   Bar -> Other : action
+   Foo <-- Bar
+
 Диадок – это система обмена юридически-значимыми электронными документами между организациями. Диадок позволяет компаниям обмениваться со своими клиентами, поставщиками, партнерами, удаленными подразделениями любыми документами.
 
 Базовым уровнем интеграции с Диадоком является его **HTTP-API** интерфейс. Этот уровень являетсся наиболее общим, и на нем, в частности, обеспечивается платформо-независимость для интеграционных решений.
@@ -18,20 +24,20 @@
    :maxdepth: 1
    :caption: Общее описание возможностей
 
-   Обзор возможностей API <Overview>   
+   Обзор возможностей API <Overview>
    Возможности для интеграции <IntegrationOptions>
    Модель данных <DataModel>
-   Порядок работы с API <ApiClientOperationPrinciple>   
+   Порядок работы с API <ApiClientOperationPrinciple>
    Управление списком активных контрагентов <Counteragents>
    Документооборот электронных счетов-фактур <InvoiceDocflow>
-   Неформализованный документооборот <NonformalizedDocflow>   
-   Дополнительные функции API <MiscellaneousApiFeatures>   
+   Неформализованный документооборот <NonformalizedDocflow>
+   Дополнительные функции API <MiscellaneousApiFeatures>
 
 .. toctree::
    :name: examples
    :maxdepth: 1
    :caption: Примеры использования
-   
+
    Как авторизоваться в системе <howto/example_authorization>
    Как отправить счет-фактуру <howto/example_send_invoice>
    Как получить счет-фактуру <howto/example_receive_invoice>
@@ -44,7 +50,7 @@
    :caption: Техническая документация
 
    Структуры данных <DataStructures>
-   Авторизация <Authorization>   
+   Авторизация <Authorization>
    Работа с организациями <API_Organizations>
    Работа с контрагентами <API_Counteragents>
    Работа с сообщениями <API_Messages>
@@ -65,7 +71,7 @@
      :name: tech
      :maxdepth: 1
      :caption: Справочное руководство
-     
+
      http_methods
      protos
      lists
@@ -74,7 +80,7 @@
    :name: others
    :caption: История изменений
    :titlesonly:
-   
+
    ReleaseNotes
 
-.. |image0| image:: _static/diadoc-logo.png
+.. |image0| image:: static/diadoc-logo.png
