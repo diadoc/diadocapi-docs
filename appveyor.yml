@@ -1,13 +1,41 @@
 version: 1.{build}
+
 environment:
   PYTHON: "c:/Python27"
+  GITHUB_ACCESS_TOKEN:
+    secure: 3YvmE4ZGQYlop9LW0mixFOQgyqlPpQNkDHzfOorKf5M30LoaWAIezSzOLwitxzjI
+
+branches:
+  only:
+    - master
+    - appveyor-support
+  except:
+    - gh-pages
+
+# fetch repository as zip archive
+shallow_clone: true
+
 install:
   - "%PYTHON%/Scripts/pip.exe install -r requirements.txt"
   - cinst graphviz
   - java -jar docs/source/_plantuml/plantuml.jar -testdot
   - pushd docs
+  - git clone https://github.com/$(APPVEYOR_REPO_NAME).git --branch gh-pages --single-branch build/html
+  - type source/conf.py
   - make.bat html
 build: none
+
+on_success:
+  - git congig --global credential.helper store
+  - git config --global user.email "halex2005@e1.ru"
+  - git config --global user.name "halex2005"
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GITHUB_ACCESS_TOKEN):x-oauth-basic@github.com`n"
+  - rm -rf build/html/*
+  - pushd build/html
+  - git add *
+  - git commit -a -m "appveyor build" --amend
+  - git push origin gh-pages --force
+
 artifacts:
   - path: docs/build/html
     name: diadoc-api-docs
