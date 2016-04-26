@@ -26,6 +26,8 @@ Organization
         optional bool IsBranch = 17;
         optional bool IsRoaming = 18;
         optional bool IsEmployee = 19;
+        optional int32 InvitationCount = 20;
+        optional int32 SearchCount = 21;
     }
 
     message Box {
@@ -63,6 +65,10 @@ Organization
 -  Поле *IsEmployee* содержит признак того, что пользователь является сотрудником организации. Используется только в методе :doc:`../http/GetMyOrganizations`.
 
 -  Поле *Departments* содержит список видимых пользователю подразделений (см. :doc:`Department`) в организации (кроме головного).
+
+-  Поле *InvitationCount* содержит количество запросов на приглашение к сотрудничеству данной организации.
+
+-  Поле *SearchCount* содержит количество запросов на поиск данной организации в Диадоке.
 
 Структура данных *Box* содержит информацию об одном ящике в Диадоке: его идентификатор, понятное имя и информацию об организации-владельце ящика.
 

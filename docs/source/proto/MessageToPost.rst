@@ -54,7 +54,7 @@ MessageToPost
 
 -  :doc:`NonformalizedDocuments <NonformalizedAttachment>` - список неформализованных документов в отправляемом сообщении.
 
--  :doc:`TrustConnectionRequest <TrustConnectionRequestAttachment>` - запрос на инициацию канала обмена документами через Диадок в отправляемом сообщении.
+-  :doc:`TrustConnectionRequest <TrustConnectionRequestAttachment>` - запрос на инициацию канала обмена документами через Диадок в отправляемом сообщении. Данная возможность устарела, для отправки приглашения с вложенным документов воспользуйтесь методом :doc:`../http/AcquireCounteragent`
 
 -  :doc:`ProformaInvoices <BasicDocumentAttachment>` - список счетов на оплату в отправляемом сообщении.
 
