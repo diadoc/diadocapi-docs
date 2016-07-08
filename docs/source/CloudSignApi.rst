@@ -47,6 +47,8 @@ HTTP-интерфейс
    http/CloudSignConfirm
    http/CloudSignConfirmResult
    http/CloudSignResult
+   http/AutoSignReceipts
+   http/AutoSignReceiptsResult
 
 Структуры данных
 ----------------
