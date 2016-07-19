@@ -68,6 +68,8 @@ Entity
         RoamingNotification = 39;
         SupplementaryAgreement = 40;
         CustomData = 64;
+        MoveDocument = 65;
+        ResolutionChainAssignment = 66;
         //Неизвестные типы должны обрабатываться как Nonformalized
     }
 
@@ -160,6 +162,10 @@ Entity
    -  *SupplementaryAgreement* (дополнительное соглашение к договору).
    
    -  *CustomData* (произвольные данные к документу).
+   
+   -  *MoveDocument* (информация о перемещении документа в подразделение).
+   
+   -  *ResolutionChainAssignment* (информация о запуске документа по маршруту согласования).
 
 -  *Content* - содержимое сущности (подробнее см. описание структуры :doc:`Content`).
    
@@ -183,7 +189,7 @@ Entity
    
    -  Содержимое сущности типа *Attachment/RoamingNotification* представляет собой сериализованную в протобуфер структуру *RoamingNotification*,
    
-   -  Для сущностей типа *Attachment* и типов вложениий *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8,
+   -  Для сущностей типа *Attachment* и типов вложениий *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial*, *ResolutionChainAssignment* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8,
    
    -  Наконец, у сущности типа *Attachment/SignatureVerificationReport* массив байтов Content.Data представляет собой сериализованную в протобуфер структуру *SignatureVerificationResult*.
 
