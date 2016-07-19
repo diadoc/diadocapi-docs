@@ -35,6 +35,7 @@ MessageToPost
         repeated EncryptedXmlDocumentAttachment EncryptedXmlTorg12SellerTitles = 29;
         repeated EncryptedXmlDocumentAttachment EncryptedXmlAcceptanceCertificateSellerTitles = 30;
         repeated SupplementaryAgreementAttachment SupplementaryAgreements = 31;
+        optional bool LockPacket = 32 [default = false];
     }
         
 
@@ -101,6 +102,8 @@ MessageToPost
 -  *StrictDraftValidation* - флаг, включающий проверку правильности черновика (по умолчанию проверка включена).
 
 -  *DelaySend* - флаг, означает, что документ из сообщения будет сохранен без отправки.
+
+-  *LockPacket* - флаг, означает, что документы сообщения будут отправлены закрытым пакетом. В таком пакете любая операция применяется ко всем документам сразу.
 
 Сообщения с флагом *DelaySend*, должны удовлетворять следующим 
 
