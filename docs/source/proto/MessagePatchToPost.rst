@@ -103,7 +103,7 @@ MessagePatchToPost
 
 -  *CustomDataPatches* - список операций по изменению пользовательских данных у документов в исходном сообщении. Каждый элемент представляется структурой :doc:`CustomDataPatch <CustomDataPatch>`.
 
--  *EditDocumentPacketCommands* - список операций по изменению состава пакета у документов в исходном сообщении. Каждый элемент представляется структурой :doc:`EditDocumentPacketCommand <EditDocumentPacketCommand>`.
+-  *EditDocumentPacketCommands* - список операций по изменению состава пакета у документов в исходном сообщении. Каждый элемент представляется структурой *EditDocumentPacketCommand*.
 
 Структура данных *ReceiptAttachment* представляет одно извещение о получении документа в отправляемом патче:
 

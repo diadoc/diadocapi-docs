@@ -101,7 +101,7 @@
 
 ``BoxId`` - это идентификатор ящика получателя, ``messageId`` - идентификатор полученного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``entityId`` - идентификатор счета-фактуры. Их можно взять из структуры :doc:`../proto/Message`
 
-.. code-block:: json
+::
 
     GET /V3/GetMessage?messageId=bbcedb0d-ce34-4e0d-b321-3f600c920935&entityId=30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&boxId=db32772b-9256-49a8-a133-fda593fda38a HTTP/1.1
     Host: diadoc-api.kontur.ru
@@ -130,7 +130,7 @@
        "IsEncryptedContent": false
    }
 
-.. _create_receipt:
+.. _create_invoice_receipt:
 
 Формирование извещения о получении подтверждения оператора
 ----------------------------------------------------------

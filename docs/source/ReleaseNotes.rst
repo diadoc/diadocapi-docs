@@ -18,7 +18,7 @@ v1.34 - 10.03.2016
 
 	- В структуре :doc:`proto/MessagePatchToPost` добавлено поле EditDocumentPacketCommands.
 	
-	- Добавлена новая структура :doc:`proto/EditDocumentPacketCommand`, описывающая операцию редактирования пакета документов.
+	- Добавлена новая структура :doc:`EditDocumentPacketCommand <proto/MessageToPost>`, описывающая операцию редактирования пакета документов.
 
 v1.33 - 10.02.2016
 ------------------
