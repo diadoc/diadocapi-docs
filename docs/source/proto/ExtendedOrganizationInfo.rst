@@ -1,5 +1,5 @@
 ExtendedOrganizationInfo
-================
+========================
 
 .. code-block:: protobuf
 

@@ -1,5 +1,5 @@
 ExtendedSigner
-======
+==============
 
 .. code-block:: protobuf
 
