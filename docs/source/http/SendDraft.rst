@@ -1,7 +1,7 @@
 SendDraft
 =========
 
-Имя ресурса: **/V2/SendDraft**
+Имя ресурса: **/SendDraft**
 
 HTTP метод: **POST**
 
