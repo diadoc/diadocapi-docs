@@ -14,7 +14,7 @@ Signer
         required string FirstName = 2;
         optional string Patronymic = 3;
         optional string JobTitle = 4;
-        optional string Inn = 5;
+        required string Inn = 5;
         optional string SoleProprietorRegistrationCertificate = 6;
     }
         
