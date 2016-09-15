@@ -210,10 +210,10 @@ BilateralDocumentMetadata
 
 Перечисление *UniversalTransferDocumentStatus* задает возможные варианты состояний, в которых может находиться Универсальный передаточный документ (УПД). Содержит все значения из перечисления BilateralDocumentStatus и дополнительно еще несколько возможных значений:
 
--  *OutboundWaitingForInvoiceReceiptAndRecipientSignature - документ исходящий, ожидается извещение о получении и подпись получателя,
+-  *OutboundWaitingForInvoiceReceiptAndRecipientSignature* - документ исходящий, ожидается извещение о получении и подпись получателя,
 
--  *OutboundWaitingForInvoiceReceipt = 3; - документ исходящий, ожидается извещение о получении,
+-  *OutboundWaitingForInvoiceReceipt* = 3; - документ исходящий, ожидается извещение о получении,
 
--  *InboundWaitingForInvoiceReceiptAndRecipientSignature - документ входящий, ожидается извещение о получении и подпись получателя,
+-  *InboundWaitingForInvoiceReceiptAndRecipientSignature* - документ входящий, ожидается извещение о получении и подпись получателя,
 
--  *InboundWaitingForInvoiceReceipt - документ входящий, ожидается извещение о получении.
+-  *InboundWaitingForInvoiceReceipt* - документ входящий, ожидается извещение о получении.

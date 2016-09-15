@@ -1,7 +1,7 @@
 Работа с УПД
 ============
 
-Для упрощения работы с API существует SDK (C#/C++/Java/COM), скрывающий детали взаимодействия по HTTP и позволяющий работать с API через набор функций.
+Для упрощения работы с API существует SDK (C#), скрывающий детали взаимодействия по HTTP и позволяющий работать с API через набор функций.
 
 HTTP-интерфейс
 --------------
@@ -11,7 +11,6 @@ HTTP-интерфейс
    :maxdepth: 1
    :titlesonly:
 
-   http/CanSendInvoice
    http/GenerateUniversalTransferDocumentXmlForSeller
    http/GenerateInvoiceDocumentReceiptXml
    http/ParseUniversalTransferDocumentSellerTitleXml
