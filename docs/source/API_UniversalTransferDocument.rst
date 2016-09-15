@@ -14,6 +14,7 @@ HTTP-интерфейс
    http/CanSendInvoice
    http/GenerateUniversalTransferDocumentXmlForSeller
    http/GenerateInvoiceDocumentReceiptXml
+   http/ParseUniversalTransferDocumentSellerTitleXml
 
 
 Структуры данных
@@ -25,3 +26,4 @@ HTTP-интерфейс
    :titlesonly:
 
    proto/UniversalTransferDocumentSellerTitleInfo
+   proto/UniversalTransferDocumentBuyerTitleInfo
