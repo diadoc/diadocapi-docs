@@ -107,9 +107,9 @@ SDK
 	// 1. Крипто-API, предоставляемое операционной системой (доступно через класс WinApiCrypt)
 	// 2. Экземпляр класса DiadocApi, проксирующий работу с веб-сервисом Диадок
 	private static WinApiCrypt Crypt = new WinApiCrypt();
-	public static readonly DiadocHttpApi Api = new DiadocApi(
+	public static readonly DiadocApi Api = new DiadocApi(
 		DefaultClientId,
-		new HttpClient(DefaultApiUrl),
+		DefaultApiUrl,
 		Crypt);
 	
 	// Логин для авторизации на сервере Диадок
