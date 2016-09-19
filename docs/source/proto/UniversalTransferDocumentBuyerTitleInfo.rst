@@ -23,6 +23,6 @@ UniversalTransferDocumentBuyerTitleInfo
 
 -  Информация о работнике покупателя представляется в виде структуры :doc:`Employee <UniversalTransferDocumentSellerTitleInfo>`.
 
--  Информация о подписанте, если он явлеяется иным лицом, представляется в виде структуры :doc:`OtherIssuer <UniversalTransferDocumentSellerTitleInfo>`.
+-  Информация о ином лице, принявшем товар, представляется в виде структуры :doc:`OtherIssuer <UniversalTransferDocumentSellerTitleInfo>`.
 
 -  Сведения информационного поля о факте хозяйственной жизни представляется в виде структуры :doc:`AdditionalInfoId <UniversalTransferDocumentSellerTitleInfo>`.

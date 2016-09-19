@@ -33,7 +33,7 @@ UniversalTransferDocumentSellerTitleInfo
     }
  
     message Shipper {
-        optional bool SameAsSeller = 1; // совпадает с продавцом // ОнЖе
+        optional bool Shipper.SameAsSeller = 1; // совпадает с продавцом // ОнЖе
         optional Organizations.ExtendedOrganizationInfo OrgInfo = 2; // реквизиты организации // ГрузОтпр
     }
   
@@ -113,7 +113,7 @@ UniversalTransferDocumentSellerTitleInfo
     }
   
     message OtherIssuer {
-        optional string TransferEmployeePosition = 1; // Должность предстваителя организации // Должность //если заполнено 0 формируется структура «ПредОргПер», если не заполнено – «ФЛПер»
+        optional string TransferEmployeePosition = 1; // Должность предстваителя организации // Должность //если заполнено - формируется структура «ПредОргПер», если не заполнено – «ФЛПер»
         optional string TransferEmployeeInfo = 2;     // Иные сведения, идентифицирующие физическое лицо // ИныеСвед
         optional string TransferOrganizationName = 3; //Наименование организации, которой доверена передача // НаимОргПер
         optional string TransferOrganizationBase = 4; // Основание, по которому организации доверена передача // ОснДоверОргПер
@@ -137,7 +137,7 @@ UniversalTransferDocumentSellerTitleInfo
 
 -  Реквизиты грузополучателя (UniversalTransferDocumentSellerTitleInfo.Consignee) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
 
--  Реквизиты подписанта счета-фактуры UniversalTransferDocumentSellerTitleInfo.Signers заполняются в виде структуры данных :doc:`ExtendedSigner`.
+-  Реквизиты подписанта документа UniversalTransferDocumentSellerTitleInfo.Signers заполняются в виде структуры данных :doc:`ExtendedSigner`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 
@@ -145,6 +145,6 @@ UniversalTransferDocumentSellerTitleInfo
 
 -  Суммы должны указываться в формате XXX.XX (дробная часть должна отделяться точкой). То же самое касается формата представления количества товара ExtendedInvoiceItem.Quantity.
 
--  Если не указан код валюты UniversalTransferDocumentSellerTitleInfo.Currency, по умолчанию будет использоваться код 643 (Российский рубль). Код валюты можно указывать в буквенном формате (например, "USD" - Доллар США), тогда он будет автоматически сконвертирован в соответствующий числовой код.
+-  Если не указан код валюты UniversalTransferDocumentSellerTitleInfo.Currency, по умолчанию будет использоваться код 643 (Российский рубль).
 
 -  Коды единиц измерения ExtendedInvoiceItem.Unit, коды стран происхождения товара InvoiceItem.CountriesOfOrigin, а также коды иностранных госудраств ForeignAddress.Country можно указывать в буквенном формате, тогда Диадок предпримет попытку сконвертироваить их в соответствующие числовые коды.
