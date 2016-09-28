@@ -56,6 +56,7 @@ Document
         optional BilateralDocument.SupplementaryAgreementMetadata SupplementaryAgreementMetadata = 50;
         optional bool IsRead = 51 [default = false];
         optional string RoamingNotificationStatusDescription = 52;
+        optional BilateralDocument.UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 53;
     }
 
     enum RevocationStatus {
@@ -126,7 +127,7 @@ Document
 
 -  *DepartmentId* - идентификатор подразделения, в котором находится документ.
 
--  *IsTest* - флаг, показывающий, что данный документ является тестовым и не имеет юридической силы, т.к. один из контрагентов не присоединился к регламенту Диадока.
+-  *IsTest* - флаг, показывающий, что данный документ является тестовым и не имеет юридической силы, т.к. один из контрагентов не присоединился  к регламенту Диадока.
 
 -  *FromDepartmentId* - идентификатор подразделения, из которого отправляется документ.
 
@@ -175,6 +176,8 @@ Document
 -  :doc:`ResolutionStatus <ResolutionStatus>` - текущий статус согласования данного документа.
 
 -  :doc:`ServiceDetailsMetadata <UnilateralDocumentMetadata>` - дополнительные атрибуты специфичные для детализаций.
+
+-  :doc:`UniversalTransferDocumentMetadata <BilateralDocumentMetadata>` - Дополнительные атрибуты, специфичные для универсального передаточного документа
 
 -  *RevocationStatus* - статус аннулирования документа. Возможные значения:
 

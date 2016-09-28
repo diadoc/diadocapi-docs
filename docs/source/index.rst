@@ -50,6 +50,7 @@
    Работа с сообщениями <API_Messages>
    Работа с документами <API_Documents>
    Работа с СФ/ИСФ/КСФ <API_Invoices>
+   Работа с УПД <API_UniversalTransferDocument>
    Работа с событиями <API_Events>
    Docflow API <Docflow API>
    Облачная подпись <CloudSignApi>

@@ -36,6 +36,7 @@ MessageToPost
         repeated EncryptedXmlDocumentAttachment EncryptedXmlAcceptanceCertificateSellerTitles = 30;
         repeated SupplementaryAgreementAttachment SupplementaryAgreements = 31;
         optional bool LockPacket = 32 [default = false];
+        repeated XmlDocumentAttachment UniversalTransferDocumentSellerTitles = 33;
     }
         
 
@@ -90,6 +91,8 @@ MessageToPost
 -  :doc:`EncryptedXmlAcceptanceCertificateSellerTitles <EncryptedXmlDocumentAttachment>` - список зашифрованных формализованных актов о выполнении работ (оказании услуг) в отправляемом сообщении.
 
 -  :doc:`SupplementaryAgreements <SupplementaryAgreementAttachment>` - список дополнительных соглашанеий к договорам в отправляемом сообщении.
+
+-  :doc:`UniversalTransferDocumentSellerTitles <XmlDocumentAttachment>` - список титулов продавца универсального передаточного документа (УПД) в XML формате.
 
 -  *ProxyBoxId* - идентификатор ящика, промежуточного получателя. Если указан ящик промежуточного получателя, то документа доставится конечному получателя только после того, как промежуточный получатель поставит подпись под документом. Если промежуточный получатель отклонит документ, то в ящик конечного получателя он не будет доставлен.
 

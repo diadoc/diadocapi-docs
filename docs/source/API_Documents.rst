@@ -18,6 +18,7 @@ HTTP-интерфейс
    http/GenerateDocumentProtocol
    http/GenerateDocumentZip
    http/GenerateForwardedDocumentProtocol
+   http/GenerateDocumentReceiptXml
    http/GeneratePrintForm
    http/GeneratePrintFormFromAttachment
    http/GenerateRevocationRequestXml
