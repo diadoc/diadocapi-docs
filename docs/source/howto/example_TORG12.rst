@@ -235,38 +235,48 @@ SDK
 
 .. code-block:: csharp
 
-	// формирование файла титула продавца
-	private GeneratedFile GenerateTorg12SellerTitle()
+	//Для работы с документами в Диадоке необходим авторизационный токен.
+	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
+	public static string AuthTokenCert;
+	
+	//Формирование файла титула продавца
+	public static GeneratedFile GenerateTorg12SellerTitle()
 	{
 		var content = new Torg12SellerTitleInfo()
 			{
-				// заполняем согласно структуре Torg12SellerTitleInfo
+				//Заполняется согласно структуре Torg12SellerTitleInfo
 			};
-		return api.GenerateTorg12XmlForSeller(authToken, content);
+		return Api.GenerateTorg12XmlForSeller(AuthTokenCert, content);
 	}
 		
-	// отправка файла титула продавца
-	private void SendTorg12SellerTitle()
+	//Отправка файла титула продавца
+	public static void SendTorg12SellerTitle()
 	{
-		var fileToSend = GenerateTorg12SellerTitle();
-
-		var messageAttachment = new XmlDocumentAttachment
+		var sellerTitle = GenerateTorg12SellerTitle();
+		var messageAttachment = new XmlDocumentAttachment()
 		{
 			SignedContent = new SignedContent //файл подписи
 			{
-				Content = fileToSend.Content,
-				Signature = new byte[0] //подпись продавца
+				Content = sellerTitle.Content,
+				//Подпись исполнителя, см. "Как авторизоваться в системе"
+				Signature = Crypt.Sign(sellerTitle.Content, ReadCertContent("путь к сертификату"))
 			}
 		};
-
 		var messageToPost = new MessageToPost
 		{
-			FromBoxId = "идентификатор ящика отправителя",
-			ToBoxId = "идентификатор ящика получателя",
-			XmlTorg12SellerTitles = { messageAttachment }
+			FromBoxId = "идентификатор ящика продавца",
+			ToBoxId = "идентификатор ящика покупателя",
+			XmlTorg12SellerTitles = 
+			{ 
+				messageAttachment 
+			}
 		};
-
-		api.PostMessage(authToken, messageToPost); //см. "Как авторизоваться в системе"
+		Api.PostMessage(AuthTokenCert, messageToPost);
+	}
+	
+	public static void Main()
+	{
+		SendTorg12SellerTitle();
 	}
 
 	
@@ -274,61 +284,76 @@ SDK
 
 .. code-block:: csharp
 
-	//находим все неподписанные товарные накладные ТОРГ-12
-	private Document SearchTorg12Documents()
-	{
-		var boxId = "идентификатор ящика, в котором следует выполнить поиск входящих документов";
-			
-		//статус и тип документа
-		var filterCategory = "XmlTorg12.InboundNotFinished"; 
-		var counteragentBoxId = "идентификатор ящика контрагента";
-			
-		DocumentList documents = api.GetDocuments(authToken, boxId, filterCategory, counteragentBoxId);
-			
-		return documents.Documents.First();
-	}
-		
-	//получаем нужную товарную накладную ТОРГ-12 и отправляем к ней титул покупателя
-	private void GetTorg12AndSendTorg12BuyerTitle()
-	{
-		var document = SearchTorg12Documents();
-		var boxId = "идентификатор ящика получателя";
-			
-		//получение товарной накладной ТОРГ-12
-		var message = api.GetMessage(authToken, boxId, document.MessageId, document.EntityId); 
-			
-		//генерация файла титула покупателя
-		var buyerInfo = GetBuyerInfo();
-		
-		//формирование файла титула покупателя
-		var torg12XmlForBuyer = api.GenerateTorg12XmlForBuyer(authToken, buyerInfo, boxId, document.MessageId, document.EntityId);
+	//Для работы с документами в Диадоке необходим авторизационный токен.
+	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
+	public static string AuthTokenCert;
 	
+	public static string BoxId = "идентификатор ящика покупателя";
+	
+	//Для работы с документом необходимо знать его уникальный идентификатор.
+	//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.
+
+	//Получение списка всех товарных накладных ТОРГ-12 услуг, по которым не завершен документооборот
+	public static DocumentList SearchTorg12DocumentsWithNotFinishedInbound()
+	{
+		//Параметры, по которым осуществляется фильтрация
+		var filterCategory = "XmlTorg12.InboundNotFinished";
+		var counteragentBoxId = "идентификатор ящика продавца";
+
+		DocumentList documents = Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
+		return documents;
+	}
+	
+	//Получение сообщения, содержащего документ
+	public static Message GetTorg12()
+	{
+		//Выбираем конкретный документ из полученного ранее списка.
+		//Например, самый первый.
+		var document = SearchTorg12DocumentsWithNotFinishedInbound().Documents[0];
+
+		//Получение товарной накладной ТОРГ12
+		var message = Api.GetMessage(AuthTokenCert, BoxId, document.MessageId, document.EntityId);
+		return message;
+	}
+	
+	//Генерация файла титула покупателя
+	public static GeneratedFile GenerateTorg12BuyerTitle(Message message)
+	{
+		var content = new Torg12BuyerTitleInfo()
+		{
+			// Заполняется согласно структуре Torg12BuyerTitleInfo
+		};
+		return Api.GenerateTorg12XmlForBuyer(AuthTokenCert, content, BoxId, message.MessageId, message.Entities[0].EntityId);
+	}
+	
+	//Отправка файла титула покупателя
+	public static void SendTorg12BuyerTitle()
+	{
+		var message = GetTorg12();
+		var buyerTitle = GenerateTorg12BuyerTitle(message);
+		var receiptAttachment = new ReceiptAttachment ()
+		{
+			ParentEntityId = message.Entities[0].EntityId,
+			SignedContent = new SignedContent
+			{
+				Content = buyerTitle.Content,
+				//Подпись заказчика, см. "Как авторизоваться в системе"
+				Signature = Crypt.Sign(buyerTitle.Content, ReadCertContent("путь к сертификату"))
+			}
+		}
 		var messagePatchToPost = new MessagePatchToPost
 		{
-			BoxId = boxId,
-			MessageId = document.MessageId,
+			BoxId = BoxId,
+			MessageId = message.MessageId,
 			XmlTorg12BuyerTitles =
 			{
-				new ReceiptAttachment
-				{
-					ParentEntityId = document.EntityId,
-					SignedContent = new SignedContent //файл подписи
-					{
-						Content = document.Content,
-						Signature = new byte[0] //подпись покупателя
-					}
-				}
+				receiptAttachment
 			}
 		};
-
-		api.PostMessagePatch(authToken, messagePatchToPost);
+		Api.PostMessagePatch(AuthTokenCert, messagePatchToPost);
 	}
 	
-	//генерация файла титула покупателя
-	private Torg12BuyerTitleInfo GetBuyerInfo()
+	public static void Main()
 	{
-		return new Torg12BuyerTitleInfo
-		{
-			//заполняется согласно структуре Torg12BuyerTitleInfo
-		};
+		SendTorg12BuyerTitle();
 	}
