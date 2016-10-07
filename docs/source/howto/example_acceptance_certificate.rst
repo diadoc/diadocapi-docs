@@ -294,57 +294,52 @@ SDK
 	//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.
 
 	//Получение списка всех актов о выполнении работ/оказании услуг, по которым не завершен документооборот
-	public static DocumentList SearchAcceptanceCertificateDocumentsWithNotFinishedInbound()
+	public static DocumentList SearchInboundAcceptanceCertificateDocumentsWithNotFinishedDocflow()
 	{
 		//Параметры, по которым осуществляется фильтрация
 		var filterCategory = "XmlAcceptanceCertificate.InboundNotFinished";
 		var counteragentBoxId = "идентификатор ящика исполнителя";
 
-		DocumentList documents = Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
-		return documents;
+		return Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
 	}
 	
-	//Получение сообщения, содержащего документ
-	public static Message GetAcceptanceCertificate()
+	//Получение документа
+	public static Document GetAcceptanceCertificate()
 	{
 		//Выбираем конкретный документ из полученного ранее списка.
 		//Например, самый первый.
-		var document = SearchAcceptanceCertificateDocumentsWithNotFinishedInbound().Documents[0];
-
-		//Получение акта о выполнении работ/оказании услуг
-		var message = Api.GetMessage(AuthTokenCert, BoxId, document.MessageId, document.EntityId);
-		return message;
+		return SearchInboundAcceptanceCertificateDocumentsWithNotFinishedDocflow().Documents[0];
 	}	
 	
 	//Генерация файла титула заказчика
-	public static GeneratedFile GenerateAcceptanceCertificateBuyerTitle(Message message)
+	public static GeneratedFile GenerateAcceptanceCertificateBuyerTitle(Document document)
 	{
 		var content = new AcceptanceCertificateBuyerTitleInfo()
 		{
 			// Заполняется согласно структуре AcceptanceCertificateBuyerTitleInfo
 		};
-		return Api.GenerateAcceptanceCertificateXmlForBuyer(AuthTokenCert, content, BoxId, message.MessageId, message.Entities[0].EntityId);
+		return Api.GenerateAcceptanceCertificateXmlForBuyer(AuthTokenCert, content, BoxId, document.MessageId, document.EntityId);
 	}
 	
 	//Отправка файла титула заказчика
 	public static void SendAcceptanceCertificateBuyerTitle()
 	{
-		var message = GetAcceptanceCertificate();
-		var buyerTitle = GenerateAcceptanceCertificateBuyerTitle(message);
+		var document = GetAcceptanceCertificate();
+		var buyerTitle = GenerateAcceptanceCertificateBuyerTitle(document);
 		var receiptAttachment = new ReceiptAttachment ()
 		{
-			ParentEntityId = message.Entities[0].EntityId,
+			ParentEntityId = document.EntityId,
 			SignedContent = new SignedContent
 			{
 				Content = buyerTitle.Content,
 				//Подпись заказчика, см. "Как авторизоваться в системе"
 				Signature = Crypt.Sign(buyerTitle.Content, ReadCertContent("путь к сертификату"))
 			}
-		}
+		};
 		var messagePatchToPost = new MessagePatchToPost
 		{
 			BoxId = BoxId,
-			MessageId = message.MessageId,
+			MessageId = document.MessageId,
 			XmlAcceptanceCertificateBuyerTitles =
 			{
 				receiptAttachment

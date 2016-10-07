@@ -297,39 +297,38 @@ SDK
 	//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.
 
 	//Получение списка всех счетов-фактур, по которым не завершен документооборот
-	public static DocumentList SearchInvoiceDocumentsWithNotFinishedInbound()
+	public static DocumentList SearchInboundInvoicesDocumentsWithNotFinishedDocflow()
 	{
 		//Параметры, по которым осуществляется фильтрация
 		var filterCategory = "Invoice.InboundNotFinished";
 		var counteragentBoxId = "идентификатор ящика отправителя";
 
-		DocumentList documents = Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
-		return documents;
+		return Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
 	}
 		
-	//Получение счета-фактуры 
+	//Получение сообщения, содержащего счет-фактуру 
 	public static Message GetInvoice()
 	{
 		//Выбираем конкретный документ из полученного ранее списка.
 		//Например, самый первый.
-		var document = SearchInvoiceDocumentsWithNotFinishedInbound().Documents[0];
+		var document = SearchInboundInvoicesDocumentsWithNotFinishedDocflow().Documents[0];
 
 		//Получение счета-фактуры
-		var message = Api.GetMessage(AuthTokenCert, BoxId, document.MessageId, document.EntityId);
-		return message;
+		return Api.GetMessage(AuthTokenCert, BoxId, document.MessageId, document.EntityId);
 	}
 	
 	//Получение подтверждения оператора, формирование и отправка извещения о получении подтверждения
 	public static void GetInvoiceConfirmationAndSendInvoiceReceipt(Message invoiceMessage)
 	{
-		var confirmationEntityId = "";
-
-		foreach (var entity in invoiceMessage.Entities)
-		{
-			if (entity.AttachmentType == AttachmentType.InvoiceConfirmation)
-				//Цикл не прерывается, т.к. нужна последняя сущность данного типа
-				confirmationEntityId = entity.EntityId;
-		}
+		//Выбор первого вложения типа InvoiceConfirmation, к которому нет извещения о получении
+		var confirmationEntities = invoiceMessage.Entities
+			.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceConfirmation);
+		var receiptEntitiesParentIds = invoiceMessage.Entities
+			.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceReceipt)
+			.Select(receiptEntety => receiptEntety.ParentEntityId);
+		var confirmationEntityWithoutReceiptId = confirmationEntities
+			.First(confirmationEntity => !receiptEntitiesParentIds
+				.Contains(confirmationEntity.EntityId)).EntityId;
 		
 		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
 		{
@@ -366,9 +365,9 @@ SDK
 	}
 	
 	//Формирование и отправка извещения о получении счета-фактуры
-	public static void SendinvoiceReceipt(Message invoiceMessage)
+	public static void SendinvoiceReceipt(Document invoiceDocument)
 	{
-		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, invoiceMessage.Entities[0].EntityId, new Signer()
+		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, new Signer()
 		{
 			//Подпись получателя, см. "Как авторизоваться в системе"
 			SignerCertificate = ReadCertContent("путь к сертификату"),
@@ -380,7 +379,7 @@ SDK
 		
 		var receiptAttachment = new ReceiptAttachment()
 		{
-			ParentEntityId = invoiceMessage.Entities[0].EntityId,
+			ParentEntityId = invoiceDocument.EntityId,
 			SignedContent = new SignedContent()
 			{
 				Content = receipt.Content,
@@ -392,7 +391,7 @@ SDK
 		var receiptPatch = new MessagePatchToPost()
 		{
 			BoxId = BoxId,
-			MessageId = invoiceMessage.MessageId,
+			MessageId = invoiceDocument.MessageId,
 			Receipts =
 			{
 				receiptAttachment
@@ -405,12 +404,13 @@ SDK
 	public static void Main()
 	{
 		var invoiceMessage = GetInvoice();
+		var invoiceDocument = invoiceMessage.Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);
 		
 		//Отправка извещения о получении подтверждения оператора для счета-фактуры
 		GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
 		
 		//Отправка извещения о получении счета-фактуры
-		SendinvoiceReceipt(invoiceMessage);
+		SendinvoiceReceipt(invoiceDocument);
 		
 		//Отправка извещения о получении подтверждения оператора для извещения о получении счета-фактуры
 		GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);

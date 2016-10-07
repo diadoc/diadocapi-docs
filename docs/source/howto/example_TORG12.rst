@@ -294,46 +294,41 @@ SDK
 	//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.
 
 	//Получение списка всех товарных накладных ТОРГ-12 услуг, по которым не завершен документооборот
-	public static DocumentList SearchTorg12DocumentsWithNotFinishedInbound()
+	public static DocumentList SearchInboundTorg12DocumentsWithNotFinishedDocflow()
 	{
 		//Параметры, по которым осуществляется фильтрация
 		var filterCategory = "XmlTorg12.InboundNotFinished";
 		var counteragentBoxId = "идентификатор ящика продавца";
 
-		DocumentList documents = Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
-		return documents;
+		return Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
 	}
 	
-	//Получение сообщения, содержащего документ
-	public static Message GetTorg12()
+	//Получение документа
+	public static Document GetTorg12()
 	{
 		//Выбираем конкретный документ из полученного ранее списка.
 		//Например, самый первый.
-		var document = SearchTorg12DocumentsWithNotFinishedInbound().Documents[0];
-
-		//Получение товарной накладной ТОРГ12
-		var message = Api.GetMessage(AuthTokenCert, BoxId, document.MessageId, document.EntityId);
-		return message;
+		return SearchInboundTorg12DocumentsWithNotFinishedDocflow().Documents[0];
 	}
 	
 	//Генерация файла титула покупателя
-	public static GeneratedFile GenerateTorg12BuyerTitle(Message message)
+	public static GeneratedFile GenerateTorg12BuyerTitle(Document document)
 	{
 		var content = new Torg12BuyerTitleInfo()
 		{
 			// Заполняется согласно структуре Torg12BuyerTitleInfo
 		};
-		return Api.GenerateTorg12XmlForBuyer(AuthTokenCert, content, BoxId, message.MessageId, message.Entities[0].EntityId);
+		return Api.GenerateTorg12XmlForBuyer(AuthTokenCert, content, BoxId, document.MessageId, document.EntityId);
 	}
 	
 	//Отправка файла титула покупателя
 	public static void SendTorg12BuyerTitle()
 	{
-		var message = GetTorg12();
-		var buyerTitle = GenerateTorg12BuyerTitle(message);
+		var document = GetTorg12();
+		var buyerTitle = GenerateTorg12BuyerTitle(document);
 		var receiptAttachment = new ReceiptAttachment ()
 		{
-			ParentEntityId = message.Entities[0].EntityId,
+			ParentEntityId = document.EntityId,
 			SignedContent = new SignedContent
 			{
 				Content = buyerTitle.Content,
@@ -344,7 +339,7 @@ SDK
 		var messagePatchToPost = new MessagePatchToPost
 		{
 			BoxId = BoxId,
-			MessageId = message.MessageId,
+			MessageId = document.MessageId,
 			XmlTorg12BuyerTitles =
 			{
 				receiptAttachment
