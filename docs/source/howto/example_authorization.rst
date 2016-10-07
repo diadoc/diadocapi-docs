@@ -97,32 +97,32 @@ SDK
 
 .. code-block:: csharp
 
-	// URL веб-сервиса Диадок
+	//URL веб-сервиса Диадок
 	private const string DefaultApiUrl = "https://diadoc-api.kontur.ru";
 	
-	// идентификатор клиента
+	//Идентификатор клиента
 	private const string DefaultClientId = "test-8ee1638deae84c86b8e2069955c2825a";
 	
-	// Для использования Диадок требуются:
-	// 1. Крипто-API, предоставляемое операционной системой (доступно через класс WinApiCrypt)
-	// 2. Экземпляр класса DiadocApi, проксирующий работу с веб-сервисом Диадок
+	//Для использования Диадок требуются:
+	//1. Крипто-API, предоставляемое операционной системой (доступно через класс WinApiCrypt)
+	//2. Экземпляр класса DiadocApi, проксирующий работу с веб-сервисом Диадок
 	private static WinApiCrypt Crypt = new WinApiCrypt();
 	public static readonly DiadocApi Api = new DiadocApi(
 		DefaultClientId,
 		DefaultApiUrl,
 		Crypt);
 	
-	// Логин для авторизации на сервере Диадок
+	//Логин для авторизации на сервере Диадок
 	
 	private const string DefaultLogin = "логин";
 		
-	// Пароль для авторизации на сервере Диадок
+	//Пароль для авторизации на сервере Диадок
 	private const string DefaultPassword = "пароль";
 		
-	// Путь к сертификату для авторизации на сервере Диадок
+	//Путь к сертификату для авторизации на сервере Диадок
 	public const string DefaultPathToCert = "C:\\folder\\subfolder\\cert.cer";
 	
-	// Для авторизации по сертификату необходимо сертификат преобразовать в массив байтов
+	//Для авторизации по сертификату необходимо сертификат преобразовать в массив байтов
 	public static byte[] ReadCertContent(string pathToCert)
 	{
 		var cert = new X509Certificate(pathToCert); 
@@ -131,7 +131,7 @@ SDK
 		
 	static void Main(string[] args)
 	{
-		// Можно использовать либо аутентификацию по логину/паролю, либо по сертификату
-		var authTokenLogin = Api.Authenticate(DefaultLogin, DefaultPassword); // по паре логин/пароль
-		var authTokenPassword = Api.Authenticate(ReadCertContent(DefaultPathToCert)); // по сертификату
+		//Можно использовать либо аутентификацию по логину/паролю, либо по сертификату
+		var authTokenLogin = Api.Authenticate(DefaultLogin, DefaultPassword); //по паре логин/пароль
+		var authTokenCert = Api.Authenticate(ReadCertContent(DefaultPathToCert)); //по сертификату
 	}

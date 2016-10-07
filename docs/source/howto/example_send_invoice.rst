@@ -281,92 +281,123 @@ SDK
 
 .. code-block:: csharp
 
-	// формирование счета-фактуры
-	private GeneratedFile GenerateinvoiceXml()
+	//Для работы с документами в Диадоке необходим авторизационный токен.
+	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
+	public static string AuthTokenCert;
+	
+	public static string BoxId = "идентификатор ящика отправителя";
+	
+	//Формирование счета-фактуры
+	public static GeneratedFile GenerateInvoiceXml()
 	{
 		var content = new InvoiceInfo()
 		{
-			// заполняем согласно структуре InvoiceInfo
+			//Заполняется согласно структуре InvoiceInfo
 		};
-		return api.GenerateInvoiceXml(authToken, content);
+		return Api.GenerateInvoiceXml(AuthTokenCert, content);
 	}
 		
-	// отправка счета-фактуры
-	private void SendInvoiceXml()
+	//Отправка счета-фактуры
+	public static Message SendInvoiceXml()
 	{
-		var fileToSend = GenerateInvoiceXml();
-
+		var invoice = GenerateInvoiceXml();
 		var messageAttachment = new XmlDocumentAttachment
 		{
-			SignedContent = new SignedContent //файл подписи
+			SignedContent = new SignedContent
 			{
-				Content = fileToSend.Content,
-				Signature = new byte[0] //подпись отправителя
+				Content = invoice.Content,
+				//Подпись отправителя, см. "Как авторизоваться в системе"
+				Signature = Crypt.Sign(invoice.Content, ReadCertContent("путь к сертификату"))
 			}
 		};
-
 		var messageToPost = new MessageToPost
 		{
-			FromBoxId = "идентификатор ящика отправителя",
+			FromBoxId = BoxId,
 			ToBoxId = "идентификатор ящика получателя",
-			Invoices = { messageAttachment }
-		};
-
-		api.PostMessage(authToken, messageToPost); //см. "Как авторизоваться в системе"
-	}
-	
-	//получение подтверждения оператора, формирование и отправка извещения о получении подтверждения
-	private void GetInvoiceConfirmationAndSendInvoiceReceipt()
-	{
-		var invoiceDocument = /*счет-фактура, по которому надо получить подтверждение*/;
-		var boxId = "идентификатор ящика отправителя";
-		var signer = new Signer
-		{
-			SignerCertificate = new byte[0] /*подпись отправителя*/,
-			SignerCertificateThumbprint = "отпечаток сертификата",
-			SignerDetails =
-			{
-				FirstName = "Имя",
-				Surname = "Фамилия",
-				Patronymic = "Отчество",
-				Inn = "ИНН",
-				JobTitle = "Должность",
-				SoleProprietorRegistrationCertificate = "Св-во о регистрации ИП"
+			Invoices = 
+			{ 
+				messageAttachment 
 			}
 		};
-			
-		//получение подтверждения оператора
-		var invoiceConfirmation = api.GetMessage(authToken, boxId, invoiceDocument.MessageId, invoiceDocument.EntityId); 
-			
-		//формирование извещения о получении подтверждения
-		var invoiceReceipt = api.GenerateInvoiceDocumentReceiptXml(authToken, invoiceDocument.MessageId, invoiceConfirmation.AttachmentId, signer);
+		return Api.PostMessage(AuthTokenCert, messageToPost);
+	}
+	
+	//Получение подтверждения оператора, формирование и отправка извещения о получении 
+	public static void GetInvoiceConfirmationAndSendReceipt(Message invoiceMessage)
+	{
+		var confirmationEntityId = "";
+
+		foreach (var entity in invoiceMessage.Entities)
+		{
+			if (entity.AttachmentType == AttachmentType.InvoiceConfirmation)
+			{
+				confirmationEntityId = entity.EntityId;
+				break;				
+			}
+		}
 		
-		//отправка извещения
-		var messagePatchToPost = new MessagePatchToPost
+		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
 		{
-			BoxId = boxId,
-			MessageId = invoiceDocument.MessageId,
-			ReceiptAttachment =
+			//Подпись отправителя, см. "Как авторизоваться в системе"
+			SignerCertificate = ReadCertContent("путь к сертификату"),
+			SignerDetails = new SignerDetails()
 			{
-				new ReceiptAttachment
-				{
-					ParentEntityId = invoiceDocument.EntityId,
-					SignedContent = new SignedContent //файл подписи
-					{
-						Content = invoiceDocument.Content,
-						Signature = new byte[0] //подпись продавца
-					}
-				}
+				//Заполняется согласно структуре SignerDetails
+			}
+		});
+		
+		var receiptAttachment = new ReceiptAttachment()
+		{
+			ParentEntityId = confirmationEntityId,
+			SignedContent = new SignedContent()
+			{
+				Content = receipt.Content,
+				//Подпись отправителя, см. "Как авторизоваться в системе"
+				Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
+			}
+		};
+		
+		var receiptPatch = new MessagePatchToPost()
+		{
+			BoxId = BoxId,
+			MessageId = invoiceMessage.MessageId,
+			Receipts =
+			{
+				receiptAttachment
 			}
 		};
 
-		api.PostMessagePatch(authToken, messagePatchToPost);
+		Api.PostMessagePatch(AuthTokenCert, receiptPatch);
 	}
 	
-	//получение извещения о получении счета-фактуры
-	private void GetInvoiceReceipt()
+	//Получение извещения о получении счета-фактуры
+	public static byte[] GetInvoiceReceipt(Message invoiceMessage)
 	{
-		var invoiceDocument = /*счет-фактура, по которому надо получить подтверждение*/;
-		var boxId = "идентификатор ящика отправителя";
-		var invoiceConfirmation = api.GetMessage(authToken, boxId, invoiceDocument.MessageId, invoiceDocument.EntityId); 
+		var receiptEntityId = "";
+		foreach (var entity in invoiceMessage.Entities)
+		{
+			if (entity.AttachmentType == AttachmentType.InvoiceReceipt &&
+				entity.ParentEntityId == invoiceMessage.Entities[0].EntityId)
+				receiptEntityId = entity.EntityId;
+		}
+		return Api.GetEntityContent(AuthTokenCert, BoxId, invoiceMessage.MessageId, receiptEntityId); 
+	}
+	
+	public static void Main()
+	{
+		var invoiceMessage = SendInvoiceXml();
+		
+		//Оператор формирует подтверждение в течение нескольких секунд.
+		//Для получения сообщения с подтверждением необходимо вызвать метод GetMessage()
+		var invoiceMessageWithConfirmation = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
+		
+		GetInvoiceConfirmationAndSendReceipt(invoiceMessageWithConfirmation);
+		
+		//Технический документ можно получить в виде массива байтов.
+		//Для получения сообщения с новыми вложениями необходимо снова вызвать метод GetMessage()
+		var invoiceMessageWithReceipt = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
+		var invoiceMessageWithReceipt = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
+		
+		//Технический документ можно получить в виде массива байтов.
+		var invoiceReceipt = GetInvoiceReceipt(invoiceMessageWithReceipt);
 	}

@@ -235,38 +235,48 @@ SDK
 
 .. code-block:: csharp
 
-	// формирование файла титула исполнителя
-	private GeneratedFile GenerateAcceptanceCertificateSellerTitle()
+	//Для работы с документами в Диадоке необходим авторизационный токен.
+	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
+	public static string AuthTokenCert;
+	
+	//Формирование файла титула исполнителя
+	public static GeneratedFile GenerateAcceptanceCertificateSellerTitle()
 	{
 		var content = new AcceptanceCertificateSellerTitleInfo()
 		{
-			// заполняем согласно структуре AcceptanceCertificateSellerTitleInfo
+			// Заполняется согласно структуре AcceptanceCertificateSellerTitleInfo
 		};
-		return api.GenerateAcceptanceCertificateXmlForSeller(authToken, content);
+		return Api.GenerateAcceptanceCertificateXmlForSeller(AuthTokenCert, content);
 	}
 		
-	// отправка файла титула исполнителя
-	private void SendAcceptanceCertificateSellerTitle()
+	//Отправка файла титула исполнителя
+	public static void SendAcceptanceCertificateSellerTitle()
 	{
-		var fileToSend = GenerateAcceptanceCertificateSellerTitle();
-
-		var messageAttachment = new XmlDocumentAttachment
+		var sellerTitle = GenerateAcceptanceCertificateSellerTitle();
+		var messageAttachment = new XmlDocumentAttachment()
 		{
-			SignedContent = new SignedContent //файл подписи
+			SignedContent = new SignedContent
 			{
-				Content = fileToSend.Content,
-				Signature = new byte[0] //подпись исполнителя
+				Content = sellerTitle.Content,
+				//Подпись исполнителя, см. "Как авторизоваться в системе"
+				Signature = Crypt.Sign(sellerTitle.Content, ReadCertContent("путь к сертификату"))
 			}
 		};
-
 		var messageToPost = new MessageToPost
 		{
-			FromBoxId = "идентификатор ящика отправителя",
-			ToBoxId = "идентификатор ящика получателя",
-			XmlAcceptanceCertificateSellerTitles = { messageAttachment }
+			FromBoxId = "идентификатор ящика исполнителя",
+			ToBoxId = "идентификатор ящика заказчика",
+			XmlAcceptanceCertificateSellerTitles = 
+			{ 
+				messageAttachment 
+			}
 		};
-
-		api.PostMessage(authToken, messageToPost); //см. "Как авторизоваться в системе"
+		Api.PostMessage(AuthTokenCert, messageToPost);
+	}
+	
+	public static void Main()
+	{
+		SendAcceptanceCertificateSellerTitle();
 	}
 
 	
@@ -274,61 +284,71 @@ SDK
 
 .. code-block:: csharp
 
-	//находим все неподписанные акты о выполнении работ/оказании услуг
-	private Document SearchAcceptanceCertificateDocuments()
-	{
-		var boxId = "идентификатор ящика, в котором следует выполнить поиск входящих документов";
-			
-		//статус и тип документа
-		var filterCategory = "XmlAcceptanceCertificate.InboundNotFinished"; 
-		var counteragentBoxId = "идентификатор ящика контрагента";
-			
-		DocumentList documents = api.GetDocuments(authToken, boxId, filterCategory, counteragentBoxId);
-			
-		return documents.Documents.First();
-	}
-		
-	//получаем нужный акт и отправляем к нему титул заказчика
-	private void GetAcceptanceCertificateAndSendBuyerTitle()
-	{
-		var document = SearchAcceptanceCertificateDocuments();
-		var boxId = "идентификатор ящика получателя";
-			
-		//получение акта о выполнении работ/оказании услуг
-		var message = api.GetMessage(authToken, boxId, document.MessageId, document.EntityId); 
-			
-		//генерация файла титула заказчика
-		var buyerInfo = GetBuyerInfo();
-		
-		//формирование файла титула заказчика
-		var acceptanceCertificateXmlForBuyer = api.GenerateAcceptanceCertificateXmlForBuyer(authToken, buyerInfo, boxId, document.MessageId, document.EntityId);
+	//Для работы с документами в Диадоке необходим авторизационный токен.
+	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
+	public static string AuthTokenCert;
 	
+	public static string BoxId = "идентификатор ящика заказчика";
+
+	//Для работы с документом необходимо знать его уникальный идентификатор.
+	//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.
+
+	//Получение списка всех актов о выполнении работ/оказании услуг, по которым не завершен документооборот
+	public static DocumentList SearchInboundAcceptanceCertificateDocumentsWithNotFinishedDocflow()
+	{
+		//Параметры, по которым осуществляется фильтрация
+		var filterCategory = "XmlAcceptanceCertificate.InboundNotFinished";
+		var counteragentBoxId = "идентификатор ящика исполнителя";
+
+		return Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
+	}
+	
+	//Получение документа
+	public static Document GetAcceptanceCertificate()
+	{
+		//Выбираем конкретный документ из полученного ранее списка.
+		//Например, самый первый.
+		return SearchInboundAcceptanceCertificateDocumentsWithNotFinishedDocflow().Documents[0];
+	}	
+	
+	//Генерация файла титула заказчика
+	public static GeneratedFile GenerateAcceptanceCertificateBuyerTitle(Document document)
+	{
+		var content = new AcceptanceCertificateBuyerTitleInfo()
+		{
+			// Заполняется согласно структуре AcceptanceCertificateBuyerTitleInfo
+		};
+		return Api.GenerateAcceptanceCertificateXmlForBuyer(AuthTokenCert, content, BoxId, document.MessageId, document.EntityId);
+	}
+	
+	//Отправка файла титула заказчика
+	public static void SendAcceptanceCertificateBuyerTitle()
+	{
+		var document = GetAcceptanceCertificate();
+		var buyerTitle = GenerateAcceptanceCertificateBuyerTitle(document);
+		var receiptAttachment = new ReceiptAttachment ()
+		{
+			ParentEntityId = document.EntityId,
+			SignedContent = new SignedContent
+			{
+				Content = buyerTitle.Content,
+				//Подпись заказчика, см. "Как авторизоваться в системе"
+				Signature = Crypt.Sign(buyerTitle.Content, ReadCertContent("путь к сертификату"))
+			}
+		};
 		var messagePatchToPost = new MessagePatchToPost
 		{
-			BoxId = boxId,
+			BoxId = BoxId,
 			MessageId = document.MessageId,
 			XmlAcceptanceCertificateBuyerTitles =
 			{
-				new ReceiptAttachment
-				{
-					ParentEntityId = document.EntityId,
-					SignedContent = new SignedContent //файл подписи
-					{
-						Content = document.Content,
-						Signature = new byte[0] //подпись заказчика
-					}
-				}
+				receiptAttachment
 			}
 		};
-
-		api.PostMessagePatch(authToken, messagePatchToPost);
+		Api.PostMessagePatch(AuthTokenCert, messagePatchToPost);
 	}
 	
-	//генерация файла титула заказчика
-	private AcceptanceCertificateBuyerTitleInfo GetBuyerInfo()
+	public static void Main()
 	{
-		return new AcceptanceCertificateBuyerTitleInfo
-		{
-			//заполняется согласно структуре AcceptanceCertificateBuyerTitleInfo
-		};
+		SendAcceptanceCertificateBuyerTitle();
 	}

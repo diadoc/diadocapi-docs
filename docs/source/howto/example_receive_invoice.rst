@@ -287,94 +287,162 @@ SDK
 
 .. code-block:: csharp
 
-	//находим все счета-фактуры, по которым не завершен документооборот
-	private Document SearchInvoiceDocuments()
+	//Для работы с документами в Диадоке необходим авторизационный токен.
+	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
+	public static string AuthTokenCert;
+	
+	public static string BoxId = "идентификатор ящика получателя";
+
+	//Для работы с документом необходимо знать его уникальный идентификатор.
+	//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.
+
+	//Получение списка всех счетов-фактур, по которым не завершен документооборот
+	public static DocumentList SearchInboundInvoicesDocumentsWithNotFinishedDocflow()
 	{
-		var boxId = "идентификатор ящика, в котором следует выполнить поиск входящих документов";
-			
-		//статус и тип документа
-		var filterCategory = "AnyInvoiceDocumentType.InboundNotFinished"; 
-		var counteragentBoxId = "идентификатор ящика контрагента";
-			
-		DocumentList documents = api.GetDocuments(authToken, boxId, filterCategory, counteragentBoxId);
-			
-		return documents.Documents.First(); //возвращаем первый документ из списка
+		//Параметры, по которым осуществляется фильтрация
+		var filterCategory = "Invoice.InboundNotFinished";
+		var counteragentBoxId = "идентификатор ящика отправителя";
+
+		return Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
 	}
 		
-	//получение счета-фактуры 
-	private void GetInvoiceAndInvoiceConfirmation()
+	//Получение сообщения, содержащего счет-фактуру 
+	public static Message GetInvoice()
 	{
-		var invoiceDocument = SearchInvoiceDocuments ();
-		
-		//получаем счет-фактуру
-		var invoiceConfirmation = api.GetMessage(authToken, boxId, invoiceDocument.MessageId, invoiceDocument.EntityId);
+		//Выбираем конкретный документ из полученного ранее списка.
+		//Например, самый первый.
+		var document = SearchInboundInvoicesDocumentsWithNotFinishedDocflow().Documents[0];
+
+		//Получение счета-фактуры
+		return Api.GetMessage(AuthTokenCert, BoxId, document.MessageId, document.EntityId);
 	}
 	
-	//получение подтверждения оператора, формирование и отправка извещения о получении подтверждения
-	private void GetInvoiceConfirmationAndSendInvoiceReceipt()
+	//Получение подтверждения оператора, формирование и отправка извещения о получении подтверждения
+	public static void GetInvoiceConfirmationAndSendInvoiceReceipt(Message invoiceMessage)
 	{
-		var invoiceDocument = SearchInvoiceDocuments ();
-		var boxId = "идентификатор ящика получателя";
-		var signer = new Signer
+		//Выбор первого вложения типа InvoiceConfirmation, к которому нет извещения о получении
+		var confirmationEntities = invoiceMessage.Entities
+			.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceConfirmation);
+		var receiptEntitiesParentIds = invoiceMessage.Entities
+			.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceReceipt)
+			.Select(receiptEntity => receiptEntity.ParentEntityId);
+		var confirmationEntityWithoutReceiptId = confirmationEntities
+			.First(confirmationEntity => !receiptEntitiesParentIds
+				.Contains(confirmationEntity.EntityId)).EntityId;
+		
+		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
 		{
-			SignerCertificate = new byte[0] /*подпись получателя*/,
-			SignerCertificateThumbprint = "отпечаток сертификата",
-			SignerDetails =
+			//Подпись получателя, см. "Как авторизоваться в системе"
+			SignerCertificate = ReadCertContent("путь к сертификату"),
+			SignerDetails = new SignerDetails()
 			{
-				FirstName = "Имя",
-				Surname = "Фамилия",
-				Patronymic = "Отчество",
-				Inn = "ИНН",
-				JobTitle = "Должность",
-				SoleProprietorRegistrationCertificate = "Св-во о регистрации ИП"
+				//Заполняется согласно структуре SignerDetails
+			}
+		});
+		
+		var receiptAttachment = new ReceiptAttachment()
+		{
+			ParentEntityId = confirmationEntityId,
+			SignedContent = new SignedContent()
+			{
+				Content = receipt.Content,
+				//Подпись получателя, см. "Как авторизоваться в системе"
+				Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
 			}
 		};
-			
-		//получение подтверждения оператора
-		var invoiceConfirmation = api.GetMessage(authToken, boxId, invoiceDocument.MessageId, invoiceDocument.EntityId); 
-			
-		//формирование извещения о получении подтверждения
-		var invoiceReceipt = api.GenerateInvoiceDocumentReceiptXml(authToken, invoiceDocument.MessageId, invoiceConfirmation.AttachmentId, signer);
 		
-		//отправка извещения
-		var messagePatchToPost = new MessagePatchToPost
+		var receiptPatch = new MessagePatchToPost()
 		{
-			BoxId = boxId,
-			MessageId = messageWithInvoice.MessageId,
-			ReceiptAttachment =
+			BoxId = BoxId,
+			MessageId = invoiceMessage.MessageId,
+			Receipts =
 			{
-				new ReceiptAttachment
+				receiptAttachment
+			}
+		};
+
+		Api.PostMessagePatch(AuthTokenCert, receiptPatch);
+	}
+	
+	//Формирование и отправка извещения о получении счета-фактуры
+	public static void SendinvoiceReceipt(Document invoiceDocument)
+	{
+		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, new Signer()
+		{
+			//Подпись получателя, см. "Как авторизоваться в системе"
+			SignerCertificate = ReadCertContent("путь к сертификату"),
+			SignerDetails = new SignerDetails()
+			{
+				//Заполняется согласно структуре SignerDetails
+			}
+		});
+		
+		var receiptAttachment = new ReceiptAttachment()
+		{
+			ParentEntityId = invoiceDocument.EntityId,
+			SignedContent = new SignedContent()
+			{
+				Content = receipt.Content,
+				//Подпись получателя, см. "Как авторизоваться в системе"
+				Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
+			}
+		};
+		
+		var receiptPatch = new MessagePatchToPost()
+		{
+			BoxId = BoxId,
+			MessageId = invoiceDocument.MessageId,
+			Receipts =
+			{
+				receiptAttachment
+			}
+		};
+
+		Api.PostMessagePatch(AuthTokenCert, receiptPatch);
+	}
+	
+	public static void Main()
+	{
+		var invoiceMessage = GetInvoice();
+		var invoiceDocument = invoiceMessage.Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);
+		
+		//Отправка извещения о получении подтверждения оператора для счета-фактуры
+		GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
+		
+		//Отправка извещения о получении счета-фактуры
+		SendinvoiceReceipt(invoiceDocument);
+		
+		//Отправка извещения о получении подтверждения оператора для извещения о получении счета-фактуры
+		GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
+	}
+Пример кода на C# для отправки уведомления об уточнении счета-фактуры:
+
+.. code-block:: csharp
+
+	//формирование уведомления об уточнении счета-фактуры
+	public static GeneratedFile GetInvoiceCorrectionRequest(Document invoiceDocument)
+	{
+		var invoiceCorrectionRequestInfo = new InvoiceCorrectionRequestInfo()
+		{
+			ErrorMessage = "Текст уведомления об уточнении",
+			Signer = new Signer()
+			{
+				//Подпись отправителя, см. "Как авторизоваться в системе"
+				SignerCertificate = ReadCertContent("путь к сертификату"),
+				SignerDetails = new SignerDetails()
 				{
-					ParentEntityId = messageWithInvoice.EntityId,
-					SignedContent = new SignedContent //файл подписи
-					{
-						Content = messageWithInvoice.Content,
-						Signature = new byte[0] //подпись продавца
-					}
+					//Заполняется согласно структуре SignerDetails
 				}
 			}
 		};
-
-		api.PostMessagePatch(authToken, messagePatchToPost);
+		return Api.GenerateInvoiceCorrectionRequestXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, invoiceCorrectionRequestInfo);
 	}
 	
-	//формирование и отправка извещения о получении счета-фактуры
-	private void GetInvoiceReceiptAndSendinvoiceReceipt()
+	//Отправка уведомления об уточнении счета-фактуры
+	public static void SendInvoiceCorrectionRequest(Document invoiceDocument)
 	{
-		//аналогично GetInvoiceConfirmationAndSendInvoiceReceipt()
-	}
-	
-Пример кода на C# для отправки уточнения/корректировки счета-фактуры:
+		var invoiceCorrectionRequest = GetInvoiceCorrectionRequest(invoiceDocument);
 
-.. code-block:: csharp
-	
-	//отправка уточнения/корректировки счета-фактуры
-	private void SendInvoiceCorrectionRequest ()
-	{
-		var invoiceDocument = "счет-фактура, к которому отправляется корректировка";
-		
-		var fileToSend = GetInvoiceCorrectionInfo();
-		
 		var messagePatchToPost = new MessagePatchToPost
 		{
 			MessageId = invoiceDocument.MessageId,
@@ -385,42 +453,18 @@ SDK
 					ParentEntityId = invoiceDocument.EntityId,
 					SignedContent = new SignedContent //файл подписи
 					{
-						Content = fileToSend.Content,
-						Signature = new byte[0] //подпись заказчика
+						Content = invoiceCorrectionRequest.Content,
+						//Подпись получателя, см. "Как авторизоваться в системе"
+						Signature = Crypt.Sign(invoiceCorrectionRequest.Content, ReadCertContent("путь к сертификату"))
 					}
 				}
 			}
 		};
-		
-		api.PostMessagePatch(authToken, messagePatchToPost);
+		Api.PostMessagePatch(AuthTokenCert, messagePatchToPost);
 	}
 	
-	//формирование и генерация уточнения/корректировки счета-фактуры
-	private GeneratedDocument GetInvoiceCorrectionInfo () 
+	public static void Main()
 	{
-		var signer = new Signer
-		{
-			SignerCertificate = new byte[0] /*подпись получателя*/,
-			SignerCertificateThumbprint = "отпечаток сертификата",
-			SignerDetails =
-			{
-				FirstName = "Имя",
-				Surname = "Фамилия",
-				Patronymic = "Отчество",
-				Inn = "ИНН",
-				JobTitle = "Должность",
-				SoleProprietorRegistrationCertificate = "Св-во о регистрации ИП"
-			}
-		};
-		
-		var invoiceCorrectionRequestInfo = new InvoiceCorrectionRequestInfo 
-		{
-			ErrorMessage = "Текст уведомления об уточнении",
-			signer
-		};
-		
-		var boxId = "идентификатор ящика получателя";
-		var invoiceDocument = "счет-фактура, к которому отправляется корректировка";
-		
-		return api.GenerateInvoiceCorrectionRequestXml (authToken, boxId, invoiceDocument.MessageId, invoiceDocument.AttachmentId, invoiceDocument);
+		var invoiceDocument = GetInvoice().Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);;
+		SendInvoiceCorrectionRequest(invoiceDocument);
 	}
