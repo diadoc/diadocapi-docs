@@ -325,7 +325,7 @@ SDK
 			.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceConfirmation);
 		var receiptEntitiesParentIds = invoiceMessage.Entities
 			.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceReceipt)
-			.Select(receiptEntety => receiptEntety.ParentEntityId);
+			.Select(receiptEntity => receiptEntity.ParentEntityId);
 		var confirmationEntityWithoutReceiptId = confirmationEntities
 			.First(confirmationEntity => !receiptEntitiesParentIds
 				.Contains(confirmationEntity.EntityId)).EntityId;
@@ -420,7 +420,7 @@ SDK
 .. code-block:: csharp
 
 	//формирование уведомления об уточнении счета-фактуры
-	public static GeneratedFile GetInvoiceCorrectionRequest(Message invoiceMessage)
+	public static GeneratedFile GetInvoiceCorrectionRequest(Document invoiceDocument)
 	{
 		var invoiceCorrectionRequestInfo = new InvoiceCorrectionRequestInfo()
 		{
@@ -435,22 +435,22 @@ SDK
 				}
 			}
 		};
-		return Api.GenerateInvoiceCorrectionRequestXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, invoiceMessage.Entities[0].EntityId, invoiceCorrectionRequestInfo);
+		return Api.GenerateInvoiceCorrectionRequestXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, invoiceCorrectionRequestInfo);
 	}
 	
 	//Отправка уведомления об уточнении счета-фактуры
-	public static void SendInvoiceCorrectionRequest(Message invoiceMessage)
+	public static void SendInvoiceCorrectionRequest(Document invoiceDocument)
 	{
-		var invoiceCorrectionRequest = GetInvoiceCorrectionRequest(invoiceMessage);
+		var invoiceCorrectionRequest = GetInvoiceCorrectionRequest(invoiceDocument);
 
 		var messagePatchToPost = new MessagePatchToPost
 		{
-			MessageId = invoiceMessage.MessageId,
+			MessageId = invoiceDocument.MessageId,
 			CorrectionRequests =
 			{
 				new CorrectionRequestAttachment
 				{
-					ParentEntityId = invoiceMessage.Entities[0].EntityId,
+					ParentEntityId = invoiceDocument.EntityId,
 					SignedContent = new SignedContent //файл подписи
 					{
 						Content = invoiceCorrectionRequest.Content,
@@ -465,6 +465,6 @@ SDK
 	
 	public static void Main()
 	{
-		var invoiceMessage = GetInvoice();
-		SendInvoiceCorrectionRequest(invoiceMessage);
+		var invoiceDocument = GetInvoice().Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);;
+		SendInvoiceCorrectionRequest(invoiceDocument);
 	}
