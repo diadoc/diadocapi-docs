@@ -160,9 +160,9 @@ Document
 
 -  :doc:`PriceListMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для ценовых листов.
 
--  :doc:`PriceListAgreementMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для протоколов согласования цены.
+-  :doc:`PriceListAgreementMetadata <NonformalizedDocumentMetadata>` - дополнительные атрибуты специфичные для протоколов согласования цены.
 
--  :doc:`CertificateRegistryMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для реестров сертификатов.
+-  :doc:`CertificateRegistryMetadata <NonformalizedDocumentMetadata>` - дополнительные атрибуты специфичные для реестров сертификатов.
 
 -  :doc:`ReconciliationActMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для актов сверки.
 
