@@ -415,6 +415,7 @@ SDK
 		//Отправка извещения о получении подтверждения оператора для извещения о получении счета-фактуры
 		GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
 	}
+
 Пример кода на C# для отправки уведомления об уточнении счета-фактуры:
 
 .. code-block:: csharp
