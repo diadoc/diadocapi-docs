@@ -39,8 +39,8 @@ Document
         optional sfixed64 SendTimestampTicks = 33;
         optional sfixed64 DeliveryTimestampTicks = 34;
         repeated ForwardDocumentEvent ForwardDocumentEvents = 35;
-        optional BilateralDocument.BilateralDocumentMetadata PriceListAgreementMetadata = 36;
-        optional BilateralDocument.BilateralDocumentMetadata CertificateRegistryMetadata = 37;
+        optional BilateralDocument.NonformalizedDocumentMetadata PriceListAgreementMetadata = 36;
+        optional BilateralDocument.NonformalizedDocumentMetadata CertificateRegistryMetadata = 37;
         optional BilateralDocument.BilateralDocumentMetadata ReconciliationActMetadata = 38;
         optional BilateralDocument.ContractMetadata ContractMetadata = 39;
         optional BilateralDocument.BasicDocumentMetadata Torg13Metadata = 40;
