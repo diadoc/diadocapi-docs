@@ -9,7 +9,7 @@ HTTP метод: **POST**
 
 В теле запроса должен содержаться XML-файл с предложением об аннулировании.
 
-Файл изготавливается в соответствии с `XML-схемой <http://roseu.org/images/stories/roaming/DP_PRANNUL_1_985_00_01_01_01.xsd>`__.
+Файл изготавливается в соответствии с :download:`XML-схемой <http://roseu.org/images/stories/roaming/DP_PRANNUL_1_985_00_01_01_01.xsd>`__.
 
 В теле ответа содержится сериализованная структура :doc:`../proto/RevocationRequestInfo`, построенная на основании данных запроса.
 
