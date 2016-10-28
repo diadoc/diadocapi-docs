@@ -90,7 +90,7 @@ Torg12Info
 
 -  Реквизиты должностных лиц *Torg12SellerTitleInfo.SupplyAllowedBy*, *Torg12SellerTitleInfo.SupplyPerformedBy* и *Torg12SellerTitleInfo.ChiefAccountant* заполняются в виде структуры данных :doc:`Official`.
 
--  Правила заполнения структуры *Torg12SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_OTORG12_1_986_00_05_01_02.xsd>`__.
+-  Правила заполнения структуры *Torg12SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей `XML-схеме <https://diadoc.kontur.ru/sdk/xsd/DP_OTORG12_1_986_00_05_01_02.xsd>`__.
 
 Структура данных *Torg12BuyerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForBuyer`.
 
@@ -102,4 +102,4 @@ Torg12Info
 
 -  Реквизиты доверенности *Torg12BuyerTitleInfo.Attorney* заполняются в виде структуры данных :doc:`Attorney <Official>`.
 
--  Правила заполнения структуры *Torg12BuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_PTORG12_1_989_00_05_01_02.xsd>`__.
+-  Правила заполнения структуры *Torg12BuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей `XML-схеме <https://diadoc.kontur.ru/sdk/xsd/DP_PTORG12_1_989_00_05_01_02.xsd>`__.
