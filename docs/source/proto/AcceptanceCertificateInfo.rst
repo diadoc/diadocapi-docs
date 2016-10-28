@@ -63,7 +63,7 @@ AcceptanceCertificateInfo
 
 -  Реквизиты подписанта акта *AcceptanceCertificateSellerTitleInfo.Signer* заполняются в виде структуры данных :doc:`Signer`;
 
--  Правила заполнения структуры *AcceptanceCertificateSellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей `XML-схеме <https://diadoc.kontur.ru/sdk/xsd/DP_IAKTPRM_1_987_00_05_01_02.xsd>`__.
+-  Правила заполнения структуры *AcceptanceCertificateSellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_IAKTPRM_1_987_00_05_01_02.xsd>`.
 
 Структура данных *AcceptanceCertificateBuyerTitleInfo* представляет исходные данные для формирования титула заказчика для акта о выполнении работ/оказании услуг в XML-формате при помощи метода :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`.
 
@@ -71,7 +71,7 @@ AcceptanceCertificateInfo
 
 -  Реквизиты подписанта акта *AcceptanceCertificateBuyerTitleInfo.Signer* заполняются в виде структуры данных :doc:`Signer`.
 
--  Правила заполнения структуры *AcceptanceCertificateBuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей `XML-схеме <https://diadoc.kontur.ru/sdk/xsd/DP_ZAKTPRM_1_990_00_05_01_02.xsd>`__.
+-  Правила заполнения структуры *AcceptanceCertificateBuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_ZAKTPRM_1_990_00_05_01_02.xsd>`.
 
 Структура данных *AcceptanceCertificateSignatureInfo* представляет реквизиты подписи одной из сторон в акте:
 
