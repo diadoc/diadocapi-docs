@@ -1,5 +1,5 @@
 AutoSignReceipts
-=======================
+================
 
 Имя ресурса: **/AutoSignReceipts**
 
