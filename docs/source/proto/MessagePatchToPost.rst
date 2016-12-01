@@ -23,6 +23,7 @@ MessagePatchToPost
         repeated ResolutionChainAssignment ResolutionChainAssignments = 17;
         repeated SignatureVerification SignatureVerifications = 18;
         repeated EditDocumentPacketCommand EditDocumentPacketCommands = 19;
+        repeated ReceiptAttachment UniversalTransferDocumentBuyerTitles = 20;
     }
 
     message ReceiptAttachment {
@@ -158,3 +159,5 @@ MessagePatchToPost
 -  *AddDocumentsToPacket* - список идентификаторов документов, которые нужно добавить в пакет к заданному документу. Каждый идентификатор представляется структурой :doc:`DocumentId <DocumentId>`. Каждый идентификатор должен соответствовать некоторому документу, уже существующему в том же ящике, что и редактируемый документ. Если добавляемый документ уже является частью другого пакета, то в редактируемый пакет вместе с добавляемым документом попадут и все остальные документы из его старого пакета, то есть пакеты объединяются целиком. Если такое поведение нежелательно, то необходимо предварительно удалить из второго пакета лишние документы при помощи RemoveDocumentsFromPacket (см. ниже).
 
 -  *RemoveDocumentsFromPacket* - список идентификаторов документов, которые нужно удалить из пакета заданного документа. Если в пакете существует документ с таким идентификатором, то он удаляется из пакета и образует новый пакет, состоящий из одного документа. Если в пакете нет документа с таким идентификатором (например, он уже является частью другого пакета), то ничего не происходит.
+
+- *UniversalTransferDocumentBuyerTitles* - список титулов покупателя УПД.
