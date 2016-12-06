@@ -23,6 +23,7 @@
    Модель данных <DataModel>
    Порядок работы с API <ApiClientOperationPrinciple>   
    Управление списком активных контрагентов <Counteragents>
+   Документооборот УПД <UtdDocflow>
    Документооборот электронных счетов-фактур <InvoiceDocflow>
    Неформализованный документооборот <NonformalizedDocflow>   
    Дополнительные функции API <MiscellaneousApiFeatures>   
@@ -44,14 +45,14 @@
    :caption: Техническая документация
 
    Структуры данных <DataStructures>
-   Авторизация <Authorization>   
+   Авторизация <Authorization>
+   Работа с УПД <API_UniversalTransferDocument>
+   Работа с СФ/ИСФ/КСФ <API_Invoices>
+   Работа с документами <API_Documents>
+   Работа с сообщениями <API_Messages>
+   Работа с событиями <API_Events>
    Работа с организациями <API_Organizations>
    Работа с контрагентами <API_Counteragents>
-   Работа с сообщениями <API_Messages>
-   Работа с документами <API_Documents>
-   Работа с СФ/ИСФ/КСФ <API_Invoices>
-   Работа с УПД <API_UniversalTransferDocument>
-   Работа с событиями <API_Events>
    Docflow API <Docflow API>
    Облачная подпись <CloudSignApi>
 

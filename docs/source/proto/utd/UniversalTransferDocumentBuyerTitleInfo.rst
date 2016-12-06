@@ -12,12 +12,12 @@ UniversalTransferDocumentBuyerTitleInfo
         optional Employee Employee = 6; // РабОргПок - работник организации покупателя
         optional OtherIssuer OtherIssuer = 7; // ИнЛицо - Иное Лицо
         optional AdditionalInfoId AdditionalInfoId = 8; // ИнфПолФХЖ4
-        repeated Signers.ExtendedSigner Signers = 9; // Подписант
+        repeated ExtendedSigner Signers = 9; // Подписант
     }
     
-Структура данных *UniversalTransferDocumentBuyerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../http/GenerateUniversalTransferDocumentXmlForBuyer`. При заполнении структуры *UniversalTransferDocumentBuyerTitleInfo* нужно иметь в виду:
+Структура данных *UniversalTransferDocumentBuyerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`. При заполнении структуры *UniversalTransferDocumentBuyerTitleInfo* нужно иметь в виду:
 
--  Реквизиты подписанта счета-фактуры UniversalTransferDocumentBuyerTitleInfo.Signers заполняются в виде структуры данных :doc:`ExtendedSigner`.
+-  Реквизиты подписанта счета-фактуры *UniversalTransferDocumentBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`ExtendedSigner`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 
