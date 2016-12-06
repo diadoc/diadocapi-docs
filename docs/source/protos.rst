@@ -7,3 +7,4 @@
    :glob:
    
    proto/*
+   proto/utd/*

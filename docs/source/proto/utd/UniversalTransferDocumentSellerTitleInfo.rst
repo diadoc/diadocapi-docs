@@ -2,17 +2,18 @@ UniversalTransferDocumentSellerTitleInfo
 ========================================
 
 .. code-block:: protobuf
+    :emphasize-lines: 1-23
 
     message UniversalTransferDocumentSellerTitleInfo {
         required FunctionType Function = 1;  // Функция документа // Функция
         optional string DocumentName = 2;    // Наименование первичного документа, определенное организацией // НаимДокОпр
         required string DocumentDate  = 3;   // дата УПД // ДатаСчФ
         required string DocumentNumber  = 4; // номер УПД // НомерСчФ
-        required Organizations.ExtendedOrganizationInfo Seller = 5;    // продавец // СвПрод
-        required Organizations.ExtendedOrganizationInfo Buyer = 6;     // покупатель //СвПокуп
+        required ExtendedOrganizationInfo Seller = 5;    // продавец // СвПрод
+        required ExtendedOrganizationInfo Buyer = 6;     // покупатель //СвПокуп
         optional Shipper Shipper = 7;                                  // грузоотправитель //ГрузОт
-        optional Organizations.ExtendedOrganizationInfo Consignee = 8; // грузополучатель //ГрузПолуч
-        repeated Signers.ExtendedSigner Signers = 9;        // подписант // Подписант
+        optional ExtendedOrganizationInfo Consignee = 8; // грузополучатель //ГрузПолуч
+        repeated ExtendedSigner Signers = 9;        // подписант // Подписант
         repeated PaymentDocumentInfo PaymentDocuments = 10; // платежно-расчетные документы // СвПРД
         optional InvoiceTable InvoiceTable = 11;            // Сведения таблицы счет фактуры // ТаблСчФакт
         required string Currency = 12;                      // валюта (код) // КодОКВ
@@ -33,8 +34,8 @@ UniversalTransferDocumentSellerTitleInfo
     }
  
     message Shipper {
-        optional bool Shipper.SameAsSeller = 1; // совпадает с продавцом // ОнЖе
-        optional Organizations.ExtendedOrganizationInfo OrgInfo = 2; // реквизиты организации // ГрузОтпр
+        optional bool SameAsSeller = 1; // совпадает с продавцом // ОнЖе
+        optional ExtendedOrganizationInfo OrgInfo = 2; // реквизиты организации // ГрузОтпр
     }
   
  
@@ -43,7 +44,7 @@ UniversalTransferDocumentSellerTitleInfo
         optional string TotalWithVatExcluded = 2; // Сумма без учета налога // СтТовБезНДСВсего
         required string Vat = 3;                  // Сумма налога // СумНалВсего
         required string Total = 4;                // Сумма всего // СтТовУчНалВсего
-        optional string TotalNet = 5;             // Нетто всего // НеттоВс}
+        optional string TotalNet = 5;             // Нетто всего // НеттоВс
     }
   
     message ExtendedInvoiceItem {
@@ -83,7 +84,7 @@ UniversalTransferDocumentSellerTitleInfo
         repeated TransferBase TransferBase = 4;          // Основание отгрузки //ОснПер
         optional string TransferTextInfo = 5;            // Сведения о транспортировке и грузе // СвТранГруз
         repeated Waybill Waybill = 6;                    // Транспортная накладная //ТранНакл
-        optional Organizations.ExtendedOrganizationInfo Carrier = 7; // Перевозчик // Перевозчик
+        optional    ExtendedOrganizationInfo Carrier = 7; // Перевозчик // Перевозчик
         optional Employee Employee = 8;                  // Работник организации продавца //РабОргПрод
         optional OtherIssuer  OtherIssuer = 9;           // Иное лицо //ИнЛицо
         optional string CreatedThingTransferDate = 10;   // Дата передачи вещи, изготовленной по договору //ДатаПерВещ
@@ -129,22 +130,22 @@ UniversalTransferDocumentSellerTitleInfo
     }
         
 
-Структура данных UniversalTransferDocumentSellerTitleInfo представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../http/GenerateUniversalTransferDocumentXmlForSeller`. При заполнении структуры UniversalTransferDocumentSellerTitleInfo нужно иметь в виду:
+Структура данных *UniversalTransferDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForSeller`. При заполнении структуры UniversalTransferDocumentSellerTitleInfo нужно иметь в виду:
 
--  Реквизиты продавца (UniversalTransferDocumentSellerTitleInfo.Seller) и покупателя (UniversalTransferDocumentSellerTitleInfo.Buyer) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
+-  Реквизиты продавца (*UniversalTransferDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalTransferDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
 
--  Реквизиты грузоотправителя (Shipper.OrgInfo) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`. Если проставлен флаг ShipperOrConsignee.SameAsSeller, то реквизиты грузоотправителя заполнять не нужно - будут использоваться соответствующие реквизиты продавца.
+-  Реквизиты грузоотправителя (*Shipper.OrgInfo*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`. Если проставлен флаг *ShipperOrConsignee.SameAsSeller*, то реквизиты грузоотправителя заполнять не нужно - будут использоваться соответствующие реквизиты продавца.
 
--  Реквизиты грузополучателя (UniversalTransferDocumentSellerTitleInfo.Consignee) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
+-  Реквизиты грузополучателя (*UniversalTransferDocumentSellerTitleInfo.Consignee*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
 
--  Реквизиты подписанта документа UniversalTransferDocumentSellerTitleInfo.Signers заполняются в виде структуры данных :doc:`ExtendedSigner`.
+-  Реквизиты подписанта документа *UniversalTransferDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`ExtendedSigner`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 
--  Идентификатор файла информационного поля AdditionalInfoId.InfoFileId заполняется в формате GUID через дефис.
+-  Идентификатор файла информационного поля *AdditionalInfoId.InfoFileId* заполняется в формате GUID через дефис.
 
--  Суммы должны указываться в формате XXX.XX (дробная часть должна отделяться точкой). То же самое касается формата представления количества товара ExtendedInvoiceItem.Quantity.
+-  Суммы должны указываться в формате XXX.XX (дробная часть должна отделяться точкой). То же самое касается формата представления количества товара *ExtendedInvoiceItem.Quantity*.
 
--  Если не указан код валюты UniversalTransferDocumentSellerTitleInfo.Currency, по умолчанию будет использоваться код 643 (Российский рубль).
+-  Если не указан код валюты *UniversalTransferDocumentSellerTitleInfo.Currency*, по умолчанию будет использоваться код 643 (Российский рубль).
 
--  Коды единиц измерения ExtendedInvoiceItem.Unit, коды стран происхождения товара InvoiceItem.CountriesOfOrigin, а также коды иностранных госудраств ForeignAddress.Country можно указывать в буквенном формате, тогда Диадок предпримет попытку сконвертироваить их в соответствующие числовые коды.
+-  Коды единиц измерения *ExtendedInvoiceItem.Unit*, коды стран происхождения товара *InvoiceItem.CountriesOfOrigin*, а также коды иностранных госудраств *ForeignAddress.Country* можно указывать в буквенном формате, тогда Диадок предпримет попытку сконвертироваить их в соответствующие числовые коды.

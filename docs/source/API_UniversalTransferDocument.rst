@@ -10,10 +10,10 @@ HTTP-интерфейс
    :name: toc3
    :maxdepth: 1
    :titlesonly:
+   :glob:
 
-   http/GenerateUniversalTransferDocumentXmlForSeller
+   http/utd/*
    http/GenerateInvoiceDocumentReceiptXml
-   http/ParseUniversalTransferDocumentSellerTitleXml
 
 
 Структуры данных
@@ -23,6 +23,6 @@ HTTP-интерфейс
    :name: toc4
    :maxdepth: 1
    :titlesonly:
+   :glob:
 
-   proto/UniversalTransferDocumentSellerTitleInfo
-   proto/UniversalTransferDocumentBuyerTitleInfo
+   proto/utd/*
