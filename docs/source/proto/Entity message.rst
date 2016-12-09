@@ -67,6 +67,12 @@ Entity
         ServiceDetails = 38;
         RoamingNotification = 39;
         SupplementaryAgreement = 40;
+        UniversalTransferDocument = 41;
+        UniversalTransferDocumentBuyerTitle = 42;
+        UniversalTransferDocumentRevision = 45;
+        UniversalCorrectionDocument = 49;
+        UniversalCorrectionDocumentRevision = 50;
+        UniversalCorrectionDocumentBuyerTitle = 51;
         CustomData = 64;
         MoveDocument = 65;
         ResolutionChainAssignment = 66;

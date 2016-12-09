@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
-import sys
-import os
 import shlex
 import sphinx_rtd_theme
+import sys, os
+from recommonmark.parser import CommonMarkParser
+
+sys.path.append(os.path.abspath('exts'))
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -18,7 +20,9 @@ import sphinx_rtd_theme
 
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx'
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.graphviz',
+    'sphinx.ext.githubpages'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -27,7 +31,8 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
+source_parsers = {'.md': CommonMarkParser}
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -190,7 +195,7 @@ html_show_copyright = True
 # Sphinx supports the following languages:
 #   'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'ja'
 #   'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr'
-html_search_language = 'en'
+html_search_language = 'ru'
 
 # A dictionary with options for the search language support, empty by default.
 # Now only 'ja' uses this config value
@@ -201,7 +206,7 @@ html_search_language = 'en'
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Diadocdoc'
+htmlhelp_basename = 'Diadoc_doc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
