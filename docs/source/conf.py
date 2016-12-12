@@ -22,7 +22,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.graphviz',
-    'sphinx.ext.githubpages'
+    'sphinx.ext.githubpages',
+    'sphinxcontrib.httpdomain'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -89,7 +90,7 @@ add_module_names = True
 # The name of the Pygments (syntax highlighting) style to use.
 
 highlight_language = 'csharp'
-pygments_style = 'vs'
+# pygments_style = 'vs'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
