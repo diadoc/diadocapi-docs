@@ -1,4 +1,4 @@
 Sphinx
 sphinx-rtd-theme
-Pygments
+sphinxcontrib-httpdomain
 recommonmark

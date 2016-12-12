@@ -23,10 +23,16 @@
    Модель данных <DataModel>
    Порядок работы с API <ApiClientOperationPrinciple>   
    Управление списком активных контрагентов <Counteragents>
+   Дополнительные функции API <MiscellaneousApiFeatures>
+
+.. toctree::
+   :name: docflow
+   :maxdepth: 1
+   :caption: Документооброт
+
    Документооборот УПД <UtdDocflow>
    Документооборот электронных счетов-фактур <InvoiceDocflow>
-   Неформализованный документооборот <NonformalizedDocflow>   
-   Дополнительные функции API <MiscellaneousApiFeatures>   
+   Неформализованный документооборот <NonformalizedDocflow>
 
 .. toctree::
    :name: examples
