@@ -2,7 +2,7 @@
 =========================================
 
 .. toctree::
-   :name: http
+   :name: httpMethods
    :maxdepth: 1
    :caption: HTTP-интерфейсы
    :glob:
