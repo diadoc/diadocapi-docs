@@ -6,24 +6,40 @@
 Генерация УПД
 -------------
 
-Отправка УПД
-------------
-
-Подписание УПД
---------------
-
-HTTP-интерфейс
---------------
-
 .. toctree::
-   :name: toc3
+   :name: utdGeneration
    :maxdepth: 1
    :titlesonly:
    :glob:
 
-   http/utd/*
+   http/utd/GenerateUniversalTransferDocumentXmlForSeller
+   http/utd/GenerateUniversalTransferDocumentXmlForBuyer
    http/GenerateInvoiceDocumentReceiptXml
 
+Отправка УПД
+------------
+
+.. toctree::
+   :name: utdSign
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   http/utd/ExtendedSignerDetails
+   http/PostMessage
+   http/PostMessagePatch
+
+Парсинг УПД
+------------
+
+.. toctree::
+   :name: utdParsing
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   http/utd/ParseUniversalTransferDocumentSellerTitleXml
+   http/utd/ParseUniversalTransferDocumentBuyerTitleXml
 
 Структуры данных
 ----------------
