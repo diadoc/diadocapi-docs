@@ -14,7 +14,7 @@ Signer
         required string FirstName = 2;
         optional string Patronymic = 3;
         optional string JobTitle = 4;
-        optional string Inn = 5;
+        required string Inn = 5;
         optional string SoleProprietorRegistrationCertificate = 6;
     }
         
@@ -63,6 +63,6 @@ Signer
    
    
 
--  Inn - ИНН юридического лица подписанта или индивидуального предпринимателя (необязательно).
+-  Inn - ИНН юридического лица подписанта или индивидуального предпринимателя.
 
 -  SoleProprietorRegistrationCertificate - реквизиты свидетельства о регистрации индивидуального предпринимателя (необязательно).
