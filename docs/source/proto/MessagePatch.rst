@@ -19,7 +19,7 @@ MessagePatch
     message EntityPatch {
         required string EntityId = 1;
         optional bool DocumentIsDeleted = 2 [default = false];
-        optional string MovedToDepartmentId = 3;
+        optional string MovedToDepartment = 3;
         optional bool DocumentIsRestored = 4 [default = false];
         optional bool ContentIsPatched = 5 [default = false];
         optional string ForwardedToBoxId = 6;
@@ -54,7 +54,7 @@ MessagePatch
 
 -  *DocumentIsDeleted* - флаг, показывающий, что документ, к которому относится данный патч, был удален.
 
--  *MovedToDepartmentId* - поле заполняется в случае перемещения документа между подразделениями организации и содержит идентификатор подразделения, в которое был перемещен документ.
+-  *MovedToDepartment* - поле заполняется в случае перемещения документа между подразделениями организации и содержит идентификатор подразделения, в которое был перемещен документ.
 
 -  *DocumentIsRestored* - флаг, показывающий, что документ, к которому относится данный патч, был восстановлен из удаленных.
 
