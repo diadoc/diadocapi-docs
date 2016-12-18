@@ -54,29 +54,21 @@
 
 Для документов, возникающих в ходе документооборота счетов-фактур, в Диадоке зарезервированы специальные :doc:`типы сущностей <../proto/Entity message>`.
 
-Для СФ можно использовать следующий структуры:
+Для счет-фактуры (СФ) можно использовать следующий структуры:
 
--  *Attachment/Invoice* (счет-фактура, приказ `приказ N ММВ-7-6/93@ <https://normativ.kontur.ru/document?moduleId=1&documentId=249567>`__),
-
--  *Attachment/UniversalTransferDocument* (УПД с функцией СЧФ, *FunctionType.Invoice*, `приказ N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__),
+-  *Attachment/Invoice*,
 
 Для исправления СФ (ИСФ) можно использовать следующий структуры:
 
--  *Attachment/InvoiceRevision* (исправление счета-фактуры, приказ `приказ N ММВ-7-6/93@ <https://normativ.kontur.ru/document?moduleId=1&documentId=249567>`__),
-
--  *Attachment/UniversalTransferDocumentRevision* (исправление УПД с функцией СЧФ, *FunctionType.Invoice*, `приказ N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__),
+-  *Attachment/InvoiceRevision*,
 
 Для корректировки СФ (КСФ) можно использовать следующий структуры:
 
--  *Attachment/InvoiceCorrection* (корректировочный счет-фактура, приказ `приказ N ММВ-7-6/93@ <https://normativ.kontur.ru/document?moduleId=1&documentId=249567>`__),
-
--  *Attachment/UniversalCorrectionDocument* (УКД с функцией СЧФ, *FunctionType.Invoice*, `приказ N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__),
+-  *Attachment/InvoiceCorrection*,
 
 Для исправления корректировки СФ (ИКСФ) можно использовать следующий структуры:
 
--  *Attachment/InvoiceCorrectionRevision* (исправление корректировочного счета-фактуры, приказ `приказ N ММВ-7-6/93@ <https://normativ.kontur.ru/document?moduleId=1&documentId=249567>`__),
-
--  *Attachment/UniversalCorrectionDocumentRevision* (исправление УКД с функцией СЧФ, *FunctionType.Invoice*, `приказ N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__),
+-  *Attachment/InvoiceCorrectionRevision*,
 
 Для служебных документов, возникающих в ходе реализации порядка обмена ЭСФ, можно использовать следующий структуры:
 

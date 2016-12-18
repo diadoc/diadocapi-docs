@@ -18,7 +18,13 @@
 
 Также, в силу приказа `N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__, утвержден электронный формат универсального передаточного документа УПД. Его можно использовать как первичный документ, подтверждающий совершение хозяйственной операции; 
 
--  :download:`XSD-схема формата УПД (с функцикй ДОП) <../xsd/ON_SCHFDOPPR_1_995_01_05_01_01.xsd>`;
+-  :download:`XSD-схема формата УПД (функция ДОП) <../xsd/ON_SCHFDOPPR_1_995_01_05_01_01.xsd>`;
+
+	-  используется для титула исполнителя электронного акта,
+
+-  :download:`XSD-схема формата УПД (функция ДОП) <../xsd/ON_SCHFDOPPOK_1_995_02_05_01_01.xsd>`;
+
+	-  используется для титула заказчика электронного акта,
 
 Структуры
 ---------
@@ -27,15 +33,12 @@
 
 Для титула исполнителя электронного акта можно использовать следующий структуры:
 
--  *Attachment/XmlAcceptanceCertificate* (приказ `№ ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=249567>`__),
-
--  *Attachment/UniversalTransferDocument* (УПД с функцией ДОП, *FunctionType.Basic*, `приказ N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__),
+-  *Attachment/XmlAcceptanceCertificate*,
 
 Для титула покупателя электронной накладной можно использовать следующий структуры:
 
--  *Attachment/XmlAcceptanceCertificateBuyerTitle* (приказ `№ ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=249567>`__),
+-  *Attachment/XmlAcceptanceCertificateBuyerTitle*,
 
--  *Attachment/UniversalTransferDocumentBuyerTitle* (исправление УПД с функцией ДОП, *FunctionType.Basic*, `приказ N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__),
 
 Порядок обмена
 --------------
