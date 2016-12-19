@@ -2,7 +2,7 @@ UniversalTransferDocumentSellerTitleInfo
 ========================================
 
 .. code-block:: protobuf
-    :emphasize-lines: 1-23
+    :emphasize-lines: 1-22
 
     message UniversalTransferDocumentSellerTitleInfo {
         required FunctionType Function = 1;  // Функция документа // Функция
@@ -128,7 +128,12 @@ UniversalTransferDocumentSellerTitleInfo
         optional string InfoFileId = 1;             // Идентификатор файла информационного поля // ИдФайлИнфПол
         repeated AdditionalInfo AdditionalInfo = 2; //Текстовая информация // ТекстИнф
     }
-        
+
+    message AdditionalInfo {
+        required string Id = 1;     // Идентификатор
+        required string Value = 2;  // Значение
+    }
+
 
 Структура данных *UniversalTransferDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForSeller`. При заполнении структуры UniversalTransferDocumentSellerTitleInfo нужно иметь в виду:
 

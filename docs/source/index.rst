@@ -54,8 +54,8 @@
 
    Структуры данных <DataStructures>
    Авторизация <Authorization>
-   Работа с УПД <API_UniversalTransferDocument>
    Работа с СФ/ИСФ/КСФ <API_Invoices>
+   Работа с УПД/УКД <API_UniversalTransferDocument>
    Работа с документами <API_Documents>
    Работа с сообщениями <API_Messages>
    Работа с событиями <API_Events>

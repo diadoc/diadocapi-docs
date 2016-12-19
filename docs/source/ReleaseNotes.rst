@@ -1,18 +1,46 @@
 ﻿История изменений API
 =====================
 
-v1.37 - 15.12.2016
+v1.37 - 19.12.2016
 ------------------
 
-В появилась возможность работать с новыми типами документов УПД, в связи с чем в документации появились новые разделы:
+В Диадоке появилась возможность работать с новыми типами документов УПД и УКД, в связи с чем в документации появились новые разделы:
 
--  Добавлен раздел, описывающий :doc:`документооборот УПД/УКД <docflows/UtdDocflow>`
-   
--  Добавлен раздел, описывающий :doc:`работу с УПД <API_UniversalTransferDocument>`
+-  Добавлен раздел, описывающий :doc:`счетов-фактур <docflows/InvoiceDocflow>`,
+
+-  Добавлен раздел, описывающий :doc:`документооборот накладных <docflows/Torg12Docflow>`,
+
+-  Добавлен раздел, описывающий :doc:`документооборот актов <docflows/AktDocflow>`,
+
+-  Добавлен раздел, описывающий :doc:`документооборот УПД/УКД <docflows/UtdDocflow>`,
+
+-  Добавлен раздел, описывающий методы и структуры для работы :doc:`с УПД <API_UniversalTransferDocument>`
 
 Появились новые методы API:
 
--  
+-  генерация титула продавца УПД - :doc:`http/utd/GenerateUniversalTransferDocumentXmlForSeller`
+
+-  генерация титула покупателя УПД - :doc:`http/utd/GenerateUniversalTransferDocumentXmlForBuyer`
+
+-  парсинг титула продавца УПД - :doc:`http/utd/ParseUniversalTransferDocumentSellerTitleXml`
+
+-  парсинг титула покупателя УПД - :doc:`http/utd/ParseUniversalTransferDocumentBuyerTitleXml`
+
+-  форматы УПД и УКД подразумевают расширенный набор полей для подписантов. Этот набор полей не содержится ни в сертификате, ни в данных организации, чтобы указать эти дополнительные данные появился метод :doc:`http/utd/ExtendedSignerDetails`
+
+Появились новые структуры в API:
+
+-  структура для описания титула продавца УПД - :doc:`proto/utd/UniversalTransferDocumentSellerTitleInfo`
+
+-  структура для описания титула покупателя УПД - :doc:`proto/utd/UniversalTransferDocumentBuyerTitleInfo`
+
+-  структура для описания титула продавца УКД - :doc:`proto/utd/UniversalCorrectionDocumentSellerTitleInfo`
+
+-  структура для описания реквизитов продавца, покупателя и грузоотправителя, используемая в УПД и УКД - :doc:`proto/utd/ExtendedOrganizationInfo`
+
+-  структура для описания реквизитов подписанта, используемая в УПД и УКД - :doc:`proto/utd/ExtendedSigner`
+
+-  структура для описания реквизитов подписанта, используемая в методе :doc:`proto/utd/ExtendedOrganizationInfo` - :doc:`proto/utd/ExtendedSignerDetailsToPost`
 
 
 v1.36 - 07.04.2016
