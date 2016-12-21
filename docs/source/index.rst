@@ -3,6 +3,12 @@
 
 |image0|
 
+Номер релиза: |release|
+
+Номер версии: |version|
+
+Текущая дата: |today|
+
 Диадок – это система обмена юридически-значимыми электронными документами между организациями. Диадок позволяет компаниям обмениваться со своими клиентами, поставщиками, партнерами, удаленными подразделениями любыми документами.
 
 Базовым уровнем интеграции с Диадоком является его **HTTP-API** интерфейс. Этот уровень являетсся наиболее общим, и на нем, в частности, обеспечивается платформо-независимость для интеграционных решений.
@@ -23,9 +29,18 @@
    Модель данных <DataModel>
    Порядок работы с API <ApiClientOperationPrinciple>   
    Управление списком активных контрагентов <Counteragents>
-   Документооборот электронных счетов-фактур <InvoiceDocflow>
-   Неформализованный документооборот <NonformalizedDocflow>   
-   Дополнительные функции API <MiscellaneousApiFeatures>   
+   Дополнительные функции API <MiscellaneousApiFeatures>
+
+.. toctree::
+   :name: docflow
+   :maxdepth: 1
+   :caption: Документооброт
+
+   Документооборот ЭСФ <docflows/InvoiceDocflow>
+   Документооборот накладных <docflows/Torg12Docflow>
+   Документооборот актов <docflows/AktDocflow>
+   Документооборот УПД <docflows/UtdDocflow>
+   Неформализованный документооборот <docflows/NonformalizedDocflow>
 
 .. toctree::
    :name: examples
@@ -44,13 +59,14 @@
    :caption: Техническая документация
 
    Структуры данных <DataStructures>
-   Авторизация <Authorization>   
+   Авторизация <Authorization>
+   Работа с УПД <API_UniversalTransferDocument>
+   Работа с СФ/ИСФ/КСФ <API_Invoices>
+   Работа с документами <API_Documents>
+   Работа с сообщениями <API_Messages>
+   Работа с событиями <API_Events>
    Работа с организациями <API_Organizations>
    Работа с контрагентами <API_Counteragents>
-   Работа с сообщениями <API_Messages>
-   Работа с документами <API_Documents>
-   Работа с СФ/ИСФ/КСФ <API_Invoices>
-   Работа с событиями <API_Events>
    Docflow API <Docflow API>
    Облачная подпись <CloudSignApi>
 
