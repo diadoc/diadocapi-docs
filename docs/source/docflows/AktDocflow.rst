@@ -59,5 +59,5 @@
 #.  Диадок доставляет отказ в подписи *XmlSignatureRejection*\ :sub:`5`\ до Исполнителя.
 
 
-.. image:: ../_static/img/docflows/scheme-03.png
+.. image:: ../_static/img/docflows/scheme-03-akt-docflow.png
 	:align: center
