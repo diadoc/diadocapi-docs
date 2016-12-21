@@ -1,12 +1,12 @@
 ﻿История изменений API
 =====================
 
-v1.37 - 19.12.2016
+v1.38 - 23.12.2016
 ------------------
 
 В Диадоке появилась возможность работать с новыми типами документов УПД и УКД, в связи с чем в документации появились новые разделы:
 
--  Добавлены разделы, описывающие:
+-  Добавлены новые разделы, описывающие:
 
     -  :doc:`документооборот счетов-фактур <docflows/InvoiceDocflow>`,
     
@@ -20,15 +20,15 @@ v1.37 - 19.12.2016
 
 Появились новые методы API:
 
--  генерация титула продавца УПД - :doc:`http/utd/GenerateUniversalTransferDocumentXmlForSeller`
+-  генерация титула продавца УПД и УКД - :doc:`http/utd/GenerateUniversalTransferDocumentXmlForSeller`
 
--  генерация титула покупателя УПД - :doc:`http/utd/GenerateUniversalTransferDocumentXmlForBuyer`
+-  генерация титула покупателя УПД и УКД - :doc:`http/utd/GenerateUniversalTransferDocumentXmlForBuyer`
 
 -  парсинг титула продавца УПД - :doc:`http/utd/ParseUniversalTransferDocumentSellerTitleXml`
 
 -  парсинг титула покупателя УПД - :doc:`http/utd/ParseUniversalTransferDocumentBuyerTitleXml`
 
--  форматы УПД и УКД подразумевают расширенный набор полей для подписантов. Этот набор полей не содержится ни в сертификате, ни в данных организации, чтобы указать эти дополнительные данные появился метод :doc:`http/utd/ExtendedSignerDetails`
+-  заполнение дополнительных данных (для УПД и УКД) о подписантах  - :doc:`http/utd/ExtendedSignerDetails`
 
 Появились новые структуры в API:
 
@@ -38,11 +38,41 @@ v1.37 - 19.12.2016
 
 -  структура для описания титула продавца УКД - :doc:`proto/utd/UniversalCorrectionDocumentSellerTitleInfo`
 
+-  структура для описания титула покупателя УКД - :doc:`proto/utd/UniversalTransferDocumentBuyerTitleInfo`
+
+-  структура для описания данных УПД и УКД - :doc:`proto/utd/UniversalDocumentMetadata`
+
 -  структура для описания реквизитов продавца, покупателя и грузоотправителя, используемая в УПД и УКД - :doc:`proto/utd/ExtendedOrganizationInfo`
 
 -  структура для описания реквизитов подписанта, используемая в УПД и УКД - :doc:`proto/utd/ExtendedSigner`
 
 -  структура для описания реквизитов подписанта, используемая в методе :doc:`proto/utd/ExtendedOrganizationInfo` - :doc:`proto/utd/ExtendedSignerDetailsToPost`
+   
+В структуре :doc:`proto/MessageToPost` добавилось поле *UniversalTransferDocumentSellerTitles*:
+
+-  для отправки УПД с функцией СЧФ,
+
+-  для отправки УКД с функцией КСЧФ,
+
+-  для отправки титула продавца УПД с функцией ДОП и СЧФДОП,
+
+-  для отправки титула продавца УКД с функцией ДОП и СЧФДОП,
+
+Для отправки титула покупателя УПД и УКД в структуре :doc:`proto/MessageToPost` добавилось поле *UniversalTransferDocumentBuyerTitles*:
+
+-  для отправки титула покупателя УПД с функцией ДОП и СЧФДОП,
+
+-  для отправки титула покупателя УКД с функцией ДОП и СЧФДОП,
+
+В структуру :doc:`proto/PrepareDocumentsToSignRequest` добавилась возможность указать расширенные данные о подписанте.
+
+v1.37 - 10.10.2016
+------------------
+
+Добавлена структура для отправки кастомных типов документов - :doc:`proto/CustomDocumentAttachment`.
+
+.. note::
+    Функциональность находится в разработке
 
 
 v1.36 - 07.04.2016
@@ -60,9 +90,9 @@ v1.34 - 10.03.2016
 
 - Добавлена возможность редактировать пакеты документов:
 
-	- В структуре :doc:`proto/MessagePatchToPost` добавлено поле EditDocumentPacketCommands.
-	
-	- Добавлена новая структура :doc:`EditDocumentPacketCommand <proto/MessageToPost>`, описывающая операцию редактирования пакета документов.
+    - В структуре :doc:`proto/MessagePatchToPost` добавлено поле EditDocumentPacketCommands.
+    
+    - Добавлена новая структура :doc:`EditDocumentPacketCommand <proto/MessageToPost>`, описывающая операцию редактирования пакета документов.
 
 v1.33 - 10.02.2016
 ------------------
@@ -94,13 +124,13 @@ v1.29 - 14.10.2015
 
 -  Появилась возможность отправлять новый тип документа "Дополнтиельное соглашение к договору".
 
-	-  в структуре :doc:`proto/MessageToPost` добавилась стуктура :doc:`proto/SupplementaryAgreementAttachment` для передачи дополнительного соглашения к договору
-	
-	-  в структуре :doc:`proto/Entity message` и :doc:`proto/DocumentType` появился новый тип для дополнительного соглашения к договору
-	
-	-  в структуре :doc:`proto/Document` появилась вложенная структура для описания метаданных дополнительного соглашения к договору - :doc:`SupplementaryAgreementMetadata <proto/BilateralDocumentMetadata>`
-	
-	-  в структуре :doc:`proto/DocumentInfo` появилась вложенная структура для описания метаданных дополнительного соглашения к договору - :doc:`SupplementaryAgreementInfo <proto/SupplementaryAgreementDocumentInfo>`
+    -  в структуре :doc:`proto/MessageToPost` добавилась стуктура :doc:`proto/SupplementaryAgreementAttachment` для передачи дополнительного соглашения к договору
+    
+    -  в структуре :doc:`proto/Entity message` и :doc:`proto/DocumentType` появился новый тип для дополнительного соглашения к договору
+    
+    -  в структуре :doc:`proto/Document` появилась вложенная структура для описания метаданных дополнительного соглашения к договору - :doc:`SupplementaryAgreementMetadata <proto/BilateralDocumentMetadata>`
+    
+    -  в структуре :doc:`proto/DocumentInfo` появилась вложенная структура для описания метаданных дополнительного соглашения к договору - :doc:`SupplementaryAgreementInfo <proto/SupplementaryAgreementDocumentInfo>`
 
 
 
@@ -108,10 +138,10 @@ v1.28 - 10.08.2015
 ------------------
 
 -  Добавилась возможность отправлять зашифрованные товарные накладные и акты выполненных работ. Для этого были внесены следующие изменения:
-	
-	-  в структуре :doc:`proto/MessageToPost` добавились поля *EncryptedXmlTorg12SellerTitles*, *EncryptedXmlAcceptanceCertificateSellerTitles*
-	
-	-  появилась структура :doc:`proto/EncryptedXmlDocumentAttachment` для передачи зашифрованных накладных и актов
+    
+    -  в структуре :doc:`proto/MessageToPost` добавились поля *EncryptedXmlTorg12SellerTitles*, *EncryptedXmlAcceptanceCertificateSellerTitles*
+    
+    -  появилась структура :doc:`proto/EncryptedXmlDocumentAttachment` для передачи зашифрованных накладных и актов
 
 
 v1.27 - 10.08.2015
@@ -123,26 +153,26 @@ v1.26 - 30.07.2015
 ------------------
 
 -  Добавилась возможность отправлять зашифрованные счета-фактуры. Для этого были внесены следующие изменения:
-	
-	-  появились структуры :doc:`CounteragentCertificateList <proto/Counteragent>` и :doc:`Certificate <proto/Counteragent>` для описания списка сертификатов контрагента
-	
-	-  в структурах :doc:`proto/Document` и :doc:`proto/Entity message` появился флаг *IsEncryptedContent*, этот флаг указывается для передачи контента в зашифрованном виде
-	
-	-  появились структуры :doc:`proto/EncryptedInvoiceAttachment`, :doc:`EncryptedDocumentMetadata <proto/EncryptedInvoiceAttachment>`, :doc:`EncryptedInvoiceMetadata <proto/EncryptedInvoiceAttachment>`, :doc:`EncryptedInvoiceCorrectionMetadata <proto/EncryptedInvoiceAttachment>` для передачи зашифрованных счетов-фактур, и метаданных для исправлений и корректировок.
-	
-	-  в структуре :doc:`proto/MessageToPost` добавилось поле *EncryptedInvoices*, для передачи зашифрованных счетов-фактур
-	
-	-  в структуре :doc:`proto/MessagePatchToPost` добавилось поле *SignatureVerifications*, для передачи резльтатов проверки подписей на стороне получателя
+    
+    -  появились структуры :doc:`CounteragentCertificateList <proto/Counteragent>` и :doc:`Certificate <proto/Counteragent>` для описания списка сертификатов контрагента
+    
+    -  в структурах :doc:`proto/Document` и :doc:`proto/Entity message` появился флаг *IsEncryptedContent*, этот флаг указывается для передачи контента в зашифрованном виде
+    
+    -  появились структуры :doc:`proto/EncryptedInvoiceAttachment`, :doc:`EncryptedDocumentMetadata <proto/EncryptedInvoiceAttachment>`, :doc:`EncryptedInvoiceMetadata <proto/EncryptedInvoiceAttachment>`, :doc:`EncryptedInvoiceCorrectionMetadata <proto/EncryptedInvoiceAttachment>` для передачи зашифрованных счетов-фактур, и метаданных для исправлений и корректировок.
+    
+    -  в структуре :doc:`proto/MessageToPost` добавилось поле *EncryptedInvoices*, для передачи зашифрованных счетов-фактур
+    
+    -  в структуре :doc:`proto/MessagePatchToPost` добавилось поле *SignatureVerifications*, для передачи резльтатов проверки подписей на стороне получателя
 
-	-  появился метод :doc:`http/GetCounteragentCertificates` для запроса списка сертификатов контрагента
-	
-	-  в структуре :doc:`proto/Signer` добавилося отпечаток сертификата *SignerCertificateThumbprint*
+    -  появился метод :doc:`http/GetCounteragentCertificates` для запроса списка сертификатов контрагента
+    
+    -  в структуре :doc:`proto/Signer` добавилося отпечаток сертификата *SignerCertificateThumbprint*
 
 -  Добавилась возможность изменения подписанта в неотправленных исходящих документах:
 
-	-  появилась структура :doc:`DocumentToPatch <proto/PrepareDocumentsToSignRequest>` представляюшая изменение исходящего неотправленного документа
-	
-	-  изменились структуры :doc:`proto/DocumentSignature`, :doc:`proto/PrepareDocumentsToSignRequest` - в них добавилась возможность ссылаться на изменение исходящего неотправленного документа
+    -  появилась структура :doc:`DocumentToPatch <proto/PrepareDocumentsToSignRequest>` представляюшая изменение исходящего неотправленного документа
+    
+    -  изменились структуры :doc:`proto/DocumentSignature`, :doc:`proto/PrepareDocumentsToSignRequest` - в них добавилась возможность ссылаться на изменение исходящего неотправленного документа
 
 v1.25 - 28.05.2015
 ------------------
@@ -238,7 +268,7 @@ v1.10 - 06.12.2013
 
 -  В Диадоке появилась возможность отправлять формализованные отказы от подписи документов. Xml файл отказа формируется при помощи метода :doc:`http/GenerateSignatureRejectionXml`.
 
-	Для отправки отказов используется метод :doc:`http/PostMessagePatch`, куда передается структура :doc:`proto/MessagePatchToPost` с заполненным списком :doc:`MessagePatchToPost.XmlSignatureRejections <proto/MessagePatchToPost>`.
+    Для отправки отказов используется метод :doc:`http/PostMessagePatch`, куда передается структура :doc:`proto/MessagePatchToPost` с заполненным списком :doc:`MessagePatchToPost.XmlSignatureRejections <proto/MessagePatchToPost>`.
 
 Для получения документов с отказом в подписи через метод :doc:`http/GetDocuments` используются такие же фильтры, как для неформализованных отказов. Формализованным отказам соответствует тип XmlSignatureRejection из перечисления :doc:`AttachmentType <proto/Entity message>`.
 
@@ -419,7 +449,7 @@ v1.0 - 04.04.2012
 
 -  Было расширено API для работы с черновиками:
 
-	-  Метод :doc:`http/GetNewEvents` теперь возвращает  информацию  о событиях, происходящик с черновиками: создание черновика (и  начальный набор документов в нем), добавление к черновику  документов, утилизация черновика (просто удаление, либо отправка  на основе него полноценного сообщения). Методы  :doc:`http/GetEvent` и :doc:`http/GetMessage` также  теперь  возвращают информацию о черновиках.
+    -  Метод :doc:`http/GetNewEvents` теперь возвращает  информацию  о событиях, происходящик с черновиками: создание черновика (и  начальный набор документов в нем), добавление к черновику  документов, утилизация черновика (просто удаление, либо отправка  на основе него полноценного сообщения). Методы  :doc:`http/GetEvent` и :doc:`http/GetMessage` также  теперь  возвращают информацию о черновиках.
  
  -  Появился метод :doc:`http/RecycleDraft`, который  позволяет  удалять еще не отправленные черновики.
  
@@ -447,7 +477,7 @@ v0.7 - 03.10.2011
 
 -  Появились методы :doc:`http/Recognize` и :doc:`http/GetRecognized`, позволяющие использовать Диадок для распознавания печатных форм счетов-фактур. Печатная форма подается на вход метода Recognize в формате `XPS <https://msdn.microsoft.com/en-us/library/windows/hardware/dn641615(v=vs.85).aspx>`__.
 
-	В случае успешного распознавания на выходе метода GetRecognized получается XML-файл счета-фактуры в формате, удовлетворяющем требованиям ФНС и пригодном для отправки в соответствии с порядком, утвержденным Минфином РФ.
+    В случае успешного распознавания на выходе метода GetRecognized получается XML-файл счета-фактуры в формате, удовлетворяющем требованиям ФНС и пригодном для отправки в соответствии с порядком, утвержденным Минфином РФ.
 
 v0.6 - 26.08.2011
 -----------------
@@ -471,7 +501,7 @@ v0.3 - 17.06.2011
 
 -  Появилась возможность связывать документы в разных сообщениях. Для организации такой связи вводится структура данных :doc:`proto/DocumentId`, которую можно заполнить, например, в структуре :doc:`proto/XmlDocumentAttachment` при отправке корректировочного счета-фактуры.
 
-	DocumentId включает в себя два идентификатора: поле DocumentId.MessageId - это идентификатор сообщения, содержащего исходный документ; поле DocumentId.EntityId - это идентификатор сущности, представляющей исходный документ в этом сообщении.
+    DocumentId включает в себя два идентификатора: поле DocumentId.MessageId - это идентификатор сообщения, содержащего исходный документ; поле DocumentId.EntityId - это идентификатор сущности, представляющей исходный документ в этом сообщении.
 
 -  Появилась возможность отправить через API отказ от запрошенной подписи. Для этого в структуре :doc:`proto/MessagePatchToPost` появилось необязательное поле RequestedSignatureRejections.
 
@@ -479,9 +509,9 @@ v0.3 - 17.06.2011
 
 -  Уведомления о невозможности доставки теперь ссылаются на недоставленные куски сообщения.
 
-	-  Для этого в структуре :doc:`Entity <proto/Entity message>` появилос необязательное поле NotDeliveredEventId. NotDeliveredEventId - это идентификатор сообщения или патча, который не удалось доставить (например, из-за некорректности одной или нескольких подписей в нем).
+    -  Для этого в структуре :doc:`Entity <proto/Entity message>` появилос необязательное поле NotDeliveredEventId. NotDeliveredEventId - это идентификатор сообщения или патча, который не удалось доставить (например, из-за некорректности одной или нескольких подписей в нем).
 
-	-  Получить недоставленный кусок сообщения можно при помощи метода :doc:`http/GetEvent`, передав ему в качестве параметра eventId значение NotDeliveredEventId. Данное поле заполняется только у сущности типа Attachment с типом вложения DeliveryFailureNotification.
+    -  Получить недоставленный кусок сообщения можно при помощи метода :doc:`http/GetEvent`, передав ему в качестве параметра eventId значение NotDeliveredEventId. Данное поле заполняется только у сущности типа Attachment с типом вложения DeliveryFailureNotification.
 
 v0.2.2 - 15.04.2011
 -------------------

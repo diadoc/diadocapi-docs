@@ -15,7 +15,9 @@ UniversalTransferDocumentBuyerTitleInfo
         repeated ExtendedSigner Signers = 9; // Подписант
     }
     
-Структура данных *UniversalTransferDocumentBuyerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`. При заполнении структуры *UniversalTransferDocumentBuyerTitleInfo* нужно иметь в виду:
+Структура данных *UniversalTransferDocumentBuyerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForBuyer` в формате УПД и УКД.
+
+При заполнении структуры *UniversalTransferDocumentBuyerTitleInfo* нужно иметь в виду:
 
 -  Реквизиты подписанта счета-фактуры *UniversalTransferDocumentBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`ExtendedSigner`.
 
@@ -26,3 +28,5 @@ UniversalTransferDocumentBuyerTitleInfo
 -  Информация о ином лице, принявшем товар, представляется в виде структуры :doc:`OtherIssuer <UniversalTransferDocumentSellerTitleInfo>`.
 
 -  Сведения информационного поля о факте хозяйственной жизни представляется в виде структуры :doc:`AdditionalInfoId <UniversalTransferDocumentSellerTitleInfo>`.
+
+-  Для формата УКД не заполняются поля *OperationCode*, *OtherIssuer* и *Employee*

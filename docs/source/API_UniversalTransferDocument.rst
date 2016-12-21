@@ -26,8 +26,9 @@
    :glob:
 
    http/utd/ExtendedSignerDetails
+   http/PrepareDocumentsToSign
    http/PostMessage
-   http/PostMessagePatch
+   http/PostMessagePatch   
 
 Парсинг УПД
 ------------
@@ -51,3 +52,5 @@
    :glob:
 
    proto/utd/*
+   proto/PrepareDocumentsToSignRequest
+   proto/PrepareDocumentsToSignResponse
