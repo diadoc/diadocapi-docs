@@ -99,6 +99,20 @@ BilateralDocumentMetadata
         required string ContractDate = 5;
         optional ReceiptStatus ReceiptStatus = 6 [default = UnknownReceiptStatus];
     }
+
+    Enum UniversalTransferDocumentStatus {
+        UnknownDocumentStatus = 0;
+        OutboundWaitingForSenderSignature = 1;
+        OutboundWaitingForInvoiceReceiptAndRecipientSignature = 2;
+        OutboundWaitingForInvoiceReceipt = 3; 
+        OutboundWaitingForRecipientSignature = 4;
+        OutboundInvalidSenderSignature = 5;
+        InboundWaitingForInvoiceReceiptAndRecipientSignature = 6;
+        InboundWaitingForRecipientSignature = 7; 
+        InboundWaitingForInvoiceReceipt = 8;
+        InboundWithRecipientSignature = 9; 
+        InboundInvalidRecipientSignature = 10;
+    }
         
 
 Структура *BasicDocumentMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для двусторонних первичных бухгалтерских документов (например, для товарных накладных ТОРГ-12):
@@ -193,3 +207,13 @@ BilateralDocumentMetadata
 -  *InboundNoRecipientSignatureRequest* (документ входящий, ответная подпись не запрошена),
 
 -  *InternalNoRecipientSignatureRequest* (документ внутренний, ответная подпись не запрошена).
+
+Перечисление *UniversalTransferDocumentStatus* задает возможные варианты состояний, в которых может находиться Универсальный передаточный документ (УПД). Содержит все значения из перечисления BilateralDocumentStatus и дополнительно еще несколько возможных значений:
+
+-  *OutboundWaitingForInvoiceReceiptAndRecipientSignature* - документ исходящий, ожидается извещение о получении и подпись получателя,
+
+-  *OutboundWaitingForInvoiceReceipt* = 3; - документ исходящий, ожидается извещение о получении,
+
+-  *InboundWaitingForInvoiceReceiptAndRecipientSignature* - документ входящий, ожидается извещение о получении и подпись получателя,
+
+-  *InboundWaitingForInvoiceReceipt* - документ входящий, ожидается извещение о получении.
