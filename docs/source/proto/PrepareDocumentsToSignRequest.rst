@@ -12,14 +12,14 @@ PrepareDocumentsToSignRequest
     message DraftDocumentToPatch {
         required DocumentId DocumentId = 1;
         optional string ToBoxId = 2;
-        optional Invoicing.Signer Signer = 3;
-        optional Invoicing.ExtendedSigner ExtendedSigner = 4;
+        optional Signer Signer = 3;
+        optional ExtendedSigner ExtendedSigner = 4;
     }
 
     message DocumentToPatch {
-	    required DocumentId DocumentId = 1;
-	    optional Invoicing.Signer Signer = 2;
-        optional Invoicing.ExtendedSigner ExtendedSigner = 4;
+        required DocumentId DocumentId = 1;
+        optional Signer Signer = 2;
+        optional ExtendedSigner ExtendedSigner = 4;
     }
         
 

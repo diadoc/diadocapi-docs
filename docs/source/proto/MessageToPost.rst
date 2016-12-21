@@ -37,6 +37,7 @@ MessageToPost
         repeated SupplementaryAgreementAttachment SupplementaryAgreements = 31;
         optional bool LockPacket = 32 [default = false];
         repeated XmlDocumentAttachment UniversalTransferDocumentSellerTitles = 33;
+        repeated CustomDocumentAttachment CustomDocumentAttachments = 34;
     }
         
 
@@ -93,6 +94,8 @@ MessageToPost
 -  :doc:`SupplementaryAgreements <SupplementaryAgreementAttachment>` - список дополнительных соглашанеий к договорам в отправляемом сообщении.
 
 -  :doc:`UniversalTransferDocumentSellerTitles <XmlDocumentAttachment>` - список титулов продавца универсального передаточного документа (УПД) в XML формате.
+
+-  :doc:`CustomDocumentAttachment` - список кастомных типов документов, функциональность находится в разработке,
 
 -  *ProxyBoxId* - идентификатор ящика, промежуточного получателя. Если указан ящик промежуточного получателя, то документа доставится конечному получателя только после того, как промежуточный получатель поставит подпись под документом. Если промежуточный получатель отклонит документ, то в ящик конечного получателя он не будет доставлен.
 

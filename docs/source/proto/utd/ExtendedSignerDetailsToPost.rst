@@ -15,13 +15,11 @@ ExtendedSignerDetailsToPost
          optional string SignerOrgPowersBase = 8;   // Основание полномочий (доверия) организации (ОснПолнОрг)
       }
 
-
      enum SignerType {
          LegalEntity = 1;      // Представитель юридического лица (ФЛ)
          IndividualEntity = 2; // Индивидуальный предприниматель (ИП)
          PhysicalPerson = 3;   // Физическое лицо (ЮЛ)
-      }
-     
+      }     
      
      enum SignerPowers {
          InvoiceSigner = 0;                 // лицо, ответственное за подписание счетов-фактур

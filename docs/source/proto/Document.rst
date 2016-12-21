@@ -56,7 +56,13 @@ Document
         optional BilateralDocument.SupplementaryAgreementMetadata SupplementaryAgreementMetadata = 50;
         optional bool IsRead = 51 [default = false];
         optional string RoamingNotificationStatusDescription = 52;
-        optional BilateralDocument.UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 53;
+        optional bool PacketIsLocked = 53 [default = false];
+        optional NonformalizedDocumentMetadata PriceListAgreementMetadata = 54;
+        optional NonformalizedDocumentMetadata CertificateRegistryMetadata = 55;
+        optional UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 56;
+        optional UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
+        optional UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
+        optional UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
     }
 
     enum RevocationStatus {
@@ -127,7 +133,7 @@ Document
 
 -  *DepartmentId* - идентификатор подразделения, в котором находится документ.
 
--  *IsTest* - флаг, показывающий, что данный документ является тестовым и не имеет юридической силы, т.к. один из контрагентов не присоединился  к регламенту Диадока.
+-  *IsTest* - флаг, показывающий, что данный документ является тестовым и не имеет юридической силы, т.к. один из контрагентов не присоединился к регламенту Диадока.
 
 -  *FromDepartmentId* - идентификатор подразделения, из которого отправляется документ.
 
@@ -177,7 +183,13 @@ Document
 
 -  :doc:`ServiceDetailsMetadata <UnilateralDocumentMetadata>` - дополнительные атрибуты специфичные для детализаций.
 
--  :doc:`UniversalTransferDocumentMetadata <BilateralDocumentMetadata>` - Дополнительные атрибуты, специфичные для универсального передаточного документа
+-  :doc:`UniversalTransferDocumentMetadata <utd/UniversalDocumentMetadata>` - дополнительные атрибуты, специфичные для УПД
+
+-  :doc:`UniversalTransferDocumentRevisionMetadata <utd/UniversalDocumentMetadata>` - дополнительные атрибуты, специфичные для исправлений УПД
+
+-  :doc:`UniversalCorrectionDocumentMetadata <utd/UniversalDocumentMetadata>` - дополнительные атрибуты, специфичные для УКД
+
+-  :doc:`UniversalCorrectionDocumentRevisionMetadata <utd/UniversalDocumentMetadata>` - дополнительные атрибуты, специфичные для исправлений УКД
 
 -  *RevocationStatus* - статус аннулирования документа. Возможные значения:
 
