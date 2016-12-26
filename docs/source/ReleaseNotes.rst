@@ -66,6 +66,23 @@ v1.38 - 23.12.2016
 
 В структуру :doc:`proto/PrepareDocumentsToSignRequest` добавилась возможность указать расширенные данные о подписанте.
 
+В DocflowAPI произошли следующие изменения:
+
+-  добавились новые структуры для описания документооборота УПД:
+
+    -  входящий УПД - :doc:`proto/utd/docflow/InboundUniversalTransferDocumentDocflow`
+    
+    -  исходящий УПД - :doc:`proto/utd/docflow/OutboundUniversalTransferDocumentDocflow`
+    
+    -  дополнительные данные о УПД - :doc:`proto/utd/docflow/UniversalTransferDocumentInfo`
+    
+    -  дополнительные данные о УКД - :doc:`proto/utd/docflow/UniversalCorrectionDocumentInfo`
+
+-  в структуру :doc:`proto/Docflow` добавились поля *InboundUniversalTransferDocumentDocflow* и *OutboundUniversalTransferDocumentDocflow*
+
+-  в структуру :doc:`proto/DocumentInfo` добавились поля *UniversalTransferDocumentInfo* и *UniversalCorrectionDocumentInfo*.
+
+
 v1.37 - 10.10.2016
 ------------------
 

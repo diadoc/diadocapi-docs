@@ -14,6 +14,9 @@ InvoiceDocumentInfo
 Структура представляет метаданные документов, имеющих :doc:`тип <DocumentType>` Invoice или InvoiceRevision.
 
 -  *Total* - сумма с учетом НДС, всего по документу.
+
 -  *Vat* - сумма НДС, всего по документу.
+
 -  *CurrencyCode* - код валюты.
+
 -  :doc:`OriginalInvoiceDateAndNumber <DocumentDateAndNumber>` - только для InvoiceRevision: дата и номер исходного счёта-фактуры.

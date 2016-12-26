@@ -3,26 +3,28 @@ Docflow
 
 .. code-block:: protobuf
 
-   message Docflow
-   {
-       optional bool IsFinished = 1;
-       optional SignedAttachment DocumentAttachment = 2;
-       optional string DepartmentId = 3;
-       optional bool DocumentIsDeleted = 4;
-       optional DocflowStatus DocflowStatus = 5;
-       optional Timestamp SendTimestamp = 6;
-       optional Timestamp DeliveryTimestamp = 7;
-       optional InboundInvoiceDocflow InboundInvoiceDocflow = 8;
-       optional OutboundInvoiceDocflow OutboundInvoiceDocflow = 9;
-       optional XmlBilateralDocflow XmlBilateralDocflow = 10;
-       optional BilateralDocflow BilateralDocflow = 11;
-       optional UnilateralDocflow UnilateralDocflow = 12;
-       optional RevocationDocflow RevocationDocflow = 13;
-       optional ResolutionDocflow ResolutionDocflow = 14;
-       optional bool CanDocumentBeRevokedUnilaterallyBySender = 15;
-       optional string PacketId = 16;
-       repeated CustomDataItem CustomData = 17;
-   }
+    message Docflow
+    {
+        optional bool IsFinished = 1;
+        optional SignedAttachment DocumentAttachment = 2;
+        optional string DepartmentId = 3;
+        optional bool DocumentIsDeleted = 4;
+        optional DocflowStatus DocflowStatus = 5;
+        optional Timestamp SendTimestamp = 6;
+        optional Timestamp DeliveryTimestamp = 7;
+        optional InboundInvoiceDocflow InboundInvoiceDocflow = 8;
+        optional OutboundInvoiceDocflow OutboundInvoiceDocflow = 9;
+        optional XmlBilateralDocflow XmlBilateralDocflow = 10;
+        optional BilateralDocflow BilateralDocflow = 11;
+        optional UnilateralDocflow UnilateralDocflow = 12;
+        optional RevocationDocflow RevocationDocflow = 13;
+        optional ResolutionDocflow ResolutionDocflow = 14;
+        optional bool CanDocumentBeRevokedUnilaterallyBySender = 15;
+        optional string PacketId = 16;
+        repeated CustomDataItem CustomData = 17;
+        optional InboundUniversalTransferDocumentDocflow InboundUniversalTransferDocumentDocflow = 18;
+        optional OutboundUniversalTransferDocumentDocflow OutboundUniversalTransferDocumentDocflow = 19;
+    }
 
 Структура представляет состояние документооборота для одного документа.
 
@@ -52,9 +54,13 @@ Docflow
 
    -  :doc:`UnilateralDocflow` - документооборот одностороннего неформализованного документа (для документов типа *ProformaInvoice*, *ServiceDetails*).
 
+   -  :doc:`utd/docflow/InboundUniversalTransferDocumentDocflow` - документооборот входящего УПД (для документов типа *UniversalTransferDocument*, *UniversalTransferDocumentRevision*, *UniversalCorrectionDocument*, *UniversalCorrectionDocumentRevision*).
+
+   -  :doc:`utd/docflow/OutboundUniversalTransferDocumentDocflow` - документооборот исходящего УПД (для документов типа *UniversalTransferDocument*, *UniversalTransferDocumentRevision*, *UniversalCorrectionDocument*, *UniversalCorrectionDocumentRevision*).
+
 -  :doc:`RevocationDocflow` - данные об отзыве и аннулировании документа.
 
--  :doc:`ResolutionDocflow` - данные о согласовании документа.
+-  ``ResolutionDocflow`` - данные о согласовании документа.
 
 -  *CanDocumentBeRevokedUnilaterallyBySender* - признак того, что документ может быть отозван отправителем в одностороннем порядке.
 
