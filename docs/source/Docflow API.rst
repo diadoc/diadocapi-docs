@@ -26,7 +26,8 @@ HTTP-интерфейс
 .. toctree::
    :name: toc4
    :maxdepth: 2
-   :titlesonly:   
+   :titlesonly:
+   :glob:
 
    proto/Attachment
    proto/BasicDocumentInfo
@@ -79,4 +80,5 @@ HTTP-интерфейс
    proto/TimeBasedFilter
    proto/Timestamp
    proto/UnilateralDocflow
+   proto/utd/docflow/*
    proto/XmlBilateralDocflow

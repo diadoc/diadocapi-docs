@@ -15,13 +15,20 @@ InvoiceCorrectionDocumentInfo
        optional DocumentDateAndNumber OriginalInvoiceCorrectionDateAndNumber = 8;
    }
 
-Структура представляет метаданные документов, имеющих :doc:`тип <DocumentType>` InvoiceCorrection или InvoiceCorrectionRevision.
+Структура представляет метаданные документов, имеющих :doc:`тип <DocumentType>` *InvoiceCorrection* или *InvoiceCorrectionRevision*.
 
 -  *TotalInc* - сумма с учетом налога, всего к увеличению.
+
 -  *TotalDec* - сумма с учетом налога, всего к уменьшению.
+
 -  *VatInc* - сумма налога, всего к увеличению.
+
 -  *VatDec* - сумма налога, всего к уменьшению.
+
 -  *CurrencyCode* - код валюты.
+
 -  :doc:`OriginalInvoiceDateAndNumber <DocumentDateAndNumber>` - дата и номер исходного счёта-фактуры (заполняется, если корректировка была сформирована на счёт-фактуру).
+
 -  :doc:`OriginalInvoiceRevisionDateAndNumber <DocumentDateAndNumber>` - дата и номер исходного исправления счёта-фактуры (заполняется, если корректировка была сформирована на исправление счёта-фактуры).
+
 -  :doc:`OriginalInvoiceCorrectionDateAndNumber <DocumentDateAndNumber>` - дата и номер исходной корректировки счёта-фактуры (заполняется, если корректировка была сформирована на корректировку счёта-фактуры).
