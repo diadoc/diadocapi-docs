@@ -54,9 +54,9 @@ Docflow
 
    -  :doc:`UnilateralDocflow` - документооборот одностороннего неформализованного документа (для документов типа *ProformaInvoice*, *ServiceDetails*).
 
-   -  :doc:`utd/docflow/InboundUniversalTransferDocumentDocflow` - документооборот входящего УПД (для документов типа *UniversalTransferDocument*, *UniversalTransferDocumentRevision*, *UniversalCorrectionDocument*).
+   -  :doc:`utd/docflow/InboundUniversalTransferDocumentDocflow` - документооборот входящего УПД (для документов типа *UniversalTransferDocument*, *UniversalTransferDocumentRevision*, *UniversalCorrectionDocument*, *UniversalCorrectionDocumentRevision*).
 
-   -  :doc:`utd/docflow/OutboundUniversalTransferDocumentDocflow` - документооборот исходящего УПД (для документов типа *UniversalTransferDocument*, *UniversalTransferDocumentRevision*, *UniversalCorrectionDocument*).
+   -  :doc:`utd/docflow/OutboundUniversalTransferDocumentDocflow` - документооборот исходящего УПД (для документов типа *UniversalTransferDocument*, *UniversalTransferDocumentRevision*, *UniversalCorrectionDocument*, *UniversalCorrectionDocumentRevision*).
 
 -  :doc:`RevocationDocflow` - данные об отзыве и аннулировании документа.
 
