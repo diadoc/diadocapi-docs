@@ -83,10 +83,10 @@ Document
 
     enum SenderSignatureStatus {
         UnknownSenderSignatureStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
-        WaitingForSenderSignature = 1;
-        SenderSignatureUnchecked = 2;
-        SenderSignatureCheckedAndValid = 3;
-        SenderSignatureCheckedAndInvalid = 4;
+        WaitingForSenderSignature = 1; // Ожидается подпись отправителя
+        SenderSignatureUnchecked = 2; // Подпись отправителя еще не проверена
+        SenderSignatureCheckedAndValid = 3; // Подпись отправителя проверена и валидна
+        SenderSignatureCheckedAndInvalid = 4; // Подпись отправителя проверена и невалидна
     }
 
 Структура данных *Document* содержит инфофрмацию об одном документе в Диадоке, которую можно получить, например, при помощи метода :doc:`../http/GetDocument`:
