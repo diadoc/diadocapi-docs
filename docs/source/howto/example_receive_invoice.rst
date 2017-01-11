@@ -159,7 +159,7 @@
 
    {
        "SignerCertificate": "",
-       "SignerDetails ": {
+       "SignerDetails": {
         "Surname": "Иванов",
         "FirstName": "Иван",
         "Patronymic": "Иванович",
