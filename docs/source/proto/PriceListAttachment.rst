@@ -22,7 +22,7 @@ PriceListAttachment
 
 Структура данных PriceListAttachment представляет один ценовой лист в отправляемом сообщении :doc:`MessageToPost`:
 
--  SignedContent - содержимое файла ценового листа вместе с ЭЦП под ним в виде структуры :doc:`SignedContent`.
+-  SignedContent - содержимое файла ценового листа вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
 
 -  FileName - имя файла отправляемого ценового листа.
 

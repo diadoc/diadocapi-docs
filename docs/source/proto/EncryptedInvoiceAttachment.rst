@@ -28,7 +28,7 @@ EncryptedInvoiceAttachment
         
 Структура данных *EncryptedInvoiceAttachment* представляет зашифрованный счет-фактуру в отправляемом сообщении :doc:`MessageToPost`:
 
--  *SignedContent* - содержимое файла документа вместе с ЭЦП под ним в виде структуры :doc:`SignedContent`.
+-  *SignedContent* - содержимое файла документа вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
 
 -  *Comment* - необязательный текстовый комментарий к документу.
 

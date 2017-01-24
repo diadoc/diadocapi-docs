@@ -85,7 +85,7 @@ Entity
 
    -  *Attachment* (файл-вложение в сообщении),
    
-   -  *Signature* (ЭЦП под вложенеим).
+   -  *Signature* (ЭП под вложенеим).
 
 -  *EntityId* - уникальный идентификатор сущности.
 
@@ -179,7 +179,7 @@ Entity
    
    -  Поле Content.Data, если присутствует, содержит собственно данные. Этот массив байтов следует интерпретировать в зависимости от типа сущности *EntityType* и типа вложения *AttachmentType*:
 
-   -  Содержимое сущности типа *Signature* представляет собой ЭЦП в формате CMS SignedData в DER-кодировке,
+   -  Содержимое сущности типа *Signature* представляет собой ЭП в формате CMS SignedData в DER-кодировке,
    
    -  Для сущностей типа *Attachment/Nonformalized*, *Attachment/ProformaInvoice*, *Attachment/Torg12*, *Attachment/AcceptanceCertificate*, *Attachment/StructuredData*, *Attachment/PriceList* - это просто двоичное содержимое исходного файла,
    
