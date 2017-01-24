@@ -23,7 +23,7 @@ AcceptanceCertificateAttachment
 
 Структура данных AcceptanceCertificateAttachment представляет один титул исполнителя для неформализованного акта о выполнении работ (оказании услуг) в отправляемом сообщении :doc:`MessageToPost`:
 
--  *SignedContent* - содержимое файла вместе с ЭЦП под ней в виде структуры :doc:`SignedContent`.
+-  *SignedContent* - содержимое файла вместе с ЭП под ней в виде структуры :doc:`SignedContent`.
 
 -  *FileName* - имя файла отправляемого документа.
 

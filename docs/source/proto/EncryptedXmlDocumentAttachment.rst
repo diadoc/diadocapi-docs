@@ -23,7 +23,7 @@ EncryptedXmlDocumentAttachment
 
 Структура данных *EncryptedXmlDocumentAttachment* представляет зашифрованный формализованный документ (накладную ТОРГ-12 или акт) в отправляемом сообщении :doc:`MessageToPost`:
 
--  *SignedContent* - содержимое файла документа вместе с ЭЦП под ним в виде структуры :doc:`SignedContent`.
+-  *SignedContent* - содержимое файла документа вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
 
 -  *Comment* - необязательный текстовый комментарий к документу.
 

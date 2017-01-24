@@ -14,7 +14,7 @@ TrustConnectionRequestAttachment
 
 Структура данных TrustConnectionRequestAttachment представляет запрос на инициацию канала обмена документами через Диадок в отправляемом сообщении :doc:`MessageToPost`:
 
--  SignedContent - содержимое файла запроса вместе с ЭЦП под ним в виде структуры :doc:`SignedContent`.
+-  SignedContent - содержимое файла запроса вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
 
 -  FileName - имя файла отправляемого запроса.
 

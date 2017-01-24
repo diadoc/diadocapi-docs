@@ -23,7 +23,7 @@ SupplementaryAgreementAttachment
 
 Структура данных *SupplementaryAgreementAttachment* представляет дополнительное соглашение  к договору в отправляемом сообщении :doc:`MessageToPost`:
 
--  *SignedContent* - содержимое файла документа вместе с ЭЦП под ним в виде структуры :doc:`SignedContent`.
+-  *SignedContent* - содержимое файла документа вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
 
 -  *FileName* - обязательный текстовый комментарий к документу.
 
