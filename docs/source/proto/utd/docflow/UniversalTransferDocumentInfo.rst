@@ -13,7 +13,7 @@ UniversalTransferDocumentInfo
         optional DocumentDateAndNumber OriginalDocumentDateAndNumber = 6;
     }
 
-Структура представляет метаданные документов, имеющих :doc:`тип <DocumentType>` *UniversalTransferDocument* или *UniversalTransferDocumentRevision*.
+Структура представляет метаданные документов, имеющих :doc:`тип <../../DocumentType>` *UniversalTransferDocument* или *UniversalTransferDocumentRevision*.
 
 -  *Total* - сумма с учетом НДС, всего по документу.
 
@@ -25,4 +25,4 @@ UniversalTransferDocumentInfo
 
 -  *Function* - функция документа, описывается структурой :doc:`FunctionType <../UniversalTransferDocumentSellerTitleInfo>`.
 
--  :doc:`OriginalInvoiceDateAndNumber <DocumentDateAndNumber>` - только для *UniversalTransferDocumentRevision*: дата и номер исходного УПД.
+-  :doc:`OriginalInvoiceDateAndNumber <../../DocumentDateAndNumber>` - только для *UniversalTransferDocumentRevision*: дата и номер исходного УПД.

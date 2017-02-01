@@ -17,7 +17,7 @@ UniversalCorrectionDocumentInfo
         optional DocumentDateAndNumber OriginalDocumentCorrectionDateAndNumber = 10;
     }
 
-Структура представляет метаданные документов, имеющих :doc:`тип <DocumentType>` *UniversalCorrectionDocument* или *UniversalCorrectionDocumentRevision*.
+Структура представляет метаданные документов, имеющих :doc:`тип <../../DocumentType>` *UniversalCorrectionDocument* или *UniversalCorrectionDocumentRevision*.
 
 -  *TotalInc* - сумма с учетом налога, всего к увеличению.
 
@@ -33,8 +33,8 @@ UniversalCorrectionDocumentInfo
 
 -  *Function* - функция документа, описывается структурой :doc:`FunctionType <../UniversalTransferDocumentSellerTitleInfo>`.
 
--  :doc:`OriginalInvoiceDateAndNumber <DocumentDateAndNumber>` - дата и номер исходного УПД (заполняется, если корректировка была сформирована на УПД).
+-  :doc:`OriginalInvoiceDateAndNumber <../../DocumentDateAndNumber>` - дата и номер исходного УПД (заполняется, если корректировка была сформирована на УПД).
 
--  :doc:`OriginalInvoiceRevisionDateAndNumber <DocumentDateAndNumber>` - дата и номер исходного исправления УПД (заполняется, если корректировка была сформирована на исправление УПД).
+-  :doc:`OriginalInvoiceRevisionDateAndNumber <../../DocumentDateAndNumber>` - дата и номер исходного исправления УПД (заполняется, если корректировка была сформирована на исправление УПД).
 
--  :doc:`OriginalInvoiceCorrectionDateAndNumber <DocumentDateAndNumber>` - дата и номер исходной УКД (заполняется, если корректировка была сформирована на УКД).
+-  :doc:`OriginalInvoiceCorrectionDateAndNumber <../../DocumentDateAndNumber>` - дата и номер исходной УКД (заполняется, если корректировка была сформирована на УКД).
