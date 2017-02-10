@@ -1,6 +1,11 @@
 ﻿История изменений API
 =====================
 
+v1.38.3 - 10.02.2017
+------------------
+
+В структуре :doc:`OrganizationWithCounteragentStatus <proto/GetOrganizationsByInnListRequest>` добавилось поле *LastEventTimestampTicks*.
+
 v1.38 - 23.12.2016
 ------------------
 

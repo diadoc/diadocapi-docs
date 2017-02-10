@@ -10,12 +10,13 @@ GetOrganizationsByInnListRequest
     message OrganizationWithCounteragentStatus {
         required Organization Organization = 1;
         optional CounteragentStatus CounteragentStatus = 2 [default = UnknownCounteragentStatus];
+        optional sfixed64 LastEventTimestampTicks = 3;
     }
 
     message GetOrganizationsByInnListResponse {
         repeated OrganizationWithCounteragentStatus Organizations = 1;
     }
-	
+
     enum CounteragentStatus {
         UnknownCounteragentStatus = 0;
         IsMyCounteragent = 1;
@@ -35,3 +36,5 @@ GetOrganizationsByInnListRequest
 -  :doc:`Organization` - содержит информацию об одной организации в Диадоке,
 
 -  *CounteragentStatus* - статус контрагента для данной организации
+
+-  *LastEventTimestampTicks* - :doc:`метка времени <Timestamp>` последнего события из истории взаимодействия с данным контрагентом
