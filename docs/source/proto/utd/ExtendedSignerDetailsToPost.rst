@@ -27,6 +27,7 @@ ExtendedSignerDetailsToPost
          MadeAndSignOperation = 2;          // лицо, совершившее сделку, операцию и ответственное за её оформление;
          PersonDocumentedOperation = 3;     // лицо, ответственное за оформление свершившегося события;
          MadeOperationAndSignedInvoice = 4; // лицо, совершившее сделку, операцию и ответственное за подписание счетов-фактур;
+         MadeAndResponsibleForOperationAndSignedInvoice = 5; // лицо, совершившее сделку, операцию и ответственное за её оформление и за подписание счетов-фактур;
          ResponsibleForOperationAndSignerForInvoice = 6;     // лицо, ответственное за оформление свершившегося события и за подписание счетов-фактур
      }
      
