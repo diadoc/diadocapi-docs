@@ -10,7 +10,7 @@ MessageToPost
         repeated NonformalizedAttachment NonformalizedDocuments = 4;
         repeated BasicDocumentAttachment Torg12Documents = 5;
         optional TrustConnectionRequestAttachment TrustConnectionRequest = 6;
-        repeated BasicDocumentAttachment AcceptanceCertificates = 7;
+        repeated AcceptanceCertificateAttachment AcceptanceCertificates = 7;
         repeated StructuredDataAttachment StructuredDataAttachments = 8;
         repeated BasicDocumentAttachment ProformaInvoices = 9;
         repeated XmlDocumentAttachment XmlTorg12SellerTitles = 10;
@@ -39,7 +39,7 @@ MessageToPost
         repeated XmlDocumentAttachment UniversalTransferDocumentSellerTitles = 33;
         repeated CustomDocumentAttachment CustomDocumentAttachments = 34;
     }
-        
+
 
 Структура данных *MessageToPost* представляет сообщение, подлежащее отправке через Диадок при помощи метода :doc:`../http/PostMessage`:
 
@@ -100,7 +100,7 @@ MessageToPost
 -  *ProxyBoxId* - идентификатор ящика, промежуточного получателя. Если указан ящик промежуточного получателя, то документа доставится конечному получателя только после того, как промежуточный получатель поставит подпись под документом. Если промежуточный получатель отклонит документ, то в ящик конечного получателя он не будет доставлен.
 
 -  *ProxyDepartmentId* - идентификатор подразделения, в ящике промежуточного получателя.
-   
+
 -  *IsDraft* - флаг, показывающий, что данное сообщение является черновиком (возможно, содержит неподписанные документы), и не подлежит отправке. Для добавления подписей к черновику и его отправки следует использовать метод :doc:`../http/SendDraft`.
 
 -  *LockDraft* - флаг, показывающий, что данный черновик является защищенным от изменений.
@@ -111,7 +111,7 @@ MessageToPost
 
 -  *LockPacket* - флаг, означает, что документы сообщения будут отправлены закрытым пакетом. В таком пакете любая операция применяется ко всем документам сразу.
 
-Сообщения с флагом *DelaySend*, должны удовлетворять следующим 
+Сообщения с флагом *DelaySend*, должны удовлетворять следующим
 
 -  Подпись под документом и запрос на подпись по доверенности должны отсутствовать.
 
