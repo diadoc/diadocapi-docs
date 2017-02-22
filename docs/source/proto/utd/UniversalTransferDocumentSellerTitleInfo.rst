@@ -24,7 +24,7 @@ UniversalTransferDocumentSellerTitleInfo
         optional TransferInfo TransferInfo = 17;            // Сведения о передаче (сдаче) // СвПер
         required string DocumentCreator = 18;               // Составитель файла обмена счета-фактуры (информации продавца) // НаимЭконСубСост
         optional string DocumentCreatorBase = 19;           // Основание, по которому экономический субъект является составителем файла обмена счета-фактуры //ОснДоверОргСост
-        optional string GovermentContractInfo = 20;         // ИдГосКон
+        optional string GovernmentContractInfo = 20;         // ИдГосКон
     } 
 
     enum FunctionType {
