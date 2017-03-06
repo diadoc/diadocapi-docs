@@ -139,7 +139,7 @@ UniversalTransferDocumentSellerTitleInfo
 
 -  Реквизиты продавца (*UniversalTransferDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalTransferDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
 
--  Реквизиты грузоотправителя (*Shipper.OrgInfo*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`. Если проставлен флаг *ShipperOrConsignee.SameAsSeller*, то реквизиты грузоотправителя заполнять не нужно - будут использоваться соответствующие реквизиты продавца.
+-  Реквизиты грузоотправителя (*Shipper.OrgInfo*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`. Если проставлен флаг *Shipper.SameAsSeller*, то реквизиты грузоотправителя заполнять не нужно - будут использоваться соответствующие реквизиты продавца.
 
 -  Реквизиты грузополучателя (*UniversalTransferDocumentSellerTitleInfo.Consignee*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
 
