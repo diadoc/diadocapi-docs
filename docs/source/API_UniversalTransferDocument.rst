@@ -41,6 +41,8 @@
 
    http/utd/ParseUniversalTransferDocumentSellerTitleXml
    http/utd/ParseUniversalTransferDocumentBuyerTitleXml
+   http/utd/ParseUniversalCorrectionDocumentSellerTitleXml
+   http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml
 
 Структуры данных
 ----------------
