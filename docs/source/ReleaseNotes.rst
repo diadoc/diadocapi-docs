@@ -1,5 +1,9 @@
 ﻿История изменений API
 =====================
+v1.40 - 24.03.2017
+------------------
+
+В API Диадока появились методы для парсинга титулов УКД: :doc:`продавца <http/utd/ParseUniversalCorrectionDocumentSellerTitleXml>` и :doc:`покупателя <http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml>`
 
 v1.39 - 15.03.2017
 ------------------
