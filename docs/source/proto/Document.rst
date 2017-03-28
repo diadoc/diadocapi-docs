@@ -63,6 +63,7 @@ Document
         optional UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
         optional UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
         optional UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
+        optional string ResolutionRouteId = 60 [default = ""];
     }
 
     enum RevocationStatus {
@@ -226,3 +227,5 @@ Document
 - *IsRead* - флаг, указывающий на то, что документ был прочитан сотрудником организации.
 
 - *RoamingNotificationStatusDescription* - текстовое описание ошибки при доставке документов в роуминг. Обычно это поле заполняется, когда статус доставки в роуминг *RoamingNotificationStatus* имеет значение *RoamingNotificationStatusError*.
+
+- *ResolutionRouteId* - идентификатор маршрута согласования, на котором находится документ (если документ находится на маршруте согласования).

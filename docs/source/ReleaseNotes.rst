@@ -5,6 +5,25 @@ v1.40 - 24.03.2017
 
 В API Диадока появились методы для парсинга титулов УКД: :doc:`продавца <http/utd/ParseUniversalCorrectionDocumentSellerTitleXml>` и :doc:`покупателя <http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml>`
 
+v1.41 - 27.03.2017
+------------------
+
+В API Диадока появилась возможность снимать документ с маршрута согласования, подробнее см. описание поля
+*ResolutionRouteRemovals* в структуре :doc:`MessagePatchToPost <proto/MessagePatchToPost>`. Также произошла
+замена термина "цепочка согласования" на маршрут согласования в документации, а в названиях структур данных и HTTP-методах
+слово Chain было заменено словом Route.
+
+Полный список всех переименований:
+-  в enum-е :doc:`AttachmentType <proto/Entity message>` элемент *ResolutionChainAssignment* переименован в *ResolutionRouteAssignment*
+-  в структуре :doc:`MessagePatchToPost <proto/MessagePatchToPost>` поле *ResolutionChainAssignments* переименовано в *ResolutionRouteAssignments*
+-  структура *ResolutionChainAssignment* переименована в :doc:`ResolutionRouteAssignment <proto/MessagePatchToPost>`
+-  в структуре :doc:`ResolutionRouteAssignment <proto/MessagePatchToPost>` поле *ChainId* переименовано в *RouteId*
+-  структура *ResolutionChainList* переименована в :doc:`ResolutionRouteList <proto/ResolutionRoute>`
+-  в структуре :doc:`ResolutionRouteList <proto/ResolutionRoute>` поле *ResolutionChains* переименовано в *ResolutionRoutes*
+-  структура *ResolutionChain* переименована в :doc:`ResolutionRoute <proto/ResolutionRoute>`
+-  в структуре :doc:`ResolutionRoute <proto/ResolutionRoute>` поле *ChainId* переименовано в *RouteId*
+-  HTTP-метод *GetResolutionChainsForOrganization* переименован в :doc:`GetResolutionRoutesForOrganization <http/GetResolutionRoutesForOrganization>`
+
 v1.39 - 15.03.2017
 ------------------
 

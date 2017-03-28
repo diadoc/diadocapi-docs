@@ -21,6 +21,9 @@ Entity
         optional ResolutionRequestDenialInfo ResolutionRequestDenialInfo = 16;  // заполняется только для вложений с типом AttachmentType.ResolutionRequestDenial
         optional bool IsApprovementSignature = 19 [default = false];   // заполняется только для вложений с типом EntityType.Signature
         optional bool IsEncryptedContent = 20 [default = false];
+        optional string AttachmentFormat = 21 [default = ""];
+        optional ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22; // заполняется только для вложений с типом AttachmentType.ResolutionRouteAssignment
+        optional ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23; // заполняется только для вложений с типом AttachmentType.ResolutionRouteRemoval
     }
 
     enum EntityType {
@@ -75,7 +78,8 @@ Entity
         UniversalCorrectionDocumentBuyerTitle = 51;
         CustomData = 64;
         MoveDocument = 65;
-        ResolutionChainAssignment = 66;
+        ResolutionRouteAssignment = 66;
+        ResolutionRouteRemoval = 67;
         //Неизвестные типы должны обрабатываться как Nonformalized
     }
 
@@ -171,7 +175,9 @@ Entity
    
    -  *MoveDocument* (информация о перемещении документа в подразделение).
    
-   -  *ResolutionChainAssignment* (информация о запуске документа по маршруту согласования).
+   -  *ResolutionRouteAssignment* (информация о запуске документа по маршруту согласования).
+
+   -  *ResolutionRouteRemoval* (информация о снятии документа с маршрута согласования).
 
 -  *Content* - содержимое сущности (подробнее см. описание структуры :doc:`Content`).
    
@@ -195,7 +201,7 @@ Entity
    
    -  Содержимое сущности типа *Attachment/RoamingNotification* представляет собой сериализованную в протобуфер структуру *RoamingNotification*,
    
-   -  Для сущностей типа *Attachment* и типов вложениий *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial*, *ResolutionChainAssignment* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8,
+   -  Для сущностей типа *Attachment* и типов вложениий *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial*, *ResolutionRouteAssignment*, *ResolutionRouteRemoval* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8,
    
    -  Наконец, у сущности типа *Attachment/SignatureVerificationReport* массив байтов Content.Data представляет собой сериализованную в протобуфер структуру *SignatureVerificationResult*.
 
@@ -222,3 +228,7 @@ Entity
 -  *IsApprovementSignature* - является ли подпись согласующей или обычной; заполняется только для сущностей типа Signature. Подробнее про согласующие подписи см. :doc:`DocumentSignature <DocumentSignature>`.
 
 -  *IsEncryptedContent* - флаг, указывающий зашифрован ли контент документа.
+
+-  *ResolutionRouteAssignmentInfo* - информация о запуске документа по маршруту согласования в виде структуры данных :doc:`ResolutionRouteAssignmentInfo <ResolutionRouteInfo>`.
+
+-  *ResolutionRouteRemovalInfo* - информация о снятии документа с маршрута согласования в виде структуры данных :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`.

@@ -1,7 +1,7 @@
-GetResolutionChainsForOrganization
+GetResolutionRoutesForOrganization
 ==================================
 
-Имя ресурса: **/GetResolutionChainsForOrganization**
+Имя ресурса: **/GetResolutionRoutesForOrganization**
 
 HTTP метод: **GET**
 
@@ -11,18 +11,18 @@ HTTP метод: **GET**
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 
-Метод возвращает список всех неудаленных цепочек согласования для организации *orgId*.
+Метод возвращает список всех неудаленных маршрутов согласования для организации *orgId*.
 
-В теле ответа содержится протобуфер :doc:`ResolutionChainList <../proto/ResolutionChain>`, который содержит в себе список протобуферов :doc:`ResolutionChain <../proto/ResolutionChain>`
+В теле ответа содержится протобуфер :doc:`ResolutionRouteList <../proto/ResolutionRoute>`, который содержит в себе список протобуферов :doc:`ResolutionRoute <../proto/ResolutionRoute>`
 
 .. code-block:: protobuf
 
-    message ResolutionChainList {
-        repeated ResolutionChain ResolutionChains = 1;
+    message ResolutionRouteList {
+        repeated ResolutionRoute ResolutionRoutes = 1;
     }
 
-    message ResolutionChain {
-        required string ChainId = 1;
+    message ResolutionRoute {
+        required string RouteId = 1;
         required string Name = 2;
     }
 

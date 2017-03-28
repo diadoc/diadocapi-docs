@@ -20,10 +20,11 @@ MessagePatchToPost
         repeated RevocationRequestAttachment RevocationRequests = 14;
         repeated XmlSignatureRejectionAttachment XmlSignatureRejections = 15;
         repeated CustomDataPatch CustomDataPatches = 16;
-        repeated ResolutionChainAssignment ResolutionChainAssignments = 17;
+        repeated ResolutionRouteAssignment ResolutionRouteAssignments = 17;
         repeated SignatureVerification SignatureVerifications = 18;
         repeated EditDocumentPacketCommand EditDocumentPacketCommands = 19;
         repeated ReceiptAttachment UniversalTransferDocumentBuyerTitles = 20;
+        repeated ResolutionRouteRemoval ResolutionRouteRemovals = 21;
     }
 
     message ReceiptAttachment {
@@ -31,9 +32,15 @@ MessagePatchToPost
         required SignedContent SignedContent = 2;
     }
 
-    message ResolutionChainAssignment {
+    message ResolutionRouteAssignment {
         required string InitialDocumentId = 1;
-        required string ChainId = 2;
+        required string RouteId = 2;
+        optional string Comment = 3;
+    }
+
+    message ResolutionRouteRemoval {
+        required string ParentEntityId = 1;
+        required string RouteId = 2;
         optional string Comment = 3;
     }
 
@@ -106,6 +113,10 @@ MessagePatchToPost
 
 -  *EditDocumentPacketCommands* - список операций по изменению состава пакета у документов в исходном сообщении. Каждый элемент представляется структурой *EditDocumentPacketCommand*.
 
+-  *ResolutionRouteAssignments* - список операций по постановке документов на маршрут согласования. Каждый элемент представляется структурой *ResolutionRouteAssignment*.
+
+-  *ResolutionRouteRemovals* - список операция по снятию документов с маршрута согласования. Каждый элемент прежставляется структурой *ResolutionRouteRemoval*.
+
 Структура данных *ReceiptAttachment* представляет одно извещение о получении документа в отправляемом патче:
 
 -  *ParentEntityId* - идентификатор документа, к которому относится данное извещение. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре :doc:`Entity <Entity message>`).
@@ -136,11 +147,19 @@ MessagePatchToPost
 
 -  *SignedContent* - содержимое файла отказа вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
 
-Структура *ResolutionChainAssignment* представляет одно действие на постановку документа на цепочку согласования:
+Структура *ResolutionRouteAssignment* представляет одно действие на постановку документа на маршрут согласования:
 
--   *InitialDocumentId* - идентификатор документа, который нужно поставить на цепочку согласования;
+-   *InitialDocumentId* - идентификатор документа, который нужно поставить на маршрут согласования;
 
--   *ChainId* - идентификатор цепочки согласования, на которую нужно поставить документ;
+-   *RouteId* - идентификатор маршрута согласования, на который нужно поставить документ;
+
+-   *Comment* - текстовый комментарий;
+
+Структура *ResolutionRouteRemoval* представляет одно действие на снятие документа с маршрута согласования:
+
+-   *ParentEntityId* - идентификатор документа, который нужно снять с маршрута согласования;
+
+-   *RouteId* - идентификатор маршрута согласования, с которого нужно снять документ;
 
 -   *Comment* - текстовый комментарий;
 
