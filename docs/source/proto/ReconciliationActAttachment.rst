@@ -10,7 +10,7 @@ ReconciliationActAttachment
         repeated DocumentId InitialDocumentIds = 5;
         repeated DocumentId SubordinateDocumentIds = 6;
         required string DocumentDate = 7;
-        required string DocumentNumber = 8;
+        optional string DocumentNumber = 8;
         optional string CustomDocumentId = 9;
         optional bool NeedReceipt = 10 [default = false];
         repeated CustomDataItem CustomData = 11;
