@@ -10,7 +10,7 @@ AcceptanceCertificateAttachment
         repeated DocumentId InitialDocumentIds = 4;
         repeated DocumentId SubordinateDocumentIds = 5;
         required string DocumentDate = 6;
-        required string DocumentNumber = 7;
+        optional string DocumentNumber = 7;
         required string Total = 8;
         optional string CustomDocumentId = 9;
         optional string Vat = 10;

@@ -1,5 +1,14 @@
 ﻿История изменений API
 =====================
+v.1.41.1 -
+------------------
+
+Появилась возможность отправлять неформализованные акты и акты сверки без указания номера документа.
+
+В структурах данных :doc:`ReconciliationActAttachment <proto/ReconciliationActAttachment>` и :doc:`AcceptanceCertificateAttachment <proto/AcceptanceCertificateAttachment>`
+поле *DocumentNumber* стало необязательным.
+
+
 v1.41 - 27.03.2017
 ------------------
 
