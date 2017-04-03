@@ -71,4 +71,12 @@ DocumentType
 
 -  *SupplementaryAgreement* - дополнительное соглашение к договору.
 
+-  *UniversalTransferDocument* - универсальный передаточный документ (УПД).
+
+-  *UniversalTransferDocumentRevision* - исправление универсального передаточного документа.
+
+-  *UniversalCorrectionDocument* - универсальный корректировочный документ (УКД).
+
+-  *UniversalCorrectionDocumentRevision* - исправление универсального корректировочного документа.
+
 -  *UnknownDocumentType* - неизвестный тип документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать тип документа, переданный сервером.
