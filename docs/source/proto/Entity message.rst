@@ -21,10 +21,9 @@ Entity
         optional ResolutionRequestDenialInfo ResolutionRequestDenialInfo = 16;  // заполняется только для вложений с типом AttachmentType.ResolutionRequestDenial
         optional bool IsApprovementSignature = 19 [default = false];   // заполняется только для вложений с типом EntityType.Signature
         optional bool IsEncryptedContent = 20 [default = false];
-        optional string AttachmentFormat = 21 [default = ""];
+        optional string AttachmentVersion = 21;
         optional ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22; // заполняется только для вложений с типом AttachmentType.ResolutionRouteAssignment
         optional ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23; // заполняется только для вложений с типом AttachmentType.ResolutionRouteRemoval
-        optional string AttachmentVersion = 24;
     }
 
     enum EntityType {
