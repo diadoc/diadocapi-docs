@@ -24,6 +24,7 @@ Entity
         optional string AttachmentFormat = 21 [default = ""];
         optional ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22; // заполняется только для вложений с типом AttachmentType.ResolutionRouteAssignment
         optional ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23; // заполняется только для вложений с типом AttachmentType.ResolutionRouteRemoval
+        optional string AttachmentVersion = 24;
     }
 
     enum EntityType {
@@ -232,3 +233,5 @@ Entity
 -  *ResolutionRouteAssignmentInfo* - информация о запуске документа по маршруту согласования в виде структуры данных :doc:`ResolutionRouteAssignmentInfo <ResolutionRouteInfo>`.
 
 -  *ResolutionRouteRemovalInfo* - информация о снятии документа с маршрута согласования в виде структуры данных :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`.
+
+- *AttachmentVersion* - информация о версии XSD схемы, в соотвествии с которой сформирована данная сущность.
