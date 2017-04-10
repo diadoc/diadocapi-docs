@@ -64,6 +64,7 @@ Document
         optional UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
         optional UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
         optional string ResolutionRouteId = 60 [default = ""];
+        optional string AttachmentVersion = 61;
     }
 
     enum RevocationStatus {
@@ -229,3 +230,5 @@ Document
 - *RoamingNotificationStatusDescription* - текстовое описание ошибки при доставке документов в роуминг. Обычно это поле заполняется, когда статус доставки в роуминг *RoamingNotificationStatus* имеет значение *RoamingNotificationStatusError*.
 
 - *ResolutionRouteId* - идентификатор маршрута согласования, на котором находится документ (если документ находится на маршруте согласования).
+
+- *AttachmentVersion* - информация о версии XSD схемы, в соотвествии с которой сформирован документ.
