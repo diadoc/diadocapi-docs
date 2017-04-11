@@ -241,6 +241,6 @@ Document
 
    -  *UniversalCorrectionDocumentBuyerTitle* (титул покупателя, соответствующий приказу ФНС №189 от 13 апреля 2016 г.)
    
-   -  *MesNotificationSenderTitle* (Титул отправителя уведомления МЭС)
+   -  *MesNotificationSenderTitle* (титул отправителя уведомления МЭС)
 
-   -  *MesNotificationRecipientTitle* (Титул получателя уведомления МЭС)
+   -  *MesNotificationRecipientTitle* (титул получателя уведомления МЭС)
