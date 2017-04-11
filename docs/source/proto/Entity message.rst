@@ -233,16 +233,4 @@ Entity
 
 -  *ResolutionRouteRemovalInfo* - информация о снятии документа с маршрута согласования в виде структуры данных :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`.
 
-- *AttachmentVersion* - информация о версии XSD схемы, в соотвествии с которой сформирована данная сущность.  Допустимые значения:
-
-   -  *UniversalTransferDocument* (титул продавца, соответствующий приказу ФНС №155 от 24 марта 2016 г.)
-
-   -  *UniversalTransferDocumentBuyerTitle* (титул покупателя, соответствующий приказу ФНС №155 от 24 марта 2016 г.)
-
-   -  *UniversalCorrectionDocument* (титул продавца, соответствующий приказу ФНС №189 от 13 апреля 2016 г.)
-
-   -  *UniversalCorrectionDocumentBuyerTitle* (титул покупателя, соответствующий приказу ФНС №189 от 13 апреля 2016 г.)
-   
-   -  *MesNotificationSenderTitle* (титул отправителя уведомления МЭС)
-
-   -  *MesNotificationRecipientTitle* (титул получателя уведомления МЭС)
+- *AttachmentVersion* - информация о версии XSD схемы, в соотвествии с которой сформирована данная сущность.
