@@ -34,7 +34,7 @@ Counteragent
     message Certificate {
         required bytes RawCertificateData = 1;
     }
-        
+
 
 Структура данных *CounteragentList* представляет собой список контрагентов *Counteragent*, возвращаемый методом :doc:`../http/GetCounteragents`. Поле *CounteragentList.TotalCount* содержит общее количество контрагентов, удовлетворяющих фильтру.
 
@@ -58,7 +58,7 @@ Counteragent
 
    -  *IsRejectedByMe* (отношение партнерства было разоварвано со стороны текущей организации, либо запрос на установление отношения партнерства был отклонен текущей организацией),
 
-   -  *NotInCounteragentList* (специальное значение, выдаваемое для организаций, которые отсутствуют в списке контрагентов текущей организации; не может выдаваться при получении структур Counteragent методами :doc:`../http/GetCounteragent` и :doc:`../http/GetCounteragent`).   
+   -  *NotInCounteragentList* (специальное значение, выдаваемое для организаций, которые отсутствуют в списке контрагентов текущей организации; не может выдаваться при получении структур Counteragent методами :doc:`../http/GetCounteragent` и :doc:`../http/GetCounteragents`).   
 
 -  *LastEventTimestampTicks* - :doc:`метка времени <Timestamp>` последнего события из истории взаимодействия с данным контрагентом.
 
