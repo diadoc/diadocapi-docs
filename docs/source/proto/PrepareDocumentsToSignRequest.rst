@@ -19,7 +19,7 @@ PrepareDocumentsToSignRequest
     message DocumentToPatch {
         required DocumentId DocumentId = 1;
         optional Signer Signer = 2;
-        repeated ExtendedSigner ExtendedSigner = 4;
+        repeated ExtendedSigner ExtendedSigner = 3;
     }
         
 
