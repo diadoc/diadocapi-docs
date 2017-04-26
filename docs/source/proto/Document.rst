@@ -63,6 +63,7 @@ Document
         optional UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
         optional string ResolutionRouteId = 60 [default = ""];
         optional string AttachmentVersion = 61;
+        optional ProxySignatureStatus ProxySignatureStatus = 62;
     }
 
     enum RevocationStatus {
@@ -87,6 +88,15 @@ Document
         SenderSignatureUnchecked = 2; // Подпись отправителя еще не проверена
         SenderSignatureCheckedAndValid = 3; // Подпись отправителя проверена и валидна
         SenderSignatureCheckedAndInvalid = 4; // Подпись отправителя проверена и невалидна
+    }
+    
+    enum ProxySignatureStatus {
+	    UnknownProxySignatureStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
+	    ProxySignatureStatusNone = 1; // Подпись промежуточного получателя не требуется
+	    WaitingForProxySignature = 2; // Ожидается подпись промежуточного получателя
+	    WithProxySignature = 3; // Подпись промежуточного получателя проверена и валидна
+	    ProxySignatureRejected = 4; // Промежуточный получатель отказал в подписи
+	    InvalidProxySignature = 5; // Подпись промежуточного получателя проверена и невалидна
     }
 
 Структура данных *Document* содержит информацию об одном документе в Диадоке, которую можно получить, например, при помощи метода :doc:`../http/GetDocument`:
@@ -230,3 +240,15 @@ Document
 - *ResolutionRouteId* - идентификатор маршрута согласования, на котором находится документ (если документ находится на маршруте согласования).
 
 - *AttachmentVersion* - информация о версии XSD схемы, в соотвествии с которой сформирован документ.
+
+- *ProxySignatureStatus* - статус промежуточной подписи. Возможные значения:
+
+  - *ProxySignatureStatusNone* (документ не требует промежуточной подписи)
+  
+  - *WaitingForProxySignature* (ожидается промежуточная подпись)
+  
+  - *WithProxySignature* (промежуточная подпись проверена и валидна)
+  
+  - *ProxySignatureRejected* (промежуточный получатель отказал в подписи)
+  
+  - *InvalidProxySignature* (промежуточная подпись проверена и невалидна)
