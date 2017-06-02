@@ -17,6 +17,7 @@ EncryptedXmlDocumentAttachment
    message EncryptedXmlBasicDocumentMetadata {
        required string FormationDate = 1;
        required string FormationTime = 2;
+       optional string DocumentName = 3;
    }
 
 
@@ -49,3 +50,4 @@ EncryptedXmlDocumentAttachment
 
 -  *FormationTime* - время формирования зашифрованного XML-документа. Значение должно совпадать со значением атрибута ВремДок в теге Документ в зашифрованном контенте.
 
+-  *DocumentName* - наименование первичного документа, определенное организацией (НаимДокОпр)
