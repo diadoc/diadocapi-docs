@@ -29,6 +29,7 @@ Organization
         optional int32 InvitationCount = 20;
         optional int32 SearchCount = 21;
         required Sociability Sociability = 22;
+        optional string LiquidationDate = 23;
     }
 
     message Box {
