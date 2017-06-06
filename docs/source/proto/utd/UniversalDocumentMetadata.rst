@@ -10,8 +10,8 @@ UniversalDocumentMetadata
         optional string Grounds = 4; // DocumentGrounds
         required string DocumentFunction = 5;
         required int32 Currency = 6;
-        optional sfixed64 ConfirmationDateTimeTicks = 8;
-        optional int32 InvoiceAmendmentFlags = 9;
+        optional sfixed64 ConfirmationDateTimeTicks = 7;
+        optional int32 InvoiceAmendmentFlags = 8;
     }
 
     message UniversalTransferDocumentRevisionMetadata {
