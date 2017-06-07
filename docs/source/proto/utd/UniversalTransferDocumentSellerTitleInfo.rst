@@ -25,20 +25,20 @@ UniversalTransferDocumentSellerTitleInfo
         required string DocumentCreator = 18;               // Составитель файла обмена счета-фактуры (информации продавца) // НаимЭконСубСост
         optional string DocumentCreatorBase = 19;           // Основание, по которому экономический субъект является составителем файла обмена счета-фактуры //ОснДоверОргСост
         optional string GovernmentContractInfo = 20;         // ИдГосКон
-    } 
+    }
 
     enum FunctionType {
         Invoice = 0;         // СЧФ
         Basic = 1;           // ДОП
         InvoiceAndBasic = 2; // СЧФДОП
     }
- 
+
     message Shipper {
         optional bool SameAsSeller = 1; // совпадает с продавцом // ОнЖе
         optional ExtendedOrganizationInfo OrgInfo = 2; // реквизиты организации // ГрузОтпр
     }
-  
- 
+
+
     message InvoiceTable {
         repeated ExtendedInvoiceItem Items = 1;   // информация о товарах // СведТов
         optional string TotalWithVatExcluded = 2; // Сумма без учета налога // СтТовБезНДСВсего
@@ -46,7 +46,7 @@ UniversalTransferDocumentSellerTitleInfo
         required string Total = 4;                // Сумма всего // СтТовУчНалВсего
         optional string TotalNet = 5;             // Нетто всего // НеттоВс
     }
-  
+
     message ExtendedInvoiceItem {
         required string Product = 1;  // наименование товара // НаимТов
         optional string Unit = 2;     // единицы измерения товара (код) // ОКЕИ_Тов
@@ -68,6 +68,16 @@ UniversalTransferDocumentSellerTitleInfo
         repeated AdditionalInfo AdditionalInfo = 18; // информационное поле документа // ИнфПолФХЖ2
     }
 
+    enum TaxRate {
+        NoVat = 0;            //без НДС
+        Percent_0 = 1;        //ставка налога 0%
+        Percent_10 = 2;       //ставка налога 10%
+        Percent_18 = 3;       //ставка налога 18%
+        Percent_20 = 4;       //ставка налога 20%
+        Fraction_10_110 = 5;  //ставка налога 10/110 (дробь)
+        Fraction_18_118 = 6;  //ставка налога 18/118 (дробь)
+    }
+
     enum ItemMark {
         NotSpecified = 0;   // не указано
         Property = 1;       // имущество
@@ -76,7 +86,7 @@ UniversalTransferDocumentSellerTitleInfo
         PropertyRights = 4; // имущественные права
         Other = 5;          // иное
     }
-   
+
     message TransferInfo {
         required string OperationInfo = 1;               // Содержание операции // СодОпер
         optional string OperationType = 2;               // Вид операции // ВидОпер
@@ -91,14 +101,14 @@ UniversalTransferDocumentSellerTitleInfo
         optional string CreatedThingInfo = 11;           // Сведения о передаче, изготовленной по договору //СвПерВещ
         optional AdditionalInfoId AdditionalInfoId = 12; // Информационное поле документа // ИнфПолФХЖ3
     }
- 
+
     message TransferBase {
         required string BaseDocumentName = 1;   // Наименование документа-основания отгрузки //НаимОсн
         optional string BaseDocumentNumber = 2; // Номер документа-основания отгрузки //НомОсн
         optional string BaseDocumentDate = 3;   // Дата документа-основания отгрузки //ДатаОсн
         optional string BaseDocumentInfo = 4;   // Дополнительные сведения документа-основания отгрузки //ДопСвОсн
     }
- 
+
     message  Waybill {
         required  string TransferDocumentNumber = 1; // Номер транспортной накладной // НомерТранНакл
         required  string TransferDocumentDate = 2;   // Дата траспортной накладной // ДатаТранНакл
@@ -112,7 +122,7 @@ UniversalTransferDocumentSellerTitleInfo
         required string TransferFirstName = 5;  // Имя //Имя
         optional string TransferPatronymic = 6; // Отчество //Отчество
     }
-  
+
     message OtherIssuer {
         optional string TransferEmployeePosition = 1; // Должность предстваителя организации // Должность //если заполнено - формируется структура «ПредОргПер», если не заполнено – «ФЛПер»
         optional string TransferEmployeeInfo = 2;     // Иные сведения, идентифицирующие физическое лицо // ИныеСвед
@@ -123,7 +133,7 @@ UniversalTransferDocumentSellerTitleInfo
         required string TransferFirstName = 7;  //Имя //Имя
         optional string TransferPatronymic = 8; //Отчество //Отчество
     }
-  
+
     message AdditionalInfoId {
         optional string InfoFileId = 1;             // Идентификатор файла информационного поля // ИдФайлИнфПол
         repeated AdditionalInfo AdditionalInfo = 2; //Текстовая информация // ТекстИнф
