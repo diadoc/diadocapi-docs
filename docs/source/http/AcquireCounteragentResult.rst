@@ -6,7 +6,7 @@ AcquireCounteragentResult
 HTTP
 ----
 
-**POST /AcquireCounteragentResult**
+**GET /AcquireCounteragentResult**
 
 **Параметры запроса:**
 
