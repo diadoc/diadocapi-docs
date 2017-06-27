@@ -21,7 +21,7 @@ HTTP метод: **POST**
 
 Если стуктура :doc:`../../proto/utd/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УПД:
 
--  файл изготавливается в соответствии со :download:`XSD-схемой <../../xsd/ON_SCHFDOPPOK_1_995_02_05_01_01.xsd>`,
+-  файл изготавливается в соответствии со :download:`XSD-схемой <../../xsd/ON_SCHFDOPPOK_1_995_02_05_01_02.xsd>`,
 
 Если стуктура :doc:`../../proto/utd/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УКД:
 
