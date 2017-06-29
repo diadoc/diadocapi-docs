@@ -37,6 +37,7 @@ Organization
         required string Title = 2;
         optional Organization Organization = 3;
         optional OrganizationInvoiceFormatVersion InvoiceFormatVersion = 4 [default = v5_02];
+        optional bool EncryptedDocumentsAllowed = 5;
     }
 
     enum OrganizationInvoiceFormatVersion {
