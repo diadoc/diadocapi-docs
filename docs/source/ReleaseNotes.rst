@@ -4,8 +4,10 @@ v.1.44.2 - 13.07.2017
 ---------------------
 
 Добавлены следующие поля:
-* В структуре данных :doc:`Organization <proto/Organization>` добавлено поле *CertificateOfRegistryInfo*, в котором указана информация о свидетельстве о государственной регистрации.
-* В структуре данных :doc:`DocumentInfo <proto/DocumentInfo>` добавлено поле *AttachmentVersion*, в котором указана версия документа.
+
+- В структуре данных :doc:`Organization <proto/Organization>` добавлено поле *CertificateOfRegistryInfo*, в котором указана информация о свидетельстве о государственной регистрации.
+
+- В структуре данных :doc:`DocumentInfo <proto/DocumentInfo>` добавлено поле *AttachmentVersion*, в котором указана версия документа.
 
 
 
