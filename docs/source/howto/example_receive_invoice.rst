@@ -52,7 +52,7 @@
           "InitialDocumentIds": [],
           "SubordinateDocumentIds": [],
           "Content": "lores ipsum",
-          "FileName": "ON_SFAKT_2BM-7770357771-2012082810454029703720000000000_2BM-7750370234-4012052808304878702630000000000_20150826_d37c6a05-e85c-4469-8c68-2d0303f61c2a.xml",
+          "FileName": "ON_SCHFDOPPR_2BM-7770357771-2012082810454029703720000000000_2BM-7750370234-4012052808304878702630000000000_20150826_d37c6a05-e85c-4469-8c68-2d0303f61c2a.xml",
           "DocumentDate": "26.08.2015",
           "DocumentNumber": "432634",
           "InvoiceMetadata":
@@ -185,11 +185,11 @@
 -  в значение атрибута *MessageId* указываем идентификатор модифицируемого сообщения,
 
 -  для передачи XML-файла извещения нужно использовать атрибут *Receipts*, описываемый структурой *ReceiptAttachment*
-  
+
   -  в поле *ParentEntityId* нужно указать идентификатор (*EntityId*) подтверждения оператора, полученный на предыдущем шаге,
 
   -  внутри структуры *ReceiptAttachment* находится вложенная структура *SignedContent*,
-  
+
   -  сам XML-файл нужно передать в атрибут *Content*, подпись продавца в атрибут *Signature*
 
 .. code-block:: protobuf
@@ -275,9 +275,9 @@
 Для этого нужно подготовить структуру :doc:`../proto/MessageToPost` следующим образом:
 
 -  Структура данных *CorrectionRequestAttachment* представляет одно уведомление об уточнении СФ/ИСФ/КСФ/ИКСФ в отправляемом патче,
- 
+
 -  *ParentEntityId* - идентификатор СФ/ИСФ/КСФ/ИКСФ, к которому относится данное уведомление. Это идентификатор соответствующей сущности из родительского сообщения (поле *EntityId* в структуре :doc:`Entity <../proto/Entity message>`).
- 
+
 -  *SignedContent* - содержимое файла уведомления вместе с ЭП под ним в виде структуры SignedContent.
 
 SDK
@@ -290,7 +290,7 @@ SDK
 	//Для работы с документами в Диадоке необходим авторизационный токен.
 	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
 	public static string AuthTokenCert;
-	
+
 	public static string BoxId = "идентификатор ящика получателя";
 
 	//Для работы с документом необходимо знать его уникальный идентификатор.
@@ -305,8 +305,8 @@ SDK
 
 		return Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
 	}
-		
-	//Получение сообщения, содержащего счет-фактуру 
+
+	//Получение сообщения, содержащего счет-фактуру
 	public static Message GetInvoice()
 	{
 		//Выбираем конкретный документ из полученного ранее списка.
@@ -316,7 +316,7 @@ SDK
 		//Получение счета-фактуры
 		return Api.GetMessage(AuthTokenCert, BoxId, document.MessageId, document.EntityId);
 	}
-	
+
 	//Получение подтверждения оператора, формирование и отправка извещения о получении подтверждения
 	public static void GetInvoiceConfirmationAndSendInvoiceReceipt(Message invoiceMessage)
 	{
@@ -329,7 +329,7 @@ SDK
 		var confirmationEntityWithoutReceiptId = confirmationEntities
 			.First(confirmationEntity => !receiptEntitiesParentIds
 				.Contains(confirmationEntity.EntityId)).EntityId;
-		
+
 		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
 		{
 			//Подпись получателя, см. "Как авторизоваться в системе"
@@ -339,7 +339,7 @@ SDK
 				//Заполняется согласно структуре SignerDetails
 			}
 		});
-		
+
 		var receiptAttachment = new ReceiptAttachment()
 		{
 			ParentEntityId = confirmationEntityId,
@@ -350,7 +350,7 @@ SDK
 				Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
 			}
 		};
-		
+
 		var receiptPatch = new MessagePatchToPost()
 		{
 			BoxId = BoxId,
@@ -363,7 +363,7 @@ SDK
 
 		Api.PostMessagePatch(AuthTokenCert, receiptPatch);
 	}
-	
+
 	//Формирование и отправка извещения о получении счета-фактуры
 	public static void SendinvoiceReceipt(Document invoiceDocument)
 	{
@@ -376,7 +376,7 @@ SDK
 				//Заполняется согласно структуре SignerDetails
 			}
 		});
-		
+
 		var receiptAttachment = new ReceiptAttachment()
 		{
 			ParentEntityId = invoiceDocument.EntityId,
@@ -387,7 +387,7 @@ SDK
 				Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
 			}
 		};
-		
+
 		var receiptPatch = new MessagePatchToPost()
 		{
 			BoxId = BoxId,
@@ -400,18 +400,18 @@ SDK
 
 		Api.PostMessagePatch(AuthTokenCert, receiptPatch);
 	}
-	
+
 	public static void Main()
 	{
 		var invoiceMessage = GetInvoice();
 		var invoiceDocument = invoiceMessage.Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);
-		
+
 		//Отправка извещения о получении подтверждения оператора для счета-фактуры
 		GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
-		
+
 		//Отправка извещения о получении счета-фактуры
 		SendinvoiceReceipt(invoiceDocument);
-		
+
 		//Отправка извещения о получении подтверждения оператора для извещения о получении счета-фактуры
 		GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
 	}
@@ -438,7 +438,7 @@ SDK
 		};
 		return Api.GenerateInvoiceCorrectionRequestXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, invoiceCorrectionRequestInfo);
 	}
-	
+
 	//Отправка уведомления об уточнении счета-фактуры
 	public static void SendInvoiceCorrectionRequest(Document invoiceDocument)
 	{
@@ -463,7 +463,7 @@ SDK
 		};
 		Api.PostMessagePatch(AuthTokenCert, messagePatchToPost);
 	}
-	
+
 	public static void Main()
 	{
 		var invoiceDocument = GetInvoice().Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);;
