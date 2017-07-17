@@ -3,30 +3,55 @@
 
 Для упрощения работы с API существует SDK (C#/C++/Java/COM), скрывающий детали взаимодействия по HTTP и позволяющий работать с API через набор функций.
 
-HTTP-интерфейс
---------------
+Генерация СФ
+-------------
 
 .. toctree::
-   :name: toc3
+   :name: invoiceGeneration
    :maxdepth: 1
    :titlesonly:
+   :glob:
 
    http/CanSendInvoice
-   http/GenerateInvoiceXml
-   http/GenerateInvoiceCorrectionRequestXml
+   http/utd/GenerateUniversalTransferDocumentXmlForSeller
    http/GenerateInvoiceDocumentReceiptXml
    http/GetInvoiceCorrectionRequestInfo
-   http/ParseInvoiceXml
+
+Отправка СФ
+-----------
+
+.. toctree::
+   :name: invoiceSign
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   http/utd/ExtendedSignerDetails
+   http/PrepareDocumentsToSign
+   http/PostMessage
+   http/PostMessagePatch
+
+Парсинг СФ
+----------
+
+.. toctree::
+   :name: invoiceParsing
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   http/utd/ParseUniversalTransferDocumentSellerTitleXml
+   http/utd/ParseUniversalCorrectionDocumentSellerTitleXml
 
 Структуры данных
 ----------------
 
 .. toctree::
-   :name: toc4
+   :name: invoceStruct
    :maxdepth: 1
    :titlesonly:
+   :glob:
 
-   proto/InvoiceCorrectionInfo
-   proto/InvoiceCorrectionRequestInfo
-   proto/InvoiceDocumentMetadata
-   proto/InvoiceInfo
+   proto/utd/*
+   proto/PrepareDocumentsToSignRequest
+   proto/PrepareDocumentsToSignResponse

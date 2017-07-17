@@ -15,27 +15,25 @@
 Формирование счета-фактуры
 --------------------------
 
-Если на стороне интеграционного решения не предусмотрено функциональности для формирования XML-документов, соответствующих утвержденным форматам, то продавец может сгенерировать СФ/ИСФ/КСФ/ИКСФ, используя команду :doc:`../http/GenerateInvoiceXml`.
+Если на стороне интеграционного решения не предусмотрено функциональности для формирования XML-документов, соответствующих утвержденным форматам, то продавец может сгенерировать СФ/ИСФ/КСФ/ИКСФ, используя команду :doc:`../http/utd/GenerateUniversalTransferDocumentXmlForSeller`.
 
-Для формирования СФ/ИСФ/КСФ/ИКСФ в GET-параметр ``invoiceType`` нужно передать значение ``Invoice``.
-	   
 В теле запроса должны содержаться данные для изготовления СФ/ИСФ/КСФ/ИКСФ:
-	
-	-  в виде сериализованной структуры :doc:`../proto/InvoiceInfo` для типов документов ``Invoice`` или ``InvoiceRevision``
-	
-	-  в виде сериализованной структуры :doc:`../proto/InvoiceCorrectionInfo` для типов документов ``InvoiceCorrection`` или ``InvoiceCorrectionRevision``.
-	   
+
+	-  в виде сериализованной структуры :doc:`../proto/utd/UniversalTransferDocumentSellerTitleInfo` для типов документов ``Invoice`` или ``InvoiceRevision``
+
+	-  в виде сериализованной структуры :doc:`../proto/utd/UniversalCorrectionDocumentSellerTitleInfo` для типов документов ``InvoiceCorrection`` или ``InvoiceCorrectionRevision``.
+
 Например, HTTP-запрос для генерации СФ выглядит следующим образом:
 
 ::
 
-    POST /GenerateInvoiceXml?invoiceType=Invoice HTTP/1.1
+    POST /GenerateUniversalTransferDocumentXmlForSeller HTTP/1.1
     Host: diadoc-api.kontur.ru
     Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
     Content-Length: 1252
     Connection: Keep-Alive
 
-    <Сериализованная структура InvoiceInfo>
+    <Сериализованная структура UniversalTransferDocumentSellerTitleInfo>
 
 В теле ответа содержится XML-файл СФ/ИСФ/КСФ/ИКСФ, построенный на основании данных из запроса.
 
@@ -47,16 +45,16 @@
 
     <XML-файл СФ>
 
-Файл СФ/ИСФ генерируется в соответствии с :download:`XML-схемой <../xsd/ON_SFAKT_1_897_01_05_02_01.xsd>`, которой должны удовлетворять XML-счета-фактуры, согласно приказу ФНС.
+Файл СФ/ИСФ генерируется в соответствии с :download:`XML-схемой <../xsd/ON_SCHFDOPPR_1_995_01_05_01_02.xsd>`, которой должны удовлетворять XML-счета-фактуры, согласно приказу ФНС.
 
-Файл КСФ/ИКСФ генерируется в соответствии с другой утвержденной ФНС :download:`XML-схемой <../xsd/ON_KORSFAKT_1_911_01_05_02_01.xsd>`. 
+Файл КСФ/ИКСФ генерируется в соответствии с другой утвержденной ФНС :download:`XML-схемой <../xsd/ON_KORSCHFDOPPR_1_996_01_05_01_01.xsd>`.
 
 Имя файла СФ/ИСФ/КСФ/ИКСФ (формат которого также определяет приказ ФНС) возвращается в стандартном HTTP-заголовке ``Content-Disposition``.
 
 Отправка счета-фактуры
 ----------------------
 
-После того, как у вас есть XML-файл СФ/ИСФ/КСФ/ИКСФ, его нужно отправить с помощью команды :doc:`../http/PostMessage`. 
+После того, как у вас есть XML-файл СФ/ИСФ/КСФ/ИКСФ, его нужно отправить с помощью команды :doc:`../http/PostMessage`.
 
 Для этого нужно подготовить структуру :doc:`../proto/MessageToPost` следующим образом:
 
@@ -67,9 +65,9 @@
 -  для передачи XML-файла СФ/ИСФ/КСФ/ИКСФ нужно использовать атрибут *Invoices*, описываемый структурой *XmlDocumentAttachment*
 
 	-  внутри структуры *XmlDocumentAttachment* находится вложенная структура *SignedContent*,
-	
+
 	-  сам XML-файл нужно передать в атрибут *Content*, подпись продавца в атрибут *Signature*
-	   
+
 Описание структур, используемых при отправке СФ/ИСФ/КСФ/ИКСФ:
 
 .. code-block:: protobuf
@@ -185,11 +183,11 @@
 -  в значение атрибута *MessageId* указываем идентификатор модифицируемого сообщения,
 
 -  для передачи XML-файла извещения нужно использовать атрибут *Receipts*, описываемый структурой *ReceiptAttachment*
-  
+
   -  в поле *ParentEntityId* нужно указать идентификатор (*EntityId*) подтверждения оператора, полученный на предыдущем шаге,
 
   -  внутри структуры *ReceiptAttachment* находится вложенная структура *SignedContent*,
-  
+
   -  сам XML-файл нужно передать в атрибут *Content*, подпись продавца в атрибут *Signature*
 
 .. code-block:: protobuf
@@ -284,9 +282,9 @@ SDK
 	//Для работы с документами в Диадоке необходим авторизационный токен.
 	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
 	public static string AuthTokenCert;
-	
+
 	public static string BoxId = "идентификатор ящика отправителя";
-	
+
 	//Формирование счета-фактуры
 	public static GeneratedFile GenerateInvoiceXml()
 	{
@@ -296,7 +294,7 @@ SDK
 		};
 		return Api.GenerateInvoiceXml(AuthTokenCert, content);
 	}
-		
+
 	//Отправка счета-фактуры
 	public static Message SendInvoiceXml()
 	{
@@ -314,15 +312,15 @@ SDK
 		{
 			FromBoxId = BoxId,
 			ToBoxId = "идентификатор ящика получателя",
-			Invoices = 
-			{ 
-				messageAttachment 
+			Invoices =
+			{
+				messageAttachment
 			}
 		};
 		return Api.PostMessage(AuthTokenCert, messageToPost);
 	}
-	
-	//Получение подтверждения оператора, формирование и отправка извещения о получении 
+
+	//Получение подтверждения оператора, формирование и отправка извещения о получении
 	public static void GetInvoiceConfirmationAndSendReceipt(Message invoiceMessage)
 	{
 		var confirmationEntityId = "";
@@ -332,10 +330,10 @@ SDK
 			if (entity.AttachmentType == AttachmentType.InvoiceConfirmation)
 			{
 				confirmationEntityId = entity.EntityId;
-				break;				
+				break;
 			}
 		}
-		
+
 		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
 		{
 			//Подпись отправителя, см. "Как авторизоваться в системе"
@@ -345,7 +343,7 @@ SDK
 				//Заполняется согласно структуре SignerDetails
 			}
 		});
-		
+
 		var receiptAttachment = new ReceiptAttachment()
 		{
 			ParentEntityId = confirmationEntityId,
@@ -356,7 +354,7 @@ SDK
 				Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
 			}
 		};
-		
+
 		var receiptPatch = new MessagePatchToPost()
 		{
 			BoxId = BoxId,
@@ -369,7 +367,7 @@ SDK
 
 		Api.PostMessagePatch(AuthTokenCert, receiptPatch);
 	}
-	
+
 	//Получение извещения о получении счета-фактуры
 	public static byte[] GetInvoiceReceipt(Message invoiceMessage)
 	{
@@ -380,24 +378,24 @@ SDK
 				entity.ParentEntityId == invoiceMessage.Entities[0].EntityId)
 				receiptEntityId = entity.EntityId;
 		}
-		return Api.GetEntityContent(AuthTokenCert, BoxId, invoiceMessage.MessageId, receiptEntityId); 
+		return Api.GetEntityContent(AuthTokenCert, BoxId, invoiceMessage.MessageId, receiptEntityId);
 	}
-	
+
 	public static void Main()
 	{
 		var invoiceMessage = SendInvoiceXml();
-		
+
 		//Оператор формирует подтверждение в течение нескольких секунд.
 		//Для получения сообщения с подтверждением необходимо вызвать метод GetMessage()
 		var invoiceMessageWithConfirmation = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
-		
+
 		GetInvoiceConfirmationAndSendReceipt(invoiceMessageWithConfirmation);
-		
+
 		//Технический документ можно получить в виде массива байтов.
 		//Для получения сообщения с новыми вложениями необходимо снова вызвать метод GetMessage()
 		var invoiceMessageWithReceipt = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
 		var invoiceMessageWithReceipt = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
-		
+
 		//Технический документ можно получить в виде массива байтов.
 		var invoiceReceipt = GetInvoiceReceipt(invoiceMessageWithReceipt);
 	}
