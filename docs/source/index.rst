@@ -18,10 +18,10 @@
    :maxdepth: 1
    :caption: Общее описание возможностей
 
-   Обзор возможностей API <Overview>   
+   Обзор возможностей API <Overview>
    Возможности для интеграции <IntegrationOptions>
    Модель данных <DataModel>
-   Порядок работы с API <ApiClientOperationPrinciple>   
+   Порядок работы с API <ApiClientOperationPrinciple>
    Управление списком активных контрагентов <Counteragents>
    Дополнительные функции API <MiscellaneousApiFeatures>
 
@@ -30,6 +30,7 @@
    :maxdepth: 1
    :caption: Документооборот
 
+   AttachmentVersion
    Документооборот счетов-фактур <docflows/InvoiceDocflow>
    Документооборот накладных <docflows/Torg12Docflow>
    Документооборот актов <docflows/AktDocflow>
@@ -40,7 +41,7 @@
    :name: examples
    :maxdepth: 1
    :caption: Примеры использования
-   
+
    Как авторизоваться в системе <howto/example_authorization>
    Как отправить счет-фактуру <howto/example_send_invoice>
    Как получить счет-фактуру <howto/example_receive_invoice>
@@ -75,7 +76,7 @@
      :name: tech
      :maxdepth: 1
      :caption: Справочное руководство
-     
+
      http_methods
      protos
      lists
@@ -84,7 +85,7 @@
    :name: others
    :caption: История изменений
    :titlesonly:
-   
+
    ReleaseNotes
 
 .. |image0| image:: _static/diadoc-logo.png

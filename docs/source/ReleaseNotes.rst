@@ -8,7 +8,7 @@ v.1.46 - 23.08.2017
 
 - В структуре данных :doc:`InvoiceItemAmountsDiff <proto/InvoiceCorrectionInfo>` поле *Subtotal*, отражающее сумму с учетом налога, теперь является опциональным.
 
-- Появилась вторая версия метода :doc:`ExtendedSignerDetails <http/utd/ExtendedSignerDetails>`, принимающая на вход структуру :doc:`DocumentTitleType <proto/DocumentTitleType>`
+- Появилась вторая версия метода :doc:`ExtendedSignerDetails <http/utd/ExtendedSignerDetailsV2>`, принимающая на вход структуру :doc:`DocumentTitleType <proto/DocumentTitleType>`
 
 
 v.1.44.2 - 13.07.2017
@@ -150,7 +150,7 @@ v1.38 - 23.12.2016
 
 -  парсинг титула покупателя УПД - :doc:`http/utd/ParseUniversalTransferDocumentBuyerTitleXml`
 
--  заполнение дополнительных данных (для УПД и УКД) о подписантах  - :doc:`http/utd/ExtendedSignerDetails`
+-  заполнение дополнительных данных (для УПД и УКД) о подписантах  - :doc:`http/utd/ExtendedSignerDetailsV2`
 
 Появились новые структуры в API:
 

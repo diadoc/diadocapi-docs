@@ -26,7 +26,7 @@
    :titlesonly:
    :glob:
 
-   http/utd/ExtendedSignerDetails
+   http/utd/ExtendedSignerDetailsV2
    http/PrepareDocumentsToSign
    http/PostMessage
    http/PostMessagePatch
