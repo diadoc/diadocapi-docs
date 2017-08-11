@@ -66,7 +66,7 @@ InvoiceCorrectionInfo
         optional string Excise = 1;                   // акциз
         optional string SubtotalWithVatExcluded = 2;  // сумма без учета налога
         optional string Vat = 3;                      // сумма налога
-        required string Subtotal = 4;                 // сумма с учетом налога
+        optional string Subtotal = 4;                 // сумма с учетом налога
     }
         
 
