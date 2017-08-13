@@ -89,11 +89,11 @@ Entity
 
    -  *Attachment* (файл-вложение в сообщении),
    
-   -  *Signature* (ЭП под вложенеим).
+   -  *Signature* (ЭП под вложением).
 
 -  *EntityId* - уникальный идентификатор сущности.
 
--  *ParentEntityId* - идентификатор родительской сущности. Например, для сущности *Signature* это будет идентификатор соответсвующей сущности *Attachment*.
+-  *ParentEntityId* - идентификатор родительской сущности. Например, для сущности *Signature* это будет идентификатор соответствующей сущности *Attachment*.
 
 -  *AttachmentType* определяет тип вложения (имеет смысл только для сущностей типа *Attachment*), возможные варианты:
 
@@ -189,7 +189,7 @@ Entity
    
    -  Для сущностей типа *Attachment/Nonformalized*, *Attachment/ProformaInvoice*, *Attachment/Torg12*, *Attachment/AcceptanceCertificate*, *Attachment/StructuredData*, *Attachment/PriceList* - это просто двоичное содержимое исходного файла,
    
-   -  Сущности типа *Attachment* с типами вложений *Invoice*, *InvoiceRevision*, *InvoiceCorrection*, *InvoiceCorrectionRevision*, *InvoiceReceipt*, *InvoiceConfirmation*, *InvoiceCorrectionRequest* представляют собой XML-файлы, которыми продавец и покупатель обмениваются в ходе выставления/получения электронных счетов-фактур согласно порядка, утвержденного Минфином России,
+   -  Сущности типа *Attachment* с типами вложений *Invoice*, *InvoiceRevision*, *InvoiceCorrection*, *InvoiceCorrectionRevision*, *InvoiceReceipt*, *InvoiceConfirmation*, *InvoiceCorrectionRequest* представляют собой XML-файлы, которыми продавец и покупатель обмениваются в ходе выставления/получения электронных счетов-фактур согласно порядку, утвержденному Минфином России,
    
    -  Сущности типа *Attachment* с типами вложений *XmlTorg12*, *XmlTorg12BuyerTitle*, *XmlAcceptanceCertificate*, *XmlAcceptanceCertificateBuyerTitle* представляют собой XML-файлы накладных и актов в формате, утвержденном ФНС России,
    
@@ -201,7 +201,7 @@ Entity
    
    -  Содержимое сущности типа *Attachment/RoamingNotification* представляет собой сериализованную в протобуфер структуру *RoamingNotification*,
    
-   -  Для сущностей типа *Attachment* и типов вложениий *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial*, *ResolutionRouteAssignment*, *ResolutionRouteRemoval* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8,
+   -  Для сущностей типа *Attachment* и типов вложений *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial*, *ResolutionRouteAssignment*, *ResolutionRouteRemoval* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8,
    
    -  Наконец, у сущности типа *Attachment/SignatureVerificationReport* массив байтов Content.Data представляет собой сериализованную в протобуфер структуру *SignatureVerificationResult*.
 
@@ -233,4 +233,4 @@ Entity
 
 -  *ResolutionRouteRemovalInfo* - информация о снятии документа с маршрута согласования в виде структуры данных :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`.
 
-- *AttachmentVersion* - информация о версии XSD схемы, в соотвествии с которой сформирована данная сущность.
+- *AttachmentVersion* - информация о версии XSD схемы, в соответствии с которой сформирована данная сущность.
