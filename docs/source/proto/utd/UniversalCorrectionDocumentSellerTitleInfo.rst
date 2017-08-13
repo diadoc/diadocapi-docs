@@ -83,7 +83,7 @@ UniversalCorrectionDocumentSellerTitleInfo
 
 При заполнении структуры *UniversalCorrectionDocumentSellerTitleInfo* нужно иметь в виду:
 
--  Первичные документы, к котором выставляются корректировачные документы заполняется в виду структуры *InvoiceForCorrectionInfo*,
+-  Первичные документы, к котором выставляются корректировочные документы заполняется в виде структуры *InvoiceForCorrectionInfo*,
 
 -  Реквизиты продавца (*UniversalCorrectionDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalCorrectionDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
 
