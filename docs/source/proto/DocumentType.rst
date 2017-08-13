@@ -47,13 +47,13 @@ DocumentType
 
 -  *Torg12* - товарная накладная ТОРГ-12.
 
--  *AcceptanceCertificate* - акт о выполении работ / оказании услуг.
+-  *AcceptanceCertificate* - акт о выполнении работ / оказании услуг.
 
 -  *ProformaInvoice* - счет на оплату.
 
 -  *XmlTorg12* - товарная накладная ТОРГ-12 в XML-формате.
 
--  *XmlAcceptanceCertificate* - акт о выполении работ / оказании услуг в XML-формате.
+-  *XmlAcceptanceCertificate* - акт о выполнении работ / оказании услуг в XML-формате.
 
 -  *PriceList* - ценовой лист.
 
