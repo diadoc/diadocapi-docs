@@ -15,7 +15,7 @@ UniversalTransferDocumentSellerTitleInfo
         optional ExtendedOrganizationInfo Consignee = 8; // грузополучатель //ГрузПолуч
         repeated ExtendedSigner Signers = 9;        // подписант // Подписант
         repeated PaymentDocumentInfo PaymentDocuments = 10; // платежно-расчетные документы // СвПРД
-        optional InvoiceTable InvoiceTable = 11;            // Сведения таблицы счет фактуры // ТаблСчФакт
+        optional InvoiceTable InvoiceTable = 11;            // Сведения таблицы счета-фактуры // ТаблСчФакт
         required string Currency = 12;                      // валюта (код) // КодОКВ
         optional string CurrencyRate = 13;                  // Курс валюты // КурсВал
         optional string RevisionDate = 14;                  // дата ИСФ (обязательно при формировании UniversalTransferDocumentSellerTitleRevision) // ДатаИспрСчФ
@@ -111,24 +111,24 @@ UniversalTransferDocumentSellerTitleInfo
 
     message  Waybill {
         required  string TransferDocumentNumber = 1; // Номер транспортной накладной // НомерТранНакл
-        required  string TransferDocumentDate = 2;   // Дата траспортной накладной // ДатаТранНакл
+        required  string TransferDocumentDate = 2;   // Дата транспортной накладной // ДатаТранНакл
     }
 
     message Employee {
         required string EmployeePosition = 1;   // Должность // Должность
         optional string EmployeeInfo = 2;       // Иные сведения, идентифицирующие физическое лицо // ИныеСвед
-        optional string EmployeeBase = 3;       // Основание полномочий предстваителя // ОснПолн
+        optional string EmployeeBase = 3;       // Основание полномочий представителя // ОснПолн
         required string TransferSurname = 4;    // Фамилия //Фамилия
         required string TransferFirstName = 5;  // Имя //Имя
         optional string TransferPatronymic = 6; // Отчество //Отчество
     }
 
     message OtherIssuer {
-        optional string TransferEmployeePosition = 1; // Должность предстваителя организации // Должность //если заполнено - формируется структура «ПредОргПер», если не заполнено – «ФЛПер»
+        optional string TransferEmployeePosition = 1; // Должность представителя организации // Должность //если заполнено - формируется структура «ПредОргПер», если не заполнено – «ФЛПер»
         optional string TransferEmployeeInfo = 2;     // Иные сведения, идентифицирующие физическое лицо // ИныеСвед
         optional string TransferOrganizationName = 3; //Наименование организации, которой доверена передача // НаимОргПер
         optional string TransferOrganizationBase = 4; // Основание, по которому организации доверена передача // ОснДоверОргПер
-        optional string TransferEmployeeBase = 5;     //Основание полномочий предстваителя // ОснПолнПредПер (ОснДоверФЛ)
+        optional string TransferEmployeeBase = 5;     //Основание полномочий представителя // ОснПолнПредПер (ОснДоверФЛ)
         required string TransferSurname = 6;    //Фамилия //Фамилия
         required string TransferFirstName = 7;  //Имя //Имя
         optional string TransferPatronymic = 8; //Отчество //Отчество
@@ -163,4 +163,4 @@ UniversalTransferDocumentSellerTitleInfo
 
 -  Если не указан код валюты *UniversalTransferDocumentSellerTitleInfo.Currency*, по умолчанию будет использоваться код 643 (Российский рубль).
 
--  Коды единиц измерения *ExtendedInvoiceItem.Unit*, коды стран происхождения товара *InvoiceItem.CountriesOfOrigin*, а также коды иностранных госудраств *ForeignAddress.Country* можно указывать в буквенном формате, тогда Диадок предпримет попытку сконвертироваить их в соответствующие числовые коды.
+-  Коды единиц измерения *ExtendedInvoiceItem.Unit*, коды стран происхождения товара *InvoiceItem.CountriesOfOrigin*, а также коды иностранных государств *ForeignAddress.Country* можно указывать в буквенном формате, тогда Диадок предпримет попытку сконвертировать их в соответствующие числовые коды.
