@@ -105,7 +105,7 @@ MessagePatchToPost
 
 -  *ResolutionRequestDenialCancellations* - список действий, отменяющих отказы от запросов подписей. При выполнении таких действий исходные запросы на подпись восстанавливаются. Каждое действие представляется структурой :doc:`ResolutionRequestDenialCancellationAttachment <ResolutionRequestDenial>`
 
--  *RevocationRequests* - список предложении об аннулировании документов. Каждое предложение представляется структурой *RevocationRequestAttachment*.
+-  *RevocationRequests* - список предложений об аннулировании документов. Каждое предложение представляется структурой *RevocationRequestAttachment*.
 
 -  *XmlSignatureRejections* - список действий по отказу от предложений об аннулировании, а также действий по отказу от подписи документов. Каждый элемент представляется структурой *XmlSignatureRejectionAttachment*.
 
@@ -115,7 +115,7 @@ MessagePatchToPost
 
 -  *ResolutionRouteAssignments* - список операций по постановке документов на маршрут согласования. Каждый элемент представляется структурой *ResolutionRouteAssignment*.
 
--  *ResolutionRouteRemovals* - список операция по снятию документов с маршрута согласования. Каждый элемент прежставляется структурой *ResolutionRouteRemoval*.
+-  *ResolutionRouteRemovals* - список операция по снятию документов с маршрута согласования. Каждый элемент представляется структурой *ResolutionRouteRemoval*.
 
 Структура данных *ReceiptAttachment* представляет одно извещение о получении документа в отправляемом патче:
 

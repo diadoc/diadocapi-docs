@@ -19,11 +19,11 @@ HTTP метод: **POST**
 
 В теле ответа содержится XML-файл, построенный на основании данных из запроса.
 
-Если стуктура :doc:`../../proto/utd/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УПД:
+Если структура :doc:`../../proto/utd/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УПД:
 
 -  файл изготавливается в соответствии со :download:`XSD-схемой <../../xsd/ON_SCHFDOPPOK_1_995_02_05_01_02.xsd>`,
 
-Если стуктура :doc:`../../proto/utd/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УКД:
+Если структура :doc:`../../proto/utd/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УКД:
 
 -  файл изготавливается в соответствии со :download:`XSD-схемой <../../xsd/ON_KORSCHFDOPPOK_1_996_02_05_01_01.xsd>`,
 

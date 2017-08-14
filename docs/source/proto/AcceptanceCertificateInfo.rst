@@ -59,7 +59,7 @@ AcceptanceCertificateInfo
 
 -  Реквизиты исполнителя (*AcceptanceCertificateSellerTitleInfo.Seller*) заполняются в виде структуры данных :doc:`DiadocOrganizationInfo <OrganizationInfo>`;
 
--  Реквизиты заказчика (*AcceptanceCertificateSellerTitleInfo.Buyer*) заполняются в виде структура данных :doc:`DocflowParticipant <OrganizationInfo>`;
+-  Реквизиты заказчика (*AcceptanceCertificateSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`DocflowParticipant <OrganizationInfo>`;
 
 -  Реквизиты подписанта акта *AcceptanceCertificateSellerTitleInfo.Signer* заполняются в виде структуры данных :doc:`Signer`;
 

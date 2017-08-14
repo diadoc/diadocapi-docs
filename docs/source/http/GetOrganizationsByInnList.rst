@@ -17,7 +17,7 @@ HTTP метод: **POST**
 
 В теле ответа содержится структура :doc:`GetOrganizationsByInnListResponse <../proto/GetOrganizationsByInnListRequest>`
 
-Если при вызове метода не передан параметр строки запроса *myOrgId*, то в теле ответа возравщается структура :doc:`GetOrganizationsByInnListResponse <../proto/GetOrganizationsByInnListRequest>`, где для вложенной структуры  :doc:`OrganizationWithCounteragentStatus <../proto/GetOrganizationsByInnListRequest>` значения поля *CounteragentStatus* всегда будет равно значению по умолчанию - *UnknownCounteragentStatus*.
+Если при вызове метода не передан параметр строки запроса *myOrgId*, то в теле ответа возвращается структура :doc:`GetOrganizationsByInnListResponse <../proto/GetOrganizationsByInnListRequest>`, где для вложенной структуры  :doc:`OrganizationWithCounteragentStatus <../proto/GetOrganizationsByInnListRequest>` значения поля *CounteragentStatus* всегда будет равно значению по умолчанию - *UnknownCounteragentStatus*.
 
 Возможные HTTP-коды возврата:
 

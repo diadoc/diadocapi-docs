@@ -20,7 +20,7 @@ HTTP Метод: **GET**
 .. code-block:: protobuf
 
 	{
-		NextBatchKey =  "next_batch_key",  // идентификатор следущей пачки уведомлений для подписания
+		NextBatchKey =  "next_batch_key",  // идентификатор следующей пачки уведомлений для подписания
                 SignedReceiptsCount = 10 // кол-во подписанных уведомлений
 	}
 
