@@ -13,12 +13,12 @@ MessagePatchToPost
         repeated ReceiptAttachment XmlTorg12BuyerTitles = 7;
         repeated ReceiptAttachment XmlAcceptanceCertificateBuyerTitles = 8;
         repeated ResolutionAttachment Resolutions = 9;
-        repeated ResolutionRequestAttachment ResolutionRequests = 10;
-        repeated ResolutionRequestCancellationAttachment ResolutionRequestCancellations = 11;
-        repeated ResolutionRequestDenialAttachment ResolutionRequestDenials = 12;
-        repeated ResolutionRequestDenialCancellationAttachment ResolutionRequestDenialCancellations = 13;
-        repeated RevocationRequestAttachment RevocationRequests = 14;
-        repeated XmlSignatureRejectionAttachment XmlSignatureRejections = 15;
+        repeated ResolutionRequest ResolutionRequests = 10;
+        repeated ResolutionRequestCancellation ResolutionRequestCancellations = 11;
+        repeated ResolutionRequestDenial ResolutionRequestDenials = 12;
+        repeated ResolutionRequestDenialCancellation ResolutionRequestDenialCancellations = 13;
+        repeated RevocationRequest RevocationRequests = 14;
+        repeated XmlSignatureRejection XmlSignatureRejections = 15;
         repeated CustomDataPatch CustomDataPatches = 16;
         repeated ResolutionRouteAssignment ResolutionRouteAssignments = 17;
         repeated SignatureVerification SignatureVerifications = 18;
@@ -54,12 +54,12 @@ MessagePatchToPost
         required SignedContent SignedContent = 2;
     }
 
-    message RevocationRequestAttachment {
+    message RevocationRequest {
         required string ParentEntityId = 1;
         required SignedContent SignedContent = 2;
     }
 
-    message XmlSignatureRejectionAttachment {
+    message XmlSignatureRejection {
         required string ParentEntityId = 1;
         required SignedContent SignedContent = 2;
     }
@@ -97,17 +97,17 @@ MessagePatchToPost
 
 -  *Resolutions* - список действий по согласованию к документам сообщения, к которому относится патч. Каждое действие является структурой :doc:`ResolutionAttachment <Resolution>`.
 
--  *ResolutionRequests* - список запросов на согласование (или подпись) документа. Каждый запрос представляется структурой :doc:`ResolutionRequestAttachment <ResolutionRequest>`
+-  *ResolutionRequests* - список запросов на согласование (или подпись) документа. Каждый запрос представляется структурой :doc:`ResolutionRequest <ResolutionRequest>`
 
--  *ResolutionRequestCancellations* - список действий, отменяющих отправленные ранее запросы на согласование документа. Каждое действие представляется структурой :doc:`ResolutionRequestCancellationAttachment <ResolutionRequest>`
+-  *ResolutionRequestCancellations* - список действий, отменяющих отправленные ранее запросы на согласование документа. Каждое действие представляется структурой :doc:`ResolutionRequestCancellation <ResolutionRequest>`
 
--  *ResolutionRequestDenials* - список действий по отказу от запроса подписи. Отказ предназначен для аннулирования (со стороны получателя запроса) ошибочного запроса на подпись, отправленного в рамках процесса согласования. Каждый отказ от запроса представляется структурой :doc:`ResolutionRequestDenialAttachment <ResolutionRequestDenial>`
+-  *ResolutionRequestDenials* - список действий по отказу от запроса подписи. Отказ предназначен для аннулирования (со стороны получателя запроса) ошибочного запроса на подпись, отправленного в рамках процесса согласования. Каждый отказ от запроса представляется структурой :doc:`ResolutionRequestDenial <ResolutionRequestDenial>`
 
--  *ResolutionRequestDenialCancellations* - список действий, отменяющих отказы от запросов подписей. При выполнении таких действий исходные запросы на подпись восстанавливаются. Каждое действие представляется структурой :doc:`ResolutionRequestDenialCancellationAttachment <ResolutionRequestDenial>`
+-  *ResolutionRequestDenialCancellations* - список действий, отменяющих отказы от запросов подписей. При выполнении таких действий исходные запросы на подпись восстанавливаются. Каждое действие представляется структурой :doc:`ResolutionRequestDenialCancellation <ResolutionRequestDenial>`
 
--  *RevocationRequests* - список предложений об аннулировании документов. Каждое предложение представляется структурой *RevocationRequestAttachment*.
+-  *RevocationRequests* - список предложений об аннулировании документов. Каждое предложение представляется структурой *RevocationRequest*.
 
--  *XmlSignatureRejections* - список действий по отказу от предложений об аннулировании, а также действий по отказу от подписи документов. Каждый элемент представляется структурой *XmlSignatureRejectionAttachment*.
+-  *XmlSignatureRejections* - список действий по отказу от предложений об аннулировании, а также действий по отказу от подписи документов. Каждый элемент представляется структурой *XmlSignatureRejection*.
 
 -  *CustomDataPatches* - список операций по изменению пользовательских данных у документов в исходном сообщении. Каждый элемент представляется структурой :doc:`CustomDataPatch <CustomDataPatch>`.
 
@@ -135,13 +135,13 @@ MessagePatchToPost
 
 -  *SignedContent* - текст причины отказа вместе с ЭП под ним в виде структуры :doc:`SignedContent`. Текст причины отказа должен быть записан в поле SignedContent.Content в кодировке UTF-8.
 
-Структура данных *RevocationRequestAttachment* представляет одно предложение об аннулировании документа в отправляемом патче:
+Структура данных *RevocationRequest* представляет одно предложение об аннулировании документа в отправляемом патче:
 
 -  *ParentEntityId* - идентификатор документа, к которому относится данное предложение. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре :doc:`Entity <Entity message>`).
 
 -  *SignedContent* - содержимое файла предложения об аннулировании вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
 
-Структура данных *XmlSignatureRejectionAttachment* представляет одно действие по отказу от предложения об аннулировании документа, либо по отказу от подписи документа:
+Структура данных *XmlSignatureRejection* представляет одно действие по отказу от предложения об аннулировании документа, либо по отказу от подписи документа:
 
 -  *ParentEntityId* - идентификатор предложения об аннулировании, либо документа, к которому относится данное действие. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре :doc:`Entity <Entity message>`).
 
