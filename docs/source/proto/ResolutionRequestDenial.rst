@@ -8,12 +8,12 @@ ResolutionRequestDenial
         optional string InitialRequestId = 2;
     }
 
-    message ResolutionRequestDenialAttachment {
+    message ResolutionRequestDenial {
         required string InitialResolutionRequestId = 1;
         optional string Comment = 2;
     }
 
-    message ResolutionRequestDenialCancellationAttachment {
+    message ResolutionRequestDenialCancellation {
         required string InitialResolutionRequestDenialId = 1;
     }
         
@@ -24,12 +24,12 @@ ResolutionRequestDenial
 
 -  InitialRequestId - идентификатор запроса, по которому было отказано.
 
-Структура данных ResolutionRequestDenialAttachment содержит информацию об отказе от запроса подписи к документу в методе :doc:`../http/PostMessagePatch`.
+Структура данных ResolutionRequestDenial содержит информацию об отказе от запроса подписи к документу в методе :doc:`../http/PostMessagePatch`.
 
 -  InitialResolutionRequestId - идентификатор запроса на подпись, для которого формируется отказ.
 
 -  Comment - комментарий к отказу от запроса подписи к документу.
 
-Структура данных ResolutionRequestDenialCancellationAttachment содержит информацию об отмене отказа от запроса подписи к документу в методе :doc:`../http/PostMessagePatch`.
+Структура данных ResolutionRequestDenialCancellation содержит информацию об отмене отказа от запроса подписи к документу в методе :doc:`../http/PostMessagePatch`.
 
 -  InitialResolutionRequestDenialId - идентификатор отменяемого отказа от запроса подписи к документу.
