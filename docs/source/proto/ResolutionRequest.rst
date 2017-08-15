@@ -24,7 +24,7 @@ ResolutionRequest
         ApprovementSignatureRequest = 2;
     }
 
-    message ResolutionRequestAttachment {
+    message ResolutionRequest {
         required string InitialDocumentId = 1;
         required ResolutionRequestType Type = 2;
         optional string TargetUserId = 3;
@@ -32,7 +32,7 @@ ResolutionRequest
         optional string Comment = 5;
     }
 
-    message ResolutionRequestCancellationAttachment {
+    message ResolutionRequestCancellation {
         required string InitialResolutionRequestId = 1;
     }
         
@@ -65,7 +65,7 @@ ResolutionRequest
 -  *TargetUserId* - идентификатор пользователя, которому направлен запрос.
 
 
-Структура данных *ResolutionRequestAttachment* содержит информацию для отправки запроса на согласование (или подпись) документа в методе :doc:`../http/PostMessagePatch`
+Структура данных *ResolutionRequest* содержит информацию для отправки запроса на согласование (или подпись) документа в методе :doc:`../http/PostMessagePatch`
 
 -  *Type* - тип запроса на согласование.
 
