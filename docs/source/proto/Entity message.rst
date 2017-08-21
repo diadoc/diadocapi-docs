@@ -24,6 +24,7 @@ Entity
         optional string AttachmentVersion = 21;
         optional ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22; // заполняется только для вложений с типом AttachmentType.ResolutionRouteAssignment
         optional ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23; // заполняется только для вложений с типом AttachmentType.ResolutionRouteRemoval
+        optional CancellationInfo CancellationInfo = 24;  // заполняется только для вложений с типом AttachmentType.Cancellation
     }
 
     enum EntityType {
@@ -80,7 +81,9 @@ Entity
         MoveDocument = 65;
         ResolutionRouteAssignment = 66;
         ResolutionRouteRemoval = 67;
-        //Неизвестные типы должны обрабатываться как Nonformalized
+        // 68 - Зарезервировано
+        Cancellation = 69;
+        // Неизвестные типы должны обрабатываться как Nonformalized
     }
 
 Структура данных *Entity* представляет одну сущность, входящую в сообщение или в дополнение к сообщению:
@@ -179,6 +182,8 @@ Entity
 
    -  *ResolutionRouteRemoval* (информация о снятии документа с маршрута согласования).
 
+   -  *Cancellation* (информация об отмене сущности, которая указана родительской по отношению к данной).
+
 -  *Content* - содержимое сущности (подробнее см. описание структуры :doc:`Content`).
    
    -  Поле Content.Size определяет размер содержимого в байтах,
@@ -229,8 +234,10 @@ Entity
 
 -  *IsEncryptedContent* - флаг, указывающий зашифрован ли контент документа.
 
+- *AttachmentVersion* - информация о версии XSD схемы, в соответствии с которой сформирована данная сущность.
+
 -  *ResolutionRouteAssignmentInfo* - информация о запуске документа по маршруту согласования в виде структуры данных :doc:`ResolutionRouteAssignmentInfo <ResolutionRouteInfo>`.
 
 -  *ResolutionRouteRemovalInfo* - информация о снятии документа с маршрута согласования в виде структуры данных :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`.
 
-- *AttachmentVersion* - информация о версии XSD схемы, в соответствии с которой сформирована данная сущность.
+- *CancellationInfo* - информация об отмене сущности в виде структуры данных :doc:`CancellationInfo <CancellationInfo>`. Отменённой является сущность, которая указана родительской по отношению к данной. Например, это может быть идентификатор запроса на согласование.
