@@ -8,7 +8,7 @@ v.1.46 - 23.08.2017
 
 - В структуре данных :doc:`InvoiceItemAmountsDiff <proto/InvoiceCorrectionInfo>` поле *Subtotal*, отражающее сумму с учетом налога, теперь является опциональным.
 
-- Появилась вторая версия метода :doc:`ExtendedSignerDetails <http/utd/ExtendedSignerDetails>`, принимающая на вход структуру :doc:`ExtendedSignerDetails <proto/utd/ExtendedSignerDetails>`
+- Появилась вторая версия метода :doc:`ExtendedSignerDetails <http/utd/ExtendedSignerDetails>`, принимающая на вход структуру :doc:`DocumentTitleType <proto/DocumentTitleType>`
 
 
 v.1.44.2 - 13.07.2017
