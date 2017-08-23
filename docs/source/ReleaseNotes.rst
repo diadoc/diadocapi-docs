@@ -1,12 +1,14 @@
 ﻿История изменений API
 =====================
-v.1.46 - 11.08.2017
+v.1.46 - 23.08.2017
 ---------------------
-Появилась новая структура данных :doc:`SignatureInfo <proto/SignatureInfo>`, содержащая информацию о подписи и сертификате.
-Добавлен метод :doc:`GetSignatureInfo <http/GetSignatureInfo>`, получающий на вход идентификаторы подписи и возвращающий данные в структуре :doc:`SignatureInfo <proto/SignatureInfo>`.
+- Появилась новая структура данных :doc:`SignatureInfo <proto/SignatureInfo>`, содержащая информацию о подписи и сертификате.
 
-В структуре данных :doc:`InvoiceItemAmountsDiff <proto/InvoiceCorrectionInfo>` поле *Subtotal*, отражающее сумму с учетом налога, теперь является опциональным.
+- Добавлен метод :doc:`GetSignatureInfo <http/GetSignatureInfo>`, получающий на вход идентификаторы подписи и возвращающий данные в структуре :doc:`SignatureInfo <proto/SignatureInfo>`.
 
+- В структуре данных :doc:`InvoiceItemAmountsDiff <proto/InvoiceCorrectionInfo>` поле *Subtotal*, отражающее сумму с учетом налога, теперь является опциональным.
+
+- Появилась вторая версия метода :doc:`ExtendedSignerDetails <http/utd/ExtendedSignerDetails>`, принимающая на вход структуру :doc:`ExtendedSignerDetails <proto/utd/ExtendedSignerDetails>`
 
 
 v.1.44.2 - 13.07.2017
