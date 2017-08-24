@@ -38,6 +38,7 @@ HTTP-интерфейс
    http/ParseRevocationRequestXml
    http/ParseSignatureRejectionXml
    http/ParseTorg12SellerTitleXml
+   http/ParseTorg12BuyerTitleXml
    http/PrepareDocumentsToSign
    http/Recognize
    http/RecycleDraft
@@ -89,6 +90,7 @@ HTTP-интерфейс
    proto/Signer
    proto/StructuredDataAttachment
    proto/Torg12Info
+   proto/TovTorgInfo
    proto/Torg13Attachment
    proto/TrustConnectionRequestAttachment
    proto/UnilateralDocumentMetadata
