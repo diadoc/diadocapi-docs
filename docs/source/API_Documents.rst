@@ -35,6 +35,7 @@ HTTP-интерфейс
    http/GetRecognized
    http/MoveDocuments
    http/ParseAcceptanceCertificateSellerTitleXml
+   http/ParseAcceptanceCertificateBuyerTitleXml
    http/ParseRevocationRequestXml
    http/ParseSignatureRejectionXml
    http/ParseTorg12SellerTitleXml
@@ -56,6 +57,7 @@ HTTP-интерфейс
    :titlesonly:
 
    proto/AcceptanceCertificateAttachment
+   proto/AcceptanceCertificate552Info
    proto/AcceptanceCertificateInfo
    proto/BasicDocumentAttachment
    proto/BilateralDocumentMetadata
