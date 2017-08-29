@@ -11,7 +11,7 @@ TovTorgInfo
         optional ExtendedOrganizationInfo Consignee = 4;  // Грузополучатель
         optional ExtendedOrganizationInfo Carrier = 5;    // Перевозчик
         repeated ExtendedSigner Signers = 6;              // Подписант
-        repeated TransferBase Bases = 7;                  // Основание 
+        repeated GroundInfo Grounds = 7;                  // Основание 
         required string Currency = 8;                     // Валюта (код) 
         optional string CurrencyRate = 9;                 // Курс валюты 
         required string DocumentDate = 10;                // Дата составления документа о передаче товара
@@ -82,6 +82,13 @@ TovTorgInfo
         optional Employee Employee = 5;               // Работник организации продавца
         optional OtherIssuer OtherIssuer = 6;         // Иное лицо
         repeated AdditionalInfo AdditionalInfos = 7;  // Информационное поле документа
+    }
+
+    message GroundInfo {
+        required string Name = 1;    // Наименование документа - основания
+        optional string Number = 2;  // Номер документа - основания
+        optional string Date = 3;    // Дата документа - основания
+        optional string Info = 4;    // Дополнительные сведения
     }
 
 

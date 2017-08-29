@@ -4,34 +4,33 @@ AcceptanceCertificate552Info
 .. code-block:: protobuf
 
     message AcceptanceCertificate552SellerTitleInfo {
-        required ExtendedOrganizationInfo Seller = 1;                // Исполнитель (продавец услуг)
-        required ExtendedOrganizationInfo Buyer = 2;                 // Заказчик (покупатель услуг)
-        repeated ExtendedSigner Signers = 3;                         // Подписант
-        repeated TransferBase Bases = 4;                             // Основание
-        required string Currency = 5;                                // Валюта (код)
-        optional string CurrencyRate = 6;                            // Курс валюты
-        repeated AcceptanceCertificate552WorkDescription Works = 7;  // описание выполненных работ
-        required string DocumentDate = 8;                            // Дата составления документа о передаче товара
-        optional string DocumentNumber = 9;                          // Номер документа о передаче товара
-        optional string RevisionDate = 10;                           // Дата исправления документа
-        optional string RevisionNumber = 11;                         // Номер исправления документа
-        required string DocumentCreator = 12;                        // Составитель файла информации продавца
-        optional string DocumentCreatorBase = 13;                    // Основание, по которому экономический субъект является составителем файла
-        optional string OperationType = 14;                          // Вид операции
-        optional string OperationTitle = 15;                         // Заголовок содержания операции
-        optional string GovernmentContractInfo = 16;                 // Идентификатор государственного контракта
-        optional AdditionalInfoId AdditionalInfoId = 17;             // Информационное поле документа
-        required string DocumentName = 18;                           // Наименование первичного документа, определенное организацией
-        required AcceptanceCertificate552SellerInfo Info = 19;       // Содержание факта хозяйственной жизни - сведения о передаче результатов работ (о предъявлении оказанных услуг)
+        required ExtendedOrganizationInfo Seller = 1;                     // Исполнитель (продавец услуг)
+        required ExtendedOrganizationInfo Buyer = 2;                      // Заказчик (покупатель услуг)
+        repeated ExtendedSigner Signers = 3;                              // Подписант
+        repeated GroundInfo Grounds = 4;                                  // Основание
+        required string Currency = 5;                                     // Валюта (код)
+        optional string CurrencyRate = 6;                                 // Курс валюты
+        repeated AcceptanceCertificate552WorkDescription Works = 7;       // описание выполненных работ
+        required string DocumentDate = 8;                                 // Дата составления документа о передаче товара
+        optional string DocumentNumber = 9;                               // Номер документа о передаче товара
+        optional string RevisionDate = 10;                                // Дата исправления документа
+        optional string RevisionNumber = 11;                              // Номер исправления документа
+        required string DocumentCreator = 12;                             // Составитель файла информации продавца
+        optional string DocumentCreatorBase = 13;                         // Основание, по которому экономический субъект является составителем файла
+        optional string OperationType = 14;                               // Вид операции
+        optional string OperationTitle = 15;                              // Заголовок содержания операции
+        optional string GovernmentContractInfo = 16;                      // Идентификатор государственного контракта
+        optional AdditionalInfoId AdditionalInfoId = 17;                  // Информационное поле документа
+        required string DocumentName = 18;                                // Наименование первичного документа, определенное организацией
+        required AcceptanceCertificate552TransferInfo TransferInfo = 19;  // Содержание факта хозяйственной жизни - сведения о передаче результатов работ (о предъявлении оказанных услуг)
     }
 
-    message AcceptanceCertificate552BuyerTitleInfo {
-        repeated ExtendedSigner Signers = 1;                         // Подписант
-        required string DocumentCreator = 2;                         // Составитель файла информации продавца
-        optional string DocumentCreatorBase = 3;                     // Основание, по которому экономический субъект является составителем файла
-        optional string OperationType = 4;                           // Вид операции
-        required string DocumentName = 5;                            // Наименование первичного документа, определенное организацией
-        required AcceptanceCertificate552BuyerInfo AccAccepted = 6;  // Сведения о приемке результатов работ (подтверждение факта оказания услуг)
+    message AcceptanceCertificate552TransferInfo { 
+        required string OperationInfo = 1;             // Содержание операции
+        optional string TransferDate = 2;              // Дата передачи результатов работ
+        optional string CreatedThingTransferDate = 3;  // Дата передачи вещи, изготовленной по договору подряда
+        optional string CreatedThingInfo = 4;          // Сведения о передаче
+        repeated AdditionalInfo AdditionalInfos = 5;   // Информационное поле документа
     }
 
     message AcceptanceCertificate552WorkDescription {
@@ -59,20 +58,17 @@ AcceptanceCertificate552Info
         optional string ItemAccountCredit = 13;                // Корреспондирующие счета: кредит
     }
 
-    message AcceptanceCertificate552SellerInfo { 
-        required string OperationInfo = 1;            // Содержание операции
-        optional string TransferDate = 2;             // Дата передачи результатов работ
-        optional string SignatureDate = 3;            // Дата передачи вещи, изготовленной по договору подряда
-        optional string Attorney = 4;                 // Сведения о передаче
-        repeated AdditionalInfo AdditionalInfos = 5;  // Информационное поле документа
-    }
-
-    message AcceptanceCertificate552BuyerInfo {
-        required string OperationInfo = 1;               // Содержание операции
-        optional string TransferDate = 2;                // Дата передачи результатов работ
-        optional string SignatureDate = 3;               // Дата передачи вещи, изготовленной по договору подряда
-        optional string Attorney = 4;                    // Сведения о передаче
-        optional AdditionalInfoId AdditionalInfoId = 5;  // Информационное поле документа
+    message AcceptanceCertificate552BuyerTitleInfo {
+        repeated ExtendedSigner Signers = 1;              // Подписант
+        required string DocumentCreator = 2;              // Составитель файла информации продавца
+        optional string DocumentCreatorBase = 3;          // Основание, по которому экономический субъект является составителем файла
+        optional string OperationType = 4;                // Вид операции
+        required string DocumentName = 5;                 // Наименование первичного документа, определенное организацией
+        required string OperationInfo = 6;                // Содержание операции
+        optional string AcceptDate = 7;                   // Дата приемки результатов работ
+        optional string CreatedThingAcceptDate = 8;       // Дата получения вещи, изготовленной  по договору подряда
+        optional string CreatedThingInfo = 9;             // Сведения о получении
+        optional AdditionalInfoId AdditionalInfoId = 10;  // Информационное поле документа
     }
 
 Структура данных *AcceptanceCertificate552SellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateAcceptanceCertificateXmlForSeller` с параметром `documentVersion=rezru_05_01_01`.
@@ -80,6 +76,8 @@ AcceptanceCertificate552Info
 При заполнении структуры *AcceptanceCertificate552SellerTitleInfo* нужно иметь в виду:
 
 -  Обязательные поля *AcceptanceCertificate552SellerTitleInfo.Seller* и *AcceptanceCertificate552SellerTitleInfo.Buyer* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`ExtendedOrganizationInfo <utd/ExtendedOrganizationInfo>`.
+
+-  Основания задаются в виде структуры данных :doc:`GroundInfo <TovTorgInfo>`.
 
 -  Реквизиты подписантов накладной *AcceptanceCertificate552SellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`utd/ExtendedSigner`.
 
