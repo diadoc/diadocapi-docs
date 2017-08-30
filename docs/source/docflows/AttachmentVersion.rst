@@ -111,7 +111,7 @@
    "Исправление УКД", "UniversalCorrectionDocumentRevision", "- ucd_05_01_01"
 
 .. important::
-  ``AttachmentVersion = UniversalTrnsaferDocument`` для СФ/ИСФ и ``AttachmentVersion = UniversalCorrectionDocument`` для КСФ/ИКСФ считаеются устаревшими. Они будут сконкертированы в новые значения, согласно таблице выше.
+  ``AttachmentVersion = UniversalTrnsaferDocument`` для СФ/ИСФ и ``AttachmentVersion = UniversalCorrectionDocument`` для КСФ/ИКСФ считаеются устаревшими. Они будут сконвертированы в новые значения, согласно таблице выше.
 
 .. csv-table:: Типы и значения AttachmentVersion для неформализованных документов
     :header: "Тип документы", "Структура", "Возможные версии"
