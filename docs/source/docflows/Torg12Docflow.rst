@@ -1,23 +1,22 @@
 Документооборот накладных
 =========================
 
-Процесс обмена электронными накладными в Диадоке реализован с учетом `Приказа ФНС России от 21 марта 2012 № ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=261859>`__.
-
-.. note::
-    Подробнее про электронные накладные можно прочитать `здесь <http://www.diadoc.ru/docs/others/tn>`__
-
 Форматы
 -------
 
-Электронные накладные в Диадоке можно создавать по формату, утвержденному приказом ФНС `от 21 марта 2012 № ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=261859>`__, с учетом внесенных изменений приказом `от 2 февраля 2015 г. N ММВ-7-15/40@ <https://normativ.kontur.ru/document?moduleId=1&documentId=248109>`__.
+.. note::
+    Подробнее про электронные накладные можно прочитать `здесь <https://www.diadoc.ru/docs/forms/first-documents/nakladnaya>`__
 
-В силу приказов `№ ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=261859>`__ и `N ММВ-7-15/40@ <https://normativ.kontur.ru/document?moduleId=1&documentId=248109>`__ электронная товарная накладная может быть в следующем формате:
+Процесс обмена электронными накладными в Диадоке реализован с учетом:
 
--  :download:`XSD-схема титула продавца электронной накладной <../xsd/DP_OTORG12_1_986_00_05_01_02.xsd>`; 
+- `приказа ФНС РФ от 24.03.2016 N ММВ-7-15/155@ <https://www.diadoc.ru/docs/laws/mmb-7-15-155>`__,
 
--  :download:`XSD-схема титула покупателя электронной накладной <../xsd/DP_PDOTPR_1_983_00_01_01_02.xsd>`;
+- `приказа ФНС от 30 ноября 2015 г. N ММВ-7-10/551@ <https://www.diadoc.ru/docs/laws/mmb-7-10-551>`__,
 
-Также, в силу приказа `N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__, утвержден электронный формат универсального передаточного документа УПД. Его можно использовать как первичный документ, подтверждающий совершение хозяйственной операции; 
+- `приказа ФНС России от 21.03.2012 № ММВ-7-6/172@ <https://www.diadoc.ru/docs/laws/prikaz-MMB-7-6-172>`__,
+
+
+В силу приказа `N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__, утвержден электронный формат универсального передаточного документа УПД. Его можно использовать как первичный документ, подтверждающий совершение хозяйственной операции;
 
 -  :download:`XSD-схема формата титула продавца УПД (функция ДОП) <../xsd/ON_SCHFDOPPR_1_995_01_05_01_02.xsd>`;
 
@@ -26,6 +25,32 @@
 -  :download:`XSD-схема формата титула покупателя УПД (функция ДОП) <../xsd/ON_SCHFDOPPOK_1_995_02_05_01_02.xsd>`;
 
     -  используется для титула покупателя электронной накладной,
+
+В силу приказов `N ММВ-7-10/551@ <https://normativ.kontur.ru/document?moduleId=1&documentId=265102&cwi=132>`__ электронная товарная накладная может быть в следующем формате:
+
+  -  :download:`XSD-схема титула продавца электронной накладной <../xsd/DP_TOVTORGPR_1_992_01_05_01_02.xsd>`;
+
+  -  :download:`XSD-схема титула покупателя электронной накладной <../xsd/DP_TOVTORGPOK_1_992_02_05_01_02.xsd>`;
+
+.. important::
+  Приказ `№ ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=261859>`__ считается устаревшим. Работа с данным форматом не рекомендуется.
+
+В силу приказов `№ ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=261859>`__ и `N ММВ-7-15/40@ <https://normativ.kontur.ru/document?moduleId=1&documentId=248109>`__ электронная товарная накладная может быть в следующем формате:
+
+  -  :download:`XSD-схема титула продавца электронной накладной <../xsd/DP_OTORG12_1_986_00_05_01_02.xsd>`;
+
+  -  :download:`XSD-схема титула покупателя электронной накладной <../xsd/DP_PDOTPR_1_983_00_01_01_02.xsd>`;
+
+
+.. csv-table:: Соответствие формата накладных и AttachmentVersion
+   :header: "Структура", "Форматы", "Функция", "AttachmentVersion"
+   :widths: 10, 10, 10, 10
+
+   "XmlTorg12", "- приказ №155", "- ДОП", "- utd_05_01_01"
+   "XmlTorg12", "- приказ №551", "", "- tovtorg_05_01_02"
+   "XmlTorg12", "- приказ №172", "", "- torg12_05_01_01;
+   - torg12_05_01_02"
+
 
 Структуры
 ---------
@@ -43,6 +68,23 @@
 Для формализованного отказа в подписи электронной накладной в Диадоке используется:
 
 -  *XmlSignatureRejection*
+
+Генерация
+---------
+
+Для генерации xml-файлов предусмотрены специальные методы:
+
+.. csv-table:: Соответствие формата накладных и AttachmentVersion
+   :header: "Титул", "Формат", "Геренация", "DocumentVersion"
+   :widths: 10, 10, 10, 10
+
+   "Титул продавца", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForSeller`"
+   "Титул покупателя", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`"
+   "Титул продавца", "Приказ №551", ":doc:`../http/GenerateTorg12XmlForSeller`", "``documentVersion = tovtorg_05_01_02``"
+   "Титул покупателя", "Приказ №551", ":doc:`../http/GenerateTorg12XmlForBuyer`", "``documentVersion = tovtorg_05_01_02``"
+   "Титул продавца", "Приказ №172", ":doc:`../http/GenerateTorg12XmlForSeller`", "``documentVersion = torg12_05_01_02``"
+   "Титул покупателя", "Приказ №172", ":doc:`../http/GenerateTorg12XmlForBuyer`", "``documentVersion = torg12_05_01_02``"
+
 
 Порядок обмена
 --------------
@@ -67,4 +109,3 @@
 
 .. image:: ../_static/img/docflows/scheme-02-torg12-docflow.png
 	:align: center
-
