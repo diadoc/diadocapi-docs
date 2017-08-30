@@ -34,6 +34,7 @@ ResolutionRequest
 
     message ResolutionRequestCancellationAttachment {
         required string InitialResolutionRequestId = 1;
+        optional string Comment = 2;
     }
         
 
@@ -79,6 +80,8 @@ ResolutionRequest
 
 -  *Comment* - комментарий к запросу согласования.
 
-Структура данных *ResolutionRequestCancellation* содержит информацию для отправки отмены запроса на согласование документа в методе :doc:`../http/PostMessagePatch`.
+Структура данных *ResolutionRequestCancellationAttachment* содержит информацию для отправки отмены запроса на согласование документа в методе :doc:`../http/PostMessagePatch`.
 
 -  *InitialResolutionRequestId* - идентификатор отменяемого запроса на согласование.
+
+-  *Comment* - комментарий к отмене запроса на согласование.
