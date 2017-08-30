@@ -41,31 +41,32 @@
    :header: "Веб", "API", "Форматы", "Функция", "Печатная форма"
    :widths: 10, 10, 10, 10, 10
 
-   "СФ", "Invoice", "- приказ №93;
+   "СФ", "Invoice", "- приказ №93
 
-   - приказ №155", "СЧФ", "СФ"
-   "КСФ", "InvoiceCorrection", "- приказ №93;
+   - приказ №155", "- –
+   - СЧФ", "СФ"
+   "КСФ", "InvoiceCorrection", "- приказ №93
 
-   - приказ №189", "КСЧФ", "КСФ"
-   "Накладная", "XmlTorg12", "- приказ №172;
+   - приказ №189", "- –
+   - КСЧФ", "КСФ"
+   "Накладная", "XmlTorg12", "- приказ №172
 
-   - приказ №155;
-   - приказ №551", "-
+   - приказ №155
+   - приказ №551", "- –
    - ДОП
-   - ", "Накаладная"
-   "Акт", "XmlAcceptanceCertificate", "- приказ №172;
+   - –", "Накаладная"
+   "Акт", "XmlAcceptanceCertificate", "- приказ №172
 
-   - приказ №155;
-   - приказ №552", "-
+   - приказ №155
+   - приказ №552", "- –
    - ДОП
-   - ", "Акт"
-   "УПД", "UniversalTransferDocument", "- приказ №155", "- СЧФ,
-   - ДОП,
+   - –", "Акт"
+   "УПД", "UniversalTransferDocument", "- приказ №155", "- СЧФ
+   - ДОП
    - СЧФДОП", "УПД"
-   "УКД", "UniversalCorrectionDocument", "- приказ №189", "- КСЧФ,
-   - ДИС,
+   "УКД", "UniversalCorrectionDocument", "- приказ №189", "- КСЧФ
+   - ДИС
    - КСЧФДИС", "УКД"
-
 
 Возможные форматы
 -----------------
@@ -80,38 +81,38 @@
    :header: "Тип документы", "Структура", "Возможные версии"
    :widths: 10, 10, 10
 
-   "Счет-фактура (СФ)", "Invoice", "- invoice_05_01_01;
-   - invoice_05_01_03;
-   - invoice_05_02_01;
-   - utd_05_01_01;
+   "Счет-фактура (СФ)", "Invoice", "- invoice_05_01_01
+   - invoice_05_01_03
+   - invoice_05_02_01
+   - utd_05_01_01
    - utd_05_01_02"
-   "Исправление СФ", "InvoiceRevision", "- invoice_05_01_03;
-   - invoice_05_02_01;
-   - utd_05_01_01;
+   "Исправление СФ", "InvoiceRevision", "- invoice_05_01_03
+   - invoice_05_02_01
+   - utd_05_01_01
    - utd_05_01_02"
-   "Корректировочный СФ (КСФ)", "InvoiceCorrection", "- invoicecor_05_01_03;
-   - invoicecor_05_02_01;
+   "Корректировочный СФ (КСФ)", "InvoiceCorrection", "- invoicecor_05_01_03
+   - invoicecor_05_02_01
    - ucd_05_01_01"
-   "Исправление КСФ", "InvoiceCorrectionRevision", "- invoicecor_05_01_03;
-   - invoicecor_05_02_01;
+   "Исправление КСФ", "InvoiceCorrectionRevision", "- invoicecor_05_01_03
+   - invoicecor_05_02_01
    - ucd_05_01_01"
-   "Формализованный ТОРГ-12", "XmlTorg12", "- torg12_05_01_01;
-   - torg12_05_01_02;
-   - utd_05_01_01;
+   "Формализованный ТОРГ-12", "XmlTorg12", "- torg12_05_01_01
+   - torg12_05_01_02
+   - utd_05_01_01
    - tovtorg_05_01_02"
-   "Формализованный акт", "XmlAcceptanceCertificate", "- act_05_01_01;
-   - act_05_01_02;
-   - utd_05_01_01;
+   "Формализованный акт", "XmlAcceptanceCertificate", "- act_05_01_01
+   - act_05_01_02
+   - utd_05_01_01
    - rezru_05_01_01"
-   "УПД", "UniversalTransferDocument", "- utd_05_01_01;
+   "УПД", "UniversalTransferDocument", "- utd_05_01_01
    - utd_05_01_02"
-   "Исправление УПД", "UniversalTransferDocumentRevision", "- utd_05_01_01;
+   "Исправление УПД", "UniversalTransferDocumentRevision", "- utd_05_01_01
    - utd_05_01_02"
    "УКД", "UniversalCorrectionDocument", "- ucd_05_01_01"
    "Исправление УКД", "UniversalCorrectionDocumentRevision", "- ucd_05_01_01"
 
 .. important::
-  ``AttachmentVersion = UniversalTrnsaferDocument`` для СФ/ИСФ и ``AttachmentVersion = UniversalCorrectionDocument`` для КСФ/ИКСФ считаеются устаревшими. Они будут сконвертированы в новые значения, согласно таблице выше.
+  ``AttachmentVersion = UniversalTrnsaferDocument`` для СФ/ИСФ и ``AttachmentVersion = UniversalCorrectionDocument`` для КСФ/ИКСФ считаются устаревшими. Они будут сконвертированы в новые значения согласно таблице выше.
 
 .. csv-table:: Типы и значения AttachmentVersion для неформализованных документов
     :header: "Тип документы", "Структура", "Возможные версии"
@@ -130,4 +131,9 @@
     "Накладная", "Torg13", "v1"
     "Детализация", "ServiceDetails", "v1"
     "Доп. соглашение", "SupplementaryAgreement", "v1"
-    "Уведомление МЭС", "MesNotification", "v1"
+
+.. rubric:: Добавление новых версий
+
+При обновление форматов формализованных документов ФНС, в Диадоке будут добавляться новые значения *AttachmentVersion*, соответствующие новым версиям формата.
+
+Интеграционным решениям нужно быть готовыми к тому, что может прийти новое значение *AttachmentVersion*. Рекомендуется уметь обрабатывать такие ситуации.
