@@ -23,7 +23,7 @@ HTTP метод: **POST**
 
 По умолчанию, если вызвать метод *ShelfUpload* и указать параметр *nameOnShelf=xyz*, то физическое имя файла будет *public/xyz*, т.е. публичное. К таким файлам можно получить доступ через :doc:`ShelfDownload`, указав *nameOnShelf=xyz*.
 
-Если вызвать *ShelfUpload* и указать параметр *nameOnShelf=__userId__/xyz*, где *__userId__* - это строковый литерал, то физическое имя файла будет *user_private_files/{userId}/xyz*. *{userId}* возьмется из текущего авторизационного токена. К таким файлам можно получить доступ через :doc:`ShelfDownload`, указав *nameOnShelf=user_private_files/{userId}/xyz*.
+Если вызвать *ShelfUpload* и указать параметр *nameOnShelf=__userId__/xyz*, где *__userId__* - это строковый литерал, то физическое имя файла будет *user_private_files/{userId}/xyz*. *{userId}* возьмется из текущего авторизационного токена. К таким файлам можно получить доступ через :doc:`ShelfDownload`, указав *nameOnShelf=__userId__/xyz*.
 
 Методы :doc:`PostMessage` и :doc:`PostMessagePatch` трактуют переданное имя файла как локальное для пользователя, поэтому дописывают вначале префикс *user_private_files/{userId}*
 
