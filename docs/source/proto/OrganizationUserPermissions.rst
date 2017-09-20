@@ -4,10 +4,10 @@ OrganizationUserPermissions
 .. code-block:: protobuf
 
     enum DocumentAccessLevel {
+        UnknownDocumentAccessLevel = -1;
         DepartmentOnly = 0;
         DepartmentAndSubdepartments = 1;
         AllDocuments = 2;
-        UnknownDocumentAccessLevel = 3;
         SelectedDepartments = 3;
     }
 
