@@ -28,21 +28,21 @@
 
 В силу приказов `N ММВ-7-10/552@ <https://normativ.kontur.ru/document?moduleId=1&documentId=265283&cwi=136>`__ электронный акт может быть в следующем формате:
 
-  -  :download:`XSD-схема титула исполнителя электронного акта <../xsd/DP_REZRUISP_1_990_01_05_01_01.xsd>`;
+-  :download:`XSD-схема титула исполнителя электронного акта <../xsd/DP_REZRUISP_1_990_01_05_01_01.xsd>`;
 
-  -  :download:`XSD-схема титула заказчика электронного акта <../xsd/DP_ZAKTPRM_1_990_00_05_01_02.xsd>`;
+-  :download:`XSD-схема титула заказчика электронного акта <../xsd/DP_REZRUZAK_1_990_02_05_01_01.xsd>`;
 
 В силу приказов `№ ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=261859>`__ и `N ММВ-7-15/40@ <https://normativ.kontur.ru/document?moduleId=1&documentId=248109>`__ электронный акт может быть в следующем формате:
 
 -  :download:`XSD-схема титула исполнителя электронного акта <../xsd/DP_IAKTPRM_1_987_00_05_01_02.xsd>`;
 
--  :download:`XSD-схема титула заказчика электронного акта <../xsd/DP_REZRUZAK_1_990_02_05_01_01.xsd>`;
+-  :download:`XSD-схема титула заказчика электронного акта <../xsd/DP_ZAKTPRM_1_990_00_05_01_02.xsd>`;
 
 .. csv-table:: Соответствие формата накладных и AttachmentVersion
    :header: "Структура", "Форматы", "Функция", "AttachmentVersion"
    :widths: 10, 10, 10, 10
 
-   "XmlAcceptanceCertificate", "- приказ №155", "- ДОП", "- utd_05_01_01"
+   "XmlAcceptanceCertificate", "- приказ №155", "- ДОП", "- utd_05_01_02"
    "XmlAcceptanceCertificate", "- приказ №552", "- –", "- rezru_05_01_01"
    "XmlAcceptanceCertificate", "- приказ №172", "- –", "- act_05_01_01
    - act_05_01_02"
