@@ -64,8 +64,8 @@ AcceptanceCertificate552Info
         optional string DocumentCreatorBase = 3;          // Основание, по которому экономический субъект является составителем файла
         optional string OperationType = 4;                // Вид операции
         required string DocumentName = 5;                 // Наименование первичного документа, определенное организацией
-        required string OperationInfo = 6;                // Содержание операции
-        optional string AcceptDate = 7;                   // Дата приемки результатов работ
+        required string OperationContent = 6;                // Содержание операции
+        optional string AcceptanceDate = 7;                   // Дата приемки результатов работ
         optional string CreatedThingAcceptDate = 8;       // Дата получения вещи, изготовленной  по договору подряда
         optional string CreatedThingInfo = 9;             // Сведения о получении
         optional AdditionalInfoId AdditionalInfoId = 10;  // Информационное поле документа
