@@ -64,29 +64,29 @@
 ---------
 
 .. csv-table:: Соответствие формата актов и AttachmentVersion
-   :header: "Титул", "Формат", "Геренация", "DocumentVersion"
+   :header: "Титул", "Формат", "Геренация", "AttachmentVersion"
    :widths: 10, 10, 10, 10
 
    "Титул исполнителя", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForSeller`"
    "Титул заказчика", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`"
-   "Титул исполнителя", "Приказ №552", ":doc:`../http/GenerateAcceptanceCertificateXmlForSeller`", "``documentVersion = rezru_05_01_01``"
-   "Титул заказчика", "Приказ №552", ":doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`", "``documentVersion = rezru_05_01_01``"
-   "Титул исполнителя", "Приказ №172", ":doc:`../http/GenerateAcceptanceCertificateXmlForSeller`", "``documentVersion = act_05_01_02``"
-   "Титул заказчика", "Приказ №172", ":doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`", "``documentVersion = act_05_01_02``"
+   "Титул исполнителя", "Приказ №552", ":doc:`../http/GenerateAcceptanceCertificateXmlForSeller`", "``AttachmentVersion = rezru_05_01_01``"
+   "Титул заказчика", "Приказ №552", ":doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`", "``AttachmentVersion = rezru_05_01_01``"
+   "Титул исполнителя", "Приказ №172", ":doc:`../http/GenerateAcceptanceCertificateXmlForSeller`", "``AttachmentVersion = act_05_01_02``"
+   "Титул заказчика", "Приказ №172", ":doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`", "``AttachmentVersion = act_05_01_02``"
 
 Парсинг
 -------
 
 .. csv-table:: Соответствие формата накладных и AttachmentVersion
-   :header: "Титул", "Формат", "Парсинг", "DocumentVersion"
+   :header: "Титул", "Формат", "Парсинг", "AttachmentVersion"
    :widths: 10, 10, 10, 10
 
    "Титул исполнителя", "Приказ №155", ":doc:`../http/utd/ParseUniversalTransferDocumentSellerTitleXml`"
    "Титул заказчика", "Приказ №155", ":doc:`../http/utd/ParseUniversalTransferDocumentBuyerTitleXml`"
-   "Титул исполнителя", "Приказ №552", ":doc:`../http/ParseAcceptanceCertificateSellerTitleXml`", "``documentVersion = rezru_05_01_01``"
-   "Титул заказчика", "Приказ №552", ":doc:`../http/ParseAcceptanceCertificateBuyerTitleXml`", "``documentVersion = rezru_05_01_01``"
-   "Титул исполнителя", "Приказ №172", ":doc:`../http/ParseAcceptanceCertificateSellerTitleXml`", "``documentVersion = act_05_01_02``"
-   "Титул заказчика", "Приказ №172", ":doc:`../http/ParseAcceptanceCertificateBuyerTitleXml`", "``documentVersion = act_05_01_02``"
+   "Титул исполнителя", "Приказ №552", ":doc:`../http/ParseAcceptanceCertificateSellerTitleXml`", "``AttachmentVersion = rezru_05_01_01``"
+   "Титул заказчика", "Приказ №552", ":doc:`../http/ParseAcceptanceCertificateBuyerTitleXml`", "``AttachmentVersion = rezru_05_01_01``"
+   "Титул исполнителя", "Приказ №172", ":doc:`../http/ParseAcceptanceCertificateSellerTitleXml`", "``AttachmentVersion = act_05_01_02``"
+   "Титул заказчика", "Приказ №172", ":doc:`../http/ParseAcceptanceCertificateBuyerTitleXml`", "``AttachmentVersion = act_05_01_02``"
 
 Подписант
 ---------
