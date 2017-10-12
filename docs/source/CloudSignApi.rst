@@ -62,3 +62,4 @@ HTTP-интерфейс
    proto/CloudSignRequest
    proto/CloudSignConfirmResultDTO
    proto/CloudSignResultDTO
+   proto/AutosignReceiptsResult
