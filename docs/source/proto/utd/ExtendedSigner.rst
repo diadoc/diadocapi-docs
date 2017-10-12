@@ -89,6 +89,6 @@ ExtendedSigner
 - *SignerOrgPowersBase* - основания полномочий (доверия) организации. Обязателен, если SignerStatus = 3, "работник иной уполномоченной организации"
 
 - *SignerOrganizationName* - наименование организации. Элемент является обязательным, если выполняются следующие условия:
-    - SignerType = "LegalEntity" 
+    - SignerType = "LegalEntity"
     - AttachmentVersion = "tovtorg_05_01_02" или "rezru_05_01_01"
-    - Вызван метод GenerateTorg12XmlForSeller, GenerateTorg12XmlForBuyer, GenerateAcceptanceCertificateXmlForSeller или GenerateAcceptanceCertificateXmlForBuyer
+    - Вызван метод GenerateTorg12XmlForSeller, GenerateTorg12XmlForBuyer, GenerateAcceptanceCertificateXmlForSeller или GenerateAcceptanceCertificateXmlForBuyer 
