@@ -1,5 +1,5 @@
 AutosignReceiptsResult
-===============
+======================
 
 .. code-block:: protobuf
 
@@ -9,5 +9,5 @@ AutosignReceiptsResult
             }
             
 
-*NextBatchKey* - Идентификатор следующей пачки уведомлений для подписания.
-*SignedReceiptsCount* - Кол-во подписанных уведомлений.
+- *NextBatchKey* - Идентификатор следующей пачки уведомлений для подписания.
+- *SignedReceiptsCount* - Кол-во подписанных уведомлений.
