@@ -70,7 +70,7 @@ ExtendedSigner
 
 -  *Patronymic* - отчество подписанта (необязательно).
 
--  *JobTitle* - должность подписанта.    
+-  *JobTitle* - должность подписанта.
 
 -  *Inn* - ИНН юридического лица подписанта или индивидуального предпринимателя (необязательно).
 
@@ -87,3 +87,11 @@ ExtendedSigner
 - *SignerPowersBase* - основания полномочий (доверия) подписанта. Обязателен, если SignerStatus = 4, "уполномоченное физическое лицо"
 
 - *SignerOrgPowersBase* - основания полномочий (доверия) организации. Обязателен, если SignerStatus = 3, "работник иной уполномоченной организации"
+
+- *SignerOrganizationName* - наименование организации. Элемент является обязательным, если выполняются следующие условия:
+
+    - *SignerType = LegalEntity*
+
+    - *AttachmentVersion = tovtorg_05_01_02* или *rezru_05_01_01*
+
+    - вызван метод :doc:`../../http/GenerateTorg12XmlForSeller`, :doc:`../../http/GenerateTorg12XmlForBuyer`, :doc:`../../http/GenerateAcceptanceCertificateXmlForSeller` или :doc:`../../http/GenerateAcceptanceCertificateXmlForBuyer`
