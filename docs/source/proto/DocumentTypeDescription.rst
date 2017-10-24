@@ -1,5 +1,7 @@
 ﻿DocumentTypeDescription
-========================
+=======================
+
+Описывает тип документов. Возвращается методом :doc:`../http/GetDocumentTypes`.
 
 .. code-block:: protobuf
 
@@ -16,16 +18,16 @@
         Internal = 1;       // внутренний документооборот
     }
 
-Структура *DocumentTypeDescription*, возвращаемая методом :doc:`../http/GetDocumentTypes`, представляет описание типа документов.
-
 -  *Name* - уникальный строковой идентификатор типа
 -  *Title* - заголовок типа
 -  *SupportedDocflows* - поддерживаемые типы документооборота
--  *RequiresFnsRegistration* - тип требует регистрации в ФНС
+-  *RequiresFnsRegistration* - для работы требуется заявление участника ЭДО
 -  *Functions* - описания функций документа
 
 DocumentFunction
 ----------------
+
+Описывает функцию документа.
 
 .. code-block:: protobuf
 
@@ -35,14 +37,14 @@ DocumentFunction
         repeated DocumentWorkflow Workflows = 3;
     }
 
-Структура *DocumentFunction* представляет описание функции документа.
-
 -  *Name* - строковой идентификатор функции, уникальное в рамках типа документов
 -  *Versions* - описания версий документа
 -  :doc:`Workflows <DocumentWorkflow>` - варианты документооборота
 
 DocumentVersion
 ~~~~~~~~~~~~~~~
+
+Описывает версию документа.
 
 .. code-block:: protobuf
 
@@ -54,8 +56,6 @@ DocumentVersion
         required bool IsActual = 5;
     }
 
-Структура *DocumentVersion* представляет описание версии документа.
-
 -  *Version* - строковой идентификатор версии, уникальный в рамках функции документа
 -  *SupportsContentPatching* - поддерживается патчинг
 -  *SupportsEncrypting* - поддерживается отправка зашифрованных документов
@@ -64,6 +64,8 @@ DocumentVersion
 
 DocumentTitle
 `````````````
+
+Описывает титул документа.
 
 .. code-block:: protobuf
 
@@ -74,8 +76,6 @@ DocumentTitle
         repeated DocumentEncryptedMetadataItem EncryptedMetadataItems = 4;
     }
 
-Структура *DocumentTitle* представляет описание титула документа.
-
 -  *IsFormal* - титул формализованный
 -  *XsdUrl* - адрес метода, возвращающего файл XSD-схемы
 -  *MetadataItems* - описания метаданных документа
@@ -83,6 +83,8 @@ DocumentTitle
 
 DocumentMetadataItem
 ********************
+
+Описывает метаданные документа.
 
 .. code-block:: protobuf
 
@@ -110,8 +112,6 @@ DocumentMetadataItem
         Xml = 0;                        // метаданные содержатся в теле документа
         User = 1;                       // метаданные передаются в метод API отдельными полями
     }
-
-Структура *DocumentMetadataItem* представляет описание метаданных документа.
 
 -  *Id* - идентификатор
 -  *Type* - тип значения
