@@ -73,13 +73,13 @@ DocumentTitle
         required bool IsFormal = 1;
         optional string XsdUrl = 2;
         repeated DocumentMetadataItem MetadataItems = 3;
-        repeated DocumentEncryptedMetadataItem EncryptedMetadataItems = 4;
+        repeated DocumentMetadataItem EncryptedMetadataItems = 4;
     }
 
 -  *IsFormal* - титул формализованный
 -  *XsdUrl* - адрес метода, возвращающего файл XSD-схемы
 -  *MetadataItems* - описания метаданных документа
--  *EncryptedMetadataItems* - описания метаданных, которые необходимо указать при отправке зашифрованного документа
+-  *EncryptedMetadataItems* - описания метаданных для отправки зашифрованного документа
 
 DocumentMetadataItem
 ********************
@@ -93,11 +93,6 @@ DocumentMetadataItem
         required DocumentMetadataItemType Type = 2;
         required bool IsRequired = 3;
         required DocumentMetadataSource Source = 4;
-    }
-
-    message DocumentEncryptedMetadataItem {
-        required string Id = 1;
-        required DocumentMetadataItemType Type = 2;
     }
 
     enum DocumentMetadataItemType {

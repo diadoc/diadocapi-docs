@@ -37,7 +37,7 @@ MessageToPost
         repeated SupplementaryAgreementAttachment SupplementaryAgreements = 31;
         optional bool LockPacket = 32 [default = false];
         repeated XmlDocumentAttachment UniversalTransferDocumentSellerTitles = 33;
-        repeated CustomDocumentAttachment CustomDocumentAttachments = 34;
+        repeated DocumentAttachment DocumentAttachments = 34;
     }
 
 
@@ -95,7 +95,7 @@ MessageToPost
 
 -  :doc:`UniversalTransferDocumentSellerTitles <XmlDocumentAttachment>` - список титулов продавца универсального передаточного документа (УПД) в XML формате.
 
--  :doc:`CustomDocumentAttachment` - список кастомных типов документов, функциональность находится в разработке,
+-  :doc:`DocumentAttachments <DocumentAttachment>` - список документов любых типов.
 
 -  *ProxyBoxId* - идентификатор ящика, промежуточного получателя. Если указан ящик промежуточного получателя, то документ доставится конечному получателю только после того, как промежуточный получатель поставит подпись под документом. Если промежуточный получатель отклонит документ, то в ящик конечного получателя он не будет доставлен.
 
@@ -111,7 +111,7 @@ MessageToPost
 
 -  *LockPacket* - флаг, означает, что документы сообщения будут отправлены закрытым пакетом. В таком пакете любая операция применяется ко всем документам сразу.
 
-Сообщения с флагом *DelaySend*, должны удовлетворять следующим
+Сообщения с флагом *DelaySend* должны удовлетворять следующим условиям:
 
 -  Подпись под документом и запрос на подпись по доверенности должны отсутствовать.
 
