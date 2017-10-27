@@ -7,6 +7,9 @@ HTTP метод: POST
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 
+Параметры строки запроса:
+* *boxId*: идентификатор ящика
+
 Тело запроса должно содержать сериализованный протобуфер *FnsRegistrationMessageInfo*, содержащий  сертификаты, сериализованные в массивы байтов в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__-кодировке:
 
 .. code-block:: protobuf
