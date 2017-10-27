@@ -50,23 +50,96 @@ DocumentAttachment
 
 -  *Version* - идентификатор версии документа. Обязательно при отправке зашифрованных документов.
 
--  *Metadata* - список пар вида "ключ-значение", содержащих метаданные документа. Каждая пара задается структурой `MetadataItem`_.
+-  *Metadata* - список пар вида "ключ-значение", содержащих метаданные документа. Каждая пара задается структурой :doc:`MetadataItem`.
 
 -  *WorkflowId* - идентификатор типа документооборота.
 
 -  *IsEncrypted* - флаг, означающий, что документ передается в зашифрованном виде.
 
-MetadataItem
-------------
+Примеры использования (C#)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Представляет пару "ключ-значение", привязанную к документу в качестве метаданных.
+Отправка титула исполнителя для акта о выполнении работ (оказании услуг) в XML-формате:
 
-.. code-block:: protobuf
+.. code-block:: csharp
 
-    message MetadataItem {
-        required string Key = 1;
-        required string Value = 2;
-    }
+    var attachment = new DocumentAttachment
+    {
+        TypeNamedId = "XmlAcceptanceCertificate",
+        SignedContent = new SignedContent { Content = xmlDocumentBytes, Signature = signatureBytes }
+    };
 
--  *Key* - непустой ключ. Должен быть валидным ключом метаданных для данного документа.
--  *Value* - непустое значение, соответствующее ключу Key.
+    var messageToPost = new MessageToPost
+    {
+        FromBoxId = senderBoxId,
+        ToBoxId = recepientBoxId,
+        DocumentAttachments = { attachment }
+    };
+
+    api.PostMessage(token, messageToPost);
+
+Отправка договора с запросом извещения о получении:
+
+.. code-block:: csharp
+
+    var attachment = new DocumentAttachment
+    {
+        TypeNamedId = "Contract",
+        SignedContent = new SignedContent { Content = documentBytes, Signature = signatureBytes },
+        Metadata =
+        {
+            new MetadataItem("FileName", "Договор.pdf"),
+            new MetadataItem("DocumentNumber", "196"),
+            new MetadataItem("DocumentDate", "27.10.2017"),
+            new MetadataItem("ContractType", "Купля-продажа"),
+            new MetadataItem("ContractPrice", "3000.00"),
+        },
+        NeedReceipt = true
+    };
+
+    var messageToPost = new MessageToPost
+    {
+        FromBoxId = senderBoxId,
+        ToBoxId = recepientBoxId,
+        DocumentAttachments = { attachment }
+    };
+
+    api.PostMessage(token, messageToPost);
+
+Отправка зашифрованного счета-фактуры в формате приказа №155:
+
+.. code-block:: csharp
+
+    var attachment = new DocumentAttachment
+    {
+        TypeNamedId = "Invoice",
+        Function = "default",
+        Version = "utd_05_01_02",
+        SignedContent = new SignedContent
+        {
+            Content = content,
+            Signature = new SignedContent
+            {
+                Content = encryptedDocumentBytes,
+                Signature = signatureBytes
+            }
+        },
+        IsEncrypted = true,
+        Metadata =
+        {
+            new MetadataItem("FileId", "invoice.xml"),
+            new MetadataItem("SellerFnsParticipantId", sellerFnsParticipantId),
+            new MetadataItem("BuyerFnsParticipantId", buyerFnsParticipantId),
+            new MetadataItem("DocumentDate", "27.10.2017"),
+            new MetadataItem("DocumentNumber", "169"),
+        }
+    };
+
+    var messageToPost = new MessageToPost
+    {
+        FromBoxId = senderBoxId,
+        ToBoxId = recepientBoxId,
+        DocumentAttachments = { attachment }
+    };
+
+    api.PostMessage(token, messageToPost);
