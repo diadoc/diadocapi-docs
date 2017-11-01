@@ -22,7 +22,9 @@
 -  *Title* - заголовок типа
 -  *SupportedDocflows* - поддерживаемые типы документооборота
 -  *RequiresFnsRegistration* - для работы требуется заявление участника ЭДО
--  *Functions* - описания функций документа
+-  :ref:`Functions <document-function>` - описания функций документа
+
+.. _document-function:
 
 DocumentFunction
 ----------------
@@ -38,8 +40,10 @@ DocumentFunction
     }
 
 -  *Name* - строковой идентификатор функции, уникальное в рамках типа документов
--  *Versions* - описания версий документа
--  :doc:`Workflows <DocumentWorkflow>` - варианты документооборота
+-  :ref:`Versions <document-version>` - описания версий документа
+-  :doc:`Workflows <DocumentWorkflow>` - виды документооборота
+
+.. _document-version:
 
 DocumentVersion
 ~~~~~~~~~~~~~~~
@@ -59,8 +63,10 @@ DocumentVersion
 -  *Version* - строковой идентификатор версии, уникальный в рамках функции документа
 -  *SupportsContentPatching* - поддерживается патчинг
 -  *SupportsEncrypting* - поддерживается отправка зашифрованных документов
--  *Titles* - описания титулов документа
+-  :ref:`Titles <document-title>` - описания титулов документа
 -  *IsActual* - версия актуальна
+
+.. _document-title:
 
 DocumentTitle
 `````````````
@@ -78,8 +84,10 @@ DocumentTitle
 
 -  *IsFormal* - титул формализованный
 -  *XsdUrl* - адрес метода, возвращающего файл XSD-схемы
--  *MetadataItems* - описания метаданных документа
--  *EncryptedMetadataItems* - описания метаданных для отправки зашифрованного документа
+-  :ref:`MetadataItems <document-metadata-item>` - описания метаданных документа
+-  :ref:`EncryptedMetadataItems <document-metadata-item>` - описания метаданных для отправки зашифрованного документа
+
+.. _document-metadata-item:
 
 DocumentMetadataItem
 ********************
