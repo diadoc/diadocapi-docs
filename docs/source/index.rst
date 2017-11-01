@@ -27,6 +27,7 @@
    :caption: Документооборот
 
    Форматы документов <docflows/AttachmentVersion>
+   Типы документов <http/GetDocumentTypes>
    Документооборот счетов-фактур <docflows/InvoiceDocflow>
    Документооборот накладных <docflows/Torg12Docflow>
    Документооборот актов <docflows/AktDocflow>
