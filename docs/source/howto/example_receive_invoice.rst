@@ -365,7 +365,7 @@ SDK
 	}
 
 	//Формирование и отправка извещения о получении счета-фактуры
-	public static void SendinvoiceReceipt(Document invoiceDocument)
+	public static void SendinvoiceReceipt(Entity invoiceDocument)
 	{
 		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, new Signer()
 		{
