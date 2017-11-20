@@ -4,10 +4,10 @@ AutosignReceiptsResult
 .. code-block:: protobuf
 
             message AutosignReceiptsResult {
-                optional string NextBatchKey = 1;
-                optional int32 SignedReceiptsCount = 1;
+                required int64 SignedReceiptsCount = 1;
+                required string NextBatchKey = 2;
             }
-            
 
+
+- *SignedReceiptsCount* - Количество подписанных уведомлений.
 - *NextBatchKey* - Идентификатор следующей пачки уведомлений для подписания.
-- *SignedReceiptsCount* - Кол-во подписанных уведомлений.
