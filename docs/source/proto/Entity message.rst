@@ -19,6 +19,8 @@ Entity
         optional string SignerDepartmentId = 14;     // заполняется только для вложений с типом EntityType.Signature
         optional ResolutionRequestInfo ResolutionRequestInfo = 15;  // заполняется только для вложений с типом AttachmentType.ResolutionRequest
         optional ResolutionRequestDenialInfo ResolutionRequestDenialInfo = 16;  // заполняется только для вложений с типом AttachmentType.ResolutionRequestDenial
+        optional bool NeedReceipt = 17 [default = false];						// заполняется только для вложений с типом EntityType.Attachment
+        optional string PacketId = 18;
         optional bool IsApprovementSignature = 19 [default = false];   // заполняется только для вложений с типом EntityType.Signature
         optional bool IsEncryptedContent = 20 [default = false];
         optional string AttachmentVersion = 21;
