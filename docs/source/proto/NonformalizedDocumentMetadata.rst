@@ -5,6 +5,7 @@ NonformalizedDocumentMetadata
 
     message NonformalizedDocumentMetadata {
         optional NonformalizedDocumentStatus DocumentStatus = 1 [default = UnknownNonformalizedDocumentStatus];
+        optional ReceiptStatus ReceiptStatus = 2 [default = UnknownReceiptStatus];
     }
 
     enum NonformalizedDocumentStatus {
