@@ -21,7 +21,7 @@ UniversalTransferDocumentSellerTitleInfo
         optional string RevisionDate = 14;                  // дата ИСФ (обязательно при формировании UniversalTransferDocumentSellerTitleRevision) // ДатаИспрСчФ
         optional string RevisionNumber = 15;                // номер ИСФ (обязательно при формировании UniversalTransferDocumentSellerTitleRevision) // НомИспрСчФ
         optional AdditionalInfoId AdditionalInfoId = 16;    // информационное поле документа // ИнфПолФХЖ1
-        optional TransferInfo TransferInfo = 17;            // Сведения о передаче (сдаче) // СвПер
+        optional TransferInfo TransferInfo = 17;            // Сведения о передаче (сдаче) // СвПродПер
         required string DocumentCreator = 18;               // Составитель файла обмена счета-фактуры (информации продавца) // НаимЭконСубСост
         optional string DocumentCreatorBase = 19;           // Основание, по которому экономический субъект является составителем файла обмена счета-фактуры //ОснДоверОргСост
         optional string GovernmentContractInfo = 20;         // ИдГосКон
