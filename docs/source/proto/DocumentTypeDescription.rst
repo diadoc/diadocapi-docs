@@ -36,12 +36,10 @@ DocumentFunction
     message DocumentFunction {
         required string Name = 1;
         repeated DocumentVersion Versions = 2;
-        repeated DocumentWorkflow Workflows = 3;
     }
 
 -  *Name* - строковой идентификатор функции, уникальное в рамках типа документов
 -  :ref:`Versions <document-version>` - описания версий документа
--  :doc:`Workflows <DocumentWorkflow>` - виды документооборота
 
 .. _document-version:
 
@@ -58,6 +56,7 @@ DocumentVersion
         required bool SupportsEncrypting = 3;
         repeated DocumentTitle Titles = 4;
         required bool IsActual = 5;
+        repeated DocumentWorkflow Workflows = 6;
     }
 
 -  *Version* - строковой идентификатор версии, уникальный в рамках функции документа
@@ -65,6 +64,7 @@ DocumentVersion
 -  *SupportsEncrypting* - поддерживается отправка зашифрованных документов
 -  :ref:`Titles <document-title>` - описания титулов документа
 -  *IsActual* - версия актуальна
+-  :doc:`Workflows <DocumentWorkflow>` - виды документооборота
 
 .. _document-title:
 
