@@ -16,7 +16,7 @@ Message
         optional bool DraftIsLocked = 10 [default = false];
         optional bool DraftIsRecycled = 11 [default = false];
         optional string CreatedFromDraftId = 12;
-        optional string DraftIsTransformedToMessageId = 13;
+        repeated string DraftIsTransformedToMessageIdList = 13;
         optional bool IsDeleted = 14 [default = false];
         optional bool IsTest = 15 [default = false];
         optional bool IsInternal = 16 [default = false];
@@ -53,7 +53,7 @@ Message
 
 -  *CreatedFromDraftId* - идентификатор сообщения-черновика, на основе которого было создано данное сообщение. Данное поле заполняется только у тех сообщений, которые формируются на основе черновиков.
 
--  *DraftIsTransformedToMessageId* - идентификатор сообщения, которое было создано на основе данного черновика. Данное поле заполняется только в структурах Message, представляющих черновики.
+-  *DraftIsTransformedToMessageIdList* - идентификатор сообщения, которое было создано на основе данного черновика. Данное поле заполняется только в структурах Message, представляющих черновики.
 
 -  *IsDeleted* - флаг, показывающий, было ли удалено данное сообщение.
 
