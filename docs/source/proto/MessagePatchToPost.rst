@@ -25,6 +25,7 @@ MessagePatchToPost
         repeated EditDocumentPacketCommand EditDocumentPacketCommands = 19;
         repeated ReceiptAttachment UniversalTransferDocumentBuyerTitles = 20;
         repeated ResolutionRouteRemoval ResolutionRouteRemovals = 21;
+        repeated ReceiptAttachment RecipientTitles = 22;
     }
 
     message ReceiptAttachment {
@@ -94,6 +95,8 @@ MessagePatchToPost
 -  *XmlTorg12BuyerTitles* - список подлежащих отправке титулов покупателя для товарных накладных ТОРГ-12 в XML-формате.
 
 -  *XmlAcceptanceCertificateBuyerTitles* - список подлежащих отправке титулов заказчика для актов о выполнении работ (оказании услуг) в XML-формате.
+
+-  *RecipientTitles* - список подлежащих отправке титулов получателя для любого типа документов. Рекомендуется использовать именно это поле вместо *XmlTorg12BuyerTitles*, *XmlAcceptanceCertificateBuyerTitles* и *UniversalTransferDocumentBuyerTitles*.
 
 -  *Resolutions* - список действий по согласованию к документам сообщения, к которому относится патч. Каждое действие является структурой :doc:`ResolutionAttachment <Resolution>`.
 
