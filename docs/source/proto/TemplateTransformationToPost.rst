@@ -1,7 +1,7 @@
 TemplateTransformationToPost
 ==================
 
-Содержит информацию для создания документов на основе шаблонов.
+    :synopsis: Содержит информацию для создания документов на основе шаблонов.
 
 .. code-block:: protobuf
 
@@ -11,8 +11,8 @@ TemplateTransformationToPost
         repeated DocumentTransformation DocumentTransformations = 3;
     }
 
--  *BoxId* - идентификатор ящика отправителя.
+    :param BoxId: - идентификатор ящика отправителя.
 
--  *TemplateId* - идентификатор шаблона с документами для преобразования.
+    :param TemplateId: - идентификатор шаблона с документами для преобразования.
 
--  *DocumentTransformations* - список сообщений с идентификаторами обрабатываемых документов. Каждое сообщение задается структурой :doc:`DocumentTransformation`.
+    :param DocumentTransformations: - список сообщений с идентификаторами обрабатываемых документов. Каждое сообщение задается структурой :doc:`DocumentTransformation`.

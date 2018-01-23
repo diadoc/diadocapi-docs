@@ -1,4 +1,4 @@
-Template
+MessageToPost
 =============
 
 .. code-block:: protobuf
