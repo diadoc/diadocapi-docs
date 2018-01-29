@@ -1,8 +1,9 @@
 GetTemplate
 ===========
 
+Получает шаблон документов.
+
 .. http:get:: /GetTemplate
-    :synopsis: Получает шаблон документов.
 
     :query boxId: идентификатор ящика
     :query templateId: идентификатор сообщения

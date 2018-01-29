@@ -1,7 +1,7 @@
 TemplateToPost
 ==============
 
-    :synopsis: Структура данных *TemplateToPost* представляет сообщение, подлежащее отправке через Диадок при помощи метода :doc:`../http/PostTemplate`.
+Структура данных *TemplateToPost* представляет сообщение, подлежащее отправке через Диадок при помощи метода :doc:`../http/PostTemplate`.
 
 .. code-block:: protobuf
 

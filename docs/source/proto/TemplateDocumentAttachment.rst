@@ -1,7 +1,7 @@
 TemplateDocumentAttachment
 ==========================
 
-    :synopsis: Представляет в отправляемом сообщении :doc:`TemplateToPost` документ любого типа.
+Представляет в отправляемом сообщении :doc:`TemplateToPost` документ любого типа.
 
 .. code-block:: protobuf
 
