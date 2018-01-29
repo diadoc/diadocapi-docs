@@ -16,8 +16,6 @@ Template
         optional bool IsDeleted = 8 [default = false];
     }
 
-Структура данных *Template* представляет одно сообщение с шаблонами документов в Диадоке:
-
     :param MessageId: уникальный идентификатор сообщения.
 
     :param TimestampTicks: :doc:`метка времени <Timestamp>` создания сообщения.
