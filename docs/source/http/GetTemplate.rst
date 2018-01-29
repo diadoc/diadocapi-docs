@@ -1,5 +1,5 @@
 GetTemplate
-==========
+===========
 
 .. http:get:: /GetTemplate
     :synopsis: Получает шаблон документов.

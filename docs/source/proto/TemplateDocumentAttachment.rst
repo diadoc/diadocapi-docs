@@ -1,5 +1,5 @@
 TemplateDocumentAttachment
-==================
+==========================
 
     :synopsis: Представляет в отправляемом сообщении :doc:`TemplateToPost` документ любого типа.
 

@@ -1,5 +1,5 @@
 PostTemplate
-===========
+============
 
 .. http:post:: /PostTemplate
     :synopsis: Отправляет шаблон документов.

@@ -1,5 +1,5 @@
 TransformTemplateToMessage
-==========
+==========================
 
 .. http:post:: /TransformTemplateToMessage
     :synopsis: Создает сообщение с документами на основе шаблона.
