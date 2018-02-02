@@ -6,6 +6,7 @@ Address
     message Address {
         optional RussianAddress RussianAddress = 1;
         optional ForeignAddress ForeignAddress = 2;
+        optional String AddressCode = 3; //Код ГАР
     }
 
     message RussianAddress {
