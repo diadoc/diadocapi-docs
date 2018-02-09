@@ -31,6 +31,7 @@ Organization
         required Sociability Sociability = 22;
         optional string LiquidationDate = 23;
         optional string CertificateOfRegistryInfo = 24;
+        optional bool IsForeign = 25;
     }
 
     message Box {
@@ -84,6 +85,8 @@ Organization
 - Поле *LiquidationDate* является признаком того, что организация ликвидирована, в нем указана дата ликвидации организации по данным из ЕГРЮЛ и ЕГРИП.
 
 - Поле *CertificateOfRegistryInfo* содержит информацию о свидетельстве о государственной регистрации.
+
+- Поле *IsForeign* содержит признак того, что организация являестя иностранной.
 
 Структура данных *Box* содержит информацию об одном ящике в Диадоке: его идентификатор, понятное имя и информацию об организации-владельце ящика.
 
