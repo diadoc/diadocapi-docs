@@ -7,6 +7,7 @@ PrepareDocumentsToSignRequest
         required string BoxId = 1;
         repeated DraftDocumentToPatch DraftDocuments = 2;
         repeated DocumentToPatch Documents = 3;
+        repeated ContentToPatch Contents = 4;
     }
 
     message DraftDocumentToPatch {
@@ -21,7 +22,17 @@ PrepareDocumentsToSignRequest
         optional Signer Signer = 2;
         repeated ExtendedSigner ExtendedSigner = 3;
     }
-        
+
+    message ContentToPatch {
+        required string TypeNamedId = 1;
+        required string Function = 2;
+        required string Version = 3;
+        required UnsignedContent Content = 4;
+        optional string ToBoxId = 5;
+        optional Invoicing.Signer Signer = 6;
+        repeated Invoicing.Signers.ExtendedSigner ExtendedSigner = 7;
+    }
+
 
 Структура данных *PrepareDocumentsToSignRequest* представляет запрос на подготовку документов к подписанию:
 
@@ -30,6 +41,8 @@ PrepareDocumentsToSignRequest
 -  *DraftDocuments* - список черновиков документов, которые надо подготовить к подписанию и отправке (отправить их можно с помощью метода :doc:`../http/SendDraft`). Каждый элемент списка представлен структурой типа *DraftDocumentToPatch*.
 
 -  *Documents* - список патчей документов, которые надо подготовить к подписанию и отправке (отправить их можно с помощью метода :doc:`../http/PostMessagePatch`). Каждый элемент списка представлен структурой типа *DocumentToPatch*.
+
+-  *Contents* - список документов, которые надо подготовить к подписанию и отправке (отправить их можно с помощью метода :doc:`../http/PostMessagePatch`). Каждый элемент списка представлен структурой типа *ContentToPatch*.
 
 Структура данных *DraftDocumentToPatch* представляет ссылку на черновик документа в Диадоке, а также информацию о подписанте:
 
@@ -46,3 +59,19 @@ PrepareDocumentsToSignRequest
 -  *DocumentId* - идентификатор черновика документа, задаваемый структурой :doc:`DocumentId`, который надо подготовить к подписанию и отправке.
 
 -  *Signer* - информация о подписанте документа, задаваемая структурой :doc:`Signer`. Если поле *Signer* не задано, подписантом считается сам пользователь, делающий вызов, т.е. будет использовано его ФИО и должность.
+
+Структура данных *ContentToPatch* представляет следующую информацию для патчинга:
+
+-  *TypeNamedId* - тип документа
+
+-  *Function* - функция документа
+
+-  *Version* - версия документа
+
+-  *Content* - содержимое документа, задаваемое структурой :doc:`UnsignedContent`.
+
+-  *ToBoxId* - идентификатор ящика, в чей адрес планируется отправить документ. Если поле не задано, используется идентификатор ящика получателя из черновика.
+
+-  *Signer* - информация о подписанте документа, задаваемая структурой :doc:`Signer`. Структура Signer не может использоваться для документов в формате УПД. Если при подписании счёта-фактуры в формате 5.02, а так же актов и накладных в формате 5.01 поле *Signer* не задано,  подписантом считается сам пользователь, делающий вызов, т.е. будет использовано его ФИО и должность.
+
+- *ExtendedSigner* - информация о подписанте документа, задаваемая массивом структур :doc:`utd/ExtendedSigner`. В случае, если документ подготавливаемый к подписанию уже содержит более одного подписанта, будет возвращена ошибка. Используется только для документов формата УПД.
