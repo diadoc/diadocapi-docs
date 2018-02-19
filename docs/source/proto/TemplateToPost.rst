@@ -10,7 +10,7 @@ TemplateToPost
         required string ToBoxId = 2;
         required string MessageFromBoxId = 3;
         required string MessageToBoxId = 4;
-        optional string DocumentRecipientDepartmentId = 5;
+        optional string MessageToDepartmentId = 5;
         repeated TemplateDocumentAttachment DocumentAttachments = 6;
     }
 
@@ -23,7 +23,7 @@ TemplateToPost
 
 - *MessageToBoxId* - идентификатор ящика получателя документов, созданных на основе шаблонов.
 
-- *DocumentRecipientDepartmentId* - идентификатор подразделения отправителя сообщения, которое будет создано на основе отправляемого шаблона.
+- *MessageToDepartmentId* - идентификатор подразделения получателя сообщения, которое будет создано на основе отправляемого шаблона.
 
 - *DocumentAttachments* - список документов любых типов, содержащий сообщение :doc:`../proto/TemplateDocumentAttachment`.
 

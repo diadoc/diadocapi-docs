@@ -14,6 +14,7 @@ Template
         required string MessageToBoxId = 6;
         repeated Entity Entities = 7;
         optional bool IsDeleted = 8 [default = false];
+        optional string MessageToDepartmentId = 9;
     }
 
 - *MessageId* - уникальный идентификатор сообщения.
@@ -31,3 +32,5 @@ Template
 - *Entities* - список сущностей, составляющих данное сообщение. Каждая сущность представлена структурой типа :doc:`Entity <Entity message>`.
 
 - *IsDeleted* - флаг, показывающий, было ли удалено данное сообщение.
+
+- *MessageToDepartmentId* - идентификатор подразделения получателя сообщения, которое будет создано на основе шаблона.
