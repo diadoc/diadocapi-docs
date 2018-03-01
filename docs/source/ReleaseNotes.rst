@@ -1,6 +1,12 @@
 ﻿История изменений API
 =====================
 
+v.1.50 - 26.02.2018
+-------------------
+
+- Расширена структура контракта :doc:`proto/Document`. Добавились свойства для универсальной работы с документом. Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* теперь считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены. 
+
+
 v.1.49.2 - 08.02.2018
 ---------------------
 
@@ -375,7 +381,7 @@ v1.26 - 30.07.2015
 v1.25 - 28.05.2015
 ------------------
 
--   Добавлен новый метод :doc:`http/GetResolutionChainsForOrganization` для получения списка цепочек согласования организации. Также изменен протобуфер :doc:`proto/MessagePatchToPost` -  добавились структура *ResolutionChainAssignment* для постановки документа на цепочку согласования.
+-   Добавлен новый метод :doc:`http/GetResolutionRoutesForOrganization` для получения списка цепочек согласования организации. Также изменен протобуфер :doc:`proto/MessagePatchToPost` -  добавились структура *ResolutionChainAssignment* для постановки документа на цепочку согласования.
 
 v1.24 - 25.05.2015
 ------------------

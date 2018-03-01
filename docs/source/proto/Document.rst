@@ -63,7 +63,17 @@ Document
         optional UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
         optional string ResolutionRouteId = 60 [default = ""];
         optional string AttachmentVersion = 61;
-        optional ProxySignatureStatus ProxySignatureStatus = 62;
+        optional ProxySignatureStatus ProxySignatureStatus = 62 [default = UnknownProxySignatureStatus];
+
+        required string TypeNamedId = 63;
+        required string Function = 64;
+        required int32 WorkflowId = 65;
+        required string Title = 66;
+        repeated Events.MetadataItem Metadata = 67;
+        required RecipientReceiptMetadata RecipientReceiptMetadata = 68;
+        required ConfirmationMetadata ConfirmationMetadata = 69;
+        required RecipientResponseStatus RecipientResponseStatus = 70 [default = RecipientResponseStatusUnknown];
+        required AmendmentRequestMetadata AmendmentRequestMetadata = 71;
     }
 
     enum RevocationStatus {
@@ -91,12 +101,12 @@ Document
     }
     
     enum ProxySignatureStatus {
-	    UnknownProxySignatureStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
-	    ProxySignatureStatusNone = 1; // Подпись промежуточного получателя не требуется
-	    WaitingForProxySignature = 2; // Ожидается подпись промежуточного получателя
-	    WithProxySignature = 3; // Подпись промежуточного получателя проверена и валидна
-	    ProxySignatureRejected = 4; // Промежуточный получатель отказал в подписи
-	    InvalidProxySignature = 5; // Подпись промежуточного получателя проверена и невалидна
+        UnknownProxySignatureStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
+        ProxySignatureStatusNone = 1; // Подпись промежуточного получателя не требуется
+        WaitingForProxySignature = 2; // Ожидается подпись промежуточного получателя
+        WithProxySignature = 3; // Подпись промежуточного получателя проверена и валидна
+        ProxySignatureRejected = 4; // Промежуточный получатель отказал в подписи
+        InvalidProxySignature = 5; // Подпись промежуточного получателя проверена и невалидна
     }
 
 Структура данных *Document* содержит информацию об одном документе в Диадоке, которую можно получить, например, при помощи метода :doc:`../http/GetDocument`:
@@ -115,7 +125,7 @@ Document
 
     Если документ находится в черновиках, то поле *CounteragentBoxId* может быть не заполнено.
 
--  *DocumentType* - тип документа, принимает одно из значений перечислимого типа :doc:`DocumentType`. В зависимости от типа документа заполняется одно из полей *Document.XxxMetadata*.
+-  *DocumentType* (устаревшее, см. *TypeNamedId*) - тип документа, принимает одно из значений перечислимого типа :doc:`DocumentType`. В зависимости от типа документа заполняется одно из полей *Document.XxxMetadata*. Для новых типов значение всегда будет равно `UnknownDocumentType`.
 
 -  *InitialDocumentIds* - список идентификаторов документов, на которые ссылается данный;
 
@@ -135,9 +145,9 @@ Document
 
 -  *FileName* - имя файла документа, которое у него было при загрузке в Диадок.
 
--  *DocumentDate* - дата формирования документа в формате ДД.ММ.ГГГГ; может отличаться от даты загрузки его в Диадок.
+-  *DocumentDate* (устаревшее, см. *Metadata*) - дата формирования документа в формате ДД.ММ.ГГГГ; может отличаться от даты загрузки его в Диадок.
 
--  *DocumentNumber* - номер документа.
+-  *DocumentNumber* (устаревшее, см. *Metadata*) - номер документа.
 
 -  *IsDeleted* - флаг, показывающий, был ли удален данный документ.
 
@@ -153,53 +163,53 @@ Document
    
 -  *IsEncryptedContent* - флаг, показывающий, что контент передаваемого документа зашифрован.
 
--  :doc:`NonformalizedDocumentMetadata` - дополнительные атрибуты специфичные для неформализованных документов.
+-  :doc:`NonformalizedDocumentMetadata` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для неформализованных документов.
 
--  :doc:`InvoiceMetadata <InvoiceDocumentMetadata>` - дополнительные атрибуты специфичные для счетов-фактур.
+-  :doc:`InvoiceMetadata <InvoiceDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты специфичные для счетов-фактур.
 
--  :doc:`InvoiceRevisionMetadata <InvoiceDocumentMetadata>` - дополнительные атрибуты специфичные для исправлений счетов-фактур.
+-  :doc:`InvoiceRevisionMetadata <InvoiceDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты специфичные для исправлений счетов-фактур.
 
--  :doc:`InvoiceCorrectionMetadata <InvoiceDocumentMetadata>` - дополнительные атрибуты специфичные для корректировочных счетов-фактур.
+-  :doc:`InvoiceCorrectionMetadata <InvoiceDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты специфичные для корректировочных счетов-фактур.
 
--  :doc:`InvoiceCorrectionRevisionMetadata <InvoiceDocumentMetadata>` - дополнительные атрибуты специфичные для исправлений корректировочных счетов-фактур.
+-  :doc:`InvoiceCorrectionRevisionMetadata <InvoiceDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты специфичные для исправлений корректировочных счетов-фактур.
 
--  :doc:`TrustConnectionRequestMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для документов типа TrustConnectionRequest.
+-  :doc:`TrustConnectionRequestMetadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientResponseStatus*) - дополнительные атрибуты специфичные для документов типа TrustConnectionRequest.
 
--  :doc:`Torg12Metadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для товарных накладных ТОРГ-12.
+-  :doc:`Torg12Metadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для товарных накладных ТОРГ-12.
 
--  :doc:`AcceptanceCertificateMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для актов о выполнении работ (оказании услуг).
+-  :doc:`AcceptanceCertificateMetadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для актов о выполнении работ (оказании услуг).
 
--  :doc:`ProformaInvoiceMetadata <UnilateralDocumentMetadata>` - дополнительные атрибуты специфичные для счетов на оплату.
+-  :doc:`ProformaInvoiceMetadata <UnilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*) - дополнительные атрибуты специфичные для счетов на оплату.
 
--  :doc:`XmlTorg12Metadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для товарных накладных ТОРГ-12 в XML-формате.
+-  :doc:`XmlTorg12Metadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для товарных накладных ТОРГ-12 в XML-формате.
 
--  :doc:`XmlAcceptanceCertificateMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для актов о выполнении работ (оказании услуг) в XML-формате.
+-  :doc:`XmlAcceptanceCertificateMetadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для актов о выполнении работ (оказании услуг) в XML-формате.
 
--  :doc:`PriceListMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для ценовых листов.
+-  :doc:`PriceListMetadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для ценовых листов.
 
--  :doc:`PriceListAgreementMetadata <NonformalizedDocumentMetadata>` - дополнительные атрибуты специфичные для протоколов согласования цены.
+-  :doc:`PriceListAgreementMetadata <NonformalizedDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для протоколов согласования цены.
 
--  :doc:`CertificateRegistryMetadata <NonformalizedDocumentMetadata>` - дополнительные атрибуты специфичные для реестров сертификатов.
+-  :doc:`CertificateRegistryMetadata <NonformalizedDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для реестров сертификатов.
 
--  :doc:`ReconciliationActMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для актов сверки.
+-  :doc:`ReconciliationActMetadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для актов сверки.
 
--  :doc:`ContractMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для договоров.
+-  :doc:`ContractMetadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для договоров.
 
--  :doc:`Torg13Metadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для накладных ТОРГ-13.
+-  :doc:`Torg13Metadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для накладных ТОРГ-13.
 
--  :doc:`SupplementaryAgreementMetadata <BilateralDocumentMetadata>` - дополнительные атрибуты специфичные для типа документа дополнительное соглашение к договору.
+-  :doc:`SupplementaryAgreementMetadata <BilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для типа документа дополнительное соглашение к договору.
 
 -  :doc:`ResolutionStatus <ResolutionStatus>` - текущий статус согласования данного документа.
 
--  :doc:`ServiceDetailsMetadata <UnilateralDocumentMetadata>` - дополнительные атрибуты специфичные для детализаций.
+-  :doc:`ServiceDetailsMetadata <UnilateralDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*) - дополнительные атрибуты специфичные для детализаций.
 
--  :doc:`UniversalTransferDocumentMetadata <utd/UniversalDocumentMetadata>` - дополнительные атрибуты, специфичные для УПД
+-  :doc:`UniversalTransferDocumentMetadata <utd/UniversalDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *RecipientResponseStatus*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты, специфичные для УПД
 
--  :doc:`UniversalTransferDocumentRevisionMetadata <utd/UniversalDocumentMetadata>` - дополнительные атрибуты, специфичные для исправлений УПД
+-  :doc:`UniversalTransferDocumentRevisionMetadata <utd/UniversalDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *RecipientResponseStatus*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты, специфичные для исправлений УПД
 
--  :doc:`UniversalCorrectionDocumentMetadata <utd/UniversalDocumentMetadata>` - дополнительные атрибуты, специфичные для УКД
+-  :doc:`UniversalCorrectionDocumentMetadata <utd/UniversalDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *RecipientResponseStatus*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты, специфичные для УКД
 
--  :doc:`UniversalCorrectionDocumentRevisionMetadata <utd/UniversalDocumentMetadata>` - дополнительные атрибуты, специфичные для исправлений УКД
+-  :doc:`UniversalCorrectionDocumentRevisionMetadata <utd/UniversalDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *RecipientResponseStatus*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты, специфичные для исправлений УКД
 
 -  *RevocationStatus* - статус аннулирования документа. Возможные значения:
 
@@ -252,3 +262,24 @@ Document
   - *ProxySignatureRejected* (промежуточный получатель отказал в подписи)
   
   - *InvalidProxySignature* (промежуточная подпись проверена и невалидна)
+
+- *TypeNamedId* - строковый идентификатор типа документа. Его следует использовать вместо свойства *DocumentType*. Может принимать значения "Nonformalized", "Invoice", "Torg12", "XmlTorg12" и другие. Полный список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
+
+- *Function* - функция документа. Дл всех типов, кроме *UniversalTransferDocument*, *UniversalTransferDocumentRevision*, *UniversalCorrectionDocument* и *UniversalCorrectionDocumentRevision*, принимает значение "default". Для документов типа УПД/ИУПД принимает значения "СЧФ", "ДОП" и "СЧФДОП", для документов типа УКД/ИУКД принимает значения "КСЧФ", "ДИС" и "КСЧФДИС".
+
+- *WorkflowId* - числовой идентификатор типа документооброта, по которому запущен документ. Более подробную информацию см. :doc:`../proto/DocumentWorkflow`.
+
+- *Title* - название документа. Например, "Счет-фактура №123 от 26.02.18".
+
+- *Metadata* - массив пар "ключ-значение", определямых типом документа. Примеры возможных значения ключей: "FileName", "DocumentDate", "DocumentNumber" и другие. Более подробную информацию см. :doc:`../proto/MetadataItem`. Набор возможных значений для конкретного типа можно узнать с помощью метода :doc:`../http/GetDocumentTypes`.
+
+- :doc:`RecipientReceiptMetadata <RecipientReceiptMetadata>` - свойство, отвечающее за состояние извещения о получении документа со стороны получателя.
+
+- :doc:`ConfirmationMetadata <ConfirmationMetadata>` - свойство, отвечающее за состояние подтверждения оператором даты отправки/получения документа. Актуально, например, для счетов-фактур и УПД/УКД с некоторыми функциями.
+
+- :doc:`RecipientResponseStatus <RecipientResponseStatus>` - свойство, отвечающее за состояние ответного действия получателя - ответную подпись или подписание ответного титула.
+
+- :doc:`AmendmentRequestMetadata <AmendmentRequestMetadata>` - свойство, отвечающее за состояние уведомления об уточнении. Актуально, например, для счетов-фактур, УПД и некоторых версий актов и накладных.
+
+.. warning::
+    Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
