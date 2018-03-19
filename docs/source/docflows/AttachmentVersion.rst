@@ -85,31 +85,42 @@
    - invoice_05_01_03
    - invoice_05_02_01
    - utd_05_01_01
-   - utd_05_01_02"
+   - utd_05_01_02
+   - utd_05_01_04"
    "Исправление СФ", "InvoiceRevision", "- invoice_05_01_03
    - invoice_05_02_01
    - utd_05_01_01
-   - utd_05_01_02"
+   - utd_05_01_02
+   - utd_05_01_04"
    "Корректировочный СФ (КСФ)", "InvoiceCorrection", "- invoicecor_05_01_03
    - invoicecor_05_02_01
-   - ucd_05_01_01"
+   - ucd_05_01_01
+   - ucd_05_01_02"
    "Исправление КСФ", "InvoiceCorrectionRevision", "- invoicecor_05_01_03
    - invoicecor_05_02_01
-   - ucd_05_01_01"
+   - ucd_05_01_01
+   - ucd_05_01_02"
    "Формализованный ТОРГ-12", "XmlTorg12", "- torg12_05_01_01
    - torg12_05_01_02
    - utd_05_01_01
-   - tovtorg_05_01_02"
+   - utd_05_01_04
+   - tovtorg_05_01_02
+   - tovtorg_05_01_03"
    "Формализованный акт", "XmlAcceptanceCertificate", "- act_05_01_01
    - act_05_01_02
    - utd_05_01_01
+   - utd_05_01_04
    - rezru_05_01_01"
    "УПД", "UniversalTransferDocument", "- utd_05_01_01
-   - utd_05_01_02"
+   - utd_05_01_02
+   - utd_05_01_04"
    "Исправление УПД", "UniversalTransferDocumentRevision", "- utd_05_01_01
-   - utd_05_01_02"
-   "УКД", "UniversalCorrectionDocument", "- ucd_05_01_01"
-   "Исправление УКД", "UniversalCorrectionDocumentRevision", "- ucd_05_01_01"
+   - utd_05_01_02
+   - utd_05_01_04"
+   "УКД", "UniversalCorrectionDocument", "- ucd_05_01_01
+   - ucd_05_01_02"
+   "Исправление УКД", "UniversalCorrectionDocumentRevision", "- ucd_05_01_01
+   - ucd_05_01_02"
 
 .. important::
   ``AttachmentVersion = UniversalTrnsaferDocument`` для СФ/ИСФ и ``AttachmentVersion = UniversalCorrectionDocument`` для КСФ/ИКСФ считаются устаревшими. Они будут сконвертированы в новые значения согласно таблице выше.
