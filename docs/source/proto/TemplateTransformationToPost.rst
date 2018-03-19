@@ -11,8 +11,8 @@ TemplateTransformationToPost
         repeated DocumentTransformation DocumentTransformations = 3;
     }
 
-    :param BoxId: - идентификатор ящика отправителя.
+- *BoxId* - идентификатор ящика отправителя.
 
-    :param TemplateId: - идентификатор шаблона с документами для преобразования.
+- *TemplateId* - идентификатор шаблона с документами для преобразования.
 
-    :param DocumentTransformations: - список сообщений с идентификаторами обрабатываемых документов. Каждое сообщение задается структурой :doc:`DocumentTransformation`.
+- *DocumentTransformations* - список сообщений с идентификаторами обрабатываемых документов. Каждое сообщение задается структурой :doc:`DocumentTransformation`.
