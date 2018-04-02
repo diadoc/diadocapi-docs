@@ -31,44 +31,52 @@ MessagePatchToPost
     message ReceiptAttachment {
         required string ParentEntityId = 1;
         required SignedContent SignedContent = 2;
+        repeated string Labels = 4;
     }
 
     message ResolutionRouteAssignment {
         required string InitialDocumentId = 1;
         required string RouteId = 2;
         optional string Comment = 3;
+        repeated string Labels = 4;
     }
 
     message ResolutionRouteRemoval {
         required string ParentEntityId = 1;
         required string RouteId = 2;
         optional string Comment = 3;
+        repeated string Labels = 4;
     }
 
     message CorrectionRequestAttachment {
         required string ParentEntityId = 1;
         required SignedContent SignedContent = 2;
+        repeated string Labels = 4;
     }
 
     message RequestedSignatureRejection {
         required string ParentEntityId = 1;
         required SignedContent SignedContent = 2;
+        repeated string Labels = 3;
     }
 
     message RevocationRequestAttachment {
         required string ParentEntityId = 1;
         required SignedContent SignedContent = 2;
+        repeated string Labels = 3;
     }
 
     message XmlSignatureRejectionAttachment {
         required string ParentEntityId = 1;
         required SignedContent SignedContent = 2;
+        repeated string Labels = 3;
     }
 
     message SignatureVerification {
         required string InitialDocumentId = 1;
         required bool IsValid = 2;
         optional string ErrorMessage = 3;
+        repeated string Labels = 4;
     }
 
     message EditDocumentPacketCommand {
@@ -126,11 +134,15 @@ MessagePatchToPost
 
 -  *SignedContent* - содержимое файла извещения вместе с ЭП под ним в виде структуры :doc:`SignedContent`. В случае *ReceiptAttachment* поле *SignedContent.SignByAttorney* не может быть равно true (подпись "по доверенности" под извещениями о получении документов запрашивать нельзя).
 
+-  *Labels* - :doc:`метки <../Labels>` извещения о получении.
+
 Структура данных *CorrectionRequestAttachment* представляет одно уведомление об уточнении СФ/ИСФ/КСФ/ИКСФ в отправляемом патче:
 
 -  *ParentEntityId* - идентификатор СФ/ИСФ/КСФ/ИКСФ, к которому относится данное уведомление. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре :doc:`Entity <Entity message>`).
 
 -  *SignedContent* - содержимое файла уведомления вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
+
+-  *Labels* - :doc:`метки <../Labels>` уведомления об уточнении.
 
 Структура данных *RequestedSignatureRejection* представляет один отказ в формировании запрошенной подписи:
 
@@ -138,17 +150,23 @@ MessagePatchToPost
 
 -  *SignedContent* - текст причины отказа вместе с ЭП под ним в виде структуры :doc:`SignedContent`. Текст причины отказа должен быть записан в поле SignedContent.Content в кодировке UTF-8.
 
+-  *Labels* - :doc:`метки <../Labels>` отказа.
+
 Структура данных *RevocationRequestAttachment* представляет одно предложение об аннулировании документа в отправляемом патче:
 
 -  *ParentEntityId* - идентификатор документа, к которому относится данное предложение. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре :doc:`Entity <Entity message>`).
 
 -  *SignedContent* - содержимое файла предложения об аннулировании вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
 
+-  *Labels* - :doc:`метки <../Labels>` предложения об аннулировании.
+
 Структура данных *XmlSignatureRejectionAttachment* представляет одно действие по отказу от предложения об аннулировании документа, либо по отказу от подписи документа:
 
 -  *ParentEntityId* - идентификатор предложения об аннулировании, либо документа, к которому относится данное действие. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре :doc:`Entity <Entity message>`).
 
 -  *SignedContent* - содержимое файла отказа вместе с ЭП под ним в виде структуры :doc:`SignedContent`.
+
+-  *Labels* - :doc:`метки <../Labels>` отказа.
 
 Структура *ResolutionRouteAssignment* представляет одно действие на постановку документа на маршрут согласования:
 
@@ -158,6 +176,8 @@ MessagePatchToPost
 
 -   *Comment* - текстовый комментарий;
 
+-   *Labels* - :doc:`метки <../Labels>` постановки на маршрут.
+
 Структура *ResolutionRouteRemoval* представляет одно действие на снятие документа с маршрута согласования:
 
 -   *ParentEntityId* - идентификатор документа, который нужно снять с маршрута согласования;
@@ -166,6 +186,8 @@ MessagePatchToPost
 
 -   *Comment* - текстовый комментарий;
 
+-   *Labels* - :doc:`метки <../Labels>` снятия с маршрута.
+
 Структура *SignatureVerification* представляет собой результат проверки подписи на стороне получателя зашифрованного документа. Нужна для того, чтобы сообщить результат проверки подписи для зашифрованных документов:
 
 -  *InitialDocumentId* - идентификатор документа
@@ -173,6 +195,8 @@ MessagePatchToPost
 -  *IsValid* - флаг, показывающий результат проверки подписи на валидность,
 
 -  *ErrorMessage* - текст ошибки, в случае если подпись не валидна
+
+-  *Labels* - :doc:`метки <../Labels>` результата проверки подписи.
 
 Структура данных *EditDocumentPacketCommand* представляет собой действие по редактированию состава пакета одного из документов в сообщении:
 

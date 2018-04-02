@@ -20,8 +20,9 @@ Resolution
         required string InitialDocumentId  = 1;
         required ResolutionType ResolutionType = 2;
         optional string Comment = 3;
+        repeated string Labels = 4;
     }
-        
+
 
 Структура данных *ResolutionInfo* содержит информацию о состоянии согласования.
 
@@ -46,3 +47,5 @@ Resolution
 -  *ResolutionType* - тип действия по согласованию
 
 -  *Comment* - комментарий к согласованию (отказу от согласования).
+
+-  *Labels* - :doc:`метки <../Labels>` согласования (отказа от согласования).

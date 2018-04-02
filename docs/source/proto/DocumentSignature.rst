@@ -10,6 +10,7 @@ DocumentSignature
         optional bool IsApprovementSignature = 5 [default = false];
         optional string SignatureNameOnShelf = 6;
         optional string PatchedContentId = 7;
+        repeated string Labels = 8;
     }
         
 Структура данных *DocumentSignature* служит для представления ЭП к некоторым данным в отправляемом сообщении:
@@ -27,7 +28,9 @@ DocumentSignature
 -  *SignatureNameOnShelf* - имя подписи на «полке документов».
 
 -  *PatchedContentId* - идентификатор патча документа
-   
+
+-  *Labels* - :doc:`метки <../Labels>` подписи.
+
 Обычная подпись под документом может быть только одна с каждой стороны (отправителя или получателя), а согласующих подписей может быть сколько угодно.
 
 Согласующие подписи можно ставить как со стороны отправителя, так и со стороны получателя, они проверяются и доставляются контрагенту.

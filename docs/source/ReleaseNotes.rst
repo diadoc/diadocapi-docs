@@ -1,6 +1,28 @@
 ﻿История изменений API
 =====================
 
+v.1.51 - 29.03.2018
+-------------------
+
+Добавлены :doc:`метки <Labels>`.
+
+Свойство *Labels* добавлено в структуры:
+
+- :doc:`Entity <proto/Entity message>`
+- :doc:`ReceiptAttachment <proto/MessagePatchToPost>`
+- :doc:`CorrectionRequestAttachment <proto/MessagePatchToPost>`
+- :doc:`DocumentSignature <proto/MessagePatchToPost>`
+- :doc:`SignatureVerification <proto/MessagePatchToPost>`
+- :doc:`ResolutionAttachment <proto/Resolution>`
+- :doc:`ResolutionRequestAttachment <proto/ResolutionRequest>`
+- :doc:`ResolutionRouteAssignment <proto/MessagePatchToPost>`
+- :doc:`ResolutionRequestCancellationAttachment <proto/ResolutionRequest>`
+- :doc:`ResolutionRequestDenialAttachment <proto/ResolutionRequestDenial>`
+- :doc:`RequestedSignatureRejection <proto/MessagePatchToPost>`
+- :doc:`RevocationRequestAttachment <proto/MessagePatchToPost>`
+- :doc:`XmlSignatureRejectionAttachment <proto/MessagePatchToPost>`
+
+
 v.1.50 - 26.02.2018
 -------------------
 
