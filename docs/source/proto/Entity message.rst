@@ -27,6 +27,7 @@ Entity
         optional ResolutionRouteAssignmentInfo ResolutionRouteAssignmentInfo = 22; // заполняется только для вложений с типом AttachmentType.ResolutionRouteAssignment
         optional ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23; // заполняется только для вложений с типом AttachmentType.ResolutionRouteRemoval
         optional CancellationInfo CancellationInfo = 24;  // заполняется только для вложений с типом AttachmentType.Cancellation
+        repeated string Labels = 25;
     }
 
     enum EntityType {
@@ -243,3 +244,5 @@ Entity
 -  *ResolutionRouteRemovalInfo* - информация о снятии документа с маршрута согласования в виде структуры данных :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`.
 
 - *CancellationInfo* - информация об отмене сущности в виде структуры данных :doc:`CancellationInfo <CancellationInfo>`. Отменённой является сущность, которая указана родительской по отношению к данной. Например, это может быть идентификатор запроса на согласование.
+
+- *Labels* - :doc:`метки сущности <../Labels>`.

@@ -30,11 +30,13 @@ ResolutionRequest
         optional string TargetUserId = 3;
         optional string TargetDepartmentId = 4;
         optional string Comment = 5;
+        repeated string Labels = 6;
     }
 
     message ResolutionRequestCancellationAttachment {
         required string InitialResolutionRequestId = 1;
         optional string Comment = 2;
+        repeated string Labels = 3;
     }
         
 
@@ -65,7 +67,6 @@ ResolutionRequest
 
 -  *TargetUserId* - идентификатор пользователя, которому направлен запрос.
 
-
 Структура данных *ResolutionRequestAttachment* содержит информацию для отправки запроса на согласование (или подпись) документа в методе :doc:`../http/PostMessagePatch`
 
 -  *Type* - тип запроса на согласование.
@@ -80,8 +81,12 @@ ResolutionRequest
 
 -  *Comment* - комментарий к запросу согласования.
 
+-  *Labels* - :doc:`метки <../Labels>` запроса на согласование.
+
 Структура данных *ResolutionRequestCancellationAttachment* содержит информацию для отправки отмены запроса на согласование документа в методе :doc:`../http/PostMessagePatch`.
 
 -  *InitialResolutionRequestId* - идентификатор отменяемого запроса на согласование.
 
 -  *Comment* - комментарий к отмене запроса на согласование.
+
+-  *Labels* - :doc:`метки <../Labels>` отмены запроса на согласование.
