@@ -26,6 +26,7 @@ MessagePatchToPost
         repeated ReceiptAttachment UniversalTransferDocumentBuyerTitles = 20;
         repeated ResolutionRouteRemoval ResolutionRouteRemovals = 21;
         repeated ReceiptAttachment RecipientTitles = 22;
+        repeated CustomDataPatch EditingPatches = 23;
     }
 
     message ReceiptAttachment {
@@ -127,6 +128,8 @@ MessagePatchToPost
 -  *ResolutionRouteAssignments* - список операций по постановке документов на маршрут согласования. Каждый элемент представляется структурой *ResolutionRouteAssignment*.
 
 -  *ResolutionRouteRemovals* - список операция по снятию документов с маршрута согласования. Каждый элемент представляется структурой *ResolutionRouteRemoval*.
+
+-  *EditingPatches* - список операций по редактированию контента документа. Каждый элемент представляется структурой :doc:`CustomDataPatch <CustomDataPatch>`. Редактирование разрешено только для тех документов, которые были сформированы путём преобразования из шаблона, и для которых была указана настройка редактирования :doc:`EditingSettingId <TemplateDocumentAttachment>` при создании шаблона с помощью метода :doc:`TemplateToPost <TemplateToPost>`.
 
 Структура данных *ReceiptAttachment* представляет одно извещение о получении документа в отправляемом патче:
 
