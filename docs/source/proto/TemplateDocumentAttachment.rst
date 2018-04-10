@@ -14,6 +14,7 @@ TemplateDocumentAttachment
         repeated MetadataItem Metadata = 6;
         optional int32 WorkflowId = 7;
         optional string CustomDocumentId = 8;
+        optional string EditingSettingId = 9;
     }
 
 - *UnsignedContent* - содержимое файла в виде структуры :doc:`UnsignedContent`.
@@ -31,3 +32,5 @@ TemplateDocumentAttachment
 - *WorkflowId* - идентификатор вида документооборота. Список допустимых видов документооборота для типа можно получить через метод :doc:`../http/GetDocumentTypes`. Описание видов документооборота доступно на странице :doc:`DocumentWorkflow`.
 
 - *CustomDocumentId* - необязательный идентификатор документа во внешней системе, уникальный в рамках структуры :doc:`TemplateToPost`; используется для выстраивания связей между документами внутри отправляемого сообщения. В дальнейшем его можно получить через *Document.CustomDocumentId*.
+
+- *EditingSettingId* - идентификатор настройки редактирования содержимого документа. Наличие данной настройки означает, что в содержимом файла может отсутствовать контент, редактирование которого разрешено данной настройкой.
