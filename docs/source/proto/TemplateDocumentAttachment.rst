@@ -15,6 +15,7 @@ TemplateDocumentAttachment
         optional int32 WorkflowId = 7;
         optional string CustomDocumentId = 8;
         optional string EditingSettingId = 9;
+        optional bool NeedRecipientSignature = 10 [default = false];
     }
 
 - *UnsignedContent* - содержимое файла в виде структуры :doc:`UnsignedContent`.
@@ -34,3 +35,5 @@ TemplateDocumentAttachment
 - *CustomDocumentId* - необязательный идентификатор документа во внешней системе, уникальный в рамках структуры :doc:`TemplateToPost`; используется для выстраивания связей между документами внутри отправляемого сообщения. В дальнейшем его можно получить через *Document.CustomDocumentId*.
 
 - *EditingSettingId* - идентификатор настройки редактирования содержимого документа. Наличие данной настройки означает, что в содержимом файла может отсутствовать контент, редактирование которого разрешено данной настройкой.
+
+- *NeedRecipientSignature* - необязательный признак, обозначающий запрос подписи получателя под отправляемым документом, созданным из шаблона. При его проставлении документ, который будет создан из шаблона, будет требовать подпись от получателя.
