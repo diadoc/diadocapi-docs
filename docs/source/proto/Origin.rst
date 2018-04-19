@@ -3,8 +3,6 @@ Origin
 
 Контракт, описывающий происхождение :doc:`документа <Document>`.
 
-Описание:
-
 .. code-block:: protobuf
 
     message Origin {
