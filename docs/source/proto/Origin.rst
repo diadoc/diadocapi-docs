@@ -8,23 +8,26 @@ Origin
 .. code-block:: protobuf
 
     message Origin {
-        required LetterType LetterType = 1;
-        required string LetterId = 2;
+        required MessageType MessageType = 1;
+        required string MessageId = 2;
     }
 
-    enum LetterType {
+    enum MessageType {
         Unknown = 0;
-        Letter = 1;
+        Message = 1;
         Draft = 2;
         Template = 3;
     }	
 
-- *LetterType* отражает тип, из которого был создан документ. 
+- *MessageType* отражает тип документа, из которого был создан искомый документ. 
 
     - флаг *Draft* - документ создан из черновика;
 
     - флаг *Template* - документ создан из шаблона;
 
-    - *Unknown* и *Letter* пока не используются, сделаны для будущих возможных сценариев.
+    - *Unknown* и *Message* пока не используются, сделаны для будущих возможных сценариев.
 
-- *LetterId* - идентификатор исходной сущности (содержит *MessageId* черновика или шаблона соответственно).
+- *MessageId* - идентификатор исходной сущности (например, черновика или шаблона соответственно).
+
+.. note::
+   В C++ SDK, ввиду особенностей Protobuf, значения в *MessageType* называются *MessageLetter*, *DraftLetter* и *TemplateLetter* соответственно.
