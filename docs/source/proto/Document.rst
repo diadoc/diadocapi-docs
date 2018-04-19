@@ -74,6 +74,7 @@ Document
         required ConfirmationMetadata ConfirmationMetadata = 69;
         required RecipientResponseStatus RecipientResponseStatus = 70 [default = RecipientResponseStatusUnknown];
         required AmendmentRequestMetadata AmendmentRequestMetadata = 71;
+        optional Origin Origin = 72;
     }
 
     enum RevocationStatus {
@@ -280,6 +281,8 @@ Document
 - :doc:`RecipientResponseStatus <RecipientResponseStatus>` - свойство, отвечающее за состояние ответного действия получателя - ответную подпись или подписание ответного титула.
 
 - :doc:`AmendmentRequestMetadata <AmendmentRequestMetadata>` - свойство, отвечающее за состояние уведомления об уточнении. Актуально, например, для счетов-фактур, УПД и некоторых версий актов и накладных.
+
+- :doc:`Origin <Origin>` - свойство, позволяющее узнать, из какой сущности был создан документ. Например, из черновика или шаблона.
 
 .. warning::
     Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
