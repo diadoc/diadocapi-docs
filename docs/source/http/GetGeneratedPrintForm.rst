@@ -7,7 +7,7 @@ HTTP метод: **GET**
 
 Параметры строки запроса:
 
--  *printFormId* - идентификатор печатной формы, полученный с помощью методов :doc:`GeneratePrintForm` или :doc:`GeneratePrintFormFromAttachment`;
+-  *printFormId* - идентификатор печатной формы, полученный с помощью метода :doc:`GeneratePrintFormFromAttachment`;
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 
