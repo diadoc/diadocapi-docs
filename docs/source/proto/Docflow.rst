@@ -24,6 +24,7 @@ Docflow
         repeated CustomDataItem CustomData = 17;
         optional InboundUniversalTransferDocumentDocflow InboundUniversalTransferDocumentDocflow = 18;
         optional OutboundUniversalTransferDocumentDocflow OutboundUniversalTransferDocumentDocflow = 19;
+        optional RoamingNotification RoamingNotification = 20;
     }
 
 Структура представляет состояние документооборота для одного документа.
@@ -67,3 +68,5 @@ Docflow
 -  *PacketId* - идентификатор пакета, в котором в данный момент находится документ.
 
 -  :doc:`CustomData <CustomDataItem>` - пользовательские данные, привязанные к документу.
+
+-  :doc:`RoamingNotification <Docflow_RoamingNotification>` - данные о доставке документа в роуминг.
