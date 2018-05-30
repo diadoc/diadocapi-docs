@@ -78,12 +78,14 @@ DocumentTitle
     message DocumentTitle {
         required bool IsFormal = 1;
         optional string XsdUrl = 2;
+        optional string UserDataXsdUrl = 5;
         repeated DocumentMetadataItem MetadataItems = 3;
         repeated DocumentMetadataItem EncryptedMetadataItems = 4;
     }
 
 -  *IsFormal* - титул формализованный
--  *XsdUrl* - адрес метода, возвращающего файл XSD-схемы
+-  *XsdUrl* - URL-путь метода, возвращающего файл XSD-схемы титула
+-  *UserDataXsdUrl* - URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью обобщённого метода генерации. Для генерации титулов получателя может быть использован метод :doc:`GenerateRecipientTitleXml <../http/GenerateRecipientTitleXml>`.
 -  :ref:`MetadataItems <document-metadata-item>` - описания метаданных документа
 -  :ref:`EncryptedMetadataItems <document-metadata-item>` - описания метаданных для отправки зашифрованного документа
 
