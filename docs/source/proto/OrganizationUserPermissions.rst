@@ -19,6 +19,8 @@ OrganizationUserPermissions
         required bool CanAddResolutions = 7;
         required bool CanRequestResolutions = 8;
         repeated string SelectedDepartmentIds = 9;
+        optional string JobTitle = 10;
+        required bool CanCreateDocuments = 11;
     }
         
 
@@ -51,3 +53,7 @@ OrganizationUserPermissions
 -  *CanRequestResolutions* - может ли пользователь отправлять запросы на согласование и подпись документов.
 
 -  *SelectedDepartmentIds* - список подразделений, к которым имеет доступ пользователь (заполняется только в случае *DocumentAccessLevel = SelectedDepartments*).
+
+-  *JobTitle* - должность пользователя в организации. Может быть не указана.
+
+-  *CanCreateDocuments* - может ли пользователь создавать и редактировать документы.
