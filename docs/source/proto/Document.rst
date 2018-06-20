@@ -76,6 +76,7 @@ Document
         required AmendmentRequestMetadata AmendmentRequestMetadata = 71;
         optional Origin Origin = 72;
         optional string EditingSettingId = 73 [default = ""];
+        required LockMode LockMode = 74;
     }
 
     enum RevocationStatus {
