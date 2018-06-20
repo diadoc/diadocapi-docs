@@ -24,8 +24,9 @@ Message
         optional string ProxyBoxId = 18;
         optional string ProxyTitle = 19;
         optional bool PacketIsLocked = 20 [default = false];
+        required LockMode LockMode = 21;
     }
-        
+
 
 Структура данных *Message* представляет одно сообщение или черновик в Диадоке:
 

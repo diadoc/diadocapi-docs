@@ -38,6 +38,7 @@ MessageToPost
         optional bool LockPacket = 32 [default = false];
         repeated XmlDocumentAttachment UniversalTransferDocumentSellerTitles = 33;
         repeated DocumentAttachment DocumentAttachments = 34;
+        optional LockMode LockMode = 35 [default = None];
     }
 
 
@@ -109,7 +110,9 @@ MessageToPost
 
 -  *DelaySend* - флаг, означает, что документ из сообщения будет сохранен без отправки.
 
--  *LockPacket* - флаг, означает, что документы сообщения будут отправлены закрытым пакетом. В таком пакете любая операция применяется ко всем документам сразу.
+-  *LockPacket* - флаг, означает, что документы сообщения будут отправлены закрытым пакетом. В таком пакете любая операция применяется ко всем документам сразу. Эквивалентен *LockMode* = *Full*.
+
+- *LockMode* - режим блокировки сообщения. Виды доступных режимы доступны в описании :doc:`../proto/LockMode`.
 
 Сообщения с флагом *DelaySend* должны удовлетворять следующим условиям:
 
