@@ -32,7 +32,6 @@ HTTP-интерфейс
    http/GetForwardedEntityContent
    http/GetForwardedDocuments
    http/GetGeneratedPrintForm
-   http/GetRecognized
    http/MoveDocuments
    http/ParseAcceptanceCertificateSellerTitleXml
    http/ParseAcceptanceCertificateBuyerTitleXml
@@ -41,7 +40,6 @@ HTTP-интерфейс
    http/ParseTorg12SellerTitleXml
    http/ParseTorg12BuyerTitleXml
    http/PrepareDocumentsToSign
-   http/Recognize
    http/RecycleDraft
    http/Restore
    http/ShelfDownload
@@ -78,8 +76,7 @@ HTTP-интерфейс
    proto/Official   
    proto/PrepareDocumentsToSignRequest
    proto/PrepareDocumentsToSignResponse
-   proto/PriceListAttachment   
-   proto/Recognized
+   proto/PriceListAttachment
    proto/ReconciliationActAttachment
    proto/Resolution
    proto/ResolutionRequest
