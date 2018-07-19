@@ -12,6 +12,7 @@ TemplateToPost
         required string MessageToBoxId = 4;
         optional string MessageToDepartmentId = 5;
         repeated TemplateDocumentAttachment DocumentAttachments = 6;
+        optional LockMode LockMode = 7 [default = None];
     }
 
 
@@ -26,5 +27,7 @@ TemplateToPost
 - *MessageToDepartmentId* - идентификатор подразделения получателя сообщения, которое будет создано на основе отправляемого шаблона.
 
 - *DocumentAttachments* - список документов любых типов, содержащий сообщение :doc:`../proto/TemplateDocumentAttachment`.
+
+- *LockMode* - режим блокировки сообщения с шаблонами. Виды доступных режимы доступны в описании :doc:`../proto/LockMode`.
 
 Сохраненный таким образом шаблон можно будет найти используя метод :doc:`../http/GetTemplate`.

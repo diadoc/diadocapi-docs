@@ -15,9 +15,10 @@ Template
         repeated Entity Entities = 7;
         optional bool IsDeleted = 8 [default = false];
         optional string MessageToDepartmentId = 9;
+        required LockMode LockMode = 10;
     }
 
-- *MessageId* - уникальный идентификатор сообщения.
+- *MessageId* - уникальный идентификатор сообщения с шаблонами.
 
 - *TimestampTicks* - :doc:`метка времени <Timestamp>` создания сообщения.
 
@@ -34,3 +35,5 @@ Template
 - *IsDeleted* - флаг, показывающий, было ли удалено данное сообщение.
 
 - *MessageToDepartmentId* - идентификатор подразделения получателя сообщения, которое будет создано на основе шаблона.
+
+- *LockMode* - режим блокировки сообщения с шаблонами. Виды доступных режимы доступны в описании :doc:`../proto/LockMode`.
