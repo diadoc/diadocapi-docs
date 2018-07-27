@@ -28,7 +28,8 @@ HTTP метод: **GET**
        <Organizations>
          <Organization id="orgId1" inn="1234567890" kpp="123456789" fullName="ООО Яблоко" shortName="ООО Яблоко" joinedDiadocTreaty="true">
            <Boxes>
-             <Box id="boxId1" title="Ящик для счетов фактур" />             
+             <Box id="boxId1" title="Ящик для счетов фактур" />
+             <Box id="boxId2" title="Тестовый ящик" />
            </Boxes>
          </Organization>
          <Organization id="orgId2" inn="123456789012" kpp="" fullName="ИП Сидоров Иван Петрович" shortName="" joinedDiadocTreaty="false">
