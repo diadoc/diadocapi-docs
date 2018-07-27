@@ -81,7 +81,7 @@ ResolutionRequest
 
 -  *Comment* - комментарий к запросу согласования.
 
--  *Labels* - :doc:`метки <../Labels>` запроса на согласование.
+-  *Labels* - :doc:`метки <../proto/Labels>` запроса на согласование.
 
 Структура данных *ResolutionRequestCancellationAttachment* содержит информацию для отправки отмены запроса на согласование документа в методе :doc:`../http/PostMessagePatch`.
 
@@ -89,4 +89,4 @@ ResolutionRequest
 
 -  *Comment* - комментарий к отмене запроса на согласование.
 
--  *Labels* - :doc:`метки <../Labels>` отмены запроса на согласование.
+-  *Labels* - :doc:`метки <../proto/Labels>` отмены запроса на согласование.
