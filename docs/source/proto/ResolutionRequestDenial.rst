@@ -31,7 +31,7 @@ ResolutionRequestDenial
 
 -  *Comment* - комментарий к отказу от запроса подписи к документу.
 
--  *Labels* - :doc:`метки <../Labels>` отказа от запроса подписи.
+-  *Labels* - :doc:`метки <../proto/Labels>` отказа от запроса подписи.
 
 Структура данных *ResolutionRequestDenialCancellationAttachment* содержит информацию об отмене отказа от запроса подписи к документу в методе :doc:`../http/PostMessagePatch`.
 
