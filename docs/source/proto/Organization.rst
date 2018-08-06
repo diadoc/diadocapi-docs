@@ -32,6 +32,7 @@ Organization
         optional string LiquidationDate = 23;
         optional string CertificateOfRegistryInfo = 24;
         optional bool IsForeign = 25;
+        optional bool HasCertificateToSign = 26;
     }
 
     message Box {
@@ -87,6 +88,8 @@ Organization
 - Поле *CertificateOfRegistryInfo* содержит информацию о свидетельстве о государственной регистрации.
 
 - Поле *IsForeign* содержит признак того, что организация являестя иностранной.
+
+- Поле *HasCertificateToSign* содержит признак наличия у организации сертификата для подписания документов.
 
 Структура данных *Box* содержит информацию об одном ящике в Диадоке: его идентификатор, понятное имя и информацию об организации-владельце ящика.
 
