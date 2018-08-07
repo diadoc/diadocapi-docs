@@ -1,6 +1,11 @@
 ﻿История изменений API
 =====================
 
+v.1.52.4 - 08.08.2018
+---------------------
+
+- Добавлены экспериментальные новые версии методов Docflow API: :doc:`http/GetDocflows_V3`, :doc:`http/GetDocflowEvents_V3`, :doc:`http/GetDocflowsByPacketId_V3`, :doc:`http/SearchDocflows_V3`. Методы доступны только в C# SDK.
+
 v.1.52.3 - 07.08.2018
 ---------------------
 
