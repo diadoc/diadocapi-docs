@@ -18,7 +18,9 @@
   :align: center
 
 Для того, чтобы отправить документ по такой схеме, идентификаторы ящиков нужно заполнить так:
+
 ::
+
     "FromBoxId": "boxId1",
     "ToBoxId": "boxId2",
     "MessageFromBoxId": "boxId2",
@@ -30,7 +32,9 @@
   :align: center
 
 Для того, чтобы отправить документ по такой схеме, идентификаторы ящиков нужно заполнить так:
+
 ::
+
     "FromBoxId": "boxId1",
     "ToBoxId": "boxId2",
     "MessageFromBoxId": "boxId1",
@@ -44,6 +48,7 @@
 
 Для того, чтобы отправить документ по такой схеме, идентификаторы ящиков нужно заполнить так:
 ::
+
     "FromBoxId": "boxId1",
     "ToBoxId": "boxId2",
     "MessageFromBoxId": "boxId2",

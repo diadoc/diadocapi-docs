@@ -21,7 +21,7 @@ HTTP-интерфейс
    http/GetOrganizationsByInnList
    http/GetOrganizationUsers
    http/ParseRussianAddress
-   
+   http/GetEmployee
 
 Структуры данных
 ----------------
@@ -40,3 +40,4 @@ HTTP-интерфейс
    proto/OrganizationUser
    proto/OrganizationUserPermissions
    proto/User
+   proto/UserV2
