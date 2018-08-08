@@ -3,14 +3,6 @@ OrganizationUserPermissions
 
 .. code-block:: protobuf
 
-    enum DocumentAccessLevel {
-        UnknownDocumentAccessLevel = -1;
-        DepartmentOnly = 0;
-        DepartmentAndSubdepartments = 1;
-        AllDocuments = 2;
-        SelectedDepartments = 3;
-    }
-
     message OrganizationUserPermissions {
         required string UserDepartmentId = 1;
         required bool IsAdministrator = 2;
@@ -32,19 +24,7 @@ OrganizationUserPermissions
 
 -  *IsAdministrator* - может ли пользователь редактировать структуру и реквизиты организации, добавлять и редактировать других пользователей.
 
--  *DocumentAccessLevel*:
-
-   -  *UnknownDocumentAccessLevel* - неизвестный набор прав пользователя; 
-   
-   может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать переданный сервером уровень прав доступа.
-
-   -  *DepartmentOnly* - пользователю доступны только документы из подразделения, в котором он состоит.
-
-   -  *DepartmentAndSubdepartments* - пользователю доступны документы из подразделения, в котором он состоит и всех дочерних подразделений.
-
-   -  *AllDocuments* - пользователю доступны все документы организации.
-
-   -  *SelectedDepartments* - пользователю доступны документы из нескольких подразделений.
+-  :doc:`DocumentAccessLevel` - уровень доступа к документам
 
 -  *CanSignDocuments* - может ли пользователь подписывать документы.
 

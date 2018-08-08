@@ -33,7 +33,7 @@
    Документооборот актов <docflows/AktDocflow>
    Документооборот УПД <docflows/UtdDocflow>
    Неформализованный документооборот <docflows/NonformalizedDocflow>
-   Документооборот шаблонов <docflows/TemplateDockflow>
+   Документооборот шаблонов <docflows/TemplateDocflow>
 
 .. toctree::
    :name: examples
