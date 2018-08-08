@@ -79,37 +79,11 @@ Document
         required LockMode LockMode = 74;
     }
 
-    enum RevocationStatus {
-        UnknownRevocationStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
-        RevocationStatusNone = 1;
-        RevocationIsRequestedByMe = 2;
-        RequestsMyRevocation = 3;
-        RevocationAccepted = 4;
-        RevocationRejected = 5;
-    }
-
     enum RoamingNotificationStatus {
         UnknownRoamingNotificationStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
         NotificationStatusNone = 1;
         NotificationStatusSuccess = 2;
         NotificationStatusError = 3;
-    }
-
-    enum SenderSignatureStatus {
-        UnknownSenderSignatureStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
-        WaitingForSenderSignature = 1; // Ожидается подпись отправителя
-        SenderSignatureUnchecked = 2; // Подпись отправителя еще не проверена
-        SenderSignatureCheckedAndValid = 3; // Подпись отправителя проверена и валидна
-        SenderSignatureCheckedAndInvalid = 4; // Подпись отправителя проверена и невалидна
-    }
-    
-    enum ProxySignatureStatus {
-        UnknownProxySignatureStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
-        ProxySignatureStatusNone = 1; // Подпись промежуточного получателя не требуется
-        WaitingForProxySignature = 2; // Ожидается подпись промежуточного получателя
-        WithProxySignature = 3; // Подпись промежуточного получателя проверена и валидна
-        ProxySignatureRejected = 4; // Промежуточный получатель отказал в подписи
-        InvalidProxySignature = 5; // Подпись промежуточного получателя проверена и невалидна
     }
 
 Структура данных *Document* содержит информацию об одном документе в Диадоке, которую можно получить, например, при помощи метода :doc:`../http/GetDocument`:
@@ -166,6 +140,8 @@ Document
    
 -  *IsEncryptedContent* - флаг, показывающий, что контент передаваемого документа зашифрован.
 
+-  :doc:`SenderSignatureStatus` - статус подписи отправителя.
+
 -  :doc:`NonformalizedDocumentMetadata` (устаревшее, см. *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для неформализованных документов.
 
 -  :doc:`InvoiceMetadata <InvoiceDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты специфичные для счетов-фактур.
@@ -214,19 +190,7 @@ Document
 
 -  :doc:`UniversalCorrectionDocumentRevisionMetadata <utd/UniversalDocumentMetadata>` (устаревшее, см. *RecipientReceiptMetadata*, *RecipientResponseStatus*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты, специфичные для исправлений УКД
 
--  *RevocationStatus* - статус аннулирования документа. Возможные значения:
-
-   -  *RevocationStatusNone* (документ не аннулирован, и не было предложений об аннулировании)
-
-   -  *RevocationIsRequestedByMe* (отправлено исходящее предложение об аннулировании документа)
-
-   -  *RequestsMyRevocation* (получено входящее предложение об аннулировании документа)
-
-   -  *RevocationAccepted* (документ аннулирован)
-
-   -  *RevocationRejected* (получен или отправлен отказ от предложения об аннулировании документа)
-
-   -  *UnknownRevocationStatus* (неизвестный статус аннулирования документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать статус аннулирования документа, переданный сервером)
+-  :doc:`RevocationStatus` - статус аннулирования документа.
 
 -  *SendTimestampTicks* - Необязательная :doc:`метка времени <Timestamp>` отправки данного документа.
 
@@ -254,17 +218,7 @@ Document
 
 - *AttachmentVersion* - информация о версии XSD схемы, в соответствии с которой сформирован документ.
 
-- *ProxySignatureStatus* - статус промежуточной подписи. Возможные значения:
-
-  - *ProxySignatureStatusNone* (документ не требует промежуточной подписи)
-  
-  - *WaitingForProxySignature* (ожидается промежуточная подпись)
-  
-  - *WithProxySignature* (промежуточная подпись проверена и валидна)
-  
-  - *ProxySignatureRejected* (промежуточный получатель отказал в подписи)
-  
-  - *InvalidProxySignature* (промежуточная подпись проверена и невалидна)
+- :doc:`ProxySignatureStatus` - статус промежуточной подписи.
 
 - *TypeNamedId* - строковый идентификатор типа документа. Его следует использовать вместо свойства *DocumentType*. Может принимать значения "Nonformalized", "Invoice", "Torg12", "XmlTorg12" и другие. Полный список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
 

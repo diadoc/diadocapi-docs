@@ -20,6 +20,19 @@ HTTP-интерфейс
    http/SearchDocflows
    http/GetDocflowEvents
 
+HTTP-интерфейс версии 3 (экспериментальный)
+-------------------------------------------
+
+.. toctree::
+   :name: toc5
+   :maxdepth: 2
+   :titlesonly:
+
+   http/GetDocflows_V3
+   http/GetDocflowsByPacketId_V3
+   http/SearchDocflows_V3
+   http/GetDocflowEvents_V3
+
 Структуры данных
 ----------------
 

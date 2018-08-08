@@ -12,10 +12,10 @@ AmendmentRequestMetadata
         required GeneralReceiptStatus ReceiptStatus = 2;
     }
 
-- :doc:`AmendmentFlags <InvoiceDocumentMetadata>` отражает статус УОУ:
+- :doc:`AmendmentFlags <InvoiceAmendmentFlags>` отражает статус УОУ:
 
     - было ли затребовано уточнение, передавалось ли исправление документа, передавалась ли корректировка документа;
 
-    - представляет собой битовую маску, составленную из одного или нескольких значений перечисления InvoiceAmendmentFlags.
+    - представляет собой битовую маску, составленную из одного или нескольких значений перечисления :doc:`InvoiceAmendmentFlags`.
 
 - :doc:`ReceiptStatus <GeneralReceiptStatus>` - статус извещения о получении под УОУ со стороны отправителя документа.
