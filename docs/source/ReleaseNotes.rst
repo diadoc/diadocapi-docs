@@ -1,6 +1,11 @@
 ﻿История изменений API
 =====================
 
+v.1.53.0 - 20.08.2018
+---------------------
+
+- Добавлен обобщённый метод генерации титула отправителя :doc:`GenerateSenderTitleXml <http/GenerateSenderTitleXml>`.
+
 v.1.53.2 - 22.08.2018
 ---------------------
 
@@ -49,7 +54,7 @@ v.1.51.7 - 14.06.2018
 v.1.51.6 - 22.05.2018
 ---------------------
 
-- Добавлен обобщённый метод генерации титулов получателя :doc:`GenerateRecipientTitleXml <http/GenerateRecipientTitleXml>`.
+- Добавлен обобщённый метод генерации титула получателя :doc:`GenerateRecipientTitleXml <http/GenerateRecipientTitleXml>`.
 - Расширена структура контракта :doc:`DocumentTitle <proto/DocumentTypeDescription>`. Добавлено поле *UserDataXsdUrl*, позволяющее узнать, по какой ссылке возможно загрузить XSD-схему контракта для генерации титула с помощью :doc:`обобщённого метода генерации <http/GenerateRecipientTitleXml>`.
 
 

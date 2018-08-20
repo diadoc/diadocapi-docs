@@ -13,6 +13,8 @@ HTTP-интерфейс
 
    http/Delete
    http/ForwardDocument
+   http/GenerateSenderTitleXml
+   http/GenerateRecipientTitleXml
    http/GenerateAcceptanceCertificateXmlForBuyer
    http/GenerateAcceptanceCertificateXmlForSeller
    http/GenerateDocumentProtocol
