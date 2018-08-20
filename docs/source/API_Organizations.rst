@@ -11,8 +11,10 @@ HTTP-интерфейс
    :maxdepth: 2
    :titlesonly:
 
+   http/CreateEmployee
    http/GetBox
    http/GetDepartment
+   http/GetEmployee
    http/GetMyOrganizations
    http/GetMyPermissions
    http/GetMyUser
@@ -22,7 +24,6 @@ HTTP-интерфейс
    http/GetOrganizationUsers
    http/GetSubscriptions
    http/ParseRussianAddress
-   http/GetEmployee
    http/UpdateSubscriptions
 
 Структуры данных
@@ -38,6 +39,7 @@ HTTP-интерфейс
    proto/Employee
    proto/EmployeePermissions
    proto/EmployeeSubscriptions
+   proto/EmployeeToCreate
    proto/GetOrganizationsByInnListRequest
    GetOrganizationsByInnListResponse <proto/GetOrganizationsByInnListRequest>
    proto/Organization
