@@ -33,6 +33,8 @@ HTTP-интерфейс
 
    proto/Address
    proto/Department
+   proto/Employee
+   proto/EmployeePermissions
    proto/GetOrganizationsByInnListRequest
    GetOrganizationsByInnListResponse <proto/GetOrganizationsByInnListRequest>
    proto/Organization
