@@ -8,6 +8,7 @@ OrganizationUserPermissions
         required bool IsAdministrator = 2;
         optional DocumentAccessLevel DocumentAccessLevel = 3 [default = UnknownDocumentAccessLevel];
         required bool CanSignDocuments = 4;
+        required bool CanManageCounteragents = 6;
         required bool CanAddResolutions = 7;
         required bool CanRequestResolutions = 8;
         repeated string SelectedDepartmentIds = 9;
@@ -27,6 +28,8 @@ OrganizationUserPermissions
 -  :doc:`DocumentAccessLevel` - уровень доступа к документам
 
 -  *CanSignDocuments* - может ли пользователь подписывать документы.
+
+-  *CanManageCounteragents* - может ли пользователь видеть списки контрагентов и работать с ними.
 
 -  *CanAddResolutions* - может ли пользователь согласовывать документы.
 
