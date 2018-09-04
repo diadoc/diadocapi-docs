@@ -37,3 +37,4 @@ EmployeePermissions
    "SignDocuments", "Подписывать документы"
    "AddResolutions", "Согласовывать документы"
    "RequestResolutions", "Передавать на подпись и согласование"
+   "ManageCounteragents", "Видеть списки контрагентов и работать с ними"
