@@ -1,5 +1,5 @@
-SenderSignatureStatus
-=====================
+RevocationStatus
+================
 
 .. code-block:: protobuf
 
