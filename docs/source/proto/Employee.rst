@@ -11,7 +11,7 @@ Employee
        optional Timestamp CreationTimestamp = 5;
     }
 
-Структура содержит информацию о сотруднике организация. Возвращается методом :doc:`../http/GetEmployee`.
+Структура содержит информацию о сотруднике организации. Возвращается методом :doc:`../http/GetEmployee`.
 
  - :doc:`User <UserV2>` - информация о пользователе
  - :doc:`Permissions <EmployeePermissions>` - права сотрудника

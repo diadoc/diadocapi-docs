@@ -90,7 +90,7 @@ MessagePatchToPost
         required string ParentEntityId = 1;
         required UnsignedContent Content = 2;
         repeated string Labels = 3;
-}
+    }
 
 Структура данных *MessagePatchToPost* представляет дополнение к сообщению, подлежащее отправке через Диадок при помощи метода :doc:`../http/PostMessagePatch`:
 
