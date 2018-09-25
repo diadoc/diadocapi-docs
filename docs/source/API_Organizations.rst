@@ -25,6 +25,7 @@ HTTP-интерфейс
    http/GetOrganizationUsers
    http/GetSubscriptions
    http/ParseRussianAddress
+   http/UpdateEmployee
    http/UpdateSubscriptions
 
 Структуры данных
@@ -41,6 +42,7 @@ HTTP-интерфейс
    proto/EmployeePermissions
    proto/EmployeeSubscriptions
    proto/EmployeeToCreate
+   proto/EmployeeToUpdate
    proto/GetOrganizationsByInnListRequest
    GetOrganizationsByInnListResponse <proto/GetOrganizationsByInnListRequest>
    proto/Organization

@@ -1,5 +1,5 @@
 GenerateSenderTitleXml
-==========================
+======================
 
 .. http:post:: /GenerateSenderTitleXml
 
@@ -33,10 +33,10 @@ GenerateSenderTitleXml
 
     .. sourcecode:: http
 
-        POST /GenerateSenderTitleXml?boxId=a96be310-0982-461a-8b2a-91d198b7861c&documentTypeNamedId=UniversalTransferDocument&documentFunction=ДОП&documentVersion=utd_05_01_04
+        POST /GenerateSenderTitleXml?boxId=a96be310-0982-461a-8b2a-91d198b7861c&documentTypeNamedId=UniversalTransferDocument&documentFunction=ДОП&documentVersion=utd_05_01_04 HTTP/1.1
         Host: diadoc-api.kontur.ru
         Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
-        Content-Type: application/json; charset=utf-8
+        Content-Type: application/xml; charset=utf-8
 
         <?xml version="1.0" encoding="utf-8"?>
         <UniversalTransferDocument Function="ДОП" DocumentDate="20.08.2018" DocumentNumber="QJ4U" Currency="643" DocumentCreator="str1234">
