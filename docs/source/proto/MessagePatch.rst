@@ -14,6 +14,9 @@ MessagePatch
         optional bool MessageIsDeleted = 8 [default = false];
         repeated EntityPatch EntityPatches = 9;
         optional bool MessageIsRestored = 10 [default = false];
+        optional bool MessageIsDelivered = 11 [default = false];
+        optional string DeliveredPatchId = 12;
+        required string PatchId = 13;
     }
 
     message EntityPatch {
@@ -47,6 +50,12 @@ MessagePatch
 -  *EntityPatches* - список патчей к сущностям сообщения, к которому относится данный патч. Каждый такой патч представлен структурой типа EntityPatch.
 
 -  *MessageIsRestored* - флаг, показывающий, что сообщение, к которому относится данный патч, было восстановлено из удаленных.
+
+-  *MessageIsDelivered* - флаг, показывающий, что сообщение, к которому относится данный патч, было доставлено получателю.
+
+-  *DeliveredPatchId* - идентификатор доставленного получателю патча.
+
+-  *PatchId* - идентификатор патча.
 
 Структура данных *EntityPatch* представляет дополнение (патч) к :doc:`сущности <Entity message>` в Диадоке:
 
