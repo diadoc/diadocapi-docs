@@ -16,6 +16,11 @@ TemplateDocumentAttachment
         optional string CustomDocumentId = 8;
         optional string EditingSettingId = 9;
         optional bool NeedRecipientSignature = 10 [default = false];
+        optional PredefinedRecipientTitle PredefinedRecipientTitle = 11;
+    }
+
+    message PredefinedRecipientTitle {
+        required UnsignedContent UnsignedContent = 1;
     }
 
 - *UnsignedContent* - содержимое файла в виде структуры :doc:`UnsignedContent`.
@@ -37,3 +42,5 @@ TemplateDocumentAttachment
 - *EditingSettingId* - идентификатор настройки редактирования содержимого документа. Наличие данной настройки означает, что в содержимом файла может отсутствовать контент, редактирование которого разрешено данной настройкой.
 
 - *NeedRecipientSignature* - необязательный признак, обозначающий запрос подписи получателя под отправляемым документом, созданным из шаблона. При его проставлении документ, который будет создан из шаблона, будет требовать подпись от получателя.
+
+- *PredefinedRecipientTitle* - необязательное поле для данных о титуле покупателя. Предназначено для двухтитульных документов с разрешённой для действия версией. Подробнее о функционале можно узнать здесь: :doc:`../howto/example_predefined_recipient_title`.
