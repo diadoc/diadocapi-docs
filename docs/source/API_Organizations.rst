@@ -18,6 +18,7 @@ HTTP-интерфейс
    http/GetMyOrganizations
    http/GetMyPermissions
    http/GetMyUser
+   http/UpdateMyUser
    http/GetOrganization
    http/GetOrganizationsByInnKpp
    http/GetOrganizationsByInnList
