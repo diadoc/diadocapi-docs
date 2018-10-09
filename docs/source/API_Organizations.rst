@@ -12,6 +12,7 @@ HTTP-интерфейс
    :titlesonly:
 
    http/CreateEmployee
+   http/DeleteEmployee
    http/GetBox
    http/GetDepartment
    http/GetEmployee
