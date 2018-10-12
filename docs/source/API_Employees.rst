@@ -14,6 +14,7 @@ HTTP-интерфейс
    http/CreateEmployee
    http/DeleteEmployee
    http/GetEmployee
+   http/GetEmployees
    http/GetMyPermissions
    http/GetMyUser
    http/GetOrganizationUsers
@@ -31,6 +32,7 @@ HTTP-интерфейс
    :titlesonly:
 
    proto/Employee
+   proto/EmployeeList
    proto/EmployeePermissions
    proto/EmployeeSubscriptions
    proto/EmployeeToCreate
