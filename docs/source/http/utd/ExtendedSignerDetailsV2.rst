@@ -12,7 +12,7 @@ ExtendedSignerDetails
 Заполнение данных
 -----------------
 
-Во второй версии метода *ExtendedSignerDetails* параметры *buyer* и *correction* заменены на 1 параметр *documentTitleType*. Возможные значения параметра представлены ниже:
+Во второй версии метода *ExtendedSignerDetails* параметры *buyer* и *correction* заменены на один параметр целочисленного типа *documentTitleType*. Возможные значения параметра представлены ниже:
 
 ::
 
@@ -57,9 +57,9 @@ ExtendedSignerDetails
 
 .. http:get:: /V2/ExtendedSignerDetails
 
-   :query boxId: идентификатор ящика, для которого нужно заполнить данные о подписанте
-   :query thumbprint: отпечаток сертификата, для которого нужно заполнить дополнтиельные данные о подписанте
-   :query documentTitleType: тип титула, для которого нужно заполнить дополнительные данные о подписанте
+   :query string boxId: идентификатор ящика, для которого нужно заполнить данные о подписанте
+   :query string thumbprint: отпечаток сертификата, для которого нужно заполнить дополнтиельные данные о подписанте
+   :query int documentTitleType: тип титула, для которого нужно заполнить дополнительные данные о подписанте
 
    :reqheader Authorization: в запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../../Authorization>`
    :reqheader Content-Type: test
