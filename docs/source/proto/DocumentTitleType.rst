@@ -4,6 +4,7 @@ DocumentTitleType
 .. code-block:: protobuf
 
     enum DocumentTitleType {
+        Absent = -1;
         UtdSeller = 0;         // Данные для титула продавца УПД
         UtdBuyer = 1;          // Данные для титула покупателя УПД
         UcdSeller = 2;         // Данные для титула продавца УКД

@@ -81,6 +81,7 @@ DocumentTitle
         required bool IsFormal = 1;
         optional string XsdUrl = 2;
         optional string UserDataXsdUrl = 5;
+        required SignerInfo SignerInfo = 6;
         repeated DocumentMetadataItem MetadataItems = 3;
         repeated DocumentMetadataItem EncryptedMetadataItems = 4;
     }
@@ -88,8 +89,39 @@ DocumentTitle
 -  *IsFormal* - титул формализованный
 -  *XsdUrl* - URL-путь метода, возвращающего файл XSD-схемы титула
 -  *UserDataXsdUrl* - URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью обобщённого метода генерации. Для генерации титулов получателя может быть использован метод :doc:`GenerateRecipientTitleXml <../http/GenerateRecipientTitleXml>`.
+-  :ref:`SignerInfo <signer-info>` - описание подписанта титула
 -  :ref:`MetadataItems <document-metadata-item>` - описания метаданных документа
 -  :ref:`EncryptedMetadataItems <document-metadata-item>` - описания метаданных для отправки зашифрованного документа
+
+.. _signer-info:
+
+SignerInfo
+********************
+
+Описывает тип подписанта титула.
+
+.. code-block:: protobuf
+
+    message SignerInfo {
+        required SignerType SignerType = 1;
+        required DocumentTitleType ExtendedDocumentTitleType = 2 [default = Absent];
+    }
+
+    enum SignerType {
+        None = 0;
+        Signer = 1;
+        ExtendedSigner = 2;
+    }
+
+-  *SignerType* - тип подписанта необходимый для титула
+
+    -  *None* - подписант отсутствует в контенте документа. Формируется только файл открепленной подписи. Используется для неформализованных документов
+
+    -  *Signer* - простой подписант. Используется для документов форматов :doc:`@93/@172 <../docflows/AttachmentVersion>` и своих типов документов не на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
+
+    -  *ExtendedSigner* - расширенный подписант. Используется для документов форматов :doc:`@155/@551/@552 <../docflows/AttachmentVersion>` и своих типов на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
+
+-  :doc:`DocumentTitleType <DocumentTitleType>` - Тип титула документа, для которого нужно заполнить дополнительные данные о подписанте. Для типов подписанта *None* и *Signer* значение всегда равно *Absent*.
 
 .. _document-metadata-item:
 
