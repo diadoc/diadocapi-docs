@@ -59,6 +59,7 @@
    Работа с сообщениями <API_Messages>
    Работа с событиями <API_Events>
    Работа с организациями <API_Organizations>
+   Работа с сотрудниками <API_Employees>
    Работа с контрагентами <API_Counteragents>
    Работа с шаблонами <API_Templates>
    Docflow API <Docflow API>
