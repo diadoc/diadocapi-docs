@@ -16,10 +16,10 @@ HTTP-интерфейс
    http/GetEmployee
    http/GetMyPermissions
    http/GetMyUser
-   http/UpdateMyUser
    http/GetOrganizationUsers
    http/GetSubscriptions
    http/UpdateEmployee
+   http/UpdateMyUser
    http/UpdateSubscriptions
 
 Структуры данных
