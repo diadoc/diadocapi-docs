@@ -6,7 +6,7 @@ v.1.59.0 - 30.10.2018
 
 Появилась возможность работы с извещением о получении на титул получателя:
 
-- Обновились настройки Workflow для всех типов документа, добавлена новая настройка.
+- Обновились :doc:`настройки документооборота <proto/DocumentWorkflow>` для всех типов документа, добавлена новая настройка.
 
 - В структуре :doc:`MessagePatchToPost <proto/MessagePatchToPost>` поля RecipientTitles, XmlTorg12BuyerTitles, XmlAcceptanceCertificateBuyerTitles, UniversalTransferDocumentBuyerTitles сменили сообщение протобуфера с ReceiptAttachment на RecipientTitleAttachment. 
 
