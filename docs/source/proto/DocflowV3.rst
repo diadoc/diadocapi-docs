@@ -14,6 +14,7 @@ DocflowV3
         optional RecipientResponseDocflow RecipientResponse = 5;
         optional AmendmentRequestDocflow AmendmentRequest = 6;
         optional RevocationDocflowV3 Revocation = 7;
+        optional ReceiptDocflowV3 SenderReceipt = 8;
     }
 
 Структура представляет состояние документооборота для одного документа.
@@ -21,7 +22,8 @@ DocflowV3
 -  :doc:`SenderTitle <SenderTitleDocflow>` - информация о титуле отправителя
 -  :doc:`Confirmation <ConfirmationDocflow>` - информация о подтверждении даты доставки, формируемом оператором
 -  :doc:`ProxyResponse <ProxyResponseDocflow>` - информация об ответе промежуточного получателя
--  :doc:`RecipientReceipt <ReceiptDocflowV3>` - информация об извещении о получении документа
+-  :doc:`RecipientReceipt <ReceiptDocflowV3>` - информация об извещении о получении документа (или титула отправителя для двухтитульного документа)
 -  :doc:`RecipientResponse <RecipientResponseDocflow>` - информация об ответном действии получателя: подписании документа, отправке второго титула или отказе в подписи
 -  :doc:`AmendmentRequest <AmendmentRequestDocflow>` - информация о документообороте по запросу уточнения
 -  :doc:`Revocation <RevocationDocflowV3>` - информация об аннулировании
+-  :doc:`SenderReceipt <ReceiptDocflowV3>` - информация об извещении о получении титула получателя для двухтитульного документа
