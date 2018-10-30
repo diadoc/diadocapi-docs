@@ -77,6 +77,7 @@ Document
         optional Origin Origin = 72;
         optional string EditingSettingId = 73 [default = ""];
         required LockMode LockMode = 74;
+        required SenderReceiptMetadata SenderReceiptMetadata = 75;
     }
 
     enum RoamingNotificationStatus {
@@ -241,6 +242,10 @@ Document
 - :doc:`Origin <Origin>` - свойство, позволяющее узнать, из какой сущности был создан документ. Например, из черновика или шаблона.
 
 - *EditingSettingId* - необязательный идентификатор настройки документа, если он был создан из шаблона с возможностью редактирования полей.
+
+- :doc:`LockMode <LockMode>` - режим блокировки сообщения.
+
+- :doc:`SenderReceiptMetadata <SenderReceiptMetadata>` - свойство, отвечающее за состояние извещения о получении титула получателя.
 
 .. warning::
     Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.

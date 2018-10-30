@@ -10,8 +10,8 @@ MessagePatchToPost
         repeated CorrectionRequestAttachment CorrectionRequests = 4;
         repeated DocumentSignature Signatures = 5;
         repeated RequestedSignatureRejection RequestedSignatureRejections = 6;
-        repeated ReceiptAttachment XmlTorg12BuyerTitles = 7;
-        repeated ReceiptAttachment XmlAcceptanceCertificateBuyerTitles = 8;
+        repeated RecipientTitleAttachment XmlTorg12BuyerTitles = 7;
+        repeated RecipientTitleAttachment XmlAcceptanceCertificateBuyerTitles = 8;
         repeated ResolutionAttachment Resolutions = 9;
         repeated ResolutionRequestAttachment ResolutionRequests = 10;
         repeated ResolutionRequestCancellationAttachment ResolutionRequestCancellations = 11;
@@ -23,10 +23,17 @@ MessagePatchToPost
         repeated ResolutionRouteAssignment ResolutionRouteAssignments = 17;
         repeated SignatureVerification SignatureVerifications = 18;
         repeated EditDocumentPacketCommand EditDocumentPacketCommands = 19;
-        repeated ReceiptAttachment UniversalTransferDocumentBuyerTitles = 20;
+        repeated RecipientTitleAttachment UniversalTransferDocumentBuyerTitles = 20;
         repeated ResolutionRouteRemoval ResolutionRouteRemovals = 21;
-        repeated ReceiptAttachment RecipientTitles = 22; 
+        repeated RecipientTitleAttachment RecipientTitles = 22; 
         repeated EditingPatch EditingPatches = 24;
+    }
+
+    message RecipientTitleAttachment {
+        required string ParentEntityId = 1;
+        required SignedContent SignedContent = 2;
+        repeated string Labels = 4;
+        required bool NeedReceipt = 5 [default = false];
     }
 
     message ReceiptAttachment {
@@ -110,7 +117,11 @@ MessagePatchToPost
 
 -  *XmlAcceptanceCertificateBuyerTitles* - список подлежащих отправке титулов заказчика для актов о выполнении работ (оказании услуг) в XML-формате.
 
--  *RecipientTitles* - список подлежащих отправке титулов получателя для любого типа документов. Рекомендуется использовать именно это поле вместо *XmlTorg12BuyerTitles*, *XmlAcceptanceCertificateBuyerTitles* и *UniversalTransferDocumentBuyerTitles*.
+-  *RecipientTitles* - список подлежащих отправке титулов получателя для любого типа документов. 
+
+.. warning:: Рекомендуется использовать поле *RecipientTitles* вместо *XmlTorg12BuyerTitles*, *XmlAcceptanceCertificateBuyerTitles* и *UniversalTransferDocumentBuyerTitles*.
+
+.. note:: Если тип документа поддерживает документооборот с извещением о получении на титул получателя (см. структуру :doc:`DocumentWorkflow`), то можно запросить извещение через флаг NeedReceipt.
 
 -  *Resolutions* - список действий по согласованию к документам сообщения, к которому относится патч. Каждое действие является структурой :doc:`ResolutionAttachment <Resolution>`.
 
