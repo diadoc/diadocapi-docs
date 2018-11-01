@@ -32,19 +32,19 @@ UpdateSubscriptions
 
 **Пример запроса**:
 
-    .. sourcecode:: http
+.. sourcecode:: http
 
-        POST /UpdateSubscriptions?boxId=994cf191-8322-40eb-8d79-f1196f8ec357&userId=fccbb0a6-0700-4401-81a6-8a6a083e12e6 HTTP/1.1
-        Host: diadoc-api.kontur.ru
-        Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
-        Content-Type: application/json; charset=utf-8
+    POST /UpdateSubscriptions?boxId=994cf191-8322-40eb-8d79-f1196f8ec357&userId=fccbb0a6-0700-4401-81a6-8a6a083e12e6 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
+    Content-Type: application/json; charset=utf-8
 
-        {
-            "Subscriptions": [
-                { "Id": "NewIncomingDocuments", "IsSubscribed": "true" },
-                { "Id": "News", "IsSubscribed": "false" }
-            ]
-        }
+    {
+        "Subscriptions": [
+            { "Id": "NewIncomingDocuments", "IsSubscribed": "true" },
+            { "Id": "News", "IsSubscribed": "false" }
+        ]
+    }
 
 Запрос приведет к тому, что пользователь подпишется на уведомления о новых входящих документах и отпишется от новостей Диадока.
 

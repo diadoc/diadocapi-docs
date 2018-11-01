@@ -28,10 +28,50 @@ CreateEmployee
 
 Если сотрудник создается по сертификату, после успешного добавления сотрудника в ящик следует отправить заявление участника ЭДО при помощи метода :doc:`../http/SendFnsRegistrationMessage`.
 
-Примеры использования (C#)
---------------------------
+Примеры использования
+---------------------
 
-**Пример создания сотрудника с логином**:
+Создание сотрудника с логином
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Пример запроса
+^^^^^^^^^^^^^^
+
+.. sourcecode:: http
+
+    POST /CreateEmployee?boxId=994cf191-8322-40eb-8d79-f1196f8ec357 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
+    Content-Type: application/json; charset=utf-8
+
+    {
+        "Credentials": {
+            "Login": {
+                "Login": "email@example.com",
+                "FullName": {
+                    "LastName": "Иванов",
+                    "FirstName": "Иван",
+                    "MiddleName": "Иванович"
+                }
+            }
+        },
+        "Position": "Бухгалтер",
+        "CanBeInvitedForChat": false,
+        "Permissions": {
+            "UserDepartmentId": "15d57c9b-645d-4710-85fa-b166e2cfcfc8",
+            "IsAdministrator": false,
+            "DocumentAccessLevel": "DepartmentAndSubdepartments",
+            "Actions": [
+                { "Name": "CreateDocuments", "IsAllowed": true },
+                { "Name": "SignDocuments", "IsAllowed": true },
+                { "Name": "AddResolutions", "IsAllowed": false },
+                { "Name": "RequestResolutions", "IsAllowed": false }
+            ]
+        }
+    }
+
+С использованием C# SDK
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: csharp
 
@@ -69,7 +109,48 @@ CreateEmployee
             }
         });
 
-**Пример создания сотрудника с сертификатом**:
+Создание сотрудника с сертификатом
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Пример запроса
+^^^^^^^^^^^^^^
+
+.. sourcecode:: http
+
+    POST /CreateEmployee?boxId=994cf191-8322-40eb-8d79-f1196f8ec357 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
+    Content-Type: application/json; charset=utf-8
+
+    {
+        "Credentials": {
+            "Certificate": {
+                "Content": "<certificateBytesBase64>",
+                "AccessBasis": "Доверенность №39 от 21.08.2018",
+                "Email": "email@example.com"
+            }
+        },
+        "Position": "Директор",
+        "CanBeInvitedForChat": false,
+        "Permissions": {
+            "UserDepartmentId": "00000000-0000-0000-0000-000000000000",
+            "IsAdministrator": true,
+            "DocumentAccessLevel": "SelectedDepartments",
+            "SelectedDepartmentIds": [
+                "e97f0026-29e2-4b0f-bcc7-ebb31511e0f9",
+                "4eef75de-44f3-4df6-8599-6c3fad74e31e"
+            ],
+            "Actions": [
+                { "Name": "CreateDocuments", "IsAllowed": true },
+                { "Name": "SignDocuments", "IsAllowed": true },
+                { "Name": "AddResolutions", "IsAllowed": true },
+                { "Name": "RequestResolutions", "IsAllowed": true }
+            ]
+        }
+    }
+
+С использованием C# SDK
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: csharp
 
@@ -93,7 +174,11 @@ CreateEmployee
                 UserDepartmentId = "00000000-0000-0000-0000-000000000000",
                 IsAdministrator = true,
                 DocumentAccessLevel = DocumentAccessLevel.SelectedDepartments,
-                SelectedDepartmentIds = { "e97f0026-29e2-4b0f-bcc7-ebb31511e0f9", "4eef75de-44f3-4df6-8599-6c3fad74e31e" },
+                SelectedDepartmentIds =
+                {
+                    "e97f0026-29e2-4b0f-bcc7-ebb31511e0f9",
+                    "4eef75de-44f3-4df6-8599-6c3fad74e31e"
+                },
                 Actions =
                 {
                     new EmployeeAction { Name = "CreateDocuments", IsAllowed = true },

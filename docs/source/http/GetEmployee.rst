@@ -20,3 +20,42 @@ GetEmployee
 **Тело ответа:** :doc:`../proto/Employee`
 
 Возвращает информацию о сотруднике организации. Запрос доступен только администраторам организации.
+
+Пример ответа
+-------------
+
+::
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json; charset=utf-8
+
+    {
+        "User": {
+            "UserId": "fccbb0a6-0700-4401-81a6-8a6a083e12e6",
+            "Login": "email@example.com",
+            "FullName": {
+                "LastName": "Иванов",
+                "FirstName": "Иван",
+                "MiddleName": "Иванович"
+            },
+            "IsRegistered": true
+        },
+        "Permissions": {
+            "UserDepartmentId": "00000000-0000-0000-0000-000000000000",
+            "IsAdministrator": false,
+            "DocumentAccessLevel": "AllDocuments",
+            "Actions": [
+                { "Name": "CreateDocuments", "IsAllowed": true },
+                { "Name": "SignDocuments", "IsAllowed": true },
+                { "Name": "AddResolutions", "IsAllowed": false },
+                { "Name": "RequestResolutions", "IsAllowed": false },
+                { "Name": "ManageCounteragents", "IsAllowed": true }
+            ]
+        },
+        "Position": "Бухгалтер",
+        "CanBeInvitedForChat": true,
+        "CreationTimestamp": {
+            "DateTime": "2018-11-01T05:40:17.6953926Z",
+            "Ticks": 636766476176953926
+        }
+    }

@@ -16,7 +16,7 @@ UserV2
         optional string MiddleName = 3;
     }
 
-Структура *UserV2* содержит информацию о пользователе.
+Структура *UserV2* содержит информацию о пользователе. Возвращается методами :doc:`V2/GetMyUser <../http/GetMyUser>`, :doc:`../http/UpdateMyUser`.
 
 - *UserId* - идентификатор пользователя в системе;
 - *Login* - логин пользователя;

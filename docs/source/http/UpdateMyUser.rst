@@ -25,51 +25,51 @@ UpdateMyUser
 
 **Пример запроса**:
 
-    .. sourcecode:: http
+.. sourcecode:: http
 
-        POST /UpdateMyUser HTTP/1.1
-        Host: diadoc-api.kontur.ru
-        Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
-        Content-Type: application/json; charset=utf-8
+    POST /UpdateMyUser HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
+    Content-Type: application/json; charset=utf-8
 
+    {
+        "Login":
         {
-            "Login":
-            {
-                "Login": "newLogin@kontur.ru"
-            },
+            "Login": "newLogin@kontur.ru"
+        },
+        "FullName":
+        {
             "FullName":
             {
-                "FullName":
-                {
-                    "FirstName": "NewFirstName",
-                    "LastName": "NewLastName",
-                    "MiddleName": "NewMiddleName"
-                }
+                "FirstName": "NewFirstName",
+                "LastName": "NewLastName",
+                "MiddleName": "NewMiddleName"
             }
         }
+    }
 
 Запрос приведет к тому, что у пользователя будет обновлено ФИО, а также на адрес newLogin@kontur.ru будет направлено письмо с ссылкой для подтверждения нового логина.
 
 **Пример запроса для обновления ФИО**:
 
-    .. sourcecode:: http
+.. sourcecode:: http
 
-        POST /UpdateMyUser HTTP/1.1
-        Host: diadoc-api.kontur.ru
-        Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
-        Content-Type: application/json; charset=utf-8
+    POST /UpdateMyUser HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
+    Content-Type: application/json; charset=utf-8
 
+    {
+        "FullName":
         {
             "FullName":
             {
-                "FullName":
-                {
-                    "FirstName": "NewFirstName",
-                    "LastName": "NewLastName",
-                    "MiddleName": "NewMiddleName"
-                }
+                "FirstName": "NewFirstName",
+                "LastName": "NewLastName",
+                "MiddleName": "NewMiddleName"
             }
         }
+    }
 
 Запрос приведет к тому, что у пользователя будет обновлено только ФИО.
 

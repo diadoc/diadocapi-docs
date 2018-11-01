@@ -26,10 +26,43 @@ UpdateEmployee
 
 Запрос доступен только администраторам организации.
 
-Примеры использования (C#)
---------------------------
+Примеры использования
+---------------------
 
-Пример изменения уровня доступа к документам, списка доступных подразделений и должности:
+Пример 1
+~~~~~~~~
+
+Изменение уровня доступа к документам, списка доступных подразделений и должности
+
+Пример запроса
+^^^^^^^^^^^^^^
+
+.. sourcecode:: http
+
+    POST /UpdateEmployee?boxId=994cf191-8322-40eb-8d79-f1196f8ec357&userId=fccbb0a6-0700-4401-81a6-8a6a083e12e6 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
+    Content-Type: application/json; charset=utf-8
+
+    {
+        "Permissions": {
+            "DocumentAccessLevel": {
+                "DocumentAccessLevel": "SelectedDepartments"
+            },
+            "SelectedDepartments": {
+                "SelectedDepartmentIds": [
+                    "7e49e042-8a0f-478d-a4e0-5e9273c47b20",
+                    "2f2f67bc-b5fe-4662-9e4f-b09348b44582"
+                ]
+            },
+        },
+        "Position": {
+            "Position": "Бухгалтер"
+        }
+    }
+
+С использованием C# SDK
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: csharp
 
@@ -60,7 +93,41 @@ UpdateEmployee
             }
         });
 
-Пример изменения подразделения, права администрировать организацию, доступных действий и необходимости показывать в списке получателей Сообщений:
+Пример 2
+~~~~~~~~
+
+Изменение подразделения, права администрировать организацию, доступных действий и необходимости показывать в списке получателей Сообщений
+
+Пример запроса
+^^^^^^^^^^^^^^
+
+.. sourcecode:: http
+
+    POST /UpdateEmployee?boxId=994cf191-8322-40eb-8d79-f1196f8ec357&userId=fccbb0a6-0700-4401-81a6-8a6a083e12e6 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id=key, ddauth_token=token
+    Content-Type: application/json; charset=utf-8
+
+    {
+        "Permissions": {
+            "Department": {
+                "DepartmentId": "11c8276b-815f-4191-adea-c0f884429624"
+            },
+            "IsAdministrator": {
+                "IsAdministrator": true
+            },
+            "Actions": [
+                { "Name": "ManageCounteragents", "IsAllowed": true },
+                { "Name": "SignDocuments", "IsAllowed": false }
+            ]
+        },
+        "CanBeInvitedForChat": {
+            "CanBeInvitedForChat": true
+        }
+    }
+
+С использованием C# SDK
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: csharp
 
