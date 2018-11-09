@@ -63,7 +63,7 @@
    Работа с контрагентами <API_Counteragents>
    Работа с шаблонами <API_Templates>
    Docflow API <Docflow API>
-   Облачная подпись <CloudSignApi>
+   CloudCrypt подпись <CloudSignApi>
 
 .. rubric:: Справочное руководство
 
