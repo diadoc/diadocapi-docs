@@ -68,7 +68,7 @@ UniversalCorrectionDocumentSellerTitleInfo
         repeated AdditionalInfo AdditionalInfo = 8;                  // информационное поле документа // ИнфПолФХЖ2
     }
 
-        message AdditionalInfoId {
+    message AdditionalInfoId {
         optional string InfoFileId = 1;             // Идентификатор файла информационного поля // ИдФайлИнфПол
         repeated AdditionalInfo AdditionalInfo = 2; //Текстовая информация // ТекстИнф
     }
