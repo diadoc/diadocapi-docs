@@ -30,5 +30,5 @@ ResolutionDocflowV3
 - если *ResolutionStatus* равен *PrimarySignatureRejected*, то *ResolutionEntityId* указывает на структуру :doc:`SignatureRejectionDocflow <SignatureRejectionDocflow>` либо внутри `ProxyResponseDocflow` (если документ находится у промежуточного получателя), либо внутри `RecipientResponseDocflow` (для входящего документа), либо внутри `RevocationResponseDocflow`
 
 
-Структура :doc:`ResolutionEntities <ResolutionEntitiesV3>` находится, в зависимости от занчения *ParentEntityId*, в структуре :doc:`DocflowV3` или :doc:`RevocationDocflowV3`.
+Структура :doc:`ResolutionEntities <ResolutionEntitiesV3>` находится, в зависимости от значения *ParentEntityId*, в структуре :doc:`DocflowV3` или :doc:`RevocationDocflowV3`.
 
