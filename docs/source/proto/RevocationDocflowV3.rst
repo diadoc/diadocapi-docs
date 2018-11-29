@@ -12,6 +12,7 @@ RevocationDocflowV3
         optional RevocationResponseDocflow RevocationResponse = 3;
         required string InitiatorBoxId = 4;
         required Documents.RevocationStatus RevocationStatus = 5;
+        optional ResolutionEntitiesV3 ResolutionEntities = 6;
     }
 
 Структура представляет информацию об аннулировании документа. Содержится в структуре :doc:`DocflowV3`.
@@ -21,6 +22,7 @@ RevocationDocflowV3
 - :ref:`RevocationResponse <revocation-response-docflow>` - информация об ответе на предложение аннулирования
 - *InitiatorBoxId* - идентификатор ящика организации, которая инициировала аннулирование документа.
 - :doc:`RevocationStatus` - статус аннулирования документа
+- :doc:`ResolutionEntities <ResolutionEntitiesV3>` - информация о сущностях, относящихся к согласованию аннулирования
 
 .. _revocation-request-docflow:
 

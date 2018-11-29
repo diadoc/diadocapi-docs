@@ -52,7 +52,9 @@ HTTP-интерфейс версии 3 (экспериментальный)
    proto/ContractDocumentInfo
    proto/CustomDataItem
    proto/Docflow
+   proto/DocflowV3
    proto/DocflowEvent
+   proto/DocflowEventV3
    proto/DocflowStatus
    proto/DocflowStatusModel
    proto/DocflowStatusSeverity
@@ -60,17 +62,23 @@ HTTP-интерфейс версии 3 (экспериментальный)
    proto/DocumentDirection
    proto/DocumentId
    proto/DocumentInfo
+   proto/DocumentInfoV3
    proto/DocumentType
    proto/DocumentWithDocflow
+   proto/DocumentWithDocflowV3
    proto/Entity
    proto/FetchedDocument
+   proto/FetchedDocumentV3
    proto/GetDocflowBatchRequest
    proto/GetDocflowBatchResponse
+   proto/GetDocflowBatchResponseV3
    proto/GetDocflowEventsRequest
    proto/GetDocflowEventsResponse
+   proto/GetDocflowEventsResponseV3
    proto/GetDocflowRequest
    proto/GetDocflowsByPacketIdRequest
    proto/GetDocflowsByPacketIdResponse
+   proto/GetDocflowsByPacketIdResponseV3
    proto/InboundInvoiceDocflow
    proto/InboundInvoiceReceiptDocflow
    proto/InvoiceConfirmationDocflow
@@ -82,7 +90,11 @@ HTTP-интерфейс версии 3 (экспериментальный)
    proto/ReceiptDocflow
    proto/RecipientSignatureDocflow
    proto/RecipientSignatureRejectionDocflow
+   proto/ResolutionDocflowV3
    proto/RevocationDocflow
+   proto/RevocationDocflowV3
+   proto/ResolutionEntitiesV3
+   proto/ResolutionStatusDocflow
    proto/SearchDocflowsRequest
    proto/SearchDocflowsResponse
    proto/SearchScope
