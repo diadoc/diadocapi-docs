@@ -63,7 +63,7 @@
    Работа с контрагентами <API_Counteragents>
    Работа с шаблонами <API_Templates>
    Docflow API <Docflow API>
-   CloudCrypt подпись <CloudSignApi>
+   Электронная подпись Контур.Сертификатом <CloudSignApi>
 
 .. rubric:: Справочное руководство
 
