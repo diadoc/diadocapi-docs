@@ -22,6 +22,7 @@ DocumentInfo
        optional UniversalTransferDocumentInfo UniversalTransferDocumentInfo = 15;
        optional UniversalCorrectionDocumentInfo UniversalCorrectionDocumentInfo = 16;
        optional string AttachmentVersion = 17;
+       required string Version = 18;
     }
 
 Структура представляет данные документа, которые не меняются в течение его жизненного цикла (метаданные). Как часть структуры :doc:`DocumentWithDocflow`, возвращается методами :doc:`../http/GetDocflows`, :doc:`../http/GetDocflowsByPacketId`, :doc:`../http/SearchDocflows`.
@@ -42,7 +43,9 @@ DocumentInfo
 
 -  :doc:`DocumentDateAndNumber` - дата и номер документа.
 
-- *AttachmentVersion* - идентификатор версии документа.
+- *AttachmentVersion* - идентификатор версии документа. Устарело. Используйте Version.
+
+- *Version* - идентификатор версии документа.
 
 -  Поля, содержащие метаданные документа. В зависимости от типа документа заполняется только одно из полей:
 

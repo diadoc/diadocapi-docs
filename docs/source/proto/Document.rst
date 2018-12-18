@@ -78,6 +78,7 @@ Document
         optional string EditingSettingId = 73 [default = ""];
         required LockMode LockMode = 74;
         required SenderReceiptMetadata SenderReceiptMetadata = 75;
+        required string Version = 76;
     }
 
     enum RoamingNotificationStatus {
@@ -217,7 +218,7 @@ Document
 
 - *ResolutionRouteId* - идентификатор маршрута согласования, на котором находится документ (если документ находится на маршруте согласования).
 
-- *AttachmentVersion* - информация о версии XSD схемы, в соответствии с которой сформирован документ.
+- *AttachmentVersion* - информация о версии XSD схемы, в соответствии с которой сформирован документ. Устарело. Используйте Version.
 
 - :doc:`ProxySignatureStatus` - статус промежуточной подписи.
 
@@ -246,6 +247,8 @@ Document
 - :doc:`LockMode <LockMode>` - режим блокировки сообщения.
 
 - :doc:`SenderReceiptMetadata <SenderReceiptMetadata>` - свойство, отвечающее за состояние извещения о получении титула получателя.
+
+- *Version* - идентификатор версии документа.
 
 .. warning::
     Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
