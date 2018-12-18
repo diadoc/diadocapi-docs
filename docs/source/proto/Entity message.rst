@@ -28,6 +28,7 @@ Entity
         optional ResolutionRouteRemovalInfo ResolutionRouteRemovalInfo = 23; // заполняется только для вложений с типом AttachmentType.ResolutionRouteRemoval
         optional CancellationInfo CancellationInfo = 24;  // заполняется только для вложений с типом AttachmentType.Cancellation
         repeated string Labels = 25;
+        optional string Version = 26;
     }
 
     enum EntityType {
@@ -249,3 +250,5 @@ Entity
 - *CancellationInfo* - информация об отмене сущности в виде структуры данных :doc:`CancellationInfo <CancellationInfo>`. Отменённой является сущность, которая указана родительской по отношению к данной. Например, это может быть идентификатор запроса на согласование.
 
 - *Labels* - :doc:`метки сущности <../proto/Labels>`.
+
+- *Version* - идентификатор версии документа.
