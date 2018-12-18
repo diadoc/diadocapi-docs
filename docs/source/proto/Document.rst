@@ -248,7 +248,7 @@ Document
 
 - :doc:`SenderReceiptMetadata <SenderReceiptMetadata>` - свойство, отвечающее за состояние извещения о получении титула получателя.
 
-- *Version* - информация о версии XSD схемы, в соответствии с которой сформирован документ.
+- *Version* - идентификатор версии документа.
 
 .. warning::
     Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
