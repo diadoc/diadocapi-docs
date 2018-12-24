@@ -65,6 +65,7 @@ InvoiceInfo
         Percent_20 = 4;       //ставка налога 20%
         Fraction_10_110 = 5;  //ставка налога 10/110 (дробь)
         Fraction_18_118 = 6;  //ставка налога 18/118 (дробь)
+        Fraction_20_120 = 6;  //ставка налога 20/120 (дробь)
     }
 
     message PaymentDocumentInfo {
