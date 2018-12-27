@@ -14,6 +14,13 @@ OrganizationUserPermissions
         repeated string SelectedDepartmentIds = 9;
         optional string JobTitle = 10;
         required bool CanCreateDocuments = 11;
+        optional AuthorizationPermission AuthorizationPermission = 12;
+    }
+
+    message AuthorizationPermission
+    {
+        required bool IsBlocked = 1;
+        optional string Comment = 2;
     }
 
 
@@ -25,7 +32,7 @@ OrganizationUserPermissions
 
 -  *IsAdministrator* - может ли пользователь редактировать структуру и реквизиты организации, добавлять и редактировать других пользователей.
 
--  :doc:`DocumentAccessLevel` - уровень доступа к документам
+-  :doc:`DocumentAccessLevel` - уровень доступа к документам.
 
 -  *CanSignDocuments* - может ли пользователь подписывать документы.
 
@@ -39,4 +46,11 @@ OrganizationUserPermissions
 
 -  *JobTitle* - должность пользователя в организации. Может быть не указана.
 
--  *CanCreateDocuments* - может ли пользователь создавать документы и работать с черновиками
+-  *CanCreateDocuments* - может ли пользователь создавать документы и работать с черновиками.
+
+-  *AuthorizationPermission* - структура описывающая разрешения авторизации сотрудника.
+
+Структура *AuthorizationPermission* описывает разрешения авторизации сотрудника.
+
+- *IsBlocked* - флаг, определяющий заблокированность сотрудника. Если флаг установлен в *true*, то у сотрудника нет возможности авторизоваться в ящике и выполнять действия.
+- *Comment* - комментарий, описывающий причины блокировки сотрудника.

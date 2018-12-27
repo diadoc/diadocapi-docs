@@ -32,6 +32,7 @@ EmployeePermissionsPatch
         optional EmployeeDocumentAccessLevelPatch DocumentAccessLevel = 3;
         optional EmployeeSelectedDepartmentsPatch SelectedDepartments = 4;
         repeated EmployeeAction Actions = 5;
+        optional AuthorizationPermissionPatch AuthorizationPermission = 6;
     }
 
 Структура содержит информацию о настройках :doc:`разрешений сотрудника <EmployeePermissions>`, которые необходимо изменить.
@@ -41,6 +42,7 @@ EmployeePermissionsPatch
 - :ref:`DocumentAccessLevel <employee-document-access-level-patch>` - структура для изменения уровня доступа к документам
 - :ref:`SelectedDepartments <employee-selected-departments-patch>` - структура для изменения списка подразделений, к которым имеет доступ сотрудник (играет роль только в случае *DocumentAccessLevel = SelectedDepartments*)
 - :doc:`Actions <EmployeePermissions>` - действия сотрудника, права на которые требуется добавить или убрать
+- :ref:`AuthorizationPermissionPatch <authorization-permission-patch>` - структура для изменения разрешений авторизации сотрудника
 
 Необходимо заполнить только те поля структуры, которые соотвествуют данным, требующим изменения.
 
@@ -107,6 +109,24 @@ EmployeeSelectedDepartmentsPatch
 Структура для изменения списка подразделений, к которым имеет доступ сотрудник (играет роль только в случае *DocumentAccessLevel = SelectedDepartments*).
 
 - *SelectedDepartmentIds* - новый список подразделений, к которым имеет доступ сотрудник
+
+.. _authorization-permission-patch:
+
+AuthorizationPermissionPatch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: protobuf
+
+    message AuthorizationPermissionPatch
+    {
+        required bool IsBlocked = 1;
+        optional string Comment = 2;
+    }
+
+Структура для изменения разрешений авторизации сотрудника.
+
+- *IsBlocked* - флаг, определяющий заблокированность сотрудника. Если флаг установлен в *true*, то у сотрудника не будет возможности авторизоваться и выполнять действия в ящике.
+- *Comment* - комментарий, описывающий причины блокировки сотрудника.
 
 .. _employee-position-patch:
 
