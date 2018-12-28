@@ -28,9 +28,9 @@
 
 В силу приказов `N ММВ-7-10/551@ <https://normativ.kontur.ru/document?moduleId=1&documentId=265102&cwi=132>`__ электронная товарная накладная может быть в следующем формате:
 
-  -  :download:`XSD-схема титула продавца электронной накладной <../xsd/DP_TOVTORGPR_1_992_01_05_01_03.xsd>`;
+  -  :download:`XSD-схема титула продавца электронной накладной <../xsd/DP_TOVTORGPR_1_992_01_05_01_04.xsd>`;
 
-  -  :download:`XSD-схема титула покупателя электронной накладной <../xsd/DP_TOVTORGPOK_1_992_02_05_01_03.xsd>`;
+  -  :download:`XSD-схема титула покупателя электронной накладной <../xsd/DP_TOVTORGPOK_1_992_02_05_01_04.xsd>`;
 
 .. important::
   Приказ `№ ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=261859>`__ считается устаревшим. Работа с данным форматом не рекомендуется.
@@ -78,8 +78,8 @@
 
    "Титул продавца", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForSeller`"
    "Титул покупателя", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`"
-   "Титул продавца", "Приказ №551", ":doc:`../http/GenerateTorg12XmlForSeller`", "``documentVersion = tovtorg_05_01_03``"
-   "Титул покупателя", "Приказ №551", ":doc:`../http/GenerateTorg12XmlForBuyer`", "``documentVersion = tovtorg_05_01_03``"
+   "Титул продавца", "Приказ №551", ":doc:`../http/GenerateTorg12XmlForSeller`", "``documentVersion = tovtorg_05_01_04``"
+   "Титул покупателя", "Приказ №551", ":doc:`../http/GenerateTorg12XmlForBuyer`", "``documentVersion = tovtorg_05_01_04``"
    "Титул продавца", "Приказ №172", ":doc:`../http/GenerateTorg12XmlForSeller`", "``documentVersion = torg12_05_01_02``"
    "Титул покупателя", "Приказ №172", ":doc:`../http/GenerateTorg12XmlForBuyer`", "``documentVersion = torg12_05_01_02``"
 
