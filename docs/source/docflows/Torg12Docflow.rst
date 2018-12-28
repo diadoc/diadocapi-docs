@@ -92,8 +92,8 @@
 
    "Титул продавца", "Приказ №155", ":doc:`../http/utd/ParseUniversalTransferDocumentSellerTitleXml`"
    "Титул покупателя", "Приказ №155", ":doc:`../http/utd/ParseUniversalTransferDocumentBuyerTitleXml`"
-   "Титул продавца", "Приказ №551", ":doc:`../http/ParseTorg12SellerTitleXml`", "``documentVersion = tovtorg_05_01_03``"
-   "Титул покупателя", "Приказ №551", ":doc:`../http/ParseTorg12BuyerTitleXml`", "``documentVersion = tovtorg_05_01_03``"
+   "Титул продавца", "Приказ №551", ":doc:`../http/ParseTorg12SellerTitleXml`", "``documentVersion = tovtorg_05_01_04``"
+   "Титул покупателя", "Приказ №551", ":doc:`../http/ParseTorg12BuyerTitleXml`", "``documentVersion = tovtorg_05_01_04``"
    "Титул продавца", "Приказ №172", ":doc:`../http/ParseTorg12SellerTitleXml`", "``documentVersion = torg12_05_01_02``"
    "Титул покупателя", "Приказ №172", ":doc:`../http/ParseTorg12BuyerTitleXml`", "``documentVersion = torg12_05_01_02``"
 
