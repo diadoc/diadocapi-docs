@@ -14,8 +14,8 @@ OrganizationUserPermissions
         repeated string SelectedDepartmentIds = 9;
         optional string JobTitle = 10;
         required bool CanCreateDocuments = 11;
+        required AuthorizationPermission AuthorizationPermission = 12;
     }
-
 
 Структура данных *OrganizationUserPermissions* содержит информацию о правах пользователя в организации.
 
@@ -40,3 +40,23 @@ OrganizationUserPermissions
 -  *JobTitle* - должность пользователя в организации. Может быть не указана.
 
 -  *CanCreateDocuments* - может ли пользователь создавать документы и работать с черновиками
+
+-  :ref:`*AuthorizationPermission* <authorization-permission>` - данные о наличии ограничения доступа пользователя к сервису
+
+.. _authorization-permission:
+
+AuthorizationPermission
+-----------------------
+
+.. code-block:: protobuf
+
+    message AuthorizationPermission {
+        required bool IsBlocked = 1;
+        optional string Comment = 2;
+    }
+
+Структура данных *AuthorizationPermission* содержит информацию о наличии ограничений доступа сотрудника к сервису.
+
+    - *IsBlocked* - флаг наличия ограничения доступа пользователя к сервису (``false`` - доступ разрешен, ``true`` - доступ ограничен)
+
+    - *Comment* - причина ограничения доступа пользователя

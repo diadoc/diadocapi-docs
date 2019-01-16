@@ -14,8 +14,8 @@ v.1.63.0 - 26.12.2018
 ---------------------
 
 - Добавлено поле ``AuthorizationPermission`` в следующие структуры:
-    - :doc:`EmployeePermissions <proto/Employees/Employee>`
-    - :doc:`EmployeePermissionsPatch <proto/Employees/EmployeeToUpdate>`
+    - :doc:`EmployeePermissions <proto/EmployeePermissions>`
+    - :doc:`EmployeePermissionsPatch <proto/EmployeeToUpdate>`
     - :doc:`OrganizationUserPermissions <proto/OrganizationUserPermissions>`
 
 v.1.62.1 - 24.12.2018
