@@ -37,8 +37,8 @@ v.1.62.0 - 14.12.2018
 
 - Добавлено поле ``Version`` в следующие структуры:
     - :doc:`DocumentInfo <proto/DocumentInfo>`
-    - :doc:`DocumentInfo <proto/Document>`
-    - :doc:`DocumentInfo <proto/Entity message>`
+    - :doc:`Document <proto/Document>`
+    - :doc:`Entity <proto/Entity message>`
 
 v.1.61.0 - 05.12.2018
 ---------------------
