@@ -10,9 +10,9 @@ ParseTorg12SellerTitleXml
     :statuscode 405: используется неподходящий HTTP-метод
     :statuscode 500: при обработке запроса возникла непредвиденная ошибка
 
-    Если *documentVersion* равен ``tovtorg_05_01_03``:
+    Если *documentVersion* равен ``tovtorg_05_01_04``:
 
-    - в теле запроса должен содержаться XML-файл ТОРГ-12, титул продавца, удовлетворяющий :download:`XSD-схеме (DP_TOVTORGPR_1_992_01_05_01_03.xsd) <../xsd/DP_TOVTORGPR_1_992_01_05_01_03.xsd>`;
+    - в теле запроса должен содержаться XML-файл ТОРГ-12, титул продавца, удовлетворяющий :download:`XSD-схеме (DP_TOVTORGPR_1_992_01_05_01_04.xsd) <../xsd/DP_TOVTORGPR_1_992_01_05_01_04.xsd>`;
 
     - в теле ответа содержится сериализованная структура :doc:`TovTorgSellerTitleInfo <../proto/TovTorgInfo>`, построенная на основании данных запроса;
 

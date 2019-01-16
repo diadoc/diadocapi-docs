@@ -25,7 +25,7 @@ AcceptanceCertificate552Info
         required AcceptanceCertificate552TransferInfo TransferInfo = 19;  // Содержание факта хозяйственной жизни - сведения о передаче результатов работ (о предъявлении оказанных услуг)
     }
 
-    message AcceptanceCertificate552TransferInfo { 
+    message AcceptanceCertificate552TransferInfo {
         required string OperationInfo = 1;             // Содержание операции
         optional string TransferDate = 2;              // Дата передачи результатов работ
         optional string CreatedThingTransferDate = 3;  // Дата передачи вещи, изготовленной по договору подряда
@@ -81,7 +81,7 @@ AcceptanceCertificate552Info
 
 -  Реквизиты подписантов накладной *AcceptanceCertificate552SellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`utd/ExtendedSigner`.
 
--  Правила заполнения структуры *AcceptanceCertificate552SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_REZRUISP_1_990_01_05_01_01.xsd>`.
+-  Правила заполнения структуры *AcceptanceCertificate552SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_REZRUISP_1_990_01_05_01_02.xsd>`.
 
 Структура данных *AcceptanceCertificate552BuyerInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer` с параметром `documentVersion=rezru_05_01_01`.
 

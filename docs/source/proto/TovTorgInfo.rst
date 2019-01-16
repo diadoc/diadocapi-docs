@@ -11,26 +11,26 @@ TovTorgInfo
         optional ExtendedOrganizationInfo Consignee = 4;  // Грузополучатель
         optional ExtendedOrganizationInfo Carrier = 5;    // Перевозчик
         repeated ExtendedSigner Signers = 6;              // Подписант
-        repeated GroundInfo Grounds = 7;                  // Основание 
-        required string Currency = 8;                     // Валюта (код) 
-        optional string CurrencyRate = 9;                 // Курс валюты 
+        repeated GroundInfo Grounds = 7;                  // Основание
+        required string Currency = 8;                     // Валюта (код)
+        optional string CurrencyRate = 9;                 // Курс валюты
         required string DocumentDate = 10;                // Дата составления документа о передаче товара
         optional string DocumentNumber = 11;              // Номер документа о передаче товара
         optional string RevisionDate = 12;                // Дата исправления документа о передаче товара
         optional string RevisionNumber = 13;              // Номер исправления документа о передаче товара
-        required TovTorgTransferInfo TransferInfo = 14;   // Сведения о факте передачи (об отпуске груза) 
-        required string DocumentCreator = 15;             // Составитель файла информации продавца 
-        optional string DocumentCreatorBase = 16;         // Основание, по которому экономический субъект является составителем файла 
-        optional string OperationType = 17;               // Вид операции 
+        required TovTorgTransferInfo TransferInfo = 14;   // Сведения о факте передачи (об отпуске груза)
+        required string DocumentCreator = 15;             // Составитель файла информации продавца
+        optional string DocumentCreatorBase = 16;         // Основание, по которому экономический субъект является составителем файла
+        optional string OperationType = 17;               // Вид операции
         optional string GovernmentContractInfo = 18;      // Идентификатор государственного контракта
-        optional TovTorgTable Table = 19;                 // Сведения об ассортименте, количестве, стоимости и другой информации о товарных позициях 
-        optional AdditionalInfoId AdditionalInfoId = 20;  // Информационное поле документа 
+        optional TovTorgTable Table = 19;                 // Сведения об ассортименте, количестве, стоимости и другой информации о товарных позициях
+        optional AdditionalInfoId AdditionalInfoId = 20;  // Информационное поле документа
         required string DocumentName = 21;                // Наименование первичного документа, определенное организацией
     }
 
     message TovTorgBuyerTitleInfo {
         required string DocumentCreator = 1;             // Наименование экономического субъекта - составителя файла обмена информации покупателя
-        optional string DocumentCreatorBase = 2;         // Основание, по которому экономический субъект является составителем файла обмена информации покупателя 
+        optional string DocumentCreatorBase = 2;         // Основание, по которому экономический субъект является составителем файла обмена информации покупателя
         optional string OperationCode = 3;               // Вид операции
         required string OperationContent = 4;            // Содержание операции
         optional string AcceptanceDate = 5;              // Дата принятия товаров (результатов выполненных работ), имущественных прав (подтверждения факта оказания услуг)
@@ -102,7 +102,7 @@ TovTorgInfo
 
 -  Реквизиты подписантов накладной *TovTorgSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`utd/ExtendedSigner`.
 
--  Правила заполнения структуры *TovTorgSellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_TOVTORGPR_1_992_01_05_01_02.xsd>`.
+-  Правила заполнения структуры *TovTorgSellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_TOVTORGPR_1_992_01_05_01_04.xsd>`.
 
 Структура данных *TovTorgBuyerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForBuyer` с параметром `documentVersion=tovtorg_05_01_02`.
 
@@ -112,4 +112,4 @@ TovTorgInfo
 
 -  Реквизиты должностных лиц *TovTorgBuyerTitleInfo.Employee* или *TovTorgBuyerTitleInfo.OtherIssuer* заполняются в виде структуры данных :doc:`Employee <utd/UniversalTransferDocumentSellerTitleInfo>` или :doc:`OtherIssuer <utd/UniversalTransferDocumentSellerTitleInfo>` соответственно.
 
--  Правила заполнения структуры *TovTorgBuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_TOVTORGPOK_1_992_02_05_01_02.xsd>`.
+-  Правила заполнения структуры *TovTorgBuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_TOVTORGPOK_1_992_02_05_01_04.xsd>`.
