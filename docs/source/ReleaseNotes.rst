@@ -10,6 +10,36 @@ v.1.64.0 - 15.01.2019
 - Добавлен метод :doc:`http/Departments/UpdateDepartment` для обновления подразделения организации.
 - Добавлен метод :doc:`http/Departments/DeleteDepartment` для удаления подразделения организации.
 
+v.1.63.0 - 26.12.2018
+---------------------
+
+- Добавлено поле ``AuthorizationPermission`` в следующие структуры:
+    - :doc:`EmployeePermissions <proto/Employees/Employee>`
+    - :doc:`EmployeePermissionsPatch <proto/Employees/EmployeeToUpdate>`
+    - :doc:`OrganizationUserPermissions <proto/OrganizationUserPermissions>`
+
+v.1.62.1 - 24.12.2018
+---------------------
+
+- Методы генерации и парсинга документов получили поддержку ставки 20%:
+    - :doc:`GenerateInvoiceXml <http/GenerateInvoiceXml>` для генерации счетов-фактур
+    - :doc:`GenerateTorg12XmlForSeller <http/GenerateTorg12XmlForSeller>` для генерации документов в формате приказа 551
+    - :doc:`GenerateAcceptanceCertificateXmlForSeller <http/GenerateAcceptanceCertificateXmlForSeller>` для генерации документов в формате приказа 552
+    - :doc:`GenerateUniversalTransferDocumentXmlForSeller <http/utd/GenerateUniversalTransferDocumentXmlForSeller>` для генерации документов в форматах УПД и УКД
+    - :doc:`ParseInvoiceXml <http/ParseInvoiceXml>` для парсинга счетов-фактур
+    - :doc:`ParseTorg12SellerTitleXml <http/ParseTorg12SellerTitleXml>` для парсинга документов в формате пригаза 551
+    - :doc:`ParseAcceptanceCertificateSellerTitleXml <http/ParseAcceptanceCertificateSellerTitleXml>` для парсинга документов в формате пригаза 552
+    - :doc:`ParseUniversalTransferDocumentSellerTitleXml <http/utd/ParseUniversalTransferDocumentSellerTitleXml>` для парсинга документов в формате УПД
+    - :doc:`ParseUniversalCorrectionDocumentSellerTitleXml <http/utd/ParseUniversalCorrectionDocumentSellerTitleXml>` для парсинга документов в формате УКД
+
+v.1.62.0 - 14.12.2018
+---------------------
+
+- Добавлено поле ``Version`` в следующие структуры:
+    - :doc:`DocumentInfo <proto/DocumentInfo>`
+    - :doc:`DocumentInfo <proto/Document>`
+    - :doc:`DocumentInfo <proto/Entity message>`
+
 v.1.61.0 - 05.12.2018
 ---------------------
 
@@ -27,7 +57,7 @@ v.1.59.0 - 30.10.2018
 
 - Обновились :doc:`настройки документооборота <proto/DocumentWorkflow>` для всех типов документа, добавлена новая настройка.
 
-- В структуре :doc:`MessagePatchToPost <proto/MessagePatchToPost>` поля RecipientTitles, XmlTorg12BuyerTitles, XmlAcceptanceCertificateBuyerTitles, UniversalTransferDocumentBuyerTitles сменили сообщение протобуфера с ReceiptAttachment на RecipientTitleAttachment. 
+- В структуре :doc:`MessagePatchToPost <proto/MessagePatchToPost>` поля RecipientTitles, XmlTorg12BuyerTitles, XmlAcceptanceCertificateBuyerTitles, UniversalTransferDocumentBuyerTitles сменили сообщение протобуфера с ReceiptAttachment на RecipientTitleAttachment.
 
 
 - В структуру :doc:`Document <proto/Document>` добавлено поле SenderReceiptMetadata.
@@ -176,7 +206,7 @@ v.1.51 - 29.03.2018
 v.1.50 - 26.02.2018
 -------------------
 
-- Расширена структура контракта :doc:`proto/Document`. Добавились свойства для универсальной работы с документом. Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* теперь считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены. 
+- Расширена структура контракта :doc:`proto/Document`. Добавились свойства для универсальной работы с документом. Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* теперь считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
 
 
 v.1.49.2 - 08.02.2018
