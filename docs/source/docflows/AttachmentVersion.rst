@@ -77,7 +77,9 @@
 
 Оно есть в структурах данных :doc:`Document <../proto/Document>`, :doc:`Entity <../proto/Entity message>` и :doc:`DocumentInfo <../proto/DocumentInfo>`.
 
-.. csv-table:: Типы и значения Version для формализованных документов
+Ниже приведен не полный список версий документов. Актуальные версии документа следует получать с помощью метода :doc:`GetDocumentTypes <../http/GetDocumentTypes>`
+
+.. csv-table:: Примеры типов и значений Version для формализованных документов
    :header: "Тип документы", "Структура", "Возможные версии"
    :widths: 10, 10, 10
 
