@@ -41,7 +41,7 @@ OrganizationUserPermissions
 
 -  *CanCreateDocuments* - может ли пользователь создавать документы и работать с черновиками
 
--  :ref:`*AuthorizationPermission* <authorization-permission>` - данные о наличии ограничения доступа пользователя к сервису
+-  :ref:`AuthorizationPermission <authorization-permission>` - данные о наличии ограничения доступа пользователя к сервису
 
 .. _authorization-permission:
 

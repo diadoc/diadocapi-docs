@@ -18,8 +18,8 @@ EmployeePermissions
 - *IsAdministrator* - может ли сотрудник редактировать структуру и реквизиты организации, добавлять и редактировать других сотрудников
 - :doc:`DocumentAccessLevel` - уровень доступа к документам
 - *SelectedDepartmentIds* - список подразделений, к которым имеет доступ сотрудник (заполняется только в случае *DocumentAccessLevel = SelectedDepartments*).
-- :ref:`*Actions* <actions>` - информация о том, какие действия имеет право выполнять сотрудник
-- :ref:`*AuthorizationPermission* <authorization-permission>` - информация о наличии ограничения доступа пользователя к сервису
+- :ref:`Actions <actions>` - информация о том, какие действия имеет право выполнять сотрудник
+- :ref:`AuthorizationPermission <authorization-permission>` - информация о наличии ограничения доступа пользователя к сервису
 
 .. _actions:
 

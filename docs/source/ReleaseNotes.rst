@@ -13,7 +13,7 @@ v.1.64.0 - 15.01.2019
 v.1.63.0 - 26.12.2018
 ---------------------
 
-- Добавлено поле ``AuthorizationPermission`` в следующие структуры:
+- Добавлена возможность блокировки сотрудников в организации; расширены соответствующие структуры:
     - :doc:`EmployeePermissions <proto/EmployeePermissions>`
     - :doc:`EmployeePermissionsPatch <proto/EmployeeToUpdate>`
     - :doc:`OrganizationUserPermissions <proto/OrganizationUserPermissions>`
