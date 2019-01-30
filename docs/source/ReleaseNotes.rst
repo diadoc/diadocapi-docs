@@ -55,9 +55,6 @@ SDK: `C# 1.62.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 05.12.2018
 ---------------------
 
-SDK: `C# 1.61.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.61.0>`__ | `Java 1.61.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.61.0>`__ | `C++ 1.61.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.61.0>`__
-+++++++++++++++++++++
-
 - Добавлен метод :doc:`http/GetEmployees` для получения списка сотрудников организации.
 
 28.11.2018
@@ -170,7 +167,7 @@ SDK: `C# 1.53.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 08.08.2018
 ---------------------
 
-SDK: `C# 1.52.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.52.4>`__ | `Java 1.52.4 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.52.4>`__ | `C++ 1.52.4 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.52.4>`__
+SDK: `C# 1.52.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.52.4>`__
 +++++++++++++++++++++
 
 - Добавлены экспериментальные новые версии методов Docflow API: :doc:`http/GetDocflows_V3`, :doc:`http/GetDocflowEvents_V3`, :doc:`http/GetDocflowsByPacketId_V3`, :doc:`http/SearchDocflows_V3`. Методы доступны только в C# SDK.
@@ -231,7 +228,7 @@ SDK: `C# 1.51.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 22.05.2018
 ---------------------
 
-SDK: `C# 1.51.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.6>`__ | `Java 1.51.6 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.6>`__ | `C++ 1.51.6 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.6>`__
+SDK: `C# 1.51.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.6>`__
 +++++++++++++++++++++
 
 - Добавлен обобщённый метод генерации титула получателя :doc:`GenerateRecipientTitleXml <http/GenerateRecipientTitleXml>`.
@@ -250,7 +247,7 @@ SDK: `C# 1.51.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 16.04.2018
 ---------------------
 
-SDK: `C# 1.51.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.2>`__ | `Java 1.51.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.2>`__ | `C++ 1.51.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.2>`__
+SDK: `C# 1.51.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.2>`__
 +++++++++++++++++++++
 
 - Расширена структура контракта :doc:`MessagePatchToPost <proto/MessagePatchToPost>`. Добавлен необязательный список операций *EditingPatches* для редактирования контента документа.
@@ -335,7 +332,7 @@ SDK: `C# 1.49 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 25.10.2017
 ---------------------
 
-SDK: `C# 1.48 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.48>`__ | `Java 1.48 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.48>`__ | `C++ 1.48 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.48>`__
+SDK: `C# 1.48 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.48>`__
 +++++++++++++++++++++
 
 - Появился новый метод :doc:`http/GetDocumentTypes`, возвращающий описание типов документов, доступных в ящике.
@@ -366,8 +363,6 @@ SDK: `C# 1.47 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 31.08.2017
 ---------------------
 
-SDK: `C# 1.46.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.46.2>`__ | `Java 1.46.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.46.2>`__ | `C++ 1.46.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.46.2>`__
-+++++++++++++++++++++
 - Появилась новая структура данных :doc:`CancellationInfo <proto/CancellationInfo>`, содержащая информацию об отмене сущности.
 
 - Изменилось поведение :doc:`GetMessage <http/GetMessage>`. Возвращаются отменённые запросы на согласование вместе с соответствующими сущностями отмены. Ранее, отменённый запрос на согласование не возвращался и, соответственно, не было возможности определить, что данный запрос на соглавание был отменён.
@@ -448,9 +443,6 @@ SDK: `C# 1.43 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 03.05.2017
 ---------------------
 
-SDK: `C# 1.42 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.42>`__ | `Java 1.42 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.42>`__ | `C++ 1.42 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.42>`__
-+++++++++++++++++++++
-
 Добавлены подписи промежуточных получателей и их статусы.
 
 В структуре данных :doc:`Document <proto/Document>` появилось поле *ProxySignatureStatus*, отвечающее за статус подписи промежуточного получателя. В структуре :doc:`Message <proto/Message>` в поле *Entities* теперь возвращаются сами подписи промежуточного получателя.
@@ -515,9 +507,6 @@ SDK: `C# 1.41 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 24.03.2017
 ---------------------
 
-SDK: `C# 1.40 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.40>`__ | `Java 1.40 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.40>`__ | `C++ 1.40 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.40>`__
-+++++++++++++++++++++
-
 В API Диадока появились методы для парсинга титулов УКД: :doc:`продавца <http/utd/ParseUniversalCorrectionDocumentSellerTitleXml>` и :doc:`покупателя <http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml>`
 
 15.03.2017
@@ -535,16 +524,13 @@ SDK: `C# 1.39 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 10.02.2017
 ---------------------
 
-SDK: `C# 1.38.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.38.3>`__ | `Java 1.38.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.38.3>`__ | `C++ 1.38.3 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.38.3>`__
+SDK: `C# 1.38.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.38.3>`__
 +++++++++++++++++++++
 
 В структуре :doc:`OrganizationWithCounteragentStatus <proto/GetOrganizationsByInnListRequest>` добавилось поле *LastEventTimestampTicks*.
 
 23.12.2016
 ---------------------
-
-SDK: `C# 1.38 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.38>`__ | `Java 1.38 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.38>`__ | `C++ 1.38 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.38>`__
-+++++++++++++++++++++
 
 В Диадоке появилась возможность работать с новыми типами документов УПД и УКД, в связи с чем в документации появились новые разделы:
 
@@ -628,7 +614,7 @@ SDK: `C# 1.38 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 10.10.2016
 ---------------------
 
-SDK: `C# 1.37 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.37>`__ | `Java 1.37 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.37>`__ | `C++ 1.37 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.37>`__
+SDK: `C# 1.37 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.37>`__
 +++++++++++++++++++++
 
 Добавлена структура для отправки кастомных типов документов - :doc:`CustomDocumentAttachment <proto/DocumentAttachment>`.
@@ -640,24 +626,15 @@ SDK: `C# 1.37 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 07.04.2016
 ---------------------
 
-SDK: `C# 1.36 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.36>`__ | `Java 1.36 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.36>`__ | `C++ 1.36 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.36>`__
-+++++++++++++++++++++
-
 - Добавлен параметр *includeRelations* у метода :doc:`http/GetOrganizationsByInnKpp`, который позволяет получить данные о количестве запросов на поиск и приглашения к сотрудничеству для данной организации.
 
 25.03.2016
 ---------------------
 
-SDK: `C# 1.35 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.35>`__ | `Java 1.35 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.35>`__ | `C++ 1.35 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.35>`__
-+++++++++++++++++++++
-
 - Добавлена возможность авторизации по логину/паролю и сертификату с ключом, полученным доверенным сервисом (см. описание методов :doc:`http/Authenticate` и :doc:`http/AuthenticateConfirm`)
 
 10.03.2016
 ---------------------
-
-SDK: `C# 1.34 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.34>`__ | `Java 1.34 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.34>`__ | `C++ 1.34 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.34>`__
-+++++++++++++++++++++
 
 - Добавлена возможность редактировать пакеты документов:
 
@@ -668,25 +645,16 @@ SDK: `C# 1.34 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 10.02.2016
 ---------------------
 
-SDK: `C# 1.33 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.33>`__ | `Java 1.33 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.33>`__ | `C++ 1.33 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.33>`__
-+++++++++++++++++++++
-
 - Добавлен метод :doc:`http/GetDepartment`, позволяющий получить информацию о конкретном подразделении организации.
 
 19.01.2016
 ---------------------
-
-SDK: `C# 1.32 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.32>`__ | `Java 1.32 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.32>`__ | `C++ 1.32 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.32>`__
-+++++++++++++++++++++
 
 - Значения перечисления ResolutionType (:doc:`proto/Resolution`) синхронизированы со значениями, возвращаемые с сервера (значение Undefined заменено на UndefinedResolutionType)
 - В структуру :doc:`proto/MessageToPost` добавлен флаг залоченного пакета *LockPacket*.
 
 02.12.2015
 ---------------------
-
-SDK: `C# 1.31 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.31>`__ | `Java 1.31 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.31>`__ | `C++ 1.31 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.31>`__
-+++++++++++++++++++++
 
 -  Добавлено свойство с сообщением об ошибке при доставке в роуминг *RoamingNotificationStatusDescription* в структуре :doc:`proto/Document`.
 
@@ -695,18 +663,12 @@ SDK: `C# 1.31 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 11.11.2015
 ---------------------
 
-SDK: `C# 1.30 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.30>`__ | `Java 1.30 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.30>`__ | `C++ 1.30 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.30>`__
-+++++++++++++++++++++
-
 -  Добавлено свойство признак прочитанности *IsRead* в структуре :doc:`proto/Document`.
 -  В методе :doc:`http/GetDocuments` теперь можно искать непрочитанные документы.
 
 
 14.10.2015
 ---------------------
-
-SDK: `C# 1.29 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.29>`__ | `Java 1.29 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.29>`__ | `C++ 1.29 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.29>`__
-+++++++++++++++++++++
 
 -  Появилась возможность отправлять новый тип документа "Дополнительное соглашение к договору".
 
@@ -723,9 +685,6 @@ SDK: `C# 1.29 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 10.08.2015
 ---------------------
 
-SDK: `C# 1.28 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.28>`__ | `Java 1.28 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.28>`__ | `C++ 1.28 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.28>`__
-+++++++++++++++++++++
-
 -  Добавилась возможность отправлять зашифрованные товарные накладные и акты выполненных работ. Для этого были внесены следующие изменения:
 
     -  в структуре :doc:`proto/MessageToPost` добавились поля *EncryptedXmlTorg12SellerTitles*, *EncryptedXmlAcceptanceCertificateSellerTitles*
@@ -736,16 +695,10 @@ SDK: `C# 1.28 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 10.08.2015
 ---------------------
 
-SDK: `C# 1.27 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.27>`__ | `Java 1.27 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.27>`__ | `C++ 1.27 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.27>`__
-+++++++++++++++++++++
-
 -  Добавлен параметр *autoRegister* у метода :doc:`http/GetMyOrganizations`, который позволяет управлять автоматической регистрацией пользователя с сертификатом КЭП в организации.
 
 30.07.2015
 ---------------------
-
-SDK: `C# 1.26 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.26>`__ | `Java 1.26 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.26>`__ | `C++ 1.26 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.26>`__
-+++++++++++++++++++++
 
 -  Добавилась возможность отправлять зашифрованные счета-фактуры. Для этого были внесены следующие изменения:
 
@@ -772,32 +725,20 @@ SDK: `C# 1.26 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 28.05.2015
 ---------------------
 
-SDK: `C# 1.25 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.25>`__ | `Java 1.25 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.25>`__ | `C++ 1.25 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.25>`__
-+++++++++++++++++++++
-
 -   Добавлен новый метод :doc:`http/GetResolutionRoutesForOrganization` для получения списка цепочек согласования организации. Также изменен протобуфер :doc:`proto/MessagePatchToPost` -  добавились структура *ResolutionChainAssignment* для постановки документа на цепочку согласования.
 
 25.05.2015
 ---------------------
-
-SDK: `C# 1.24 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.24>`__ | `Java 1.24 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.24>`__ | `C++ 1.24 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.24>`__
-+++++++++++++++++++++
 
 -   Добавлен новый метод для получения печатной формы со штампом для пересланного документа - :doc:`http/GenerateForwardedDocumentPrintForm`
 
 28.04.2015
 ---------------------
 
-SDK: `C# 1.23 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.23>`__ | `Java 1.23 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.23>`__ | `C++ 1.23 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.23>`__
-+++++++++++++++++++++
-
 -  Добавлен метод аутентификации по ключу, полученному доверенным сервисом (см. описание метода :doc:`http/Authenticate`)
 
 13.04.2015
 ---------------------
-
-SDK: `C# 1.22.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.22.1>`__ | `Java 1.22.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.22.1>`__ | `C++ 1.22.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.22.1>`__
-+++++++++++++++++++++
 
 -  Изменены структуры данных :doc:`proto/InvoiceInfo` и :doc:`proto/InvoiceCorrectionInfo`, которые предоставляют исходные данные для формирования СФ и КСФ в XML-формате при помощи метода :doc:`http/GenerateInvoiceXml`
 
@@ -810,16 +751,10 @@ SDK: `C# 1.22.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 10.04.2015
 ---------------------
 
-SDK: `C# 1.22 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.22>`__ | `Java 1.22 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.22>`__ | `C++ 1.22 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.22>`__
-+++++++++++++++++++++
-
 -  Изменены структуры данных :doc:`proto/InvoiceInfo` и :doc:`proto/InvoiceCorrectionInfo`, которые предоставляют исходные данные для формирования СФ и КСФ в XML-формате при помощи метода :doc:`http/GenerateInvoiceXml`, появилась возможность указывать версию формата СФ и КСФ.
 
 02.04.2015
 ---------------------
-
-SDK: `C# 1.21 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.21>`__ | `Java 1.21 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.21>`__ | `C++ 1.21 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.21>`__
-+++++++++++++++++++++
 
 -  Добавлена возможность отравлять приглашения организациям, не подключенным к Диадоку. Соответствующие изменения были внесены в методы :doc:`http/AcquireCounteragent` и :doc:`http/AcquireCounteragentResult`.
 
@@ -828,40 +763,25 @@ SDK: `C# 1.21 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 20.01.2015
 ---------------------
 
-SDK: `C# 1.20 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.20>`__ | `Java 1.20 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.20>`__ | `C++ 1.20 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.20>`__
-+++++++++++++++++++++
-
 -  Добавлены методы для работы с :doc:`облачной ЭП <CloudSignApi>`
 
 15.10.2014
 ---------------------
-
-SDK: `C# 1.19 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.19>`__ | `Java 1.19 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.19>`__ | `C++ 1.19 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.19>`__
-+++++++++++++++++++++
 
 -  Добавлен метод :doc:`http/GenerateDocumentZip`, позволяющий формировать zip-архив с документом, подписями к нему и файлами документооборота.
 
 02.10.2014
 ---------------------
 
-SDK: `C# 1.18 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.18>`__ | `Java 1.18 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.18>`__ | `C++ 1.18 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.18>`__
-+++++++++++++++++++++
-
 -  Добавлена возможность привязывать к документам произвольные данные "ключ-значение". Соответствующие изменения были внесены в структуры :doc:`proto/MessageToPost` и :doc:`proto/MessagePatchToPost`.
 
 05.06.2014
 ---------------------
 
-SDK: `C# 1.17 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.17>`__ | `Java 1.17 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.17>`__ | `C++ 1.17 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.17>`__
-+++++++++++++++++++++
-
 -  В Диадоке появилась возможность получать статус доставки документа в роуминг - :doc:`proto/RoamingNotification`
 
 25.02.2014
 ---------------------
-
-SDK: `C# 1.16 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.16>`__ | `Java 1.16 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.16>`__ | `C++ 1.16 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.16>`__
-+++++++++++++++++++++
 
 В Диадоке появилась поддержка новых типов полуформализованных документов:
 
@@ -875,18 +795,12 @@ SDK: `C# 1.16 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 05.02.2014
 ---------------------
 
-SDK: `C# 1.15 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.15>`__ | `Java 1.15 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.15>`__ | `C++ 1.15 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.15>`__
-+++++++++++++++++++++
-
 -  Появилась возможность получать через API протокол передачи документа. См. описание метода :doc:`http/GenerateDocumentProtocol`.
 
 Выгрузка протокола передачи документа адресатом пересылки документа третьей стороне производится при помощи метода :doc:`http/GenerateForwardedDocumentProtocol`.
 
 24.01.2014
 ---------------------
-
-SDK: `C# 1.14 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.14>`__ | `Java 1.14 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.14>`__ | `C++ 1.14 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.14>`__
-+++++++++++++++++++++
 
 -  Появилась возможность пересылать документы третьей стороне. См. описание методов :doc:`http/ForwardDocument`, :doc:`http/GetForwardedDocuments` и :doc:`http/GetForwardedDocumentEvents`.
 
@@ -895,16 +809,10 @@ SDK: `C# 1.14 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 20.12.2013
 ---------------------
 
-SDK: `C# 1.11 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.11>`__ | `Java 1.11 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.11>`__ | `C++ 1.11 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.11>`__
-+++++++++++++++++++++
-
 -  Сборка protobuf-net.dll теперь внедрена в библиотеку DiadocApi.dll. Это позволяет интегратору использовать в своем проекте другую версию сборки protobuf-net.dll.
 
 06.12.2013
 ---------------------
-
-SDK: `C# 1.10 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.10>`__ | `Java 1.10 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.10>`__ | `C++ 1.10 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.10>`__
-+++++++++++++++++++++
 
 -  В Диадоке появилась возможность отправлять формализованные отказы от подписи документов. Xml файл отказа формируется при помощи метода :doc:`http/GenerateSignatureRejectionXml`.
 
@@ -918,9 +826,6 @@ SDK: `C# 1.10 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 
 20.10.2013
 ---------------------
-
-SDK: `C# 1.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.9>`__ | `Java 1.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.9>`__ | `C++ 1.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.9>`__
-+++++++++++++++++++++
 
 -  В Диадоке появилась возможность аннулирования документов.
 
@@ -941,16 +846,10 @@ SDK: `C# 1.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1
 13.08.2013
 ---------------------
 
-SDK: `C# 1.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.8>`__ | `Java 1.8 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.8>`__ | `C++ 1.8 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.8>`__
-+++++++++++++++++++++
-
 -  Произошли изменения в API по работе со списками контрагентов. См. описание методов :doc:`http/GetCounteragents`, :doc:`http/AcquireCounteragent` и :doc:`http/BreakWithCounteragent`.
 
 10.04.2013
 ---------------------
-
-SDK: `C# 1.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.7>`__ | `Java 1.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.7>`__ | `C++ 1.7 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.7>`__
-+++++++++++++++++++++
 
 -  В Диадоке появилась поддержка нового типа полуформализованных документов - ценовых листов.
 
@@ -971,9 +870,6 @@ SDK: `C# 1.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1
 14.03.2013
 ---------------------
 
-SDK: `C# 1.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.6>`__ | `Java 1.6 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.6>`__ | `C++ 1.6 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.6>`__
-+++++++++++++++++++++
-
 -  Добавлена возможность отправлять документы, подписанные тестовой подписью (см. описание флага :doc:`SignedContent.SignWithTestSignature <proto/SignedContent>`).
 
 -  Добавлены методы :doc:`http/ParseAcceptanceCertificateSellerTitleXml` и :doc:`http/ParseTorg12SellerTitleXml`, позволяющие преобразовывать xml-файлы формализованных актов (титул исполнителя) и ТОРГ-12 (титул продавца) в структуры :doc:`AcceptanceCertificateSellerTitleInfo <proto/AcceptanceCertificateInfo>` и :doc:`Torg12SellerTitleInfo <proto/Torg12Info>` соответственно.
@@ -992,9 +888,6 @@ SDK: `C# 1.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1
 
 31.01.2013
 ---------------------
-
-SDK: `C# 1.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.5>`__ | `Java 1.5 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.5>`__ | `C++ 1.5 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.5>`__
-+++++++++++++++++++++
 
 -  Появилась возможность работы с документами, пересылаемыми внутри организации.
 
@@ -1019,9 +912,6 @@ SDK: `C# 1.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1
 29.08.2012
 ---------------------
 
-SDK: `C# 1.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.4>`__ | `Java 1.4 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.4>`__ | `C++ 1.4 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.4>`__
-+++++++++++++++++++++
-
 -  В структуру данных :doc:`proto/Organization` добавилось поле Departments, содержащее список всех подразделений в организации. Это поле позволяет получать информацию об оргструктуре при помощи методов :doc:`http/GetMyOrganizations`, :doc:`http/GetOrganization`, :doc:`http/GetCounteragents`, :doc:`http/GetCounteragent`.
 
 -  В методах :doc:`http/PostMessage` и PostDraft появилась возможность отправлять документы в конкретное подразделение контрагента. Для этого в структуру данных :doc:`proto/MessageToPost` добавилось новое поле ToDepartmentId, а в метод PostDraft был добавлен новый параметр toDepartmentId.
@@ -1038,9 +928,6 @@ SDK: `C# 1.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1
 
 26.06.2012
 ---------------------
-
-SDK: `C# 1.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.3>`__ | `Java 1.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.3>`__ | `C++ 1.3 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.3>`__
-+++++++++++++++++++++
 
 -  Был добавлен метод :doc:`http/Delete`, позволяющий помечать документы как удаленные. Также в структурах данных :doc:`proto/Document` и :doc:`proto/Message` появились соответствующие флаги IsDeleted.
 
@@ -1079,9 +966,6 @@ v1.1 - 11.05.2012
 
 04.04.2012
 ---------------------
-
-SDK: `C# 1.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.0>`__ | `Java 1.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.0>`__ | `C++ 1.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.0>`__
-+++++++++++++++++++++
 
 -  Появилась поддержка официально утвержденных версий форматов документов, фигурирующих в документообороте счетов-фактур. В связи с этим поменялись сигнатуры методов :doc:`http/GenerateInvoiceDocumentReceiptXml` и :doc:`http/GenerateInvoiceCorrectionRequestXml`. В Diadoc SDK включены соответствующие XML-схемы, описывающие форматы документов, фигурирующих в документообороте счетов-фактур:
 
@@ -1123,18 +1007,12 @@ SDK: `C# 1.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1
 18.01.2012
 ---------------------
 
-SDK: `C# 0.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.9>`__ | `Java 0.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.9>`__ | `C++ 0.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.9>`__
-+++++++++++++++++++++
-
 -  Появились методы для управления списком своих контрагентов. Метод :doc:`http/GetCounteragents` позволяет получить список контрагентов, отфильтрованный по их статусу. Метод :doc:`http/GetCounteragent` позволяет получить информацию о контрагенте по его идентификатору. Метод :doc:`http/AcquireCounteragent` позволяет добавить организацию в список своих контрагентов. Метод :doc:`http/BreakWithCounteragent` позволяет исключить организацию из списка своих контрагентов.
 
 -  Был переработан механизм получения справочной информации об организациях и ящиках в Диадоке. Методы GetBoxInfo и GetBoxesByInnKpp, а также метод GetBoxesByAuthToken объявлены устаревшими и не рекомендуются к использованию. Через некоторое время их поддержка будет прекращена. Вместо метода GetBoxesByAuthToken теперь нужно использовать метод :doc:`http/GetMyOrganizations`, позволяющий получить информацию обо всех организациях и ящиках, к которым имеет доступ владелец текущего авторизационного токена. Вместо метода GetBoxesByInnKpp теперь нужно использовать метод :doc:`http/GetOrganizationsByInnKpp`, позволяющий получить информацию о ящиках в Диадоке по ИНН и КПП организации. Наконец, на смену методу GetBoxInfo пришли методы :doc:`http/GetOrganization` и :doc:`http/GetBox`, позволяющие получить информацию соответственно о конкретных организации и ящике по их идентификаторам.
 
 16.12.2011
 ---------------------
-
-SDK: `C# 0.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.8>`__ | `Java 0.8 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.8>`__ | `C++ 0.8 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.8>`__
-+++++++++++++++++++++
 
 -  Появился метод :doc:`http/GetDocuments`, позволяющий быстро получать информацию о документах (например, о счетах-фактурах) в своем ящике, задавая различные критерии фильтрации документов. Также появился метод :doc:`http/GetDocument`, позволяющий получить всю метаинформацию об отдельном документе, зная его идентификатор.
 
@@ -1145,9 +1023,6 @@ SDK: `C# 0.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0
 03.10.2011
 ---------------------
 
-SDK: `C# 0.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.7>`__ | `Java 0.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.7>`__ | `C++ 0.7 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.7>`__
-+++++++++++++++++++++
-
 -  Появились методы *Recognize* и *GetRecognized*, позволяющие использовать Диадок для распознавания печатных форм счетов-фактур. Печатная форма подается на вход метода Recognize в формате `XPS <https://msdn.microsoft.com/en-us/library/windows/hardware/dn641615(v=vs.85).aspx>`__.
 
     В случае успешного распознавания на выходе метода GetRecognized получается XML-файл счета-фактуры в формате, удовлетворяющем требованиям ФНС и пригодном для отправки в соответствии с порядком, утвержденным Минфином РФ.
@@ -1155,16 +1030,10 @@ SDK: `C# 0.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0
 26.08.2011
 ---------------------
 
-SDK: `C# 0.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.6>`__ | `Java 0.6 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.6>`__ | `C++ 0.6 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.6>`__
-+++++++++++++++++++++
-
 -  В патчи с уведомлениями о невозможности доставки (DFN), возникающими по причине невалидности подписей под передаваемыми документами, теперь добавляются так называемые протоколы проверки подписей в виде отдельных сущностей для каждой подписи. Эти сущности-протоколы имеют тип :doc:`Attachment/SignatureVerificationReport <proto/Entity message>` и привязываться к «своим» подписям при помощи поля Entity.ParentEntityId. Протоколы проверки формируются для всех подписей (как валидных, так и невалидных), поэтому чтобы понять, какие именно подписи были признаны недействительными, нужно анализировать содержимое соответствующих протоколов. Содержимое сущности-протокола (массив байтов Entity.Content.Data) представляет собой сериализованную в протобуфер структуру :doc:`proto/SignatureVerificationResult`.
 
 15.08.2011
 ---------------------
-
-SDK: `C# 0.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.5>`__ | `Java 0.5 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.5>`__ | `C++ 0.5 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.5>`__
-+++++++++++++++++++++
 
 -  Появилась возможность запрашивать формирование ЭП под пересылаемыми данными "по доверенности". В этом случае изготавливать ЭП на клиенте  не нужно (и значит, можно не устанавливать на рабочее место криптопровайдер), вместо этого формирование необходимой подписи будет произведено на сервере в момент доставки отправленного сообщения.
 
@@ -1173,16 +1042,10 @@ SDK: `C# 0.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0
 08.07.2011
 ---------------------
 
-SDK: `C# 0.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.4>`__ | `Java 0.4 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.4>`__ | `C++ 0.4 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.4>`__
-+++++++++++++++++++++
-
 Появилась возможность формирования печатных форм различных документов (в частности, счетов фактур) при помощи метода :doc:`http/GeneratePrintForm`.
 
 17.06.2011
 ---------------------
-
-SDK: `C# 0.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.3>`__ | `Java 0.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.3>`__ | `C++ 0.3 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.3>`__
-+++++++++++++++++++++
 
 -  Появилась возможность связывать документы в разных сообщениях. Для организации такой связи вводится структура данных :doc:`proto/DocumentId`, которую можно заполнить, например, в структуре :doc:`proto/XmlDocumentAttachment` при отправке корректировочного счета-фактуры.
 
@@ -1201,32 +1064,20 @@ SDK: `C# 0.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0
 15.04.2011
 ---------------------
 
-SDK: `C# 0.2.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.2.2>`__ | `Java 0.2.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.2.2>`__ | `C++ 0.2.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.2.2>`__
-+++++++++++++++++++++
-
 Справочные методы GetBoxInfo, GetBoxesByAuthToken и GetBoxesByInnKpp научились отдавать данные в формате XML.
 
 07.04.2011
 ---------------------
-
-SDK: `C# 0.2.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.2.1>`__ | `Java 0.2.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.2.1>`__ | `C++ 0.2.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.2.1>`__
-+++++++++++++++++++++
 
 Появилась возможность создавать черновики при помощи метода PostDraft.
 
 30.03.2011
 ---------------------
 
-SDK: `C# 0.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.2>`__ | `Java 0.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.2>`__ | `C++ 0.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.2>`__
-+++++++++++++++++++++
-
 Появилась возможность вести документооборот по счетам-фактурам в соответствии с порядком Минфина.
 
 18.02.2011
 ---------------------
-
-SDK: `C# 0.1.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.1.1>`__ | `Java 0.1.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.1.1>`__ | `C++ 0.1.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.1.1>`__
-+++++++++++++++++++++
 
 -  Появились методы для получения справочной информации GetBoxInfo и GetBoxesByInnKpp.
 
@@ -1236,8 +1087,5 @@ SDK: `C# 0.1.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions
 
 09.12.2010
 ---------------------
-
-SDK: `C# 0.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/0.1>`__ | `Java 0.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/0.1>`__ | `C++ 0.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/0.1>`__
-+++++++++++++++++++++
 
 Первоначальный релиз интеграторского интерфейса.
