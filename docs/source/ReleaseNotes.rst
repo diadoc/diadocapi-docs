@@ -4,7 +4,7 @@
 30.01.2019
 ---------------------
 
-`Java 1.64.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.64.0>`__
+`Java 1.64.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.0.0>`__
 +++++++++++++++++++++
 
 - Обновлен JDK до версии 10.x
