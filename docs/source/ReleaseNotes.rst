@@ -5,7 +5,7 @@
 ---------------------
 
 SDK: `Java 2.0.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.0.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Обновлен JDK до версии 10.x
 - Обновлен КриптоПро JCP до версии 2.0
@@ -14,7 +14,7 @@ SDK: `Java 2.0.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions
 ---------------------
 
 SDK: `C# 1.64.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.64.0>`__ | `Java 1.64.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.64.0>`__ | `C++ 1.64.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.64.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен метод :doc:`http/Departments/GetDepartment` для получения информацию о подразделении организации.
 - Добавлен метод :doc:`http/Departments/GetDepartments` для получения списка подразделений организации.
@@ -26,7 +26,7 @@ SDK: `C# 1.64.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.63.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.63.0>`__ | `Java 1.63.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.63.0>`__ | `C++ 1.63.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.63.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлена возможность блокировки сотрудников в организации; расширены соответствующие структуры:
     - :doc:`EmployeePermissions <proto/EmployeePermissions>`
@@ -37,7 +37,7 @@ SDK: `C# 1.63.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.62.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.62.1>`__ | `Java 1.62.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.62.1>`__ | `C++ 1.62.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.62.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Методы генерации и парсинга документов получили поддержку ставки 20%:
     - :doc:`GenerateInvoiceXml <http/GenerateInvoiceXml>` для генерации счетов-фактур
@@ -54,7 +54,7 @@ SDK: `C# 1.62.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.62.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.62.0>`__ | `Java 1.62.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.62.0>`__ | `C++ 1.62.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.62.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлено поле ``Version`` в следующие структуры:
     - :doc:`DocumentInfo <proto/DocumentInfo>`
@@ -70,7 +70,7 @@ SDK: `C# 1.62.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.60.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.60.1>`__ | `Java 1.60.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.60.1>`__ | `C++ 1.60.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.60.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - В структуру :doc:`DocflowV3 <proto/DocflowV3>` добавлена информация о согласовании документа
 
@@ -78,7 +78,7 @@ SDK: `C# 1.60.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.59.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.59.0>`__ | `Java 1.59.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.59.0>`__ | `C++ 1.59.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.59.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Появилась возможность работы с извещением о получении на титул получателя:
 
@@ -96,7 +96,7 @@ SDK: `C# 1.59.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.58.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.58.0>`__ | `Java 1.58.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.58.0>`__ | `C++ 1.58.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.58.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен метод :doc:`http/DeleteEmployee` для удаления сотрудника.
 
@@ -104,7 +104,7 @@ SDK: `C# 1.58.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.57.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.57.0>`__ | `Java 1.57.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.57.0>`__ | `C++ 1.57.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.57.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен метод :doc:`http/UpdateEmployee` для редактирования сотрудника.
 
@@ -112,7 +112,7 @@ SDK: `C# 1.57.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.56.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.56.0>`__ | `Java 1.56.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.56.0>`__ | `C++ 1.56.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.56.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - В структуру :doc:`DocumentTitle <proto/DocumentTypeDescription>` добавлена информация о типе подписанта SignerInfo, необходимого для подписания титула.
 
@@ -120,7 +120,7 @@ SDK: `C# 1.56.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.55.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.55.7>`__ | `Java 1.55.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.55.7>`__ | `C++ 1.55.7 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.55.7>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен метод :doc:`http/UpdateMyUser` для редактирования данных пользователя.
 
@@ -128,7 +128,7 @@ SDK: `C# 1.55.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.55.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.55.6>`__ | `Java 1.55.6 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.55.6>`__ | `C++ 1.55.6 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.55.6>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Появился механизм для отправки предопределённого титула получателя. Более подробно можно узнать на странице: :doc:`/howto/example_predefined_recipient_title`.
 
@@ -137,7 +137,7 @@ SDK: `C# 1.55.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.54.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.54.6>`__ | `Java 1.54.6 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.54.6>`__ | `C++ 1.54.6 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.54.6>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен метод :doc:`http/CreateEmployee` для создания сотрудника.
 
@@ -145,7 +145,7 @@ SDK: `C# 1.54.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.54.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.54.4>`__ | `Java 1.54.4 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.54.4>`__ | `C++ 1.54.4 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.54.4>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - В структуру :doc:`DocumentList <proto/DocumentList>` добавлено поле HasMoreResults. Если количество документов превышает 1000, значение TotalCount всегда будет возвращаться равным 1000, а признак HasMoreResults = true.
 
@@ -153,7 +153,7 @@ SDK: `C# 1.54.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.54.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.54.1>`__ | `Java 1.54.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.54.1>`__ | `C++ 1.54.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.54.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Появилась возможность управлять :doc:`правом сотрудника <proto/EmployeePermissions>` видеть списки контрагентов и работать с ними. В структуре :doc:`OrganizationUserPermissions <proto/OrganizationUserPermissions>` добавлено поле *CanManageCounteragents*.
 
@@ -161,7 +161,7 @@ SDK: `C# 1.54.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.54.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.54.0>`__ | `Java 1.54.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.54.0>`__ | `C++ 1.54.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.54.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен метод получения подписок сотрудника на почтовые уведомления :doc:`http/GetSubscriptions` и метод для их редактирования :doc:`http/UpdateSubscriptions`.
 
@@ -169,7 +169,7 @@ SDK: `C# 1.54.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.53.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.53.0>`__ | `Java 1.53.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.53.0>`__ | `C++ 1.53.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.53.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен обобщённый метод генерации титула отправителя :doc:`GenerateSenderTitleXml <http/GenerateSenderTitleXml>`.
 
@@ -177,7 +177,7 @@ SDK: `C# 1.53.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.52.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.52.4>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлены экспериментальные новые версии методов Docflow API: :doc:`http/GetDocflows_V3`, :doc:`http/GetDocflowEvents_V3`, :doc:`http/GetDocflowsByPacketId_V3`, :doc:`http/SearchDocflows_V3`. Методы доступны только в C# SDK.
 
@@ -185,7 +185,7 @@ SDK: `C# 1.52.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.52.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.52.3>`__ | `Java 1.52.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.52.3>`__ | `C++ 1.52.3 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.52.3>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен метод получения сотрудника :doc:`http/GetEmployee` и новая версия метода :doc:`http/GetMyUser`.
 
@@ -193,7 +193,7 @@ SDK: `C# 1.52.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.52.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.52.1>`__ | `Java 1.52.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.52.1>`__ | `C++ 1.52.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.52.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен флаг *HasCertificateToSign* в структуру :doc:`proto/Organization`.
 
@@ -201,7 +201,7 @@ SDK: `C# 1.52.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.52.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.52.0>`__ | `Java 1.52.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.52.0>`__ | `C++ 1.52.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.52.0>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлены режимы блокировки сообщений с шаблонами :doc:`LockMode <proto/LockMode>`. Режим можно указать при отправке шаблонов через :doc:`TemplateToPost <proto/TemplateToPost>`.
 - Добавлена поддержка удаления и восстановления шаблонов через имеющиеся методы :doc:`http/Delete` и :doc:`http/Restore`.
@@ -210,7 +210,7 @@ SDK: `C# 1.52.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.51.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.9>`__ | `Java 1.51.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.9>`__ | `C++ 1.51.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.9>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - В структуре :doc:`Docflow <proto/Docflow>` появилось поле :doc:`RoamingNotification <proto/Docflow_RoamingNotification>`, содержащее данные о доставке документа в роуминг.
 
@@ -219,7 +219,7 @@ SDK: `C# 1.51.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.51.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.8>`__ | `Java 1.51.8 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.8>`__ | `C++ 1.51.8 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.8>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлены режимы блокировки сообщений :doc:`LockMode <proto/LockMode>`.
 
@@ -228,7 +228,7 @@ SDK: `C# 1.51.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.51.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.7>`__ | `Java 1.51.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.7>`__ | `C++ 1.51.7 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.7>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - В структуре :doc:`Document <proto/Document>` появилось поле *EditingSettingId*, содержащее идентификатор настройки документа, если он был создан из шаблона с возможностью редактирования полей.
 - В структуре :doc:`OrganizationUserPermissions <proto/OrganizationUserPermissions>` появилось поле *CanCreateDocuments*, указывающее, может ли пользователь создавать документы и работать с черновиками.
@@ -238,7 +238,7 @@ SDK: `C# 1.51.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.51.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.6>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен обобщённый метод генерации титула получателя :doc:`GenerateRecipientTitleXml <http/GenerateRecipientTitleXml>`.
 - Расширена структура контракта :doc:`DocumentTitle <proto/DocumentTypeDescription>`. Добавлено поле *UserDataXsdUrl*, позволяющее узнать, по какой ссылке возможно загрузить XSD-схему контракта для генерации титула с помощью :doc:`обобщённого метода генерации <http/GenerateRecipientTitleXml>`.
@@ -248,7 +248,7 @@ SDK: `C# 1.51.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.51.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.3>`__ | `Java 1.51.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.3>`__ | `C++ 1.51.3 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.3>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Расширена структура контракта :doc:`Document <proto/Document>`. Добавлено свойство :doc:`Origin <proto/Origin>`, позволяющее узнать, из какого черновика или шаблона был создан документ.
 
@@ -257,7 +257,7 @@ SDK: `C# 1.51.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.51.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.2>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Расширена структура контракта :doc:`MessagePatchToPost <proto/MessagePatchToPost>`. Добавлен необязательный список операций *EditingPatches* для редактирования контента документа.
 
@@ -266,7 +266,7 @@ SDK: `C# 1.51.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.51.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.1>`__ | `Java 1.51.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.1>`__ | `C++ 1.51.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Расширена структура контракта :doc:`TemplateDocumentAttachment <proto/TemplateDocumentAttachment>`. Добавлен необязательный признак *NeedRecipientSignature*, обозначающий запрос подписи получателя под отправляемым документом, созданным из шаблона, а также необязательный идентификатор настройки редактирования содержимого документа :doc:`EditingSettingId <proto/TemplateDocumentAttachment>`.
 
@@ -275,7 +275,7 @@ SDK: `C# 1.51.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.51 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51>`__ | `Java 1.51 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51>`__ | `C++ 1.51 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Добавлены :doc:`метки <proto/Labels>`.
 
@@ -300,7 +300,7 @@ SDK: `C# 1.51 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.50 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.50>`__ | `Java 1.50 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.50>`__ | `C++ 1.50 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.50>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Расширена структура контракта :doc:`proto/Document`. Добавились свойства для универсальной работы с документом. Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* теперь считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
 
@@ -309,7 +309,7 @@ SDK: `C# 1.50 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.49.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.49.2>`__ | `Java 1.49.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.49.2>`__ | `C++ 1.49.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.49.2>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Расширена структура :doc:`proto/PrepareDocumentsToSignRequest` метода :doc:`http/PrepareDocumentsToSign`: добавлена структура `ContentToPatch` для патчинга содержимого документов.
 - Добавлен метод для создания сообщения с документами на основе шаблона :doc:`http/TransformTemplateToMessage`.
@@ -319,7 +319,7 @@ SDK: `C# 1.49.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.49.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.49.1>`__ | `Java 1.49.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.49.1>`__ | `C++ 1.49.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.49.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Появился параметр `count` для метода :doc:`http/GetDocuments`
 
@@ -328,7 +328,7 @@ SDK: `C# 1.49.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.49 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.49>`__ | `Java 1.49 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.49>`__ | `C++ 1.49 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.49>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Появились новые методы для работы с шаблонами документов:
 
@@ -342,7 +342,7 @@ SDK: `C# 1.49 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.48 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.48>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Появился новый метод :doc:`http/GetDocumentTypes`, возвращающий описание типов документов, доступных в ящике.
 
@@ -357,7 +357,7 @@ SDK: `C# 1.48 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.47.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.47.1>`__ | `Java 1.47.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.47.1>`__ | `C++ 1.47.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.47.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 - В структуре :doc:`../proto/User`, которая возвращается методом :doc:`/GetMyUser <http/GetMyUser>`, изменилась структура CertificateInfo. В неё были добавлены два новых поля: *OrganizationName* - наименование организации, на которую выдан сертификат и *Inn* - ИНН организации, на которую выдан сертификат.
 
 
@@ -365,7 +365,7 @@ SDK: `C# 1.47.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.47 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.47>`__ | `Java 1.47 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.47>`__ | `C++ 1.47 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.47>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 - В API Диадока появилась новая версия метода :doc:`/V4/GetMessage <http/GetMessage>`. Основное отличие версии *V4* от версии *V3* в том, что новая версия метода имеет дополнительную опцию *injectEntityContent*. Подробное описание метода находится :doc:`здесь <http/GetMessage>`.
 
 
@@ -380,7 +380,7 @@ SDK: `C# 1.47 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.46.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.46.1>`__ | `Java 1.46.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.46.1>`__ | `C++ 1.46.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.46.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавили структуры :doc:`proto/TovTorgInfo` и :doc:`proto/AcceptanceCertificate552Info` для описания накладных и актов в формате приказов №551/552.
 
@@ -389,7 +389,7 @@ SDK: `C# 1.46.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.46 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.46>`__ | `Java 1.46 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.46>`__ | `C++ 1.46 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.46>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 - Появилась новая структура данных :doc:`SignatureInfo <proto/SignatureInfo>`, содержащая информацию о подписи и сертификате.
 
 - Добавлен метод :doc:`GetSignatureInfo <http/GetSignatureInfo>`, получающий на вход идентификаторы подписи и возвращающий данные в структуре :doc:`SignatureInfo <proto/SignatureInfo>`.
@@ -403,7 +403,7 @@ SDK: `C# 1.46 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.44.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.44.2>`__ | `Java 1.44.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.44.2>`__ | `C++ 1.44.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.44.2>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Добавлены следующие поля:
 
@@ -417,7 +417,7 @@ SDK: `C# 1.44.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.44.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.44.1>`__ | `Java 1.44.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.44.1>`__ | `C++ 1.44.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.44.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Добавлен признак "Разрешить посылать зашифрованные документы".
 
@@ -429,7 +429,7 @@ SDK: `C# 1.44.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.44 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.44>`__ | `Java 1.44 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.44>`__ | `C++ 1.44 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.44>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Добавлено наименование первичного документа.
 
@@ -441,7 +441,7 @@ SDK: `C# 1.44 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.43 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.43>`__ | `Java 1.43 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.43>`__ | `C++ 1.43 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.43>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Добавлена дата ликвидации организации.
 
@@ -462,7 +462,7 @@ SDK: `C# 1.43 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.41.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.41.3>`__ | `Java 1.41.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.41.3>`__ | `C++ 1.41.3 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.41.3>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Появилась возможность определить версию XSD-схемы, в соответствии с которой был отправлен документ.
 
@@ -474,7 +474,7 @@ SDK: `C# 1.41.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.41.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.41.1>`__ | `Java 1.41.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.41.1>`__ | `C++ 1.41.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.41.1>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Появилась возможность отправлять неформализованные акты и акты сверки без указания номера документа.
 
@@ -486,7 +486,7 @@ SDK: `C# 1.41.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.41 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.41>`__ | `Java 1.41 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.41>`__ | `C++ 1.41 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.41>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 В API Диадока появилась возможность снимать документ с маршрута согласования, подробнее см. описание поля
 *ResolutionRouteRemovals* в структуре :doc:`MessagePatchToPost <proto/MessagePatchToPost>`. Также произошла
@@ -522,7 +522,7 @@ SDK: `C# 1.41 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.39 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.39>`__ | `Java 1.39 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.39>`__ | `C++ 1.39 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.39>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 В API Диадока появилась новая версия метода :doc:`/V5/GetNewEvents /<http/GetNewEvents>`, для получения ленты событий по ящику.
 
@@ -534,7 +534,7 @@ SDK: `C# 1.39 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/
 ---------------------
 
 SDK: `C# 1.38.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.38.3>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 В структуре :doc:`OrganizationWithCounteragentStatus <proto/GetOrganizationsByInnListRequest>` добавилось поле *LastEventTimestampTicks*.
 
@@ -624,7 +624,7 @@ SDK: `C# 1.38.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 ---------------------
 
 SDK: `C# 1.37 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.37>`__
-+++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Добавлена структура для отправки кастомных типов документов - :doc:`CustomDocumentAttachment <proto/DocumentAttachment>`.
 
