@@ -22,7 +22,7 @@ ResolutionDocflowV3
 
 Сущность, на которую ссылается *ResolutionEntityId*, следует искать, в зависимости от значения *ResolutionStatus*, по следующим правилам:
 
-- если *ResolutionStatus* принимает одно из значений *ApprovementRequested*, *ApprovementSignatureRequested* или *PrimarySignatureRequested*, то *ResolutionEntityId* находится в коллекции *Requests* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`
+- если *ResolutionStatus* принимает одно из значений *ApprovementRequested*, *ApprovementSignatureRequested*, *PrimarySignatureRequested* или *ActionsRequested*, то *ResolutionEntityId* находится в коллекции *Requests* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`
 - если *ResolutionStatus* равен *Approved* или *Disapproved*, то *ResolutionEntityId* находится в коллекции *Resolutions* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`
 - если *ResolutionStatus* равен *SignatureRequestRejected*, то *ResolutionEntityId* находится в коллекции *SignatureDenials* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`
 - если *ResolutionStatus* равен *SignedWithApprovingSignature*, то *ResolutionEntityId* находится в коллекции *ApprovementSignatures* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`

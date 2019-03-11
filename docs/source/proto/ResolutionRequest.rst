@@ -126,7 +126,7 @@ ResolutionRequestAttachment
 
 Структура данных *ResolutionRequestAttachment* содержит информацию для отправки запроса на согласование (или подпись) документа в методе :doc:`../http/PostMessagePatch`
 
--  *Type* - тип запроса на согласование.
+- :ref:`Type <ResolutionRequestType>` - тип запроса на согласование. Допустимые значения --- *ApprovementRequest*, *SignatureRequest* и *ApprovementSignatureRequest*.
 
 -  *InitialDocumentId* - идентификатор документа, для которого формируется запрос на согласование.
 
