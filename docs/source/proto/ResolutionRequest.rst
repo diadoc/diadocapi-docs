@@ -1,6 +1,9 @@
 ResolutionRequest
 =================
 
+ResolutionRequestInfo
+---------------------
+
 .. code-block:: protobuf
 
     message ResolutionRequestInfo {
@@ -8,8 +11,55 @@ ResolutionRequest
         required string Author = 2;
         optional ResolutionTarget Target = 3;
         optional string ResolvedWith = 4;
+        repeated ResolutionAction Actions = 5;
     }
-    
+
+Структура данных *ResolutionRequestInfo* содержит информацию о состоянии запроса на согласование и является частью структуры :doc:`Entity <Entity message>` в случае, когда сущность имеет тип *AttachmentType.ResolutionRequest*:
+
+- *ResolutionRequestType* - тип запроса на согласование.
+
+- *Author* - ФИО инициатора запроса.
+
+- *ResolutionTarget* - информация о том, кому направлен запрос.
+
+- *ResolvedWith* - идентификатор ответного действия (положительное/отрицательное согласование, отказ в запросе подписи).
+
+- *Actions* - действия, которые можно выполнить в рамках текущего запроса на согласование.
+
+.. _ResolutionRequestType:
+
+ResolutionRequestType
+---------------------
+
+.. code-block:: protobuf
+
+    enum ResolutionRequestType {
+        UnknownResolutionRequestType = -1;
+        ApprovementRequest = 0;
+        SignatureRequest = 1;
+        ApprovementSignatureRequest = 2;
+        Custom = 3;
+    }
+
+Структура определяет тип запроса на согласования:
+
+- *ApprovementRequest* - запрос на согласование документа.
+
+- *SignatureRequest* - запрос на подпись документа.   
+
+- *ApprovementSignatureRequest* - запрос на согласующую подпись под документом.
+
+- *Custom* - запрос был создан на основе шага маршрута согласования и не вписывается в стандартные типы. 
+
+Действия, которые можно выполнить по каждому из запросов на согласования, перечислены в свойстве `Actions`.
+
+.. _ResolutionTarget:
+
+ResolutionTarget
+----------------
+
+.. code-block:: protobuf
+
     message ResolutionTarget {
     	optional string Department = 1;
     	optional string DepartmentId = 2;
@@ -17,12 +67,53 @@ ResolutionRequest
     	optional string UserId = 4;
     }
 
-    enum ResolutionRequestType {
-        UnknownResolutionRequestType = -1;
-        ApprovementRequest = 0;
-        SignatureRequest = 1;
-        ApprovementSignatureRequest = 2;
+Структура содержит информацию о том, кому направлен запрос на согласование:
+
+- *TargetDepartment* - название подразделения, в которое направлен запрос.
+
+- *TargetDepartmentId* - идентификатор подразделения, в которое направлен запрос.
+
+- *TargetUser* - ФИО пользователя, которому направлен запрос.
+
+- *TargetUserId* - идентификатор пользователя, которому направлен запрос.
+
+Если запрос назначен на конкретного сотрудника, то будут заполены свойства *User* и *UserId*. Если на подразделение, то --- *Department* и *DepartmentId*.
+
+.. _ResolutionAction:
+
+ResolutionAction
+----------------
+
+.. code-block:: protobuf
+
+    enum ResolutionAction {
+        UnknownAction = 0;
+        ApproveAction = 1;
+        DisapproveAction = 2;
+        SignWithApprovementSignature = 3;
+        SignWithPrimarySignature = 4;
+        DenySignatureRequest = 5;
+        RejectSigning = 6;
     }
+
+Перечисление описывает возможные действия по запросу на согласование:
+
+- *ApproveAction* - согласовать;
+
+- *DisapproveAction* - отказать в согласовании;
+
+- *SignWithApprovementSignature* - подписать согласующей подписью;
+
+- *SignWithPrimarySignature* - подписать завершающей подписью;
+
+- *DenySignatureRequest* - отказать в подписи сотруднику;
+
+- *RejectSigning* - отказать в подписи контрагенту.
+
+ResolutionRequestAttachment
+---------------------------
+
+.. code-block:: protobuf
 
     message ResolutionRequestAttachment {
         required string InitialDocumentId = 1;
@@ -33,43 +124,9 @@ ResolutionRequest
         repeated string Labels = 6;
     }
 
-    message ResolutionRequestCancellationAttachment {
-        required string InitialResolutionRequestId = 1;
-        optional string Comment = 2;
-        repeated string Labels = 3;
-    }
-        
-
-Структура данных *ResolutionRequestInfo* содержит информацию о состоянии запроса на согласование.
-
--  *ResolutionRequestType* - тип запроса на согласование:
-
-   -  *ApprovementRequest* - запрос на согласование документа.
-
-   -  *SignatureRequest* - запрос на подпись документа.
-   
-   -  *ApprovementSignatureRequest* - запрос на согласующую подпись под документом.
-
--  *Author* - ФИО инициатора запроса.
-
--  *ResolutionTarget* - информация о том, кому направлен запрос.
-
--  *ResolvedWith* - идентификатор ответного действия (положительное/отрицательное согласование, отказ в запросе подписи).
-
-
-Структура данных *ResolutionRequestInfo* :
-
--  *TargetDepartment* - название подразделения, в которое направлен запрос.
-
--  *TargetDepartmentId* - идентификатор подразделения, в которое направлен запрос.
-
--  *TargetUser* - ФИО пользователя, которому направлен запрос.
-
--  *TargetUserId* - идентификатор пользователя, которому направлен запрос.
-
 Структура данных *ResolutionRequestAttachment* содержит информацию для отправки запроса на согласование (или подпись) документа в методе :doc:`../http/PostMessagePatch`
 
--  *Type* - тип запроса на согласование.
+- :ref:`Type <ResolutionRequestType>` - тип запроса на согласование. Допустимые значения --- *ApprovementRequest*, *SignatureRequest* и *ApprovementSignatureRequest*.
 
 -  *InitialDocumentId* - идентификатор документа, для которого формируется запрос на согласование.
 
@@ -82,6 +139,17 @@ ResolutionRequest
 -  *Comment* - комментарий к запросу согласования.
 
 -  *Labels* - :doc:`метки <../proto/Labels>` запроса на согласование.
+
+ResolutionRequestCancellationAttachment
+---------------------------------------
+
+.. code-block:: protobuf
+
+    message ResolutionRequestCancellationAttachment {
+        required string InitialResolutionRequestId = 1;
+        optional string Comment = 2;
+        repeated string Labels = 3;
+    }
 
 Структура данных *ResolutionRequestCancellationAttachment* содержит информацию для отправки отмены запроса на согласование документа в методе :doc:`../http/PostMessagePatch`.
 
