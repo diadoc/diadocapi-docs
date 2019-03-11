@@ -3,7 +3,7 @@
 
 09.03.2019
 ---------------------
-SDK: `C# 1.64.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.64.6>`__ | `Java 2.0.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.0.2>`__ | `C++ 1.64.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.64.2>`__
+SDK: `C# 1.65.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.65.0>`__ | `Java 2.1.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.1.0>`__ | `C++ 1.65.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.65.0>`__
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - В контракт :doc:`ResolutionRequestType <proto/ResolutionRequest>` добавлен тип согласования `Custom`.
