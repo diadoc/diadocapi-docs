@@ -1,6 +1,17 @@
 ﻿История изменений API
 =====================
 
+09.03.2019
+---------------------
+SDK: `C# 1.64.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.64.6>`__ | `Java 2.0.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.0.2>`__ | `C++ 1.64.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.64.2>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- В контракт :doc:`ResolutionRequestType <proto/ResolutionRequest>` добавлен тип согласования `Custom`.
+- В контракт :doc:`ResolutionRequestInfo <proto/ResolutionRequest>` добавлено свойство `Actions`, в котором перечислены доступные действия для запроса согласования
+- В контракт :doc:`ResolutionStatusType <proto/ResolutionStatus>` добавлен тип запроса согласования `ActionsRequested` (соответствует типу `Custom`).
+- В контракт :doc:`ResolutionStatus <proto/ResolutionDocflowV3>` добавлено свойство `ActionsRequested`
+- В контракт :doc:`ResolutionRequestV3 <proto/ResolutionEntitiesV3>` добавлено свойство `Actions`, в котором перечислены доступные действия для запроса согласования
+
 30.01.2019
 ---------------------
 

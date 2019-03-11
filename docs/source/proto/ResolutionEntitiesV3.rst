@@ -20,6 +20,8 @@ ResolutionEntitiesV3
 - *ApprovementSignatures* - содержит согласующие подписи;
 - *SignatureDenials* - содержит отказы в подписи сотруднику.
 
+.. _ResolutionRequestV3:
+
 ResolutionRequestV3
 -------------------
 
@@ -31,16 +33,18 @@ ResolutionRequestV3
         required ResolutionTarget Target = 2;
         optional string AuthorUserId = 3;
         required ResolutionRequestType RequestType = 4;
-        optional string ResolvedWith = 5;
+        optional string ResolvedWith = 5; 
+        repeated ResolutionAction Actions = 6;
     }
 
 Структура `ResolutionRequestV3` описывает запрос на согласование документа или запроса на аннулирование
 
 - :doc:`Entity <Entity>` - содержит информацию о содержимом запроса (идентификатор, время создания). В качестве содержимого запроса следует рассматривать комментарий к запросу;
-- :doc:`Target <ResolutionRequest>` - информация о том, кому направлен запрос (пользователь или подразделение);
+- :ref:`Target <ResolutionTarget>` - информация о том, кому направлен запрос (пользователь или подразделение);
 - *AuthorUserId* - идентификатор пользователя, запросившего согласование/подпись;
-- :doc:`RequestType <ResolutionRequest>` - тип запроса на согласование;
+- :ref:`RequestType <ResolutionRequestType>` - тип запроса на согласование;
 - *ResolvedWith* - идентификатор ответного действия (положительное/отрицательное согласование, отказ в запросе подписи сотруднику, подпись, отказ в подписи контрагенту).
+- :ref:`Actions <ResolutionAction>` - действия, которые можно выполнить в рамках текущего запроса на согласование.
 
 ResolutionV3
 ------------
@@ -60,7 +64,7 @@ ResolutionV3
 - :doc:`Entity <Entity>` - содержит информацию о согласовании (идентификатор, время создания). В качестве содержимого согласования следует рассматривать комментарий к согласованию/отказу;
 - *ResolutionRequestId* - идентификатор запроса на согласование, если он был;
 - *AuthorUserId* - идентификатор пользователя, совершившего согласование/отказ в согласовании;
-- :doc:`ResolutionType <Resolution>` - тип действия по согласованию.
+- :ref:`ResolutionType` - тип действия по согласованию.
 
 ApprovementSignatureV3
 ----------------------
