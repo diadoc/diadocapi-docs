@@ -39,6 +39,7 @@ RevocationRequestDocflow
         optional Timestamp SentAt = 2;
         optional Timestamp DeliveredAt = 3;
         optional RoamingNotification RoamingNotification = 4;
+        optional string PlainText = 5;
     }
 
 Структура содержит информацию о предложении об аннулировании документа.
@@ -47,6 +48,7 @@ RevocationRequestDocflow
 - :doc:`SentAt <Timestamp>` - метка времени отправки предложения об аннулировании
 - :doc:`DeliveredAt <Timestamp>` - метка времени доставки предложения об аннулировании в ящик контрагента
 - :doc:`RoamingNotification` - данные о доставке предложения об аннулировании в роуминг
+- *PlainText* - комментарий к сущности
 
 .. _revocation-response-docflow:
 
