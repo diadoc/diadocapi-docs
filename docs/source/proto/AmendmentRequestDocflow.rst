@@ -13,6 +13,7 @@ AmendmentRequestDocflow
         optional Timestamp DeliveredAt = 4;
         optional ReceiptDocflowV3 Receipt = 5;
         required int32 AmendmentFlags = 6;
+        optional string PlainText = 7;
     }
 
 Структура содержит информацию о состоянии уведомления об уточнении (УоУ). Содержится в структуре :doc:`DocflowV3`.
@@ -25,3 +26,4 @@ AmendmentRequestDocflow
 - :doc:`AmendmentFlags <InvoiceAmendmentFlags>` отражает статус УОУ:
     - было ли затребовано уточнение, передавалось ли исправление документа, передавалась ли корректировка документа;
     - представляет собой битовую маску, составленную из одного или нескольких значений перечисления :doc:`InvoiceAmendmentFlags`.
+- *PlainText* - комментарий к сущности
