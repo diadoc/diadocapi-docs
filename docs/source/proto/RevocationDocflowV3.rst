@@ -48,7 +48,7 @@ RevocationRequestDocflow
 - :doc:`SentAt <Timestamp>` - метка времени отправки предложения об аннулировании
 - :doc:`DeliveredAt <Timestamp>` - метка времени доставки предложения об аннулировании в ящик контрагента
 - :doc:`RoamingNotification` - данные о доставке предложения об аннулировании в роуминг
-- *PlainText* - комментарий к сущности
+- *PlainText* - текст запроса аннулирования
 
 .. _revocation-response-docflow:
 
