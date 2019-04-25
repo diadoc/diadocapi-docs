@@ -1,6 +1,17 @@
 ﻿История изменений API
 =====================
 
+23.04.2019
+---------------------
+SDK: `C# 1.67.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.67.0>`__ | `Java 2.3.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.3.0>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+В контракты DocflowV3 добавлены свойства, содержащие текстовые выдержки соответствующих документов.
+
+- В контракт :doc:`SignatureRejectionDocflow <proto/SignatureRejectionDocflow>` добавлено свойство `PlainText`, которое содержит текст сообщения об отказе в подписи
+- В контракт :doc:`AmendmentRequestDocflow <proto/AmendmentRequestDocflow>` добавлено свойство `PlainText`, которое содержит текст  запроса уточнения
+- В контракт :doc:`RevocationRequestDocflow <proto/RevocationDocflowV3>` добавлено свойство `PlainText`, которое содержит текст запроса аннулирования
+
 09.03.2019
 ---------------------
 SDK: `C# 1.65.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.65.0>`__ | `Java 2.1.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.1.0>`__ | `C++ 1.65.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.65.0>`__
