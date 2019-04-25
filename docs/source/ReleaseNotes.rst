@@ -1,6 +1,24 @@
 ﻿История изменений API
 =====================
 
+24.04.2019
+---------------------
+SDK: `C# 1.68.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.68.0>`__ | `Java 2.4.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.4.0>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+В контракте DocflowV3 
+
+- Удалён контракт `ProxyResponseDocflow`
+- Изменён контракт `RecipientResponseDocflow`:
+
+    * Контракт переименован в :doc:`ParticipantResponseDocflow <proto/ParticipantResponseDocflow>`
+
+    * Поле `RecipientTitle` переименовано в `Title`
+
+    * Поле `RecipientResponseStatus` переименовано `ResponseStatus`
+
+- В контракте :doc:`DocflowV3 <proto/DocflowV3>` удалено поле `ProxyResponse = 3` и вместо него добавлено поле `ProxyResponse = 11`, структура которого соответствует :doc:`ParticipantResponseDocflow <proto/ParticipantResponseDocflow>`
+
 23.04.2019
 ---------------------
 SDK: `C# 1.67.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.67.0>`__ | `Java 2.3.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.3.0>`__
