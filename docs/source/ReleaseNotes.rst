@@ -1,6 +1,13 @@
 ﻿История изменений API
 =====================
 
+07.05.2019
+----------
+SDK: `C# 1.69.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.69.0>`__ | `Java 2.5.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.5.0>`__ | `C++ 1.67.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.67.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Добавлены методы :doc:`http/Register` и :doc:`http/RegisterConfirm` для регистрации организации и сотрудника по сертификату.
+
 24.04.2019
 ---------------------
 SDK: `C# 1.68.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.68.0>`__ | `Java 2.4.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.4.0>`__

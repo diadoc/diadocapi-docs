@@ -63,6 +63,7 @@
    Работа с сотрудниками <API_Employees>
    Работа с контрагентами <API_Counteragents>
    Работа с шаблонами <API_Templates>
+   Регистрация организации и сотрудника по сертификату <API_Registration>
    Docflow API <Docflow API>
    Электронная подпись Контур.Сертификатом <CloudSignApi>
 
