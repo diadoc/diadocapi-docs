@@ -9,12 +9,12 @@ OrganizationFeatures
         repeated string Features = 2;
     }
 
-Структура *OrganizationFeatures* содержит информацию о статусе блокировки и BoxFeatures ящика.
+Структура *OrganizationFeatures* содержит информацию о статусе блокировки ящика на отправку документов и о включенных дополнительных функциях.
 
-- :doc:`BlockStatus <BlockStatus>` - статус блокировки организации.
-- *Features* - список включенных BoxFeatures ящика
+- :doc:`BlockStatus <BlockStatus>` - статус блокировки ящика на отправку документов.
+- *Features* - список включенных дополнительных функций ящика
 
-    + AllowApprovementSignatures - разрешить согласующую подпись
-    + AllowDocumentsForwarding - разрешить пересылку документов третьей стороне
-    + AllowProxifiedDocuments - разрешить отправлять документы через промежуточного получателя
-    + AllowSendEncryptedDocuments - разрешить посылать зашифрованные документы
+    + AllowApprovementSignatures - согласующая подпись
+    + AllowDocumentsForwarding - пересылка документов третьей стороне
+    + AllowProxifiedDocuments - отправка документов через промежуточного получателя
+    + AllowSendEncryptedDocuments - отправка зашифрованных документов
