@@ -9,7 +9,7 @@ BlockStatus
         required AutoBlockStatus AutoBlockStatus = 2;
     }
 
-Структура *BlockStatus* содержит информацию о статусе блокировки и BoxFeatures ящика.
+Структура *BlockStatus* содержит информацию о статусе блокировки ящика на отправку документов.
 
-- :doc:`ManualBlockStatus <ManualBlockStatus>` - статус ручной блокировки организации
-- :doc:`AutoBlockStatus <AutoBlockStatus>` - статус автоблокировки организации (на основании текущего пакета)
+- :doc:`ManualBlockStatus <ManualBlockStatus>` - статус ручной блокировки отправки
+- :doc:`AutoBlockStatus <AutoBlockStatus>` - статус автоматической блокировки отправки  
