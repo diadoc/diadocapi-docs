@@ -18,6 +18,7 @@ HTTP-интерфейс
    http/GetOrganizationsByInnKpp
    http/GetOrganizationsByInnList
    http/ParseRussianAddress
+   http/Organizations/GetOrganizationFeatures
 
 Структуры данных
 ----------------
@@ -33,3 +34,7 @@ HTTP-интерфейс
    GetOrganizationsByInnListResponse <proto/GetOrganizationsByInnListRequest>
    proto/Organization
    proto/OrganizationInfo
+   proto/Organizations/AutoBlockStatus
+   proto/Organizations/BlockStatus
+   proto/Organizations/ManualBlockStatus
+   proto/Organizations/OrganizationFeatures
