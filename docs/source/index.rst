@@ -10,6 +10,13 @@
 Для разработчиков, занимающихся интеграцией Диадока с различными программными продуктами, построенными на платформе 1С, доступен специальный внешний компонент.
 
 .. toctree::
+   :name: others
+   :caption: История изменений
+   :titlesonly:
+
+   ReleaseNotes
+
+.. toctree::
    :name: main
    :maxdepth: 1
    :caption: Общее описание возможностей
@@ -82,13 +89,6 @@
      http_methods
      protos
      lists
-
-.. toctree::
-   :name: others
-   :caption: История изменений
-   :titlesonly:
-
-   ReleaseNotes
 
 .. |image0| image:: _static/diadoc-logo.png
 .. _image0: https://www.diadoc.ru/
