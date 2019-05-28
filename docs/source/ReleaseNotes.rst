@@ -1,12 +1,34 @@
 ﻿История изменений API
 =====================
 
+27.05.2019
+----------
+SDK: `C# 1.72.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.72.0>`__ | `Java 2.8.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.8.0>`__ | `C++ 1.70.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.70.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Появилась поддержка формата `приказа №820 <https://normativ.kontur.ru/document?moduleId=1&documentId=328588>`__:
+
+    * Через метод :doc:`http/GetDocumentTypes` можно найти версии с идентификатором ``utd820_05_01_01`` для всех типов документов, поддерживающих новый формат — счета-фактуры, акты, накладные, УПД, иУПД.
+    
+    * Для генерации и парсинга документов новой версии доступны только обобщенные методы: :doc:`GenerateSenderTitleXml <http/GenerateSenderTitleXml>`, :doc:`GenerateRecipientTitleXml <http/GenerateRecipientTitleXml>`, :doc:`http/ParseTitleXml`.
+
+- Добавлены новые значения в контракты :doc:`proto/utd/ExtendedSigner` и :doc:`proto/DocumentTitleType` для поддержки версий формата приказа №820.
+
+
 16.05.2019
 ----------
 SDK: `C# 1.71.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.71.0>`__ | `Java 2.7.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.7.0>`__ | `C++ 1.69.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.69.0>`__
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Добавлен метод :doc:`http/Organizations/GetOrganizationFeatures` для возвращения статуса блокировки ящика и прочих фич ящика.
+
+
+14.05.2019
+----------
+SDK: `C# 1.70.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.70.0>`__ | `Java 2.6.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.6.0>`__ | `C++ 1.68.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.68.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Добавлен метод :doc:`http/ParseTitleXml` для парсинга документа любой версии.
 
 
 07.05.2019
@@ -100,8 +122,8 @@ SDK: `C# 1.62.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
     - :doc:`GenerateAcceptanceCertificateXmlForSeller <http/GenerateAcceptanceCertificateXmlForSeller>` для генерации документов в формате приказа 552
     - :doc:`GenerateUniversalTransferDocumentXmlForSeller <http/utd/GenerateUniversalTransferDocumentXmlForSeller>` для генерации документов в форматах УПД и УКД
     - :doc:`ParseInvoiceXml <http/ParseInvoiceXml>` для парсинга счетов-фактур
-    - :doc:`ParseTorg12SellerTitleXml <http/ParseTorg12SellerTitleXml>` для парсинга документов в формате пригаза 551
-    - :doc:`ParseAcceptanceCertificateSellerTitleXml <http/ParseAcceptanceCertificateSellerTitleXml>` для парсинга документов в формате пригаза 552
+    - :doc:`ParseTorg12SellerTitleXml <http/ParseTorg12SellerTitleXml>` для парсинга документов в формате приказа 551
+    - :doc:`ParseAcceptanceCertificateSellerTitleXml <http/ParseAcceptanceCertificateSellerTitleXml>` для парсинга документов в формате приказа 552
     - :doc:`ParseUniversalTransferDocumentSellerTitleXml <http/utd/ParseUniversalTransferDocumentSellerTitleXml>` для парсинга документов в формате УПД
     - :doc:`ParseUniversalCorrectionDocumentSellerTitleXml <http/utd/ParseUniversalCorrectionDocumentSellerTitleXml>` для парсинга документов в формате УКД
 

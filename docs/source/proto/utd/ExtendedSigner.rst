@@ -20,12 +20,12 @@ ExtendedSigner
         optional string RegistrationCertificate = 6;
 
         required SignerType SignerType = 7 [default = LegalEntity]; // Физическое лицо-Индивидуальный предприниматель – представитель юридического лица (ФЛ-ИП-ЮЛ)
-        optional string SignerOrganizationName = 8; // Наименование (НаимОрг)
-        optional string SignerInfo = 9;             // Иные сведения, идентифицирующие физическое лицо (ИныеСвед)
-        required SignerPowers SignerPowers = 10;    // Область полномочий (ОблПолн)
-        required SignerStatus SignerStatus = 11;    // Статус (Статус)
-        optional string SignerPowersBase = 12;      // Основание полномочий (доверия) (ОснПолн)
-        optional string SignerOrgPowersBase = 13;   // Основание полномочий (доверия) организации (ОснПолнОрг)
+        optional string SignerOrganizationName = 8;                 // Наименование (НаимОрг)
+        optional string SignerInfo = 9;                             // Иные сведения, идентифицирующие физическое лицо (ИныеСвед)
+        required SignerPowers SignerPowers = 10;                    // Область полномочий (ОблПолн)
+        required SignerStatus SignerStatus = 11;                    // Статус (Статус)
+        optional string SignerPowersBase = 12;                      // Основание полномочий (доверия) (ОснПолн)
+        optional string SignerOrgPowersBase = 13;                   // Основание полномочий (доверия) организации (ОснПолнОрг)
     }
 
     message ExtendedSignerDetailsToPost {
@@ -46,21 +46,23 @@ ExtendedSigner
     }
 
     enum SignerPowers {
-        InvoiceSigner = 0;                 // лицо, ответственное за подписание счетов-фактур
-        PersonMadeOperation = 1;           // лицо, совершившее сделку, операцию
-        MadeAndSignOperation = 2;          // лицо, совершившее сделку, операцию и ответственное за её оформление;
-        PersonDocumentedOperation = 3;     // лицо, ответственное за оформление свершившегося события;
-        MadeOperationAndSignedInvoice = 4; // лицо, совершившее сделку, операцию и ответственное за подписание счетов-фактур;
+        InvoiceSigner = 0;                                  // лицо, ответственное за подписание счетов-фактур
+        PersonMadeOperation = 1;                            // лицо, совершившее сделку, операцию
+        MadeAndSignOperation = 2;                           // лицо, совершившее сделку, операцию и ответственное за её оформление;
+        PersonDocumentedOperation = 3;                      // лицо, ответственное за оформление свершившегося события;
+        MadeOperationAndSignedInvoice = 4;                  // лицо, совершившее сделку, операцию и ответственное за подписание счетов-фактур;
         MadeAndResponsibleForOperationAndSignedInvoice = 5; // лицо, совершившее сделку, операцию и ответственное за её оформление и за подписание счетов-фактур;
         ResponsibleForOperationAndSignerForInvoice = 6;     // лицо, ответственное за оформление свершившегося события и за подписание счетов-фактур
     }
 
     enum SignerStatus {
-        SellerEmployee = 1;             // Работник организации продавца товаров (работ, услуг, имущественных прав);
-        InformationCreatorEmployee = 2; // Работник организации - составителя информации продавца;
-        OtherOrganizationEmployee = 3;  // Работник иной уполномоченной организации;
-        AuthorizedPerson= 4;            // Уполномоченное физическое лицо (в том числе индивидуальный предприниматель)
-    }
+        SellerEmployee = 1;                  // Работник организации продавца товаров (работ, услуг, имущественных прав);
+        InformationCreatorEmployee = 2;      // Работник организации - составителя информации продавца;
+        OtherOrganizationEmployee = 3;       // Работник иной уполномоченной организации;
+        AuthorizedPerson= 4;                 // Уполномоченное физическое лицо (в том числе индивидуальный предприниматель)
+        BuyerEmployee = 5;                   // Работник организации - покупателя (для документов в формате приказа №820);
+        InformationCreatorBuyerEmployee = 6; // Работник организации - составителя файла обмена информации покупателя, если составитель файла обмена информации покупателя не является покупателем (для документов в формате приказа №820)
+}
 
 Структура данных *ExtendedSigner* содержит следующие поля:
 
