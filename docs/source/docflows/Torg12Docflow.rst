@@ -28,7 +28,7 @@
 
     -  используется для титула покупателя электронной накладной.
 
-В силу приказа `N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__ утвержден электронный формат универсального передаточного документа УПД, его можно использовать до конца 2019 года.
+В силу приказа `N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__ утвержден электронный формат универсального передаточного документа УПД. Данный формат может быть использован до конца 2019 года.
 
 -  :download:`XSD-схема формата титула продавца УПД (функция ДОП) <../xsd/ON_SCHFDOPPR_1_995_01_05_01_05.xsd>`;
 
@@ -91,8 +91,8 @@
 
    "Титул продавца", "Приказ №820", ":doc:`../http/GenerateSenderTitleXml`", "``documentVersion = utd820_05_01_01``"
    "Титул покупателя", "Приказ №820", ":doc:`../http/GenerateResipientTitleXml`", "``documentVersion = utd820_05_01_01``"
-   "Титул продавца", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForSeller`", "``documentVersion = utd_05_01_05``"
-   "Титул покупателя", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`", "``documentVersion = utd_05_01_05``"
+   "Титул продавца", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForSeller`"
+   "Титул покупателя", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`"
    "Титул продавца", "Приказ №551", ":doc:`../http/GenerateTorg12XmlForSeller`", "``documentVersion = tovtorg_05_01_04``"
    "Титул покупателя", "Приказ №551", ":doc:`../http/GenerateTorg12XmlForBuyer`", "``documentVersion = tovtorg_05_01_04``"
    "Титул продавца", "Приказ №172", ":doc:`../http/GenerateTorg12XmlForSeller`", "``documentVersion = torg12_05_01_02``"
@@ -107,8 +107,8 @@
 
    "Титул продавца", "Приказ №820", ":doc:`../http/utd/ParseUniversalTransferDocumentSellerTitleXml`", "``documentVersion = utd820_05_01_01``"
    "Титул покупателя", "Приказ №820", ":doc:`../http/utd/ParseUniversalTransferDocumentBuyerTitleXml`", "``documentVersion = utd820_05_01_01``"
-   "Титул продавца", "Приказ №155", ":doc:`../http/utd/ParseUniversalTransferDocumentSellerTitleXml`", "``documentVersion = utd_05_01_05``"
-   "Титул покупателя", "Приказ №155", ":doc:`../http/utd/ParseUniversalTransferDocumentBuyerTitleXml`", "``documentVersion = utd_05_01_05``"
+   "Титул продавца", "Приказ №155", ":doc:`../http/utd/ParseUniversalTransferDocumentSellerTitleXml`"
+   "Титул покупателя", "Приказ №155", ":doc:`../http/utd/ParseUniversalTransferDocumentBuyerTitleXml`"
    "Титул продавца", "Приказ №551", ":doc:`../http/ParseTorg12SellerTitleXml`", "``documentVersion = tovtorg_05_01_04``"
    "Титул покупателя", "Приказ №551", ":doc:`../http/ParseTorg12BuyerTitleXml`", "``documentVersion = tovtorg_05_01_04``"
    "Титул продавца", "Приказ №172", ":doc:`../http/ParseTorg12SellerTitleXml`", "``documentVersion = torg12_05_01_02``"
