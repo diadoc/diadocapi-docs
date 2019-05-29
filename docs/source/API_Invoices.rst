@@ -13,6 +13,7 @@
    :glob:
 
    http/CanSendInvoice
+   http/GenerateSenderTitleXml
    http/utd/GenerateUniversalTransferDocumentXmlForSeller
    http/GenerateInvoiceDocumentReceiptXml
    http/GetInvoiceCorrectionRequestInfo
@@ -40,6 +41,7 @@
    :titlesonly:
    :glob:
 
+   http/ParseTitleXml
    http/utd/ParseUniversalTransferDocumentSellerTitleXml
    http/utd/ParseUniversalCorrectionDocumentSellerTitleXml
 
