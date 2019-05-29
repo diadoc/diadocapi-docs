@@ -10,6 +10,13 @@
 Для разработчиков, занимающихся интеграцией Диадока с различными программными продуктами, построенными на платформе 1С, доступен специальный внешний компонент.
 
 .. toctree::
+   :name: others
+   :caption: История изменений
+   :titlesonly:
+
+   ReleaseNotes
+
+.. toctree::
    :name: main
    :maxdepth: 1
    :caption: Общее описание возможностей
@@ -59,9 +66,11 @@
    Работа с сообщениями <API_Messages>
    Работа с событиями <API_Events>
    Работа с организациями <API_Organizations>
+   Работа с подразделениями <API_Departments>
    Работа с сотрудниками <API_Employees>
    Работа с контрагентами <API_Counteragents>
    Работа с шаблонами <API_Templates>
+   Регистрация организации и сотрудника по сертификату <API_Registration>
    Docflow API <Docflow API>
    Электронная подпись Контур.Сертификатом <CloudSignApi>
 
@@ -80,13 +89,6 @@
      http_methods
      protos
      lists
-
-.. toctree::
-   :name: others
-   :caption: История изменений
-   :titlesonly:
-
-   ReleaseNotes
 
 .. |image0| image:: _static/diadoc-logo.png
 .. _image0: https://www.diadoc.ru/

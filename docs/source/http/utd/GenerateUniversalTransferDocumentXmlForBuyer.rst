@@ -21,11 +21,11 @@ HTTP метод: **POST**
 
 Если структура :doc:`../../proto/utd/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УПД:
 
--  файл изготавливается в соответствии со :download:`XSD-схемой <../../xsd/ON_SCHFDOPPOK_1_995_02_05_01_04.xsd>`,
+-  файл изготавливается в соответствии со :download:`XSD-схемой <../../xsd/ON_SCHFDOPPOK_1_995_02_05_01_05.xsd>`,
 
 Если структура :doc:`../../proto/utd/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УКД:
 
--  файл изготавливается в соответствии со :download:`XSD-схемой <../../xsd/ON_KORSCHFDOPPOK_1_996_02_05_01_02.xsd>`,
+-  файл изготавливается в соответствии со :download:`XSD-схемой <../../xsd/ON_KORSCHFDOPPOK_1_996_02_05_01_03.xsd>`,
 
 Возможные HTTP-коды возврата:
 

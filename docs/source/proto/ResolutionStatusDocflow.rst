@@ -17,6 +17,7 @@ ResolutionStatusDocflow
         SignedWithApprovingSignature = 8;
         SignedWithPrimarySignature = 9;
         PrimarySignatureRejected = 10;
+        ActionsRequested = 11;
     }
 
 Перечисление отражает актуальный статус согласования документа/запроса на аннулирование:
@@ -32,3 +33,4 @@ ResolutionStatusDocflow
 - *SignedWithApprovingSignature* - документ или запрос на аннулирование подписан согласующей подписью;
 - *SignedWithPrimarySignature* - документ или запрос на аннулирование подписан основной подписью;
 - *PrimarySignatureRejected* - отказано контрагенту в основной подписи (под документом или запросом на аннулировании);
+- *ActionsRequested* - запрошено одно из действий в рамках запроса на согласование типа *Custom*. Список действий можно узнать в свойстве *Actions* :ref:`ResolutionRequestV3`;

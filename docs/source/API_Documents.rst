@@ -35,6 +35,7 @@ HTTP-интерфейс
    http/GetForwardedDocuments
    http/GetGeneratedPrintForm
    http/MoveDocuments
+   http/ParseTitleXml
    http/ParseAcceptanceCertificateSellerTitleXml
    http/ParseAcceptanceCertificateBuyerTitleXml
    http/ParseRevocationRequestXml

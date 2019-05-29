@@ -22,12 +22,25 @@ ResolutionDocflowV3
 
 Сущность, на которую ссылается *ResolutionEntityId*, следует искать, в зависимости от значения *ResolutionStatus*, по следующим правилам:
 
-- если *ResolutionStatus* принимает одно из значений *ApprovementRequested*, *ApprovementSignatureRequested* или *PrimarySignatureRequested*, то *ResolutionEntityId* находится в коллекции *Requests* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`
+- если *ResolutionStatus* принимает одно из значений *ApprovementRequested*, *ApprovementSignatureRequested*, *PrimarySignatureRequested* или *ActionsRequested*, то *ResolutionEntityId* находится в коллекции *Requests* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`
 - если *ResolutionStatus* равен *Approved* или *Disapproved*, то *ResolutionEntityId* находится в коллекции *Resolutions* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`
 - если *ResolutionStatus* равен *SignatureRequestRejected*, то *ResolutionEntityId* находится в коллекции *SignatureDenials* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`
 - если *ResolutionStatus* равен *SignedWithApprovingSignature*, то *ResolutionEntityId* находится в коллекции *ApprovementSignatures* в структуре :doc:`ResolutionEntities <ResolutionEntitiesV3>`
-- если *ResolutionStatus* равен *SignedWithPrimarySignature*, то *ResolutionEntityId* указывает на структуру :doc:`SignatureV3 <SignatureV3>` либо внутри `SenderTitleDocflow` (если речь идет об исходящем документе), либо внутри `ProxyResponseDocflow` (если документ находится у промежуточного получателя), либо внутри `RecipientResponseDocflow` (для входящего документа), либо внутри `RevocationRequestDocflow` (для инициатора аннулирования), либо внутри `RevocationResponseDocflow`
-- если *ResolutionStatus* равен *PrimarySignatureRejected*, то *ResolutionEntityId* указывает на структуру :doc:`SignatureRejectionDocflow <SignatureRejectionDocflow>` либо внутри `ProxyResponseDocflow` (если документ находится у промежуточного получателя), либо внутри `RecipientResponseDocflow` (для входящего документа), либо внутри `RevocationResponseDocflow`
+- если *ResolutionStatus* равен *SignedWithPrimarySignature*, то *ResolutionEntityId* указывает на структуру :doc:`SignatureV3 <SignatureV3>` внутри одного из нижепредставленных контрактов:
+
+  * :doc:`SenderTitleDocflow <SenderTitleDocflow>` (если речь идет об исходящем документе)
+
+  * :doc:`ParticipantResponseDocflow <ParticipantResponseDocflow>` (если документ находится у промежуточного или конечного получателя)
+
+  * :doc:`RevocationRequestDocflow <RevocationDocflowV3>` (для инициатора аннулирования)
+
+  * :doc:`RevocationResponseDocflow <RevocationDocflowV3>`
+
+- если *ResolutionStatus* равен *PrimarySignatureRejected*, то *ResolutionEntityId* указывает на структуру :doc:`SignatureRejectionDocflow <SignatureRejectionDocflow>` внутри одного из нижепредставленных контрактов:
+
+  * :doc:`ParticipantResponseDocflow <ParticipantResponseDocflow>` (если документ находится у промежуточного или конечного получателя)
+
+  * :doc:`RevocationResponseDocflow <RevocationDocflowV3>`
 
 
 Структура :doc:`ResolutionEntities <ResolutionEntitiesV3>` находится, в зависимости от значения *ParentEntityId*, в структуре :doc:`DocflowV3` или :doc:`RevocationDocflowV3`.

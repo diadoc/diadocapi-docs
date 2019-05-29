@@ -20,7 +20,7 @@ InvoiceInfo
         optional string AdditionalInfo = 14;                // информационное поле документа v5.01
         optional string InvoiceRevisionDate = 15;           // дата ИСФ (обязательно при формировании InvoiceRevision)
         optional string InvoiceRevisionNumber = 16;         // номер ИСФ (обязательно при формировании InvoiceRevision)
-        repeated AdditionalInfo AdditionalInfos = 17;       // информационное поле документа v5.02      
+        repeated AdditionalInfo AdditionalInfos = 17;       // информационное поле документа v5.02
         optional InvoiceFormatVersion Version = 18 [default = DefaultInvoiceFormatVersion]; // версия формата ФУФа (для тестирования систем в переходном периоде)
     }
 
@@ -65,6 +65,8 @@ InvoiceInfo
         Percent_20 = 4;       //ставка налога 20%
         Fraction_10_110 = 5;  //ставка налога 10/110 (дробь)
         Fraction_18_118 = 6;  //ставка налога 18/118 (дробь)
+        TaxedByAgent = 7;     //ставка налога "НДС исчисляется налоговым агентом"
+        Fraction_20_120 = 8;  //ставка налога 20/120 (дробь)
     }
 
     message PaymentDocumentInfo {
@@ -98,4 +100,4 @@ InvoiceInfo
 
 -  В зависимости от значения поля InvoiceFormatVersion, из сериализованной структуры :doc:`InvoiceInfo` обрабатываются поля, соответствующие указанной версии (указаны в комментариях к полям).
 
--  Правила заполнения структуры InvoiceInfo повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме, v5.02 <../xsd/ON_SFAKT_1_897_01_05_02_01.xsd>`.
+-  Правила заполнения структуры InvoiceInfo повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме, v5.02 <../xsd/ON_SFAKT_1_897_01_05_02_02.xsd>`.

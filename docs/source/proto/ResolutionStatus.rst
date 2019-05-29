@@ -17,6 +17,7 @@ ResolutionStatus
         ApprovementRequested = 3;
         SignatureRequested = 4;
         SignatureDenied = 5;
+        ActionsRequested = 6;
     }
 
     message ResolutionTarget {
@@ -42,6 +43,8 @@ ResolutionStatusType - тип статуса согласования:
 -  SignatureRequested - Запрошена подпись
 
 -  SignatureDenied - В подписи отказано
+
+-  ActionsRequested - Запрошены действия в рамках запроса согласования типа Custom
 
 Структура ResolutionTarget заполняется только при запросе согласования или подписи, и описывает получателя запроса. Получателем запроса на согласование или подпись может быть:
 

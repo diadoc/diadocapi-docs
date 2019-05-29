@@ -9,11 +9,7 @@ EmployeePermissions
         required DocumentAccessLevel DocumentAccessLevel = 3 [default = UnknownDocumentAccessLevel];
         repeated string SelectedDepartmentIds = 4;
         repeated EmployeeAction Actions = 5;
-    }
-
-    message EmployeeAction {
-        required string Name = 1;
-        required bool IsAllowed = 2;
+        optional AuthorizationPermission AuthorizationPermission = 6;
     }
 
 Структура *EmployeePermissions* содержит информацию о правах сотрудника организации. Как часть структуры :doc:`Employee` возвращается методами :doc:`../http/GetEmployee`, :doc:`../http/CreateEmployee`, :doc:`../http/UpdateEmployee`.
@@ -22,7 +18,20 @@ EmployeePermissions
 - *IsAdministrator* - может ли сотрудник редактировать структуру и реквизиты организации, добавлять и редактировать других сотрудников
 - :doc:`DocumentAccessLevel` - уровень доступа к документам
 - *SelectedDepartmentIds* - список подразделений, к которым имеет доступ сотрудник (заполняется только в случае *DocumentAccessLevel = SelectedDepartments*).
-- *Actions* - информация о том, какие действия имеет право выполнять сотрудник
+- :ref:`Actions <actions>` - информация о том, какие действия имеет право выполнять сотрудник
+- :ref:`AuthorizationPermission <authorization-permission>` - информация о наличии ограничения доступа пользователя к сервису
+
+.. _actions:
+
+EmployeeAction
+--------------
+
+.. code-block:: protobuf
+
+    message EmployeeAction {
+        required string Name = 1;
+        required bool IsAllowed = 2;
+    }
 
 Структура *EmployeeAction* содержит информацию о том, может ли сотрудник совершить конкретное действие.
 
@@ -38,3 +47,22 @@ EmployeePermissions
    "AddResolutions", "Согласовывать документы"
    "RequestResolutions", "Передавать на подпись и согласование"
    "ManageCounteragents", "Видеть списки контрагентов и работать с ними"
+
+.. _authorization-permission:
+
+AuthorizationPermission
+-----------------------
+
+.. code-block:: protobuf
+
+    message AuthorizationPermission
+    {
+        required bool IsBlocked = 1;
+        optional string Comment = 2;
+    }
+
+Структура *AuthorizationPermission* содержит информацию о наличии ограничений доступа сотрудника к сервису.
+
+- *IsBlocked* - флаг наличия ограничения доступа пользователя к сервису (``false`` - доступ разрешен, ``true`` - доступ ограничен)
+
+- *Comment* - причина ограничения доступа пользователя к сервису

@@ -9,7 +9,7 @@ MessagePatch
         repeated Entity Entities = 3;
         optional bool ForDraft = 4 [default = false];
         optional bool DraftIsRecycled = 5 [default = false];
-        optional string DraftIsTransformedToMessageId = 6;
+        repeated string DraftIsTransformedToMessageIdList = 6;
         optional bool DraftIsLocked = 7 [default = false];
         optional bool MessageIsDeleted = 8 [default = false];
         repeated EntityPatch EntityPatches = 9;
@@ -41,7 +41,7 @@ MessagePatch
 
 -  *DraftIsRecycled* - флаг, показывающий, что черновик, к которому относится данный патч, был утилизирован, то есть он был либо удален, либо на его основе было создано полноценное сообщение и отправлено получателю. Поле *DraftIsRecycled* заполняется только в патчах, относящихся к черновикам.
 
--  *DraftIsTransformedToMessageId* - идентификатор сообщения, созданного на основе черновика, к которому относится данный патч. Поле DraftIsTransformedToMessageId заполняется только в патчах, относящихся к черновикам.
+-  *DraftIsTransformedToMessageIdList* - идентификаторы сообщений, созданных на основе черновика, к которому относится данный патч. Поле DraftIsTransformedToMessageIdList заполняется только в патчах, относящихся к черновикам.
 
 -  *DraftIsLocked* - флаг, показывающий, что черновик, к которому относится данный патч, был заблокирован. После этого в этот черновик нельзя добавлять, или удалять из него документы. Такой черновик можно только либо отправить, превратив в полноценное сообщение, либо удалить. Поле DraftIsLocked заполняется только в патчах, относящихся к черновикам.
 

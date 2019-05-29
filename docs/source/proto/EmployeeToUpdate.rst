@@ -32,6 +32,7 @@ EmployeePermissionsPatch
         optional EmployeeDocumentAccessLevelPatch DocumentAccessLevel = 3;
         optional EmployeeSelectedDepartmentsPatch SelectedDepartments = 4;
         repeated EmployeeAction Actions = 5;
+        optional AuthorizationPermissionPatch AuthorizationPermission = 6;
     }
 
 Структура содержит информацию о настройках :doc:`разрешений сотрудника <EmployeePermissions>`, которые необходимо изменить.
@@ -41,6 +42,7 @@ EmployeePermissionsPatch
 - :ref:`DocumentAccessLevel <employee-document-access-level-patch>` - структура для изменения уровня доступа к документам
 - :ref:`SelectedDepartments <employee-selected-departments-patch>` - структура для изменения списка подразделений, к которым имеет доступ сотрудник (играет роль только в случае *DocumentAccessLevel = SelectedDepartments*)
 - :doc:`Actions <EmployeePermissions>` - действия сотрудника, права на которые требуется добавить или убрать
+- :ref:`AuthorizationPermission <authorization-permission-patch>` - структура с информацией о наличии ограничения доступа сотрудника к сервису
 
 Необходимо заполнить только те поля структуры, которые соотвествуют данным, требующим изменения.
 
@@ -103,7 +105,7 @@ EmployeeSelectedDepartmentsPatch
     {
         repeated string SelectedDepartmentIds = 1;
     }
-    
+
 Структура для изменения списка подразделений, к которым имеет доступ сотрудник (играет роль только в случае *DocumentAccessLevel = SelectedDepartments*).
 
 - *SelectedDepartmentIds* - новый список подразделений, к которым имеет доступ сотрудник
@@ -140,3 +142,22 @@ EmployeeCanBeInvitedForChatPatch
 
 - *CanBeInvitedForChat* - нужно ли отображать сотрудника в списке получателей Сообщений в веб-интерфейсе
 
+
+.. _authorization-permission-patch:
+
+AuthorizationPermissionPatch
+----------------------------
+
+.. code-block:: protobuf
+
+    message AuthorizationPermissionPatch
+    {
+        required bool IsBlocked = 1;
+        optional string Comment = 2;
+    }
+
+Структура для изменения данных об ограничении доступа пользователя к сервису.
+
+- *IsBlocked* - флаг наличия ограничения доступа пользователя к сервису (``false`` - доступ разрешен, ``true`` - доступ ограничен)
+
+- *Comment* - причина ограничения доступа пользователя к сервису
