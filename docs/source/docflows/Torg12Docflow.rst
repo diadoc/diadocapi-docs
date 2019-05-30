@@ -20,11 +20,11 @@
 
 В силу приказа `N ММВ-7-15/820@ <https://normativ.kontur.ru/document?moduleId=1&documentId=328588>`__ утвержден электронный формат универсального передаточного документа УПД. Его можно использовать как первичный документ, подтверждающий совершение хозяйственной операции.
 
--  :download:`XSD-схема формата титула продавца УПД (функция ДОП) <../xsd/>`;
+-  :download:`XSD-схема формата титула продавца УПД (функция ДОП) <../xsd/ON_NSCHFDOPPR_1_997_01_05_01_01.xsd>`;
 
     -  используется для титула продавца электронной накладной,
 
--  :download:`XSD-схема формата титула покупателя УПД (функция ДОП) <../xsd/>`;
+-  :download:`XSD-схема формата титула покупателя УПД (функция ДОП) <../xsd/ON_NSCHFDOPPOK_1_997_02_05_01_01.xsd>`;
 
     -  используется для титула покупателя электронной накладной.
 
@@ -90,7 +90,7 @@
    :widths: 10, 10, 10, 10
 
    "Титул продавца", "Приказ №820", ":doc:`../http/GenerateSenderTitleXml`", "``documentVersion = utd820_05_01_01``"
-   "Титул покупателя", "Приказ №820", ":doc:`../http/GenerateResipientTitleXml`", "``documentVersion = utd820_05_01_01``"
+   "Титул покупателя", "Приказ №820", ":doc:`../http/GenerateRecipientTitleXml`", "``documentVersion = utd820_05_01_01``"
    "Титул продавца", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForSeller`"
    "Титул покупателя", "Приказ №155", ":doc:`../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`"
    "Титул продавца", "Приказ №551", ":doc:`../http/GenerateTorg12XmlForSeller`", "``documentVersion = tovtorg_05_01_04``"
