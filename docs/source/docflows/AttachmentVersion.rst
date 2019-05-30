@@ -53,19 +53,9 @@
 
 Есть различия в работе с форматами №155 и №820, они касаются генерации и парсинга документов.
 
-Для генерации документов в формате №155 можно использовать универсальные методы генерации `GenerateSenderTitleXml <http://api-docs.diadoc.ru/ru/latest/http/GenerateSenderTitleXml.html>`_ и `GenerateRecipientTitleXml <http://api-docs.diadoc.ru/ru/latest/http/GenerateRecipientTitleXml.html>`_, а также методы для соответствующего типа:
+Для генерации документов в формате №155 можно использовать универсальные методы генерации `GenerateSenderTitleXml <http://api-docs.diadoc.ru/ru/latest/http/GenerateSenderTitleXml.html>`_ и `GenerateRecipientTitleXml <http://api-docs.diadoc.ru/ru/latest/http/GenerateRecipientTitleXml.html>`_, а также специальные методы для документов в формате УПД `GenerateUniversalTransferDocumentXmlForSeller <http://api-docs.diadoc.ru/ru/latest/http/utd/GenerateUniversalTransferDocumentXmlForSeller.html>`_ и `GenerateUniversalTransferDocumentXmlForBuyer <http://api-docs.diadoc.ru/ru/latest/http/utd/GenerateUniversalTransferDocumentXmlForBuyer.html>`_.
 
-- для УПД - методы `GenerateUniversalTransferDocumentXmlForSeller <http://api-docs.diadoc.ru/ru/latest/http/utd/GenerateUniversalTransferDocumentXmlForSeller.html>`_ и `GenerateUniversalTransferDocumentXmlForBuyer <http://api-docs.diadoc.ru/ru/latest/http/utd/GenerateUniversalTransferDocumentXmlForBuyer.html>`_,
-- для счетов-фактур - метод `GenerateUniversalTransferDocumentXmlForSeller <http://api-docs.diadoc.ru/ru/latest/http/utd/GenerateUniversalTransferDocumentXmlForSeller.html>`_,
-- для актов - методы `GenerateAcceptanceCertificateXmlForBuyer <http://api-docs.diadoc.ru/ru/latest/http/GenerateAcceptanceCertificateXmlForBuyer.html>`_ и `GenerateAcceptanceCertificateXmlForSeller <http://api-docs.diadoc.ru/ru/latest/http/GenerateAcceptanceCertificateXmlForBuyer.html>`_,
-- для накладных - методы `GenerateTorg12XmlForBuyer <http://api-docs.diadoc.ru/ru/latest/http/GenerateTorg12XmlForBuyer.html>`_ и `GenerateTorg12XmlForSeller <http://api-docs.diadoc.ru/ru/latest/http/GenerateTorg12XmlForSeller.html>`_.
-
-Для парсинга документов в формате №155 можно использовать универсальный метод `ParseTitleXml <http://api-docs.diadoc.ru/ru/latest/http/ParseTitleXml.html>`_, а также методы для соответствующего типа:
-
-- для УПД - методы `ParseUniversalTransferDocumentSellerTitleXml <http://api-docs.diadoc.ru/ru/latest/http/utd/ParseUniversalTransferDocumentSellerTitleXml.html>`_ и `ParseUniversalTransferDocumentBuyerTitleXml <http://api-docs.diadoc.ru/ru/latest/http/utd/ParseUniversalTransferDocumentBuyerTitleXml.html>`_,
-- для счетов-фактур - методы `ParseUniversalTransferDocumentSellerTitleXml <http://api-docs.diadoc.ru/ru/latest/http/utd/ParseUniversalTransferDocumentSellerTitleXml.html>`_,
-- для актов - методы `ParseAcceptanceCertificateSellerTitleXml <http://api-docs.diadoc.ru/ru/latest/http/ParseAcceptanceCertificateSellerTitleXml.html>`_ и `ParseAcceptanceCertificateBuyerTitleXml <http://api-docs.diadoc.ru/ru/latest/http/ParseAcceptanceCertificateBuyerTitleXml.html>`_,
-- для накладных - методы `ParseTorg12SellerTitleXml <http://api-docs.diadoc.ru/ru/latest/http/ParseTorg12SellerTitleXml.html>`_ и `ParseTorg12BuyerTitleXml <http://api-docs.diadoc.ru/ru/latest/http/ParseTorg12BuyerTitleXml.html>`_.
+Для парсинга документов в формате №155 можно использовать универсальный метод `ParseTitleXml <http://api-docs.diadoc.ru/ru/latest/http/ParseTitleXml.html>`_, а также специальные методы для документов в формате УПД `ParseUniversalTransferDocumentSellerTitleXml <http://api-docs.diadoc.ru/ru/latest/http/utd/ParseUniversalTransferDocumentSellerTitleXml.html>`_ и `ParseUniversalTransferDocumentBuyerTitleXml <http://api-docs.diadoc.ru/ru/latest/http/utd/ParseUniversalTransferDocumentBuyerTitleXml.html>`_.
 
 Для генерации и парсинга документов в формате №820 можно использовать только универсальные методы:
 `GenerateSenderTitleXml <http://api-docs.diadoc.ru/ru/latest/http/GenerateSenderTitleXml.html>`_ и `GenerateRecipientTitleXml <http://api-docs.diadoc.ru/ru/latest/http/GenerateRecipientTitleXml.html>`_ для генерации,
