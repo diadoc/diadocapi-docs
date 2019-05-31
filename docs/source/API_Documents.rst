@@ -29,6 +29,7 @@ HTTP-интерфейс
    http/GenerateTorg12XmlForSeller
    http/GetDocument
    http/GetDocuments
+   http/GetDocumentsByMessageId
    http/GetForwardedDocumentEvents
    http/GenerateForwardedDocumentPrintForm
    http/GetForwardedEntityContent
