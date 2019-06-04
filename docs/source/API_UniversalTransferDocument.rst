@@ -12,6 +12,8 @@
    :titlesonly:
    :glob:
 
+   http/GenerateSenderTitleXml
+   http/GenerateRecipientTitleXml
    http/utd/GenerateUniversalTransferDocumentXmlForSeller
    http/utd/GenerateUniversalTransferDocumentXmlForBuyer
    http/GenerateInvoiceDocumentReceiptXml
@@ -39,6 +41,7 @@
    :titlesonly:
    :glob:
 
+   http/ParseTitleXml
    http/utd/ParseUniversalTransferDocumentSellerTitleXml
    http/utd/ParseUniversalTransferDocumentBuyerTitleXml
    http/utd/ParseUniversalCorrectionDocumentSellerTitleXml
