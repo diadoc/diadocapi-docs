@@ -1,6 +1,9 @@
 GetTemplate
 ===========
 
+.. warning::
+    Этот метод устаревший
+
 Получает шаблон документов.
 
 .. http:get:: /GetTemplate

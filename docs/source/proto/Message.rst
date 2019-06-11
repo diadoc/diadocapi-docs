@@ -25,6 +25,8 @@ Message
         optional string ProxyTitle = 19;
         optional bool PacketIsLocked = 20 [default = false];
         required LockMode LockMode = 21;
+        required MessageType MessageType = 22;
+        optional TemplateTransformedToLetter TemplateTransformedToLetter = 23;
     }
 
 
@@ -46,7 +48,7 @@ Message
 
 -  *Entities* - список сущностей, составляющих данное сообщение (включая сущности из дополнений к нему). Каждая сущность представлена структурой типа :doc:`Entity <Entity message>`.
 
--  *IsDraft* - флаг, показывающий, является ли данное сообщение черновиком.
+-  *IsDraft* - флаг, показывающий, является ли данное сообщение черновиком (считать устаревшим, использовать MessageType).
 
 -  *DraftIsLocked* - флаг, показывающий, что данный черновик заблокирован, то есть в него нельзя добавлять, или удалять из него документы. Такой черновик можно только либо отправить, превратив в полноценное сообщение, либо удалить. Данное поле заполняется только в структурах Message, представляющих черновики.
 
@@ -71,3 +73,7 @@ Message
 -  *PacketIsLocked* - признак закрытого пакета. В таком пакете операция применяется ко всем документам сразу. Например, при подписании одного документа, подписываются сразу все.
 
 -  *LockMode* - режим блокировки сообщения. Виды доступных режимы доступны в описании :doc:`../proto/LockMode`.
+
+-  *MessageType* - тип сообщения :doc:`../proto/MessageType`.
+
+-  *TemplateTransformedToLetter* - содержит информацию о документе. созданном на основе шаблона :doc:`../proto/TemplateTransformedToLetter`.
