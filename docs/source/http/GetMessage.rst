@@ -1,7 +1,7 @@
 GetMessage
 ==========
 
-Имя ресурса: **/V4/GetMessage**
+Имя ресурса: **/V5/GetMessage**
 
 HTTP метод: **GET**
 
