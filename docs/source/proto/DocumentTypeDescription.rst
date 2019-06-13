@@ -119,7 +119,7 @@ SignerInfo
 
     -  *Signer* - простой подписант. Используется для документов форматов :doc:`@93/@172 <../docflows/AttachmentVersion>` и своих типов документов не на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
 
-    -  *ExtendedSigner* - расширенный подписант. Используется для документов форматов :doc:`@155/@551/@552 <../docflows/AttachmentVersion>` и своих типов на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
+    -  *ExtendedSigner* - расширенный подписант. Используется для документов форматов :doc:`@155/@551/@552/@820 <../docflows/AttachmentVersion>` и своих типов на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
 
 -  :doc:`DocumentTitleType <DocumentTitleType>` - Тип титула документа, для которого нужно заполнить дополнительные данные о подписанте. Для типов подписанта *None* и *Signer* значение всегда равно *Absent*.
 
