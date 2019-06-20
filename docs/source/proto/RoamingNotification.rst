@@ -5,13 +5,13 @@ RoamingNotification
 
     message RoamingNotification
     {
-        required bool Success = 1;
-        optional string Description = 2;
+        required Entity Notification = 1;
+        required bool Success = 2;
     }
         
 
 Структура данных *RoamingNotification* описывает статус доставки документа в роуминг:
 
--  *Success* (всегда заполняется) - флаг, обозначающий успешную доставку.
+- *Success* - флаг, обозначающий успешную доставку.
 
--  *Description* (может отсутствовать) - описание ошибки доставки.
+- *Notification* - объект типа :doc:`Entity`.
