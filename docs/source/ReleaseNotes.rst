@@ -3,6 +3,16 @@
 
 09.07.2019
 ----------
+SDK: `C# 1.76.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.76.0>`__ | `Java 2.12.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/2.12.0>`__ | `C++ 1.74.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.74.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Появился метод :doc:`http/GetMyEmployee`, возвращающий информацию о текущем сотруднике организации
+
+- Появилась возможность управлять :doc:`правом сотрудника <proto/EmployeePermissions>` удалять документы и черновики, восстанавливать документы. В структуру :doc:`proto/OrganizationUserPermissions` добавлен флаг *CanDeleteRestoreDocuments*
+
+
+09.07.2019
+----------
 SDK: `C# 1.75.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.75.0>`__ | `Java 2.11.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.11.1>`__ | `C++ 1.73.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.73.0>`__
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

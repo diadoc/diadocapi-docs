@@ -15,6 +15,7 @@ HTTP-интерфейс
    http/DeleteEmployee
    http/GetEmployee
    http/GetEmployees
+   http/GetMyEmployee
    http/GetMyPermissions
    http/GetMyUser
    http/GetOrganizationUsers
