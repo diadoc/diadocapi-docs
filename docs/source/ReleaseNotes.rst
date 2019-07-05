@@ -1,5 +1,15 @@
 ﻿История изменений API
 =====================
+
+05.07.2019
+----------
+SDK: `C# 1.74.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/1.74>`__ | `Java 2.10.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/2.10.0>`__ | `C++ 1.72.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/1.72.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Появилась возможность отправлять шаблоны из/в подразделение :doc:`http/PostTemplate`
+
+- Появилась возможность перемещать шаблоны между подразделениями :doc:`http/MoveDocuments`
+
 11.06.2019
 ----------
 SDK: `C# 1.73.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.73.0>`__ | `Java 2.9.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/2.9.0>`__ | `C++ 1.71.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/1.71.0>`__
