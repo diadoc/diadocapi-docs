@@ -13,6 +13,8 @@ TemplateToPost
         optional string MessageToDepartmentId = 5;
         repeated TemplateDocumentAttachment DocumentAttachments = 6;
         optional LockMode LockMode = 7 [default = None];
+        optional string FromDepartmentId = 8;     
+        optional string ToDepartmentId = 9;
     }
 
 
@@ -29,5 +31,9 @@ TemplateToPost
 - *DocumentAttachments* - список документов любых типов, содержащий сообщение :doc:`../proto/TemplateDocumentAttachment`.
 
 - *LockMode* - режим блокировки сообщения с шаблонами. Виды доступных режимы доступны в описании :doc:`../proto/LockMode`.
+
+- *FromDepartmentId* - идентификатор подразделения отправителя сообщения.
+
+- *ToDepartmentId* - идентификатор подразделения в организации получателя, в которое будут отправлены все шаблоны из сообщения (может отсутствовать, в этом случае шаблоны будут отправлены в головное подразделение).
 
 Сохраненный таким образом шаблон можно будет найти используя метод :doc:`../http/GetTemplate`.
