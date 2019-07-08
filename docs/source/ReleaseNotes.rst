@@ -1,6 +1,13 @@
 ﻿История изменений API
 =====================
 
+09.07.2019
+----------
+SDK: `C# 1.75.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/1.75.0>`__ | `Java 2.11.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/2.11.0>`__ | `C++ 1.73.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/1.73.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Поле *TransferDocDetails* в структуре :doc:`EventContent <proto/utd/UniversalCorrectionDocumentSellerTitleInfo>`, соответствующее атрибуту *ПередатДокум* в УКД, стало необязательным
+
 05.07.2019
 ----------
 SDK: `C# 1.74.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/1.74>`__ | `Java 2.10.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/2.10.0>`__ | `C++ 1.72.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/1.72.0>`__
