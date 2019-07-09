@@ -3,7 +3,7 @@
 
 09.07.2019
 ----------
-SDK: `C# 1.76.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.76.0>`__ | `Java 2.12.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/2.12.0>`__ | `C++ 1.74.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.74.0>`__
+SDK: `C# 1.76.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.76.0>`__ | `Java 2.12.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.12.0>`__ | `C++ 1.74.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.74.0>`__
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Появился метод :doc:`http/GetMyEmployee`, возвращающий информацию о текущем сотруднике организации
