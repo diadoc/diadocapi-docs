@@ -43,11 +43,11 @@ EmployeeAction
    :widths: 2, 10
 
    "CreateDocuments", "Создавать и редактировать документы и черновики"
+   "DeleteRestoreDocuments", "Удалять документы и черновики, восстанавливать документы"
    "SignDocuments", "Подписывать документы"
    "AddResolutions", "Согласовывать документы"
    "RequestResolutions", "Передавать на подпись и согласование"
    "ManageCounteragents", "Видеть списки контрагентов и работать с ними"
-   "DeleteRestoreDocuments", "Удалять документы и черновики, восстанавливать документы"
 
 .. _authorization-permission:
 

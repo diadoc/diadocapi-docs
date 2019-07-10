@@ -45,6 +45,7 @@ GetMyEmployee
             "DocumentAccessLevel": "AllDocuments",
             "Actions": [
                 { "Name": "CreateDocuments", "IsAllowed": true },
+                { "Name": "DeleteRestoreDocuments", "IsAllowed": true },
                 { "Name": "SignDocuments", "IsAllowed": true },
                 { "Name": "AddResolutions", "IsAllowed": false },
                 { "Name": "RequestResolutions", "IsAllowed": false },
