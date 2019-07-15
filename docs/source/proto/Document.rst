@@ -44,7 +44,7 @@ Document
         optional BilateralDocument.BasicDocumentMetadata Torg13Metadata = 40;
         optional UnilateralDocument.ServiceDetailsMetadata ServiceDetailsMetadata = 41;
         optional RoamingNotificationStatus RoamingNotificationStatus = 42 [default = UnknownRoamingNotificationStatus];
-        optional bool HasCustomPrintForm = 43 [default = false];
+        optional bool HasCustomPrintForm = 43 [default = false]; // Deprecated
         repeated CustomDataItem CustomData = 44;
         optional string PacketId = 45;
         optional DocumentDirection DocumentDirection = 46 [default = UnknownDocumentDirection];
@@ -210,7 +210,7 @@ Document
    
    -  *UnknownRoamingNotificationStatus* (неизвестный роуминговый статус документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать роуминговый статус документа, переданный сервером)
 
--  *HasCustomPrintForm* - флаг, показывающий, что данный документ имеет нестандартную печатную форму. Скачать печатную форму документа можно при помощи метода :doc:`../http/GeneratePrintForm`.
+-  *HasCustomPrintForm* - флаг, показывающий, что данный документ имеет нестандартную печатную форму. Свойство более **не поддерживается**. Значение всегда *false*. В случае необходимости используйте метод :doc:`../http/DetectCustomPrintForms`.
 
 - *IsRead* - флаг, указывающий на то, что документ был прочитан сотрудником организации.
 
@@ -251,4 +251,4 @@ Document
 - *Version* - идентификатор версии документа.
 
 .. warning::
-    Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
+    Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata*, *HasCustomPrintForm* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
