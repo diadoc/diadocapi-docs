@@ -1,6 +1,15 @@
 ﻿История изменений API
 =====================
 
+14.07.2019
+----------
+SDK: `C# 1.77.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.77.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Реализован метод :doc:`http/DetectCustomPrintForms`, возвращающий информацию о наличии у документа нестандратной печатной формы
+
+- Свойство *HasCustomPrintForms* структуры :doc:`proto/Document` объявлено устаревшим и более не заполняется (всегда возвращается *false*)
+
 09.07.2019
 ----------
 SDK: `C# 1.76.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.76.0>`__ | `Java 2.12.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.12.0>`__ | `C++ 1.74.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.74.0>`__
