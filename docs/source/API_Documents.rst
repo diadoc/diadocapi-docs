@@ -12,6 +12,7 @@ HTTP-интерфейс
    :titlesonly:
 
    http/Delete
+   http/DetectCustomPrintForms
    http/ForwardDocument
    http/GenerateSenderTitleXml
    http/GenerateRecipientTitleXml
