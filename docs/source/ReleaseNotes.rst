@@ -3,7 +3,7 @@
 
 14.07.2019
 ----------
-SDK: `C# 1.77.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.77.0>`__
+SDK: `C# 1.77.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.77.0>`__  | `Java 2.13.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.13.0>`__ | `C++ 1.75.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.75.0>`__
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Реализован метод :doc:`http/DetectCustomPrintForms`, возвращающий информацию о наличии у документа нестандратной печатной формы
