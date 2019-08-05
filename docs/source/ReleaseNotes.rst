@@ -1,6 +1,13 @@
 ﻿История изменений API
 =====================
 
+05.08.2019
+----------
+SDK: `C# 1.78.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.78.0>`__  | `Java 2.14.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.14.0>`__ | `C++ 1.76.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.76.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- В метод :doc:`http/utd/GenerateUniversalTransferDocumentXmlForSeller` добавлен опциональный параметр ``documentVersion``
+
 14.07.2019
 ----------
 SDK: `C# 1.77.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.77.0>`__  | `Java 2.13.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.13.0>`__ | `C++ 1.75.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.75.0>`__
