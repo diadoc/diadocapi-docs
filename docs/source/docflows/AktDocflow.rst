@@ -28,21 +28,17 @@
 
     -  используется для титула заказчика электронного акта.
 
-В силу приказа `N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__, утвержден электронный формат универсального передаточного документа УПД. Данный формат может быть использован до конца 2019 года.
+В силу приказа `N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=339569>`__, утвержден электронный формат универсального передаточного документа УПД. Данный формат может быть использован до конца 2019 года.
 
--  :download:`XSD-схема формата титула продавца УПД (функция ДОП) <../xsd/ON_SCHFDOPPR_1_995_01_05_01_05.xsd>`;
+XSD-схемы  первого и второго титулов УПД (функция ДОП) последней версии формата 155 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, в результате вызова метода :doc:`GetDocumentTypes`.
 
-    -  используется для титула исполнителя электронного акта,
-
--  :download:`XSD-схема формата титула покупателя УПД (функция ДОП) <../xsd/ON_SCHFDOPPOK_1_995_02_05_01_05.xsd>`;
-
-    -  используется для титула заказчика электронного акта.
-
-В силу приказов `N ММВ-7-10/552@ <https://normativ.kontur.ru/document?moduleId=1&documentId=265283&cwi=136>`__ электронный акт может быть в следующем формате:
+В силу приказов `N ММВ-7-10/552@ <https://normativ.kontur.ru/document?moduleId=1&documentId=265283&cwi=136>`__ электронный акт может быть в следующем формате (documentVerstion=rezru_05_01_02):
 
 -  :download:`XSD-схема титула исполнителя электронного акта <../xsd/DP_REZRUISP_1_990_01_05_01_02.xsd>`;
 
 -  :download:`XSD-схема титула заказчика электронного акта <../xsd/DP_REZRUZAK_1_990_02_05_01_02.xsd>`.
+
+XSD-схемы  первого и второго титулов акта последней версии формата 552 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, в результате вызова метода :doc:`GetDocumentTypes`.
 
 В силу приказов `№ ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=261859>`__ и `N ММВ-7-15/40@ <https://normativ.kontur.ru/document?moduleId=1&documentId=248109>`__ электронный акт может быть в следующем формате:
 
@@ -55,8 +51,8 @@
    :widths: 10, 10, 10, 10
 
    "XmlAcceptanceCertificate", "- приказ №820", "- ДОП", "- utd820_05_01_01"
-   "XmlAcceptanceCertificate", "- приказ №155", "- ДОП", "- utd_05_01_05"
-   "XmlAcceptanceCertificate", "- приказ №552", "- –", "- rezru_05_01_02"
+   "XmlAcceptanceCertificate", "- приказ №155", "- ДОП", "- utd_05_02_01"
+   "XmlAcceptanceCertificate", "- приказ №552", "- –", "- rezru_05_02_01"
    "XmlAcceptanceCertificate", "- приказ №172", "- –", "- act_05_01_01
    - act_05_01_02"
 
