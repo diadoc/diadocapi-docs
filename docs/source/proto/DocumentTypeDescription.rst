@@ -50,7 +50,7 @@ DocumentVersion
 
 .. code-block:: protobuf
 
-    message DocumentVersion {
+    message DocumentVersion {  
         required string Version = 1;
         required bool SupportsContentPatching = 2;
         required bool SupportsEncrypting = 3;
@@ -78,6 +78,7 @@ DocumentTitle
 .. code-block:: protobuf
 
     message DocumentTitle {
+        required int32 Index = 7;
         required bool IsFormal = 1;
         optional string XsdUrl = 2;
         optional string UserDataXsdUrl = 5;
@@ -86,9 +87,10 @@ DocumentTitle
         repeated DocumentMetadataItem EncryptedMetadataItems = 4;
     }
 
+-  *Index* - числовой идентификатор титула. По смыслу означает, в каком порядке титулы загружаются контрагентами. Всегда начинается с 0.
 -  *IsFormal* - титул формализованный
 -  *XsdUrl* - URL-путь метода, возвращающего файл XSD-схемы титула
--  *UserDataXsdUrl* - URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью обобщённого метода генерации. Для генерации титулов получателя может быть использован метод :doc:`GenerateRecipientTitleXml <../http/GenerateRecipientTitleXml>`.
+-  *UserDataXsdUrl* - URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью обобщённого метода генерации. Может отсутствовать, тогда это означает, что генерация титула под этим индексом нереализована. Для генерации титулов используется метод :doc:`GenerateTitleXml <../http/GenerateTitleXml>`.
 -  :ref:`SignerInfo <signer-info>` - описание подписанта титула
 -  :ref:`MetadataItems <document-metadata-item>` - описания метаданных документа
 -  :ref:`EncryptedMetadataItems <document-metadata-item>` - описания метаданных для отправки зашифрованного документа

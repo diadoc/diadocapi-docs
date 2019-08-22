@@ -9,6 +9,14 @@ SDK: `C# 1.80.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 - Реализован метод :doc:`http/GetLastEvent`, возвращающий последнее событие в ящике.
 
 
+15.08.2019
+----------
+SDK: `C# 1.79.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.79.0>`__ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Реализован метод :doc:`http/GenerateTitleXml`, позволяющий сгенерировать любой титул любого типа документа.
+- В структуру :doc:`DocumentTitle <proto/DocumentTypeDescription>` добавлено поле Index для обозначения порядкового номера титула в документе.
+
 05.08.2019
 ----------
 SDK: `C# 1.78.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.78.0>`__  | `Java 2.14.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.14.0>`__ | `C++ 1.76.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.76.0>`__
