@@ -85,4 +85,5 @@ FromBoxId. Для создания документа из шаблона, сл�
 - `Удаление <http://api-docs.diadoc.ru/ru/latest/http/Delete.html>`__ и `восстановление <http://api-docs.diadoc.ru/ru/latest/http/Restore.html>`__.
 - Получение событий по шаблонам :doc:`../http/GetNewEvents`, :doc:`../http/GetDocflows_V3`, :doc:`../http/GetMessage`
 - Перемещение шаблонов :doc:`../http/MoveDocuments`
+
 Все остальные действия для шаблонов недоступны.

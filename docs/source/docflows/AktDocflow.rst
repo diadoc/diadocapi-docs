@@ -30,7 +30,7 @@
 
 В силу приказа `N ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=339569>`__, утвержден электронный формат универсального передаточного документа УПД. Данный формат может быть использован до конца 2019 года.
 
-XSD-схемы  первого и второго титулов УПД (функция ДОП) последней версии формата 155 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, в результате вызова метода :doc:`GetDocumentTypes`.
+XSD-схемы  первого и второго титулов УПД (функция ДОП) последней версии формата 155 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, в результате вызова метода :doc:`../http/GetDocumentTypes`.
 
 В силу приказов `N ММВ-7-10/552@ <https://normativ.kontur.ru/document?moduleId=1&documentId=265283&cwi=136>`__ электронный акт может быть в следующем формате (documentVerstion=rezru_05_01_02):
 
@@ -38,7 +38,7 @@ XSD-схемы  первого и второго титулов УПД (функ
 
 -  :download:`XSD-схема титула заказчика электронного акта <../xsd/DP_REZRUZAK_1_990_02_05_01_02.xsd>`.
 
-XSD-схемы  первого и второго титулов акта последней версии формата 552 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, в результате вызова метода :doc:`GetDocumentTypes`.
+XSD-схемы  первого и второго титулов акта последней версии формата 552 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, в результате вызова метода :doc:`../http/GetDocumentTypes`.
 
 В силу приказов `№ ММВ-7-6/172@ <https://normativ.kontur.ru/document?moduleId=1&documentId=261859>`__ и `N ММВ-7-15/40@ <https://normativ.kontur.ru/document?moduleId=1&documentId=248109>`__ электронный акт может быть в следующем формате:
 

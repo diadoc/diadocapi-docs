@@ -1,5 +1,5 @@
 DetectCustomPrintForms
-============
+======================
 
 .. http:post:: /DetectCustomPrintForms
 
@@ -25,7 +25,7 @@ DetectCustomPrintForms
 .. _CustomPrintFormDetectionRequest:
 
 CustomPrintFormDetectionRequest
---------------
+-------------------------------
 
 .. code-block:: protobuf
 
@@ -40,7 +40,7 @@ CustomPrintFormDetectionRequest
 .. _CustomPrintFormDetectionResult:
 
 CustomPrintFormDetectionResult
---------------
+------------------------------
 
 .. code-block:: protobuf
 

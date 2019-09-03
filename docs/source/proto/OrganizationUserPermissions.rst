@@ -42,11 +42,11 @@ OrganizationUserPermissions
 
 -  *CanCreateDocuments* - может ли пользователь создавать и редактировать документы и черновики
 
--  :ref:`AuthorizationPermission <authorization-permission>` - данные о наличии ограничения доступа пользователя к сервису
+-  :ref:`AuthorizationPermission <organization-user-authorization-permission>` - данные о наличии ограничения доступа пользователя к сервису
 
 -  *CanDeleteRestoreDocuments* - может ли пользователь удалять документы и черновики, восстанавливать документы
 
-.. _authorization-permission:
+.. _organization-user-authorization-permission:
 
 AuthorizationPermission
 -----------------------
