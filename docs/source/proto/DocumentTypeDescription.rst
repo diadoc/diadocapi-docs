@@ -18,8 +18,8 @@
         Internal = 1;       // внутренний документооборот
     }
 
--  *Name* - уникальный строковой идентификатор типа
--  *Title* - заголовок типа
+-  *Name* - уникальный строковой идентификатор типа (он же TypeNamedId в других контрактах и методах)
+-  *Title* - заголовок типа, человеко-понятное название (например, "Счёт-фактура")
 -  *SupportedDocflows* - поддерживаемые типы документооборота
 -  *RequiresFnsRegistration* - для работы требуется заявление участника ЭДО
 -  :ref:`Functions <document-function>` - описания функций документа
@@ -53,20 +53,21 @@ DocumentVersion
     message DocumentVersion {  
         required string Version = 1;
         required bool SupportsContentPatching = 2;
-        required bool SupportsEncrypting = 3;
+        required bool SupportsEncrypting = 3;        
+        required bool SupportsPredefinedRecipientTitle = 7;
         repeated DocumentTitle Titles = 4;
         required bool IsActual = 5;
         repeated DocumentWorkflow Workflows = 6;
-        required bool SupportsPredefinedRecipientTitle = 7;
     }
 
 -  *Version* - строковой идентификатор версии, уникальный в рамках функции документа
 -  *SupportsContentPatching* - поддерживается патчинг
 -  *SupportsEncrypting* - поддерживается отправка зашифрованных документов
+-  *SupportsPredefinedRecipientTitle* - поддерживается отправка предопределенного титула. Подробнее здесь: :doc:`../howto/example_predefined_recipient_title`.
 -  :ref:`Titles <document-title>` - описания титулов документа
 -  *IsActual* - версия актуальна
 -  :doc:`Workflows <DocumentWorkflow>` - виды документооборота
--  *SupportsPredefinedRecipientTitle* - поддерживается отправка предопределенного титула. Подробнее здесь: :doc:`../howto/example_predefined_recipient_title`.
+
 
 .. _document-title:
 
