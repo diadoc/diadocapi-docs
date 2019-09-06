@@ -1,6 +1,16 @@
 ﻿История изменений API
 =====================
 
+06.09.2019
+----------
+SDK: `C# 1.81.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.81.0>`__  | `Java 2.16.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.16.0>`__ | `C++ 1.78.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.78.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- В возвращаемое значение метода :doc:`http/AcquireCounteragentResult` добавлено поле *InvitationDocumentId*.
+
+- В структуру :doc:`proto/Counteragent` добавлено поле *InvitationDocumentId*.
+
+
 27.08.2019
 ----------
 SDK: `Java 2.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.16.0>`__ | `C++ 1.78.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.78.0>`__
@@ -8,16 +18,6 @@ SDK: `Java 2.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/version
 
 - Поддержка универсального метода генерации :doc:`http/GenerateTitleXml` (в Java и C++ SDK).
 - В структуру :doc:`DocumentTitle <proto/DocumentTypeDescription>` добавлено поле Index для обозначения порядкового номера титула в документе (в Java и C++ SDK).
-
-
-16.08.2019
-----------
-SDK: `C# 1.81.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.81.0>`__  | `Java 2.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.16.0>`__ | `C++ 1.78.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.78.0>`__
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-- В возвращаемое значение метода :doc:`http/AcquireCounteragentResult` добавлено поле *InvitationDocumentId*.
-
-- В структуру :doc:`proto/Counteragent` добавлено поле *InvitationDocumentId*.
 
 
 16.08.2019
