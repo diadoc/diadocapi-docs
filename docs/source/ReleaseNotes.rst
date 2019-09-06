@@ -12,6 +12,16 @@ SDK: `Java 2.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/version
 
 16.08.2019
 ----------
+SDK: `C# 1.81.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.81.0>`__  | `Java 2.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.16.0>`__ | `C++ 1.78.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.78.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- В возвращаемое значение метода :doc:`http/AcquireCounteragentResult` добавлено поле *InvitationDocumentId*.
+
+- В структуру :doc:`proto/Counteragent` добавлено поле *InvitationDocumentId*.
+
+
+16.08.2019
+----------
 SDK: `C# 1.80.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.80.0>`__  | `Java 2.15.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.15.0>`__ | `C++ 1.77.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.77.0>`__
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
