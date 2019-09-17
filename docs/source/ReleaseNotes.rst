@@ -25,7 +25,12 @@ SDK: `C# 1.82.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 
 Для C# SDK добавили кодогенерацию новой XSD, доступной по `ссылке <https://github.com/diadoc/diadocsdk-csharp/blob/master/src/DataXml/Utd820/Hyphens/ON_NSCHFDOPPR_UserContract_820_05_01_01_Hyphen.cs>`__.
 
+17.09.2019
+----------
+SDK: `C# 1.82.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.82.0>`__ | `Java 2.16.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.17.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Добавили новую версию Authenticate, с универсальным контрактом, где все данные для аутентификации передаются в теле POST запроса :doc:`Authenticate <http/Authenticate>`
 
 
 06.09.2019
