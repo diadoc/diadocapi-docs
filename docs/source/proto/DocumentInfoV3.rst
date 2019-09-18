@@ -108,16 +108,13 @@ DocumentTemplateInfo
         repeated TemplateTransformationInfo TemplateTransformationInfos = 3;
     }
 
-
-
-
 Структура содержит свойства, присущие только документам в шаблоне
 
 - :doc:`LetterParticipants <DocumentParticipants>` - информация об отправителе и получателе письма, которое можно создать на основе данного шаблона
 - *TransformedToLetterIds* - список идентификаторов писем, созданных на основе данного шаблона и содержащих данный документ
 
 TemplateTransformationInfo
---------------------
+--------------------------
 
 .. warning:: Эта версия контракта — экспериментальная и может измениться.
 
