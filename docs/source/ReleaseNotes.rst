@@ -27,7 +27,7 @@ SDK: `C# 1.82.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 
 17.09.2019
 ----------
-SDK: `C# 1.82.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.82.0>`__ | `Java 2.16.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.17.0>`__
+SDK: `C# 1.82.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.82.0>`__ | `Java 2.17.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.17.0>`__ | `C++ 1.78.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.78.2>`__ 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Добавили новую версию Authenticate, с универсальным контрактом, где все данные для аутентификации передаются в теле POST запроса :doc:`Authenticate <http/Authenticate>`
