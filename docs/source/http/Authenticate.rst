@@ -55,6 +55,7 @@ Authenticate v3
 Необходимо указать type - sid, в теле запроса передавая `auth.sid <https://docs-ke.readthedocs.io/ru/latest/auth/auth.sid.html>`__ c заголовком *Content-Type: text/plain*
 
 - **Аутентификация по сертификату**:
+
 Необходимо указать type - certificate, в теле запроса передавая сертификат в виде массива байт закодированного в base64 c заголовком 
 *Content-Type: application/octet-stream*.
 Ответ метода необходимо интерпретировать как зашифрованную строку, аналогично `Authenticate V2`_ , расшифровать закрытым ключом сертификата, и передать в :doc:`AuthenticateConfirm`

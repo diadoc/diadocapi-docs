@@ -14,6 +14,7 @@ HTTP-интерфейс
    http/Delete
    http/DetectCustomPrintForms
    http/ForwardDocument
+   http/GenerateTitleXml
    http/GenerateSenderTitleXml
    http/GenerateRecipientTitleXml
    http/GenerateAcceptanceCertificateXmlForBuyer
