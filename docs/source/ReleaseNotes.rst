@@ -1,6 +1,17 @@
 ﻿История изменений API
 =====================
 
+30.09.2019
+__________
+
+SDK: `C# 1.84.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.84.0>`__
+
+Выпущен метод :doc:`http/GenerateReceiptXml`, который позволяет сгенерировать извещение о получении на любую сущность в документообороте, для которой оно требуется.
+
+Для обратной совместимости старые урлы ``GenerateDocumentReceiptXml`` и ``GenerateInvoiceDocumentReceiptXml`` расширены и поддерживают весь функционал нового метода.
+
+
+
 18.09.2019
 ----------
 SDK: `C# 1.83.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.83.0>`__  | `Java 2.18.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.18.0>`__ | `C++ 1.79.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.79.0>`__
