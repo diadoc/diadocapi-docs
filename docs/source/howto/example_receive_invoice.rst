@@ -139,7 +139,7 @@
 
 Извещение о получении подтверждения оператора представляется структурой :doc:`Entity <../proto/Entity message>`, где значение полей ``EntityType`` и ``AttachmentType`` должно быть *Attachment/InvoiceReceipt*.
 
-В API Диадока есть метод, который позволяет сформировать извещение о получении подтверждения оператора - :doc:`../http/GenerateInvoiceDocumentReceiptXml`, при вызове этого метода нужно корректно указать GET-параметры ``boxId``, ``messageId``, ``attachmentId`` и передать в тело запроса данные о подписанте генерируемого извещения в виде сериализованной структуры :doc:`../proto/Signer`.
+В API Диадока есть метод, который позволяет сформировать извещение о получении подтверждения оператора - :doc:`../http/GenerateReceiptXml`, при вызове этого метода нужно корректно указать GET-параметры ``boxId``, ``messageId``, ``attachmentId`` и передать в тело запроса данные о подписанте генерируемого извещения в виде сериализованной структуры :doc:`../proto/Signer`.
 
 ``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``attachmentId`` - идентификатор подтверждение оператора. Их можно взять из структуры :doc:`../proto/Message`.
 
@@ -147,7 +147,7 @@
 
 ::
 
-    POST /GenerateInvoiceDocumentReceiptXml?boxId=db32772b-9256-49a8-a133-fda593fda38a&messageId=a9093c56-7c48-4ab1-bc87-efb04e7d4400&attachmentId=f80738a3-b0bc-426a-aadf-6967ec1b53df HTTP/1.1
+    POST /GenerateReceiptXml?boxId=db32772b-9256-49a8-a133-fda593fda38a&messageId=a9093c56-7c48-4ab1-bc87-efb04e7d4400&attachmentId=f80738a3-b0bc-426a-aadf-6967ec1b53df HTTP/1.1
     Host: diadoc-api.kontur.ru
     Content-Type: application/json charset=utf-8
     Accept: application/json
@@ -330,7 +330,7 @@ SDK
 			.First(confirmationEntity => !receiptEntitiesParentIds
 				.Contains(confirmationEntity.EntityId)).EntityId;
 
-		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
+		var receipt = Api.GenerateReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
 		{
 			//Подпись получателя, см. "Как авторизоваться в системе"
 			SignerCertificate = ReadCertContent("путь к сертификату"),
@@ -367,7 +367,7 @@ SDK
 	//Формирование и отправка извещения о получении счета-фактуры
 	public static void SendinvoiceReceipt(Entity invoiceDocument)
 	{
-		var receipt = Api.GenerateInvoiceDocumentReceiptXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, new Signer()
+		var receipt = Api.GenerateReceiptXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, new Signer()
 		{
 			//Подпись получателя, см. "Как авторизоваться в системе"
 			SignerCertificate = ReadCertContent("путь к сертификату"),

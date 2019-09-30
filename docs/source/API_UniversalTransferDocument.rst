@@ -16,7 +16,7 @@
    http/GenerateRecipientTitleXml
    http/utd/GenerateUniversalTransferDocumentXmlForSeller
    http/utd/GenerateUniversalTransferDocumentXmlForBuyer
-   http/GenerateInvoiceDocumentReceiptXml
+   http/GenerateReceiptXml
 
 Отправка УПД
 ------------
