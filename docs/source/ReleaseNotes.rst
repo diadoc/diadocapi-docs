@@ -3,7 +3,6 @@
 
 30.09.2019
 __________
-
 SDK: `C# 1.84.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.84.0>`__
 
 Выпущен метод :doc:`http/GenerateReceiptXml`, который позволяет сгенерировать извещение о получении на любую сущность в документообороте, для которой оно требуется.
