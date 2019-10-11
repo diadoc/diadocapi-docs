@@ -18,8 +18,8 @@
         Internal = 1;       // внутренний документооборот
     }
 
--  *Name* - уникальный строковой идентификатор типа
--  *Title* - заголовок типа
+-  *Name* - уникальный строковой идентификатор типа (он же TypeNamedId в других контрактах и методах)
+-  *Title* - заголовок типа, человеко-понятное название (например, "Счёт-фактура")
 -  *SupportedDocflows* - поддерживаемые типы документооборота
 -  *RequiresFnsRegistration* - для работы требуется заявление участника ЭДО
 -  :ref:`Functions <document-function>` - описания функций документа
@@ -50,23 +50,24 @@ DocumentVersion
 
 .. code-block:: protobuf
 
-    message DocumentVersion {
+    message DocumentVersion {  
         required string Version = 1;
         required bool SupportsContentPatching = 2;
-        required bool SupportsEncrypting = 3;
+        required bool SupportsEncrypting = 3;        
+        required bool SupportsPredefinedRecipientTitle = 7;
         repeated DocumentTitle Titles = 4;
         required bool IsActual = 5;
         repeated DocumentWorkflow Workflows = 6;
-        required bool SupportsPredefinedRecipientTitle = 7;
     }
 
 -  *Version* - строковой идентификатор версии, уникальный в рамках функции документа
 -  *SupportsContentPatching* - поддерживается патчинг
 -  *SupportsEncrypting* - поддерживается отправка зашифрованных документов
+-  *SupportsPredefinedRecipientTitle* - поддерживается отправка предопределенного титула. Подробнее здесь: :doc:`../howto/example_predefined_recipient_title`.
 -  :ref:`Titles <document-title>` - описания титулов документа
 -  *IsActual* - версия актуальна
 -  :doc:`Workflows <DocumentWorkflow>` - виды документооборота
--  *SupportsPredefinedRecipientTitle* - поддерживается отправка предопределенного титула. Подробнее здесь: :doc:`../howto/example_predefined_recipient_title`.
+
 
 .. _document-title:
 
@@ -78,6 +79,7 @@ DocumentTitle
 .. code-block:: protobuf
 
     message DocumentTitle {
+        required int32 Index = 7;
         required bool IsFormal = 1;
         optional string XsdUrl = 2;
         optional string UserDataXsdUrl = 5;
@@ -86,9 +88,10 @@ DocumentTitle
         repeated DocumentMetadataItem EncryptedMetadataItems = 4;
     }
 
+-  *Index* - числовой идентификатор титула. По смыслу означает, в каком порядке титулы загружаются контрагентами. Всегда начинается с 0.
 -  *IsFormal* - титул формализованный
 -  *XsdUrl* - URL-путь метода, возвращающего файл XSD-схемы титула
--  *UserDataXsdUrl* - URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью обобщённого метода генерации. Для генерации титулов получателя может быть использован метод :doc:`GenerateRecipientTitleXml <../http/GenerateRecipientTitleXml>`.
+-  *UserDataXsdUrl* - URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью обобщённого метода генерации. Может отсутствовать, тогда это означает, что генерация титула под этим индексом нереализована. Для генерации титулов используется метод :doc:`GenerateTitleXml <../http/GenerateTitleXml>`.
 -  :ref:`SignerInfo <signer-info>` - описание подписанта титула
 -  :ref:`MetadataItems <document-metadata-item>` - описания метаданных документа
 -  :ref:`EncryptedMetadataItems <document-metadata-item>` - описания метаданных для отправки зашифрованного документа
@@ -119,7 +122,7 @@ SignerInfo
 
     -  *Signer* - простой подписант. Используется для документов форматов :doc:`@93/@172 <../docflows/AttachmentVersion>` и своих типов документов не на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
 
-    -  *ExtendedSigner* - расширенный подписант. Используется для документов форматов :doc:`@155/@551/@552 <../docflows/AttachmentVersion>` и своих типов на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
+    -  *ExtendedSigner* - расширенный подписант. Используется для документов форматов :doc:`@155/@551/@552/@820 <../docflows/AttachmentVersion>` и своих типов на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
 
 -  :doc:`DocumentTitleType <DocumentTitleType>` - Тип титула документа, для которого нужно заполнить дополнительные данные о подписанте. Для типов подписанта *None* и *Signer* значение всегда равно *Absent*.
 

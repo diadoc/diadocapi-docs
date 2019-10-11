@@ -1,6 +1,9 @@
 GetMyPermissions
 ================
 
+.. warning::
+    Метод устарел. Для получения прав и другой информации о текущем сотруднике используйте :doc:`../http/GetMyEmployee`
+
 Имя ресурса: **/GetMyPermissions**
 
 HTTP метод: **GET**

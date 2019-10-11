@@ -15,6 +15,7 @@ OrganizationUserPermissions
         optional string JobTitle = 10;
         required bool CanCreateDocuments = 11;
         required AuthorizationPermission AuthorizationPermission = 12;
+        required bool CanDeleteRestoreDocuments = 13;
     }
 
 Структура данных *OrganizationUserPermissions* содержит информацию о правах пользователя в организации.
@@ -39,11 +40,13 @@ OrganizationUserPermissions
 
 -  *JobTitle* - должность пользователя в организации. Может быть не указана.
 
--  *CanCreateDocuments* - может ли пользователь создавать документы и работать с черновиками
+-  *CanCreateDocuments* - может ли пользователь создавать и редактировать документы и черновики
 
--  :ref:`AuthorizationPermission <authorization-permission>` - данные о наличии ограничения доступа пользователя к сервису
+-  :ref:`AuthorizationPermission <organization-user-authorization-permission>` - данные о наличии ограничения доступа пользователя к сервису
 
-.. _authorization-permission:
+-  *CanDeleteRestoreDocuments* - может ли пользователь удалять документы и черновики, восстанавливать документы
+
+.. _organization-user-authorization-permission:
 
 AuthorizationPermission
 -----------------------

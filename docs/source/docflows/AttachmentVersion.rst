@@ -4,7 +4,7 @@
 Формат №155
 -----------
 
-Формат, утвержденный Приказом ФНС России от `24.03.2016 №ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=271958>`__, позволяет сформировать 3 разных типа документов:
+Формат, утвержденный Приказом ФНС России от `24.03.2016 №ММВ-7-15/155@ <https://normativ.kontur.ru/document?moduleId=1&documentId=339569>`__, позволяет сформировать 3 разных типа документов:
 
 - *счета-фактуры*,
 
@@ -30,7 +30,7 @@
 - *УПД*.
 
 .. note::
-До конца 2019 года действующими являются оба формата - №155 и №820, с 1 января 2020 года формат №155 утратит свою силу.
+    До конца 2019 года действующими являются оба формата - №155 и №820, с 1 января 2020 года формат №155 утратит свою силу.
 
 .. rubric:: Работа в Диадоке
 
@@ -119,6 +119,7 @@
    - utd_05_01_02
    - utd_05_01_04
    - utd_05_01_05
+   - utd_05_02_01
    - utd820_05_01_01"
    "Исправление СФ", "InvoiceRevision", "- invoice_05_01_03
    - invoice_05_02_01
@@ -126,46 +127,57 @@
    - utd_05_01_02
    - utd_05_01_04
    - utd_05_01_05
+   - utd_05_02_01
    - utd820_05_01_01"
    "Корректировочный СФ (КСФ)", "InvoiceCorrection", "- invoicecor_05_01_03
    - invoicecor_05_02_01
    - ucd_05_01_01
-   - ucd_05_01_02"
+   - ucd_05_01_02
+   - ucd_05_02_01"
    "Исправление КСФ", "InvoiceCorrectionRevision", "- invoicecor_05_01_03
    - invoicecor_05_02_01
    - ucd_05_01_01
-   - ucd_05_01_02"
+   - ucd_05_01_02
+   - ucd_05_02_01"
    "Формализованный ТОРГ-12", "XmlTorg12", "- torg12_05_01_01
    - torg12_05_01_02
    - utd_05_01_01
    - utd_05_01_02
    - utd_05_01_04
    - utd_05_01_05
+   - utd_05_02_01
    - utd820_05_01_01
    - tovtorg_05_01_02
-   - tovtorg_05_01_03"
+   - tovtorg_05_01_03
+   - tovtorg_05_02_01"
    "Формализованный акт", "XmlAcceptanceCertificate", "- act_05_01_01
    - act_05_01_02
    - utd_05_01_01
    - utd_05_01_02
    - utd_05_01_04
    - utd_05_01_05
+   - utd_05_02_01
    - utd820_05_01_01
-   - rezru_05_01_01"
+   - rezru_05_01_01
+   - rezru_05_02_01"
    "УПД", "UniversalTransferDocument", "- utd_05_01_01
    - utd_05_01_02
    - utd_05_01_04
    - utd_05_01_05
+   - utd_05_02_01
    - utd820_05_01_01"
    "Исправление УПД", "UniversalTransferDocumentRevision", "- utd_05_01_01
    - utd_05_01_02
    - utd_05_01_04
    - utd_05_01_05
+   - utd_05_02_01
    - utd820_05_01_01"
    "УКД", "UniversalCorrectionDocument", "- ucd_05_01_01
-   - ucd_05_01_02"
+   - ucd_05_01_02
+   - ucd_05_02_01"
    "Исправление УКД", "UniversalCorrectionDocumentRevision", "- ucd_05_01_01
-   - ucd_05_01_02"
+   - ucd_05_01_02
+   - ucd_05_02_01"
 
 .. important::
   ``AttachmentVersion = UniversalTrnsaferDocument`` для СФ/ИСФ и ``AttachmentVersion = UniversalCorrectionDocument`` для КСФ/ИКСФ считаются устаревшими. Поле AttachmentVersion устарело. Вместо него используйте Version.

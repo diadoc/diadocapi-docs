@@ -1,6 +1,136 @@
 ﻿История изменений API
 =====================
 
+30.09.2019
+----------
+SDK: `C# 1.84.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.84.0>`__  | `Java 2.19.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.19.0>`__ | `C++ 1.80.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.80.0>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Выпущен метод :doc:`http/GenerateReceiptXml`, который позволяет сгенерировать извещение о получении на любую сущность в документообороте, для которой оно требуется.
+
+Для обратной совместимости старые урлы ``GenerateDocumentReceiptXml`` и ``GenerateInvoiceDocumentReceiptXml`` расширены и поддерживают весь функционал нового метода.
+
+
+18.09.2019
+----------
+SDK: `C# 1.83.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.83.0>`__  | `Java 2.18.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.18.0>`__ | `C++ 1.79.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.79.0>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Добавили методы :doc:`http/DssSign` и :doc:`http/DssSignResult` для :doc:`подписания DSS-сертификатом <API_Dss>`.
+
+17.09.2019
+----------
+SDK: `C# 1.82.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.82.1>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Добавили новую версию ``utd820_05_01_01_hyphen`` для всех типов документов, поддерживающих формат приказа №820 — счета-фактуры и их исправления, акты, накладные, УПД, иУПД.
+
+Версия полностью совместима с ``utd820_05_01_01``. Отличается только генерация и парсинг.
+
+Теперь при генерации необходимо явно задать атрибуты вида `ДефНомИспрСчФ`, `ДефДатаИспрСчФ`, `ДефОКЕИ_Тов`, `ДефСтТовУчНал`, `ДефСтТовУчНалВсего`, `ДефКодПроисх`, `ДефИННЮЛ`, `ДефИННФЛ`, элемент `ДефНДС`, и при парсинге учитывать наличие этих атрибутов в UserDataXML. 
+
+Также можно явно указывать ФНС-идентификаторы отправителя (ИдОтпр) и получателя (ИдПол). Может быть полезно в случаях, когда в документе указано несколько продавцов (элемент xml СвПрод) или покупателей (СвПокуп), и нужно явно определить, кто из них является участником документооборота.
+
+Более подробные отличия можно посмотреть в XSD-схеме, доступной в поле UserDataXSD ответа метода :doc:`http/GetDocumentTypes`.
+
+Для C# SDK добавили кодогенерацию новой XSD, доступной по `ссылке <https://github.com/diadoc/diadocsdk-csharp/blob/master/src/DataXml/Utd820/Hyphens/ON_NSCHFDOPPR_UserContract_820_05_01_01_Hyphen.cs>`__.
+
+17.09.2019
+----------
+SDK: `C# 1.82.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.82.0>`__ | `Java 2.17.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.17.0>`__ | `C++ 1.78.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.78.2>`__ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Добавили новую версию Authenticate, с универсальным контрактом, где все данные для аутентификации передаются в теле POST запроса :doc:`Authenticate <http/Authenticate>`
+
+
+06.09.2019
+----------
+SDK: `C# 1.81.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.81.0>`__  | `Java 2.16.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.16.0>`__ | `C++ 1.78.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.78.0>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- В возвращаемое значение метода :doc:`http/AcquireCounteragentResult` добавлено поле *InvitationDocumentId*.
+
+- В структуру :doc:`proto/Counteragent` добавлено поле *InvitationDocumentId*.
+
+
+27.08.2019
+----------
+SDK: `Java 2.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.16.0>`__ | `C++ 1.78.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.78.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Поддержка универсального метода генерации :doc:`http/GenerateTitleXml` (в Java и C++ SDK).
+- В структуру :doc:`DocumentTitle <proto/DocumentTypeDescription>` добавлено поле Index для обозначения порядкового номера титула в документе (в Java и C++ SDK).
+
+
+16.08.2019
+----------
+SDK: `C# 1.80.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.80.0>`__  | `Java 2.15.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.15.0>`__ | `C++ 1.77.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.77.0>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Реализован метод :doc:`http/GetLastEvent`, возвращающий последнее событие в ящике.
+
+
+15.08.2019
+----------
+SDK: `C# 1.79.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.79.0>`__ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Реализован метод :doc:`http/GenerateTitleXml` (в C# SDK), позволяющий сгенерировать любой титул любого типа документа.
+- В структуру :doc:`DocumentTitle <proto/DocumentTypeDescription>` добавлено поле Index для обозначения порядкового номера титула в документе (в C# SDK).
+
+05.08.2019
+----------
+SDK: `C# 1.78.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.78.0>`__  | `Java 2.14.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.14.0>`__ | `C++ 1.76.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.76.0>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- В метод :doc:`http/utd/GenerateUniversalTransferDocumentXmlForSeller` добавлен опциональный параметр ``documentVersion``
+
+14.07.2019
+----------
+SDK: `C# 1.77.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.77.0>`__  | `Java 2.13.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.13.0>`__ | `C++ 1.75.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.75.0>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Реализован метод :doc:`http/DetectCustomPrintForms`, возвращающий информацию о наличии у документа нестандратной печатной формы
+
+- Свойство *HasCustomPrintForms* структуры :doc:`proto/Document` объявлено устаревшим и более не заполняется (всегда возвращается *false*)
+
+09.07.2019
+----------
+SDK: `C# 1.76.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.76.0>`__ | `Java 2.12.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.12.0>`__ | `C++ 1.74.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.74.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Появился метод :doc:`http/GetMyEmployee`, возвращающий информацию о текущем сотруднике организации
+
+- Метод :doc:`http/GetMyPermissions` объявлен устаревшим
+
+- Появилась возможность управлять :doc:`правом сотрудника <proto/EmployeePermissions>` удалять документы и черновики, восстанавливать документы. В структуру :doc:`proto/OrganizationUserPermissions` добавлен флаг *CanDeleteRestoreDocuments*
+
+
+09.07.2019
+----------
+SDK: `C# 1.75.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.75.0>`__ | `Java 2.11.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.11.1>`__ | `C++ 1.73.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.73.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Поле *TransferDocDetails* в структуре :doc:`EventContent <proto/utd/UniversalCorrectionDocumentSellerTitleInfo>`, соответствующее атрибуту *ПередатДокум* в УКД, стало необязательным
+
+05.07.2019
+----------
+SDK: `C# 1.74.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/1.74>`__ | `Java 2.10.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/2.10.0>`__ | `C++ 1.72.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/1.72.0>`__
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Появилась возможность отправлять шаблоны из/в подразделение :doc:`http/PostTemplate`
+
+- Появилась возможность перемещать шаблоны между подразделениями :doc:`http/MoveDocuments`
+
+11.06.2019
+----------
+SDK: `C# 1.73.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.73.0>`__ | `Java 2.9.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/2.9.0>`__ | `C++ 1.71.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/1.71.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Обновилась версия методов :doc:`http/GetNewEvents` и :doc:`http/GetMessage`. Новая версия возвращает события по шаблонам :doc:`proto/Message` и :doc:`proto/MessagePatch`
+
+- В метод :doc:`http/GetDocflowEvents_V3` добавилась информация о шаблонах
+
 27.05.2019
 ----------
 SDK: `C# 1.72.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.72.0>`__ | `Java 2.8.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.8.0>`__ | `C++ 1.70.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.70.0>`__

@@ -63,9 +63,11 @@ CreateEmployee
             "DocumentAccessLevel": "DepartmentAndSubdepartments",
             "Actions": [
                 { "Name": "CreateDocuments", "IsAllowed": true },
+                { "Name": "DeleteRestoreDocuments", "IsAllowed": true },
                 { "Name": "SignDocuments", "IsAllowed": true },
                 { "Name": "AddResolutions", "IsAllowed": false },
-                { "Name": "RequestResolutions", "IsAllowed": false }
+                { "Name": "RequestResolutions", "IsAllowed": false },
+                { "Name": "ManageCounteragents", "IsAllowed": true },
             ]
         }
     }
@@ -102,9 +104,11 @@ CreateEmployee
                 Actions =
                 {
                     new EmployeeAction { Name = "CreateDocuments", IsAllowed = true },
+                    new EmployeeAction { Name = "DeleteRestoreDocuments", IsAllowed = true },
                     new EmployeeAction { Name = "SignDocuments", IsAllowed = true },
                     new EmployeeAction { Name = "AddResolutions", IsAllowed = false },
-                    new EmployeeAction { Name = "RequestResolutions", IsAllowed = false }
+                    new EmployeeAction { Name = "RequestResolutions", IsAllowed = false },
+                    new EmployeeAction { Name = "ManageCounteragents", IsAllowed = true }
                 }
             }
         });
@@ -142,9 +146,11 @@ CreateEmployee
             ],
             "Actions": [
                 { "Name": "CreateDocuments", "IsAllowed": true },
+                { "Name": "DeleteRestoreDocuments", "IsAllowed": true },
                 { "Name": "SignDocuments", "IsAllowed": true },
                 { "Name": "AddResolutions", "IsAllowed": true },
-                { "Name": "RequestResolutions", "IsAllowed": true }
+                { "Name": "RequestResolutions", "IsAllowed": true },
+                { "Name": "ManageCounteragents", "IsAllowed": true }
             ]
         }
     }
@@ -182,9 +188,11 @@ CreateEmployee
                 Actions =
                 {
                     new EmployeeAction { Name = "CreateDocuments", IsAllowed = true },
+                    new EmployeeAction { Name = "DeleteRestoreDocuments", IsAllowed = true },
                     new EmployeeAction { Name = "SignDocuments", IsAllowed = true },
                     new EmployeeAction { Name = "AddResolutions", IsAllowed = true },
-                    new EmployeeAction { Name = "RequestResolutions", IsAllowed = true }
+                    new EmployeeAction { Name = "RequestResolutions", IsAllowed = true },
+                    new EmployeeAction { Name = "ManageCounteragents", IsAllowed = true }
                 }
             }
         });

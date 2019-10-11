@@ -13,6 +13,7 @@ HTTP-интерфейс
 
    http/GetEvent
    http/GetNewEvents
+   http/GetLastEvent
 
 Структуры данных
 ----------------

@@ -19,12 +19,16 @@ HTTP
 .. code-block:: protobuf
 
     message AcquireCounteragentResult {
-        optional string orgId = 1;
+        required string OrgId = 1;
+        optional DocumentId InvitationDocumentId = 2;
     }
+
 
 AcquireCounteragentResult:
 
 -  *orgId*: идентификатор приглашенной организации
+
+-  :doc:`InvitationDocumentId <../proto/DocumentId>`: ссылка на документ, который был отправлен вместе с приглашением. Данное поле заполняется независимо от наличия доступа к документу.
 
 Метод *AcquireCounteragentResult* позволяет получить идентификатор приглашенной организации. Если по каким то причинам не удалось доставить приглашение до контрагента, то вернется ошибка 409. Возможные причины ошибки:
 

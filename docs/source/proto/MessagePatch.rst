@@ -17,6 +17,7 @@ MessagePatch
         optional bool MessageIsDelivered = 11 [default = false];
         optional string DeliveredPatchId = 12;
         required string PatchId = 13;
+        required MessageType MessageType = 14;
     }
 
     message EntityPatch {
@@ -56,6 +57,8 @@ MessagePatch
 -  *DeliveredPatchId* - идентификатор доставленного получателю патча.
 
 -  *PatchId* - идентификатор патча.
+
+-  *MessageType* - тип сообщения :doc:`../proto/MessageType`.
 
 Структура данных *EntityPatch* представляет дополнение (патч) к :doc:`сущности <Entity message>` в Диадоке:
 

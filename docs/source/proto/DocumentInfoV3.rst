@@ -105,9 +105,30 @@ DocumentTemplateInfo
     {
         required DocumentParticipants LetterParticipants = 1;
         repeated string TransformedToLetterIds = 2;
+        repeated TemplateTransformationInfo TemplateTransformationInfos = 3;
     }
 
 Структура содержит свойства, присущие только документам в шаблоне
 
 - :doc:`LetterParticipants <DocumentParticipants>` - информация об отправителе и получателе письма, которое можно создать на основе данного шаблона
 - *TransformedToLetterIds* - список идентификаторов писем, созданных на основе данного шаблона и содержащих данный документ
+
+TemplateTransformationInfo
+--------------------------
+
+.. warning:: Эта версия контракта — экспериментальная и может измениться.
+
+.. code-block:: protobuf
+
+    message TemplateTransformationInfo
+    {
+        required string TransformationId = 1;
+        optional DocumentId TransformedToLetterId = 2;
+        optional string AuthorUserId = 3;
+    }
+
+Структура содержит информацию о документе, созданном на основе шаблона
+
+- *TransformationId* - идентификатор трансформации
+- :doc:`TransformedToLetterId <DocumentId>` - идентификаторы письма и документа, созданного на основе шаблона
+- *AuthorUserId* - идентификатор пользователя, который создал документ из шаблона

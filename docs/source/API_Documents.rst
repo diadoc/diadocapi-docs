@@ -12,7 +12,9 @@ HTTP-интерфейс
    :titlesonly:
 
    http/Delete
+   http/DetectCustomPrintForms
    http/ForwardDocument
+   http/GenerateTitleXml
    http/GenerateSenderTitleXml
    http/GenerateRecipientTitleXml
    http/GenerateAcceptanceCertificateXmlForBuyer
@@ -20,7 +22,7 @@ HTTP-интерфейс
    http/GenerateDocumentProtocol
    http/GenerateDocumentZip
    http/GenerateForwardedDocumentProtocol
-   http/GenerateDocumentReceiptXml
+   http/GenerateReceiptXml
    http/GeneratePrintForm
    http/GeneratePrintFormFromAttachment
    http/GenerateRevocationRequestXml
@@ -29,6 +31,7 @@ HTTP-интерфейс
    http/GenerateTorg12XmlForSeller
    http/GetDocument
    http/GetDocuments
+   http/GetDocumentsByMessageId
    http/GetForwardedDocumentEvents
    http/GenerateForwardedDocumentPrintForm
    http/GetForwardedEntityContent

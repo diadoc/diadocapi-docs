@@ -5,8 +5,8 @@ GenerateRecipientTitleXml
 
     :query documentVersion:  строковый идентификатор версии типа документа
     :query boxId: идентификатор ящика
-    :query sellerTitleMessageId: идентификатор сообщения, содержащего соответствующий титул продавца
-    :query sellerTitleAttachmentId: идентификатор сущности, представляющей титул продавца, для которого требуется изготовить титул заказчика
+    :query senderTitleMessageId: идентификатор сообщения, содержащего соответствующий титул продавца
+    :query senderTitleAttachmentId: идентификатор сущности, представляющей титул продавца, для которого требуется изготовить титул заказчика
 
     :reqheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`
 

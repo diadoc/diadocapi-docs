@@ -29,6 +29,7 @@ Entity
         optional CancellationInfo CancellationInfo = 24;  // заполняется только для вложений с типом AttachmentType.Cancellation
         repeated string Labels = 25;
         optional string Version = 26;
+        optional TemplateTransformationInfo TemplateTransformationInfo = 27;
     }
 
     enum EntityType {
@@ -88,6 +89,8 @@ Entity
         // 68 - Зарезервировано
         Cancellation = 69;
         Edition = 71;
+        DeletionRestoration = 72;
+        TemplateTransformation = 73;
         // Неизвестные типы должны обрабатываться как Nonformalized
     }
 
@@ -190,6 +193,10 @@ Entity
    -  *Cancellation* (информация об отмене сущности, которая указана родительской по отношению к данной).
 
    -  *Edition* (информация о редактировании контента документа, который указан родительским по отношению к данной сущности).
+   
+   -  *DeletionRestoration* (восстановление удалённого документа).
+
+   -  *TemplateTransformation* (информация о трансформации)
 
 -  *Content* - содержимое сущности (подробнее см. описание структуры :doc:`Content`).
    
@@ -252,3 +259,6 @@ Entity
 - *Labels* - :doc:`метки сущности <../proto/Labels>`.
 
 - *Version* - идентификатор версии документа.
+
+- *TemplateTransformationInfos* - содержит информацию о документе. созданном на основе шаблона. Будет заполняться для AttachmentType=TemplateTransformation.
+

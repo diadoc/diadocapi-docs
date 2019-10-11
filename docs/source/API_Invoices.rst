@@ -15,7 +15,7 @@
    http/CanSendInvoice
    http/GenerateSenderTitleXml
    http/utd/GenerateUniversalTransferDocumentXmlForSeller
-   http/GenerateInvoiceDocumentReceiptXml
+   http/GenerateReceiptXml
    http/GetInvoiceCorrectionRequestInfo
 
 Отправка СФ

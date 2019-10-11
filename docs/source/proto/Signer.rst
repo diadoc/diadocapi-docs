@@ -41,13 +41,13 @@ Signer
 
    -  :doc:`../http/GenerateInvoiceCorrectionRequestXml`
 
-   -  :doc:`../http/GenerateInvoiceDocumentReceiptXml`
+   -  :doc:`../http/GenerateReceiptXml`
 
    -  :doc:`../http/GenerateSignatureRejectionXml`
 
    -  :doc:`../http/GenerateRevocationRequestXml`
 
-   -  :doc:`../http/GenerateInvoiceDocumentReceiptXml`
+   -  :doc:`../http/GenerateReceiptXml`
 
    Не обязательно в методах:
 

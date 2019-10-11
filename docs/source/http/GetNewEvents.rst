@@ -3,7 +3,7 @@ GetNewEvents
 
 Метод для получения ленты событий в ящике.
 
-Имя ресурса: **/V5/GetNewEvents**
+Имя ресурса: **/V6/GetNewEvents**
 
 HTTP метод: **GET**
 

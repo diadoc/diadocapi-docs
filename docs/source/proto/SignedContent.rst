@@ -6,7 +6,6 @@ SignedContent
     message SignedContent {
         optional bytes Content = 1;
         optional bytes Signature = 2;
-        optional bool SignByAttorney = 3 [default = false];
         optional string NameOnShelf = 4;
         optional bool SignWithTestSignature = 5 [default = false];
         optional string SignatureNameOnShelf = 6;
@@ -21,21 +20,9 @@ SignedContent
 
 -  *Signature* - ЭП (в некоторых случаях может отсутствовать). Если ЭП присутствует, то она должна быть представлена в формате :rfc:`CMS SignedData <5652#section-5>` в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__-кодировке.
 
--  *SignByAttorney* - флаг, который позволяет запросить формирование ЭП под пересылаемыми данными «по доверенности».
-
 -  *SignWithTestSignature* - флаг, который позволяет запросить формирование тестовой ЭП под пересылаемыми данными.
 
 -  *SignatureNameOnShelf* - имя подписи на «полке документов».
-
-Значения полей в данной структуре обязаны быть согласованы следующим образом:
-
--  *SignWithTestSignature = false, SignByAttorney = false*: типовая ситуация формирования структуры *SignedContent* для подписываемого документа; в этом случае ЭП обязана присутствовать в поле *Signature*;
-
--  *SignWithTestSignature = true, SignByAttorney = false*: для документа запрашивается формирование тестовой подписи; в этом случае поле *Signature* должно оставаться пустым.
-
--  *SignWithTestSignature = false, SignByAttorney = true*: для документа запрашивается формирование ЭП «по доверенности» (подпись будет добавлена позже); в этом случае поле *Signature* должно оставаться пустым.
-
--  *SignWithTestSignature = true, SignByAttorney = true*: недопустимая комбинация флагов; не должна использоваться.
 
 Следует придерживаться следующей схемы использования структуры *SignedContent*. Если подписываемый документ имеет небольшой размер (не превышает 500Кб), его бинарное представление можно разместить непосредственно в структуре *SignedContent* в поле *Content*.
 
