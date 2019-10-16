@@ -32,10 +32,10 @@
 
 В теле запроса должен содержаться упрощенный XML-файл, соответствующий XSD-схеме контракта для генерации титула. XSD-схема контракта, необходимого для генерации титула, может быть получена с помощью ссылки, доступной в поле UserDataXsdUrl контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, который можно получить с помощью метода-справочника :doc:`GetDocumentTypes`.
 
-Вызовем метод :doc:`GetDocumentTypes` и найдем интересующие нас тип-функцию верси. Для УПД в 820 формате возьмем следующие значения:
+Вызовем метод :doc:`GetDocumentTypes` и найдем интересующие нас тип-функцию-версию. Для УПД в 820 формате возьмем следующие значения:
 - TypeNamedId - UniversalTransferDocument
 - Function - СЧФДОП
-- Version - utd820_05_01_01_hyphen
+- Version - utd820_05_01_01
 - IndexTitle=0 (титул продавца)
 
 *Ответ метода GetDocumentTypes*:
@@ -53,15 +53,15 @@
         "Name": "СЧФДОП",
         "Versions": [
             {
-                "Version": "utd820_05_01_01_hyphen",
+                "Version": "utd820_05_01_01",
                 "SupportsContentPatching": true,
                 "SupportsEncrypting": true,
                 "Titles": [
                     {
                         "Index": 0,
                         "IsFormal": true,
-                        "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01_hyphen&titleIndex=0&contentType=TitleXsd",
-                        "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01_hyphen&titleIndex=0&contentType=UserContractXsd",
+                        "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=0&contentType=TitleXsd",
+                        "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=0&contentType=UserContractXsd",
                          "SignerInfo": {
                             "SignerType": "ExtendedSigner",
                             "ExtendedDocumentTitleType": "UtdSeller"
@@ -95,7 +95,7 @@
 
 Выбор, как формировать UserDataXml, остаётся за разработчиком интеграционного решения.
 
-Один из путей — это кодогенерация из xsd-схемы упрощённого титула. Ссылка на схему находится в поле UserDataXsdUrl из выдачи GetDocumentTypes выше.
+Один из путей — это кодогенерация из xsd-схемы упрощённого титула. Ссылка на схему находится в поле UserDataXsdUrl ответа метода GetDocumentTypes, приведенного выше.
 
 В качестве примера, в C# SDK для всех версий формата приказа №820 есть `пример кодогенерации <https://github.com/diadoc/diadocsdk-csharp/tree/master/src/DataXml>`_. 
 
@@ -103,14 +103,13 @@
 
 Чтобы воспользоваться ей в C#-клиенте, достаточно заполнить объект UniversalTransferDocument для титула отправителя (или UniversalTransferDocumentBuyerTitle для титула получателя) и затем `сериализовать в XML <https://github.com/diadoc/diadocsdk-csharp/blob/master/src/XmlSerializerExtensions.cs>`_.
 
-
-Итого, имея идентификаторы типа, функции, версии, порядкового номера титула, а также пользовательский контент, можем получить сам титул счёта-фактуры.
+Итого, имея идентификаторы типа, функции, версии, порядкового номера титула, а также пользовательский контент, можно получить сам титул УПД.
 
 *Пример http-запроса*:
 
 .. sourcecode:: http
 
-    POST /GenerateTitleXml?boxId=a96be310-0982-461a-8b2a-91d198b7861c&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_01_hyphen&titleIndex=0 HTTP/1.1
+    POST /GenerateTitleXml?boxId=a96be310-0982-461a-8b2a-91d198b7861c&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_01&titleIndex=0 HTTP/1.1
     Host: diadoc-api.kontur.ru
     Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
     Content-Type: application/xml; charset=utf-8
@@ -231,3 +230,134 @@
    </Подписант>
 </Документ>
 </Файл>
+
+Отправка документа
+------------------
+Сценариев отправки может быть несколько:
+- Загрузить документ как Черновик. В веб-интерфейсе подписать черновик и отправить
+- Загрузить документ как Исходящий неотправленный. В веб-интерфейсе подписать документ и отправить
+- Подписать и отправить документ через API
+
+Для всех трех случаев необходимо использовать метод PostMessage со структурой DocumentAttachment. В зависимости от сценария отправки передаваемый контент запроса будет разный.
+
+Рассмотрим пример третьего варианта, когда документ сразу подписывается и отправляется.
+
+.. sourcecode:: xml
+
+{
+ "FromBoxId": "a96be310-0982-461a-8b2a-91d198b7861c",
+ "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
+ "DocumentAttachments":
+    
+     [ {
+       "SignedContent":
+        {
+         "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",        //контент xml-файла в кодировке base-64
+         "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",       //контент файла подписи в кодировке base-64
+        },
+       "TypeNamedId": "UniversalTransferDocument",
+       "Function": "СЧФДОП",
+       "Version": "utd820_05_01_01"
+      }
+     ]
+}
+
+ Парсинг документа
+-------------------
+
+Документ отправлен. Получатель документа хочет выполнить парсинг полученного титула и загрузить информацию в свою учетную систему. Для этого необходимо использовать метод ParseTitleXml. 
+
+Для того, чтобы распарсить документ, нужно знать тип документа, функцию, версию, номер титула. Тип, функцию и версию можно узнать из ответов методов GetNewEvents, GetMessage, GetDocument, GetDocflowEvents (версия 3) или использовать метод детектирования DetectDocumentTypes. 
+
+*Пример http-запроса*:
+
+.. sourcecode:: http
+
+POST /ParseTitleXml?boxId=13254c42-b4f7-4fd3-3324-0094aeb0f15a&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_01&titleIndex=0 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+    Content-Type: application/xml; charset=utf-8
+
+В теле запроса должен быть xml полученного титула
+
+В теле ответа будет упрощенный xml (UserDataXml), аналогичный тому, который был использован при генерации. Не всегда упрощенный xml в теле ответа метода парсинга будет совпадать с упрощенным xml в теле запроса метода генерации. Это связано с тем, что при генерации документа мы можем автоматически заполнять какие-то данные в титуле. Например по идентификатору ящика можно определить все его реквизиты - ИНН, КПП, наименование и т.д. Соответственно после парсинга в упрощенном xml будут указаны ИНН, КПП и наименование организации, а не идентификатор ящика, как это было до генерации.
+
+//А дальше надо написать, как UserDataXml обработать, чтобы можно было загрузить в свою учетную систему 
+
+Генерация титула покупателя
+---------------------------
+
+Генерация титула покупателя выполняется аналогично титулу продавца. 
+
+Для генерации можно использовать один из универсальных методов - ParseTitleXml или GenerateRecipientTitleXml. В теле запроса должен содержаться упрощенный XML-файл (UserDataXml), соответствующий XSD-схеме контракта, который мы использовали для генерации титула. В теле ответа будет xml титула покупателя.
+
+Для получения xsd-схемы вызовем метод :doc:`GetDocumentTypes` и найдем интересующие нас тип-функцию-версию. Для титула покупателя УПД в 820 формате возьмем следующие значения:
+- TypeNamedId - UniversalTransferDocument
+- Function - СЧФДОП
+- Version - utd820_05_01_01
+- IndexTitle=1 (титул покупателя)
+ 
+*Ответ метода GetDocumentTypes*:
+
+.. sourcecode:: json
+
+ "Name": "UniversalTransferDocument",
+ "Title": "УПД",
+ "SupportedDocflows": [
+    "External"
+ ],
+ "RequiresFnsRegistration": true,
+ "Functions": [
+    {
+        "Name": "СЧФДОП",
+        "Versions": [
+            {
+                "Version": "utd820_05_01_01",
+                "SupportsContentPatching": true,
+                "SupportsEncrypting": true,
+                "Titles": [
+                    {
+                        "Index": 1,
+                        "IsFormal": true,
+                        "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=1&contentType=TitleXsd",
+                        "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=1&contentType=UserContractXsd",
+                         "SignerInfo": {
+                            "SignerType": "ExtendedSigner",
+                            "ExtendedDocumentTitleType": "UtdSeller"
+                         },
+                          "MetadataItems": [...],
+                           "EncryptedMetadataItems": [...],
+                           "IsActual": true,
+                            "Workflows": [
+                                {
+                                    "Id": 10,
+                                    "IsDefault": true
+                                }
+                            ],
+                            "SupportsPredefinedRecipientTitle": false
+                        }
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   ]
+ 
+ Далее необходимо подготовить UserDataXml. Как это делается подробно описано для титула продавца.
+ 
+ После того, как UseerDataXml готов, можно запускать генерацию титула покупателя.
+ 
+ *Пример http-запроса*:
+
+.. sourcecode:: http
+
+    POST /GenerateTitleXml?boxId=13254c42-b4f7-4fd3-3324-0094aeb0f15&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_01&titleIndex=1 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+    Content-Type: application/xml; charset=utf-8
+ 
+ *Пример UserDataXml (тело запроса)*:
+
+.. sourcecode:: xml
+
