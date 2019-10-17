@@ -407,4 +407,34 @@ POST /ParseTitleXml?boxId=13254c42-b4f7-4fd3-3324-0094aeb0f15a&documentTypeNamed
 
 Все действия кроме подписания выполняются при помощи метода PostMessagePatch. Как сформировать подпись определяет разработчик интеграционного решения.
 
-Пример запроса для отправки документа
+*Пример http-запроса для отправки документа*
+
+.. sourcecode:: http
+
+POST /V3/PostMessagePatch HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+    Content-Type: application/json; charset=utf-8
+    
+ *Тело запроса*:
+ 
+ .. sourcecode:: xml
+ 
+ "BoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15",
+ "MessageId": "93bdfb88-7b80-484d-883d-765102ca5af5",
+ "RecipientTitles":
+ [
+ 	{
+ 		"ParentEntityId":"fc3c3811-3368-4e47-95f4-5334b9a42654",
+ 		"SignedContent":
+ 		{
+ 			"Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",
+
+ 		"Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"
+ 		}
+ 	}
+ ]
+ 
+ В результате получаем УПД с подписанными двумя титулами.
+ 
+ 
