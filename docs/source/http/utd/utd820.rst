@@ -448,6 +448,7 @@
 В результате получаем УПД с подписанными двумя титулами.
  
 В данной статье не рассмотрены примеры для генерации и отправки извещений о получении, а также запроса уточнения. С ними работа осуществляется также, как и для документов в 155 формате: 
+
 - для генерации xml-файла извещения необходимо использовать метод :doc:`../GenerateReceiptXml`,
 - для отправки извещения - метод :doc:`../PostMessagePatch` и структуру Receipt,
 - для отправки запроса уточнения - метод :doc:`../PostMessagePatch` и структуру CorrectionRequest
@@ -459,8 +460,8 @@
 Ниже приведены xsd-схемы для версии utd820_05_01_01_hyphen:
  
  - :download:`XSD-схема титула продавца <../../xsd/ON_NSCHFDOPPR_1_997_01_05_01_01.xsd>`; 
- - :download:`XSD-схема титула покупателя <../../xsd/ON_NSCHFDOPOK_1_997_02_05_01_01.xsd>`; 
- - :download:`XSD-схема упрощенного xml (UserDataXsd) для титула продавца <../../xsd/ON_NSCHFDOPPR_UserContract_820_05_01_01_hyphen.xsd>`; 
+ - :download:`XSD-схема титула покупателя <../../xsd/ON_NSCHFDOPPOK_1_997_02_05_01_01.xsd>`; 
+ - :download:`XSD-схема упрощенного xml (UserDataXsd) для титула продавца <../../xsd/ON_NSCHFDOPPR_UserContract_820_05_01_01_Hyphen.xsd>`; 
  - :download:`XSD-схема упрощенного xml (UserDataXsd) для титула покупателя <../../xsd/ON_NSCHFDOPPOK_UserContract_820_05_01_01.xsd>`.
  
  
