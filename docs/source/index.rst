@@ -47,7 +47,7 @@
    :maxdepth: 1
    :caption: Примеры использования
 
-   Как работать с документами 820 формата <http/utd/utd820.rst>
+   Как работать с документами 820 формата <howto/utd820.rst>
    Как авторизоваться в системе <howto/example_authorization>
    Как отправить счет-фактуру <howto/example_send_invoice>
    Как получить счет-фактуру <howto/example_receive_invoice>
