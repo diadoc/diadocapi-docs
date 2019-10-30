@@ -176,6 +176,7 @@
 *Пример получившегося титула (тело ответа)*:
 
 .. sourcecode:: xml
+
     <?xml version="1.0" encoding="windows-1251"?>
     <Файл ИдФайл="ON_NSCHFDOPPR_2BM-participantId2_2BM-participantId1_20191011_2ebfc880-6e31-4042-8302-c5201523fc3c" ВерсФорм="5.01" ВерсПрог="Diadoc 1.0">
        <СвУчДокОбор ИдОтпр="2BM-participantId1" ИдПол="2BM-7750370234-4012052808304878702630000000000">
@@ -243,6 +244,8 @@
 
 Рассмотрим пример третьего варианта, когда документ сразу подписывается и отправляется. Как сформировать подпись для документа определяет разработчик интеграционного решения.
 
+*Тело запроса PostMessage*
+
 .. sourcecode:: xml
 
     {
@@ -307,54 +310,54 @@
 
 .. sourcecode:: json
 
- "Name": "UniversalTransferDocument",
- "Title": "УПД",
- "SupportedDocflows": [
-    "External"
- ],
- "RequiresFnsRegistration": true,
- "Functions": [
-    {
-        "Name": "СЧФДОП",
-        "Versions": [
-            {
-                "Version": "utd820_05_01_01",
-                "SupportsContentPatching": true,
-                "SupportsEncrypting": true,
-                "Titles": [
-                    {
-                        "Index": 1,
-                        "IsFormal": true,
-                        "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=1&contentType=TitleXsd",
-                        "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=1&contentType=UserContractXsd",
-                         "SignerInfo": {
-                            "SignerType": "ExtendedSigner",
-                            "ExtendedDocumentTitleType": "UtdSeller"
-                         },
-                          "MetadataItems": [...],
-                           "EncryptedMetadataItems": [...],
-                           "IsActual": true,
-                            "Workflows": [
-                                {
-                                    "Id": 10,
-                                    "IsDefault": true
-                                }
-                            ],
-                            "SupportsPredefinedRecipientTitle": false
-                        }
-                     }
-                  ]
-               }
-            ]
-         }
-      ]
-   ]
+     "Name": "UniversalTransferDocument",
+     "Title": "УПД",
+     "SupportedDocflows": [
+        "External"
+     ],
+     "RequiresFnsRegistration": true,
+     "Functions": [
+        {
+            "Name": "СЧФДОП",
+            "Versions": [
+                {
+                    "Version": "utd820_05_01_01",
+                    "SupportsContentPatching": true,
+                    "SupportsEncrypting": true,
+                    "Titles": [
+                        {
+                            "Index": 1,
+                            "IsFormal": true,
+                            "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=1&contentType=TitleXsd",
+                            "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=1&contentType=UserContractXsd",
+                             "SignerInfo": {
+                                "SignerType": "ExtendedSigner",
+                                "ExtendedDocumentTitleType": "UtdSeller"
+                             },
+                              "MetadataItems": [...],
+                               "EncryptedMetadataItems": [...],
+                               "IsActual": true,
+                                "Workflows": [
+                                    {
+                                        "Id": 10,
+                                        "IsDefault": true
+                                    }
+                                ],
+                                "SupportsPredefinedRecipientTitle": false
+                            }
+                         }
+                      ]
+                   }
+                ]
+             }
+          ]
+       ]
  
- Далее необходимо подготовить UserDataXml. Как это делается подробно описано для титула продавца.
+Далее необходимо подготовить UserDataXml. Как это делается подробно описано для титула продавца.
  
- После того, как UserDataXml готов, можно запускать генерацию титула покупателя.
+После того, как UserDataXml готов, можно запускать генерацию титула покупателя.
  
- *Пример http-запроса*:
+*Пример http-запроса*:
 
 .. sourcecode:: http
 
@@ -420,7 +423,7 @@
         Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
         Content-Type: application/json; charset=utf-8
     
- *Тело запроса*:
+*Тело запроса*:
  
  .. sourcecode:: xml
  
@@ -439,8 +442,7 @@
         }
      ]
  
- В результате получаем УПД с подписанными двумя титулами.
- 
+В результате получаем УПД с подписанными двумя титулами.
  
 В данной статье не рассмотрены примеры для генерации и отправки извещений о получении, а также запроса уточнения. С ними работа осуществляется также, как и для документов в 155 формате: 
 - для генерации xml-файла извещения необходимо использовать метод :http:`GenerateReceiptXml`,
