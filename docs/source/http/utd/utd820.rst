@@ -458,9 +458,9 @@
  
 Ниже приведены xsd-схемы для версии utd820_05_01_01_hyphen:
  
- - :download:`XSD-схема титула продавца <../xsd/ON_NSCHFDOPPR_1_997_01_05_01_01.xsd>`; 
- - :download:`XSD-схема титула покупателя <../xsd/ON_NSCHFDOPOK_1_997_01_05_01_01.xsd>`; 
- - :download:`XSD-схема упрощенного xml (UserDataXsd) для титула продавца <../xsd/ON_NSCHFDOPPR_UserContract_820_05_01_01_hyphen.xsd>`; 
- - :download:`XSD-схема упрощенного xml (UserDataXsd) для титула покупателя <../xsd/ON_NSCHFDOPPOK_UserContract_820_05_01_01.xsd>`;
+ - :download:`XSD-схема титула продавца <../../xsd/ON_NSCHFDOPPR_1_997_01_05_01_01.xsd>`; 
+ - :download:`XSD-схема титула покупателя <../../xsd/ON_NSCHFDOPOK_1_997_01_05_01_01.xsd>`; 
+ - :download:`XSD-схема упрощенного xml (UserDataXsd) для титула продавца <../../xsd/ON_NSCHFDOPPR_UserContract_820_05_01_01_hyphen.xsd>`; 
+ - :download:`XSD-схема упрощенного xml (UserDataXsd) для титула покупателя <../../xsd/ON_NSCHFDOPPOK_UserContract_820_05_01_01.xsd>`;
  
  
