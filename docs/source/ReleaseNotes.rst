@@ -1,6 +1,14 @@
 ﻿История изменений API
 =====================
 
+25.11.2019
+----------
+SDK: `C# 1.85.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.85.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Выпущен метод :doc:`http/GetMyCertificates`, который позволяет получить информацию о сертификатах сотрудника.
+
+
 30.09.2019
 ----------
 SDK: `C# 1.84.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.84.0>`__  | `Java 2.19.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.19.0>`__ | `C++ 1.80.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.80.0>`__

@@ -23,6 +23,7 @@ HTTP-интерфейс
    http/UpdateEmployee
    http/UpdateMyUser
    http/UpdateSubscriptions
+   http/GetMyCertificates
 
 Структуры данных
 ----------------
