@@ -48,3 +48,55 @@ GetMyCertificates
 Структура *CertificateInfoV2* содержит набор полей из публичной части сертификата сотрудника, таких как отпечаток, тип сертификата (железный носитель, Контур.Сертификат или DSS-сертификат), информация о субъектах.
 
 Параметр *IsDefault* означает, выбран ли сертификат для работы по умолчанию в организации сотрудника. Например, от этого зависит автоматическое подписание извещений о получений в веб-интерфейсе Диадока.
+
+Примеры ответов
+---------------
+
+::
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json; charset=utf-8
+
+    {
+        "Certificates": []
+    }
+
+::
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json; charset=utf-8
+
+    {
+        "Certificates": [
+            {
+                "Thumbprint": "6B************************************D7",
+                "Type": "Dss",
+                "ValidFrom": 637033581700000000,
+                "ValidTo": 637428429700000000,
+                "PrivateKeyValidFrom": 637033581700000000,
+                "PrivateKeyValidTo": 637428429700000000,
+                "OrganizationName": "ООО Васильки",
+                "Inn": "60*******43",
+                "UserFirstName": "Петр",
+                "UserMiddleName": "Алексеевич",
+                "UserLastName": "Иванов",
+                "UserShortName": "Иванов П. А.",
+                "IsDefault": false
+            },
+            {
+                "Thumbprint": "BA************************************81",
+                "Type": "Token",
+                "ValidFrom": 636965170070000000,
+                "ValidTo": 637360882070000000,
+                "PrivateKeyValidFrom": 636965170060000000,
+                "PrivateKeyValidTo": 637360882060000000,
+                "OrganizationName": "ООО Ромашки",
+                "Inn": "62*******14",
+                "UserFirstName": "Петр",
+                "UserMiddleName": "Алексеевич",
+                "UserLastName": "Иванов",
+                "UserShortName": "Иванов П. А.",
+                "IsDefault": true
+            }
+        ]
+    }
