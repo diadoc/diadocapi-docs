@@ -13,5 +13,5 @@ GetDocflowEventsResponseV3
 Структура представляет результат работы метода :doc:`../http/GetDocflowEvents_V3`.
 
 -  *TotalCount* — количество всех событий, удовлетворяющих запросу.
--  :doc:`TotalCountType <TotalCountType>` — указано ли точное количество *TotalCount* или подсчет был ограничен указанным числом.
+-  :doc:`TotalCountType <TotalCountType>` — указано ли точное количество *TotalCount* или подсчет был ограничен соответствующим числом.
 -  :doc:`Events <DocflowEventV3>` — список событий.
