@@ -1,6 +1,15 @@
 ﻿История изменений API
 =====================
 
+
+12.12.2019
+----------
+SDK: `C# 1.85.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.85.3>`__  | `Java 2.19.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.19.1>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Методы :doc:`http/GetNewEvents`, :doc:`http/GetDocflowEvents`, :doc:`http/GetDocflowEvents_V3` и :doc:`http/GetForwardedDocumentEvents` теперь могут возвращать неточное количество событий `TotalCount`.
+
+
 25.11.2019
 ----------
 SDK: `C# 1.85.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.85.0>`__
