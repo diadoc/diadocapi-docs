@@ -32,6 +32,7 @@ HTTP метод: **POST**
     {
         required int32 TotalCount = 1;
         repeated ForwardedDocumentEvent Events = 2;
+        required TotalCountType TotalCountType = 3;
     }
 
     message ForwardedDocumentEvent
