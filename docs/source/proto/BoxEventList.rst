@@ -12,4 +12,4 @@ BoxEventList
 
 Структура данных *BoxEventList* представляет собой список событий :doc:`BoxEvent`, возвращаемый методом :doc:`../http/GetNewEvents`. 
 
-Поле *BoxEventList.TotalCount* содержит количество событий, удовлетворяющих запросу. Поле *BoxEventList.TotalCountType* типа :doc:`TotalCountType` указывает, точно ли посчитан *TotalCount* или подсчет был прерван после определенного значения.
+Поле *BoxEventList.TotalCount* содержит количество событий, удовлетворяющих запросу. Поле *BoxEventList.TotalCountType* типа :doc:`TotalCountType` указывает, точно ли посчитан *TotalCount* или подсчет был ограничен после соответствующего значения.
