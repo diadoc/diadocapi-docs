@@ -23,7 +23,7 @@ GetDepartment
 
 **Пример запроса с использованием C# SDK**:
 
-*Внимание!!* В SDK соответсвующий метод имеет название *GetDepartmentByFullId*. Метод *GetDepartment* отвечает за вызов к другому методу API :doc:`../../http/GetDepartment`.
+*Внимание!* В SDK соответсвующий метод имеет название *GetDepartmentByFullId*. Метод *GetDepartment* отвечает за вызов к другому методу API :doc:`../../http/GetDepartment`.
 
 .. code-block:: csharp
 
