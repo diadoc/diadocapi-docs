@@ -111,9 +111,7 @@
    "УКД", "UniversalCorrectionDocument", "- приказ №189", "- КСЧФ
    - ДИС
    - КСЧФДИС", "УКД"
-   "Исправление УКД", "UniversalCorrectionDocument Revision", "- приказ №189", "- КСЧФ
-   - ДИС
-   - КСЧФДИС", "УКД"
+
 
 Возможные форматы
 -----------------
@@ -195,10 +193,10 @@
    - utd_05_02_01 (приказ №155)
    - utd820_05_01_01 (приказ №820)
    - utd820_05_01_01_Hyphen (приказ №820)"
-   "УКД", "UniversalCorrectionDocument", "- ucd_05_01_01
+   "УКД", "UniversalCorrectionDocument", "- ucd_05_01_01 (приказ №189)
    - ucd_05_01_02 (приказ №189)
    - ucd_05_02_01 (приказ №189)"
-   "Исправление УКД", "UniversalCorrectionDocumentRevision", "- ucd_05_01_01
+   "Исправление УКД", "UniversalCorrectionDocumentRevision", "- ucd_05_01_01 (приказ №189)
    - ucd_05_01_02 (приказ №189)
    - ucd_05_02_01 (приказ №189)"
 
