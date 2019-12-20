@@ -1,8 +1,6 @@
 DocumentInfoV3
 ==============
 
-.. warning:: Эта версия контракта — экспериментальная и может измениться.
-
 .. code-block:: protobuf
 
     message DocumentInfoV3
@@ -53,8 +51,6 @@ DocumentInfoV3
 DocumentLetterInfo
 ------------------
 
-.. warning:: Эта версия контракта — экспериментальная и может измениться.
-
 .. code-block:: protobuf
 
     message DocumentLetterInfo
@@ -74,8 +70,6 @@ DocumentLetterInfo
 
 DocumentDraftInfo
 -----------------
-
-.. warning:: Эта версия контракта — экспериментальная и может измениться.
 
 .. code-block:: protobuf
 
@@ -97,8 +91,6 @@ DocumentDraftInfo
 DocumentTemplateInfo
 --------------------
 
-.. warning:: Эта версия контракта — экспериментальная и может измениться.
-
 .. code-block:: protobuf
 
     message DocumentTemplateInfo
@@ -106,17 +98,19 @@ DocumentTemplateInfo
         required DocumentParticipants LetterParticipants = 1;
         repeated string TransformedToLetterIds = 2;
         repeated TemplateTransformationInfo TemplateTransformationInfos = 3;
+        optional TemplateRefusalInfo TemplateRefusalInfo = 4;
     }
 
 Структура содержит свойства, присущие только документам в шаблоне
 
 - :doc:`LetterParticipants <DocumentParticipants>` - информация об отправителе и получателе письма, которое можно создать на основе данного шаблона
-- *TransformedToLetterIds* - список идентификаторов писем, созданных на основе данного шаблона и содержащих данный документ
+- :ref:`TemplateTransformationInfo <template-transformation-info>` - список идентификаторов писем, созданных на основе данного шаблона и содержащих данный документ
+- :ref:`TemplateRefusalInfo <template-refusal-info>` - информация об отклонении или отзыве шаблона
+
+.. _template-transformation-info:
 
 TemplateTransformationInfo
---------------------------
-
-.. warning:: Эта версия контракта — экспериментальная и может измениться.
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: protobuf
 
@@ -127,8 +121,30 @@ TemplateTransformationInfo
         optional string AuthorUserId = 3;
     }
 
-Структура содержит информацию о документе, созданном на основе шаблона
+Структура содержит информацию о документе, созданном на основе шаблона.
 
 - *TransformationId* - идентификатор трансформации
 - :doc:`TransformedToLetterId <DocumentId>` - идентификаторы письма и документа, созданного на основе шаблона
 - *AuthorUserId* - идентификатор пользователя, который создал документ из шаблона
+
+.. _template-refusal-info:
+
+TemplateRefusalInfo
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: protobuf
+
+    message TemplateRefusalInfo
+    {
+        required string BoxId = 1;
+        optional string AuthorUserId = 2;
+        optional string AuthorName = 3;
+        optional string Comment = 4;
+    }
+
+Структура содержит информацию об отклонении или отзыве шаблона.
+
+- *BoxId* - идентификатор ящика, на стороне которого выполнено отклонение или отзыв.
+- *AuthorUserId* - идентификатор пользователя, который выполнил отклонение или отзыв.
+- *AuthorName* - ФИО пользователя, который выполнил отклонение или отзыв.
+- *Comment* - комментарий, который был указан при отклонении или отзыве.

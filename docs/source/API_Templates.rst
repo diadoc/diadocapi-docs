@@ -13,8 +13,9 @@ HTTP-интерфейс
 
    http/GetTemplate
    http/PostTemplate
+   http/PostTemplatePatch
    http/TransformTemplateToMessage
-   
+
 
 Структуры данных
 ----------------
@@ -27,6 +28,7 @@ HTTP-интерфейс
    proto/DocumentTransformation
    proto/Template
    proto/TemplateDocumentAttachment
+   proto/TemplatePatchToPost
    proto/TemplateToPost
    proto/TemplateTransformationToPost
    proto/UnsignedContent
