@@ -30,6 +30,7 @@ Entity
         repeated string Labels = 25;
         optional string Version = 26;
         optional TemplateTransformationInfo TemplateTransformationInfo = 27;
+        optional TemplateRefusalInfo TemplateRefusalInfo = 28;
     }
 
     enum EntityType {
@@ -91,10 +92,11 @@ Entity
         Edition = 71;
         DeletionRestoration = 72;
         TemplateTransformation = 73;
+        TemplateRefusal = 74;
         // Неизвестные типы должны обрабатываться как Nonformalized
     }
 
-Структура данных *Entity* представляет одну сущность, входящую в сообщение или в дополнение к сообщению:
+Структура данных *Entity* представляет одну сущность, входящую в сообщение или в дополнение к сообщению. Содержится в структурах :doc:`Message` и :doc:`MessagePatch`.
 
 -  *EntityType* определяет тип сущности; возможные варианты:
 
@@ -197,6 +199,8 @@ Entity
    -  *DeletionRestoration* (восстановление удалённого документа).
 
    -  *TemplateTransformation* (информация о трансформации)
+   
+   -  *TemplateRefusal* (информация об отклонении или отзыве шаблона)
 
 -  *Content* - содержимое сущности (подробнее см. описание структуры :doc:`Content`).
    
@@ -260,5 +264,6 @@ Entity
 
 - *Version* - идентификатор версии документа.
 
-- *TemplateTransformationInfos* - содержит информацию о документе. созданном на основе шаблона. Будет заполняться для AttachmentType=TemplateTransformation.
+- *TemplateTransformationInfos* - содержит информацию о документе, созданном на основе шаблона. Будет заполняться для AttachmentType=TemplateTransformation.
 
+- :doc:`TemplateRefusalInfo` - содержит информацию об отклонении или отзыве шаблона. Будет заполняться для AttachmentType=TemplateRefusal.
