@@ -1,6 +1,21 @@
 ﻿История изменений API
 =====================
 
+
+24.12.2019
+----------
+`Java 3.0.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.21.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Произошёл глобальный рефакторинг Java SDK, в котором внутреннее устройство библиотеки было переработано, обновились зависимости и произошли некоторые breacking changes.
+- Появилась поддержка подписания по ГОСТ 2012 в CertificateHelper. Библиотека сама определяет ГОСТ сертификата, и подписывает соответствующим алгоритмом.
+- Произошло изменение контракта ошибок, сейчас любая ошибка оборачивается в тип DiadocSdkException
+- Появились доменные клиенты, обратиться к которым можно через корневой объект DiadocApi. Методы были перемещены по соответсвующим доменным клиентам, а в старых методах были сделаны перевызовы. Все старые методы помеченны @Deprecated, и будут удалены в ближайшее время.
+- Breacking changes:
+    - Тип GeneratedFile был перемещён в пакет Diadoc.Api.httpClient;
+    - Тип DiadocErrorException был переименоват в DiadocException
+    - Тип DocumentsFilter был перемещён в пакет Diadoc.Api.document, и был изменён его интерфейс. Убрали публиные поля, на их месте появились fluent setters.
+
 24.12.2019
 ----------
 SDK: `C# 1.87.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.87.0>`__  | `Java 2.21.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.21.0>`__ | `C++  1.82.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.82.0>`__
@@ -9,7 +24,6 @@ SDK: `C# 1.87.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/version
 - Добавлен метод :doc:`http/PostTemplatePatch`, который позволяет отправлять дополнения к шаблонам документов.
 - Добавлена возможность с помощью этого метода и структуры :ref:`TemplateRefusalAttachment <template-refusal-attachment>` выполнить отзыв или отклонение шаблона.
 - В структуры :doc:`proto/Entity message` и :ref:`DocumentTemplateInfo <document-template-info>` добавлена информация об отзыве и отклонении шаблона.
-
 
 13.12.2019
 ----------
