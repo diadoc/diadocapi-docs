@@ -49,7 +49,7 @@
                                                     <xs:simpleType>
                                                         <xs:restriction base="xs:string">
                                                             <xs:minLength value="1" />
-                                                            <xs:maxLength value="200" />
+                                                            <xs:maxLength value="255" />
                                                         </xs:restriction>
                                                     </xs:simpleType>
                                                 </xs:attribute>
