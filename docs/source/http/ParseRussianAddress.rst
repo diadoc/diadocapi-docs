@@ -1,6 +1,8 @@
 ParseRussianAddress
 ===================
 
+.. warning:: Метод более не поддерживается и не рекомендуется к использованию
+
 Имя ресурса: **/ParseRussianAddress**
 
 HTTP метод: **GET**
