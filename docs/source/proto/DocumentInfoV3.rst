@@ -23,6 +23,7 @@ DocumentInfoV3
         optional DocumentDraftInfo DraftInfo = 16;
         optional DocumentTemplateInfo TemplateInfo = 17;
         optional Documents.Origin Origin = 18;
+        optional string EditingSettingId = 19 [default = ""];
     }
 
 Структура *DocumentInfoV3* представляет данные документа, которые не меняются в течение его жизненного цикла (метаданные). Как часть структуры :doc:`DocumentWithDocflowV3`, возвращается методами :doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3`.
@@ -45,6 +46,7 @@ DocumentInfoV3
 - :ref:`DraftInfo <document-draft-info>` - информация о черновике, заполянется когда MessageType = Draft
 - :ref:`TemplateInfo <document-template-info>` - информация о шаблоне, заполянется когда MessageType = Template
 - :doc:`Origin` - ссылка на письмо, на основе которого был создан документ
+- *EditingSettingId* - идентификатор настройки редактирования содержимого документа. Наличие настройки означает, что в содержимом файла может отсутствовать контент, редактирование которого разрешено этой настройкой.
 
 .. _document-letter-info:
 
