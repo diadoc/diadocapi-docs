@@ -26,7 +26,7 @@ Message
         optional bool PacketIsLocked = 20 [default = false];
         required LockMode LockMode = 21;
         required MessageType MessageType = 22;
-        optional TemplateTransformedToLetter TemplateTransformedToLetter = 23;
+        optional TemplateToLetterTransformationInfo TemplateToLetterTransformationInfo = 23;
     }
 
 
@@ -76,4 +76,4 @@ Message
 
 -  *MessageType* - тип сообщения :doc:`../proto/MessageType`.
 
--  *TemplateTransformedToLetter* - содержит информацию о документе, созданном на основе шаблона :doc:`../proto/TemplateTransformedToLetter`.
+-  *TemplateToLetterTransformationInfo* - содержит информацию о документе, который уже создан или будет создан на основе шаблона :doc:`../proto/TemplateToLetterTransformationInfo`.
