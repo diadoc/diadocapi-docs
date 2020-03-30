@@ -1,11 +1,11 @@
-TemplateTransformedToLetter
-============================
+TemplateToLetterTransformationInfo
+==================================
 
 Cодержит информацию о документе, созданном на основе шаблона.
 
 .. code-block:: protobuf
 
-    message TemplateTransformedToLetter
+    message TemplateToLetterTransformationInfo
     {
         required string LetterFromBoxId = 1;
         required string LetterToBoxId = 2;
