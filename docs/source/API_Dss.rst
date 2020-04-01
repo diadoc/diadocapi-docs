@@ -14,8 +14,8 @@
     var request = new DssSignRequest
     {
         Files = {
-            new DssSignFile { FileName = "file1.txt", Content = new Content_v3 { NameOnShelf = nameOnShelf1 } },
-            new DssSignFile { FileName = "file2.txt", Content = new Content_v3 { NameOnShelf = nameOnShelf2 } }
+            new DssSignFile { FileName = "file1.txt", Content = new Content_v3 { NameOnShelf = "__userId__/" + nameOnShelf1 } },
+            new DssSignFile { FileName = "file2.txt", Content = new Content_v3 { NameOnShelf = "__userId__/" + nameOnShelf2 } }
         }
     };
 
