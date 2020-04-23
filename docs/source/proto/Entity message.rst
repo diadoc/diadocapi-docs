@@ -87,7 +87,7 @@ Entity
         MoveDocument = 65;
         ResolutionRouteAssignment = 66;
         ResolutionRouteRemoval = 67;
-        // 68 - Зарезервировано
+        Title = 68;
         Cancellation = 69;
         Edition = 71;
         DeletionRestoration = 72;
@@ -191,6 +191,8 @@ Entity
    -  *ResolutionRouteAssignment* (информация о запуске документа по маршруту согласования).
 
    -  *ResolutionRouteRemoval* (информация о снятии документа с маршрута согласования).
+   
+   -  *Title* (титул документа; возвращается для всех вновь добавляемых типов документов, для сохранения обратной совместимости для первых титулов типов от Invoice до UniversalCorrectionDocumentRevision возвращается соответствующее значение),
 
    -  *Cancellation* (информация об отмене сущности, которая указана родительской по отношению к данной).
 
