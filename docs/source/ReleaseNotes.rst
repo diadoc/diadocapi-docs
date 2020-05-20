@@ -1,6 +1,13 @@
 ﻿История изменений API
 =====================
 
+20.05.2020
+----------
+SDK: `C# 2.2.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.2.0>`__  | `Java 3.2.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.2.0>`__ | `C++  1.83.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.83.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Добавлено поле SupportsAmendmentRequest в ответ метода :doc:`http/GetDocumentTypes`
+
 24.01.2020
 ----------
 SDK: `C# 2.0.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.0.0>`__

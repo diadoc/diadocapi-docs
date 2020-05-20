@@ -55,6 +55,7 @@ DocumentVersion
         required bool SupportsContentPatching = 2;
         required bool SupportsEncrypting = 3;        
         required bool SupportsPredefinedRecipientTitle = 7;
+        required bool SupportsAmendmentRequest = 8;
         repeated DocumentTitle Titles = 4;
         required bool IsActual = 5;
         repeated DocumentWorkflow Workflows = 6;
@@ -64,6 +65,7 @@ DocumentVersion
 -  *SupportsContentPatching* - поддерживается патчинг
 -  *SupportsEncrypting* - поддерживается отправка зашифрованных документов
 -  *SupportsPredefinedRecipientTitle* - поддерживается отправка предопределенного титула. Подробнее здесь: :doc:`../howto/example_predefined_recipient_title`.
+-  *SupportsAmendmentRequest* - поддерживается отправка запроса на уточнение.
 -  :ref:`Titles <document-title>` - описания титулов документа
 -  *IsActual* - версия актуальна
 -  :doc:`Workflows <DocumentWorkflow>` - виды документооборота
