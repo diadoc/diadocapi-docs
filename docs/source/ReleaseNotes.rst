@@ -6,7 +6,9 @@
 SDK: `C# 2.2.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.2.0>`__  | `Java 3.2.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.2.0>`__ | `C++  1.83.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.83.0>`__
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Добавлено поле SupportsAmendmentRequest в ответ метода :doc:`http/GetDocumentTypes`
+- Добавлено поле SupportsAmendmentRequest в ответ метода :doc:`http/GetDocumentTypes`
+- Добавлены новые значения в контракты :doc:`http/utd/ExtendedSignerDetailsV2` и :doc:`proto/DocumentTitleType` для поддержки версий формата приказа №423.
+- Добавлены новые значения SignerPowers и SignerStatus в контракты :doc:`proto/utd/ExtendedSigner` и :doc:`proto/utd/ExtendedSignerDetailsToPost`
 
 24.01.2020
 ----------
