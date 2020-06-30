@@ -1,5 +1,12 @@
 ﻿История изменений API
 =====================
+30.06.2020
+----------
+SDK: `C# 2.3.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.3.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Docflow V3 добавлен в COM Api
+
 24.01.2020
 ----------
 SDK: `Java 3.2.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.2.1>`__
