@@ -33,6 +33,7 @@ HTTP-интерфейс
    http/GetDocuments
    http/GetDocumentsByMessageId
    http/GetForwardedDocumentEvents
+   http/GetResolutionRoutesForOrganization
    http/GenerateForwardedDocumentPrintForm
    http/GetForwardedEntityContent
    http/GetForwardedDocuments
@@ -87,6 +88,7 @@ HTTP-интерфейс
    proto/Resolution
    proto/ResolutionRequest
    proto/ResolutionRequestDenial
+   proto/ResolutionRoute
    proto/ResolutionStatus
    proto/RevocationRequestInfo   
    proto/RoamingNotification
