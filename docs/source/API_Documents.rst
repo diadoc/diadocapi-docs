@@ -21,6 +21,7 @@ HTTP-интерфейс
    http/GenerateAcceptanceCertificateXmlForSeller
    http/GenerateDocumentProtocol
    http/GenerateDocumentZip
+   http/GenerateForwardedDocumentPrintForm
    http/GenerateForwardedDocumentProtocol
    http/GenerateReceiptXml
    http/GeneratePrintForm
@@ -34,7 +35,6 @@ HTTP-интерфейс
    http/GetDocumentsByMessageId
    http/GetForwardedDocumentEvents
    http/GetResolutionRoutesForOrganization
-   http/GenerateForwardedDocumentPrintForm
    http/GetForwardedEntityContent
    http/GetForwardedDocuments
    http/GetGeneratedPrintForm
