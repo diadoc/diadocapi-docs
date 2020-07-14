@@ -1,5 +1,12 @@
 ﻿История изменений API
 =====================
+14.07.2020
+----------
+SDK: `C# 2.5.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.5.0>`__  | `Java 3.3.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.3.0>`__ | `C++  1.84.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.84.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Добавлена поддержка подписаня сертификатми МЭП в метот :doc:`http/DssSign`
+
 30.06.2020
 ----------
 SDK: `C# 2.3.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.3.0>`__
