@@ -11,6 +11,9 @@ GetOrganizationsByInnListRequest
         required Organization Organization = 1;
         optional CounteragentStatus CounteragentStatus = 2 [default = UnknownCounteragentStatus];
         optional sfixed64 LastEventTimestampTicks = 3;
+       	optional string MessageFromCounteragent = 4;
+    	optional string MessageToCounteragent = 5;
+        optional DocumentId InvitationDocumentId = 6;
     }
 
     message GetOrganizationsByInnListResponse {
@@ -38,3 +41,9 @@ GetOrganizationsByInnListRequest
 -  *CounteragentStatus* - статус контрагента для данной организации
 
 -  *LastEventTimestampTicks* - :doc:`метка времени <Timestamp>` последнего события из истории взаимодействия с данным контрагентом
+
+-  *MessageFromCounteragent* - сообщение пришедшее от контрагента вместе с приглашением
+
+-  *MessageToCounteragent* - сообщение отправленное контрагенту вместе с приглашением
+
+-  *InvitationDocumentId* - :doc:`DocumentId` идентификатор документа пришедший вместе с приглашением

@@ -1,5 +1,12 @@
 ﻿История изменений API
 =====================
+27.07.2020
+----------
+SDK: `C# 2.6.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.6.0>`__  | `Java 3.4.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.4.0>`__ | `C++  1.85.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.85.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+В метод :doc:`http/GetOrganizationsByInnList` добавлена инфомация о приглашении контрагента 
+
 14.07.2020
 ----------
 SDK: `C# 2.5.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.5.0>`__  | `Java 3.3.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.3.0>`__ | `C++  1.84.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.84.0>`__
