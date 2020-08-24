@@ -18,6 +18,7 @@ TemplateDocumentAttachment
         optional bool NeedRecipientSignature = 10 [default = false];
         optional PredefinedRecipientTitle PredefinedRecipientTitle = 11;
         optional bool RefusalDisabled = 12 [default = false];
+        repeated CustomDataItem CustomData = 13;
     }
 
     message PredefinedRecipientTitle {
@@ -47,3 +48,5 @@ TemplateDocumentAttachment
 - *PredefinedRecipientTitle* - необязательное поле для данных о титуле получателя. Предназначено для двухтитульных документов с разрешённой для действия версией. Подробнее о функционале можно узнать здесь: :doc:`../howto/example_predefined_recipient_title`.
 
 - *RefusalDisabled* - необязательный признак, управляющий возможностью отклонять шаблон на стороне получателя. Если выставить при знак в true, то у получателя шаблона не будет возможности отклонить его.
+
+- *CustomData* - список пар вида "ключ-значение", содержащих произвольные данные по документу. Каждая пара задается структурой :doc:`CustomDataItem`.
