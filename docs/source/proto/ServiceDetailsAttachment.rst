@@ -9,9 +9,9 @@ ServiceDetailsAttachment
         optional string Comment = 3;
         repeated DocumentId InitialDocumentIds = 5;
         repeated DocumentId SubordinateDocumentIds = 6;
-        optional string CustomDocumentId = 7;
-        optional string DocumentDate = 8;
-        optional string DocumentNumber = 9;
+        optional string DocumentDate = 7;
+        optional string DocumentNumber = 8;
+        optional string CustomDocumentId = 9;
         optional bool NeedReceipt = 10 [default = false];
         repeated CustomDataItem CustomData = 11;
     }
