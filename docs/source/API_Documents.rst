@@ -78,9 +78,11 @@ HTTP-интерфейс
    proto/DocumentsMoveOperation
    proto/DraftToSend
    proto/ForwardedDocument
+   proto/LastOuterDocflow
    proto/NonformalizedAttachment
    proto/NonformalizedDocumentMetadata
    proto/Official   
+   proto/OuterDocflowInfo
    proto/PrepareDocumentsToSignRequest
    proto/PrepareDocumentsToSignResponse
    proto/PriceListAttachment
