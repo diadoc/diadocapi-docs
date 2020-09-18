@@ -1,4 +1,4 @@
-OuterDocflowV3
+OuterDocflow
 ================
 .. code-block:: protobuf
 
