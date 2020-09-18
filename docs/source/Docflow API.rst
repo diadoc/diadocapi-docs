@@ -86,6 +86,8 @@ HTTP-интерфейс версии 3 (экспериментальный)
    proto/InvoiceCorrectionRequestDocflow
    proto/InvoiceDocumentInfo
    proto/OutboundInvoiceDocflow
+   proto/OuterDocflow
+   proto/OuterDocflowEntities
    proto/PriceListDocumentInfo
    proto/ReceiptDocflow
    proto/RecipientSignatureDocflow
