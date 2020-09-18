@@ -79,6 +79,7 @@ Document
         required LockMode LockMode = 74;
         required SenderReceiptMetadata SenderReceiptMetadata = 75;
         required string Version = 76;
+        repeated LastOuterDocflow LastOuterDocflows = 77;
     }
 
     enum RoamingNotificationStatus {
@@ -249,6 +250,8 @@ Document
 - :doc:`SenderReceiptMetadata <SenderReceiptMetadata>` - свойство, отвечающее за состояние извещения о получении титула получателя.
 
 - *Version* - идентификатор версии документа.
+
+- :doc:`LastOuterDocflows <LastOuterDocflow>` - набор состояний по внешним документооборотам, например, информация о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК".
 
 .. warning::
     Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata*, *HasCustomPrintForm* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
