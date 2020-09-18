@@ -13,16 +13,18 @@ RevocationDocflowV3
         required string InitiatorBoxId = 4;
         required Documents.RevocationStatus RevocationStatus = 5;
         optional ResolutionEntitiesV3 ResolutionEntities = 6;
+        repeated OuterDocflowEntities OuterDocflowEntities  = 7;
     }
 
 Структура представляет информацию об аннулировании документа. Содержится в структуре :doc:`DocflowV3`.
 
 - *IsFinished* - признак того, что документооборот по аннулированию завершен, т.е. не требует дальнейших действий.
-- :ref:`RevocationRequest <revocation-request-docflow>` - информация о предложении об аннулировании
-- :ref:`RevocationResponse <revocation-response-docflow>` - информация об ответе на предложение аннулирования
+- :ref:`RevocationRequest <revocation-request-docflow>` - информация о предложении об аннулировании.
+- :ref:`RevocationResponse <revocation-response-docflow>` - информация об ответе на предложение аннулирования.
 - *InitiatorBoxId* - идентификатор ящика организации, которая инициировала аннулирование документа.
-- :doc:`RevocationStatus` - статус аннулирования документа
-- :doc:`ResolutionEntities <ResolutionEntitiesV3>` - информация о сущностях, относящихся к согласованию аннулирования
+- :doc:`RevocationStatus` - статус аннулирования документа.
+- :doc:`ResolutionEntities <ResolutionEntitiesV3>` - информация о сущностях, относящихся к согласованию аннулирования.
+- :doc:`OuterDocflowEntities <OuterDocflowEntities>` - информация о сущностях, относящихся к внешнему документообороту по аннулированию.
 
 .. _revocation-request-docflow:
 

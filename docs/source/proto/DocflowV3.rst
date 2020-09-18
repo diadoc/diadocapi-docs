@@ -17,6 +17,8 @@ DocflowV3
         optional ReceiptDocflowV3 SenderReceipt = 8;
         optional ResolutionDocflowV3 Resolution = 9;
         optional ResolutionEntitiesV3 ResolutionEntities = 10;
+        repeated OuterDocflow OuterDocflows = 12;
+        repeated OuterDocflowEntities OuterDocflowEntities = 13;
     }
 
 Структура представляет состояние документооборота для одного документа.
@@ -30,4 +32,6 @@ DocflowV3
 - :doc:`Revocation <RevocationDocflowV3>` - информация об аннулировании;
 - :doc:`SenderReceipt <ReceiptDocflowV3>` - информация об извещении о получении титула получателя для двухтитульного документа;
 - :doc:`Resolution <ResolutionDocflowV3>` - информация об актуальном статусе согласования документа/аннулировании;
-- :doc:`ResolutionEntities <ResolutionEntitiesV3>` - информация о сущностях, относящихся к согласованию документа.
+- :doc:`ResolutionEntities <ResolutionEntitiesV3>` - информация о сущностях, относящихся к согласованию документа;
+- :doc:`OuterDocflows <OuterDocflow>` - информация о состоянии внешнего документооборота по документу/аннулированию, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК";
+- :doc:`OuterDocflowEntities <OuterDocflowEntities>` - информация о сущностях, относящихся к внешнему документообороту по документу.

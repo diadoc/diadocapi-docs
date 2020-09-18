@@ -31,6 +31,7 @@ Entity
         optional string Version = 26;
         optional TemplateTransformationInfo TemplateTransformationInfo = 27;
         optional TemplateRefusalInfo TemplateRefusalInfo = 28;
+        optional OuterDocflowInfo OuterDocflow = 29;   // заполняется только для вложений с типом AttachmentType.OuterDocflow
     }
 
     enum EntityType {
@@ -93,6 +94,7 @@ Entity
         DeletionRestoration = 72;
         TemplateTransformation = 73;
         TemplateRefusal = 74;
+        OuterDocflow = 75;
         // Неизвестные типы должны обрабатываться как Nonformalized
     }
 
@@ -269,3 +271,5 @@ Entity
 - *TemplateTransformationInfos* - содержит информацию о документе, созданном на основе шаблона. Будет заполняться для AttachmentType=TemplateTransformation.
 
 - :doc:`TemplateRefusalInfo` - содержит информацию об отклонении или отзыве шаблона. Будет заполняться для AttachmentType=TemplateRefusal.
+
+- :doc:`OuterDocflow` <OuterDocflowInfo>` - содержит информацию о внешнем документообороте, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК". Будет заполняться для AttachmentType=OuterDocflow.
