@@ -272,4 +272,4 @@ Entity
 
 - :doc:`TemplateRefusalInfo` - содержит информацию об отклонении или отзыве шаблона. Будет заполняться для AttachmentType=TemplateRefusal.
 
-- :doc:`OuterDocflow` <OuterDocflowInfo>` - содержит информацию о внешнем документообороте, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК". Будет заполняться для AttachmentType=OuterDocflow.
+- :doc:`OuterDocflow <OuterDocflowInfo>` - содержит информацию о внешнем документообороте, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК". Будет заполняться для AttachmentType=OuterDocflow.
