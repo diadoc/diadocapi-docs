@@ -145,7 +145,7 @@ MessagePatchToPost
 
 -  *ResolutionRouteRemovals* - список операций по снятию документов с маршрута согласования. Каждый элемент представляется структурой *ResolutionRouteRemoval*.
 
--  *EditingPatches* - список операций по редактированию контента документа. Редактирование разрешено только для тех документов, которые были сформированы путём преобразования из шаблона с помощью метода :doc:`TransformTemplateToMessage <../http/TransformTemplateToMessage>`, и для которых была указана настройка редактирования :doc:`EditingSettingId <TemplateDocumentAttachment>` при создании шаблона с помощью метода :doc:`TemplateToPost <TemplateToPost>`.
+-  *EditingPatches* - список операций по редактированию контента документа. Редактирование разрешено только для тех документов, для которых была указана настройка редактирования EditingSettingId при создании шаблона с помощью метода :doc:`PostTemplate <PostTemplate>` или при отправке с параметром DelaySend с помощью метода :doc:`PostMessage <PostMessage>`.
 
 Структура данных *ReceiptAttachment* представляет одно извещение о получении документа в отправляемом патче:
 
