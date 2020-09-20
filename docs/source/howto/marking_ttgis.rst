@@ -75,4 +75,7 @@
 Получение статуса ГИС МТ "Честный ЗНАК"
 ---------------------------------------
 
-Информацию о статусе обработки документов в ГИС МТ “Честный ЗНАК” можно получить в виде структуры :doc:`../proto/OuterDocflow` в методах :doc:`../http/GetMessage`, :doc:`../http/GetEvent`, :doc:`../http/GetNewEvents`, :doc:`../http/GetLastEvent`, :doc:`../http/GetDocument`, :doc:`../http/GetDocumentsByMessageId`, :doc:`../http/GetDocuments`, :doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3`, :doc:`../http/GetDocflowEvents_V3`.
+Информацию о статусе обработки документов в ГИС МТ “Честный ЗНАК” можно получить в виде структуры :doc:`../proto/OuterDocflow` в методах:
+-  работы с сообщениями :doc:`../http/GetMessage`, :doc:`../http/GetEvent`, :doc:`../http/GetNewEvents`, :doc:`../http/GetLastEvent`, :doc:`../http/GetDocument`, :doc:`../http/GetDocumentsByMessageId`, 
+-  работы с документами :doc:`../http/GetDocuments`, 
+-  DocflowAPI V3:doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3`, :doc:`../http/GetDocflowEvents_V3`.
