@@ -75,4 +75,4 @@
 Получение статуса ГИС МТ "Честный ЗНАК"
 ---------------------------------------
 
-Информацию о статусе обработки документов в ГИС МТ “Честный ЗНАК” можно получить в виде структуры OuterDocflow в методах :doc:`http/GetMessage`, GetEvent, GetNewEvents, GetLastEvent, GetDocument, GetDocumentsByMessageId, GetDocuments, GetDocflows_V3, GetDocflowsByPacketId_V3, SearchDocflows_V3, GetDocflowEvents_V3.
+Информацию о статусе обработки документов в ГИС МТ “Честный ЗНАК” можно получить в виде структуры OuterDocflow в методах :doc:`../http/GetMessage`, GetEvent, GetNewEvents, GetLastEvent, GetDocument, GetDocumentsByMessageId, GetDocuments, GetDocflows_V3, GetDocflowsByPacketId_V3, SearchDocflows_V3, GetDocflowEvents_V3.
