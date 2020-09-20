@@ -87,13 +87,46 @@
    - файл с текстом ошибки"
    "Ошибка передачи в ГИС МТ Честный ЗНАК", "Статус возвращается, если при передаче документа в ГИС МТ Честный ЗНАК получена ошибка 4хх или 500, документ передать не удалось, повторные попытки передачи не выполняются", "- статус,
    - транспортная квитанция ГИС МТ"
-   
 
 Информацию о статусе обработки документов в ГИС МТ “Честный ЗНАК” можно получить в виде структуры :doc:`../proto/OuterDocflow` в методах:
 
--  работы с сообщениями :doc:`../http/GetMessage`, 
--  работы с событиями:doc:`../http/GetEvent`, :doc:`../http/GetNewEvents`, :doc:`../http/GetLastEvent`,  
--  работы с документами :doc:`../http/GetDocument`, :doc:`../http/GetDocumentsByMessageId`, :doc:`../http/GetDocuments`, 
--  DocflowAPI V3 :doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3`, :doc:`../http/GetDocflowEvents_V3`.
+-  работы с сообщениями :doc:`../http/GetMessage` - возвращается информация о всех полученных статусах ГИС МТ
+-  работы с событиями :doc:`../http/GetEvent`, :doc:`../http/GetNewEvents`, :doc:`../http/GetLastEvent` - - возвращается информация о всех полученных статусах ГИС МТ,  
+-  работы с документами :doc:`../http/GetDocument`, :doc:`../http/GetDocumentsByMessageId`, :doc:`../http/GetDocuments` - возвращается только последний полученный статус по документу либо запросу на аннулирование.
 
+В :doc:`../proto/OuterDocflow` может содержаться информация не только о взаимодействии с ГИС МТ "Честный ЗНАК", но и о других внешних документооборотах. Статусам ГИС МТ "Честный ЗНАК" соответствует DocflowNamedId=TtGis
 
+Пример ответа:
+
+.. sourcecode:: json
+
+   "OuterDocflowInfo":
+   {
+      "DocflowNamedId": "TtGis",
+      "DocflowFriendlyName":"ГИС МТ",
+      "Status":{
+        "NamedId":"ProcessingError",
+        "FriendlyName":"Ошибка в ГИС МТ ""Честный ЗНАК""",
+        "Type":"Error",   
+        "Details":[
+        {
+        "Code":"4",
+        "Text":"Документ с таким номером уже зарегистрирован в ГИС МТ"
+        },
+        {
+        "Code":"24",
+        "Text":"Статус кода маркировки {КМ} не соответствует выполняемой операции"
+        }
+     ]}
+   }
+
+В DocflowAPI V3 данные о статусах ГИС МТ можно получить в :doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3`, :doc:`../http/GetDocflowEvents_V3` в виде структур:
+
+-  :doc:`../proto/OuterDocflow` - информация о последнем полученном статусе ГИС МТ. 
+-  :doc:`../proto/OuterDocflowEntities` - информация о всех полученных статусах ГИС МТ. 
+
+В :doc:`../proto/OuterDocflow` и :doc:`../proto/OuterDocflowEntities` может содержаться информация не только о взаимодействии с ГИС МТ "Честный ЗНАК", но и о других внешних документооборотах. Статусам ГИС МТ "Честный ЗНАК" соответствует DocflowNamedId=TtGis
+
+Пример ответа:
+
+.. sourcecode:: json
