@@ -8,7 +8,7 @@ AmendmentRequestDocflow
     message AmendmentRequestDocflow
     {
         required bool IsFinished = 1;
-        required SignedAttachmentV3 AmendmentRequest = 2;
+        optional SignedAttachmentV3 AmendmentRequest = 2;
         optional Timestamp SentAt = 3;
         optional Timestamp DeliveredAt = 4;
         optional ReceiptDocflowV3 Receipt = 5;
