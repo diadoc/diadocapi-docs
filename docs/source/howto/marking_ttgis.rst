@@ -264,3 +264,13 @@
        
   -  статус,
   -  транспортная квитанция ГИС МТ.
+  
+.. csv-table:: Соответствие возвращаемых в ответе значений
+  :header: "DocflowNamedId", "Status.NamedId", "Status.FriendlyName", "Status.Type"
+  :widths: 10, 10, 10, 10
+  
+  "TtGis", "SendingInProgress", "Отправляется в ГИС МТ Честный ЗНАК", "Normal"
+  "TtGis", "GisReceivingError", "Ошибка передачи в ГИС МТ Честный ЗНАК", "Error"
+  "TtGis", "InProcessing", "Обрабатывается в ГИС МТ Честный ЗНАК", "Normal"
+  "TtGis", "SuccessProcessed", "Обработан в ГИС МТ Честный ЗНАК", "Success"
+  "TtGis", "ProcessingError", "Ошибка в ГИС МТ Честный ЗНАК", "Error"
