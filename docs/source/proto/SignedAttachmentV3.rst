@@ -5,7 +5,7 @@ SignedAttachmentV3
 
 .. code-block:: protobuf
 
-   message SignedAttachment
+   message SignedAttachmentV3
    {
         required Attachment Attachment = 1;
         optional SignatureV3 Signature = 2;
