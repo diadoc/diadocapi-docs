@@ -16,6 +16,8 @@ Template
         optional bool IsDeleted = 8 [default = false];
         optional string MessageToDepartmentId = 9;
         required LockMode LockMode = 10;
+        optional string MessageProxyBoxId = 11;
+        optional string MessageProxyDepartmentId = 12; 
     }
 
 - *MessageId* - уникальный идентификатор сообщения с шаблонами.
@@ -37,3 +39,7 @@ Template
 - *MessageToDepartmentId* - идентификатор подразделения получателя сообщения, которое будет создано на основе шаблона.
 
 - *LockMode* - режим блокировки сообщения с шаблонами. Виды доступных режимы доступны в описании :doc:`../proto/LockMode`.
+
+- *MessageProxyBoxId* - идентификатор ящика промежуточного получателя документов, созданных на основе шаблонов.
+
+- *MessageProxyDepartmentId* - идентификатор подразделения промежуточного получателя сообщения, которое будет создано на основе отправляемого шаблона.
