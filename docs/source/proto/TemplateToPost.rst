@@ -15,6 +15,8 @@ TemplateToPost
         optional LockMode LockMode = 7 [default = None];
         optional string FromDepartmentId = 8;     
         optional string ToDepartmentId = 9;
+        optional string MessageProxyBoxId = 10;
+        optional string MessageProxyDepartmentId = 11;
     }
 
 
@@ -36,4 +38,8 @@ TemplateToPost
 
 - *ToDepartmentId* - идентификатор подразделения в организации получателя, в которое будут отправлены все шаблоны из сообщения (может отсутствовать, в этом случае шаблоны будут отправлены в головное подразделение).
 
-Сохраненный таким образом шаблон можно будет найти используя метод :doc:`../http/GetTemplate`.
+- *MessageProxyBoxId* - идентификатор ящика промежуточного получателя документов, созданных на основе шаблонов.
+
+- *MessageProxyDepartmentId* - идентификатор подразделения промежуточного получателя сообщения, которое будет создано на основе отправляемого шаблона.
+
+Сохраненный таким образом шаблон можно будет найти используя метод :doc:`../http/GetMessage`.
