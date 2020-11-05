@@ -1,5 +1,14 @@
 ﻿История изменений API
 =====================
+
+05.11.2020
+----------
+SDK: `C# 2.8.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.8.4>`__  | `Java 3.7.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.7.3>`__ | `C++  1.89.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.89.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+В :doc:`../proto/TemplateToPost` добавлены MessageProxyBoxId и MessageProxyDepartmentId для указания промежуточного получателя документа, который создается из шаблона.
+MessageProxyBoxId и MessageProxyDepartmentId возвращаются в :doc:`../proto/Template` и :doc:`../proto/TemplateToLetterTransformationInfo`.
+
 24.08.2020
 ----------
 SDK: `C# 2.7.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.7.0>`__  | `Java 3.5.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.5.0>`__ | `C++  1.86.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.86.0>`__
