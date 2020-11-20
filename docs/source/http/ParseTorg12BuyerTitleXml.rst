@@ -1,6 +1,8 @@
 ParseTorg12BuyerTitleXml
 =========================
 
+.. warning:: Этод метод — устаревший. Для парсинга документов следует использовать метод :doc:`../http/ParseTitleXml`.
+
 .. http:post:: /ParseTorg12BuyerTitleXml
 
     :query documentVersion: версия документа
