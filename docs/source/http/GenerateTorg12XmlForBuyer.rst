@@ -1,6 +1,8 @@
 GenerateTorg12XmlForBuyer
 =========================
 
+.. warning:: Этод метод — устаревший. Для генерации документов следует использовать метод :doc:`../http/GenerateTitleXml`.
+
 .. http:post:: /GenerateTorg12XmlForBuyer
 
     :query documentVersion: версия документа
