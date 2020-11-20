@@ -50,7 +50,7 @@
     required string TypeNamedId = 12;
     optional string Function = 13;
     optional string Version = 14;
-}
+   }
 
     message SignedContent {
         optional bytes Content = 1;
