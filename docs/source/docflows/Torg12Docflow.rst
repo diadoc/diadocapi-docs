@@ -85,8 +85,8 @@
    :header: "Титул", "Формат", "Парсинг", "DocumentVersion"
    :widths: 10, 10, 10, 10
 
-   "Титул продавца", "Приказ №820", ":doc:`../http/utd/ParseTitleXml`", "``documentVersion = utd820_05_01_01``"
-   "Титул покупателя", "Приказ №820", ":doc:`../http/utd/ParseTitleXml`", "``documentVersion = utd820_05_01_01``"
+   "Титул продавца", "Приказ №820", ":doc:`../http/ParseTitleXml`", "``documentVersion = utd820_05_01_01``"
+   "Титул покупателя", "Приказ №820", ":doc:`../http/ParseTitleXml`", "``documentVersion = utd820_05_01_01``"
    "Титул продавца", "Приказ №551", ":doc:`../http/ParseTitleXml`", "``documentVersion = tovtorg_05_01_04``"
    "Титул покупателя", "Приказ №551", ":doc:`../http/ParseTitleXml`", "``documentVersion = tovtorg_05_01_04``"
    
