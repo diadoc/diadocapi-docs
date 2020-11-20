@@ -13,7 +13,6 @@
    :glob:
 
    http/GenerateTitleXml
-   http/GenerateRecipientTitleXml
    http/GenerateReceiptXml
 
 Отправка УПД
