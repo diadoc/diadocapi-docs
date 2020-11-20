@@ -15,10 +15,6 @@ HTTP-интерфейс
    http/DetectCustomPrintForms
    http/ForwardDocument
    http/GenerateTitleXml
-   http/GenerateSenderTitleXml
-   http/GenerateRecipientTitleXml
-   http/GenerateAcceptanceCertificateXmlForBuyer
-   http/GenerateAcceptanceCertificateXmlForSeller
    http/GenerateDocumentProtocol
    http/GenerateDocumentZip
    http/GenerateForwardedDocumentPrintForm
@@ -28,8 +24,6 @@ HTTP-интерфейс
    http/GeneratePrintFormFromAttachment
    http/GenerateRevocationRequestXml
    http/GenerateSignatureRejectionXml
-   http/GenerateTorg12XmlForBuyer
-   http/GenerateTorg12XmlForSeller
    http/GetDocument
    http/GetDocuments
    http/GetDocumentsByMessageId
@@ -40,12 +34,8 @@ HTTP-интерфейс
    http/GetGeneratedPrintForm
    http/MoveDocuments
    http/ParseTitleXml
-   http/ParseAcceptanceCertificateSellerTitleXml
-   http/ParseAcceptanceCertificateBuyerTitleXml
    http/ParseRevocationRequestXml
    http/ParseSignatureRejectionXml
-   http/ParseTorg12SellerTitleXml
-   http/ParseTorg12BuyerTitleXml
    http/PrepareDocumentsToSign
    http/RecycleDraft
    http/Restore
