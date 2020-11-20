@@ -1,6 +1,8 @@
 ParseAcceptanceCertificateSellerTitleXml
 ========================================
 
+.. warning:: Этод метод — устаревший. Для парсинга документов следует использовать метод :doc:`../http/ParseTitleXml`.
+
 .. http:post:: /ParseAcceptanceCertificateSellerTitleXml
 
     :query documentVersion: версия документа
