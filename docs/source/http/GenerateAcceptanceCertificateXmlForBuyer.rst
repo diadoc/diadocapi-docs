@@ -1,6 +1,8 @@
 GenerateAcceptanceCertificateXmlForBuyer
 ========================================
 
+.. warning:: Этод метод — устаревший. Для генерации документов следует использовать метод :doc:`../http/GenerateTitleXml`.
+
 .. http:post:: /GenerateAcceptanceCertificateXmlForBuyer
 
     :query documentVersion: версия документа
