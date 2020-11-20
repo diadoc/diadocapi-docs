@@ -13,8 +13,7 @@
    :glob:
 
    http/CanSendInvoice
-   http/GenerateSenderTitleXml
-   http/utd/GenerateUniversalTransferDocumentXmlForSeller
+   http/GenerateTitleXml
    http/GenerateReceiptXml
    http/GetInvoiceCorrectionRequestInfo
 
@@ -42,8 +41,6 @@
    :glob:
 
    http/ParseTitleXml
-   http/utd/ParseUniversalTransferDocumentSellerTitleXml
-   http/utd/ParseUniversalCorrectionDocumentSellerTitleXml
 
 Структуры данных
 ----------------
