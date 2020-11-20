@@ -1,6 +1,8 @@
 GenerateRecipientTitleXml
 ==========================
 
+.. warning:: Этод метод — устаревший. Для генерации документов следует использовать метод :doc:`../http/GenerateTitleXml`.
+
 .. http:post:: /GenerateRecipientTitleXml
 
     :query documentVersion:  строковый идентификатор версии типа документа
