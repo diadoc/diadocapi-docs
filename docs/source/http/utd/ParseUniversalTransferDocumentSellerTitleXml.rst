@@ -1,6 +1,8 @@
 ParseUniversalTransferDocumentSellerTitleXml
 ============================================
 
+.. warning:: Этод метод — устаревший. Для парсинга документов следует использовать метод :doc:`../http/ParseTitleXml`.
+
 Имя ресурса: **/ParseUniversalTransferDocumentSellerTitleXml**
 
 HTTP метод: **POST**
