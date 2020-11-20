@@ -42,11 +42,14 @@
     message MessageToPost {
         required string FromBoxId = 1;
         optional string ToBoxId = 2;
-        repeated XmlDocumentAttachment XmlTorg12SellerTitles = 3;
+        repeated DocumentAttachment DocumentAttachments = 34;
     }
 
     message XmlDocumentAttachment {
-        required SignedContent SignedContent = 1;
+     required SignedContent SignedContent = 1;
+     required string TypeNamedId = 12;
+     optional string Function = 13;
+     optional string Version = 14; 
     }
 
     message SignedContent {
@@ -142,18 +145,18 @@
 	
 	-  сам XML-файл нужно передать в атрибут *Content*, подпись продавца в атрибут *Signature*.
 	   
-Описание структур, используемых при отправке товарной накладной ТОРГ-12:
+Описание структур, используемых при отправке ответного титула товарной накладной ТОРГ-12:
 
 .. code-block:: protobuf
 
     message MessagePatchToPost {
         required string BoxId = 1;
         optional string MessageId = 2;
-        repeated ReceiptAttachment XmlTorg12BuyerTitles = 7;
+        repeated RecipientTitleAttachment RecipientTitles = 22;
     }
 
-    message ReceiptAttachment {
-		required string ParentEntityId = 1;
+    message RecipientTitleAttachment  {
+	required string ParentEntityId = 1;
         required SignedContent SignedContent = 1;
     }
 
