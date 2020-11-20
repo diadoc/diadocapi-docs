@@ -108,7 +108,7 @@
        "EntityId": "654ac483-0dd4-4085-b70f-565c8b754e10",
        "Content": "lores ipsum",
        "AttachmentType": "XmlTorg12",
-       "FileName": "DP_OTORG12_2BM-7750370234-4012052808304878702630000000000_2BM_20150927_324c290e-f049-4906-baac-1ddcd7f3c2ff.xml",
+       "FileName": "ON_NSCHFDOPPR_2BM-7750370234-4012052808304878702630000000000_2BM_20150927_324c290e-f049-4906-baac-1ddcd7f3c2ff.xml",
        "NeedRecipientSignature": true,
        "SignerBoxId": "",
        "NotDeliveredEventId": "",
