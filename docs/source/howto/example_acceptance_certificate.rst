@@ -42,12 +42,15 @@
     message MessageToPost {
         required string FromBoxId = 1;
         optional string ToBoxId = 2;
-        repeated XmlDocumentAttachment XmlAcceptanceCertificateSellerTitles = 3;
+        repeated DocumentAttachment DocumentAttachments = 34;
     }
 
-    message XmlDocumentAttachment {
-        required SignedContent SignedContent = 1;
-    }
+   message DocumentAttachment {
+    required SignedContent SignedContent = 1;
+    required string TypeNamedId = 12;
+    optional string Function = 13;
+    optional string Version = 14;
+}
 
     message SignedContent {
         optional bytes Content = 1;
@@ -105,7 +108,7 @@
        "EntityId": "654ac483-0dd4-4085-b70f-565c8b754e10",
        "Content": "lores ipsum",
        "AttachmentType": "XmlAcceptanceCertificate",
-       "FileName": "DP_ZAKTPRM_2BM-7750370234-4012052808304878702630000000000_2BM_20150927_324c290e-f049-4906-baac-1ddcd7f3c2ff.xml",
+       "FileName": "ON_NSCHFDOPPR_2BM-7750370234-4012052808304878702630000000000_2BM_20150927_324c290e-f049-4906-baac-1ddcd7f3c2ff.xml",
        "NeedRecipientSignature": true,
        "SignerBoxId": "",
        "NotDeliveredEventId": "",
@@ -149,12 +152,12 @@
     message MessagePatchToPost {
         required string BoxId = 1;
         optional string MessageId = 2;
-        repeated ReceiptAttachment XmlAcceptanceCertificateBuyerTitles = 7;
+        repeated RecipientTitleAttachment RecipientTitles = 22;
     }
 
-    message ReceiptAttachment {
-		required string ParentEntityId = 1;
-        required SignedContent SignedContent = 1;
+    message RecipientTitleAttachment {
+	required string ParentEntityId = 1;
+   	required SignedContent SignedContent = 2;
     }
 
     message SignedContent {
