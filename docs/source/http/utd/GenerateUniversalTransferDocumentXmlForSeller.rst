@@ -1,6 +1,8 @@
 GenerateUniversalTransferDocumentXmlForSeller
 =============================================
 
+.. warning:: Этод метод — устаревший. Для генерации документов следует использовать метод :doc:`../http/GenerateTitleXml`.
+
 Имя ресурса: **/GenerateUniversalTransferDocumentXmlForSeller**
 
 HTTP метод: **POST**
