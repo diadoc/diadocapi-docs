@@ -12,10 +12,8 @@
    :titlesonly:
    :glob:
 
-   http/GenerateSenderTitleXml
+   http/GenerateTitleXml
    http/GenerateRecipientTitleXml
-   http/utd/GenerateUniversalTransferDocumentXmlForSeller
-   http/utd/GenerateUniversalTransferDocumentXmlForBuyer
    http/GenerateReceiptXml
 
 Отправка УПД
@@ -42,10 +40,6 @@
    :glob:
 
    http/ParseTitleXml
-   http/utd/ParseUniversalTransferDocumentSellerTitleXml
-   http/utd/ParseUniversalTransferDocumentBuyerTitleXml
-   http/utd/ParseUniversalCorrectionDocumentSellerTitleXml
-   http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml
 
 Структуры данных
 ----------------
