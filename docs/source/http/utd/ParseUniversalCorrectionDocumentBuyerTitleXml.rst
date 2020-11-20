@@ -1,6 +1,8 @@
 ParseUniversalCorrectionDocumentBuyerTitleXml
 =============================================
 
+.. warning:: Этод метод — устаревший. Для парсинга документов следует использовать метод :doc:`../http/ParseTitleXml`.
+
 Метод для парсинга титула покупателя УКД
 
 Имя ресурса: **/ParseUniversalCorrectionDocumentBuyerTitleXml**
