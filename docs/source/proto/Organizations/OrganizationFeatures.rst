@@ -19,3 +19,4 @@ OrganizationFeatures
     + AllowProxifiedDocuments — отправка документов через промежуточного получателя
     + AllowSendEncryptedDocuments — отправка зашифрованных документов
     + AllowSendLockedPackets — отправка залоченных пакетов
+    + EnableProductNameAlongWithCodes — вывод в одном поле наименования товара вместе с кодом, артикулом, характеристикой в печатной форме актов, УПД, счетов-фактур
