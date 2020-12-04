@@ -7,8 +7,22 @@ Docflow API
 
 Для упрощения работы с API существует SDK (C#/C++/Java/COM), скрывающий детали взаимодействия по HTTP и позволяющий работать с API через набор функций.
 
-HTTP-интерфейс
---------------
+HTTP-интерфейс версии 3 
+-----------------------
+
+.. toctree::
+   :name: toc5
+   :maxdepth: 2
+   :titlesonly:
+
+   http/GetDocflows_V3
+   http/GetDocflowsByPacketId_V3
+   http/SearchDocflows_V3
+   http/GetDocflowEvents_V3
+
+
+HTTP-интерфейс (устаревший)
+---------------------------
 
 .. toctree::
    :name: toc3
@@ -20,18 +34,7 @@ HTTP-интерфейс
    http/SearchDocflows
    http/GetDocflowEvents
 
-HTTP-интерфейс версии 3 (экспериментальный)
--------------------------------------------
 
-.. toctree::
-   :name: toc5
-   :maxdepth: 2
-   :titlesonly:
-
-   http/GetDocflows_V3
-   http/GetDocflowsByPacketId_V3
-   http/SearchDocflows_V3
-   http/GetDocflowEvents_V3
 
 Структуры данных
 ----------------
