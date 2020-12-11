@@ -1,6 +1,20 @@
 ﻿История изменений API
 =====================
 
+10.12.2020
+----------
+SDK: `C# 2.9.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.0>`__  | `Java 3.8.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.8.0>`__ | `C++  1.91.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.91.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Подготовка клиентов для работы с возможностями частичной приёмки
+
+07.12.2020
+----------
+SDK: `C# 2.8.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.8.5>`__  | `Java 3.7.4 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.7.4>`__ | `C++  1.90.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.90.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+В :doc:`../proto/Message` и :doc:`../proto/MessagePathc` добавлена структура RevocationRequestInfo, позволяющая получить информацию о запросе аннулирования.
+
 05.11.2020
 ----------
 SDK: `C# 2.8.4 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.8.4>`__  | `Java 3.7.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.7.3>`__ | `C++  1.89.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.89.0>`__
