@@ -13,7 +13,7 @@ SDK: `C# 2.9.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions
 SDK: `C# 2.8.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.8.5>`__  | `Java 3.7.4 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.7.4>`__ | `C++  1.90.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.90.0>`__
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-В :doc:`../proto/Message` и :doc:`../proto/MessagePathc` добавлена структура RevocationRequestInfo, позволяющая получить информацию о запросе аннулирования.
+В :doc:`../proto/Message` и :doc:`../proto/MessagePatch` добавлена структура RevocationRequestInfo, позволяющая получить информацию о запросе аннулирования.
 
 05.11.2020
 ----------
