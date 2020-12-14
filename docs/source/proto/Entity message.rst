@@ -275,4 +275,4 @@ Entity
 
 - :doc:`OuterDocflow <OuterDocflowInfo>` - содержит информацию о внешнем документообороте, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК". Будет заполняться для AttachmentType=OuterDocflow.
 
-- *RevocationRequestInfo* - содержит информацию о соглашении об аннулировании.
+- :doc:`RevocationRequestInfo <RevocationRequestInfo_Entity>` - содержит информацию о соглашении об аннулировании.
