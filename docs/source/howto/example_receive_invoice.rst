@@ -80,11 +80,7 @@
           "DocumentDirection": "Inbound",
           "LastModificationTimestampTicks": 635802325696852440,
           "IsEncryptedContent": false,
-          "SenderSignatureStatus": "SenderSignatureCheckedAndValid",
-          "MessageIdGuid": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
-          "EntityIdGuid": "30cf2c07-7297-4d48-bc6f-ca7a80e2cf95",
-          "CreationTimestamp": "2015-10-12T07:42:33.6912186Z",
-          "CounteragentBoxIdGuid": "95f642cd-1256-426f-b11c-883c73d8440a"
+          "SenderSignatureStatus": "SenderSignatureCheckedAndValid"
         }]
     }
 
