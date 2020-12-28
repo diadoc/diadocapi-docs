@@ -23,5 +23,5 @@ SignatureV3
 - *SignerBoxId* - идентификатор ящика, от имени которого была поставлена подпись
 - *SignerDepartmentId* - идентификатор подразделения, сотрудник которого поставил подпись
 - *IsValid* - признак того, что подпись либо еще не прошла проверку, либо проверена и признана верной
-- :doc:`VerificationResult <SignatureVerificationResult>` - результат проверки подписи
+- :doc:`VerificationResult <SignatureVerificationResult>` - результат проверки подписи. Возвращается в ответе методов, если в запросе был установлен InjectEntityContent=true
 - :doc:`DeliveredAt <Timestamp>` - метка времени доставки подписи
