@@ -11,39 +11,9 @@ HTTP метод: **GET**
 
 - *departmentId*: идентификатор подразделения организации.
 
--  *outputFormat*: формат вывода данных, может отсутствовать. Возможные значения: xml, protobuf (по-умолчанию - protobuf).
-
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
 
-В теле ответа содержатся справочные данные для подразделения, сериализованные в запрошенном формате:
-
--  если в строке запроса не было параметра outputFormat, либо его значение было равно protobuf, данные возвращаются сериализованными в протобуфер :doc:`../proto/Department`;
-
--  если значение параметра outputFormat в строке запроса было равно xml, данные возвращаются в формате xml, как в следующем примере:
-
-   ::
-
-       <Department id="departmentId" parent-id="parentDepartmentId" name="Название" abbreviation="Н" kpp="123456789">
-         <Address>
-           <RussianAddress
-             zip-code="620000"
-             region="Свердловская область"
-             territory=""
-             city="Екатеринбург"
-             locality=""
-             street=""
-             building=""
-             block=""
-             apartment="" />
-         </Address>
-       </Department>
-       <Department id="departmentId" parent-id="parentDepartmentId" name="Название" abbreviation="Н" kpp="123456789">
-         <Address>
-           <ForeignAddress
-             country="USA"
-             address="Washington DC" />
-         </Address>
-       </Department>
+В теле ответа содержатся справочные данные для подразделения в виде структуры :doc:`../proto/Department`.
 
 Возможные HTTP-коды возврата:
 
