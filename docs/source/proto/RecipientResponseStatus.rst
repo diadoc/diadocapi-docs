@@ -14,6 +14,7 @@ RecipientResponseStatus
         WithRecipientSignature = 3;
         RecipientSignatureRequestRejected = 4;
         InvalidRecipientSignature = 5;
+        WithRecipientPartiallySignature = 6
     }
 
 Расшифровка значений:
@@ -27,3 +28,5 @@ RecipientResponseStatus
 - *RecipientSignatureRequestRejected* - получатель документа отказал в подписи.
 
 - *InvalidRecipientSignature* — получатель подписал документ невалидной подписью. Если это незашифрованный документ, то такой статус возможен только на стороне получателя документа.
+
+- *WithRecipientPartiallySignature* - получатель подписал документ (ответный титул) с разногласиями. 
