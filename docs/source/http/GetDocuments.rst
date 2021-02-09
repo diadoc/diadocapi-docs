@@ -77,6 +77,7 @@ GetDocuments
     "NoRecipientSignatureRequest", "Документ без запроса ответной подписи"
     "WaitingForRecipientSignature", "Документ в ожидании ответной подписи"
     "WithRecipientSignature", "Документ с ответной подписью"
+    "WithRecipientPartiallySignature", "Документ с ответной подписью с разногласиями"
     "WithSenderSignature", "Документ с подписью отправителя"
     "RecipientSignatureRequestRejected", "Документ с отказом от формирования ответной подписи"
     "WaitingForSenderSignature", "Документ, требующий подписания и отправки"
