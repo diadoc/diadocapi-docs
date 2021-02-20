@@ -86,7 +86,7 @@ Entity
         UniversalCorrectionDocumentRevision = 50;
         UniversalCorrectionDocumentBuyerTitle = 51;
         CustomData = 64;
-        MoveDocument = 65;
+        MoveDocument = 65;  //является устаревшим, в ответе методов не возвращается
         ResolutionRouteAssignment = 66;
         ResolutionRouteRemoval = 67;
         Title = 68;
