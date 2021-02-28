@@ -3,7 +3,7 @@
 
 Метод возвращает описание типов документов, доступных в ящике.
 
-.. http:get:: /GetDocumentTypes
+.. http:get:: /V2/GetDocumentTypes
 
     :query boxId: идентификатор ящика
 
@@ -15,12 +15,12 @@
     :statuscode 405: используется неподходящий HTTP-метод
     :statuscode 500: при обработке запроса возникла непредвиденная ошибка
 
-Тело ответа будет содержать структуру *GetDocumentTypesResponse* с описанием типов документов:
+Тело ответа будет содержать структуру *GetDocumentTypesResponseV2* с описанием типов документов:
 
 .. code-block:: protobuf
 
-    message GetDocumentTypesResponse {
-    	repeated DocumentTypeDescription DocumentTypes = 1;
+    message GetDocumentTypesResponseV2 {
+    	repeated DocumentTypeDescriptionV2 DocumentTypes = 1;
     }
 
-- :doc:`DocumentTypes <../proto/DocumentTypeDescription>` - список типов документов.
+- :doc:`DocumentTypes <../proto/DocumentTypeDescriptionV2>` - список типов документов.

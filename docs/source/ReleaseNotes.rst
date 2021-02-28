@@ -1,5 +1,11 @@
 ﻿История изменений API
 =====================
+17.02.2021
+----------
+SDK: `C# 2.9.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.5>`__  | `Java 3.9.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.0>`__ | `C++  1.92.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.0>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Метод :doc:`GetDocumentTypes <http/GetDocumentTypes>` заменен второй версией.
 
 10.12.2020
 ----------
