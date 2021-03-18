@@ -227,9 +227,7 @@ Entity
    
    -  Содержимое сущности типа *Attachment/XmlSignatureRejection* представляет собой XML-файл (формат файла),
    
-   -  Содержимое сущности типа *Attachment/RoamingNotification* представляет собой сериализованную в протобуфер структуру *RoamingNotification*,
-   
-   -  Для сущностей типа *Attachment* и типов вложений *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial*, *ResolutionRouteAssignment*, *ResolutionRouteRemoval* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8,
+   -  Для сущностей типа *Attachment* и типов вложений *AttachmentComment*, *SignatureRequestRejection*, *DeliveryFailureNotification*, *Resolution*, *ResolutionRequest*, *ResolutionRequestDenial*, *ResolutionRouteAssignment*, *ResolutionRouteRemoval*, *RoamingNotification* массив байтов Content.Data следует интерпретировать как строку в кодировке UTF-8,
    
    -  Наконец, у сущности типа *Attachment/SignatureVerificationReport* массив байтов Content.Data представляет собой сериализованную в протобуфер структуру *SignatureVerificationResult*.
 
