@@ -1,5 +1,12 @@
 ﻿История изменений API
 =====================
+17.03.2021
+----------
+SDK: `C# 2.9.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.8>`__  | `Java 3.9.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.3>`__ | `C++  1.92.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.1>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+В :doc:`../proto/Document` добавлена информация о промежуточном получателе: ProxyBoxId и ProxyDepartmentId.
+
 17.02.2021
 ----------
 SDK: `C# 2.9.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.5>`__  | `Java 3.9.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.0>`__ | `C++  1.92.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.0>`__

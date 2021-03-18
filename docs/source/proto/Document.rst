@@ -80,6 +80,8 @@ Document
         required SenderReceiptMetadata SenderReceiptMetadata = 75;
         required string Version = 76;
         repeated LastOuterDocflow LastOuterDocflows = 77;
+        optional string ProxyBoxId = 78;
+        optional string ProxyDepartmentId = 79;
     }
 
     enum RoamingNotificationStatus {
@@ -252,6 +254,10 @@ Document
 - *Version* - идентификатор версии документа.
 
 - :doc:`LastOuterDocflows <LastOuterDocflow>` - информация о состоянии внешнего документооборота по документу, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК".
+
+- *ProxyBoxId* - идентификатор ящика промежуточного получателя.
+
+- *ProxyDepartmentId* - идентификатор подразделения промежуточного получателя.
 
 .. warning::
     Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata*, *HasCustomPrintForm* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
