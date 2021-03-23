@@ -18,6 +18,7 @@ Template
         required LockMode LockMode = 10;
         optional string MessageProxyBoxId = 11;
         optional string MessageProxyDepartmentId = 12; 
+        optional bool IsReusable = 13 [default = false];
     }
 
 - *MessageId* - уникальный идентификатор сообщения с шаблонами.
@@ -43,3 +44,5 @@ Template
 - *MessageProxyBoxId* - идентификатор ящика промежуточного получателя документов, созданных на основе шаблонов.
 
 - *MessageProxyDepartmentId* - идентификатор подразделения промежуточного получателя сообщения, которое будет создано на основе отправляемого шаблона.
+
+- *IsReusable* - флаг, показывающий, является ли шаблон многоразовым.
