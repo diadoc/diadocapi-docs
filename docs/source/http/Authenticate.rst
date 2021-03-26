@@ -69,3 +69,13 @@ Authenticate v3
     + X-Diadoc-ServiceUserId (ServiceUserId)
 
 Чтобы воспользоваться доверительной аутентификацией, необходимо указать type - trust, с указанием заголовков X-Diadoc-ServiceKey, X-Diadoc-ServiceUserId, после создания привязки.
+
+Authenticate v2
+---------------
+
+Метод устарел
+
+Authenticate v2
+---------------
+
+Метод устарел
