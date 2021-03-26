@@ -75,7 +75,7 @@ Authenticate v2
 
 Метод устарел
 
-Authenticate v2
----------------
+Authenticate
+------------
 
 Метод устарел
