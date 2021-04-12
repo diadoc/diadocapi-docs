@@ -1,5 +1,12 @@
 ﻿История изменений API
 =====================
+23.03.2021
+----------
+SDK: `C# 2.9.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.9>`__  | `Java 3.9.4 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.4>`__ | `C++  1.92.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.2>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Добавлен признак возможности использовать шаблон больше одного раза.
+
 17.03.2021
 ----------
 SDK: `C# 2.9.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.8>`__  | `Java 3.9.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.3>`__ | `C++  1.92.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.1>`__

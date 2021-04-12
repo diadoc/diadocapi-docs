@@ -27,6 +27,7 @@ Message
         required LockMode LockMode = 21;
         required MessageType MessageType = 22;
         optional TemplateToLetterTransformationInfo TemplateToLetterTransformationInfo = 23;
+        optional bool IsReusable = 24 [default = false];
     }
 
 
@@ -77,3 +78,5 @@ Message
 -  *MessageType* - тип сообщения :doc:`../proto/MessageType`.
 
 -  *TemplateToLetterTransformationInfo* - содержит информацию о документе, который уже создан или будет создан на основе шаблона :doc:`../proto/TemplateToLetterTransformationInfo`.
+
+-  *IsReusable* - флаг, показывающий, что сообщение создано на основе многоразового шаблона.

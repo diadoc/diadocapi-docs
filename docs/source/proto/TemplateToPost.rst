@@ -17,6 +17,7 @@ TemplateToPost
         optional string ToDepartmentId = 9;
         optional string MessageProxyBoxId = 10;
         optional string MessageProxyDepartmentId = 11;
+        optional bool IsReusable = 12 [default = false];
     }
 
 
@@ -41,5 +42,7 @@ TemplateToPost
 - *MessageProxyBoxId* - идентификатор ящика промежуточного получателя документов, созданных на основе шаблонов.
 
 - *MessageProxyDepartmentId* - идентификатор подразделения промежуточного получателя сообщения, которое будет создано на основе отправляемого шаблона.
+
+- *IsReusable* - флаг, устанавливающий, можно ли использовать шаблон больше одного раза.
 
 Сохраненный таким образом шаблон можно будет найти используя метод :doc:`../http/GetMessage`.

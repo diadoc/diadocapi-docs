@@ -101,6 +101,7 @@ DocumentTemplateInfo
         repeated string TransformedToLetterIds = 2;
         repeated TemplateTransformationInfo TemplateTransformationInfos = 3;
         optional TemplateRefusalInfo TemplateRefusalInfo = 4;
+        optional bool IsReusable = 5 [default = false];
     }
 
 Структура содержит свойства, присущие только документам в шаблоне
@@ -108,6 +109,7 @@ DocumentTemplateInfo
 - :doc:`LetterParticipants <DocumentParticipants>` - информация об отправителе и получателе письма, которое можно создать на основе данного шаблона
 - :ref:`TemplateTransformationInfo <template-transformation-info>` - список идентификаторов писем, созданных на основе данного шаблона и содержащих данный документ
 - :ref:`TemplateRefusalInfo <template-refusal-info>` - информация об отклонении или отзыве шаблона
+- *IsReusable* - признак указывает на то, что шаблон может быть использован больше одного раза
 
 .. _template-transformation-info:
 
