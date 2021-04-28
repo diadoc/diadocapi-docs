@@ -9,7 +9,7 @@ MessagePatchToPost
         repeated ReceiptAttachment Receipts = 3;
         repeated CorrectionRequestAttachment CorrectionRequests = 4;
         repeated DocumentSignature Signatures = 5;
-        repeated RequestedSignatureRejection RequestedSignatureRejections = 6;
+        repeated RequestedSignatureRejection RequestedSignatureRejections = 6;  // Устаревшая структура
         repeated RecipientTitleAttachment XmlTorg12BuyerTitles = 7;
         repeated RecipientTitleAttachment XmlAcceptanceCertificateBuyerTitles = 8;
         repeated ResolutionAttachment Resolutions = 9;
@@ -111,7 +111,7 @@ MessagePatchToPost
 
 -  *Signatures* - список подписей под документами (см. описание структуры :doc:`DocumentSignature <DocumentSignature>`). Подписи могут быть подписями отправителя (для отправки документов, сохраненных без отправки), подписями получателя (для двусторонних документов с запросом подписи), согласующими подписями под документом, а также ответными подписями под запросом на аннулирование документа.
 
--  *RequestedSignatureRejections* - список отказов от запрошенных подписей под двусторонними документами.
+-  *RequestedSignatureRejections* - (структура устаревшая, нужно использовать *XmlSignatureRejections*) список отказов от запрошенных подписей под двусторонними документами.
 
 -  *XmlTorg12BuyerTitles* - список подлежащих отправке титулов покупателя для товарных накладных ТОРГ-12 в XML-формате.
 
@@ -163,7 +163,7 @@ MessagePatchToPost
 
 -  *Labels* - :doc:`метки <Labels>` уведомления об уточнении.
 
-Структура данных *RequestedSignatureRejection* представляет один отказ в формировании запрошенной подписи:
+Структура данных *RequestedSignatureRejection* представляет один отказ в формировании запрошенной подписи (структура устаревшая, нужно использовать *XmlSignatureRejections*):
 
 -  *ParentEntityId* - идентификатор документа, к которому относится данный отказ. Это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре :doc:`Entity <Entity message>`).
 
