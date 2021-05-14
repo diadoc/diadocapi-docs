@@ -82,6 +82,7 @@ Document
         repeated LastOuterDocflow LastOuterDocflows = 77;
         optional string ProxyBoxId = 78;
         optional string ProxyDepartmentId = 79;
+        required DocflowStatusV3 DocflowStatus = 80; 
     }
 
     enum RoamingNotificationStatus {
@@ -258,6 +259,8 @@ Document
 - *ProxyBoxId* - идентификатор ящика промежуточного получателя.
 
 - *ProxyDepartmentId* - идентификатор подразделения промежуточного получателя.
+
+- :doc:`DocflowStatus <DocflowStatusV3>` - информация о статусе документооборота.
 
 .. warning::
     Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata*, *HasCustomPrintForm* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
