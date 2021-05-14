@@ -17,6 +17,7 @@ DocflowV3
         optional ResolutionEntitiesV3 ResolutionEntities = 10;
         repeated OuterDocflow OuterDocflows = 12;
         repeated OuterDocflowEntities OuterDocflowEntities = 13;
+        required DocflowStatusV3 DocflowStatus = 14;
     }
 
 Структура представляет состояние документооборота для одного документа.
@@ -33,3 +34,4 @@ DocflowV3
 - :doc:`ResolutionEntities <ResolutionEntitiesV3>` - информация о сущностях, относящихся к согласованию документа;
 - :doc:`OuterDocflows <OuterDocflow>` - информация о состоянии внешнего документооборота по документу/аннулированию, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК";
 - :doc:`OuterDocflowEntities <OuterDocflowEntities>` - информация о сущностях, относящихся к внешнему документообороту по документу.
+- :doc:`DocflowStatus <DocflowStatusV3>` - информация о статусе документооборота.
