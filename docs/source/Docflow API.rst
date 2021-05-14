@@ -59,7 +59,9 @@ HTTP-интерфейс (устаревший)
    proto/DocflowEvent
    proto/DocflowEventV3
    proto/DocflowStatus
+   proto/DocflowStatusV3
    proto/DocflowStatusModel
+   proto/DocflowStatusModelV3
    proto/DocflowStatusSeverity
    proto/DocumentDateAndNumber
    proto/DocumentDirection
