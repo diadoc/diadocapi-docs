@@ -1,5 +1,12 @@
 ﻿История изменений API
 =====================
+04.05.2021
+----------
+SDK: `C# 2.9.12 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.12>`__  | `Java 3.9.6 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.6>`__ | `C++  1.92.3 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.3>`__
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Добавлен текстовый статус документа :doc:`../proto/DocflowStatusV3` в контракты :doc:`../proto/Document` и :doc:`../proto/DocflowV3`.
+
 23.03.2021
 ----------
 SDK: `C# 2.9.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.9>`__  | `Java 3.9.4 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.4>`__ | `C++  1.92.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.2>`__
