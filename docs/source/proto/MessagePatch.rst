@@ -17,7 +17,8 @@ MessagePatch
         optional bool MessageIsDelivered = 11 [default = false];
         optional string DeliveredPatchId = 12;
         required string PatchId = 13;
-        required MessageType MessageType = 14;
+        optional string NotDeliveredEventId = 14;
+        required MessageType MessageType = 15;
     }
 
     message EntityPatch {
