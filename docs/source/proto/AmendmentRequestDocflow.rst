@@ -1,8 +1,6 @@
 AmendmentRequestDocflow
 =======================
 
-.. warning:: Эта версия контракта — экспериментальная и может измениться.
-
 .. code-block:: protobuf
 
     message AmendmentRequestDocflow
@@ -14,6 +12,7 @@ AmendmentRequestDocflow
         optional ReceiptDocflowV3 Receipt = 5;
         required int32 AmendmentFlags = 6;
         optional string PlainText = 7;
+        optional ConfirmationDocflow ConfirmationDocflow = 8;
     }
 
 Структура содержит информацию о состоянии уведомления об уточнении (УоУ). Содержится в структуре :doc:`DocflowV3`.
@@ -27,3 +26,4 @@ AmendmentRequestDocflow
     - было ли затребовано уточнение, передавалось ли исправление документа, передавалась ли корректировка документа;
     - представляет собой битовую маску, составленную из одного или нескольких значений перечисления :doc:`InvoiceAmendmentFlags`.
 - *PlainText* - текст уведомления об уточнении
+- :doc:`ConfirmationDocflow <ConfirmationDocflow>` - информация о подтверждении оператором даты получения или доставки уведомления об уточнении
