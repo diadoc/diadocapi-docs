@@ -407,7 +407,7 @@ SDK
 	}
 
 
-Порядок согласно приказу `N 174Н <https://normativ.kontur.ru/document?moduleId=1&documentId=268278>`_
+Порядок согласно приказу `N 174Н <https://normativ.kontur.ru/document?moduleId=1&documentId=268278>`_ (утратил силу с 01.07.2021)
 ----------------------------------------------------------------------------------------------------
 
 .. raw:: html
