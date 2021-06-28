@@ -163,4 +163,6 @@ XSD-схемы счетов-фактур формата 820, корректир�
 .. image:: ../_static/img/docflows/scheme-08-invoice-docflow-3.png
 	:align: center
 
+.. raw:: html
+
    </details>
