@@ -410,6 +410,11 @@ SDK
 Порядок согласно приказу `N 174Н <https://normativ.kontur.ru/document?moduleId=1&documentId=268278>`_
 ----------------------------------------------------------------------------------------------------
 
+.. raw:: html
+
+   <details>
+   <summary><a>Подробнее</a></summary>
+
 Порядок документооборота со стороны Покупателя:
 
 #. Продавец отправляет счет-фактуру Покупателю.
@@ -670,3 +675,7 @@ SDK
 		var invoiceDocument = GetInvoice().Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);;
 		SendInvoiceCorrectionRequest(invoiceDocument);
 	}
+
+.. raw:: html
+
+   </details>
