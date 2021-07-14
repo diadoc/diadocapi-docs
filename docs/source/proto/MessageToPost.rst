@@ -36,7 +36,7 @@ MessageToPost
         repeated EncryptedXmlDocumentAttachment EncryptedXmlAcceptanceCertificateSellerTitles = 30; // Устаревшая структура
         repeated SupplementaryAgreementAttachment SupplementaryAgreements = 31; // Устаревшая структура
         optional bool LockPacket = 32 [default = false];
-        repeated XmlDocumentAttachment UniversalTransferDocumentSellerTitles = 33;
+        repeated XmlDocumentAttachment UniversalTransferDocumentSellerTitles = 33; // Устаревшая структура
         repeated DocumentAttachment DocumentAttachments = 34;
         optional LockMode LockMode = 35 [default = None];
     }
