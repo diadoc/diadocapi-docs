@@ -1,8 +1,6 @@
 DocumentParticipants
 ====================
 
-.. warning:: Эта версия контракта — экспериментальная и может измениться.
-
 .. code-block:: protobuf
 
     message DocumentParticipants
