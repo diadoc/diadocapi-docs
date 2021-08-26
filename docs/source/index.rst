@@ -15,7 +15,14 @@
    :titlesonly:
 
    ReleaseNotes
-
+   
+.. toctree::
+   :name: main
+   :caption: С чего начать
+   :titlesonly:
+   
+   Возможности для интеграции <IntegrationOptions2>
+   
 .. toctree::
    :name: main
    :maxdepth: 1
