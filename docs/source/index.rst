@@ -14,14 +14,14 @@
    :caption: История изменений
    :titlesonly:
 
-   ReleaseNotes
+   История изменений <ReleaseNotes>
    
 .. toctree::
-   :name: main
+   :name: howtouse
    :caption: С чего начать
    :titlesonly:
    
-   Возможности для интеграции <IntegrationOptions2>
+   Возможности для интеграции <HowToUse/IntegrationOptions>
    
 .. toctree::
    :name: main
