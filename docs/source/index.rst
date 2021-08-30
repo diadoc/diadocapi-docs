@@ -25,7 +25,6 @@
    
 .. toctree::
    :name: main
-   :maxdepth: 1
    :caption: Общее описание возможностей
 
    Обзор возможностей API <Overview>
@@ -37,7 +36,6 @@
 
 .. toctree::
    :name: docflow
-   :maxdepth: 1
    :caption: Документооборот
 
    Форматы документов <docflows/AttachmentVersion>
@@ -51,7 +49,6 @@
 
 .. toctree::
    :name: examples
-   :maxdepth: 1
    :caption: Примеры использования
 
    Как работать с документами с маркированными товарами <howto/marking_ttgis.rst>
@@ -64,7 +61,6 @@
 
 .. toctree::
    :name: work
-   :maxdepth: 1
    :caption: Техническая документация
 
    Структуры данных <DataStructures>
@@ -93,7 +89,6 @@
 ..
   .. toctree::
      :name: tech
-     :maxdepth: 1
      :caption: Справочное руководство
 
      http_methods
