@@ -29,7 +29,7 @@
    :caption: Общее описание возможностей
 
    Обзор возможностей API <Overview>
-   Возможности для интеграции <IntegrationOptions>
+   Возможности для интеграции <IntegrationOptions_obsolete>
    Модель данных <DataModel>
    Порядок работы с API <ApiClientOperationPrinciple>
    Управление списком активных контрагентов <Counteragents>
