@@ -10,11 +10,12 @@ GetDocflowEventsRequest
        optional bool PopulateDocuments = 3 [default = false];
        optional bool InjectEntityContent = 4 [default = false];
        optional bool PopulatePreviousDocumentStates = 5 [default = false];
-       optional string MessageType = 6;
-       optional string DocumentDirection = 7;
+       repeated string MessageTypes = 6;
+       repeated string DocumentDirections = 7;
        optional string DepartmentId = 8;
-       repeated string TypeNamedId = 9;
+       repeated string TypeNamedIds = 9;
        optional string CounteragentBoxId = 10;
+       optional int32 Limit = 11 [default = 100];
    }
 
 Структура представляет запрос, передаваемый методу :doc:`../http/GetDocflowEvents`.
@@ -28,3 +29,4 @@ GetDocflowEventsRequest
 - *DepartmentId* - идентификатор подразделения, из которого производится выборка документов. Параметр может отсутствовать, если пользователь имеет доступ ко всем документам организации. Пользователям с ограниченным доступом необходимо задать параметр. Указать можно любое подразделение, к документам которого пользователь имеет доступ. Если параметр задан, вернутся события только по указанному подразделению.
 - *TypeNamedId* - строковый идентификатор типа документа, возможно указание нескольких идентификаторов.
 - *CounteragentBoxId* - идентификатор ящика контрагента.
+- *Limit* - максимальное количество документов в ответе (может отсутствовать, в этом случае в ответе будет не больше 100 документов). Может принимать значения от 1 до 100.
