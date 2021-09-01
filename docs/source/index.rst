@@ -17,11 +17,11 @@
    История изменений <ReleaseNotes>
    
 .. toctree::
-   :name: howtouse
+   :name: howtostart
    :caption: С чего начать
    :titlesonly:
    
-   Возможности для интеграции <HowToUse/IntegrationOptions>
+   Возможности для интеграции <howtostart/IntegrationOptions>
    
 .. toctree::
    :name: main
