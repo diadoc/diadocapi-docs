@@ -21,6 +21,7 @@
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :titlesonly:
    :caption: История изменений
 
    ReleaseNotes
@@ -28,6 +29,7 @@
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :titlesonly:
    :caption: С чего начать
    
    howtostart/IntegrationOptions
@@ -35,6 +37,7 @@
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :titlesonly:
    :caption: Общее описание возможностей
 
    Overview
@@ -47,6 +50,7 @@
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :titlesonly:
    :caption: Документооборот
 
    docflows/AttachmentVersion
@@ -61,6 +65,7 @@
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :titlesonly:
    :caption: Примеры использования
 
    howto/marking_ttgis
@@ -74,6 +79,7 @@
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :titlesonly:
    :caption: Техническая документация
 
    DataStructures
@@ -96,6 +102,7 @@
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :titlesonly:
    :caption: Справочное руководство
 
    http_methods
