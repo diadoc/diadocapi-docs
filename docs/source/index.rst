@@ -3,97 +3,104 @@
 
 |image0|_
 
-Диадок – это система обмена юридически-значимыми электронными документами между организациями.
+Диадок – юридически значимый онлайн-документооборот между организациями.
 
-Базовым уровнем интеграции с Диадоком является его **HTTP-API** интерфейс.
+Интеграция с помощью API Диадока подойдет любым нестандартным учетным системам, для которых нет типового решения или оно не устраивает организацию. В результате интеграции в учетной системе появится та функциональность Диадока, которая нужна организации.
+ 
+Возможности API Диадока
+=======================
 
-Для разработчиков, занимающихся интеграцией Диадока с различными программными продуктами, построенными на платформе 1С, доступен специальный внешний компонент.
+- Создание документов в xml-формате, утвержденном ФНС
+- Отправка и получение документов из своей информационной системы
+- Автоматическое подписание документов КЭП
+- Актуальные статусы документов онлайн
+- Работа со списком контрагентов
+- Согласование документов
+- Выборка документов по заданным в поиске параметрам
 
 .. toctree::
-   :name: others
+   :maxdepth: 2
+   :hidden:
    :caption: История изменений
-   :titlesonly:
 
-   История изменений <ReleaseNotes>
+   ReleaseNotes
    
 .. toctree::
-   :name: howtostart
+   :maxdepth: 2
+   :hidden:
    :caption: С чего начать
-   :titlesonly:
    
-   Возможности для интеграции <howtostart/IntegrationOptions>
+   howtostart/IntegrationOptions
    
 .. toctree::
-   :name: main
+   :maxdepth: 2
+   :hidden:
    :caption: Общее описание возможностей
 
-   Обзор возможностей API <Overview>
-   Возможности для интеграции <IntegrationOptions_obsolete>
-   Модель данных <DataModel>
-   Порядок работы с API <ApiClientOperationPrinciple>
-   Управление списком активных контрагентов <Counteragents>
-   Дополнительные функции API <MiscellaneousApiFeatures>
+   Overview
+   IntegrationOptions_obsolete
+   DataModel
+   ApiClientOperationPrinciple
+   Counteragents
+   MiscellaneousApiFeatures
 
 .. toctree::
-   :name: docflow
+   :maxdepth: 2
+   :hidden:
    :caption: Документооборот
 
-   Форматы документов <docflows/AttachmentVersion>
-   Типы документов <http/GetDocumentTypes>
-   Документооборот счетов-фактур <docflows/InvoiceDocflow>
-   Документооборот накладных <docflows/Torg12Docflow>
-   Документооборот актов <docflows/AktDocflow>
-   Документооборот УПД <docflows/UtdDocflow>
-   Неформализованный документооборот <docflows/NonformalizedDocflow>
-   Документооборот шаблонов <docflows/TemplateDocflow>
+   docflows/AttachmentVersion
+   http/GetDocumentTypes
+   docflows/InvoiceDocflow
+   docflows/Torg12Docflow
+   docflows/AktDocflow
+   docflows/UtdDocflow
+   docflows/NonformalizedDocflow
+   docflows/TemplateDocflow
 
 .. toctree::
-   :name: examples
+   :maxdepth: 2
+   :hidden:
    :caption: Примеры использования
 
-   Как работать с документами с маркированными товарами <howto/marking_ttgis.rst>
-   Как работать с документами 820 формата <howto/utd820.rst>
-   Как авторизоваться в системе <howto/example_authorization>
-   Как отправить счет-фактуру <howto/example_send_invoice>
-   Как получить счет-фактуру <howto/example_receive_invoice>
-   Как отправить и получить товарную накладную ТОРГ-12 <howto/example_torg12>
-   Как отправить и получить акт о выполнении работ/оказании услуг <howto/example_acceptance_certificate>
+   howto/marking_ttgis
+   howto/utd820
+   howto/example_authorization
+   howto/example_send_invoice
+   howto/example_receive_invoice
+   howto/example_torg12
+   howto/example_acceptance_certificate
 
 .. toctree::
-   :name: work
+   :maxdepth: 2
+   :hidden:
    :caption: Техническая документация
 
-   Структуры данных <DataStructures>
-   Авторизация <Authorization>
-   Работа с СФ/ИСФ/КСФ <API_Invoices>
-   Работа с УПД/УКД <API_UniversalTransferDocument>
-   Работа с документами <API_Documents>
-   Работа с сообщениями <API_Messages>
-   Работа с событиями <API_Events>
-   Работа с организациями <API_Organizations>
-   Работа с подразделениями <API_Departments>
-   Работа с сотрудниками <API_Employees>
-   Работа с контрагентами <API_Counteragents>
-   Работа с шаблонами <API_Templates>
-   Регистрация организации и сотрудника по сертификату <API_Registration>
-   Docflow API <Docflow API>
-   Электронная подпись Контур.Сертификатом <CloudSignApi>
-   Электронная подпись DSS-сертификатом <API_Dss>
+   DataStructures
+   Authorization
+   API_Invoices
+   API_UniversalTransferDocument
+   API_Documents
+   API_Messages
+   API_Events
+   API_Organizations
+   API_Departments
+   API_Employees
+   API_Counteragents
+   API_Templates
+   API_Registration
+   Docflow API
+   CloudSignApi
+   API_Dss
 
-.. rubric:: Справочное руководство
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Справочное руководство
 
--  :doc:`Справочник HTTP-интерфейсов <http_methods>`
--  :doc:`Справочник структур данных <protos>`
--  :doc:`Список HTTP-интерфейсов и структур данных <lists>`
-
-..
-  .. toctree::
-     :name: tech
-     :caption: Справочное руководство
-
-     http_methods
-     protos
-     lists
+   http_methods
+   protos
+   lists
 
 .. |image0| image:: _static/diadoc-logo.png
 .. _image0: https://www.diadoc.ru/
