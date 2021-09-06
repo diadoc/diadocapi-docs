@@ -18,7 +18,7 @@ HTTP API
 
 Клиентские приложения могут обращаться напрямую к HTTP API Диадока, а могут использовать одно из готовых решений:
 
-- :doc:`Библиотека .NET/COM <DiadocApiDll>` - библиотека для клиентских приложений, которые построены на технологиях Microsoft.
+- :doc:`Библиотека .NET/COM <DiadocApiDll>` - библиотека для клиентских приложений, которые построены на технологиях Microsoft. Входит в состав `SDK Диадока <#sdk>`__ вместе с инструментами для других языков.
 
 - `Диадок.Коннектор <https://www.diadoc.ru/integrations/dd_connector>`__ - облачное решение, которое интегрирует Диадок с учетной системой. Подойдет компаниям со сложными бизнес-процессами и большим объемом документооборота.
 
@@ -35,6 +35,12 @@ HTTP API
 SDK
 ---
 
-Помимо этого, для клиентских приложений на языках Java, C# и C++ доступен `SDK Диадока <https://diadoc.kontur.ru/sdk/>`__. А из приложений на Visual Basic и JavaScript можно работать с Диадоком через COM-сервисы. Примеры работы с ними есть в составе SDK.
+`SDK Диадока <https://diadoc.kontur.ru/sdk/>`__ - набор готовых инструментов для разработки клиентских приложений. Он включает в себя решения для языков:
+
+- `C# <https://github.com/diadoc/diadocsdk-csharp>`__ - представляет собой исходный код :doc:`библиотеки .NET/COM <DiadocApiDll>`
+- `C++ <https://github.com/diadoc/diadocsdk-cpp>`__
+- `Java <https://github.com/diadoc/diadocsdk-java>`__
+
+А из приложений на Visual Basic и JavaScript можно работать с Диадоком через COM-сервисы библиотеки .NET/COM.
 
 .. |image0| image:: ../_static/img/diadoc-api-integration-options.png
