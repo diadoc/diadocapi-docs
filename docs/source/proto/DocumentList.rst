@@ -6,7 +6,7 @@ DocumentList
     message DocumentList {
         required int32 TotalCount = 1;
         repeated Document Documents = 2;
-        required bool HasMoreResults = 3;
+        optional bool HasMoreResults = 3;
     }
         
 
