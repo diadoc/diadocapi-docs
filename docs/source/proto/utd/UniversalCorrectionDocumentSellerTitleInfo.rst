@@ -1,7 +1,7 @@
 UniversalCorrectionDocumentSellerTitleInfo
 ==========================================
 
-.. warning:: Структура UniversalTransferDocumentSellerTitleInfo использовалась в методах :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../../http/utd/ParseUniversalCorrectionDocumentSellerTitleXml`, которые устарели с 1 октября 2021 года.
+.. warning:: Эта структура использовалась в методах :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../../http/utd/ParseUniversalCorrectionDocumentSellerTitleXml`, которые устарели с 1 октября 2021 года.
 
 .. code-block:: protobuf
     :emphasize-lines: 1-20
