@@ -361,3 +361,9 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+# Try to fix error «TypeError: 'generator' object has no attribute '__getitem__'»
+autodoc_default_options = {
+    'members': None, 'undoc-members': None,
+    'private-members': None, 'show-inheritance': None
+}
