@@ -1,7 +1,7 @@
 Документация API
 ================
 
-|diadoc_logo|_
+|image0|_
 
 Диадок – юридически значимый онлайн-документооборот между организациями.
 
@@ -22,21 +22,24 @@ API Диадока - универсальный инструмент для ин
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :hidden:
    :titlesonly:
    :caption: История изменений
 
    ReleaseNotes
    
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :hidden:
    :titlesonly:
    :caption: С чего начать
    
    howtostart/IntegrationOptions
    
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :hidden:
    :titlesonly:
    :caption: Общее описание возможностей
 
@@ -48,7 +51,8 @@ API Диадока - универсальный инструмент для ин
    MiscellaneousApiFeatures
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :hidden:
    :titlesonly:
    :caption: Документооборот
 
@@ -62,7 +66,8 @@ API Диадока - универсальный инструмент для ин
    docflows/TemplateDocflow
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :hidden:
    :titlesonly:
    :caption: Примеры использования
 
@@ -75,7 +80,8 @@ API Диадока - универсальный инструмент для ин
    howto/example_acceptance_certificate
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :hidden:
    :titlesonly:
    :caption: Техническая документация
 
@@ -97,13 +103,14 @@ API Диадока - универсальный инструмент для ин
    API_Dss
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :hidden:
    :titlesonly:
    :caption: Справочное руководство
 
    http_methods
    protos
    lists
-   
-.. |diadoc_logo| image:: _static/diadoc-logo.png
-.. _diadoc_logo: https://www.diadoc.ru/
+
+.. |image0| image:: _static/diadoc-logo.png
+.. _image0: https://www.diadoc.ru/
