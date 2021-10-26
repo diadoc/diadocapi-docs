@@ -1,9 +1,6 @@
 Документация API
 ================
 
-.. |diadoc_logo| image:: _static/diadoc-logo.png
-.. _diadoc_logo: https://www.diadoc.ru/
-
 |diadoc_logo|_
 
 Диадок – юридически значимый онлайн-документооборот между организациями.
@@ -107,3 +104,6 @@ API Диадока - универсальный инструмент для ин
    http_methods
    protos
    lists
+   
+.. |diadoc_logo| image:: _static/diadoc-logo.png
+.. _diadoc_logo: https://www.diadoc.ru/
