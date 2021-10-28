@@ -1,7 +1,8 @@
 Возможности для интеграции
 ==========================
 
-|image0|
+.. image:: ../_static/img/diadoc-api-integration-options.png
+ :align: center
 
 Выбор способа работы с API Диадок зависит от решаемых задач, требований к клиентской части и доступных средств разработки.
 
@@ -18,7 +19,10 @@ HTTP API
 
 - `Диадок.Коннектор <https://www.diadoc.ru/integrations/dd_connector>`__ - облачное решение, которое интегрирует Диадок с учетной системой. Подойдет компаниям со сложными бизнес-процессами и большим объемом документооборота.
 
-- :doc:`Библиотека .NET/COM <DiadocApiDll>` - библиотека для клиентских приложений, которые построены на технологиях Microsoft. Входит в состав `SDK Диадока <#sdk>`__ вместе с инструментами для других языков.
+- `SDK Диадока <https://diadoc.kontur.ru/sdk/>`__ - набор готовых инструментов для разработки клиентских приложений. Он включает в себя решения на языках:
+ - `C# <https://github.com/diadoc/diadocsdk-csharp>`__ - представляет собой исходный код :doc:`библиотеки .NET/COM <DiadocApiDll>`
+ - `C++ <https://github.com/diadoc/diadocsdk-cpp>`__ - представляет собой исходный код `внешней компоненты <https://1c-docs.diadoc.ru/ru/latest/>`__
+ - `Java <https://github.com/diadoc/diadocsdk-java>`__
 
 - `1С модуль <https://www.diadoc.ru/integrations/1c>`__ - решает задачи стыковки 1С-решений с Диадоком.
 
@@ -31,14 +35,3 @@ HTTP API
    :hidden:
     
    DiadocApiDll
-   
-SDK
----
-
-`SDK Диадока <https://diadoc.kontur.ru/sdk/>`__ - набор готовых инструментов для разработки клиентских приложений. Он включает в себя решения на языках:
-
-- `C# <https://github.com/diadoc/diadocsdk-csharp>`__ - представляет собой исходный код :doc:`библиотеки .NET/COM <DiadocApiDll>`
-- `C++ <https://github.com/diadoc/diadocsdk-cpp>`__ - представляет собой исходный код `внешней компоненты <https://1c-docs.diadoc.ru/ru/latest/>`__
-- `Java <https://github.com/diadoc/diadocsdk-java>`__
-
-.. |image0| image:: ../_static/img/diadoc-api-integration-options.png
