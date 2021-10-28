@@ -20,7 +20,7 @@ HTTP API
 - `Диадок.Коннектор <https://www.diadoc.ru/integrations/dd_connector>`__ - облачное решение, которое интегрирует Диадок с учетной системой. Подойдет компаниям со сложными бизнес-процессами и большим объемом документооборота.
 
 - `SDK Диадока <https://diadoc.kontur.ru/sdk/>`__ - набор готовых инструментов для разработки клиентских приложений. Он включает в себя решения на языках:
- - `C# <https://github.com/diadoc/diadocsdk-csharp>`__ - представляет собой исходный код :doc:`библиотеки .NET/COM <DiadocApiDll>`
+ - `C# <https://github.com/diadoc/diadocsdk-csharp>`__ - представляет собой исходный код :doc:`библиотеки .NET/COM <DiadocApiDll>`, которая предназначена для клиентских приложений на технологиях Microsoft
  - `C++ <https://github.com/diadoc/diadocsdk-cpp>`__ - представляет собой исходный код `внешней компоненты <https://1c-docs.diadoc.ru/ru/latest/>`__
  - `Java <https://github.com/diadoc/diadocsdk-java>`__
 
