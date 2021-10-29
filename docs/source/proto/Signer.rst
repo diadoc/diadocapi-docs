@@ -47,8 +47,6 @@ Signer
 
    -  :doc:`../http/GenerateRevocationRequestXml`
 
-   -  :doc:`../http/GenerateReceiptXml`
-
    Не обязательно в методах:
 
    -  :doc:`../http/GenerateInvoiceXml`
