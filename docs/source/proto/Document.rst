@@ -228,7 +228,20 @@ Document
 
 - *TypeNamedId* - строковый идентификатор типа документа. Его следует использовать вместо свойства *DocumentType*. Может принимать значения "Nonformalized", "Invoice", "Torg12", "XmlTorg12" и другие. Полный список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
 
-- *Function* - функция документа. Дл всех типов, кроме *UniversalTransferDocument*, *UniversalTransferDocumentRevision*, *UniversalCorrectionDocument* и *UniversalCorrectionDocumentRevision*, принимает значение "default". Для документов типа УПД/ИУПД принимает значения "СЧФ", "ДОП" и "СЧФДОП", для документов типа УКД/ИУКД принимает значения "КСЧФ", "ДИС" и "КСЧФДИС".
+- *Function* — функция документа.
+	Для документов типа УПД (``UniversalTransferDocument``) и ИУПД  (``UniversalTransferDocumentRevision``) может принимать значения:
+	- "СЧФ",
+	- "ДОП",
+	- "СЧФДОП",
+	- "СвРК",
+	- "СвЗК".
+	Для документов типа УКД (``UniversalCorrectionDocument``) и ИУКД (``UniversalCorrectionDocumentRevision``) может принимать значения:
+	- "КСЧФ",
+	- "ДИС",
+	- "КСЧФДИС",
+	- "СвИСРК",
+	- "СвИСЗК".
+	Для всех остальных типов принимает значение ``default``. 
 
 - *WorkflowId* - числовой идентификатор типа документооброта, по которому запущен документ. Более подробную информацию см. :doc:`../proto/DocumentWorkflow`.
 

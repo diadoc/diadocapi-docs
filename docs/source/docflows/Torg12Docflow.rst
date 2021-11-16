@@ -41,7 +41,7 @@
    :header: "Структура", "Форматы", "Функция", "AttachmentVersion"
    :widths: 10, 10, 10, 10
 
-   "XmlTorg12", "- приказ №820", "- ДОП", "- utd820_05_01_01"
+   "XmlTorg12", "- приказ №820", "- ДОП", "- utd820_05_01_02_hyphen"
    "XmlTorg12", "- приказ №155 (формат устарел)", "- ДОП", "- utd_05_02_01"
    "XmlTorg12", "- приказ №551", "- –", "- tovtorg_05_02_01"
    "XmlTorg12", "- приказ №172 (формат устарел)", "- –", "- torg12_05_01_01;
@@ -72,8 +72,8 @@
    :header: "Титул", "Формат", "Геренация", "DocumentVersion"
    :widths: 10, 10, 10, 10
 
-   "Титул продавца", "Приказ №820", ":doc:`../http/GenerateTitleXml`", "``documentVersion = utd820_05_01_01``"
-   "Титул покупателя", "Приказ №820", ":doc:`../http/GenerateTitleXml`", "``documentVersion = utd820_05_01_01``"
+   "Титул продавца", "Приказ №820", ":doc:`../http/GenerateTitleXml`", "``documentVersion = utd820_05_01_02_hyphen``"
+   "Титул покупателя", "Приказ №820", ":doc:`../http/GenerateTitleXml`", "``documentVersion = utd820_05_01_02_hyphen``"
    "Титул продавца", "Приказ №551", ":doc:`../http/GenerateTitleXml`", "``documentVersion = tovtorg_05_01_04``"
    "Титул покупателя", "Приказ №551", ":doc:`../http/GenerateTitleXml`", "``documentVersion = tovtorg_05_01_04``"
    
@@ -85,8 +85,8 @@
    :header: "Титул", "Формат", "Парсинг", "DocumentVersion"
    :widths: 10, 10, 10, 10
 
-   "Титул продавца", "Приказ №820", ":doc:`../http/ParseTitleXml`", "``documentVersion = utd820_05_01_01``"
-   "Титул покупателя", "Приказ №820", ":doc:`../http/ParseTitleXml`", "``documentVersion = utd820_05_01_01``"
+   "Титул продавца", "Приказ №820", ":doc:`../http/ParseTitleXml`", "``documentVersion = utd820_05_01_02_hyphen``"
+   "Титул покупателя", "Приказ №820", ":doc:`../http/ParseTitleXml`", "``documentVersion = utd820_05_01_02_hyphen``"
    "Титул продавца", "Приказ №551", ":doc:`../http/ParseTitleXml`", "``documentVersion = tovtorg_05_01_04``"
    "Титул покупателя", "Приказ №551", ":doc:`../http/ParseTitleXml`", "``documentVersion = tovtorg_05_01_04``"
    
