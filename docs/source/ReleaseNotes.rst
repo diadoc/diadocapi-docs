@@ -75,7 +75,7 @@
 ----------
 **SDK**: `C# 2.3.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.3.0>`__
 
-- Docflow V3 добавлен в COM API.
+- Структура ``DocflowV3`` добавлена в COM API.
 
 
 24.01.2020
@@ -315,7 +315,7 @@
 ----------
 **SDK**: `C# 1.68.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.68.0>`__ | `Java 2.4.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.4.0>`__
 
-- В структуре ``DocflowV3``:
+- В структуре :doc:`proto/DocflowV3`:
 
  - удалена структура ``ProxyResponseDocflow``;
  - изменена структура ``RecipientResponseDocflow``:
@@ -324,14 +324,14 @@
   - поле ``RecipientTitle`` переименовано в ``Title``;
   - Поле ``RecipientResponseStatus`` переименовано ``ResponseStatus``;
   
-- В структуре :doc:`proto/DocflowV3` удалено поле ``ProxyResponse = 3``, вместо него добавлено поле ``ProxyResponse = 11``, структура которого соответствует :doc:`proto/ParticipantResponseDocflow`.
+ - удалено поле ``ProxyResponse = 3``, вместо него добавлено поле ``ProxyResponse = 11``, структура которого соответствует :doc:`proto/ParticipantResponseDocflow`.
 
 
 23.04.2019
 ----------
 **SDK**: `C# 1.67.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.67.0>`__ | `Java 2.3.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.3.0>`__
 
-- В структуре ``DocflowV3`` добавлены свойства, содержащие текстовые выдержки соответствующих документов.
+- В структуре :doc:`proto/DocflowV3` добавлены свойства, содержащие текстовые выдержки соответствующих документов.
 - В структуре :doc:`proto/SignatureRejectionDocflow` добавлено свойство ``PlainText``, которое содержит текст сообщения об отказе в подписи.
 - В структуре :doc:`proto/AmendmentRequestDocflow` добавлено свойство ``PlainText``, которое содержит текст запроса уточнения.
 - В структуре :doc:`RevocationRequestDocflow <proto/RevocationDocflowV3>` добавлено свойство ``PlainText``, которое содержит текст запроса аннулирования.
