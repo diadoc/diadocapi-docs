@@ -1,6 +1,9 @@
 DocflowStatusSeverity
 =====================
 
+.. tip::
+	Этот параметр относится к устаревшей версии Docflow API. Мы рекомендуем использовать последнюю версию :doc:`Docflow API <../Docflow API>` — V3.
+
 .. code-block:: protobuf
 
     enum DocflowStatusSeverity
@@ -13,3 +16,7 @@ DocflowStatusSeverity
     }
 
 Возможные уровни критичности статуса документа.
+
+.. rubric:: Использование
+
+Этот параметр используется в структуре :doc:`DocflowStatusModel`.
