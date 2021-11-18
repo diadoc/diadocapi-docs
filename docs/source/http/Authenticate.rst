@@ -20,7 +20,7 @@ Authenticate v3
     :statuscode 405: используется неподходящий HTTP-метод;
     :statuscode 500: при обработке запроса возникла непредвиденная ошибка.
     
-Параметр *type* может принмать значения:
+Параметр *type* может принимать значения:
     
     + password - логин и пароль
     + sid - `auth.sid <https://docs-ke.readthedocs.io/ru/latest/auth/auth.sid.html>`__ из API Аутентификатора
