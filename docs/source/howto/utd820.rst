@@ -38,7 +38,7 @@
 
 - TypeNamedId - UniversalTransferDocument
 - Function - СЧФДОП
-- Version - utd820_05_01_01
+- Version - utd820_05_01_02_hyphen
 - IndexTitle=0 (титул продавца)
 
 *Ответ метода GetDocumentTypes*:
@@ -56,15 +56,15 @@
         "Name": "СЧФДОП",
         "Versions": [
             {
-                "Version": "utd820_05_01_01",
+                "Version": "utd820_05_01_02_hyphen",
                 "SupportsContentPatching": true,
                 "SupportsEncrypting": true,
                 "Titles": [
                     {
                         "Index": 0,
                         "IsFormal": true,
-                        "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=0&contentType=TitleXsd",
-                        "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=0&contentType=UserContractXsd",
+                        "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_02_hyphen&titleIndex=0&contentType=TitleXsd",
+                        "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_02_hyphen&titleIndex=0&contentType=UserContractXsd",
                          "SignerInfo": {
                             "SignerType": "ExtendedSigner",
                             "ExtendedDocumentTitleType": "UtdSeller"
@@ -112,7 +112,7 @@
 
 .. sourcecode:: http
 
-    POST /GenerateTitleXml?boxId=a96be310-0982-461a-8b2a-91d198b7861c&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_01&titleIndex=0 HTTP/1.1
+    POST /GenerateTitleXml?boxId=a96be310-0982-461a-8b2a-91d198b7861c&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_02_hyphen&titleIndex=0 HTTP/1.1
     Host: diadoc-api.kontur.ru
     Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
     Content-Type: application/xml; charset=utf-8
@@ -263,14 +263,14 @@
             },
            "TypeNamedId": "UniversalTransferDocument",
            "Function": "СЧФДОП",
-           "Version": "utd820_05_01_01"
+           "Version": "utd820_05_01_02_hyphen"
           }
          ]
     }
 
 Получение титула продавца в ящике покупателя
 ---------------------------------------------
-Титул продавца доставлен в ящик получателя. Об этом можно узнать при помощи методов чтения ленты новостей :doc:`../http/GetNewEvents` и :doc:`../http/GetDocflowEvents_V3`. Как понять, что это документ именно 820 формата? В ответе каждого из методов чтения ленты новостей возвращается версия документа (поле Version). Для документов 820 формата версия будет начинаться с utd820 (например, utd820_05_01_01, utd820_05_01_01_hyphen).
+Титул продавца доставлен в ящик получателя. Об этом можно узнать при помощи методов чтения ленты новостей :doc:`../http/GetNewEvents` и :doc:`../http/GetDocflowEvents_V3`. Как понять, что это документ именно 820 формата? В ответе каждого из методов чтения ленты новостей возвращается версия документа (поле Version). Для документов 820 формата версия будет начинаться с utd820 (например, utd820_05_01_02_hyphen).
 
 Из ленты новостей можно определить идентификатоы документа MessageId, DocumentId и при необходимости запросить дополнительную информацию по документу, используя методы :doc:`../http/GetMessage`, :doc:`../http/GetDocument`, :doc:`../http/GetDocflows_V3`.
 
@@ -284,7 +284,7 @@
 
 .. sourcecode:: http
 
-    POST /ParseTitleXml?boxId=13254c42-b4f7-4fd3-3324-0094aeb0f15a&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_01&titleIndex=0 HTTP/1.1
+    POST /ParseTitleXml?boxId=13254c42-b4f7-4fd3-3324-0094aeb0f15a&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_02_hyphen&titleIndex=0 HTTP/1.1
         Host: diadoc-api.kontur.ru
         Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
         Content-Type: application/xml; charset=utf-8
@@ -306,7 +306,7 @@
 
 - TypeNamedId - UniversalTransferDocument
 - Function - СЧФДОП
-- Version - utd820_05_01_01
+- Version - utd820_05_01_02_hyphen
 - IndexTitle=1 (титул покупателя)
  
 *Ответ метода GetDocumentTypes*:
@@ -324,15 +324,15 @@
             "Name": "СЧФДОП",
             "Versions": [
                 {
-                    "Version": "utd820_05_01_01",
+                    "Version": "utd820_05_01_02_hyphen",
                     "SupportsContentPatching": true,
                     "SupportsEncrypting": true,
                     "Titles": [
                         {
                             "Index": 1,
                             "IsFormal": true,
-                            "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=1&contentType=TitleXsd",
-                            "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_01&titleIndex=1&contentType=UserContractXsd",
+                            "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_02_hyphen&titleIndex=1&contentType=TitleXsd",
+                            "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=%u0421%u0427%u0424%u0414%u041e%u041f&version=utd820_05_01_02_hyphen&titleIndex=1&contentType=UserContractXsd",
                              "SignerInfo": {
                                 "SignerType": "ExtendedSigner",
                                 "ExtendedDocumentTitleType": "UtdSeller"
@@ -364,7 +364,7 @@
 
 .. sourcecode:: http
 
-    POST /GenerateTitleXml?boxId=13254c42-b4f7-4fd3-3324-0094aeb0f15&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_01&titleIndex=1&letterId=93bdfb88-7b80-484d-883d-765102ca5af5&documentId=fc3c3811-3368-4e47-95f4-5334b9a42654 HTTP/1.1
+    POST /GenerateTitleXml?boxId=13254c42-b4f7-4fd3-3324-0094aeb0f15&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_02_hyphen&titleIndex=1&letterId=93bdfb88-7b80-484d-883d-765102ca5af5&documentId=fc3c3811-3368-4e47-95f4-5334b9a42654 HTTP/1.1
     Host: diadoc-api.kontur.ru
     Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
     Content-Type: application/xml; charset=utf-8
