@@ -5,11 +5,11 @@ GenerateRevocationRequestXml
 
 Версии метода:
 
--  :ref:`v2`
+-  :ref:`GenerateRevocationRequestXml_v2`
 
--  :ref:`v1`
+-  :ref:`GenerateRevocationRequestXml_v1`
 
-.. _v2:
+.. _GenerateRevocationRequestXml_v2:
 
 v2
 --
@@ -62,7 +62,8 @@ HTTP метод: **POST**
 
 -  500 (Internal server error) — при обработке запроса возникла непредвиденная ошибка
 
-.. _v1:
+
+.. _GenerateRevocationRequestXml_v1:
 
 v1
 --

@@ -3,11 +3,11 @@ GetCounteragents
 
 На текущий момент доступно 2 версии данного метода:
 
--  :ref:`v3`
+-  :ref:`GetCounteragents_v2`
 
--  :ref:`v4`
+-  :ref:`GetCounteragents_v1`
 
-.. _v3:
+.. _GetCounteragents_v2:
 
 v2
 --
@@ -64,7 +64,8 @@ HTTP метод: **GET**
 
 -  500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.
 
-.. _v4:
+
+.. _GetCounteragents_v1:
 
 v1
 --
