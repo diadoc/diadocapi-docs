@@ -1,11 +1,75 @@
 ﻿История изменений API
 =====================
 
+06.10.2021
+----------
+**SDK**: `C# 2.9.22 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.22>`__ | `Java 3.9.8 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.8>`__ | `C++ 1.92.8 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.8>`__
+
+- Добавлена новая версия метода :doc:`/V2/GenerateRevocationRequestXml <http/GenerateRevocationRequestXml>`. Метод позволяет сгенерировать предложение об аннулировании версии 1.02. Если получатель ПоА в роуминге, то метод сгенерирует ту версию, которую поддерживает оператор.
+
+
+05.10.2021
+----------
+**SDK**: `C# 2.9.21 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.21>`__
+
+- В структуру :doc:`http/utd/ExtendedSignerDetailsV2` добавлено значение ``Ucd736Buyer``  для поддержки формата приказа №736.
+
+
+20.09.2021
+----------
+**SDK**: `C# 2.9.20 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.20>`__
+
+- Для титула покупателя ``UniversalCorrectionDocumentBuyerTitle`` добавлены методы ``UseSignerDetails`` и ``UseSignerReference``, с помощью которых можно задать объекту значения полей ``SignerDetails`` и ``SignerReference`` соответственно.
+
+
+01.09.2021
+----------
+**SDK**: `C# 2.9.19 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.19>`__
+
+- Добавлена новая версия метода :doc:`/V7/GetNewEvents <http/GetNewEvents>` для получения ленты событий по ящику.
+- Для методов :doc:`/V7/GetNewEvents <http/GetNewEvents>` и :doc:`http/GetDocflowEvents_V3` добавлены новые условия фильтрации по критериям:
+
+ - подразделение,
+ - тип документа,
+ - тип сообщения (письмо, черновик, шаблон),
+ - контрагент,
+ - направление документооборота (входящий, исходящий, внутренний),
+ - время возникновения события.
+
+
+19.07.2021
+----------
+**SDK**: `C++ 1.92.6 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.6>`__
+
+- Добавлен метод :doc:`http/GetMyCertificates`, который позволяет получить информацию о сертификатах сотрудника.
+
+
+29.06.2021
+----------
+**SDK**: `C# 2.9.15 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.15>`__
+
+- Добавлены функции документов ``ucd736_05_01_02`` и ``utd820_05_01_02_hyphen`` по приказам №736 и №820.  
+
+
+25.06.2021
+----------
+**SDK**: `C# 2.9.14 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.14>`__ | `Java 3.9.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.7>`__ | `C++ 1.92.4 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.4>`__
+
+- Добавленое поле :doc:`../proto/ConfirmationDocflow` в структуру :doc:`../proto/AmendmentRequestDocflow`.
+
+
+20.05.2021
+----------
+**SDK**: `C# 2.9.13 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.13>`__
+
+- Добавлены структуры для поддержки документов в формате приказа №736 и примеры их использования.
+
+
 04.05.2021
 ----------
 **SDK**: `C# 2.9.12 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.12>`__ | `Java 3.9.6 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.6>`__ | `C++ 1.92.3 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.3>`__
 
-- Добавлен текстовый статус документа :doc:`../proto/DocflowStatusV3` в контракты :doc:`../proto/Document` и :doc:`../proto/DocflowV3`.
+- Добавлен текстовый статус документа :doc:`../proto/DocflowStatusV3` в структуры :doc:`../proto/Document` и :doc:`../proto/DocflowV3`.
 
 
 23.03.2021
