@@ -86,7 +86,7 @@ Entity
         UniversalCorrectionDocumentRevision = 50;
         UniversalCorrectionDocumentBuyerTitle = 51;
         CustomData = 64;
-        MoveDocument = 65; //является устаревшим, в ответе методов не возвращается
+        MoveDocument = 65; // является устаревшим, в ответе методов не возвращается
         ResolutionRouteAssignment = 66;
         ResolutionRouteRemoval = 67;
         Title = 68;
@@ -100,21 +100,21 @@ Entity
         // Неизвестные типы должны обрабатываться как Nonformalized
     }
 
-Структура данных *Entity* представляет одну сущность, входящую в сообщение или в дополнение к сообщению. Содержится в структурах :doc:`Message` и :doc:`MessagePatch`.
+Структура данных ``Entity`` представляет одну сущность, входящую в сообщение или в дополнение к сообщению. Содержится в структурах :doc:`Message` и :doc:`MessagePatch`.
 
-- *EntityType* — тип сущности. Может принимать значения:
+- ``EntityType`` — тип сущности. Может принимать значения:
 
-	- *Attachment* — файл-вложение в сообщении
-	- *Signature* — электронная подпись под вложением
+	- ``Attachment`` — файл-вложение в сообщении
+	- ``Signature`` — электронная подпись под вложением
 
-- *EntityId* — уникальный идентификатор сущности.
+- ``EntityId`` — уникальный идентификатор сущности.
 
-- *ParentEntityId* — идентификатор родительской сущности. Например, для сущности *Signature* это будет идентификатор соответствующей сущности *Attachment*.
+- ``ParentEntityId`` — идентификатор родительской сущности. Например, для сущности ``Signature`` это будет идентификатор соответствующей сущности ``Attachment``.
 
-- *Content* — содержимое сущности (подробнее в описании структуры :doc:`Content`).
+- ``Content`` — содержимое сущности (подробнее в описании структуры :doc:`Content`).
 
-	- *Content.Size* — размер содержимого в байтах
-	- *Content.Data* — если присутствует, содержит массив байтов с данными. Его нужно интерпретировать в зависимости от типа сущности *EntityType* и типа вложения *AttachmentType*.
+	- ``Content.Size`` — размер содержимого в байтах
+	- ``Content.Data`` — если присутствует, содержит массив байтов с данными. Его нужно интерпретировать в зависимости от типа сущности ``EntityType`` и типа вложения ``AttachmentType``.
 
 .. table:: Содержимое Content.Data в зависимости от типа сущности и типа вложения
 
@@ -143,7 +143,7 @@ Entity
 	|                        | - XmlAcceptanceCertificate           |                                                                  |
 	|                        | - XmlAcceptanceCertificateBuyerTitle |                                                                  |
 	|                        +--------------------------------------+------------------------------------------------------------------+
-	|                        | - TrustConnectionRequest             | XML-файл в формате *TrustConnectionRequestAttachment*            |
+	|                        | - TrustConnectionRequest             | XML-файл в формате ``TrustConnectionRequestAttachment``            |
 	|                        +--------------------------------------+------------------------------------------------------------------+
 	|                        | - RevocationRequest                  | XML-файл (формат файла)                                          |
 	|                        +--------------------------------------+------------------------------------------------------------------+
@@ -159,122 +159,122 @@ Entity
 	|                        | - ResolutionRouteRemoval             |                                                                  |
 	|                        | - RoamingNotification                |                                                                  |
 	|                        +--------------------------------------+------------------------------------------------------------------+
-	|                        | - SignatureVerificationReport        | Структура *SignatureVerificationResult*,                         |
+	|                        | - SignatureVerificationReport        | Структура ``SignatureVerificationResult``,                         |
 	|                        | - RoamingNotification                | сериализованная в протобуфер                                     |
 	+------------------------+--------------------------------------+------------------------------------------------------------------+
 
-- *AttachmentType* — тип вложения (имеет смысл только для сущностей типа *Attachment*). Может принимать значения:
+- ``AttachmentType`` — тип вложения (имеет смысл только для сущностей типа ``Attachment``). Может принимать значения:
 
-	- *UnknownAttachmentType* — неизвестный тип документа. Возвращается только в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать тип документа, переданный сервером.
-	- *Nonformalized* — неформализованный документ
-	- *Invoice* — счет-фактура
-	- *InvoiceRevision* — исправление счета-фактуры
-	- *InvoiceCorrection* — корректировочный счет-фактура
-	- *InvoiceCorrectionRevision* — исправление корректировочного счета-фактуры
-	- *InvoiceReceipt* — извещение о получении счета-фактуры, подтверждения оператора электронного документооборота или уведомления об уточнении счета-фактуры
-	- *InvoiceConfirmation* — подтверждение оператора электронного документооборота
-	- *InvoiceCorrectionRequest* — уведомление об уточнении счета-фактуры
-	- *AttachmentComment* — текстовый комментарий к другой сущности-вложению
-	- *DeliveryFailureNotification* — уведомление о невозможности доставки сообщения
-	- *SignatureRequestRejection* — отказ в формировании запрошенной подписи
-	- *SignatureVerificationReport* — протокол проверки подписи, сформированный Диадоком
-	- *TrustConnectionRequest* — запрос на инициацию канала обмена документами через Диадок
-	- *ProformaInvoice* — счет на оплату
-	- *Torg12* — товарная накладная ТОРГ-12
-	- *AcceptanceCertificate* — акт о выполнении работ или оказании услуг
-	- *XmlTorg12* — товарная накладная ТОРГ-12 в XML-формате, титул продавца
-	- *XmlTorg12BuyerTitle* — товарная накладная ТОРГ-12 в XML-формате, титул покупателя
-	- *XmlAcceptanceCertificate* — акт о выполнении работ / оказании услуг в XML-формате, титул исполнителя
-	- *XmlAcceptanceCertificateBuyerTitle* — акт о выполнении работ / оказании услуг в XML-формате, титул заказчика
-	- *StructuredData* — произвольный файл со структурированными данными, описывающими тот или иной документ, представленный в виде печатной формы
-	- *Resolution* — информация о статусе согласования документа
-	- *ResolutionRequest* — запрос согласования документа
-	- *ResolutionRequestDenial* — отказ в запросе подписи документа
-	- *PriceList* — ценовой лист
-	- *PriceListAgreement* — протокол согласования цены
-	- *CertificateRegistry* — реестр сертификатов
-	- *ReconciliationAct* — акт сверки
-	- *Contract* — договор
-	- *Torg13* — накладная ТОРГ-13
-	- *ServiceDetails* — детализация
-	- *Receipt* — извещение о получении
-	- *XmlSignatureRejection* — формализованный отказ в подписи
-	- *RevocationRequest* — предложение об аннулировании
-	- *RoamingNotification* — роуминговая квитанция
-	- *SupplementaryAgreement* — дополнительное соглашение к договору
-	- *CustomData* — произвольные данные к документу
-	- *MoveDocument* — информация о перемещении документа в подразделение
-	- *ResolutionRouteAssignment* — информация о запуске документа по маршруту согласования
-	- *ResolutionRouteRemoval* — информация о снятии документа с маршрута согласования
-	- *Title* — титул документа. Возвращается для всех вновь добавляемых типов документов. Для сохранения обратной совместимости для первых титулов с типами от *Invoice* до *UniversalCorrectionDocumentRevision* возвращается соответствующее значение.
-	- *Cancellation* — информация об отмене сущности, которая указана родительской по отношению к данной
-	- *Edition* — информация о редактировании контента документа, который указан родительским по отношению к данной сущности
-	- *DeletionRestoration* — восстановление удаленного документа
-	- *TemplateTransformation* — информация о трансформации
-	- *TemplateRefusal* — информация об отклонении или отзыве шаблона
-	- *OuterDocflow* — внешний документооборот
-	- *RoamingConfirmation* — подтверждение роумингового оператора
+	- ``UnknownAttachmentType`` — неизвестный тип документа. Возвращается только в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать тип документа, переданный сервером.
+	- ``Nonformalized`` — неформализованный документ
+	- ``Invoice`` — счет-фактура
+	- ``InvoiceRevision`` — исправление счета-фактуры
+	- ``InvoiceCorrection`` — корректировочный счет-фактура
+	- ``InvoiceCorrectionRevision`` — исправление корректировочного счета-фактуры
+	- ``InvoiceReceipt`` — извещение о получении счета-фактуры, подтверждения оператора электронного документооборота или уведомления об уточнении счета-фактуры
+	- ``InvoiceConfirmation`` — подтверждение оператора электронного документооборота
+	- ``InvoiceCorrectionRequest`` — уведомление об уточнении счета-фактуры
+	- ``AttachmentComment`` — текстовый комментарий к другой сущности-вложению
+	- ``DeliveryFailureNotification`` — уведомление о невозможности доставки сообщения
+	- ``SignatureRequestRejection`` — отказ в формировании запрошенной подписи
+	- ``SignatureVerificationReport`` — протокол проверки подписи, сформированный Диадоком
+	- ``TrustConnectionRequest`` — запрос на инициацию канала обмена документами через Диадок
+	- ``ProformaInvoice`` — счет на оплату
+	- ``Torg12`` — товарная накладная ТОРГ-12
+	- ``AcceptanceCertificate`` — акт о выполнении работ или оказании услуг
+	- ``XmlTorg12`` — товарная накладная ТОРГ-12 в XML-формате, титул продавца
+	- ``XmlTorg12BuyerTitle`` — товарная накладная ТОРГ-12 в XML-формате, титул покупателя
+	- ``XmlAcceptanceCertificate`` — акт о выполнении работ / оказании услуг в XML-формате, титул исполнителя
+	- ``XmlAcceptanceCertificateBuyerTitle`` — акт о выполнении работ / оказании услуг в XML-формате, титул заказчика
+	- ``StructuredData`` — произвольный файл со структурированными данными, описывающими тот или иной документ, представленный в виде печатной формы
+	- ``Resolution`` — информация о статусе согласования документа
+	- ``ResolutionRequest`` — запрос согласования документа
+	- ``ResolutionRequestDenial`` — отказ в запросе подписи документа
+	- ``PriceList`` — ценовой лист
+	- ``PriceListAgreement`` — протокол согласования цены
+	- ``CertificateRegistry`` — реестр сертификатов
+	- ``ReconciliationAct`` — акт сверки
+	- ``Contract`` — договор
+	- ``Torg13`` — накладная ТОРГ-13
+	- ``ServiceDetails`` — детализация
+	- ``Receipt`` — извещение о получении
+	- ``XmlSignatureRejection`` — формализованный отказ в подписи
+	- ``RevocationRequest`` — предложение об аннулировании
+	- ``RoamingNotification`` — роуминговая квитанция
+	- ``SupplementaryAgreement`` — дополнительное соглашение к договору
+	- ``CustomData`` — произвольные данные к документу
+	- ``MoveDocument`` — информация о перемещении документа в подразделение
+	- ``ResolutionRouteAssignment`` — информация о запуске документа по маршруту согласования
+	- ``ResolutionRouteRemoval`` — информация о снятии документа с маршрута согласования
+	- ``Title`` — титул документа. Возвращается для всех вновь добавляемых типов документов. Для сохранения обратной совместимости для первых титулов с типами от ``Invoice`` до ``UniversalCorrectionDocumentRevision`` возвращается соответствующее значение.
+	- ``Cancellation`` — информация об отмене сущности, которая указана родительской по отношению к данной
+	- ``Edition`` — информация о редактировании контента документа, который указан родительским по отношению к данной сущности
+	- ``DeletionRestoration`` — восстановление удаленного документа
+	- ``TemplateTransformation`` — информация о трансформации
+	- ``TemplateRefusal`` — информация об отклонении или отзыве шаблона
+	- ``OuterDocflow`` — внешний документооборот
+	- ``RoamingConfirmation`` — подтверждение роумингового оператора
 
-- *FileName* — для сущности типа *Attachment* это исходное имя файла, для других типов сущностей не заполняется.
+- ``FileName`` — для сущности типа ``Attachment`` это исходное имя файла, для других типов сущностей не заполняется.
 
-- *NeedRecipientSignature* — флаг, обозначающий запрос подписи получателя под данной сущностью. Имеет смысл только для сущностей типа *Attachment* с типом вложения *Nonformalized*.
+- ``NeedRecipientSignature`` — флаг, обозначающий запрос подписи получателя под данной сущностью. Имеет смысл только для сущностей типа ``Attachment`` с типом вложения ``Nonformalized``.
 
-- *SignerBoxId* — для сущности типа *Signature* это идентификатор ящика автора данной подписи, для других типов сущностей не заполняется.
+- ``SignerBoxId`` — для сущности типа ``Signature`` это идентификатор ящика автора данной подписи, для других типов сущностей не заполняется.
 
-- *NotDeliveredEventId* — это идентификатор сообщения или патча, который не удалось доставить (например, из-за некорректности одной или нескольких подписей в нем). Получить недоставленный кусок сообщения можно с помощью метода :doc:`../http/GetEvent`, передав в качестве параметра `eventId` значение *NotDeliveredEventId*. Данное поле заполняется только у сущности типа Attachment с типом вложения *DeliveryFailureNotification*.
+- ``NotDeliveredEventId`` — это идентификатор сообщения или патча, который не удалось доставить (например, из-за некорректности одной или нескольких подписей в нем). Получить недоставленный кусок сообщения можно с помощью метода :doc:`../http/GetEvent`, передав в качестве параметра ``eventId`` значение ``NotDeliveredEventId``. Данное поле заполняется только у сущности типа ``Attachment`` с типом вложения ``DeliveryFailureNotification``.
 
-- *DocumentInfo* — для сущности типа *Attachment* содержит расширенную информацию о документе, представляемом данной сущностью, в виде структуры данных :doc:`Document`. Заполняется только для сущностей со следующими типами вложений:
+- ``DocumentInfo`` — для сущности типа ``Attachment`` содержит расширенную информацию о документе, представляемом данной сущностью, в виде структуры данных :doc:`Document`. Заполняется только для сущностей со следующими типами вложений:
 
-	- *Nonformalized*
-	- *Invoice*
-	- *InvoiceRevision*
-	- *InvoiceCorrection*
-	- *InvoiceCorrectionRevision*
-	- *TrustConnectionRequest*
-	- *ProformaInvoice*
-	- *Torg12*
-	- *AcceptanceCertificate*
-	- *XmlTorg12*
-	- *XmlAcceptanceCertificate*
-	- *PriceList*
-	- *PriceListAgreement*
-	- *CertificateRegistry*
-	- *ReconciliationAct*
-	- *Contract*
-	- *Torg13*
-	- *ServiceDetails*
-	- *Title*
+	- ``Nonformalized``
+	- ``Invoice``
+	- ``InvoiceRevision``
+	- ``InvoiceCorrection``
+	- ``InvoiceCorrectionRevision``
+	- ``TrustConnectionRequest``
+	- ``ProformaInvoice``
+	- ``Torg12``
+	- ``AcceptanceCertificate``
+	- ``XmlTorg12``
+	- ``XmlAcceptanceCertificate``
+	- ``PriceList``
+	- ``PriceListAgreement``
+	- ``CertificateRegistry``
+	- ``ReconciliationAct``
+	- ``Contract``
+	- ``Torg13``
+	- ``ServiceDetails``
+	- ``Title``
 
-- *RawCreationDate* — :doc:`метка времени <Timestamp>` создания сущности.
+- ``RawCreationDate`` — :doc:`метка времени <Timestamp>` создания сущности.
 
-- *ResolutionInfo* — информация о согласовании в виде структуры данных :doc:`ResolutionInfo <Resolution>`.
+- ``ResolutionInfo`` — информация о согласовании в виде структуры данных :doc:`ResolutionInfo <Resolution>`.
 
-- *SignerDepartmentId* — для сущности типа *Signature* это идентификатор подразделения в котором лежала сущность в момент подписания, для других типов сущностей не заполняется.
+- ``SignerDepartmentId`` — для сущности типа ``Signature`` это идентификатор подразделения в котором лежала сущность в момент подписания, для других типов сущностей не заполняется.
 
-- *ResolutionRequestInfo* — информация о запросе согласования в виде структуры данных :doc:`ResolutionRequestInfo <ResolutionRequest>`.
+- ``ResolutionRequestInfo`` — информация о запросе согласования в виде структуры данных :doc:`ResolutionRequestInfo <ResolutionRequest>`.
 
-- *ResolutionRequestDenialInfo* — информация об отказе в запросе подписи в виде структуры данных :doc:`ResolutionRequestDenialInfo <ResolutionRequestDenial>`.
+- ``ResolutionRequestDenialInfo`` — информация об отказе в запросе подписи в виде структуры данных :doc:`ResolutionRequestDenialInfo <ResolutionRequestDenial>`.
 
-- *IsApprovementSignature* — флаг, указывающий, является ли подпись согласующей или обычной. Заполняется только для сущностей типа *Signature*. Подробнее про согласующие подписи см. :doc:`DocumentSignature <DocumentSignature>`.
+- ``IsApprovementSignature`` — флаг, указывающий, является ли подпись согласующей или обычной. Заполняется только для сущностей типа ``Signature``. Подробнее про согласующие подписи см. :doc:`DocumentSignature <DocumentSignature>`.
 
-- *IsEncryptedContent* — флаг, указывающий, зашифрован ли контент документа.
+- ``IsEncryptedContent`` — флаг, указывающий, зашифрован ли контент документа.
 
-- *AttachmentVersion* — информация о версии XSD схемы, в соответствии с которой сформирована данная сущность.
+- ``AttachmentVersion`` — информация о версии XSD схемы, в соответствии с которой сформирована данная сущность.
 
-- *ResolutionRouteAssignmentInfo* — информация о запуске документа по маршруту согласования в виде структуры данных :doc:`ResolutionRouteAssignmentInfo <ResolutionRouteInfo>`.
+- ``ResolutionRouteAssignmentInfo`` — информация о запуске документа по маршруту согласования в виде структуры данных :doc:`ResolutionRouteAssignmentInfo <ResolutionRouteInfo>`.
 
-- *ResolutionRouteRemovalInfo* — информация о снятии документа с маршрута согласования в виде структуры данных :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`.
+- ``ResolutionRouteRemovalInfo`` — информация о снятии документа с маршрута согласования в виде структуры данных :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`.
 
-- *CancellationInfo* — информация об отмене сущности в виде структуры данных :doc:`CancellationInfo <CancellationInfo>`. Отмененной является сущность, которая указана родительской по отношению к данной. Например, это может быть идентификатор запроса на согласование.
+- ``CancellationInfo`` — информация об отмене сущности в виде структуры данных :doc:`CancellationInfo <CancellationInfo>`. Отмененной является сущность, которая указана родительской по отношению к данной. Например, это может быть идентификатор запроса на согласование.
 
-- *Labels* — :doc:`метки сущности <../proto/Labels>`.
+- ``Labels`` — :doc:`метки сущности <../proto/Labels>`.
 
-- *Version* — идентификатор версии документа.
+- ``Version`` — идентификатор версии документа.
 
-- *TemplateTransformationInfos* — информация о документе, созданном на основе шаблона. Заполняется только для вложений с типом *TemplateTransformation*.
+- ``TemplateTransformationInfos`` — информация о документе, созданном на основе шаблона. Заполняется только для вложений с типом ``TemplateTransformation``.
 
-- :doc:`TemplateRefusalInfo` — информация об отклонении или отзыве шаблона. Заполняется только для вложений с типом *TemplateRefusal*.
+- :doc:`TemplateRefusalInfo` — информация об отклонении или отзыве шаблона. Заполняется только для вложений с типом ``TemplateRefusal``.
 
-- :doc:`OuterDocflow <OuterDocflowInfo>` — информация о внешнем документообороте, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК". Заполняется только для вложений с типом *OuterDocflow*.
+- :doc:`OuterDocflow <OuterDocflowInfo>` — информация о внешнем документообороте, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК". Заполняется только для вложений с типом ``OuterDocflow``.
 
 - :doc:`RevocationRequestInfo <RevocationRequestInfo_Entity>` — содержит информацию о соглашении об аннулировании.
