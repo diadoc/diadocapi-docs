@@ -1,6 +1,16 @@
 ﻿История изменений API
 =====================
 
+26.01.2022
+----------
+**SDK**: `C# 2.9.23 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.23>`__
+
+- Внесены изменения для работы с подтверждениями роумингового оператора:
+
+ - Добавлен новый тип вложения :doc:`AttachmentType <proto/Entity message>` — RoamingConfirmation.
+ - В структуру :doc:`proto/ConfirmationDocflow` добавлено новое поле ``RoamingConfirmation``. Оно содержит информацию о подтверждении роумингового оператора.
+
+
 06.10.2021
 ----------
 **SDK**: `C# 2.9.22 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.22>`__ | `Java 3.9.8 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.8>`__ | `C++ 1.92.8 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.8>`__
