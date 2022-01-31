@@ -3,3 +3,4 @@ sphinx-rtd-theme
 sphinxcontrib-httpdomain
 recommonmark
 docutils==0.17.1
+pip==20.3.4
