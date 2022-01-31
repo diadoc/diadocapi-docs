@@ -9,7 +9,7 @@ DepartmentList
         required int32 TotalCount = 2; // Общее кол-во подразделений
     }
 
-Структура *Department* содержит список подразделений.
+Структура ``DepartmentList`` содержит список подразделений.
 
 - :doc:`Departments <Department>` - список запрошенных подразделений.
-- *TotalCount* - общее кол-во подразделений.
+- ``TotalCount`` - общее кол-во подразделений.
