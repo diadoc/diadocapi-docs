@@ -1,5 +1,5 @@
-Возможности для интеграции
-==========================
+Интеграция с Диадоком
+=====================
 
 .. image:: ../_static/img/diadoc-api-integration-options.png
 	:align: center
