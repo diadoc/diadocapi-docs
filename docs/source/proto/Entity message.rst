@@ -143,7 +143,7 @@ Entity
 	|                        | - XmlAcceptanceCertificate           |                                                                  |
 	|                        | - XmlAcceptanceCertificateBuyerTitle |                                                                  |
 	|                        +--------------------------------------+------------------------------------------------------------------+
-	|                        | - TrustConnectionRequest             | XML-файл в формате ``TrustConnectionRequestAttachment``            |
+	|                        | - TrustConnectionRequest             | XML-файл в формате ``TrustConnectionRequestAttachment``          |
 	|                        +--------------------------------------+------------------------------------------------------------------+
 	|                        | - RevocationRequest                  | XML-файл (формат файла)                                          |
 	|                        +--------------------------------------+------------------------------------------------------------------+
@@ -159,7 +159,7 @@ Entity
 	|                        | - ResolutionRouteRemoval             |                                                                  |
 	|                        | - RoamingNotification                |                                                                  |
 	|                        +--------------------------------------+------------------------------------------------------------------+
-	|                        | - SignatureVerificationReport        | Структура ``SignatureVerificationResult``,                         |
+	|                        | - SignatureVerificationReport        | Структура ``SignatureVerificationResult``,                       |
 	|                        | - RoamingNotification                | сериализованная в протобуфер                                     |
 	+------------------------+--------------------------------------+------------------------------------------------------------------+
 
