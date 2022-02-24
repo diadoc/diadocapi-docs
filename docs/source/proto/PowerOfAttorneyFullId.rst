@@ -8,7 +8,7 @@ PowerOfAttorneyFullId
         required string IssuerInn = 2;
     }
    
-Структура данных ``PowerOfAttorneyFullId`` предназначена для хранения идентификатора машиночитаемой доверенности (МЧД).
+Структура ``PowerOfAttorneyFullId`` предназначена для хранения идентификатора машиночитаемой доверенности (МЧД).
 
 - ``RegistrationNumber`` — регистрационный номер МЧД в формате GUID.
 - ``IssuerInn`` — ИНН доверителя из МЧД.
@@ -17,7 +17,7 @@ PowerOfAttorneyFullId
 
 .. rubric:: Использование
 
-Структура используется внутри структур:
+Структура ``PowerOfAttorneyFullId`` используется внутри структур:
 
 - :doc:`PowerOfAttorneyToRegister`
 - :doc:`PowerOfAttorney`

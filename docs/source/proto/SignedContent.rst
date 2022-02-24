@@ -37,4 +37,4 @@ SignedContent
 
 .. rubric:: Использование
 
-Структура используется внутри структур :doc:`Message` и :doc:`MessageToPost` при отправке документов методами :doc:`../http/PostMessage` и :doc:`../http/PostMessagePatch`.
+Структура ``SignedContent`` используется внутри структур :doc:`Message` и :doc:`MessageToPost` при отправке документов методами :doc:`../http/PostMessage` и :doc:`../http/PostMessagePatch`.
