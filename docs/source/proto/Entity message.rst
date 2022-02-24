@@ -34,6 +34,7 @@ Entity
         optional OuterDocflowInfo OuterDocflow = 29; // заполняется только для вложений с типом AttachmentType.OuterDocflow
         optional RevocationRequestInfo RevocationRequestInfo = 30; // заполняется только для вложений с типом AttachmentType.RevocationRequest
         optional string ContentTypeId = 31;
+        optional PowerOfAtorneyInfo PowerOfAttorneyInfo = 32;
     }
 
     enum EntityType {
@@ -98,6 +99,8 @@ Entity
         TemplateRefusal = 74;
         OuterDocflow = 75;
         RoamingConfirmation = 76;
+        PowerOfAttorney = 77;
+        PowerOfAttorneyStatus = 78;
         // Неизвестные типы должны обрабатываться как Nonformalized
     }
 
@@ -215,6 +218,8 @@ Entity
 	- ``TemplateRefusal`` — информация об отклонении или отзыве шаблона
 	- ``OuterDocflow`` — информация о внешнем документообороте
 	- ``RoamingConfirmation`` — подтверждение оператора, отправленное в роуминг или полученное из роуминга
+	- ``PowerOfAttorney`` — информация о машиночитаемой доверенности
+	- ``PowerOfAttorneyStatus`` — статус проверки машиночитаемой доверенности
 
 - ``FileName`` — для сущности типа ``Attachment`` это исходное имя файла, для других типов сущностей не заполняется.
 
@@ -281,3 +286,18 @@ Entity
 - ``RevocationRequestInfo`` — информация о соглашении об аннулировании, представленная в виде структуры :doc:`RevocationRequestInfo <RevocationRequestInfo_Entity>`.
 
 - ``ContentTypeId`` — уникальный идентификатор контента документа. ``ContentTypeId`` будет единым для документов с одинаковой структурой и одинаковыми правилами обработки. Идентификатор будет свой для каждого типа документа, титула и служебного документа. Например, УПД 820 формата с функцией СЧФДОП будет иметь ``ContentTypeId=utd820_schfdop_orig_t1_05_01_01`` для первого титула и ``ContentTypeId=utd820_schfdop_t2_05_01_01`` для второго титула, а для отказа в подписи в формате уведомления об уточнении ``ContentTypeId=signature_rejection_02``.
+
+- ``PowerOfAttorneyInfo`` — информация о машиночитаемой доверенности. Возвращается только для вложений с типами типами ``AttachmentType=PowerOfAttorney`` и  ``AttachmentType=PowerOfAttorneyStatus``. Статус проверки машиночитаемой доверенности ``PowerOfAttorneyValidationStatus`` возвращается только для вложений с типом ``AttachmentType=PowerOfAttorneyStatus``.
+ Для машиночитаемой доверенности в поле ``ParentEntityId`` возвращается:
+ - для вложения с типом ``AttachmentType=PowerOfAttorney`` — идентификатор подписи,
+ - для вложения с типом ``AttachmentType=PowerOfAttorneyStatus`` — идентификатор МЧД.
+
+----
+
+.. rubric:: Использование
+
+Структура возвращается внутри структуры :doc:`Message` следующими методами:
+- :doc:`../http/GetMessage`
+- :doc:`../http/GetNewEvents`
+- :doc:`../http/GetLastEvent`
+- :doc:`../http/GetEvent`
