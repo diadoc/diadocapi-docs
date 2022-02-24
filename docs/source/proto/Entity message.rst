@@ -33,6 +33,7 @@ Entity
         optional TemplateRefusalInfo TemplateRefusalInfo = 28;
         optional OuterDocflowInfo OuterDocflow = 29; // заполняется только для вложений с типом AttachmentType.OuterDocflow
         optional RevocationRequestInfo RevocationRequestInfo = 30; // заполняется только для вложений с типом AttachmentType.RevocationRequest
+        optional string ContentTypeId = 31;
     }
 
     enum EntityType {
@@ -278,3 +279,5 @@ Entity
 - ``OuterDocflow`` — информация о внешнем документообороте, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК". Представлена в виде структуры :doc:`OuterDocflowInfo`. Заполняется только для вложений с типом ``OuterDocflow``.
 
 - ``RevocationRequestInfo`` — информация о соглашении об аннулировании, представленная в виде структуры :doc:`RevocationRequestInfo <RevocationRequestInfo_Entity>`.
+
+- ``ContentTypeId`` — уникальный идентификатор контента документа. ``ContentTypeId`` будет единым для документов с одинаковой структурой и одинаковыми правилами обработки. Идентификатор будет свой для каждого типа документа, титула и служебного документа. Например, УПД 820 формата с функцией СЧФДОП будет иметь ``ContentTypeId=utd820_schfdop_orig_t1_05_01_01`` для первого титула и ``ContentTypeId=utd820_schfdop_t2_05_01_01`` для второго титула, а для отказа в подписи в формате уведомления об уточнении ``ContentTypeId=signature_rejection_02``.
