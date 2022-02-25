@@ -1,5 +1,7 @@
 DocumentSignature
 =================
+  
+Структура ``DocumentSignature`` предназначена для представления ЭП к некоторым данным в отправляемом сообщении:
 
 .. code-block:: protobuf
 
@@ -13,8 +15,6 @@ DocumentSignature
         repeated string Labels = 8;
         optional PowerOfAttorneyToPost PowerOfAttorney = 9;
     }
-        
-Структура данных ``DocumentSignature`` служит для представления ЭП к некоторым данным в отправляемом сообщении:
 
 - ``ParentEntityId`` — идентификатор подписываемых данных в отправляемом сообщении. Данный идентификатор должен соответствовать содержимому поля :doc:`Entity.EntityId <Entity message>` какой-либо из сущностей (:doc:`Entity <Entity message>`) модифицируемого отправляемого сообщения (:doc:`Message`).
    

@@ -1,6 +1,8 @@
 DocumentSenderSignature
 =======================
 
+Структура ``DocumentSenderSignature`` предназначена для представления ЭП к документам отправляемого черновика:
+
 .. code-block:: protobuf
 
     message DocumentSenderSignature {
@@ -10,9 +12,6 @@ DocumentSenderSignature
         optional string PatchedContentId = 5;
         optional PowerOfAttorneyToPost PowerOfAttorney = 6;
     }
-        
-
-Структура данных ``DocumentSenderSignature`` служит для представления ЭП к документам отправляемого черновика:
 
 - ``ParentEntityId`` — идентификатор подписываемых данных в отправляемом сообщении. Данный идентификатор должен соответствовать содержимому поля :doc:`Entity.EntityId <Entity message>` какой-либо из сущностей (:doc:`Entity <Entity message>`) модифицируемого черновика (:doc:`Message`).
 

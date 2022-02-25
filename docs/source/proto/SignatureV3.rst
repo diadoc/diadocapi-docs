@@ -1,6 +1,8 @@
 SignatureV3
 ===========
 
+Структура ``SignatureV3`` представляет информацию о подписи под документом.
+
 .. code-block:: protobuf
 
     message SignatureV3
@@ -14,8 +16,6 @@ SignatureV3
         optional Timestamp DeliveredAt = 7;
         optional SignaturePowerOfAttorney PowerOfAttorney = 8;
     }
-
-Структура представляет информацию о подписи под документом.
 
 - ``Cms`` — информация о содержимом оригинальной подписи, представленная структурой :doc:`Entity`.
 - ``CadesT`` — информация о содержимом подписи в формате CADES-T, представленная структурой :doc:`Entity`. 

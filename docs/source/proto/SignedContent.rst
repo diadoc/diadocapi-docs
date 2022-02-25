@@ -1,6 +1,8 @@
 SignedContent
 =============
 
+Структура ``SignedContent`` предназначена для представления подписанных ЭП данных в отправляемом сообщении:
+
 .. code-block:: protobuf
 
     message SignedContent {
@@ -11,9 +13,6 @@ SignedContent
         optional string SignatureNameOnShelf = 6;
         optional PowerOfAttorneyToPost PowerOfAttorney = 7;
     }
-        
-
-Структура данных ``SignedContent`` служит для представления подписанных ЭП данных в отправляемом сообщении:
 
 - ``Content`` — подписываемые данные (бинарное представление документа). Должно оставаться пустым (не заполняться), если заполнено поле ``NameOnShelf``.
 

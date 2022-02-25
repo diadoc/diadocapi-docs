@@ -1,6 +1,8 @@
 PowerOfAttorneyValidationStatus
 ===============================
 
+Структура ``PowerOfAttorneyValidationStatus`` предназначена для хранения информации о статусе проверки машиночитаемой доверенности (МЧД).
+
 .. code-block:: protobuf
 
     message PowerOfAttorneyValidationStatus {
@@ -31,12 +33,10 @@ PowerOfAttorneyValidationStatus
         required string Text = 2;
     }
 
-Структура ``PowerOfAttorneyValidationStatus`` предназначена для хранения информации о статусе проверки машиночитаемой доверенности (МЧД).
-
 - ``Severity`` — критичность статуса, значение из перечисления ``Severity``.
 - ``StatusNamedId`` — текстовый идентификатор статуса, значение из перечисления ``PowerOfAttorneyValidationStatusNamedId``.
 - ``StatusText`` — удобочитаемый текст статуса.
-- ``Errors`` — список ошибок, представленных в виде:
+- ``Errors`` — список ошибок, представленных структурой ``PowerOfAttorneyValidationError`` с полями:
 
 	- ``Code`` — код ошибки.
 	- ``Text`` — текст ошибки.

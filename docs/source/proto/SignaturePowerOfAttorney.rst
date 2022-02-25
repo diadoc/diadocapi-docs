@@ -1,6 +1,8 @@
 SignaturePowerOfAttorney
 ========================
 
+Структура ``SignaturePowerOfAttorney`` предназначена для хранения информации о машиночитаемой доверенности (МЧД), использованной при подписании документа, и статусе ее проверки.
+
 .. code-block:: protobuf
 
     message SignaturePowerOfAttorney {
@@ -15,8 +17,6 @@ SignaturePowerOfAttorney
         required PowerOfAttorneyValidationStatus PowerOfAttorneyStatus = 2;
     }
    
-Структура ``SignaturePowerOfAttorney`` предназначена для хранения информации о машиночитаемой доверенности (МЧД), использованной при подписании документа, и статусе ее проверки.
-
 - ``Entity`` — сущность, содержащая идентификатор МЧД и время ее создания, преставленная структурой :doc:`Entity message`.
 - ``FullId`` — идентификатор МЧД, представленный структурой :doc:PowerOfAttorneyFullId`.
 - ``Status`` — последний статус проверки МЧД, представленный структурой :doc:PowerOfAttorneyValidationStatus`.

@@ -1,6 +1,8 @@
 DocflowStatusV3
 ===============
 
+Структура ``DocflowStatusV3`` содержит информацию о статусе документооборота. В нее входит человекочитаемый текст статуса, предназначенный для вывода пользователю.
+
 .. code-block:: protobuf
 
    message DocflowStatusV3
@@ -9,8 +11,6 @@ DocflowStatusV3
         optional DocflowStatusModelV3 SecondaryStatus = 2;
         optional PowerOfAttorneyValidationStatus PowerOfAttorneyGeneralStatus = 3;
    }
-
-Структура содержит информацию о статусе документооборота. В нее входит человекочитаемый текст статуса, предназначенный для вывода пользователю.
 
 Статус формируется с точки зрения пользователя, от имени которого был сделан запрос на получение этой информации.
 

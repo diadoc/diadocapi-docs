@@ -1,6 +1,8 @@
 PowerOfAttorneyFullId
 =====================
 
+Структура ``PowerOfAttorneyFullId`` предназначена для хранения идентификатора машиночитаемой доверенности (МЧД).
+
 .. code-block:: protobuf
 
     message PowerOfAttorneyFullId {
@@ -8,8 +10,6 @@ PowerOfAttorneyFullId
         required string IssuerInn = 2;
     }
    
-Структура ``PowerOfAttorneyFullId`` предназначена для хранения идентификатора машиночитаемой доверенности (МЧД).
-
 - ``RegistrationNumber`` — регистрационный номер МЧД в формате GUID.
 - ``IssuerInn`` — ИНН доверителя из МЧД.
 
