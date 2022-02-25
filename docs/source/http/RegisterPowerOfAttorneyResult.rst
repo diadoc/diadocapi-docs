@@ -8,7 +8,7 @@ RegisterPowerOfAttorneyResult
 	:queryparam boxId: идентификатор ящика организации.
 	:queryparam taskId: идентификатор операции, полученный методом :doc:`RegisterPowerOfAttorney`.
 
-	:requestheader Authorization: необходимые данные для :doc:`авторизации <../Authorization>`
+	:requestheader Authorization: необходимые данные для :doc:`авторизации <../Authorization>`.
 
 	:statuscode 200: операция успешно завершена
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры

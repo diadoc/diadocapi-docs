@@ -116,4 +116,4 @@ PowerOfAttorney
 
 - в структуре :doc:`PowerOfAttorneyRegisterResult`
 - в структуре :doc:`EmployeePowerOfAttorney`
-- в теле ответа метода :doc:`../http/GetPowersOfAttorneyInfo`
+- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`

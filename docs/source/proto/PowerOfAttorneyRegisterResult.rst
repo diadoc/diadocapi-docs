@@ -44,4 +44,4 @@ PowerOfAttorneyRegisterResult
 
 .. rubric:: Использование
 
-Структура ``PowerOfAttorneyRegisterResult`` используется в теле ответа метода :doc:`../http/RegisterPowerOfAttorneyResult`.
+Структура ``PowerOfAttorneyRegisterResult`` возвращается в теле ответа метода :doc:`../http/RegisterPowerOfAttorneyResult`.

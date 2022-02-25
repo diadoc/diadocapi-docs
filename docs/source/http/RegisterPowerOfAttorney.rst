@@ -7,9 +7,9 @@ RegisterPowerOfAttorney
 
 	:queryparam boxId: идентификатор ящика организации.
 
-	:body: данные для регистрации МЧД, сериализованные в протобуфер :doc:`../proto/PowerOfAttorneyToRegister`
+	:requestheader Authorization: необходимые данные для :doc:`авторизации <../Authorization>`.
 
-	:requestheader Authorization: необходимые данные для :doc:`авторизации <../Authorization>`
+	:body: данные для регистрации МЧД, сериализованные в протобуфер :doc:`../proto/PowerOfAttorneyToRegister`.
 
 	:statuscode 200: операция успешно завершена
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры
