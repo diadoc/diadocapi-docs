@@ -289,7 +289,7 @@ Entity
 
 - ``ContentTypeId`` — уникальный идентификатор контента документа. ``ContentTypeId`` будет единым для документов с одинаковой структурой и одинаковыми правилами обработки. Идентификатор будет свой для каждого типа документа, титула и служебного документа. Например, УПД 820 формата с функцией СЧФДОП будет иметь ``ContentTypeId=utd820_schfdop_orig_t1_05_01_01`` для первого титула и ``ContentTypeId=utd820_schfdop_t2_05_01_01`` для второго титула, а для отказа в подписи в формате уведомления об уточнении ``ContentTypeId=signature_rejection_02``.
 
-- ``PowerOfAttorneyInfo`` — информация о машиночитаемой доверенности и статусе ее проверки, представленная структурой :doc:`PowerOfAttorneyInfo`. Возвращается только для вложений с типами типами ``AttachmentType=PowerOfAttorney`` и  ``AttachmentType=PowerOfAttorneyStatus``. Статус проверки машиночитаемой доверенности ``PowerOfAttorneyValidationStatus`` возвращается только для вложений с типом ``AttachmentType=PowerOfAttorneyStatus``. Для машиночитаемой доверенности в поле ``ParentEntityId`` возвращается:
+- ``PowerOfAttorneyInfo`` — информация о машиночитаемой доверенности и статусе ее проверки, представленная структурой :doc:`PowerOfAttorneyInfo`. Возвращается только для вложений с типами ``AttachmentType=PowerOfAttorney`` и  ``AttachmentType=PowerOfAttorneyStatus``. Статус проверки машиночитаемой доверенности ``PowerOfAttorneyValidationStatus`` возвращается только для вложений с типом ``AttachmentType=PowerOfAttorneyStatus``. Для машиночитаемой доверенности в поле ``ParentEntityId`` возвращается:
  
 	- для вложения с типом ``AttachmentType=PowerOfAttorney`` — идентификатор подписи,
 	- для вложения с типом ``AttachmentType=PowerOfAttorneyStatus`` — идентификатор МЧД.

@@ -79,7 +79,7 @@ PowerOfAttorney
 		- ``Kpp`` — КПП доверителя.
 		- ``OrganizationName`` — наименование организации.
 		
-	- ``ForeignEntity`` — данные об организации. Используются в случае, если тип доверителя имеет значение ``Type=ForeignEntity``. Представлены структурой ``PowerOfAttorneyIssuerForeignEntity`` с полями:
+	- ``ForeignEntity`` — данные об иностранной организации. Используются в случае, если тип доверителя имеет значение ``Type=ForeignEntity``. Представлены структурой ``PowerOfAttorneyIssuerForeignEntity`` с полями:
 	
 		- ``Inn`` — ИНН доверителя.
 		- ``Kpp`` — КПП доверителя.
@@ -88,7 +88,7 @@ PowerOfAttorney
 	- ``IndividualEntity`` — данные об индивидуальном предпринимателе. Используются в случае, если тип доверителя имеет значение ``Type=IndividualEntity``. Представлены структурой ``PowerOfAttorneyIssuerIndividualEntity`` с полями:
 	
 		- ``Inn`` — ИНН доверителя.
-		- ``OrganizationName`` — ФИО индивидуального предпринимателя.
+		- ``OrganizationName`` — Наименование индивидуального предпринимателя.
 
 	- ``PhysicalEntity`` — данные о физическом лице. Используются в случае, если тип доверителя имеет значение ``Type=PhysicalEntity``. Представлены структурой ``PowerOfAttorneyIssuerPhysicalEntity`` с полями:
 	

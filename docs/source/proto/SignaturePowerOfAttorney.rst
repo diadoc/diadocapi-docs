@@ -17,12 +17,12 @@ SignaturePowerOfAttorney
         required PowerOfAttorneyValidationStatus PowerOfAttorneyStatus = 2;
     }
    
-- ``Entity`` — сущность, содержащая идентификатор МЧД и время ее создания, преставленная структурой :doc:`Entity message`.
-- ``FullId`` — идентификатор МЧД, представленный структурой :doc:PowerOfAttorneyFullId`.
-- ``Status`` — последний статус проверки МЧД, представленный структурой :doc:PowerOfAttorneyValidationStatus`.
+- ``Entity`` — сущность, содержащая идентификатор МЧД и время ее создания, преставленная структурой :doc:`Entity`.
+- ``FullId`` — идентификатор МЧД, представленный структурой :doc:`PowerOfAttorneyFullId`.
+- ``Status`` — последний статус проверки МЧД, представленный структурой :doc:`PowerOfAttorneyValidationStatus`.
 - ``StatusChanges`` — история статусов МЧД:
 
-	- ``Entity`` — идентификатор и время установки статуса, преставленныя структурой :doc:`Entity message`.
+	- ``Entity`` — идентификатор и время установки статуса, преставленныя структурой :doc:`Entity`.
 	- ``PowerOfAttorneyStatus`` — статус проверки МЧД, представленный структурой :doc:`PowerOfAttorneyValidationStatus`.
 
 ----

@@ -1,7 +1,7 @@
 PowerOfAttorneyToUpdate
 =======================
 
-Структура ``PowerOfAttorneyToUpdate`` используется для :doc:`обновления <../http/UpdatePowerOfAttorney>` настроек машиночитаемой доверенности (МЧД).
+Структура ``PowerOfAttorneyToUpdate`` используется для :doc:`обновления <../http/UpdatePowerOfAttorney>` настроек машиночитаемой доверенности (МЧД) для сотрудника.
 
 .. code-block:: protobuf
 
