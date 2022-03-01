@@ -1,6 +1,54 @@
 ﻿История изменений API
 =====================
 
+21.02.2022
+----------
+**SDK**: `C# 2.9.28 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.28>`__
+
+- Реализованы методы для работы с машиночитаемой доверенностью (МЧД).
+
+	- Регистрация МЧД:
+	
+		- методы :doc:`http/RegisterPowerOfAttorney` и :doc:`http/RegisterPowerOfAttorneyResult` для регистрации МЧД.
+		
+	- Работа с МЧД сотрудника:
+	
+		- метод :doc:`http/AddEmployeePowerOfAttorney` для привязки МЧД к сотруднику.
+		- метод :doc:`http/DeleteEmployeePowerOfAttorney` для отвязки МЧД от сотрудника.
+		- метод :doc:`http/UpdateEmployeePowerOfAttorney` для одновления настроек МЧД сотрудника.
+		- метод :doc:`http/GetEmployeePowersOfAttorney` для получения всх МЧД сотрудника.
+		
+	- Получение и проверка МЧД:
+	
+		- метод :doc:`http/GetPowerOfAttorneyInfo` для получения информации о МЧД, отправленной с документом.
+		- метод :doc:`http/PrevalidatePowerOfAttorney` для предварительной проверки МЧД.
+
+- Реализована отправка документов с машиночитаемой доверенностью (МЧД).
+
+ При отправке документов методами :doc:`http/PostMessage`, :doc:`http/PostMessagePatch` и :doc:`http/SendDraft` теперь можно указать МЧД. Для этого изменены структуры :doc:`proto/SignedContent`, :doc:`proto/DocumentSignature` и :doc:`proto/DocumentSenderSignature`, которые теперь могут хранить информацию о МЧД в новой структуре :doc:`proto/PowerOfAttorneyToPost`.
+
+- Реализовано получение машиночитаемой доверенности (МЧД).
+
+	- Получение МЧД в сообщении.
+
+	 В методы :doc:`http/GetMessage`, :doc:`http/GetNewEvents`, :doc:`http/GetLastEvent` и :doc:`http/GetEvent` добавлена возможность получить информацию о МЧД и ее статусе. Для этого реализована структура :doc:`proto/PowerOfAttorneyInfo`, используемая в структуре :doc:`proto/Entity message`.
+	 В перечисление ``AttachmentType`` добавлены значения:
+
+		- ``PowerOfAttorney`` — информация о МЧД
+		- ``PowerOfAttorneyStatus`` — статус проверки МЧД
+
+	- Получение МЧД в docflow.
+
+	 В методах  :doc:`V3/GetDocflowEvents <../http/GetDocflowEvents_V3>`, :doc:`V3/GetDocflows <../http/GetDocflows_V3>`, :doc:`V3/GetDocflowsByPacketId <../http/GetDocflowsByPacketId_V3>`, :doc:`V3/SearchDocflows <../http/SearchDocflows_V3>` реализованы следующие изменения:
+
+		- добавлена возможность получить информацию об общем (сводном) статусе по всем МЧД для всех сущностей документа. Для этого изменена структура :doc:`proto/DocflowStatusV3`, которая теперь содержит новую структуру :doc:`proto/PowerOfAttorneyValidationStatus`, хранящую информацию о сводном статусе МЧД.
+		- добавлена возможность  получить информацию о МЧД и ее статусе из подписи под документом. Для этого изменена структура :doc:`proto/SignatureV3`, которая теперь хранит информацию о подписи с использованием МЧД в своей структуре :doc:`proto/SignaturePowerOfAttorney`.
+
+	- Получение МЧД в документах.
+
+	 Методы :doc:`http/GetDocument`, :doc:`http/GetDocuments`, :doc:`http/GetDocumentsByMessageId` теперь возвращают информацию об общем (сводном) статусе по всем МЧД для всех сущностей документа. Для этого изменена структура :doc:`proto/DocflowStatusV3` в структуре :doc:`proto/Document`, которая теперь содержит новую структуру :doc:`proto/PowerOfAttorneyValidationStatus`, хранящую информацию о сводном статусе МЧД.
+
+
 06.10.2021
 ----------
 **SDK**: `C# 2.9.22 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.22>`__ | `Java 3.9.8 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.8>`__ | `C++ 1.92.8 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.8>`__
