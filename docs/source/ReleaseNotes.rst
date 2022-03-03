@@ -47,6 +47,14 @@
 	- Получение МЧД в документах.
 
 	 Методы :doc:`http/GetDocument`, :doc:`http/GetDocuments`, :doc:`http/GetDocumentsByMessageId` теперь возвращают информацию об общем (сводном) статусе по всем МЧД для всех сущностей документа. Для этого изменена структура :doc:`proto/DocflowStatusV3` в структуре :doc:`proto/Document`, которая теперь содержит новую структуру :doc:`proto/PowerOfAttorneyValidationStatus`, хранящую информацию о сводном статусе МЧД.
+	 
+- Реализована генерция титулов с машиночитаемой доверенностью (МЧД).
+
+ Метод :doc:`http/GenerateTitleXml` теперь может генерировать :ref:`титулы с МЧД <generate_title_xml_poa>`.
+ 
+- Реализована подготовка к подписанию документа с машиночитаемой доверенностью (МЧД).
+ 
+ Метод :doc:`http/PrepareDocumentsToSign` теперь может подготовить к подписанию документ с МЧД. Для этого в структуру :doc:`proto/utd/ExtendedSigner` включена структура :doc:`proto/PowerOfAttorneyToPost`, содержащая данные о МЧД.
 
 
 06.10.2021
