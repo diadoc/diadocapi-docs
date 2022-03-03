@@ -64,12 +64,12 @@ DocumentVersion
 -  *SupportsEncrypting* - поддерживается отправка зашифрованных документов
 -  *SupportsPredefinedRecipientTitle* - поддерживается отправка предопределенного титула. Подробнее здесь: :doc:`../howto/example_predefined_recipient_title`.
 -  *SupportsAmendmentRequest* - поддерживается отправка запроса на уточнение.
--  :ref:`Titles <document-title>` - описания титулов документа
+-  :ref:`Titles <document_title>` - описания титулов документа
 -  *IsActual* - версия актуальна
 -  :doc:`Workflows <DocumentWorkflow>` - виды документооборота
 
 
-.. _document-title:
+.. _document_title:
 
 DocumentTitle
 `````````````
