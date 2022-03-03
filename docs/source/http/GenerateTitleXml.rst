@@ -137,56 +137,56 @@ GenerateTitleXml
 
 .. sourcecode:: xml
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <UniversalTransferDocumentWithHyphens Function="СЧФ"
-                   DocumentDate="01.08.2019"
-                   DocumentNumber="140"
-                   DocumentCreator="1"
-                   DocumentCreatorBase="1"
-                   CircumFormatInvoice="1"
-                   Currency="643" >
-        <Sellers>
-            <Seller>
-                <OrganizationDetails OrgType="2"
-                         Inn="114500647890"
-                         FnsParticipantId="2BM-participantId1"
-                         OrgName="ИП Продавец Иван Иванович">
-                    <Address>
-                        <RussianAddress Region="02"/>
-                    </Address>
-                </OrganizationDetails>
-            </Seller>
-        </Sellers>
-        <Buyers>
-            <Buyer>
-                <OrganizationReference OrgType="1"
-                         BoxId="53d55d52-9317-4ad4-a7d9-5e9dd3cd6367"/>
-            </Buyer>
-        </Buyers>
-        <Table TotalWithVatExcluded="0" Vat="0" Total="0">
-            <Item Product="Товарная позиция"
-                     Unit="796"
-                     Quantity="0"
-                     Price="0"
-                     TaxRate="без НДС"
-                     SubtotalWithVatExcluded="0"
-                     Vat="0"
-                     Subtotal="0"
-					 Excise="10"/>
-        </Table>
-        <TransferInfo OperationInfo="Товары переданы"/>
-        <Signers>
-            <SignerDetails Inn="123456789047"
-                     LastName="Подписантов"
-                     FirstName="Иван"
-                     MiddleName="Иванович"
-                     RegistrationCertificate="1"
-                     SignerPowers="0"
-                     SignerType="3"
-                     SignerStatus="1"
-                     SignerPowersBase="Должностные обязанности"/>
-        </Signers>
-    </UniversalTransferDocumentWithHyphens>
+	<?xml version="1.0" encoding="utf-8"?>
+	<UniversalTransferDocumentWithHyphens Function="СЧФ"
+			DocumentDate="01.08.2019"
+			DocumentNumber="140"
+			DocumentCreator="1"
+			DocumentCreatorBase="1"
+			CircumFormatInvoice="1"
+			Currency="643" >
+		<Sellers>
+			<Seller>
+				<OrganizationDetails OrgType="2"
+						Inn="114500647890"
+						FnsParticipantId="2BM-participantId1"
+						OrgName="ИП Продавец Иван Иванович">
+					<Address>
+						<RussianAddress Region="02"/>
+					</Address>
+				</OrganizationDetails>
+			</Seller>
+		</Sellers>
+		<Buyers>
+			<Buyer>
+				<OrganizationReference OrgType="1"
+						BoxId="53d55d52-9317-4ad4-a7d9-5e9dd3cd6367"/>
+			</Buyer>
+		</Buyers>
+		<Table TotalWithVatExcluded="0" Vat="0" Total="0">
+			<Item Product="Товарная позиция"
+					Unit="796"
+					Quantity="0"
+					Price="0"
+					TaxRate="без НДС"
+					SubtotalWithVatExcluded="0"
+					Vat="0"
+					Subtotal="0"
+					Excise="10"/>
+		</Table>
+		<TransferInfo OperationInfo="Товары переданы"/>
+		<Signers>
+			<SignerDetails Inn="123456789047"
+					LastName="Подписантов"
+					FirstName="Иван"
+					MiddleName="Иванович"
+					RegistrationCertificate="1"
+					SignerPowers="0"
+					SignerType="3"
+					SignerStatus="1"
+					SignerPowersBase="Должностные обязанности"/>
+		</Signers>
+	</UniversalTransferDocumentWithHyphens>
 
 *Пример тела ответа*:
 
@@ -273,7 +273,7 @@ GenerateTitleXml
 
 - если при генерации детали подписанта задаются в явном виде с помощью структуры ``SignerDetails``, то в случае формирования подписанта по МЧД интегратор сам определяет необходимость использования ИНН подписанта и название организации для ЮЛ из МЧД.
 
-*XSD-схема структуры PowerOfAttorney*
+*Структура PowerOfAttorney в XSD-схеме*
 
 .. sourcecode:: xml
 
@@ -302,18 +302,18 @@ GenerateTitleXml
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<UniversalTransferDocumentWithHyphens Function="СЧФ"
-				   DocumentDate="01.08.2019"
-				   DocumentNumber="140"
-				   DocumentCreator="1"
-				   DocumentCreatorBase="1"
-				   CircumFormatInvoice="1"
-				   Currency="643" >
+			DocumentDate="01.08.2019"
+			DocumentNumber="140"
+			DocumentCreator="1"
+			DocumentCreatorBase="1"
+			CircumFormatInvoice="1"
+			Currency="643" >
 		<Sellers>
 			<Seller>
 				<OrganizationDetails OrgType="2"
-							Inn="114500647890"
-							FnsParticipantId="2BM-participantId1"
-							OrgName="ИП Продавец Иван Иванович">
+						Inn="114500647890"
+						FnsParticipantId="2BM-participantId1"
+						OrgName="ИП Продавец Иван Иванович">
 					<Address>
 						<RussianAddress Region="02"/>
 					</Address>
@@ -339,10 +339,10 @@ GenerateTitleXml
 		</Table>
 		<TransferInfo OperationInfo="Товары переданы"/>
 		<Signers>
-		<SignerReference BoxId="74ef3a00-c625-3ef0-9b50-65bf7f96b9ae" CertificateThumbprint="8A80C2723DBC4F0A94F8CEE21C0A15A68A80C272">
-			<PowerOfAttorney UseDefault="false">
-				<FullId RegistrationNumber="4F73C574-CF7C-4664-91B9-48185BC66A27" IssuerInn="114500647890" />
-			</PowerOfAttorney> 
-	  </SignerReference>
-	  </Signers>
+			<SignerReference BoxId="74ef3a00-c625-3ef0-9b50-65bf7f96b9ae" CertificateThumbprint="8A80C2723DBC4F0A94F8CEE21C0A15A68A80C272">
+				<PowerOfAttorney UseDefault="false">
+					<FullId RegistrationNumber="4F73C574-CF7C-4664-91B9-48185BC66A27" IssuerInn="114500647890" />
+				</PowerOfAttorney> 
+			</SignerReference>
+		</Signers>
 	</UniversalTransferDocumentWithHyphens>
