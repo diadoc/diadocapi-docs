@@ -9,6 +9,7 @@ ExtendedSigner
         optional bytes SignerCertificate = 2;
         optional string SignerCertificateThumbprint = 3;
         optional ExtendedSignerDetails SignerDetails = 4;
+        optional PowerOfAttorneyToPost PowerOfAttorney = 5;
     }
 
     message ExtendedSignerDetails {
@@ -70,36 +71,38 @@ ExtendedSigner
         InformationCreatorBuyerEmployee = 6; // Работник организации - составителя файла обмена информации покупателя, если составитель файла обмена информации покупателя не является покупателем (для документов в формате приказа №820 и №423)
     }
 
-Структура данных *ExtendedSigner* содержит следующие поля:
+- ``PowerOfAttorney`` - данные машиночитаемой доверенности, представленные структурой :doc:`../PowerOfAttorneyToPost`.
+	
+Структура данных ``ExtendedSigner`` содержит следующие поля:
 
--  *Surname* - фамилия подписанта.
+- ``Surname`` - фамилия подписанта.
 
--  *FirstName* - имя подписанта.
+- ``FirstName`` - имя подписанта.
 
--  *Patronymic* - отчество подписанта (необязательно).
+- ``Patronymic`` - отчество подписанта (необязательно).
 
--  *JobTitle* - должность подписанта.
+- ``JobTitle`` - должность подписанта.
 
--  *Inn* - ИНН юридического лица подписанта или индивидуального предпринимателя (необязательно).
+- ``Inn`` - ИНН юридического лица подписанта или индивидуального предпринимателя (необязательно).
 
--  *RegistrationCertificate* - реквизиты свидетельства о регистрации индивидуального предпринимателя (необязательно).
+- ``RegistrationCertificate`` - реквизиты свидетельства о регистрации индивидуального предпринимателя (необязательно).
 
-- *SignerType* - ТИП подписанта: индивидуальный предприниматель, юридическое или физическое лицо
+- ``SignerType`` - ТИП подписанта: индивидуальный предприниматель, юридическое или физическое лицо
 
-- *SignerInfo* - иные сведения, идентифицируеющие подписанта.
+- ``SignerInfo`` - иные сведения, идентифицируеющие подписанта.
 
-- *SignerPowers* - область полномочий подписанта. Указывается из предложенного списка.
+- ``SignerPowers`` - область полномочий подписанта. Указывается из предложенного списка.
 
-- *SignerStatus* - статус подписанта. Указывается из предложенного списка.
+- ``SignerStatus`` - статус подписанта. Указывается из предложенного списка.
 
-- *SignerPowersBase* - основания полномочий (доверия) подписанта. Обязателен, если SignerStatus = 4, "уполномоченное физическое лицо"
+- ``SignerPowersBase`` - основания полномочий (доверия) подписанта. Обязателен, если SignerStatus = 4, "уполномоченное физическое лицо"
 
-- *SignerOrgPowersBase* - основания полномочий (доверия) организации. Обязателен, если SignerStatus = 3, "работник иной уполномоченной организации"
+- ``SignerOrgPowersBase`` - основания полномочий (доверия) организации. Обязателен, если SignerStatus = 3, "работник иной уполномоченной организации"
 
-- *SignerOrganizationName* - наименование организации. Элемент является обязательным, если выполняются следующие условия:
+- ``SignerOrganizationName`` - наименование организации. Элемент является обязательным, если выполняются следующие условия:
 
-    - *SignerType = LegalEntity*
+    - ``SignerType = LegalEntity``
 
-    - *AttachmentVersion = tovtorg_05_01_02* или *rezru_05_01_01*
+    - ``AttachmentVersion = tovtorg_05_01_02`` или ``rezru_05_01_01``
 
     - вызван метод :doc:`../../http/GenerateTorg12XmlForSeller`, :doc:`../../http/GenerateTorg12XmlForBuyer`, :doc:`../../http/GenerateAcceptanceCertificateXmlForSeller` или :doc:`../../http/GenerateAcceptanceCertificateXmlForBuyer`
