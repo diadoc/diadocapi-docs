@@ -11,7 +11,7 @@ PrevalidatePowerOfAttorney
 .. http:post:: /PrevalidatePowerOfAttorney
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam registraionNumber: регистрационный номер МЧД.
+	:queryparam registrationNumber: регистрационный номер МЧД.
 	:queryparam issuerInn: ИНН доверителя.
 
 	:requestheader Authorization: необходимые данные для :doc:`авторизации <../Authorization>`.
