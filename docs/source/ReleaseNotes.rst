@@ -5,7 +5,9 @@
 ----------
 **SDK**: `C# 2.9.28 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.28>`__
 
-- Реализованы методы для работы с машиночитаемой доверенностью (МЧД).
+- API Диадока теперь поддерживает :doc:`работу с машиночитаемой доверенностью <howto/powerofattorney>` (МЧД).
+
+- Реализованы методы для работы с машиночитаемой доверенностью.
 
 	- Регистрация МЧД:
 	
@@ -15,7 +17,7 @@
 	
 		- метод :doc:`http/AddEmployeePowerOfAttorney` для привязки МЧД к сотруднику.
 		- метод :doc:`http/DeleteEmployeePowerOfAttorney` для отвязки МЧД от сотрудника.
-		- метод :doc:`http/UpdateEmployeePowerOfAttorney` для одновления настроек МЧД сотрудника.
+		- метод :doc:`http/UpdateEmployeePowerOfAttorney` для обновления настроек МЧД сотрудника.
 		- метод :doc:`http/GetEmployeePowersOfAttorney` для получения всх МЧД сотрудника.
 		
 	- Получение и проверка МЧД:
@@ -39,10 +41,10 @@
 
 	- Получение МЧД в docflow.
 
-	 В методах  :doc:`V3/GetDocflowEvents <../http/GetDocflowEvents_V3>`, :doc:`V3/GetDocflows <../http/GetDocflows_V3>`, :doc:`V3/GetDocflowsByPacketId <../http/GetDocflowsByPacketId_V3>`, :doc:`V3/SearchDocflows <../http/SearchDocflows_V3>` реализованы следующие изменения:
+	 В методах :doc:`V3/GetDocflowEvents <../http/GetDocflowEvents_V3>`, :doc:`V3/GetDocflows <../http/GetDocflows_V3>`, :doc:`V3/GetDocflowsByPacketId <../http/GetDocflowsByPacketId_V3>`, :doc:`V3/SearchDocflows <../http/SearchDocflows_V3>` реализованы следующие изменения:
 
 		- добавлена возможность получить информацию об общем (сводном) статусе по всем МЧД для всех сущностей документа. Для этого изменена структура :doc:`proto/DocflowStatusV3`, которая теперь содержит новую структуру :doc:`proto/PowerOfAttorneyValidationStatus`, хранящую информацию о сводном статусе МЧД.
-		- добавлена возможность  получить информацию о МЧД и ее статусе из подписи под документом. Для этого изменена структура :doc:`proto/SignatureV3`, которая теперь хранит информацию о подписи с использованием МЧД в своей структуре :doc:`proto/SignaturePowerOfAttorney`.
+		- добавлена возможность получить информацию о МЧД и ее статусе из подписи под документом. Для этого изменена структура :doc:`proto/SignatureV3`, которая теперь хранит информацию о подписи с использованием МЧД в своей структуре :doc:`proto/SignaturePowerOfAttorney`.
 
 	- Получение МЧД в документах.
 

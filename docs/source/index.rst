@@ -68,6 +68,7 @@ API Диадока — универсальный инструмент для и
 	:titlesonly:
 	:caption: Примеры использования
 
+	howto/powerofattorney
 	howto/marking_ttgis
 	howto/utd820
 	howto/example_authorization
