@@ -1,6 +1,13 @@
 ﻿История изменений API
 =====================
 
+23.02.2022
+----------
+**SDK**: `C# 2.9.29 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.29>`__ | `Java 3.9.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.9>`__ | `C++ 1.92.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.9>`__
+
+- Изменена структура :doc:`CounteragentList <proto/Counteragent>`: добавлено поле ``CounteragentList.TotalCountType``, которое отражает количество контрагентов, возвращаемых в поле ``TotalCount``. Для поля ``TotalCount`` введено ограничение значения: теперь в нем возвращает значение не больше 10000. Это ограничение введено для повышения производительности метода поиска контрагентов.
+
+
 21.02.2022
 ----------
 **SDK**: `C# 2.9.28 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.28>`__
