@@ -72,8 +72,8 @@
 
 - Внесены изменения для работы с подтверждениями роумингового оператора:
 
- - Добавлен новый тип вложения :doc:`AttachmentType <proto/Entity message>` — RoamingConfirmation.
- - В структуру :doc:`proto/ConfirmationDocflow` добавлено новое поле ``RoamingConfirmation``. Оно содержит информацию о подтверждении роумингового оператора.
+ - Добавлен новый тип вложения :doc:`AttachmentType <proto/Entity message>` — ``RoamingConfirmation``. Он представляет собой подтверждение оператора, отправленное в роуминг или полученное из роуминга.
+ - В структуру :doc:`proto/ConfirmationDocflow` добавлено новое поле ``RoamingConfirmation``. Оно содержит подтверждение оператора, отправленное в роуминг или полученное из роуминга, представленное структурой :doc:`OperatorConfirmationDocflow`.
 
 
 06.10.2021
