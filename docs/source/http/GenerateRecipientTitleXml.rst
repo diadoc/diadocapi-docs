@@ -1,7 +1,7 @@
 GenerateRecipientTitleXml
 ==========================
 
-.. warning:: Этод метод — устаревший. Для генерации документов следует использовать метод :doc:`../http/GenerateTitleXml`.
+.. warning:: Этот метод — устаревший. Для генерации документов следует использовать метод :doc:`../http/GenerateTitleXml`.
 
 .. http:post:: /GenerateRecipientTitleXml
 

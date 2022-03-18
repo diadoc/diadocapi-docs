@@ -6,6 +6,7 @@ Counteragent
     message CounteragentList {
         required int32 TotalCount = 1;
         repeated Counteragent Counteragents = 2;
+		required TotalCountType TotalCountType = 3;
     }
 
     message Counteragent {
@@ -27,6 +28,12 @@ Counteragent
         IsRejectedByMe = 6;
         NotInCounteragentList = 7;
     }
+	
+    enum TotalCountType {
+        UnknownCountType = 0;
+        Equal = 1;
+        GreaterThanOrEqual = 2;
+    }
 
     message CounteragentCertificateList {
         repeated Certificate Certificates = 1;
@@ -38,6 +45,11 @@ Counteragent
 
 
 Структура данных *CounteragentList* представляет собой список контрагентов *Counteragent*, возвращаемый методом :doc:`../http/GetCounteragents`. Поле *CounteragentList.TotalCount* содержит общее количество контрагентов, удовлетворяющих фильтру.
+
+- *TotalCountType* — параметр, отражающий, какое значение содержит поле *TotalCount*. Принимает одно из значений перечисления *TotalCountType*:
+
+ - *Equal* — поле *TotalCount* содержит точное количество контрагентов, удовлетворяющих запросу. Этот параметр используется при количестве контрагентов меньше 10000.
+ - *GreaterThanOrEqual* — поле *TotalCount* возвращает значение 10000, при этом реальное количество контрагентов может быть больше. Это ограничение введено для того, чтобы увеличить производительность метода при больших количествах контрагентов. При этом ограничение влияет только на значение поля *TotalCount*, но вы по-прежнему можете получить весь список контрагентов, используя параметр *IndexKey*.
 
 Структура данных *Counteragent* содержит информацию об одном контрагенте:
 
