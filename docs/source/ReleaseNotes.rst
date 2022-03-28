@@ -5,7 +5,7 @@
 ----------
 **SDK**: `Java 3.9.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.9>`__
 
-- В Java SDK реализована функциональность для работы с машиночитаемыми доверенностями.
+- В Java SDK реализована функциональность для :doc:`работы с машиночитаемой доверенностью <howto/powerofattorney>`.
 
 
 23.02.2022
