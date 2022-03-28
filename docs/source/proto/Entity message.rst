@@ -301,7 +301,7 @@ Entity
 
 .. rubric:: Использование
 
-Структура ``Entuty`` возвращается внутри структуры :doc:`Message` следующими методами:
+Структура ``Entity`` возвращается внутри структуры :doc:`Message` следующими методами:
 
 - :doc:`../http/GetMessage`
 - :doc:`../http/GetNewEvents`
