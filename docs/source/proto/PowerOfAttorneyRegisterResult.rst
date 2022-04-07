@@ -11,14 +11,6 @@ PowerOfAttorneyRegisterResult
         optional PowerOfAttorneyStatus Status = 3;
         repeated PowerOfAttorneyOperationError Errors = 4;
     }
-	
-    enum PowerOfAttorneyOperationStatus {
-        Unknown = 0;
-        Queued = 1;
-        Processing = 2;
-        Done = 3;
-        Error = 4;
-    }
 
     message PowerOfAttorneyStatus {
         required string Status = 1;
@@ -30,7 +22,14 @@ PowerOfAttorneyRegisterResult
         required string Text = 2;
     }
 
-- ``OperationStatus`` — статус выполнения операции регистрации, значение из перечисления ``PowerOfAttorneyOperationStatus``
+- ``OperationStatus`` — статус выполнения операции регистрации. Может принимать значения:
+        
+		- ``Unknown`` — неизвестный статус;
+		- ``Queued`` — операция в очереди;
+		- ``Processing`` — операция выполняется;
+		- ``Done`` — операция завершена;
+		- ``Error`` — ошибка при выполнении операции.
+
 - ``PowerOfAttorney`` — информация о МЧД, представленная структурой :doc:`PowerOfAttorney`.
 - ``Status`` — статус МЧД, представленный структурой ``PowerOfAttorneyStatus`` с полями:
 
