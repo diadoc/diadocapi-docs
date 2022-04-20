@@ -1,6 +1,8 @@
 ExternalServiceAuthInfo
 =======================
 
+.. warning:: Эта структура удалена из API. Она возвращалась методом :doc:`../http/GetExternalServiceAuthInfo`.
+
 .. code-block:: protobuf
 
     message ExternalServiceAuthInfo {
