@@ -14,3 +14,43 @@
   background: #fff;
   border: none;
 }
+
+.github-link {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  z-index: 400;
+  padding: 12px;
+  background-color: #272525;
+  display: block;
+  font-size: 90%;
+  cursor: pointer;
+  color: #fcfcfc;
+}
+
+.github-link:hover,.github-link:visited {
+  color: #fcfcfc;
+}
+
+.github-link:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: inherit;
+  content: "";	
+}
+
+@media screen and (max-width: 768px) {
+  .github-link {
+     display: none;
+  }
+}
+
+@media print {
+  .github-link {
+    display: none;
+  }
+}
