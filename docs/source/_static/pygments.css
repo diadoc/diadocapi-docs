@@ -1,6 +1,6 @@
 .wy-side-nav-search {background-color: #1fab90}
 .wy-nav-content {
-   max-width: 80%;
+   max-width: 1100px !important;
 }
 .highlight .hll { background-color: #ffffcc }
 .highlight  { background: #ffffff; }
