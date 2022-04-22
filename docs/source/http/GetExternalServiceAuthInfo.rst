@@ -1,6 +1,8 @@
 GetExternalServiceAuthInfo
 ==========================
 
+.. warning:: Этот метод удален из API.
+
 Имя ресурса: **/GetExternalServiceAuthInfo**
 
 HTTP метод: **POST**

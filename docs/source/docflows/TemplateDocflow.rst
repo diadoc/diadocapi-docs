@@ -130,6 +130,7 @@
 	"MessageFromBoxId": "boxId2",
 	"MessageToBoxId": "boxId3"
 
+.. _template_editing_settings:
 
 Редактируемые шаблоны
 """""""""""""""""""""

@@ -81,13 +81,3 @@ HTTP-интерфейс
    :maxdepth: 1
    
    http/Authenticate
-   http/GetExternalServiceAuthInfo
-   
-Структуры данных
-----------------
-
-.. toctree::
-   :name: toc2
-   :maxdepth: 1
-   
-   proto/ExternalServiceAuthInfo

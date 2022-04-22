@@ -109,6 +109,14 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
     import sphinx_rtd_theme
     html_theme = 'sphinx_rtd_theme'
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+    html_context = {
+      "display_github": True,
+      "github_user": "diadoc",
+      "github_repo": 'diadocapi-docs',
+      "github_version": "final",
+      "conf_py_path": "/docs/source/",
+      "source_suffix": '.rst',
+    }
 
 # otherwise, readthedocs.org uses their theme by default, so no need to specify it
 
