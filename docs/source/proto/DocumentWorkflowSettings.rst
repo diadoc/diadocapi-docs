@@ -1,7 +1,7 @@
 ﻿DocumentWorkflowSettings
 ========================
 
-Структура ``DocumentWorkflowSettings`` используется для хранения информации о свойствах документооборота.
+Структура ``DocumentWorkflowSettings`` используется для хранения информации о свойствах вида документооборота :doc:`../proto/DocumentWorkflow`.
 
 .. code-block:: protobuf
 
@@ -97,7 +97,7 @@
 		- ``Recipient`` — получатель;
 
 	- ``ParticipantAction`` — свойство «Действие участника», принимает значения из перечисления ``ParticipantAction``:
-
+	
 		- ``Title`` — титул;
 		- ``Signature`` — подпись;
 		- ``OptionalSignature`` — подпись по запросу;
@@ -109,7 +109,7 @@
 		- ``Always`` — требуется;
 
 	- ``OperatorConfirmationBehavior`` — свойство «Подтверждение оператора на титул участника», принимает значения из перечисления ``OperatorConfirmationBehavior``:
-
+	
 		- ``Never`` — не требуется;
 		- ``Initiator`` — подтверждение оператора должно быть отправлено отправителю;
 		- ``InitiatorCounterpart`` — подтверждение оператора должно быть отправлено отправителю и получателю;
