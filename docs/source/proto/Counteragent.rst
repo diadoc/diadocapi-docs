@@ -6,7 +6,7 @@ Counteragent
     message CounteragentList {
         required int32 TotalCount = 1;
         repeated Counteragent Counteragents = 2;
-		required TotalCountType TotalCountType = 3;
+        required TotalCountType TotalCountType = 3;
     }
 
     message Counteragent {
