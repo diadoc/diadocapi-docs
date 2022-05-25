@@ -1,7 +1,7 @@
 GetWorkflowsSettings
 ====================
 
-Метод ``GetWorkflowsSettings`` возвращает свойства указанного вида документооборота :doc:`../proto/DocumentWorkflow`.
+Метод ``GetWorkflowsSettings`` возвращает свойства всех видов документооборота :doc:`../proto/DocumentWorkflow`.
 
 .. http:get:: /GetWorkflowsSettings
 
@@ -17,4 +17,4 @@ GetWorkflowsSettings
 	:statuscode 404: не найден ящик с указанным идентификатором
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка
 
-**Тело ответа:**  Метод возвращает структуру :doc:`../proto/DocumentWorkflowSettings`.
+**Тело ответа:**  Метод возвращает коллекцию структур :doc:`../proto/DocumentWorkflowSettings`, содержащих свойства вида документооборота.
