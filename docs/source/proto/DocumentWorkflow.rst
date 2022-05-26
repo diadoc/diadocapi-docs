@@ -1,7 +1,9 @@
 ﻿DocumentWorkflow
 ================
 
-Структура ``DocumentWorkflow`` представляет вид документооборота (workflow) для версии документа :ref:`DocumentVersionV2 <document-version2>`.
+Структура ``DocumentWorkflow`` представляет вид документооборота для версии документа :ref:`DocumentVersionV2 <document-version2>`.
+
+Подробно о видах документооборота написано на странице :doc:`../docflows/Workflows`.
 
 .. code-block:: protobuf
 

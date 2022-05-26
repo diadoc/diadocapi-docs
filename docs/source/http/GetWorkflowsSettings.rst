@@ -3,6 +3,8 @@ GetWorkflowsSettings
 
 Метод ``GetWorkflowsSettings`` возвращает свойства всех видов документооборота :doc:`../proto/DocumentWorkflow`.
 
+Подробно о видах документооборота написано на странице :doc:`../docflows/Workflows`.
+
 .. http:get:: /GetWorkflowsSettings
 
 	:queryparam boxId: идентификатор ящика организации.
