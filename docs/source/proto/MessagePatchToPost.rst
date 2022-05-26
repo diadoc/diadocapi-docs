@@ -121,7 +121,8 @@ MessagePatchToPost
 
 .. warning:: Рекомендуется использовать поле *RecipientTitles* вместо *XmlTorg12BuyerTitles*, *XmlAcceptanceCertificateBuyerTitles* и *UniversalTransferDocumentBuyerTitles*.
 
-.. note:: Если тип документа поддерживает документооборот с извещением о получении на титул получателя (см. структуру :doc:`DocumentWorkflow`), то можно запросить извещение через флаг NeedReceipt.
+.. note::
+	Если тип документа поддерживает документооборот с извещением о получении на титул получателя (см. структуру :doc:`DocumentWorkflowSettings`), то можно запросить извещение через флаг ``NeedReceipt``.
 
 -  *Resolutions* - список действий по согласованию к документам сообщения, к которому относится патч. Каждое действие является структурой :doc:`ResolutionAttachment <Resolution>`.
 
