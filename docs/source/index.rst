@@ -62,6 +62,7 @@ API Диадока — универсальный инструмент для и
 	docflows/UtdDocflow
 	docflows/NonformalizedDocflow
 	docflows/TemplateDocflow
+	docflows/Workflows
 
 .. toctree::
 	:maxdepth: 1
