@@ -1,7 +1,8 @@
 ParseUniversalTransferDocumentBuyerTitleXml
 ============================================
 
-.. warning:: Этот метод устарел и не работает с 1 октября 2021 года. Для парсинга документов используйте метод :doc:`../../http/ParseTitleXml`.
+.. warning::
+	Этот метод устарел и не работает с 1 октября 2021 года. Для парсинга документов используйте метод :doc:`../../http/ParseTitleXml`.
 
 Имя ресурса: **/ParseUniversalTransferDocumentBuyerTitleXml**
 
