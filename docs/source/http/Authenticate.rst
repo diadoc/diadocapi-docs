@@ -6,7 +6,7 @@ Authenticate
 Authenticate v3
 ---------------
 
-	.. http:post:: /V3/Authenticate
+.. http:post:: /V3/Authenticate
 
 	:queryparam type: метод, которым пользователь хочет аутентифицироваться. Параметр не может быть пустым и принимает значения.
 
