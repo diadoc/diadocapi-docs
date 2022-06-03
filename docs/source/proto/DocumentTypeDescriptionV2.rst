@@ -22,12 +22,12 @@
     -  *1* - внутренний документооборот
 
 -  *RequiresFnsRegistration* - для работы требуется заявление участника ЭДО
--  :ref:`Functions <document-function>` - описания функций документа
+-  :ref:`Functions <document-function2>` - описания функций документа
 
-.. _document-function:
+.. _document-function2:
 
 DocumentFunctionV2
-----------------
+------------------
 
 Описывает функцию документа.
 
@@ -39,9 +39,9 @@ DocumentFunctionV2
     }
 
 -  *Name* - строковой идентификатор функции, уникальное в рамках типа документов
--  :ref:`Versions <document-version>` - описания версий документа
+-  :ref:`Versions <document-version2>` - описания версий документа
 
-.. _document-version:
+.. _document-version2:
 
 DocumentVersionV2
 ~~~~~~~~~~~~~~~
@@ -66,7 +66,7 @@ DocumentVersionV2
 -  *SupportsEncrypting* - поддерживается отправка зашифрованных документов
 -  *SupportsPredefinedRecipientTitle* - поддерживается отправка предопределенного титула. Подробнее здесь: :doc:`../howto/example_predefined_recipient_title`.
 -  *SupportsAmendmentRequest* - поддерживается отправка запроса на уточнение.
--  :ref:`Titles <document_title_v2>` - описания титулов документа
+-  :ref:`Titles <document-title_v2>` - описания титулов документа
 -  *IsActual* - версия актуальна
 -  :doc:`Workflows <DocumentWorkflow>` - виды документооборота
 
@@ -94,11 +94,11 @@ DocumentTitleV2
 -  *IsFormal* - титул формализованный
 -  *XsdUrl* - URL-путь метода, возвращающего файл XSD-схемы титула
 -  *UserDataXsdUrl* - URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью обобщённого метода генерации. Может отсутствовать, тогда это означает, что генерация титула под этим индексом нереализована. Для генерации титулов используется метод :doc:`GenerateTitleXml <../http/GenerateTitleXml>`.
--  :ref:`SignerInfo <signer-info>` - описание подписанта титула
--  :ref:`MetadataItems <document-metadata-item>` - описания метаданных документа
--  :ref:`EncryptedMetadataItems <document-metadata-item>` - описания метаданных для отправки зашифрованного документа
+-  :ref:`SignerInfo <signer-info2>` - описание подписанта титула
+-  :ref:`MetadataItems <document-metadata-item2>` - описания метаданных документа
+-  :ref:`EncryptedMetadataItems <document-metadata-item2>` - описания метаданных для отправки зашифрованного документа
 
-.. _signer-info:
+.. _signer-info2:
 
 SignerInfoV2
 ********************
@@ -147,7 +147,7 @@ SignerInfoV2
     -  *11* - данные для титула покупателя УКД формата приказа 736
 
 
-.. _document-metadata-item:
+.. _document-metadata-item2:
 
 DocumentMetadataItemV2
 ********************

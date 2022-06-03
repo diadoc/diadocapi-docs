@@ -12,20 +12,20 @@ HTTP
 
 .. http:post:: /V3/GetDocflowsByPacketId
 
-    :query boxId: идентификатор ящика
+	:queryparam boxId: идентификатор ящика организации.
 
-    :reqheader Authorization: необходимые данными для :doc:`авторизации <../Authorization>`
+	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
-    :statuscode 200: операция успешно завершена
-    :statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры
-    :statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization``, или в этом заголовке содержатся некорректные авторизационные данные
-    :statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен
-    :statuscode 405: используется неподходящий HTTP-метод
-    :statuscode 500: при обработке запроса возникла непредвиденная ошибка
+	:request Body: Тело запроса должно содержать структуру :doc:`../proto/GetDocflowsByPacketIdRequest`.
 
-**Тело запроса:** протобуфер :doc:`../proto/GetDocflowsByPacketIdRequest`.
+	:statuscode 200: операция успешно завершена.
+	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
+	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
+	:statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен.
+	:statuscode 405: используется неподходящий HTTP-метод.
+	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-**Тело ответа:** протобуфер :doc:`../proto/GetDocflowsByPacketIdResponseV3`.
+Метод возвращает структуру :doc:`../proto/GetDocflowsByPacketIdResponseV3`.
 
 SDK
 ~~~

@@ -51,6 +51,7 @@
 	docflows/UtdDocflow
 	docflows/NonformalizedDocflow
 	docflows/TemplateDocflow
+	docflows/Workflows
 
 .. toctree::
 	:maxdepth: 1

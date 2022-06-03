@@ -5,16 +5,16 @@ GetMyCertificates
 
 .. http:get:: /GetMyCertificates
 
-    :query boxId: идентификатор ящика сотрудника
+	:queryparam boxId: идентификатор ящика сотрудника.
 
-    :reqheader Authorization: необходимые данные для :doc:`авторизации <../Authorization>`
+	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
-    :statuscode 200: операция успешно завершена
-    :statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization``, или в этом заголовке содержатся некорректные авторизационные данные
-    :statuscode 405: используется неподходящий HTTP-метод
-    :statuscode 500: при обработке запроса возникла непредвиденная ошибка
+	:statuscode 200: операция успешно завершена.
+	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
+	:statuscode 405: используется неподходящий HTTP-метод.
+	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-**Тело ответа:** структура CertificateList
+Метод возвращает структуру CertificateList.
 
 .. code-block:: protobuf
 

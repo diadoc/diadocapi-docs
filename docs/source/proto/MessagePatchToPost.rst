@@ -121,7 +121,8 @@ MessagePatchToPost
 
 .. warning:: Рекомендуется использовать поле *RecipientTitles* вместо *XmlTorg12BuyerTitles*, *XmlAcceptanceCertificateBuyerTitles* и *UniversalTransferDocumentBuyerTitles*.
 
-.. note:: Если тип документа поддерживает документооборот с извещением о получении на титул получателя (см. структуру :doc:`DocumentWorkflow`), то можно запросить извещение через флаг NeedReceipt.
+.. note::
+	Если тип документа поддерживает документооборот с извещением о получении на титул получателя (см. структуру :doc:`DocumentWorkflowSettings`), то можно запросить извещение через флаг ``NeedReceipt``.
 
 -  *Resolutions* - список действий по согласованию к документам сообщения, к которому относится патч. Каждое действие является структурой :doc:`ResolutionAttachment <Resolution>`.
 
@@ -137,7 +138,7 @@ MessagePatchToPost
 
 -  *XmlSignatureRejections* - список действий по отказу от предложений об аннулировании, а также действий по отказу от подписи документов. Каждый элемент представляется структурой *XmlSignatureRejectionAttachment*.
 
--  *CustomDataPatches* - список операций по изменению пользовательских данных у документов в исходном сообщении. Каждый элемент представляется структурой :doc:`CustomDataPatch <CustomDataPatch>`. Максимальное число патчей - 10 штук.
+-  *CustomDataPatches* - список операций по изменению пользовательских данных у документов в исходном сообщении. Каждый элемент представляется структурой :doc:`CustomDataPatch`. Максимальное число патчей - 15 штук.
 
 -  *EditDocumentPacketCommands* - список операций по изменению состава пакета у документов в исходном сообщении. Каждый элемент представляется структурой *EditDocumentPacketCommand*.
 
