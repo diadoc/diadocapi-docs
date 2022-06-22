@@ -6,7 +6,7 @@ Address
     message Address {
         optional RussianAddress RussianAddress = 1;
         optional ForeignAddress ForeignAddress = 2;
-        optional String AddressCode = 3; //Код ГАР
+        optional string AddressCode = 3; //Код ГАР
     }
 
     message RussianAddress {
@@ -27,4 +27,4 @@ Address
     }
         
 
-Структура данных *Address* служит для представления адресов организаций. Из двух полей *RussianAddress* и *ForeignAddress* одно обязательно должно быть заполнено.
+Структура данных ``Address`` служит для представления адресов организаций. Из двух полей ``RussianAddress`` и ``ForeignAddress`` одно обязательно должно быть заполнено.
