@@ -23,10 +23,7 @@
 
 .. rubric:: Генерация и парсинг
 
-Для документов в формате №820 используйте методы:
-
-- `GenerateSenderTitleXml <http://api-docs.diadoc.ru/ru/latest/http/GenerateSenderTitleXml.html>`_ и `GenerateRecipientTitleXml <http://api-docs.diadoc.ru/ru/latest/http/GenerateRecipientTitleXml.html>`_ для генерации,
-- `ParseTitleXml <http://api-docs.diadoc.ru/ru/latest/http/ParseTitleXml.html>`_ для парсинга.
+Для документов в формате №820 используйте методы :doc:`../http/GenerateTitleXml` для генерации и :doc:`../http/ParseTitleXml` для парсинга.
 
 .. table:: Соответствие типов документов и форматов документов
 
