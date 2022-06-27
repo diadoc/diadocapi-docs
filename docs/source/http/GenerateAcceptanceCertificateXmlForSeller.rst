@@ -7,7 +7,7 @@ GenerateAcceptanceCertificateXmlForSeller
 .. http:post:: /GenerateAcceptanceCertificateXmlForSeller
 
 	:queryparam documentVersion: версия документа.
-	:queryparam disableValidation: отключение валидации полученного Xml документа по формату ФНС; параметр может отсутствовать.
+	:queryparam disableValidation: отключение валидации полученного Xml документа по формату ФНС. Параметр может отсутствовать.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 

@@ -27,7 +27,6 @@ ExtendedSignerDetails
 	:queryparam correction: флаг, указывающий, что указанные данные должны использоваться при формировании корректировки.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
-	:requestheader Content-Type: test.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -51,7 +50,6 @@ ExtendedSignerDetails
    :queryparam correction: флаг, указывающий, что указанные данные должны использоваться при формировании корректировки.
 
    :requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
-   :requestheader Content-Type: test.
    
    :statuscode 200: операция успешно завершена.
    :statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.

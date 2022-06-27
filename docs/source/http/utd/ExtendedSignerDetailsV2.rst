@@ -43,7 +43,6 @@ ExtendedSignerDetails
    :queryparam int documentTitleType: тип титула, для которого нужно заполнить дополнительные данные о подписанте.
 
    :requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
-   :requestheader Content-Type: test.
    
    :statuscode 200: операция успешно завершена.
    :statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -67,7 +66,6 @@ ExtendedSignerDetails
 	:queryparam int documentTitleType: тип титула, для которого нужно заполнить дополнительные данные о подписанте
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
-	:requestheader Content-Type: test.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.

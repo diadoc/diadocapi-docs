@@ -32,4 +32,4 @@ GetEmployeePowersOfAttorney
 
 - ``PowersOfAttorney`` —  список МЧД, привязанных к сотруднику, представленных структурой :doc:`../proto/EmployeePowerOfAttorney`.
 
-Если у сотрудника нет привязанных МЧД, то метод вернет код ``200`` и пустой список ``PowersOfAttorney``.
+Если у сотрудника нет привязанных МЧД, то метод вернет код ``200 (OK)`` и пустой список ``PowersOfAttorney``.
