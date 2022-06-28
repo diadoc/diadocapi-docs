@@ -4,8 +4,7 @@ GenerateRevocationRequestXml
 Метод генерирует предложение об аннулировании.
 
 Версии метода:
-	- :ref:`GenerateRevocationRequestXml_v2`:
-		- поддерживает несколько версий предложения об аннулировании.
+	- :ref:`GenerateRevocationRequestXml_v2` — поддерживает несколько версий предложения об аннулировании.
 	- :ref:`GenerateRevocationRequestXml_v1` — устаревшая версия.
 
 .. _GenerateRevocationRequestXml_v2:
