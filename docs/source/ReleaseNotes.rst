@@ -1335,7 +1335,7 @@
 
  - для отправки ранее созданного черновика добавился метод :doc:`http/SendDraft`;
  - черновики теперь можно загружать в Диадок с помощью метода :doc:`http/PostMessage` — это предпочтительный способ;
- - изменилась структура :doc:`proto//MessageToPost`;
+ - изменилась структура :doc:`proto/MessageToPost`;
  - добавлена структура :doc:`proto/DraftToSend`;
  - структура ``RequestedSignature`` переименована в ``DocumentSignature``, подробнее в описании :doc:`proto/MessagePatchToPost`.
  
