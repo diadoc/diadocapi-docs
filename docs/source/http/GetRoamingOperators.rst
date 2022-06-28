@@ -22,3 +22,38 @@ GetRoamingOperators
 - ``SupportsRevocation`` — аннулирование версии 1.01,
 - ``EnableRevocationV2`` — аннулирование версии 1.02,
 - ``SupportsAutoInvitation`` — автоматическая обработка приглашений или автороуминг: чтобы установить отношения с контрагентом, пользователю достаточно отправить только приглашение — заявку на роуминг отправлять не нужно.
+
+**Пример ответа метода:**
+
+.. sourcecode:: js 
+
+    {
+        "RoamingOperators": [
+            {
+                "FnsId": "1fr",
+                "Name": "Финтендер",
+                "IsActive": true,
+                "Features": [
+                    {
+                        "Name": "SupportsAutoInvitation",
+                        "Description": "Автоматическая обработка приглашений"
+                    }
+                ]
+            },
+            {
+                "FnsId": "2hx",
+                "Name": "ООО Криптэкс",
+                "IsActive": true,
+                "Features": [
+                    {
+                        "Name": "EnableRevocationV2",
+                        "Description": "Аннулирование 1.02"
+                    },
+                    {
+                        "Name": "SupportsAutoInvitation",
+                        "Description": "Автоматическая обработка приглашений"
+                    }
+                ]
+            }
+        ]
+    }
