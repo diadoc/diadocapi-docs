@@ -10,8 +10,8 @@ GenerateSenderTitleXml
 	:queryparam documentTypeNamedId: уникальный строковый идентификатор типа документа.
 	:queryparam documentFunction:  строковый идентификатор функции, уникальный в рамках типа документа.
 	:queryparam documentVersion: строковый идентификатор версии, уникальный в рамках функции типа документа.
-	:queryparam disableValidation:  отключение валидации полученного Xml документа по XSD-схеме данного типа документа; параметр может отсутствовать.
-	:queryparam editingSettingId: идентификатор настройки редактирования содержимого документа; параметр может отсутствовать.
+	:queryparam disableValidation:  отключение валидации полученного Xml документа по XSD-схеме данного типа документа. Параметр может отсутствовать.
+	:queryparam editingSettingId: идентификатор настройки редактирования содержимого документа. Параметр может отсутствовать.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
