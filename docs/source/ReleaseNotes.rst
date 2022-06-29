@@ -1,11 +1,17 @@
 ﻿История изменений API
 =====================
 
+21.06.2022
+----------
+**SDK**: `C# 2.11.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.0>`__
+
+- Реализована возможность получения информации о функциях роуминговых операторов с помощью метода :doc:`../http/GetRoamingOperators`.
+
 05.04.2022
 ----------
 **SDK**: `C# 2.10.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.10.0>`__ | `Java 3.11.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.11.0>`__ | `C++ 1.92.10 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.10>`__
 
-- Реализована позможность получения свойств :doc:`вида документооборота <../proto/DocumentWorkflow>`:
+- Реализована возможность получения свойств :doc:`вида документооборота <../proto/DocumentWorkflow>`:
 
  - добавлена структура :doc:`proto/DocumentWorkflowSettings` для хранения свойств вида документооборота;
  - реализован метод :doc:`http/GetWorkflowsSettings` для получения свойств вида документооборота.
@@ -1329,7 +1335,7 @@
 
  - для отправки ранее созданного черновика добавился метод :doc:`http/SendDraft`;
  - черновики теперь можно загружать в Диадок с помощью метода :doc:`http/PostMessage` — это предпочтительный способ;
- - изменилась структура :doc:`proto//MessageToPost`;
+ - изменилась структура :doc:`proto/MessageToPost`;
  - добавлена структура :doc:`proto/DraftToSend`;
  - структура ``RequestedSignature`` переименована в ``DocumentSignature``, подробнее в описании :doc:`proto/MessagePatchToPost`.
  
