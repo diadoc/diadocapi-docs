@@ -1,6 +1,10 @@
 Address
 =======
 
+Структура ``Address`` представляет собой информацию об адресе организации.
+
+Из полей ``RussianAddress`` и ``ForeignAddress`` одно обязательно должно быть заполнено.
+
 .. code-block:: protobuf
 
     message Address {
@@ -25,6 +29,3 @@ Address
         required string Country = 1;  // страна (код)
         required string Address = 2;  // текст адреса
     }
-        
-
-Структура данных ``Address`` служит для представления адресов организаций. Из двух полей ``RussianAddress`` и ``ForeignAddress`` одно обязательно должно быть заполнено.

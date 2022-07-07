@@ -1,7 +1,7 @@
 SendFnsRegistrationMessage
 ==========================
 
-Метод отправляет заявление участника ЭДО для ящика.
+Метод ``SendFnsRegistrationMessage`` отправляет заявление участника ЭДО для ящика.
 
 .. http:post:: /SendFnsRegistrationMessage
 
@@ -9,7 +9,7 @@ SendFnsRegistrationMessage
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
-	:request Body: Тело запроса должно содержать структуру *FnsRegistrationMessageInfo*.
+	:request Body: Тело запроса должно содержать структуру ``FnsRegistrationMessageInfo``.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -19,7 +19,7 @@ SendFnsRegistrationMessage
 	:statuscode 409: в свойствах организации не указаны поля: ОГРН, код ИФНС, код региона.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Протобуфер *FnsRegistrationMessageInfo* содержит сертификаты, сериализованные в массивы байтов в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__-кодировке:
+Протобуфер ``FnsRegistrationMessageInfo`` содержит сертификаты, сериализованные в массивы байтов в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__-кодировке:
 
 .. code-block:: protobuf
 
