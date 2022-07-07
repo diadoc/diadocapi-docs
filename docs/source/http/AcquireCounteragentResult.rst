@@ -1,7 +1,7 @@
 AcquireCounteragentResult
 =========================
 
-Метод возвращает идентификатор приглашенной организации.
+Метод ``AcquireCounteragentResult`` возвращает идентификатор приглашенной организации.
 
 .. http:get:: /AcquireCounteragentResult
 

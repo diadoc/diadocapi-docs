@@ -1,7 +1,7 @@
 PostMessage
 ===========
 
-Метод отправляет сообщение :doc:`../proto/MessageToPost`.
+Метод ``PostMessage`` отправляет сообщение :doc:`../proto/MessageToPost`.
 
 .. http:post:: /V3/PostMessage
 

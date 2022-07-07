@@ -1,7 +1,7 @@
 DetectDocumentTitles
 ====================
 
-Метод возвращает возможные типы переданного документа.
+Метод ``DetectDocumentTitles`` возвращает возможные типы переданного документа.
 
 .. http:post:: /DetectDocumentTitles
 

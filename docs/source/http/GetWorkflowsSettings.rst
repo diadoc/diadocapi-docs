@@ -1,7 +1,7 @@
 GetWorkflowsSettings
 ====================
 
-Метод возвращает свойства всех видов документооборота :doc:`../proto/DocumentWorkflow`.
+Метод ``GetWorkflowsSettings`` возвращает свойства всех видов документооборота :doc:`../proto/DocumentWorkflow`.
 
 Подробно о видах документооборота написано на странице :doc:`../docflows/Workflows`.
 

@@ -1,7 +1,7 @@
 RegisterPowerOfAttorneyResult
 =============================
 
-Метод предназначен для получения результата :doc:`регистрации <RegisterPowerOfAttorney>` машиночитаемой доверенности (МЧД).
+Метод ``RegisterPowerOfAttorneyResult`` предназначен для получения результата :doc:`регистрации <RegisterPowerOfAttorney>` машиночитаемой доверенности (МЧД).
 
 .. http:get:: /RegisterPowerOfAttorneyResult
 

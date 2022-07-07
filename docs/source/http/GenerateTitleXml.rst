@@ -3,7 +3,7 @@ GenerateTitleXml
 
 .. contents:: :local:
 
-Метод генерирует XML-файл любого титула для любого типа документа. 
+Метод ``GenerateTitleXml`` генерирует XML-файл любого титула для любого типа документа. 
 
 .. http:post:: /GenerateTitleXml
 

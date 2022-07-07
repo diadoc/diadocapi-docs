@@ -1,7 +1,7 @@
 GetEntityContent
 ================
 
-Метод возвращает содержимое сущности.
+Метод ``GetEntityContent`` возвращает содержимое сущности.
 
 .. http:get:: /V4/GetEntityContent
 

@@ -1,7 +1,7 @@
 PostTemplatePatch
 =================
 
-Метод отправляет дополнение к шаблону документов.
+Метод ``PostTemplatePatch`` отправляет дополнение к шаблону документов.
 
 .. http:post:: /PostTemplatePatch
 

@@ -1,7 +1,7 @@
 PostTemplate
 ============
 
-Метод отправляет шаблон документов.
+Метод ``PostTemplate`` отправляет шаблон документов.
 
 .. http:post:: /PostTemplate
 
