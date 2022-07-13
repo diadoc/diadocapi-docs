@@ -114,6 +114,6 @@ PowerOfAttorney
 
 Структура ``PowerOfAttorney`` используется:
 
-- в структуре :doc:`PowerOfAttorneyRegisterResult`
-- в структуре :doc:`EmployeePowerOfAttorney`
-- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`
+- в структуре :doc:`PowerOfAttorneyRegisterResult`,
+- в структуре :doc:`EmployeePowerOfAttorney`,
+- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.

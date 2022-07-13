@@ -1,6 +1,8 @@
 SearchDocflowsResponseV3
 ========================
 
+Структура ``SearchDocflowsResponseV3`` представляет собой результат поиска документов методом :doc:`../http/SearchDocflows_V3`.
+
 .. code-block:: protobuf
 
    message SearchDocflowsResponseV3
@@ -9,7 +11,11 @@ SearchDocflowsResponseV3
        optional bool HaveMoreDocuments = 2;
    }
 
-Представляет результат работы метода :doc:`../http/SearchDocflows_V3`.
+- ``Documents`` — список найденных документов, представленный структурой :doc:`DocumentWithDocflowV3`.
+- ``HaveMoreDocuments`` - признак того, что поле ``Documents`` содержит не все найденные документы. Остальные документы можно получить постранично, передавая в метод :doc:`../http/SearchDocflows` индекс первого документа очередной страницы: пример использования приведен в описании метода.
 
--  :doc:`Documents <DocumentWithDocflowV3>` - список документов.
--  *HaveMoreDocuments* - признак того, что условиям поиска соответствует больше документов, чем было возвращено. Остальные документы можно выгрузить постранично, передавая в запросе индекс первого документа очередной страницы (см. пример использования :doc:`../http/SearchDocflows_V3`).
+----
+
+.. rubric:: Использование
+
+Структура ``SearchDocflowsResponseV3`` возвращается в теле ответа метода :doc:`../http/SearchDocflows_V3`.

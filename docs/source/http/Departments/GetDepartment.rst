@@ -1,10 +1,15 @@
 GetDepartment
 =============
 
+.. note::
+	Вызов метода доступен только администраторам организации.
+
+Метод ``GetDepartment`` возвращает информацию об указанном подразделении организации.
+
 .. http:get:: /admin/GetDepartment
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam departmentId: идентификатор подразделения.
+	:queryparam departmentId: идентификатор подразделения организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
 
@@ -17,13 +22,16 @@ GetDepartment
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод возвращает структуру :doc:`../../proto/Departments/Department`.
+Метод возвращает информацию о подразделении, представленную структурой :doc:`../../proto/Departments/Department`.
 
-Возвращает информацию о подразделении организации. Запрос доступен только администраторам организации.
+SDK
+"""
 
-**Пример запроса с использованием C# SDK**:
+.. note::
+	В SDK соответсвующий метод имеет название ``GetDepartmentByFullId``. Метод ``GetDepartment`` в SDK соответствует методу API :doc:`../../http/GetDepartment`.
 
-*Внимание!* В SDK соответсвующий метод имеет название *GetDepartmentByFullId*. Метод *GetDepartment* отвечает за вызов к другому методу API :doc:`../../http/GetDepartment`.
+Пример использования (C#)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: csharp
 
