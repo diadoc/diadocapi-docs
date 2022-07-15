@@ -4,7 +4,7 @@ DeleteDepartment
 .. note::
 	Вызов метода доступен только администраторам организации.
 
-Метод ``DeleteDepartment`` удаляет указанное подразделение оранизации.
+Метод ``DeleteDepartment`` удаляет подразделение оранизации.
 	
 .. http:post:: /admin/DeleteDepartment
 

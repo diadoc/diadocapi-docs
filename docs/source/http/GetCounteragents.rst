@@ -4,8 +4,8 @@ GetCounteragents
 Метод ``GetCounteragents`` осуществляет поиск контрагентов по указанным параметрам.
 
 Версии метода:
-	-  :ref:`GetCounteragents_v2`
-	-  :ref:`GetCounteragents_v1`
+	- :ref:`GetCounteragents_v2` — не возвращает для контрагента список его подразделений.
+	- :ref:`GetCounteragents_v1` — возвращает для контрагента список его подразделений.
 
 .. _GetCounteragents_v2:
 
@@ -82,5 +82,3 @@ v1
 	- ``InvitesMe``,
 	- ``IsInvitedByMe``,
 	- ``Rejected``.
-
-Во вложенной структуре :doc:`Counteragent.Organization <../proto/Organization>` поле ``Departments`` будет пустым.

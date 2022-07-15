@@ -1,11 +1,11 @@
 GetCounteragent
 ===============
 
-Метод ``GetCounteragent`` возвращает информацию о контрагенте по указанным идентификаторам.
+Метод ``GetCounteragent`` возвращает информацию о контрагенте.
 
 Версии метода:
-	-  :ref:`GetCounteragent_v2`
-	-  :ref:`GetCounteragent_v1`
+	- :ref:`GetCounteragent_v2` — возвращает для контрагента только видимые подразделения и их родительские подразделения.
+	- :ref:`GetCounteragent_v1` — возвращает все подразделения контрагента.
 
 .. _GetCounteragent_v2:
 

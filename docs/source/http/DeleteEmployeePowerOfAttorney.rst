@@ -1,7 +1,7 @@
 DeleteEmployeePowerOfAttorney
 =============================
 
-Метод ``DeleteEmployeePowerOfAttorney`` предназначен для отвязки машиночитаемой доверенности (МЧД) от сотрудника. 
+Метод ``DeleteEmployeePowerOfAttorney`` отвязывает машиночитаемую доверенность (МЧД) от сотрудника. 
 
 .. http:post:: /DeleteEmployeePowerOfAttorney
 

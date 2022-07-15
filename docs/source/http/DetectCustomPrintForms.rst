@@ -11,7 +11,7 @@ DetectCustomPrintForms
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
-	:request Body: Тело запроса должно содержать структуру ``CustomPrintFormDetectionRequest``, содержащую список документов, для которых нужно определить наличие нестандартной печатной формы:
+	:request Body: Тело запроса должно содержать список документов, для которых нужно определить наличие нестандартной печатной формы, представленный структурой ``CustomPrintFormDetectionRequest``:
 	
 		.. code-block:: protobuf
 
@@ -30,7 +30,7 @@ DetectCustomPrintForms
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод возвращает структуру ``CustomPrintFormDetectionResult``, содержащую результаты проверки:
+Метод возвращает результат проверки, представленный структурой ``CustomPrintFormDetectionResult``:
 
 .. code-block:: protobuf
 

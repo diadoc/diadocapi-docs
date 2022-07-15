@@ -9,7 +9,7 @@ SendFnsRegistrationMessage
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
-	:request Body: Тело запроса должно содержать структуру ``FnsRegistrationMessageInfo``, содержащую сертификаты:
+	:request Body: Тело запроса должно содержать список сертификатов, представленный структурой ``FnsRegistrationMessageInfo``:
 
 		.. code-block:: protobuf
 

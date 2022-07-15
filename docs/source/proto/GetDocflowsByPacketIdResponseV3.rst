@@ -1,6 +1,8 @@
 GetDocflowsByPacketIdResponseV3
 ===============================
 
+Структура ``GetDocflowsByPacketIdResponseV3`` представляет собой список документов, полученных методом :doc:`../http/GetDocflowsByPacketId_V3`.
+
 .. code-block:: protobuf
 
    message GetDocflowsByPacketIdResponseV3
@@ -9,7 +11,11 @@ GetDocflowsByPacketIdResponseV3
        optional bytes NextPageIndexKey = 2;
    }
 
-Представляет результат работы метода :doc:`../http/GetDocflowsByPacketId_V3`.
+- ``Documents`` — список документов в пакете, представленный структурой :doc:`FetchedDocumentV3`.
+- ``NextPageIndexKey`` — ключ, использующийся для постраничного получения документов. Возвращается в том случае, когда количество документов, соответствующих запросу, превышает допустимый размер страницы.
 
--  :doc:`Documents <FetchedDocumentV3>` - список документов, содержащихся в пакете.
--  *NextPageIndexKey* - ключ, использующийся для постраничной выгрузки. Заполняется в том случае, когда количество документов, соответствующих запросу, превышает допустимый размер страницы.
+----
+
+.. rubric:: Использование
+
+Структура ``GetDocflowsByPacketIdResponseV3`` возвращается в теле ответа метода :doc:`../http/GetDocflowsByPacketId_V3`.

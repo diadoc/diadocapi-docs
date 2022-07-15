@@ -1,7 +1,7 @@
 AddEmployeePowerOfAttorney
 ==========================
 
-Метод ``AddEmployeePowerOfAttorney`` предназначен для привязки машиночитаемой доверенности (МЧД) к сотруднику.
+Метод ``AddEmployeePowerOfAttorney`` привязывает машиночитаемую доверенность (МЧД) к сотруднику.
 
 .. http:post:: /AddEmployeePowerOfAttorney
 
