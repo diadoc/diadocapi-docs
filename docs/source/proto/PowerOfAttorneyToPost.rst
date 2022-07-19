@@ -24,7 +24,7 @@ PowerOfAttorneyToPost
 
 .. rubric:: Использование
 
-Структура ``PowerOfAttorneyToPost`` используется внутри структур:
+Структура ``PowerOfAttorneyToPost`` используется в структурах:
 
 - :doc:`SignedContent`
 - :doc:`DocumentSignature`

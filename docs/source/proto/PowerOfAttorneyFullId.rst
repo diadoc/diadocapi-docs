@@ -17,7 +17,7 @@ PowerOfAttorneyFullId
 
 .. rubric:: Использование
 
-Структура ``PowerOfAttorneyFullId`` используется внутри структур:
+Структура ``PowerOfAttorneyFullId`` используется в структурах:
 
 - :doc:`PowerOfAttorneyToRegister`
 - :doc:`PowerOfAttorney`
