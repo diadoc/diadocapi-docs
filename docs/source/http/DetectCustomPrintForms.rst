@@ -31,22 +31,24 @@ DetectCustomPrintForms
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод возвращает результат проверки, представленный структурой ``CustomPrintFormDetectionResult``:
+	:response Body: Тело ответа содержит результат проверки, представленный структурой ``CustomPrintFormDetectionResult``:
 
-.. code-block:: protobuf
+		.. code-block:: protobuf
 
-    message CustomPrintFormDetectionResult {
-       repeated CustomPrintFormDetectionItemResult Items = 1;
-    }
+			message CustomPrintFormDetectionResult {
+			   repeated CustomPrintFormDetectionItemResult Items = 1;
+			}
 
-    message CustomPrintFormDetectionItemResult {
-       required DocumentId DocumentId = 1;
-       required bool HasCustomPrintForm = 2;
-    }
+			message CustomPrintFormDetectionItemResult {
+			   required DocumentId DocumentId = 1;
+			   required bool HasCustomPrintForm = 2;
+			}
+			
+		..
 
-- ``Items`` — список результатов проверки, представленных структурой ``CustomPrintFormDetectionItemResult`` с полями:
+		- ``Items`` — список результатов проверки, представленных структурой ``CustomPrintFormDetectionItemResult`` с полями:
 
-	- ``DocumentId`` — идентификатор документа, представленный структурой :doc:`../proto/DocumentId`.
-	- ``HasCustomPrintForm`` — флаг, показывающий, что данный документ имеет нестандартную печатную форму.
+			- ``DocumentId`` — идентификатор документа, представленный структурой :doc:`../proto/DocumentId`.
+			- ``HasCustomPrintForm`` — флаг, показывающий, что данный документ имеет нестандартную печатную форму.
 
 Метод обрабатывает за один запрос не более 100 документов.

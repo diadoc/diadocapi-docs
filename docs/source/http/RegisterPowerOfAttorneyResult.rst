@@ -19,6 +19,6 @@ RegisterPowerOfAttorneyResult
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод возвращает результат регистрации МЧД, представленный структурой :doc:`../proto/PowerOfAttorneyRegisterResult`.
+	:response Body: Тело ответа содержит результат регистрации МЧД, представленный структурой :doc:`../proto/PowerOfAttorneyRegisterResult`.
 
 Если МЧД уже была зарегистрирована раньше, то метод вернет код ``200 (OK)`` и заполненную структуру :doc:`../proto/PowerOfAttorney` внутри тела ответа.

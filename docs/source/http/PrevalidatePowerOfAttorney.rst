@@ -3,11 +3,6 @@ PrevalidatePowerOfAttorney
 
 Метод ``PrevalidatePowerOfAttorney`` выполняет предварительную проверку машиночитаемой доверенности (МЧД).
 
-В рамках метода выполняется проверка следующих параметров:
-
-	- доверенность действующая: проверка выполняется на основании дат действия доверенности, отзыв МЧД может быть не учтен;
-	- представитель в МЧД соответствует субъекту из сертификата электронной подписи.
-
 .. http:post:: /PrevalidatePowerOfAttorney
 
 	:queryparam boxId: идентификатор ящика организации.
@@ -27,12 +22,19 @@ PrevalidatePowerOfAttorney
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод возвращает результат проверки МЧД, представленный структурой ``PowerOfAttorneyPrevalidateResult``.
+	:response Body: Тело ответа содержит результат проверки МЧД, представленный структурой ``PowerOfAttorneyPrevalidateResult``:
 
-.. code-block:: protobuf
+		.. code-block:: protobuf
 
-    message PowerOfAttorneyPrevalidateResult {
-        required PowerOfAttorneyValidationStatus PrevalidateStatus = 1;
-    }
+			message PowerOfAttorneyPrevalidateResult {
+				required PowerOfAttorneyValidationStatus PrevalidateStatus = 1;
+			}
+			
+		..
 
-- ``PrevalidateStatus`` — статус проверки, представленный структурой :doc:`../proto/PowerOfAttorneyValidationStatus`.
+		- ``PrevalidateStatus`` — статус проверки, представленный структурой :doc:`../proto/PowerOfAttorneyValidationStatus`.
+		
+В рамках метода выполняется проверка следующих параметров:
+
+	- доверенность действующая: проверка выполняется на основании дат действия доверенности, отзыв МЧД может быть не учтен;
+	- представитель в МЧД соответствует субъекту из сертификата электронной подписи.

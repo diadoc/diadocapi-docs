@@ -19,6 +19,6 @@ GetCounteragentCertificates
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 	
-Метод возвращает информацию о сертификатах контрагента ``counteragentOrgId``, представленную структурой :doc:`CounteragentCertificateList <../proto/Counteragent>`.
+	:response Body: Тело ответа содержит информацию о сертификатах контрагента ``counteragentOrgId``, представленную структурой :doc:`CounteragentCertificateList <../proto/Counteragent>`.
 
 Организация имеет право запрашивать список сертификатов контрагента ``counteragentOrgId``, если у нее включена возможность отправки зашифрованных документов. Эта возможность указана в поле :doc:`Organization.Box.EncryptedDocumentsAllowed <../proto/Box>`.

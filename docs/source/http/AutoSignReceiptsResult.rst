@@ -18,4 +18,4 @@ AutoSignReceiptsResult
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод возвращает результат выполнения операции, представленный структурой :doc:`../proto/AutosignReceiptsResult`.
+	:response Body: Тело ответа содержит результат выполнения операции, представленный структурой :doc:`../proto/AutosignReceiptsResult`.

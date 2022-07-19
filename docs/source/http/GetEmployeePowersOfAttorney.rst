@@ -20,16 +20,18 @@ GetEmployeePowersOfAttorney
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
+	:response Body: Тело ответа содержит список МЧД, представленный структурой ``EmployeePowerOfAttorneyList``:
+
+		.. code-block:: protobuf
+
+			message EmployeePowerOfAttorneyList {
+				repeated EmployeePowerOfAttorney PowersOfAttorney = 1;
+			}
+			
+		..
+
+		- ``PowersOfAttorney`` —  список МЧД, привязанных к сотруднику, представленных структурой :doc:`../proto/EmployeePowerOfAttorney`.
+
 Получить МЧД сотрудника может он сам или администратор ящика.
-
-Метод возвращает список МЧД, представленный структурой ``EmployeePowerOfAttorneyList``.
-
-.. code-block:: protobuf
-
-    message EmployeePowerOfAttorneyList {
-        repeated EmployeePowerOfAttorney PowersOfAttorney = 1;
-    }
-
-- ``PowersOfAttorney`` —  список МЧД, привязанных к сотруднику, представленных структурой :doc:`../proto/EmployeePowerOfAttorney`.
 
 Если у сотрудника нет привязанных МЧД, то метод вернет код ``200 (OK)`` и пустой список ``PowersOfAttorney``.

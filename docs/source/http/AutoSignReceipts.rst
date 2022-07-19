@@ -23,4 +23,4 @@ AutoSignReceipts
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод возвращает идентификатор операции ``taskId`` в структуре :doc:`../proto/AsyncMethodResult`. По этому идентификатору с помощью метода :doc:`AutoSignReceiptsResult` можно узнать результат обработки запроса.
+	:response Body: Тело ответа содержит идентификатор операции ``taskId`` в структуре :doc:`../proto/AsyncMethodResult`. По этому идентификатору с помощью метода :doc:`AutoSignReceiptsResult` можно узнать результат обработки запроса.

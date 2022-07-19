@@ -21,8 +21,8 @@ ForwardDocument
 			
 		..
 	
-			- ``ToBoxId`` — идентификатор ящика организации, в который нужно переслать документ.
-			- ``DocumentId`` — идентификатор документа, который нужно переслать, представленный структурой :doc:`../proto/DocumentId`.
+		- ``ToBoxId`` — идентификатор ящика организации, в который нужно переслать документ.
+		- ``DocumentId`` — идентификатор документа, который нужно переслать, представленный структурой :doc:`../proto/DocumentId`.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -34,18 +34,20 @@ ForwardDocument
 	:statuscode 409: текущее состояние системы не позволяет корректно обработать запрос или запрещен прием документов от контрагентов согласно свойству ``Sociability`` из :doc:`../proto/Organization`.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 	
-Метод возвращает информацию о пересылке документа, представленную структурой ``ForwardDocumentResponse``:
+	:response Body: Тело ответа содержит информацию о пересылке документа, представленную структурой ``ForwardDocumentResponse``:
 
-.. code-block:: protobuf
+		.. code-block:: protobuf
 
-    message ForwardDocumentResponse
-    {
-    	optional Timestamp ForwardTimestamp = 1;
-    	optional ForwardedDocumentId ForwardedDocumentId = 2;
-    }
-	
-- ``ForwardTimestamp`` — метка времени пересылки документа, представленная структурой :doc:`../proto/Timestamp`.
-- ``ForwardedDocumentId`` — идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
+			message ForwardDocumentResponse
+			{
+				optional Timestamp ForwardTimestamp = 1;
+				optional ForwardedDocumentId ForwardedDocumentId = 2;
+			}
+			
+		..
+			
+		- ``ForwardTimestamp`` — метка времени пересылки документа, представленная структурой :doc:`../proto/Timestamp`.
+		- ``ForwardedDocumentId`` — идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
 
 Метод пересылает документ ``ForwardDocumentRequest.DocumentId`` из ящика ``boxId`` третьей стороне в ящик ``ForwardDocumentRequest.ToBoxId``. Адресат пересылки получает снапшот состояния документа на момент времени пересылки.
 
