@@ -44,12 +44,13 @@ GetMyCertificates
                 "PrivateKeyValidFrom": 637033581700000000,
                 "PrivateKeyValidTo": 637428429700000000,
                 "OrganizationName": "ООО Васильки",
-                "Inn": "60*******43",
+                "Inn": "60******43",
                 "UserFirstName": "Петр",
                 "UserMiddleName": "Алексеевич",
                 "UserLastName": "Иванов",
                 "UserShortName": "Иванов П. А.",
-                "IsDefault": false
+                "IsDefault": false,
+                            "SubjectType": "LegalEntity"
             },
             {
                 "Thumbprint": "BA************************************81",
@@ -59,12 +60,29 @@ GetMyCertificates
                 "PrivateKeyValidFrom": 636965170060000000,
                 "PrivateKeyValidTo": 637360882060000000,
                 "OrganizationName": "ООО Ромашки",
-                "Inn": "62*******14",
+                "Inn": "62******14",
                 "UserFirstName": "Петр",
                 "UserMiddleName": "Алексеевич",
                 "UserLastName": "Иванов",
                 "UserShortName": "Иванов П. А.",
-                "IsDefault": true
+                "IsDefault": true,
+                "SubjectType": "LegalEntity"
+            },
+                    {
+                "Thumbprint": "D7************************************4D",
+                "Type": "Token",
+                "ValidFrom": 637913122540000000,
+                "ValidTo": 638307960600000000,
+                "PrivateKeyValidFrom": 637913122540000000,
+                "PrivateKeyValidTo": 638307960600000000,
+                "OrganizationName": "",
+                "Inn": "66********02",
+                "UserFirstName": "Петр",
+                "UserMiddleName": "Алексеевич",
+                "UserLastName": "Иванов",
+                "UserShortName": "Иванов П. А.",
+                "IsDefault": false,
+                "SubjectType": "PhysicalPerson"
             }
         ]
     }
