@@ -7,7 +7,7 @@ GenerateTorg12XmlForSeller
 .. http:post:: /GenerateTorg12XmlForSeller
 
 	:queryparam documentVersion: версия документа.
-	:queryparam disableValidation: отключение валидации полученного Xml документа по формату ФНС. Необязатеьный параметр.
+	:queryparam disableValidation: отключение валидации полученного Xml документа по формату ФНС. Необязательный параметр.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
