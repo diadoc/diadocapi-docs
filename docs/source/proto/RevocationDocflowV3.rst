@@ -29,8 +29,6 @@ RevocationDocflowV3
 RevocationRequestDocflow
 ------------------------
 
-.. warning:: Эта версия контракта — экспериментальная и может измениться.
-
 .. code-block:: protobuf
 
     message RevocationRequestDocflow
@@ -54,8 +52,6 @@ RevocationRequestDocflow
 
 RevocationResponseDocflow
 -------------------------
-
-.. warning:: Эта версия контракта — экспериментальная и может измениться.
 
 .. code-block:: protobuf
 
