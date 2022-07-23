@@ -129,7 +129,7 @@ documentNumber
 
 Параметр ``documentNumber`` позволяет получить документ по номеру первичного документа.
 
-.. note::
+.. important::
 	Нельзя одновременно указывать параметры ``DocumentNumber`` и ``timestampFromTicks``/``timestampToTicks`` в одном запросе: метод вернет ошибку ``400 (Bad Request)``.
 
 .. _GetDocuments_timestamp:
@@ -162,7 +162,7 @@ fromDocumentDate и toDocumentDate
 
 Если указаны один или оба этих параметра, то дата документа (поле :doc:`Document.DocumentDate <../proto/Document>`), попавшего в результат, будет лежать в интервале ``[fromDocumentDate, toDocumentDate]``, включая границы. Если какой-то параметр отсутствует в запросе, то его значение неявно принимается равным +/- бесконечности.
 
-.. note::
+.. important::
 	Нельзя одновременно указывать параметры ``timestampFromTicks``/``timestampToTicks`` и ``fromDocumentDate``/``toDocumentDate`` в одном запросе: фильтрация производится либо по дате документа, либо по метке времени.
 
 Ключи :doc:`Document.IndexKey <../proto/Document>`, полученные при фильтрации по дате документа (с помощью параметров ``fromDocumentDate`` и ``toDocumentDate``) и при фильтрации по метке времени (с помощью параметров ``timestampFromTicks`` и ``timestampToTicks``), для одного и того же документа могут различаться.
