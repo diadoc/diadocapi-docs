@@ -2,6 +2,7 @@ GenerateTitleXml
 ================
 
 .. contents:: :local:
+	:depth: 3
 
 Метод ``GenerateTitleXml`` генерирует XML-файл любого титула для любого типа документа. 
 

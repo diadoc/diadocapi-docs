@@ -2,6 +2,7 @@ Authenticate
 ============
 
 .. contents:: :local:
+	:depth: 3
 
 Authenticate v3
 ---------------
