@@ -35,3 +35,20 @@ GetEmployeePowersOfAttorney
 Получить МЧД сотрудника может он сам или администратор ящика.
 
 Если у сотрудника нет привязанных МЧД, то метод вернет код ``200 (OK)`` и пустой список ``PowersOfAttorney``.
+
+----
+
+Смотри также
+^^^^^^^^^^^^
+
+Инструкции:
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+
+Другие методы для работы с МЧД:
+	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД.
+	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД.
+	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику.
+	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника.
+	- :doc:`UpdateEmployeePowerOfAttorney` — изменяет параметр МЧД «Использовать по умолчанию».
+	- :doc:`PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД.
+	- :doc:`GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом.

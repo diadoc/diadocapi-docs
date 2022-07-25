@@ -16,6 +16,8 @@ SearchDocflowsResponseV3
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``SearchDocflowsResponseV3`` возвращается в теле ответа метода :doc:`../http/SearchDocflows_V3`.
+Структура используется:
+	- в теле ответа метода :doc:`../http/SearchDocflows_V3`.

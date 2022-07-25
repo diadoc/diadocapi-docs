@@ -16,6 +16,8 @@ SearchDocflowsResponse
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``SearchDocflowsResponse`` возвращается в теле ответа метода :doc:`../http/SearchDocflows`.
+Структура используется:
+	- в теле ответа метода :doc:`../http/SearchDocflows`.

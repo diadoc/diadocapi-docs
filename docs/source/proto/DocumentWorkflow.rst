@@ -20,6 +20,11 @@
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``DocumentWorkflow`` используется внутри структуры :ref:`DocumentVersionV2 <document-version2>`.
+Структура используется:
+	- в структуре :ref:`DocumentVersionV2 <document-version2>`.
+	
+Инструкции:
+	- :doc:`../docflows/Workflows`

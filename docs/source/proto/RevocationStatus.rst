@@ -23,9 +23,9 @@ RevocationStatus
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Перечисление ``RevocationStatus`` используется в структурах:
-
-- :doc:`RevocationDocflowV3`
-- :doc:`Document`
+Перечисление используется:
+	- в структуре :doc:`RevocationDocflowV3`,
+	- в структуре :doc:`Document`.

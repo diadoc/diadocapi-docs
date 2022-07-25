@@ -27,6 +27,11 @@ SignaturePowerOfAttorney
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``SignaturePowerOfAttorney`` используется внутри структуры :doc:`SignatureV3`.
+Структура используется:
+	- в структуре :doc:`SignatureV3`.
+	
+Инструкции:
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

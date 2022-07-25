@@ -22,10 +22,13 @@ PowerOfAttorneyToPost
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``PowerOfAttorneyToPost`` используется в структурах:
-
-- :doc:`SignedContent`
-- :doc:`DocumentSignature`
-- :doc:`DocumentSenderSignature`
+Структура используется:
+	- в структуре :doc:`SignedContent`,
+	- в структуре :doc:`DocumentSignature`,
+	- в структуре :doc:`DocumentSenderSignature`.
+	
+Инструкции:
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

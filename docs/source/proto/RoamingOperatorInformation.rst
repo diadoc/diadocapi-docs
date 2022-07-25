@@ -27,6 +27,8 @@ RoamingOperatorInformation
 	
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура возвращается методом :doc:`../http/GetRoamingOperators`.
+Структура используется:
+	- в теле ответа метода :doc:`../http/GetRoamingOperators`.

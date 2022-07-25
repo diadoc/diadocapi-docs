@@ -22,3 +22,20 @@ RegisterPowerOfAttorney
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
 	:response Body: Тело ответа содержит идентификатор операции ``taskId`` в структуре :doc:`../proto/AsyncMethodResult`. По этому идентификатору с помощью метода :doc:`RegisterPowerOfAttorneyResult` можно узнать результат обработки запроса.
+	
+----
+
+Смотри также
+^^^^^^^^^^^^
+
+Инструкции:
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+
+Другие методы для работы с МЧД:
+	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД.
+	- :doc:`GetEmployeePowersOfAttorney` — возвращает МЧД, привязанные к сотруднику.
+	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику.
+	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника.
+	- :doc:`UpdateEmployeePowerOfAttorney` — изменяет параметр МЧД «Использовать по умолчанию».
+	- :doc:`PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД.
+	- :doc:`GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом.

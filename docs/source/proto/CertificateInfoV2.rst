@@ -71,6 +71,8 @@ CertificateInfoV2
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``CertificateInfoV2`` возвращается в теле ответа метода :doc:`../http/GetMyCertificates`.
+Структура используется:
+	- в теле ответа метода :doc:`../http/GetMyCertificates`.

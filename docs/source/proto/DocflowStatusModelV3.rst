@@ -23,6 +23,8 @@ DocflowStatusModelV3
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``DocflowStatusModelV3`` используется в структуре :doc:`DocflowStatusV3`.
+Структура используется:
+	- в структуре :doc:`DocflowStatusV3`.

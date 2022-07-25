@@ -301,13 +301,13 @@ Entity
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``Entity`` хранится внутри структур :doc:`Message` и :doc:`MessagePatch`.
-
-Возвращается внутри структуры :doc:`Message` следующими методами:
-
-- :doc:`../http/GetMessage`
-- :doc:`../http/GetNewEvents`
-- :doc:`../http/GetLastEvent`
-- :doc:`../http/GetEvent`
+Структура используется:
+	- в структуре :doc:`Message`, возвращаемой методамиследующими методами:
+		- :doc:`../http/GetMessage`,
+		- :doc:`../http/GetNewEvents`,
+		- :doc:`../http/GetLastEvent`,
+		- :doc:`../http/GetEvent`.
+	- в структуре :doc:`MessagePatch`.

@@ -176,6 +176,11 @@
 	
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``DocumentWorkflowSettings`` возвращается методом :doc:`../http/GetWorkflowsSettings`.
+Структура используется:
+	- в теле ответа метода :doc:`../http/GetWorkflowsSettings`.
+	
+Инструкции:
+	- :doc:`../docflows/Workflows`

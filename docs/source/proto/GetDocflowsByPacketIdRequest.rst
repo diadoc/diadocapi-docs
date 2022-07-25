@@ -20,6 +20,8 @@ GetDocflowsByPacketIdRequest
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``GetDocflowsByPacketIdRequest`` используется в теле запроса метода :doc:`../http/GetDocflowsByPacketId`.
+Структура используется:
+	- в теле запроса метода :doc:`../http/GetDocflowsByPacketId`.

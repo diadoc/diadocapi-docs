@@ -22,3 +22,20 @@ RegisterPowerOfAttorneyResult
 	:response Body: Тело ответа содержит результат регистрации МЧД, представленный структурой :doc:`../proto/PowerOfAttorneyRegisterResult`.
 
 Если МЧД уже была зарегистрирована раньше, то метод вернет код ``200 (OK)`` и заполненную структуру :doc:`../proto/PowerOfAttorney` внутри тела ответа.
+
+----
+
+Смотри также
+^^^^^^^^^^^^
+
+Инструкции:
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+
+Другие методы для работы с МЧД:
+	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД.
+	- :doc:`GetEmployeePowersOfAttorney` — возвращает МЧД, привязанные к сотруднику.
+	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику.
+	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника.
+	- :doc:`UpdateEmployeePowerOfAttorney` — изменяет параметр МЧД «Использовать по умолчанию».
+	- :doc:`PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД.
+	- :doc:`GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом.

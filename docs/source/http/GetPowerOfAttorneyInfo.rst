@@ -23,3 +23,20 @@ GetPowerOfAttorneyInfo
 	:response Body: Тело ответа содержит информацию о МЧД, представленную структурой :doc:`../proto/PowerOfAttorney`.
 	
 По идентификаторам ящика и сообщения метод определяет регистрационный номер МЧД и ИНН доверителя, после чего получает информацию о МЧД по этим данным.
+
+----
+
+Смотри также
+^^^^^^^^^^^^
+
+Инструкции:
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+
+Другие методы для работы с МЧД:
+	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД.
+	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД.
+	- :doc:`GetEmployeePowersOfAttorney` — возвращает МЧД, привязанные к сотруднику.
+	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику.
+	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника.
+	- :doc:`UpdateEmployeePowerOfAttorney` — изменяет параметр МЧД «Использовать по умолчанию».
+	- :doc:`PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД.

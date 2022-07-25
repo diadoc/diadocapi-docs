@@ -26,6 +26,8 @@ SearchDocflowsRequest
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``SearchDocflowsRequest`` используется в теле запроса метода :doc:`../http/SearchDocflows`.
+Структура используется:
+	- в теле запроса метода :doc:`../http/SearchDocflows`.

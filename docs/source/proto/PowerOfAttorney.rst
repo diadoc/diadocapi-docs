@@ -110,10 +110,13 @@ PowerOfAttorney
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``PowerOfAttorney`` используется:
+Структура используется:
+	- в структуре :doc:`PowerOfAttorneyRegisterResult`,
+	- в структуре :doc:`EmployeePowerOfAttorney`,
+	- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.
 
-- в структуре :doc:`PowerOfAttorneyRegisterResult`,
-- в структуре :doc:`EmployeePowerOfAttorney`,
-- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.
+Инструкции:
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

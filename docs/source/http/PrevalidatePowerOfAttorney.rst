@@ -38,3 +38,20 @@ PrevalidatePowerOfAttorney
 
 	- доверенность действующая: проверка выполняется на основании дат действия доверенности, отзыв МЧД может быть не учтен;
 	- представитель в МЧД соответствует субъекту из сертификата электронной подписи.
+	
+----
+
+Смотри также
+^^^^^^^^^^^^
+
+Инструкции:
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+
+Другие методы для работы с МЧД:
+	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД.
+	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД.
+	- :doc:`GetEmployeePowersOfAttorney` — возвращает МЧД, привязанные к сотруднику.
+	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику.
+	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника.
+	- :doc:`GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом.
+	- :doc:`UpdateEmployeePowerOfAttorney` — изменяет параметр МЧД «Использовать по умолчанию».

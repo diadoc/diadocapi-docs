@@ -15,6 +15,11 @@ PowerOfAttorneyInfo
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``PowerOfAttorneyInfo`` используется в структуре :doc:`Entity message`.
+Структура используется:
+	- в структуре :doc:`Entity message`.
+	
+Инструкции:
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

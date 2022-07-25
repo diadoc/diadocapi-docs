@@ -16,6 +16,8 @@ GetDocflowsByPacketIdResponse
 
 ----
 
-.. rubric:: Использование
+Смотри также
+^^^^^^^^^^^^
 
-Структура ``GetDocflowsByPacketIdResponse`` возвращается в теле ответа метода :doc:`../http/GetDocflowsByPacketId`.
+Структура используется:
+	- в теле ответа метода :doc:`../http/GetDocflowsByPacketId`.
