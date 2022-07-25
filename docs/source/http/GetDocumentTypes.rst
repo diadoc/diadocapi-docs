@@ -16,12 +16,14 @@
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Тело ответа будет содержать структуру *GetDocumentTypesResponseV2* с описанием типов документов:
+	:response Body: Тело ответа содержит структуру ``GetDocumentTypesResponseV2`` с описанием типов документов:
 
-.. code-block:: protobuf
+		.. code-block:: protobuf
 
-    message GetDocumentTypesResponseV2 {
-    	repeated DocumentTypeDescriptionV2 DocumentTypes = 1;
-    }
+			message GetDocumentTypesResponseV2 {
+				repeated DocumentTypeDescriptionV2 DocumentTypes = 1;
+			}
 
-- :doc:`DocumentTypes <../proto/DocumentTypeDescriptionV2>` - список типов документов.
+		..
+
+		- ``DocumentTypes`` — список типов документов, представленных структурой :doc:`../proto/DocumentTypeDescriptionV2`.
