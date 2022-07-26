@@ -15,13 +15,12 @@ EmployeePowerOfAttorney
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в структуре ``EmployeePowerOfAttorneyList``, возвращаемой методом :doc:`../http/GetEmployeePowersOfAttorney`,
 	- в теле ответа метода :doc:`../http/AddEmployeePowerOfAttorney`,
 	- в теле ответа метода :doc:`../http/UpdateEmployeePowerOfAttorney`.
 
-Инструкции:
+*Инструкции:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

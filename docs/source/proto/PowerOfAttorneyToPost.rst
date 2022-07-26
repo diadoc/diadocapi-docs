@@ -22,13 +22,12 @@ PowerOfAttorneyToPost
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в структуре :doc:`SignedContent`,
 	- в структуре :doc:`DocumentSignature`,
 	- в структуре :doc:`DocumentSenderSignature`.
 	
-Инструкции:
+*Инструкции:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

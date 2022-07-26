@@ -49,11 +49,10 @@ PowerOfAttorneyRegisterResult
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в теле ответа метода :doc:`../http/RegisterPowerOfAttorneyResult`.
 	
-Инструкции:
+*Инструкции:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

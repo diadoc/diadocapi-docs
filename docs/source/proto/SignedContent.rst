@@ -34,8 +34,7 @@ SignedContent
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в структурах :doc:`Message` и :doc:`MessageToPost` при отправке документов методами :doc:`../http/PostMessage` и :doc:`../http/PostMessagePatch`.

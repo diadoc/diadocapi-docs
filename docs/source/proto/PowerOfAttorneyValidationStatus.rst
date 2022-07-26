@@ -57,14 +57,13 @@ PowerOfAttorneyValidationStatus
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в структуре :doc:`PowerOfAttorneyInfo`,
 	- в структуре :doc:`SignaturePowerOfAttorney`,
 	- в структуре :doc:`DocflowStatusV3`,
 	- в теле ответа метода :doc:`../http/PrevalidatePowerOfAttorney`.
 
-Инструкции:
+*Инструкции:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

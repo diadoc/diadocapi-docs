@@ -11,10 +11,9 @@ AsyncMethodResult
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в теле ответа парных методов :doc:`../http/CloudSign` и :doc:`../http/CloudSignResult`,
 	- в теле ответа парных методов :doc:`../http/DssSign` и :doc:`../http/DssSignResult`,
 	- в теле ответа парных методов :doc:`../http/RegisterPowerOfAttorney` и :doc:`../http/RegisterPowerOfAttorneyResult`.

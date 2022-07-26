@@ -16,8 +16,7 @@ GetDocflowsByPacketIdResponseV3
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в теле ответа метода :doc:`../http/GetDocflowsByPacketId_V3`.

@@ -28,10 +28,9 @@ SignatureV3
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в теле ответа метода :doc:`V3/GetDocflowEvents <../http/GetDocflowEvents_V3>`,
 	- в теле ответа метода :doc:`V3/GetDocflows <../http/GetDocflows_V3>`,
 	- в теле ответа метода :doc:`V3/GetDocflowsByPacketId <../http/GetDocflowsByPacketId_V3>`,

@@ -33,10 +33,9 @@ DocflowStatusV3
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в структуре :doc:`DocflowV3`, возвращаемой методами
 		- :doc:`V3/GetDocflowEvents <../http/GetDocflowEvents_V3>`,
 		- :doc:`V3/GetDocflows <../http/GetDocflows_V3>`,

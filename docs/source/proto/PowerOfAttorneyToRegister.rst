@@ -25,11 +25,10 @@ PowerOfAttorneyToRegister
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в теле запроса метода :doc:`../http/RegisterPowerOfAttorney`.
 	
-Инструкции:
+*Инструкции:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

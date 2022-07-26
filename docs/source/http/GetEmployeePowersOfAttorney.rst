@@ -38,13 +38,12 @@ GetEmployeePowersOfAttorney
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Инструкции:
+*Инструкции:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
 
-Другие методы для работы с МЧД:
+*Другие методы для работы с МЧД:*
 	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД.
 	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД.
 	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику.

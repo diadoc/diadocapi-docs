@@ -160,13 +160,11 @@
 
 Для ответного действия по документу вызовите метод :doc:`../http/PostMessagePatch`, указав в теле запроса регистрационный номер МЧД и ИНН доверителя или признак «использовать МЧД по умолчанию». Этот метод принимает на вход структуру :doc:`../proto/DocumentSignature`, которая хранят информацию о МЧД внутри структуры :doc:`../proto/PowerOfAttorneyToPost`.
 
-
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Методы для работы с МЧД:
+*Методы для работы с МЧД:*
 	- :doc:`../http/RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД.
 	- :doc:`../http/RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД.
 	- :doc:`../http/GetEmployeePowersOfAttorney` — возвращает МЧД, привязанные к сотруднику.
@@ -176,7 +174,7 @@
 	- :doc:`../http/PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД.
 	- :doc:`../http/GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом.
 	
-Структуры для работы с МЧД:
+*Структуры для работы с МЧД:*
 	- :doc:`../proto/PowerOfAttorneyToRegister` — хранит данные для регистрации МЧД.
 	- :doc:`../proto/PowerOfAttorneyRegisterResult` — хранит данные о результате регистрации МЧД.
 	- :doc:`../proto/EmployeePowerOfAttorney` — для хранения информации о МЧД, привязанной к сотруднику.

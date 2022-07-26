@@ -19,11 +19,10 @@ PowerOfAttorneyToUpdate
 
 ----
 
-Смотри также
-^^^^^^^^^^^^
+.. rubric:: Смотри также
 
-Структура используется:
+*Структура используется:*
 	- в теле запроса метода :doc:`../http/UpdateEmployeePowerOfAttorney`.
 
-Инструкции:
+*Инструкции:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
