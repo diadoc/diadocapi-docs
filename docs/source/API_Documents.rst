@@ -8,7 +8,7 @@ HTTP-интерфейс
 
 .. toctree::
    :name: toc3
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
 
    http/Delete
