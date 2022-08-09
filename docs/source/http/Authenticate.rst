@@ -5,9 +5,9 @@ Authenticate
 
 Версии метода:
 
-    :ref:`Authenticate_v3`
-    Authenticate v2 — устаревшая версия
-    Authenticate — устаревшая версия
+    - :ref:`Authenticate_v3`
+    - Authenticate v2 — устаревшая версия
+    - Authenticate — устаревшая версия
 
 .. _Authenticate_v3:
 
@@ -49,7 +49,7 @@ Authenticate v3
         "password" : "pass" 
     }
 
-Если вы передаете данные в формате protobuf, ``Content-Type`` указывать необязательно, так как по умолчанию десериализация происходит из protobuf.
+Если вы передаете данные в формате protobuf, необязательно указывать ``Content-Type``, так как по умолчанию десериализация происходит из protobuf.
 
 .. code-block:: protobuf
 
