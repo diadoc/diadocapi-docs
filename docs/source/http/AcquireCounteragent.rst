@@ -5,8 +5,10 @@ AcquireCounteragent
 
 Версии метода:
 	- :ref:`AcquireCounteragent_1.21`:
+	
 		- поддерживает отправку приглашений с вложением;
 		- позволяет указать контрагента по идентификатору организации или по ИНН.
+		
 	- :ref:`AcquireCounteragent_1.20` — устаревшая версия.
 
 .. _AcquireCounteragent_1.21:
