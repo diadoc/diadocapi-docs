@@ -150,7 +150,6 @@ SDK
 		var authTokenCert = Api.Authenticate(ReadCertContent(DefaultPathToCert)); //по сертификату
 	}
 
-
 ----
 
 .. rubric:: Смотри также
