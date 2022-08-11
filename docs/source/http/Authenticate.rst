@@ -59,7 +59,7 @@ Authenticate v3
         message LoginPassword {
             required string Login = 1;
             required string Password = 2;
-            }
+        }
     ..
 
 	В теле ответа метод вернет авторизационный токен.
@@ -96,8 +96,8 @@ Authenticate v3
 
 	При аутентификации по логину привязка происходит автоматически, в запросе нужно указать заголовки:
 
-    	- X-Diadoc-ServiceKey (ServiceKey)
-    	- X-Diadoc-ServiceUserId (ServiceUserId)
+		- X-Diadoc-ServiceKey (ServiceKey)
+		- X-Diadoc-ServiceUserId (ServiceUserId)
 
 	При аутентификации по сертификату привязку пользователя нужно сделать с помощью метода :doc:`AuthenticateConfirm` с указанием параметра ``saveBinding=true``.
 
