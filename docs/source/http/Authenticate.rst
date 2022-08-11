@@ -5,9 +5,9 @@ Authenticate
 
 Версии метода:
 
-    - :ref:`Authenticate_v3`.
-    - Authenticate v2 — устаревшая версия.
-    - Authenticate — устаревшая версия.
+	- :ref:`Authenticate_v3`.
+	- Authenticate v2 — устаревшая версия.
+	- Authenticate — устаревшая версия.
 
 .. _Authenticate_v3:
 
@@ -18,10 +18,10 @@ Authenticate v3
 
 	:queryparam type: способ аутентификации. Параметр не может быть пустым. Может принимать значения:
 
-                        - ``password`` — логин и пароль,
-                        - ``certificate`` — сертификат,
-                        - ``sid`` — auth.sid из API Аутентификатора,
-                        - ``trust`` — доверительная аутентификация.
+		- ``password`` — логин и пароль,
+		- ``certificate`` — сертификат,
+		- ``sid`` — auth.sid из API Аутентификатора,
+		- ``trust`` — доверительная аутентификация.
 
 	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``ddauth_api_client_id``.
 
@@ -37,8 +37,8 @@ Authenticate v3
 
 В Диадоке существует четыре способа аутентификации:
 
-- Аутентификация по логину и паролю:
-    
+- Аутентификация по логину и паролю
+
 	Чтобы аутентифицироваться по логину и паролю, укажите в качестве параметра запроса ``type`` значение ``password``: ``type=password``.
 	В теле запроса нужно передавать сериализованный объект в формате JSON или protobuf.
 
@@ -46,10 +46,10 @@ Authenticate v3
 
     .. code-block:: json     
    
-        { 
+        {
             "login" : "login",
-            "password" : "pass" 
-    	}
+            "password" : "pass"
+        }
     ..
 
 	Если вы передаете данные в формате protobuf, необязательно указывать ``Content-Type``, так как по умолчанию десериализация происходит из protobuf.
@@ -64,7 +64,7 @@ Authenticate v3
 
 	В теле ответа метод вернет авторизационный токен.
 
-- Аутентификация по сертификату:
+- Аутентификация по сертификату
 
 	Чтобы аутентифицироваться по сертификату, укажите в качестве параметра запроса ``type`` значение ``certificate``: ``type=certificate``.
 
@@ -78,7 +78,7 @@ Authenticate v3
 	2. Полученный массив байтов закодируйте в :rfc:`Base64 <3548>`-строку.
 	3. Передайте результат в метод :doc:`AuthenticateConfirm`, в ответ метод вернет авторизационный токен.
 
-- Аутентификация по auth.sid API аутентификатора:
+- Аутентификация по auth.sid API аутентификатора
 
 	Чтобы аутентифицироваться по auth.sid, укажите в качестве параметра запроса ``type`` значение ``sid``: ``type=sid``.
 
@@ -86,7 +86,7 @@ Authenticate v3
 
 	Чтобы получить auth.sid, аутентифицируйтесь с помощью сервиса Auth.API по `сертификату <https://developer.kontur.ru/doc/auth/method?type=post&path=%2Fauth%2Fv5.17%2Fauthenticate-by-cert>`__ или `паролю <https://developer.kontur.ru/doc/auth/method?type=post&path=%2Fauth%2Fv5.17%2Fauthenticate-by-pass>`__.
 
-- Доверительная аутентификация:
+- Доверительная аутентификация
 
 	Для доверительной аутентификации укажите в качестве параметра запроса ``type`` значение ``trust``: ``type=trust``.
 
@@ -99,7 +99,6 @@ Authenticate v3
     	- X-Diadoc-ServiceKey (ServiceKey)
     	- X-Diadoc-ServiceUserId (ServiceUserId)
 
-
 	При аутентификации по сертификату привязку пользователя нужно сделать с помощью метода :doc:`AuthenticateConfirm` с указанием параметра ``saveBinding=true``.
 
 	Функционал недоступен по умолчанию. Для подключения обратитесь к менеджеру или в `техническую поддержку <https://www.diadoc.ru/support>`__.
@@ -111,45 +110,44 @@ SDK
 
 .. code-block:: csharp
 
-	//URL веб-сервиса Диадок
-	private const string DefaultApiUrl = "https://diadoc-api.kontur.ru";
-	
-	//Идентификатор клиента
-	private const string DefaultClientId = "test-8ee1638deae84c86b8e2069955c2825a";
-	
-	//Для использования Диадок требуются:
-	//1. Крипто-API, предоставляемое операционной системой (доступно через класс WinApiCrypt)
-	//2. Экземпляр класса DiadocApi, проксирующий работу с веб-сервисом Диадок
-	private static WinApiCrypt Crypt = new WinApiCrypt();
-	public static readonly DiadocApi Api = new DiadocApi(
-		DefaultClientId,
-		DefaultApiUrl,
-		Crypt);
-	
-	//Логин для авторизации на сервере Диадок
-	
-	private const string DefaultLogin = "логин";
-		
-	//Пароль для авторизации на сервере Диадок
-	private const string DefaultPassword = "пароль";
-		
-	//Путь к сертификату для авторизации на сервере Диадок
-	public const string DefaultPathToCert = "C:\\folder\\subfolder\\cert.cer";
-	
-	//Для авторизации по сертификату необходимо сертификат преобразовать в массив байтов
-	public static byte[] ReadCertContent(string pathToCert)
-	{
-		var cert = new X509Certificate(pathToCert); 
-		return cert.Export(X509ContentType.Cert);
-	}
-		
-	static void Main(string[] args)
-	{
-		//Можно использовать либо аутентификацию по логину/паролю, либо по сертификату
-		var authTokenLogin = Api.Authenticate(DefaultLogin, DefaultPassword); //по паре логин/пароль
-		var authTokenCert = Api.Authenticate(ReadCertContent(DefaultPathToCert)); //по сертификату
-	}
+    //URL веб-сервиса Диадок
+    private const string DefaultApiUrl = "https://diadoc-api.kontur.ru";
 
+    //Идентификатор клиента
+    private const string DefaultClientId = "test-8ee1638deae84c86b8e2069955c2825a";
+
+    //Для использования Диадок требуются:
+    //1. Крипто-API, предоставляемое операционной системой (доступно через класс WinApiCrypt)
+    //2. Экземпляр класса DiadocApi, проксирующий работу с веб-сервисом Диадок
+    private static WinApiCrypt Crypt = new WinApiCrypt();
+    public static readonly DiadocApi Api = new DiadocApi(
+        DefaultClientId,
+        DefaultApiUrl,
+        Crypt);
+
+    //Логин для авторизации на сервере Диадок
+
+    private const string DefaultLogin = "логин";
+
+    //Пароль для авторизации на сервере Диадок
+    private const string DefaultPassword = "пароль";
+
+    //Путь к сертификату для авторизации на сервере Диадок
+    public const string DefaultPathToCert = "C:\\folder\\subfolder\\cert.cer";
+
+    //Для авторизации по сертификату необходимо сертификат преобразовать в массив байтов
+    public static byte[] ReadCertContent(string pathToCert)
+    {
+        var cert = new X509Certificate(pathToCert); 
+        return cert.Export(X509ContentType.Cert);
+    }
+
+    static void Main(string[] args)
+    {
+        //Можно использовать либо аутентификацию по логину/паролю, либо по сертификату
+        var authTokenLogin = Api.Authenticate(DefaultLogin, DefaultPassword); //по паре логин/пароль
+        var authTokenCert = Api.Authenticate(ReadCertContent(DefaultPathToCert)); //по сертификату
+    }
 
 ----
 
