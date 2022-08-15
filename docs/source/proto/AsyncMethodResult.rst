@@ -11,10 +11,9 @@ AsyncMethodResult
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``AsyncMethodResult`` используется в теле ответа парных методов:
-
-- :doc:`../http/CloudSign` и :doc:`../http/CloudSignResult`
-- :doc:`../http/DssSign` и :doc:`../http/DssSignResult`
-- :doc:`../http/RegisterPowerOfAttorney` и :doc:`../http/RegisterPowerOfAttorneyResult`
+*Структура используется:*
+	- в теле ответа парных методов :doc:`../http/CloudSign` и :doc:`../http/CloudSignResult`,
+	- в теле ответа парных методов :doc:`../http/DssSign` и :doc:`../http/DssSignResult`,
+	- в теле ответа парных методов :doc:`../http/RegisterPowerOfAttorney` и :doc:`../http/RegisterPowerOfAttorneyResult`.

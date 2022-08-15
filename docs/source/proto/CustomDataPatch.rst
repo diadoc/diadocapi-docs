@@ -31,6 +31,7 @@ CustomDataPatch
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``CustomDataPatch`` используется внутри структуры :doc:`MessagePatchToPost`.
+*Структура используется:*
+	- в структуре :doc:`MessagePatchToPost`.

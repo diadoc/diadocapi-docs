@@ -15,12 +15,14 @@ PowerOfAttorneyFullId
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``PowerOfAttorneyFullId`` используется внутри структур:
+*Структура используется:*
+	- в структуре :doc:`PowerOfAttorneyToRegister`,
+	- в структуре :doc:`PowerOfAttorney`,
+	- в структуре :doc:`PowerOfAttorneyToPost`,
+	- в структуре :doc:`PowerOfAttorneyInfo`,
+	- в структуре :doc:`SignaturePowerOfAttorney`.
 
-- :doc:`PowerOfAttorneyToRegister`
-- :doc:`PowerOfAttorney`
-- :doc:`PowerOfAttorneyToPost`
-- :doc:`PowerOfAttorneyInfo`
-- :doc:`SignaturePowerOfAttorney`
+*Инструкции:*
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

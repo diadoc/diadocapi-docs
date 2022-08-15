@@ -16,6 +16,7 @@ OperatorConfirmationDocflow
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``OperatorConfirmationDocflow`` используется в структуре :doc:`ConfirmationDocflow`.
+*Структура используется:*
+	- в структуре :doc:`ConfirmationDocflow`.

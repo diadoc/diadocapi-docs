@@ -7,7 +7,7 @@ GenerateAcceptanceCertificateXmlForSeller
 .. http:post:: /GenerateAcceptanceCertificateXmlForSeller
 
 	:queryparam documentVersion: версия документа.
-	:queryparam disableValidation: отключение валидации полученного Xml документа по формату ФНС. Параметр может отсутствовать.
+	:queryparam disableValidation: отключение валидации полученного Xml документа по формату ФНС. Необязательный параметр.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -18,6 +18,8 @@ GenerateAcceptanceCertificateXmlForSeller
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
+	:responseheader Content-Disposition: имя файла титула исполнителя для акта.
+	
 Если *documentVersion* равен ``rezru_05_01_02``:
 
 - в теле запроса должны содержаться данные для изготовления титула исполнителя для акта о выполнении работ / оказании услуг в XML-формате, в виде сериализованной структуры :doc:`AcceptanceCertificate552SellerTitleInfo <../proto/AcceptanceCertificate552Info>`;
@@ -28,6 +30,4 @@ GenerateAcceptanceCertificateXmlForSeller
 
 - в теле запроса должны содержаться данные для изготовления титула исполнителя для акта о выполнении работ / оказании услуг в XML-формате, в виде сериализованной структуры :doc:`AcceptanceCertificateSellerTitleInfo <../proto/AcceptanceCertificateInfo>`;
 
-- в теле ответа содержится XML-файл титула исполнителя для акта о выполнении работ / оказании услуг, построенный на основании данных из запроса. Файл изготавливается в соответствии с :download:`XML-схемой (DP_IAKTPRM_1_987_00_05_01_02.xsd) <../xsd/DP_IAKTPRM_1_987_00_05_01_02.xsd>`, которая описывает рекомендованный ФНС формат для электронных актов о выполнении работ / оказании услуг;
-
-Имя файла титула исполнителя для акта возвращается в стандартном HTTP-заголовке Content-Disposition;
+- в теле ответа содержится XML-файл титула исполнителя для акта о выполнении работ / оказании услуг, построенный на основании данных из запроса. Файл изготавливается в соответствии с :download:`XML-схемой (DP_IAKTPRM_1_987_00_05_01_02.xsd) <../xsd/DP_IAKTPRM_1_987_00_05_01_02.xsd>`, которая описывает рекомендованный ФНС формат для электронных актов о выполнении работ / оказании услуг.

@@ -1,6 +1,8 @@
 SearchDocflowsResponse
 ======================
 
+Структура ``SearchDocflowsResponse`` представляет собой результат поиска документов методом :doc:`../http/SearchDocflows`.
+
 .. code-block:: protobuf
 
    message SearchDocflowsResponse
@@ -9,7 +11,12 @@ SearchDocflowsResponse
        optional bool HaveMoreDocuments = 2;
    }
 
-Представляет результат работы метода :doc:`../http/SearchDocflows`.
+- ``Documents`` — список найденных документов, представленный структурой :doc:`DocumentWithDocflow`.
+- ``HaveMoreDocuments`` - признак того, что поле ``Documents`` содержит не все найденные документы. Остальные документы можно получить постранично, передавая в метод :doc:`../http/SearchDocflows` индекс первого документа очередной страницы: пример использования приведен в описании метода.
 
--  :doc:`Documents <DocumentWithDocflow>` - список документов.
--  *HaveMoreDocuments* - признак того, что условиям поиска соответствует больше документов, чем было возвращено. Остальные документы можно выгрузить постранично, передавая в запросе индекс первого документа очередной страницы (см. пример использования :doc:`../http/SearchDocflows`).
+----
+
+.. rubric:: Смотри также
+
+*Структура используется:*
+	- в теле ответа метода :doc:`../http/SearchDocflows`.

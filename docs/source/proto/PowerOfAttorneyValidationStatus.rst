@@ -13,7 +13,7 @@ PowerOfAttorneyValidationStatus
     }
  
     enum Severity {
-        UnknownSeverity = 0; // reserved for backward compatibility
+        UnknownSeverity = 0;
         Info = 1;
         Success = 2;
         Warning = 3;
@@ -21,7 +21,7 @@ PowerOfAttorneyValidationStatus
     }
   
     enum PowerOfAttorneyValidationStatusNamedId {
-        UnknownStatus = 0; // reserved for backward compatibility
+        UnknownStatus = 0;
         CanNotBeValidated = 1;
         IsValid = 2;
         IsNotValid = 3;
@@ -33,8 +33,22 @@ PowerOfAttorneyValidationStatus
         required string Text = 2;
     }
 
-- ``Severity`` — критичность статуса, значение из перечисления ``Severity``.
-- ``StatusNamedId`` — текстовый идентификатор статуса, значение из перечисления ``PowerOfAttorneyValidationStatusNamedId``.
+- ``Severity`` — критичность статуса, значение из перечисления ``Severity``:
+
+		- ``UnknownSeverity`` — значение по умолчанию;
+		- ``Info`` — информация;
+		- ``Success`` — успешно;
+		- ``Warning`` — предупреждение;
+		- ``Error`` — ошибка.
+
+- ``StatusNamedId`` — текстовый идентификатор статуса, значение из перечисления ``PowerOfAttorneyValidationStatusNamedId``:
+
+		- ``UnknownStatus`` — значение по умолчанию;
+		- ``CanNotBeValidated`` — не получилось выполнить проверку из-за ошибки валидации МЧД;
+		- ``IsValid`` — все проверки выполнены без ошибок;
+		- ``IsNotValid`` — среди МЧД есть хотя бы одна невалидная; 
+		- ``ValidationError`` — при проверке возникли ошибки валидации.
+
 - ``StatusText`` — удобочитаемый текст статуса.
 - ``Errors`` — список ошибок, представленных структурой ``PowerOfAttorneyValidationError`` с полями:
 
@@ -43,12 +57,13 @@ PowerOfAttorneyValidationStatus
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``PowerOfAttorneyValidationStatus`` используется:
+*Структура используется:*
+	- в структуре :doc:`PowerOfAttorneyInfo`,
+	- в структуре :doc:`SignaturePowerOfAttorney`,
+	- в структуре :doc:`DocflowStatusV3`,
+	- в теле ответа метода :doc:`../http/PrevalidatePowerOfAttorney`.
 
-- в структуре :doc:`PowerOfAttorneyInfo`
-- в структуре :doc:`SignaturePowerOfAttorney`
-- в структуре :doc:`DocflowStatusV3`
-- в теле ответа метода :doc:`../http/PrevalidatePowerOfAttorney`
-
+*Инструкции:*
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

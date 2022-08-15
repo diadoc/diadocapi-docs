@@ -19,6 +19,10 @@ PowerOfAttorneyToUpdate
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``PowerOfAttorneyToUpdate`` используется в теле запроса метода :doc:`../http/UpdateEmployeePowerOfAttorney`.
+*Структура используется:*
+	- в теле запроса метода :doc:`../http/UpdateEmployeePowerOfAttorney`.
+
+*Инструкции:*
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

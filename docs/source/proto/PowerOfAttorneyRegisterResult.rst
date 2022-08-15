@@ -22,18 +22,18 @@ PowerOfAttorneyRegisterResult
         required string Text = 2;
     }
 
-- ``OperationStatus`` — статус выполнения операции регистрации. Может принимать значения:
-        
-		- ``Unknown`` — неизвестный статус;
-		- ``Queued`` — операция в очереди;
-		- ``Processing`` — операция выполняется;
-		- ``Done`` — операция завершена;
-		- ``Error`` — ошибка при выполнении операции.
+- ``OperationStatus`` — статус выполнения операции регистрации. Принимает значения:
+
+	- ``Unknown`` — неизвестный статус;
+	- ``Queued`` — операция в очереди;
+	- ``Processing`` — операция выполняется;
+	- ``Done`` — операция завершена;
+	- ``Error`` — ошибка при выполнении операции.
 
 - ``PowerOfAttorney`` — информация о МЧД, представленная структурой :doc:`PowerOfAttorney`.
 - ``Status`` — статус МЧД, представленный структурой ``PowerOfAttorneyStatus`` с полями:
 
-	- ``Status`` — строка со статусом МЧД. Может принимать значения:
+	- ``Status`` — строка со статусом МЧД. Принимает значения:
 	
 		- ``created`` — создана, но еще не действует;
 		- ``active`` — активна;
@@ -49,6 +49,10 @@ PowerOfAttorneyRegisterResult
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``PowerOfAttorneyRegisterResult`` возвращается в теле ответа метода :doc:`../http/RegisterPowerOfAttorneyResult`.
+*Структура используется:*
+	- в теле ответа метода :doc:`../http/RegisterPowerOfAttorneyResult`.
+	
+*Инструкции:*
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

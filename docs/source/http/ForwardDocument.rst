@@ -1,54 +1,54 @@
 ForwardDocument
 ===============
 
-Имя ресурса: **/V2/ForwardDocument**
+Метод ``ForwardDocument`` пересылает документ в указанный ящик.
 
-HTTP метод: **POST**
+.. http:post:: /V2/ForwardDocument
 
-Параметры строки запроса:
+	:queryparam boxId: идентификатор ящика организации.
 
--  *boxId* - идентификатор ящика;
+	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
+	
+	:request Body: Тело запроса должно содержать данные для пересылки документа, представленные структурой ``ForwardDocumentRequest``:
 
-В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
+		.. code-block:: protobuf
 
-Тело запроса должно содержать сериализованный протобуфер *ForwardDocumentRequest*:
+			message ForwardDocumentRequest
+			{
+				required string ToBoxId = 1;
+				required DocumentId DocumentId = 2;
+			}
+			
+		..
+	
+		- ``ToBoxId`` — идентификатор ящика организации, в который нужно переслать документ.
+		- ``DocumentId`` — идентификатор документа, который нужно переслать, представленный структурой :doc:`../proto/DocumentId`.
 
-.. code-block:: protobuf
+	:statuscode 200: операция успешно завершена.
+	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
+	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
+	:statuscode 402: у организации с указанным идентификатором ``boxId`` закончилась подписка на API.
+	:statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен.
+	:statuscode 404: не найдено сообщение или документ с указанными идентификаторами.
+	:statuscode 405: используется неподходящий HTTP-метод.
+	:statuscode 409: текущее состояние системы не позволяет корректно обработать запрос или запрещен прием документов от контрагентов согласно свойству ``Sociability`` из :doc:`../proto/Organization`.
+	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
+	
+	:response Body: Тело ответа содержит информацию о пересылке документа, представленную структурой ``ForwardDocumentResponse``:
 
-    message ForwardDocumentRequest
-    {
-        required string ToBoxId = 1;
-        required DocumentId DocumentId = 2;
-    }
+		.. code-block:: protobuf
 
-В теле ответа содержится сериализованный протобуфер ForwardDocumentResponse:
+			message ForwardDocumentResponse
+			{
+				optional Timestamp ForwardTimestamp = 1;
+				optional ForwardedDocumentId ForwardedDocumentId = 2;
+			}
+			
+		..
+			
+		- ``ForwardTimestamp`` — метка времени пересылки документа, представленная структурой :doc:`../proto/Timestamp`.
+		- ``ForwardedDocumentId`` — идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
 
-.. code-block:: protobuf
+Метод пересылает документ ``ForwardDocumentRequest.DocumentId`` из ящика ``boxId`` третьей стороне в ящик ``ForwardDocumentRequest.ToBoxId``. Адресат пересылки получает снапшот состояния документа на момент времени пересылки.
 
-    message ForwardDocumentResponse
-    {
-    	optional Timestamp ForwardTimestamp = 1;
-    	optional ForwardedDocumentId ForwardedDocumentId = 2;
-    }
-
-Метод позволяет переслать документ *ForwardDocumentRequest.DocumentId* из ящика boxId третьей стороне (в ящик *ForwardDocumentRequest.ToBoxId*).
-
-При этом адресат пересылки получает снэпшот состояния документа на текущий момент времени. Допускается пересылка одного документа нескольким получателям, а также - пересылка одного документа несколько раз одному получателю.
-
-Возможные HTTP-коды возврата:
-
--  200 (OK) - операция успешно завершена;
-
--  400 (Bad Request) - данные в запросе имеют неверный формат или отсутствуют обязательные параметры;
-
--  401 (Unauthorized) - в запросе отсутствует HTTP-заголовок ``Authorization``, или в этом заголовке содержатся некорректные авторизационные данные;
-
--  403 (Forbidden) - доступ к ящику с предоставленным авторизационным токеном запрещен;
-
--  404 (Not found) - не найдено сообщение/документ с заданным идентификатором;
-
--  405 (Method not allowed) - используется неподходящий HTTP-метод;
-
--  409 (Conflict) - текущее состояние системы не позволяет корректно обработать запрос или запрещен прием документов от контрагентов согласно свойству ``Sociability`` из :doc:`../proto/Organization`.;
-
--  500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.
+Допускается пересылка одного документа нескольким получателям и пересылка одного документа несколько раз одному получателю.

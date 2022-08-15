@@ -101,8 +101,8 @@ PowerOfAttorney
 	- ``Inn`` — ИНН представителя: физического или юридического лица. В случае юридического лица используется ИНН уполномоченного представителя этой организации, который может действовать без доверенности.
 	- ``Organization`` — данные об организации. Используются в случае, если представителем является организация. Представлены структурой ``PowerOfAttorneyConfidantOrganization`` с полями:
 	
-		- ``Inn`` — ИНН доверителя.
-		- ``Kpp`` — КПП доверителя.
+		- ``Inn`` — ИНН представителя.
+		- ``Kpp`` — КПП представителя.
 		- ``Name`` — наименование организации.
 
 - ``StartAt`` — дата начала действия МЧД, представленная структурой :doc:`Timestamp`.
@@ -110,10 +110,12 @@ PowerOfAttorney
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``PowerOfAttorney`` используется:
+*Структура используется:*
+	- в структуре :doc:`PowerOfAttorneyRegisterResult`,
+	- в структуре :doc:`EmployeePowerOfAttorney`,
+	- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.
 
-- в структуре :doc:`PowerOfAttorneyRegisterResult`
-- в структуре :doc:`EmployeePowerOfAttorney`
-- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`
+*Инструкции:*
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

@@ -1,7 +1,7 @@
 DocflowStatusModel
 ==================
 
-.. tip::
+.. warning::
 	Эта структура относится к устаревшей версии Docflow API. Мы рекомендуем использовать последнюю версию :doc:`Docflow API <../Docflow API>` — V3. В нее включена аналогичная структура :doc:`DocflowStatusModelV3`.
 
 .. code-block:: protobuf
@@ -21,6 +21,9 @@ DocflowStatusModel
 
 - ``StatusHint`` — дополнительный текст статуса.
 
-.. rubric:: Использование
+----
 
-Эта структура используется в структуре :doc:`DocflowStatus`.
+.. rubric:: Смотри также
+
+*Структура используется:*
+	- в структуре :doc:`DocflowStatus`.

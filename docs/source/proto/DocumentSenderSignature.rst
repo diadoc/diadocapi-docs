@@ -27,6 +27,7 @@ DocumentSenderSignature
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``DocumentSenderSignature`` используется внутри структуры :doc:`DraftToSend` при отправке документов методом :doc:`../http/SendDraft`.
+*Структура используется:*
+	- в структуре :doc:`DraftToSend` при отправке документов методом :doc:`../http/SendDraft`.

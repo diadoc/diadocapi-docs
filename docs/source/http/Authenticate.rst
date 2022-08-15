@@ -1,79 +1,160 @@
 Authenticate
 ============
 
-.. contents:: :local:
+Метод ``Authenticate`` предназначен для аутентификации пользователя в Диадоке.
+
+Версии метода:
+
+	- :ref:`Authenticate_v3`.
+	- Authenticate v2 — устаревшая версия.
+	- Authenticate — устаревшая версия.
+
+.. _Authenticate_v3:
 
 Authenticate v3
 ---------------
 
 .. http:post:: /V3/Authenticate
 
-	:queryparam type: метод, которым пользователь хочет аутентифицироваться. Параметр не может быть пустым и принимает значения.
+	:queryparam type: способ аутентификации. Параметр не может быть пустым. Может принимать значения:
 
-	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
+		- ``password`` — логин и пароль,
+		- ``certificate`` — сертификат,
+		- ``sid`` — auth.sid из API Аутентификатора,
+		- ``trust`` — доверительная аутентификация.
+
+	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``ddauth_api_client_id``.
+
+	:request Body: Тело запроса зависит от способа аутентификации.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
-	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization``, или в этом заголовке отсутствует параметр *ddauth_api_client_id*, или переданный в нем ключ разработчика не зарегистрирован в Диадоке.
+	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization``, или в этом заголовке отсутствует параметр ``ddauth_api_client_id``, или переданный в нем ключ разработчика не зарегистрирован в Диадоке.
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Параметр *type* может принимать значения:
-    
-    + password - логин и пароль
-    + sid - `auth.sid <https://docs-ke.readthedocs.io/ru/latest/auth/auth.sid.html>`__ из API Аутентификатора
-    + certificate - сертификат
-    + trust - доверительная аутентификаци
+	:response Body: Тело ответа зависит от способа аутентификации.
 
-В версии v3 от передаваемого параметра *type* зависит Тело запроса.
+В Диадоке существует четыре способа аутентификации:
 
-- **Аутентификация по логину и паролю** :
-    
-Необходимо указывать type - password, и в теле запроса передавать сериализованный объект.
-Возможно передавать данные в формате json, в этом случае необходимо указать заголовок *Content-Type: application/json*
+- Аутентификация по логину и паролю
 
-.. code-block:: json 
+	Чтобы аутентифицироваться по логину и паролю, укажите в качестве параметра запроса ``type`` значение ``password``: ``type=password``.
+	В теле запроса нужно передавать сериализованный объект в формате JSON или protobuf.
+
+	Если вы передаете данные в формате JSON, укажите заголовок ``Content-Type: application/json``.
+
+    .. code-block:: json     
    
-    { 
-        "login" : "login", 
-        "password" : "pass" 
+        {
+            "login" : "login",
+            "password" : "pass"
+        }
+    ..
+
+	Если вы передаете данные в формате protobuf, необязательно указывать ``Content-Type``, так как по умолчанию десериализация происходит из protobuf.
+
+    .. code-block:: protobuf
+
+        message LoginPassword {
+            required string Login = 1;
+            required string Password = 2;
+        }
+    ..
+
+	В теле ответа метод вернет авторизационный токен.
+
+- Аутентификация по сертификату
+
+	Чтобы аутентифицироваться по сертификату, укажите в качестве параметра запроса ``type`` значение ``certificate``: ``type=certificate``.
+
+	Укажите заголовок ``Content-Type: application/octet-stream``, в теле запроса передайте бинарное содержимое открытого ключа сертификата.
+
+	В теле ответа метод вернет зашифрованную строку. 
+
+	Чтобы получить авторизационный токен:
+
+	1. Расшифруйте ответ закрытым ключом сертификата пользователя.
+	2. Полученный массив байтов закодируйте в :rfc:`Base64 <3548>`-строку.
+	3. Передайте результат в метод :doc:`AuthenticateConfirm`, в ответ метод вернет авторизационный токен.
+
+- Аутентификация по auth.sid API аутентификатора
+
+	Чтобы аутентифицироваться по auth.sid, укажите в качестве параметра запроса ``type`` значение ``sid``: ``type=sid``.
+
+	В теле запроса нужно передавать ``auth.sid`` c заголовком ``Content-Type: text/plain``
+
+	Чтобы получить auth.sid, аутентифицируйтесь с помощью сервиса Auth.API по `сертификату <https://developer.kontur.ru/doc/auth/method?type=post&path=%2Fauth%2Fv5.17%2Fauthenticate-by-cert>`__ или `паролю <https://developer.kontur.ru/doc/auth/method?type=post&path=%2Fauth%2Fv5.17%2Fauthenticate-by-pass>`__.
+
+- Доверительная аутентификация
+
+	Для доверительной аутентификации укажите в качестве параметра запроса ``type`` значение ``trust``: ``type=trust``.
+
+	С помощью доверительной аутентификации можно перейти из стороннего доверенного сервиса в Диадок без дополнительной аутентификации. 
+
+	Для доверительной аутентификации нужно привязать пользователя доверенного сервиса к пользователю Диадока. 
+
+	При аутентификации по логину привязка происходит автоматически, в запросе нужно указать заголовки:
+
+		- X-Diadoc-ServiceKey (ServiceKey)
+		- X-Diadoc-ServiceUserId (ServiceUserId)
+
+	При аутентификации по сертификату привязку пользователя нужно сделать с помощью метода :doc:`AuthenticateConfirm` с указанием параметра ``saveBinding=true``.
+
+	Функционал недоступен по умолчанию. Для подключения обратитесь к менеджеру или в `техническую поддержку <https://www.diadoc.ru/support>`__.
+
+SDK
+"""
+
+Пример кода на C# для получения авторизационного токена:
+
+.. code-block:: csharp
+
+    //URL веб-сервиса Диадок
+    private const string DefaultApiUrl = "https://diadoc-api.kontur.ru";
+
+    //Идентификатор клиента
+    private const string DefaultClientId = "test-8ee1638deae84c86b8e2069955c2825a";
+
+    //Для использования Диадок требуются:
+    //1. Крипто-API, предоставляемое операционной системой (доступно через класс WinApiCrypt)
+    //2. Экземпляр класса DiadocApi, проксирующий работу с веб-сервисом Диадок
+    private static WinApiCrypt Crypt = new WinApiCrypt();
+    public static readonly DiadocApi Api = new DiadocApi(
+        DefaultClientId,
+        DefaultApiUrl,
+        Crypt);
+
+    //Логин для авторизации на сервере Диадок
+
+    private const string DefaultLogin = "логин";
+
+    //Пароль для авторизации на сервере Диадок
+    private const string DefaultPassword = "пароль";
+
+    //Путь к сертификату для авторизации на сервере Диадок
+    public const string DefaultPathToCert = "C:\\folder\\subfolder\\cert.cer";
+
+    //Для авторизации по сертификату необходимо сертификат преобразовать в массив байтов
+    public static byte[] ReadCertContent(string pathToCert)
+    {
+        var cert = new X509Certificate(pathToCert); 
+        return cert.Export(X509ContentType.Cert);
     }
 
-Либо передавать в формате protobuf. В этом случае Content-Type указывать не обязательно, так как по умолчанию десериализация происходит из protobuf.
-
-.. code-block:: protobuf
-
-    message LoginPassword {
-        required string Login = 1;
-        required string Password = 2;
+    static void Main(string[] args)
+    {
+        //Можно использовать либо аутентификацию по логину/паролю, либо по сертификату
+        var authTokenLogin = Api.Authenticate(DefaultLogin, DefaultPassword); //по паре логин/пароль
+        var authTokenCert = Api.Authenticate(ReadCertContent(DefaultPathToCert)); //по сертификату
     }
 
-- **Аутентификация по auth.sid API аутентификатора** :
+----
 
-Необходимо указать type - sid, в теле запроса передавая `auth.sid <https://docs-ke.readthedocs.io/ru/latest/auth/auth.sid.html>`__ c заголовком *Content-Type: text/plain*
+.. rubric:: Смотри также
 
-- **Аутентификация по сертификату**:
+*Инструкции:*
+	- :doc:`Авторизация <../Authorization>`
 
-Необходимо указать type - certificate, в Тело запроса передать бинарное содержимое открытого ключа сертификата c заголовком 
-*Content-Type: application/octet-stream*.
-
-В ответе метода возвращается зашифрованная строка. Полученный ответ следует расшифровать закрытым ключом сертификата. Расшифрованный файл надо декодировать, преобразовать все символы полученной base64 строки в URL формат и передать результат на вход :doc:`AuthenticateConfirm`
-
-- **Доверительная аутентификация**
-
-Чтобы сохранить привязку(Binding) для доверительной аутентификации, необходимо авторизоваться с помощью пароля или сертификата, с указанием заголовков:
-
-    + X-Diadoc-ServiceKey (ServiceKey)
-    + X-Diadoc-ServiceUserId (ServiceUserId)
-
-Чтобы воспользоваться доверительной аутентификацией, необходимо указать type - trust, с указанием заголовков X-Diadoc-ServiceKey, X-Diadoc-ServiceUserId, после создания привязки.
-
-Authenticate v2
----------------
-
-Метод устарел и больше не используется.
-
-Authenticate
-------------
-
-Метод устарел и больше не используется.
+*Другие методы для аутентификации:*
+	- :doc:`AuthenticateConfirm` — возвращает авторизационный токен.

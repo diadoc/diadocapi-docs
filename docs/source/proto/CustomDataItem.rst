@@ -16,11 +16,10 @@ CustomDataItem
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``CustomDataPatch`` используется внутри структур:
-
-- :doc:`DocumentInfoV3`
-- :doc:`Document`
-- :doc:`Docflow`
-и во всех типах вложений.
+*Структура используется:*
+	- в структуре :doc:`DocumentInfoV3`,
+	- в структуре :doc:`Document`,
+	- в структуре :doc:`Docflow`,
+	- во всех типах вложений.

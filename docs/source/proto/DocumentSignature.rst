@@ -46,6 +46,7 @@ DocumentSignature
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``DocumentSignature`` используется внутри структуры :doc:`MessageToPost` при отправке документов методом :doc:`../http/PostMessagePatch`.
+*Структура используется:*
+	- в структуре :doc:`MessageToPost` при отправке документов методом :doc:`../http/PostMessagePatch`.

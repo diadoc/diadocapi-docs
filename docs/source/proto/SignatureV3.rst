@@ -28,11 +28,10 @@ SignatureV3
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``SignatureV3`` возвращается методами:
-
-- :doc:`V3/GetDocflowEvents <../http/GetDocflowEvents_V3>`
-- :doc:`V3/GetDocflows <../http/GetDocflows_V3>`
-- :doc:`V3/GetDocflowsByPacketId <../http/GetDocflowsByPacketId_V3>`
-- :doc:`V3/SearchDocflows <../http/SearchDocflows_V3>`
+*Структура используется:*
+	- в теле ответа метода :doc:`V3/GetDocflowEvents <../http/GetDocflowEvents_V3>`,
+	- в теле ответа метода :doc:`V3/GetDocflows <../http/GetDocflows_V3>`,
+	- в теле ответа метода :doc:`V3/GetDocflowsByPacketId <../http/GetDocflowsByPacketId_V3>`,
+	- в теле ответа метода :doc:`V3/SearchDocflows <../http/SearchDocflows_V3>`.

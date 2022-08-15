@@ -25,6 +25,10 @@ PowerOfAttorneyToRegister
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``PowerOfAttorneyToRegister`` используется в теле запроса метода :doc:`../http/RegisterPowerOfAttorney`.
+*Структура используется:*
+	- в теле запроса метода :doc:`../http/RegisterPowerOfAttorney`.
+	
+*Инструкции:*
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

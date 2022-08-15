@@ -22,6 +22,7 @@ ConfirmationDocflow
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``ConfirmationDocflow`` используется в структуре :doc:`DocflowV3`.
+*Структура используется:*
+	- в структуре :doc:`DocflowV3`.

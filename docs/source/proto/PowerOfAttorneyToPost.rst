@@ -10,7 +10,7 @@ PowerOfAttorneyToPost
         required bool UseDefault = 2;
     }
    
-- ``FullId`` — идентификатор МЧД, представленный структурой :doc:`PowerOfAttorneyFullId`, необязательный параметр. Если не указан, то у сотрудника должна быть настроена МЧД по умолчанию и флаг ``UseDefault`` должен иметь значение ``true``.
+- ``FullId`` — идентификатор МЧД, представленный структурой :doc:`PowerOfAttorneyFullId`. Необязательный параметр. Если не указан, то у сотрудника должна быть настроена МЧД по умолчанию и флаг ``UseDefault`` должен иметь значение ``true``.
 - ``UseDefault`` — флаг «Использовать МЧД по умолчанию». Чтобы использовать этот флаг, сотрудник или администратор ящика должен настроить МЧД по умолчанию в веб-интерфейсе или с помощью метода :doc:`../http/UpdateEmployeePowerOfAttorney`. Если для сотрудника, вызывающего метод отправки документа, не настроена МЧД по умолчанию, то при значении ``UseDefault=true`` метод вернет ошибку.
 
 В структуре ``PowerOfAttorneyToPost`` обязательно должно быть указано либо поле ``FullId``, либо значение ``UseDefault=true``. В противном случае метод отправки вернет ошибку.
@@ -22,10 +22,12 @@ PowerOfAttorneyToPost
 
 ----
 
-.. rubric:: Использование
+.. rubric:: Смотри также
 
-Структура ``PowerOfAttorneyToPost`` используется внутри структур:
-
-- :doc:`SignedContent`
-- :doc:`DocumentSignature`
-- :doc:`DocumentSenderSignature`
+*Структура используется:*
+	- в структуре :doc:`SignedContent`,
+	- в структуре :doc:`DocumentSignature`,
+	- в структуре :doc:`DocumentSenderSignature`.
+	
+*Инструкции:*
+	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

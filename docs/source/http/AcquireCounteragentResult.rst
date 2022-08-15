@@ -1,7 +1,7 @@
 AcquireCounteragentResult
 =========================
 
-Метод возвращает идентификатор приглашенной организации.
+Метод ``AcquireCounteragentResult`` возвращает идентификатор приглашенной организации.
 
 .. http:get:: /AcquireCounteragentResult
 
@@ -19,17 +19,21 @@ AcquireCounteragentResult
 	:statuscode 409: не удалось выполнить запрос на приглашение контрагента.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод возвращает структуру ``AcquireCounteragentResult``:
+	:responseheader Retry-After: если в ответе содержится HTTP-заголовок ``Retry-After``, то предыдущий вызов этого метода с таким же идентификатором операции еще не завершен. В этом случае следует повторить вызов через указанное в заголовке время (в секундах), чтобы убедиться, что операция завершилась без ошибок.
+	
+	:response Body: Тело ответа содержит результат выполнения операции, представленный структурой ``AcquireCounteragentResult``:
 
-.. code-block:: protobuf
+		.. code-block:: protobuf
 
-    message AcquireCounteragentResult {
-        required string OrgId = 1;
-        optional DocumentId InvitationDocumentId = 2;
-    }
+			message AcquireCounteragentResult {
+				required string OrgId = 1;
+				optional DocumentId InvitationDocumentId = 2;
+			}
+		
+		..
 
-- ``orgId`` — идентификатор приглашенной организации.
-- ``InvitationDocumentId`` — ссылка на документ, отправленный вместе с приглашением, представленная структурой :doc:`../proto/DocumentId`. Заполняется независимо от наличия доступа к документу.
+		- ``orgId`` — идентификатор приглашенной организации.
+		- ``InvitationDocumentId`` — ссылка на документ, отправленный вместе с приглашением, представленная структурой :doc:`../proto/DocumentId`. Заполняется независимо от наличия доступа к документу.
 
 Если отправить приглашение контрагенту не удалось, то метод вернет ошибку ``409 (Conflict)``. Возможные причины ошибки:
 
