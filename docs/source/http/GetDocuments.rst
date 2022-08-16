@@ -19,7 +19,7 @@ GetDocuments
 	:queryparam excludeSubdepartments: параметр, указывающий, что из поиска нужно исключить дочерние подразделения организации.
 	:queryparam afterIndexKey: :ref:`уникальный ключ <GetDocuments_afterIndexKey>`, позволяющий итерироваться по списку документов, удовлетворяющих фильтру. Необязательный параметр.
 	:queryparam sortDirection: параметр, задающий порядок сортировки документов в ответе. Принимает значения ``Ascending`` или ``Descending``. Необязательный параметр, по умолчанию равен ``Ascending``.
-	:queryparam count: максимальное количество документов в ответе. Необязательный параметр, по умолчанию равен 100. Может принимать значения от 0 до 100.
+	:queryparam count: максимальное количество документов в ответе. Необязательный параметр, по умолчанию равен 100. Принимает значения от 0 до 100.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -41,7 +41,6 @@ GetDocuments
 Элементы в списке ``DocumentList.Documents`` идут в порядке возрастания соответствующих меток времени, хранящихся в полях с именем ``Document.[...]TimestampTicks``:
 
 	- для исходящих отправленных документов — по :doc:`Document.SendTimestampTicks<../proto/Document>`;
-	- для исходящих неотправленных документов — по :doc:`Document.CreationTimestampTicks<../proto/Document>`;
 	- для входящих документов — по :doc:`Document.DeliveryTimestampTicks<../proto/Document>`.
 
 Содержимое документов не включается в ответ метода, то есть поле ``Document.Content.Data`` документов в ответе будет иметь значение ``null``. Вы можете получить содержимое документа с помощью метода :doc:`GetEntityContent`.
@@ -56,7 +55,7 @@ filterCategory
 
 Параметр ``filterCategory`` задается строкой в формате ``<DocumentType>.<DocumentClass><DocumentStatus>``.
 
-``<DocumentType>`` задает тип документа и может принимать следующие значения:
+``<DocumentType>`` задает тип документа и принимает значения:
 
 	- ``<TypeNamedId>`` — строковый идентификатор любого доступного в организации типа документа, подробнее см. поле :doc:`TypeNamedId <../proto/Document>`. Например: ``Invoice``, ``XmlAcceptanceCertificate``, ``Nonformalized`` и т.п.
 	- ``Any`` — аггрегированный запрос для всех документов в ящике без учета по типу. 
@@ -64,14 +63,14 @@ filterCategory
 	- ``AnyBilateralDocumentType`` — **значение больше не поддерживается.**. Аггрегированный запрос только для типов ``Nonformalized``, ``Torg12``, ``AcceptanceCertificate``, ``XmlTorg12``, ``XmlAcceptanceCertificate``, ``TrustConnectionRequest``, ``PriceList``, ``PriceListAgreement``, ``CertificateRegistry``, ``ReconciliationAct``, ``Contract``, ``Torg13``.
 	- ``AnyUnilateralDocumentType`` — **значение больше не поддерживается.**. Аггрегированный запрос только для типов ``ProformaInvoice``, ``ServiceDetails``.
 
-``<DocumentClass>`` задает класс документа и может принимать следующие значения:
+``<DocumentClass>`` задает класс документа и принимает значения:
 
 	- ``Inbound`` — только входящие.
 	- ``Outbound`` — только исходящие.
 	- ``Internal`` — только внутренние.
 	- ``Proxy`` — только документы, переданные через промежуточного получателя.
 	
-``<DocumentStatus>`` задает статус документа и может принимать следующие значения:
+``<DocumentStatus>`` задает статус документа и принимает значения:
 
 	- Пустое значение — любой документ указанного класса.
 	- ``NotRead`` — документ не прочитан.
@@ -142,10 +141,11 @@ timestampFromTicks и timestampToTicks
 В зависимости от типа документа для фильтрации используются следующие метки времени документа:
 
 	- исходящие отправленные документы — :doc:`Document.SendTimestampTicks<../proto/Document>`;
-	- исходящие неотправленные документы — :doc:`Document.CreationTimestampTicks<../proto/Document>`;
 	- входящие документы — :doc:`Document.DeliveryTimestampTicks<../proto/Document>`.
 
 Если указаны один или оба этих параметра, то метка времени документа, попавшего в результат, будет лежать в интервале ``[timestampFromTicks, timestampToTicks]``, включая границы. Если какой-то параметр отсутствует в запросе, то его значение неявно принимается равным -/+ бесконечности соответственно.
+
+Не используйте фильтрацию по метке времени для исходящих неотправленных документов: их можно отфильтровать по статусу.
 
 .. _GetDocuments_documentDate:
 
