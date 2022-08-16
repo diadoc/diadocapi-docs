@@ -98,4 +98,3 @@ GetForwardedDocumentEvents
             break;
         request.AfterIndexKey = response.Events.Last().IndexKey;
     }
-           

@@ -27,3 +27,4 @@ CloudSignConfirmResult
 	- :doc:`CloudSignConfirm` — подтверждает операцию подписания.
 	- :doc:`CloudSign` — начинает асинхронную операцию подписания данных.
 	- :doc:`CloudSignResult` — завершает операцию подписания данных.
+	
