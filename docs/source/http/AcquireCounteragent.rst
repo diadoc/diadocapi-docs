@@ -28,20 +28,20 @@ v1.21
 		.. code-block:: protobuf
 
 			message AcquireCounteragentRequest {
-				optional string OrgId = 1;
-				optional string Inn = 2;
-				optional string MessageToCounteragent = 3;
-				optional InvitationDocument InvitationDocument = 4;
+			    optional string OrgId = 1;
+			    optional string Inn = 2;
+			    optional string MessageToCounteragent = 3;
+			    optional InvitationDocument InvitationDocument = 4;
 			}
 
 			message InvitationDocument {
-				required Events.SignedContent SignedContent = 1;
-				required string FileName = 2;
-				optional bool SignatureRequested = 3 [default = false];
+			    required Events.SignedContent SignedContent = 1;
+			    required string FileName = 2;
+			    optional bool SignatureRequested = 3 [default = false];
 			}
 
 		..
-	
+
 		- ``OrgId`` — идентификатор организации контрагента.
 		- ``Inn`` — ИНН организации контрагента.
 		- ``MessageToCounteragent`` — текст сообщения для контрагента. Длина не должна превышать 2000 символов.

@@ -12,15 +12,15 @@ DetectCustomPrintForms
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
 	:request Body: Тело запроса должно содержать список документов, для которых нужно определить наличие нестандартной печатной формы, представленный структурой ``CustomPrintFormDetectionRequest``:
-	
+
 		.. code-block:: protobuf
 
 			message CustomPrintFormDetectionRequest {
-				repeated DocumentId DocumentIds = 1;
+			    repeated DocumentId DocumentIds = 1;
 			}
 
 		..
-	
+
 		- ``DocumentIds`` — список идентификаторов документов, представленных структурой :doc:`../proto/DocumentId`.
 
 	:statuscode 200: операция успешно завершена.
@@ -43,7 +43,7 @@ DetectCustomPrintForms
 			   required DocumentId DocumentId = 1;
 			   required bool HasCustomPrintForm = 2;
 			}
-			
+
 		..
 
 		- ``Items`` — список результатов проверки, представленных структурой ``CustomPrintFormDetectionItemResult`` с полями:

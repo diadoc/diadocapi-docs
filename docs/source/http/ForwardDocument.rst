@@ -8,19 +8,19 @@ ForwardDocument
 	:queryparam boxId: идентификатор ящика организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
-	
+
 	:request Body: Тело запроса должно содержать данные для пересылки документа, представленные структурой ``ForwardDocumentRequest``:
 
 		.. code-block:: protobuf
 
 			message ForwardDocumentRequest
 			{
-				required string ToBoxId = 1;
-				required DocumentId DocumentId = 2;
+			    required string ToBoxId = 1;
+			    required DocumentId DocumentId = 2;
 			}
-			
+
 		..
-	
+
 		- ``ToBoxId`` — идентификатор ящика организации, в который нужно переслать документ.
 		- ``DocumentId`` — идентификатор документа, который нужно переслать, представленный структурой :doc:`../proto/DocumentId`.
 
@@ -33,19 +33,19 @@ ForwardDocument
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 409: текущее состояние системы не позволяет корректно обработать запрос или запрещен прием документов от контрагентов согласно свойству ``Sociability`` из :doc:`../proto/Organization`.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
-	
+
 	:response Body: Тело ответа содержит информацию о пересылке документа, представленную структурой ``ForwardDocumentResponse``:
 
 		.. code-block:: protobuf
 
 			message ForwardDocumentResponse
 			{
-				optional Timestamp ForwardTimestamp = 1;
-				optional ForwardedDocumentId ForwardedDocumentId = 2;
+			    optional Timestamp ForwardTimestamp = 1;
+			    optional ForwardedDocumentId ForwardedDocumentId = 2;
 			}
-			
+
 		..
-			
+
 		- ``ForwardTimestamp`` — метка времени пересылки документа, представленная структурой :doc:`../proto/Timestamp`.
 		- ``ForwardedDocumentId`` — идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
 

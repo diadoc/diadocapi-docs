@@ -26,10 +26,10 @@ AcquireCounteragentResult
 		.. code-block:: protobuf
 
 			message AcquireCounteragentResult {
-				required string OrgId = 1;
-				optional DocumentId InvitationDocumentId = 2;
+			    required string OrgId = 1;
+			    optional DocumentId InvitationDocumentId = 2;
 			}
-		
+
 		..
 
 		- ``orgId`` — идентификатор приглашенной организации.

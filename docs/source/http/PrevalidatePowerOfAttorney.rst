@@ -27,9 +27,9 @@ PrevalidatePowerOfAttorney
 		.. code-block:: protobuf
 
 			message PowerOfAttorneyPrevalidateResult {
-				required PowerOfAttorneyValidationStatus PrevalidateStatus = 1;
+			    required PowerOfAttorneyValidationStatus PrevalidateStatus = 1;
 			}
-			
+
 		..
 
 		- ``PrevalidateStatus`` — статус проверки, представленный структурой :doc:`../proto/PowerOfAttorneyValidationStatus`.

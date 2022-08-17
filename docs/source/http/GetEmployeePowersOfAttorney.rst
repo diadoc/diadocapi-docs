@@ -25,9 +25,9 @@ GetEmployeePowersOfAttorney
 		.. code-block:: protobuf
 
 			message EmployeePowerOfAttorneyList {
-				repeated EmployeePowerOfAttorney PowersOfAttorney = 1;
+			    repeated EmployeePowerOfAttorney PowersOfAttorney = 1;
 			}
-			
+
 		..
 
 		- ``PowersOfAttorney`` —  список МЧД, привязанных к сотруднику, представленных структурой :doc:`../proto/EmployeePowerOfAttorney`.

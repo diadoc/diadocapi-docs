@@ -13,10 +13,10 @@ SendFnsRegistrationMessage
 
 		.. code-block:: protobuf
 
-		    message FnsRegistrationMessageInfo
-		    {
-		        repeated bytes Certificates = 1;
-		    }
+			message FnsRegistrationMessageInfo
+			{
+			    repeated bytes Certificates = 1;
+			}
 
 		..
 
