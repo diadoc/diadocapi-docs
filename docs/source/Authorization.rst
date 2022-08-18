@@ -1,8 +1,11 @@
 Авторизация
 ===========
 
+.. contents:: :local:
+	:depth: 3
+
 Схема авторизации Диадока
-----------------------------
+-------------------------
 
 Чтобы работать с API Диадока, нужно авторизоваться.
 
@@ -37,60 +40,70 @@
 
 Подробная информация обо всех способах получения токена приведена на странице метода :doc:`http/Authenticate`. Здесь рассмотрим самые распространенные способы получения токена: по сертификату и по логину и паролю.
 
+Аутентификация по сертификату
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Чтобы получить авторизационный токен по сертификату:
 
 1. Вызовите метод :doc:`http/Authenticate`. В параметре ``ddauth_api_client_id`` HTTP-заголовка ``Authorization`` передайте ключ разработчика.
 
-    Пример HTTP-запроса:
+	Пример HTTP-запроса:
 
-    ::
+	::
 
-        POST v3/Authenticate?type=certificate HTTP/1.1
-        Host: diadoc-api.kontur.ru
-        Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
-        Content-Length: 1252
-        Connection: Keep-Alive
+	    POST v3/Authenticate?type=certificate HTTP/1.1
+	    Host: diadoc-api.kontur.ru
+	    Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
+	    Content-Length: 1252
+	    Connection: Keep-Alive
 
-        <Двоичное DER-представление X.509-сертификата пользователя> 
-    ..
+	    <Двоичное DER-представление X.509-сертификата пользователя> 
+	..
 
-    Успешный ответ сервера:
-     
-    ::
+	Успешный ответ сервера:
 
-        HTTP/1.1 200 OK
-        Content-Length: 598
+	::
 
-        <Двоичное DER-представление зашифрованного токена>
-    ..
+	    HTTP/1.1 200 OK
+	    Content-Length: 598
+
+	    <Двоичное DER-представление зашифрованного токена>
+	..
 
 2. Расшифруйте тело ответа метода :doc:`http/Authenticate` с помощью закрытого ключа сертификата пользователя. 
 3. Полученный после расшифровки массив байтов закодируйте в :rfc:`Base64 <3548>`-строку.
 4. Передайте закодированную строку в метод :doc:`http/AuthenticateConfirm`, он вернет авторизационный токен.
+
+Аутентификация по логину и паролю
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Чтобы получить авторизационный токен по логину и паролю:
 
 1. Вызовите метод :doc:`http/Authenticate`. В параметре ``ddauth_api_client_id`` HTTP-заголовка ``Authorization`` передайте ключ разработчика.
 2. Метод вернет авторизационный токен.
 
-    Пример HTTP-запроса:
+	Пример HTTP-запроса:
 
-    ::
+	::
 
-        POST v3/Authenticate?type=password HTTP/1.1
-        Host: diadoc-api.kontur.ru
-        Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
-        Content-Length: 1252
-        Connection: Keep-Alive
-        
-    Успешный ответ сервера:
+	    POST v3/Authenticate?type=password HTTP/1.1
+	    Host: diadoc-api.kontur.ru
+	    Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
+	    Content-Length: 1252
+	    Connection: Keep-Alive
 
-    ::
+	..
 
-        HTTP/1.1 200 OK
-        Content-Length: 598
+	Успешный ответ сервера:
 
-        <Авторизационный токен>
+	::
+
+	    HTTP/1.1 200 OK
+	    Content-Length: 598
+
+	    <Авторизационный токен>
+
+	..
 
 Авторизация при вызове методов API
 ----------------------------------

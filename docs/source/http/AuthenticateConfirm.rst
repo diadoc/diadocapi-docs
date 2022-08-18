@@ -6,7 +6,7 @@ AuthenticateConfirm
 .. http:post:: /V2/AuthenticateConfirm
 
 	:queryparam token: строка в формате Base64, полученная после расшифровки тела ответа метода :doc:`Authenticate <./Authenticate>`.
-	:queryparam thumbprint: отпечаток сертификата пользователя. Необязательный параметр. Если не указан в теле запроса нужно передать сертификат пользователя, сериализованный в DER.
+	:queryparam thumbprint: отпечаток сертификата пользователя. Необязательный параметр. Если не указан, в теле запроса нужно передать сертификат пользователя, сериализованный в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__.
 	:queryparam saveBinding: флаг для :ref:`сохранения привязки пользователя доверенного сервиса <save_binding>`. Укажите значение ``true``, если нужно сохранить привязку. Необязательный параметр. По умолчанию имеет значение ``false``.
 
 	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``ddauth_api_client_id``.

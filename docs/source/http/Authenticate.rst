@@ -44,23 +44,23 @@ Authenticate v3
 
 	Если вы передаете данные в формате JSON, укажите заголовок ``Content-Type: application/json``.
 
-    .. code-block:: json     
-   
-        {
-            "login" : "login",
-            "password" : "pass"
-        }
-    ..
+	.. code-block:: json     
+
+	    {
+	        "login" : "login",
+	        "password" : "pass"
+	    }
+	..
 
 	Если вы передаете данные в формате protobuf, необязательно указывать ``Content-Type``, так как по умолчанию десериализация происходит из protobuf.
 
-    .. code-block:: protobuf
+	.. code-block:: protobuf
 
-        message LoginPassword {
-            required string Login = 1;
-            required string Password = 2;
-        }
-    ..
+	    message LoginPassword {
+	        required string Login = 1;
+	        required string Password = 2;
+	    }
+	..
 
 	В теле ответа метод вернет авторизационный токен.
 
