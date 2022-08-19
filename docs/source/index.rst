@@ -104,7 +104,7 @@ API Диадока — универсальный инструмент для и
 .. toctree::
 	:maxdepth: 1
 	:titlesonly:
-	:caption: Справочное руководство
+	:caption: Справочная информация
 
 	http_methods
 	protos
