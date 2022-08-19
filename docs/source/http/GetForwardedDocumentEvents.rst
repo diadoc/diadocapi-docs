@@ -14,7 +14,7 @@ GetForwardedDocumentEvents
 		.. code-block:: protobuf
 
 		    message GetForwardedDocumentEventsRequest
-		{
+		    {
 		        required TimeBasedFilter Filter = 1;
 		        optional bytes AfterIndexKey = 2;
 		        optional bool PopulateForwardedDocuments = 3 [default = false];
