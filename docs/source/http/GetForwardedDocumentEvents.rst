@@ -58,11 +58,11 @@ GetForwardedDocumentEvents
 
 		- ``TotalCount`` — общее количество событий, соответствующих заданным параметрам.
 		- ``Events`` — список событий.
-		- ``TotalCountType`` — параметр, отражающий, какое значение содержит поле ``TotalCount``, представленный структурой :doc:`<../proto/TotalCountType>`.
-		- ``Timestamp`` — метка времени возникновения события, представленная структурой :doc:`<../proto/Timestamp>`.
+		- ``TotalCountType`` — параметр, отражающий, какое значение содержит поле ``TotalCount``, представленный структурой :doc:`../proto/TotalCountType`.
+		- ``Timestamp`` — метка времени возникновения события, представленная структурой :doc:`../proto/Timestamp`.
 		- ``ForwardedDocumentId`` — идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
 		- ``IndexKey`` — ключ, используемый для постраничного получения списка событий. Может передаваться в качестве параметра запроса ``AfterIndexKey``.
-		- ``ForwardedDocument`` — пересланный документ, представленный структурой :doc:`ForwardedDocument <../proto/ForwardedDocument>`.
+		- ``ForwardedDocument`` — пересланный документ, представленный структурой :doc:`../proto/ForwardedDocument`.
 
 Список ``GetForwardedDocumentEventsResponse.Events`` может содержать не более 100 элементов. Чтобы получить остальные элементы, вызовите метод ``GetForwardedDocumentEvents`` с теми же параметрами и с указанием ``AfterIndexKey``. В зависимости от значения параметра ``AfterIndexKey`` метод работает следующим образом:
 

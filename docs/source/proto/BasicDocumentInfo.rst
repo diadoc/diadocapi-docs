@@ -1,6 +1,15 @@
 BasicDocumentInfo
 =================
 
+Структура ``BasicDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>`:
+
+- ``XmlTorg12``,
+- ``XmlAcceptanceCertificate``,
+- ``Torg12``,
+- ``AcceptanceCertificate``,
+- ``ProformaInvoice``, 
+- ``Torg13``.
+
 .. code-block:: protobuf
 
     message BasicDocumentInfo
@@ -11,12 +20,14 @@ BasicDocumentInfo
         optional string Grounds = 4;
     }
 
-Структура представляет метаданные документов, имеющих :doc:`тип <DocumentType>` *XmlTorg12*, *XmlAcceptanceCertificate*, *Torg12*, *AcceptanceCertificate*, *ProformaInvoice* или *Torg13*.
+- ``Total`` — сумма с учетом НДС, всего по документу.
+- ``NoVat`` — признак, что ставка налога по документу равна «без НДС».
+- ``Vat`` — сумма НДС, всего по документу.
+- ``Grounds`` — описание оснований для данного документа.
 
--  *Total* - сумма с учетом НДС, всего по документу.
+----
 
--  *NoVat* - признак того, что ставка налога по документу равна "без НДС".
+.. rubric:: Смотри также
 
--  *Vat* - сумма НДС, всего по документу.
-
--  *Grounds* - описание оснований для данного документа.
+*Структура используется:*
+	- в структуре :doc:`DocumentInfo`.

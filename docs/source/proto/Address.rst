@@ -3,29 +3,58 @@ Address
 
 Структура ``Address`` представляет собой информацию об адресе организации.
 
-Из полей ``RussianAddress`` и ``ForeignAddress`` одно обязательно должно быть заполнено.
-
 .. code-block:: protobuf
 
     message Address {
         optional RussianAddress RussianAddress = 1;
         optional ForeignAddress ForeignAddress = 2;
-        optional string AddressCode = 3; //Код ГАР
+        optional string AddressCode = 3;
     }
 
     message RussianAddress {
-        optional string ZipCode = 1;    // индекс
-        required string Region = 2;     // регион (код)
-        optional string Territory = 3;  // район
-        optional string City = 4;       // город
-        optional string Locality = 5;   // населенный пункт
-        optional string Street = 6;     // улица
-        optional string Building = 7;   // дом
-        optional string Block = 8;      // корпус
-        optional string Apartment = 9;  // квартира
+        optional string ZipCode = 1;
+        required string Region = 2;
+        optional string Territory = 3;
+        optional string City = 4;
+        optional string Locality = 5;
+        optional string Street = 6;
+        optional string Building = 7;
+        optional string Block = 8;
+        optional string Apartment = 9;
     }
 
     message ForeignAddress {
-        required string Country = 1;  // страна (код)
-        required string Address = 2;  // текст адреса
+        required string Country = 1;
+        required string Address = 2;
     }
+
+Обязательно должно быть заполнено одно из полей ``RussianAddress`` и ``ForeignAddress``.
+
+- ``RussianAddress`` — российский адрес организации, представленный структурой ``RussianAddress`` с полями:
+
+	- ``ZipCode`` — индекс.
+	- ``Region`` — код региона.
+	- ``Territory`` — район.
+	- ``City`` — город.
+	- ``Locality`` — населенный пункт.
+	- ``Street`` — улица.
+	- ``Building`` — дом.
+	- ``Block`` — корпус.
+	- ``Apartment`` — квартира.
+
+- ``ForeignAddress`` — иностранный адрес организации, представленный структурой ``ForeignAddress`` с полями:
+
+	- ``Country`` — код страны.
+	- ``Address`` — текст адреса.
+
+- ``AddressCode`` — код ГАР.
+
+----
+
+.. rubric:: Смотри также
+
+*Структура используется:*
+	- в структуре :doc:`Organization`,
+	- в структуре :doc:`ExtendedOrganizationInfo`,
+	- в структуре :doc:`DepartmentToCreate`,
+	- в структуре :doc:`Department`.
