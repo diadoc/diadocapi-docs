@@ -20,7 +20,7 @@ SignaturePowerOfAttorney
 - ``Entity`` — сущность, содержащая идентификатор МЧД и время ее создания, преставленная структурой :doc:`Entity`.
 - ``FullId`` — идентификатор МЧД, представленный структурой :doc:`PowerOfAttorneyFullId`.
 - ``Status`` — последний статус проверки МЧД, представленный структурой :doc:`PowerOfAttorneyValidationStatus`.
-- ``StatusChanges`` — история статусов МЧД:
+- ``StatusChanges`` — история статусов МЧД, представленных структурой ``PowerOfAttorneyStatusChange`` с полями:
 
 	- ``Entity`` — идентификатор и время установки статуса, преставленныя структурой :doc:`Entity`.
 	- ``PowerOfAttorneyStatus`` — статус проверки МЧД, представленный структурой :doc:`PowerOfAttorneyValidationStatus`.

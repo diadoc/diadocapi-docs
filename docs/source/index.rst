@@ -65,6 +65,7 @@
 	howto/example_receive_invoice
 	howto/example_torg12
 	howto/example_acceptance_certificate
+	howto/tags
 
 .. toctree::
 	:maxdepth: 1

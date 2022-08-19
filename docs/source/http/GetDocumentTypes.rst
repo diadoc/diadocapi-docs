@@ -20,9 +20,9 @@
 
 		.. code-block:: protobuf
 
-			message GetDocumentTypesResponseV2 {
-				repeated DocumentTypeDescriptionV2 DocumentTypes = 1;
-			}
+		    message GetDocumentTypesResponseV2 {
+		        repeated DocumentTypeDescriptionV2 DocumentTypes = 1;
+		    }
 
 		..
 
