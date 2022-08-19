@@ -15,9 +15,9 @@ DetectCustomPrintForms
 
 		.. code-block:: protobuf
 
-			message CustomPrintFormDetectionRequest {
-			    repeated DocumentId DocumentIds = 1;
-			}
+		    message CustomPrintFormDetectionRequest {
+		        repeated DocumentId DocumentIds = 1;
+		    }
 
 		..
 
@@ -35,14 +35,14 @@ DetectCustomPrintForms
 
 		.. code-block:: protobuf
 
-			message CustomPrintFormDetectionResult {
-			   repeated CustomPrintFormDetectionItemResult Items = 1;
-			}
+		    message CustomPrintFormDetectionResult {
+		       repeated CustomPrintFormDetectionItemResult Items = 1;
+		    }
 
-			message CustomPrintFormDetectionItemResult {
-			   required DocumentId DocumentId = 1;
-			   required bool HasCustomPrintForm = 2;
-			}
+		    message CustomPrintFormDetectionItemResult {
+		       required DocumentId DocumentId = 1;
+		       required bool HasCustomPrintForm = 2;
+		    }
 
 		..
 

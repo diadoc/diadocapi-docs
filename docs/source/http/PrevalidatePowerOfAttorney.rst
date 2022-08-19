@@ -26,9 +26,9 @@ PrevalidatePowerOfAttorney
 
 		.. code-block:: protobuf
 
-			message PowerOfAttorneyPrevalidateResult {
-			    required PowerOfAttorneyValidationStatus PrevalidateStatus = 1;
-			}
+		    message PowerOfAttorneyPrevalidateResult {
+		        required PowerOfAttorneyValidationStatus PrevalidateStatus = 1;
+		    }
 
 		..
 

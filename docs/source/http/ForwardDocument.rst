@@ -13,11 +13,11 @@ ForwardDocument
 
 		.. code-block:: protobuf
 
-			message ForwardDocumentRequest
-			{
-			    required string ToBoxId = 1;
-			    required DocumentId DocumentId = 2;
-			}
+		    message ForwardDocumentRequest
+		    {
+		        required string ToBoxId = 1;
+		        required DocumentId DocumentId = 2;
+		    }
 
 		..
 
@@ -38,11 +38,11 @@ ForwardDocument
 
 		.. code-block:: protobuf
 
-			message ForwardDocumentResponse
-			{
-			    optional Timestamp ForwardTimestamp = 1;
-			    optional ForwardedDocumentId ForwardedDocumentId = 2;
-			}
+		    message ForwardDocumentResponse
+		    {
+		        optional Timestamp ForwardTimestamp = 1;
+		        optional ForwardedDocumentId ForwardedDocumentId = 2;
+		    }
 
 		..
 

@@ -24,9 +24,9 @@ GetEmployeePowersOfAttorney
 
 		.. code-block:: protobuf
 
-			message EmployeePowerOfAttorneyList {
-			    repeated EmployeePowerOfAttorney PowersOfAttorney = 1;
-			}
+		    message EmployeePowerOfAttorneyList {
+		        repeated EmployeePowerOfAttorney PowersOfAttorney = 1;
+		    }
 
 		..
 
