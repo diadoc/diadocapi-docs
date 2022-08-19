@@ -21,7 +21,7 @@ CloudSignConfirm
 
 		- ``CloudCrypt.BadConfirmationCode`` — указан неверный код подтверждения;
 		- ``CloudCrypt.ExpiredRequest`` — истек срок действия кода подтверждения.
-	
+
 	:responseheader X-Diadoc-ErrorCode: текст ошибки.
 
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.

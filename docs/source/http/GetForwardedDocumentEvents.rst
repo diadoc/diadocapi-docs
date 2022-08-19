@@ -11,21 +11,21 @@ GetForwardedDocumentEvents
 
 	:Request Body: Тело запроса должно содержать структуру ``GetForwardedDocumentEventsRequest``:
 
-        .. code-block:: protobuf
+		.. code-block:: protobuf
 
-            message GetForwardedDocumentEventsRequest
-            {
-                required TimeBasedFilter Filter = 1;
-                optional bytes AfterIndexKey = 2;
-                optional bool PopulateForwardedDocuments = 3 [default = false];
-                optional bool InjectEntityContent = 4 [default = false];
-            }
-        ..
+		    message GetForwardedDocumentEventsRequest
+		{
+		        required TimeBasedFilter Filter = 1;
+		        optional bytes AfterIndexKey = 2;
+		        optional bool PopulateForwardedDocuments = 3 [default = false];
+		        optional bool InjectEntityContent = 4 [default = false];
+		    }
+	    ..
 
 			- ``Filter`` — фильтр событий, представленный структурой :doc:`../proto/TimeBasedFilter`.
-			- ``AfterIndexKey`` — ключ позволяет итерироваться по всему списку документов, удовлетворяющих фильтру.
-			- ``PopulateForwardedDocuments`` — флаг, указывающий, что в списке событий нужно заполнить метаифнормацию о документах. Метаинформация возвращается в поле ``ForwardedDocument`` структуры ``ForwardedDocumentEvent``.
-			- ``InjectEntityContent`` — флаг, указывающий, что в ответе нужно вернуть контент документа и контент относящихся к нему сущностей.
+			- ``AfterIndexKey`` — уникальный ключ, позволяющий итерироваться по списку событий.
+			- ``PopulateForwardedDocuments`` — флаг, указывающий, что в ответе нужно заполнить метаифнормацию о документах. Метаинформация возвращается в поле ``ForwardedDocument`` структуры ``ForwardedDocumentEvent``.
+			- ``InjectEntityContent`` — флаг, указывающий, что в ответе нужно вернуть содержимое документа и содержимое относящихся к нему сущностей.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -38,33 +38,30 @@ GetForwardedDocumentEvents
 
 	:response Body: Тело ответа содержит результат выполнения операции, представленный структурой  ``GetForwardedDocumentEventsResponse``:
 
-        .. code-block:: protobuf
+		.. code-block:: protobuf
 
-            message GetForwardedDocumentEventsResponse
-            {
-                required int32 TotalCount = 1;
-                repeated ForwardedDocumentEvent Events = 2;
-                required TotalCountType TotalCountType = 3;
-            }
- 
-            message ForwardedDocumentEvent
-            {
-                required Timestamp Timestamp = 1;
-                required ForwardedDocumentId ForwardedDocumentId = 2;
-                required bytes IndexKey = 3;
-                optional ForwardedDocument ForwardedDocument = 4;
-            }
-        ..
+		    message GetForwardedDocumentEventsResponse
+		    {
+		        required int32 TotalCount = 1;
+		        repeated ForwardedDocumentEvent Events = 2;
+		        required TotalCountType TotalCountType = 3;
+		    }
+
+		    message ForwardedDocumentEvent
+		    {
+		        required Timestamp Timestamp = 1;
+		        required ForwardedDocumentId ForwardedDocumentId = 2;
+		        required bytes IndexKey = 3;
+		        optional ForwardedDocument ForwardedDocument = 4;
+		    }
+	    ..
 
 			- ``TotalCount`` — количество событий, удовлетворяющих запросу.
-			- ``TotalCountType`` — параметр, отражающий, какое значение содержит поле ``TotalCount``. Принимает одно из значений:
-
-				- ``Equal`` — поле ``TotalCount`` содержит точное количество событий, удовлетворяющих запросу. Этот параметр используется при количестве контрагентов меньше 100.
-				- ``GreaterThanOrEqual`` — поле ``TotalCount`` возвращает значение 100, при этом реальное количество собыйтий может быть больше. 
-
-			- ``Timestamp`` - метка времени возникновения события.
-			- ``ForwardedDocumentId`` - идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
-			- ``IndexKey`` — ключ, который можно передавать в качестве параметра ``AfterIndexKey`` для итерирования по всему отфильтрованному списку.
+			- ``Events`` — список событий.
+			- ``TotalCountType`` — параметр, отражающий, какое значение содержит поле ``TotalCount``, представленный структурой :doc:`<../proto/TotalCountType>`.
+			- ``Timestamp`` — метка времени возникновения события, представленная структурой :doc:`<../proto/Timestamp>`.
+			- ``ForwardedDocumentId`` — идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
+			- ``IndexKey`` — ключ, который можно передавать в качестве параметра ``AfterIndexKey`` для итерирования по отфильтрованному списку.
 			- ``ForwardedDocument`` — описание пересланного документа, представленное структурой :doc:`ForwardedDocument <../proto/ForwardedDocument>`.
 
 Список ``GetForwardedDocumentEventsResponse.Events`` может содержать не более 100 элементов. Чтобы получить остальные элементы, вызовите метод ``GetForwardedDocumentEvents`` с теми же параметрами и с указанием ``AfterIndexKey``. В зависимости от значения параметра ``AfterIndexKey`` метод работает следующим образом:
@@ -76,8 +73,8 @@ GetForwardedDocumentEvents
 Пример использования (C#)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Вычитывание списка пересланных документов.
- 
+Получение списка пересланных документов.
+
 .. code-block:: csharp
 
     var diadoc = new DiadocApi(...);
@@ -98,3 +95,13 @@ GetForwardedDocumentEvents
             break;
         request.AfterIndexKey = response.Events.Last().IndexKey;
     }
+
+
+----
+
+.. rubric:: Смотри также
+
+*Другие методы для работы с событиями:*
+	- :doc:`GetNewEvents` — возвращает ленту событий в ящике.
+	- :doc:`GetEvent` — возвращает информацию о конкретном событии.
+	- :doc:`GetLastEvent` — возвращает последнее событие в ящике.
