@@ -49,28 +49,28 @@
 
 1. Вызовите метод :doc:`http/Authenticate`. В параметре ``ddauth_api_client_id`` HTTP-заголовка ``Authorization`` передайте ключ разработчика.
 
-	Пример HTTP-запроса:
+ Пример HTTP-запроса:
 
-	::
+ ::
 
-	    POST v3/Authenticate?type=certificate HTTP/1.1
-	    Host: diadoc-api.kontur.ru
-	    Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
-	    Content-Length: 1252
-	    Connection: Keep-Alive
+     POST v3/Authenticate?type=certificate HTTP/1.1
+     Host: diadoc-api.kontur.ru
+     Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
+     Content-Length: 1252
+     Connection: Keep-Alive
 
-	    <Двоичное DER-представление X.509-сертификата пользователя> 
-	..
+     <Двоичное DER-представление X.509-сертификата пользователя> 
+ ..
 
-	Успешный ответ сервера:
+ Успешный ответ сервера:
 
-	::
+ ::
 
-	    HTTP/1.1 200 OK
-	    Content-Length: 598
+     HTTP/1.1 200 OK
+     Content-Length: 598
 
-	    <Двоичное DER-представление зашифрованного токена>
-	..
+     <Двоичное DER-представление зашифрованного токена>
+ ..
 
 2. Расшифруйте тело ответа метода :doc:`http/Authenticate` с помощью закрытого ключа сертификата пользователя. 
 3. Полученный после расшифровки массив байтов закодируйте в :rfc:`Base64 <3548>`-строку.
@@ -84,26 +84,26 @@
 1. Вызовите метод :doc:`http/Authenticate`. В параметре ``ddauth_api_client_id`` HTTP-заголовка ``Authorization`` передайте ключ разработчика.
 2. Метод вернет авторизационный токен.
 
-	Пример HTTP-запроса:
+ Пример HTTP-запроса:
 
-	::
+ ::
 
-	    POST v3/Authenticate?type=password HTTP/1.1
-	    Host: diadoc-api.kontur.ru
-	    Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
-	    Content-Length: 1252
-	    Connection: Keep-Alive
-	..
+     POST v3/Authenticate?type=password HTTP/1.1
+     Host: diadoc-api.kontur.ru
+     Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
+     Content-Length: 1252
+     Connection: Keep-Alive
+ ..
 
-	Успешный ответ сервера:
+ Успешный ответ сервера:
 
-	::
+ ::
 
-	    HTTP/1.1 200 OK
-	    Content-Length: 598
+     HTTP/1.1 200 OK
+     Content-Length: 598
 
-	    <Авторизационный токен>
-	..
+     <Авторизационный токен>
+ ..
 
 Авторизация при вызове методов API
 ----------------------------------
@@ -123,10 +123,10 @@
 
 1. Сервер Диадока извлекает из HTTP-заголовка ``Authorization`` значение параметра ``ddauth_token``. После его декодирования сервер получает идентификатор пользователя. Если какое-то действие не удалось выполнить, метод вернет код ошибки ``401 (Unauthorized)``. Это возможно в случаях, когда:
 
-	- в запросе отсутствует HTTP-заголовок ``Authorization``,
-	- нет параметра ``ddauth_token``,
-	- токен поврежден или просрочен,
-	- указан некорректный ``ddauth_api_client_id``.
+ - в запросе отсутствует HTTP-заголовок ``Authorization``,
+ - нет параметра ``ddauth_token``,
+ - токен поврежден или просрочен,
+ - указан некорректный ``ddauth_api_client_id``.
 
 2. По идентификатору пользователя Диадок находит ящики, к которым у пользователя есть доступ. Список ящиков совпадает со списком, который вернет метод :doc:`http/GetMyOrganizations`.
 3. Сервер извлекает идентификатор ящика из параметров запроса. Если идентификатор ящика не входит в список ящиков, доступных пользователю, метод вернет код ошибки ``403 (Forbidden)``.
