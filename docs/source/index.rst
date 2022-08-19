@@ -108,5 +108,4 @@ API Диадока — универсальный инструмент для и
 
 	http_methods
 	protos
-	lists
 	obsolete_methods
