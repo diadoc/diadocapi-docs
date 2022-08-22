@@ -37,11 +37,14 @@ DocflowStatusV3
 
 *Структура используется:*
 	- в структуре :doc:`DocflowV3`, возвращаемой методами
+	
 		- :doc:`V3/GetDocflowEvents <../http/GetDocflowEvents_V3>`,
 		- :doc:`V3/GetDocflows <../http/GetDocflows_V3>`,
 		- :doc:`V3/GetDocflowsByPacketId <../http/GetDocflowsByPacketId_V3>`,
-		- :doc:`V3/SearchDocflows <../http/SearchDocflows_V3>`.
+		- :doc:`V3/SearchDocflows <../http/SearchDocflows_V3>`,
+		
 	- в структуре :doc:`Document`, возвращаемой методами
+	
 		- :doc:`../http/GetDocument`,
 		- :doc:`../http/GetDocuments`,
 		- :doc:`../http/GetDocumentsByMessageId`.
