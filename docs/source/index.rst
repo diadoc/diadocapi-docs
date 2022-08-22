@@ -72,7 +72,6 @@ API Диадока — универсальный инструмент для и
 	howto/powerofattorney
 	howto/marking_ttgis
 	howto/utd820
-	howto/example_authorization
 	howto/example_send_invoice
 	howto/example_receive_invoice
 	howto/example_torg12
