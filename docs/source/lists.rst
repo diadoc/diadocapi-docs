@@ -1,10 +1,10 @@
-Список HTTP-интерфейсов и структур данных
-=========================================
+Список методов и структур
+=========================
 
 .. toctree::
    :name: httpMethods
    :maxdepth: 1
-   :caption: HTTP-интерфейсы
+   :caption: Методы
    :glob:
    
    http/*
@@ -12,7 +12,7 @@
 .. toctree::
    :name: proto
    :maxdepth: 1
-   :caption: Структуры данных
+   :caption: Структуры
    :glob:
    
    proto/*

@@ -60,7 +60,6 @@
 
 	howto/marking_ttgis
 	howto/utd820
-	howto/example_authorization
 	howto/example_send_invoice
 	howto/example_receive_invoice
 	howto/example_torg12
@@ -92,8 +91,8 @@
 .. toctree::
 	:maxdepth: 1
 	:titlesonly:
-	:caption: Справочное руководство
+	:caption: Справочная информация
 
 	http_methods
 	protos
-	lists
+	obsolete_methods
