@@ -27,13 +27,15 @@
 
 	howtostart/IntegrationOptions
 	Overview
+	DataModel
+	Authorization
+	DataStructures
    
 .. toctree::
 	:maxdepth: 1
 	:titlesonly:
 	:caption: Общее описание возможностей
 
-	DataModel
 	ApiClientOperationPrinciple
 	Counteragents
 	MiscellaneousApiFeatures
@@ -44,7 +46,6 @@
 	:caption: Документооборот
 
 	docflows/AttachmentVersion
-	http/GetDocumentTypes
 	docflows/InvoiceDocflow
 	docflows/Torg12Docflow
 	docflows/AktDocflow
@@ -71,8 +72,6 @@
 	:titlesonly:
 	:caption: Техническая документация
 
-	DataStructures
-	Authorization
 	API_Invoices
 	API_UniversalTransferDocument
 	API_Documents
