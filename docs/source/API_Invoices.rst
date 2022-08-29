@@ -1,13 +1,13 @@
 Работа со счетами-фактурами
 ===========================
 
-Для упрощения работы с API существует SDK (C#/C++/Java/COM), скрывающий детали взаимодействия по HTTP и позволяющий работать с API через набор функций.
+Методы
+------
 
-Генерация СФ
--------------
+Генерация
+~~~~~~~~~
 
 .. toctree::
-   :name: invoiceGeneration
    :maxdepth: 1
    :titlesonly:
    :glob:
@@ -17,11 +17,20 @@
    http/GenerateReceiptXml
    http/GetInvoiceCorrectionRequestInfo
 
-Отправка СФ
------------
+Парсинг
+~~~~~~~
 
 .. toctree::
-   :name: invoiceSign
+   :maxdepth: 1
+   :titlesonly:
+   :glob:
+
+   http/ParseTitleXml
+
+Отправка
+~~~~~~~~
+
+.. toctree::
    :maxdepth: 1
    :titlesonly:
    :glob:
@@ -31,22 +40,10 @@
    http/PostMessage
    http/PostMessagePatch
 
-Парсинг СФ
-----------
+Структуры
+---------
 
 .. toctree::
-   :name: invoiceParsing
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
-
-   http/ParseTitleXml
-
-Структуры данных
-----------------
-
-.. toctree::
-   :name: invoceStruct
    :maxdepth: 1
    :titlesonly:
    :glob:
