@@ -1,28 +1,26 @@
 Работа с сообщениями
-~~~~~~~~~~~~~~~~~~~~
+====================
 
-Для упрощения работы с API существует SDK (C#/C++/Java/COM), скрывающий детали взаимодействия по HTTP и позволяющий работать с API через набор функций.
-
-HTTP-интерфейс
---------------
+Методы
+------
 
 .. toctree::
-   :name: toc3
    :maxdepth: 1
    :titlesonly:
+   :glob:
 
    http/GetEntityContent
    http/GetMessage
    http/PostMessage
    http/PostMessagePatch
 
-Структуры данных
-----------------
+Структуры
+---------
 
 .. toctree::
-   :name: toc4
    :maxdepth: 1
    :titlesonly:
+   :glob:
 
    proto/Entity message
    proto/Message
