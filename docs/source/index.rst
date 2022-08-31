@@ -26,16 +26,16 @@
 	:caption: С чего начать
 
 	howtostart/IntegrationOptions
-	Overview
 	DataModel
-	Authorization
-	DataStructures
+	Overview
    
 .. toctree::
 	:maxdepth: 1
 	:titlesonly:
 	:caption: Общее описание возможностей
 
+	Authorization
+	DataStructures
 	ApiClientOperationPrinciple
 	Counteragents
 	MiscellaneousApiFeatures
