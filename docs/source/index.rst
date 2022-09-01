@@ -28,6 +28,7 @@
 	howtostart/IntegrationOptions
 	Overview
 	DataModel
+	howtostart/quickstart
    
 .. toctree::
 	:maxdepth: 1
