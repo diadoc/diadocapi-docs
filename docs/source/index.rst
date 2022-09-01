@@ -26,8 +26,8 @@
 	:caption: С чего начать
 
 	howtostart/IntegrationOptions
-	DataModel
 	Overview
+	DataModel
    
 .. toctree::
 	:maxdepth: 1
