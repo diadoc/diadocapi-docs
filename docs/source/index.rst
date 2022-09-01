@@ -71,7 +71,7 @@
 .. toctree::
 	:maxdepth: 1
 	:titlesonly:
-	:caption: Техническая документация
+	:caption: Работа с API
 
 	API_Invoices
 	API_UniversalTransferDocument
