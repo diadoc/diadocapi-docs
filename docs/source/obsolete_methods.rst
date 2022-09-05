@@ -2,7 +2,6 @@
 =============================
 
 .. toctree::
-   :name: obsolete_methods
    :maxdepth: 1
    :glob:
    

@@ -2,7 +2,6 @@
 ==============
 
 .. toctree::
-   :name: http
    :maxdepth: 1
    :glob:
    
