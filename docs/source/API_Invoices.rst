@@ -5,49 +5,29 @@
 ------
 
 Генерация
-~~~~~~~~~
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
-
-   http/CanSendInvoice
-   http/GenerateTitleXml
-   http/GenerateReceiptXml
-   http/GetInvoiceCorrectionRequestInfo
+	- :doc:`http/CanSendInvoice`
+	- :doc:`http/GenerateTitleXml`
+	- :doc:`http/GenerateReceiptXml`
+	- :doc:`http/GetInvoiceCorrectionRequestInfo`
 
 Парсинг
-~~~~~~~
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
-
-   http/ParseTitleXml
+	- :doc:`http/ParseTitleXml`
 
 Отправка
-~~~~~~~~
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
-
-   http/utd/ExtendedSignerDetailsV2
-   http/PrepareDocumentsToSign
-   http/PostMessage
-   http/PostMessagePatch
+	- :doc:`http/utd/ExtendedSignerDetailsV2`
+	- :doc:`http/PrepareDocumentsToSign`
+	- :doc:`http/PostMessage`
+	- :doc:`http/PostMessagePatch`
 
 Структуры
 ---------
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :glob:
-
-   proto/utd/*
-   proto/PrepareDocumentsToSignRequest
-   proto/PrepareDocumentsToSignResponse
+- :doc:`proto/utd/ExtendedOrganizationInfo`
+- :doc:`proto/utd/ExtendedSigner`
+- :doc:`proto/utd/ExtendedSignerDetailsToPost`
+- :doc:`proto/utd/UniversalCorrectionDocumentSellerTitleInfo`
+- :doc:`proto/utd/UniversalDocumentMetadata`
+- :doc:`proto/utd/UniversalTransferDocumentBuyerTitleInfo`
+- :doc:`proto/utd/UniversalTransferDocumentSellerTitleInfo`
+- :doc:`proto/PrepareDocumentsToSignRequest`
+- :doc:`proto/PrepareDocumentsToSignResponse`
