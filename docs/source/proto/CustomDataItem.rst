@@ -24,5 +24,4 @@ CustomDataItem
 *Структура используется:*
 	- в структуре :doc:`DocumentInfoV3`,
 	- в структуре :doc:`Document`,
-	- в структуре :doc:`Docflow`,
-	- во всех типах вложений.
+	- в структуре :doc:`Docflow`.
