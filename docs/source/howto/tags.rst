@@ -28,7 +28,8 @@
 Использование
 -------------
 
-- Присвоить тэги документу или шаблону можно при отправке методом :doc:`../http/PostMessage`, передав в него структуру :doc:`../proto/MessageToPost` с заполненным полем :doc:`DocumentAttachment.CustomDataItem <../proto/CustomDataItem>`.
+- Присвоить теги документу можно при отправке методом :doc:`../http/PostMessage`, передав в него структуру :doc:`../proto/MessageToPost` с заполненным полем :doc:`DocumentAttachment.CustomDataItem <../proto/DocumentAttachment>`.
+- Присвоить теги шаблону можно при отправке методом :doc:`../http/PostTemplate`, передав в него структуру :doc:`../proto/TemplateToPost` с заполненным полем :doc:`TemplateDocumentAttachment.CustomDataItem <../proto/TemplateDocumentAttachment>`.
 - Отредактировать теги, удалить или добавить новые можно с помощью метода :doc:`../http/PostMessagePatch`, передав в него структуру :doc:`../proto/MessagePatchToPost` с заполненным полем :doc:`../proto/CustomDataPatch`.
 - Искать документы по тегам можно с помощью метода :doc:`../http/SearchDocflows_V3`.
 
