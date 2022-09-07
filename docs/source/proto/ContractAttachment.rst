@@ -1,6 +1,9 @@
 ContractAttachment
 ==================
 
+.. important::
+	Структура устарела. При заполнении структуры MessageToPost используйте структуру DocumentAttachment.
+
 .. code-block:: protobuf
 
     message ContractAttachment {

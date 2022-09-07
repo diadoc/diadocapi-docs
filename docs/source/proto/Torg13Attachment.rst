@@ -1,6 +1,9 @@
 Torg13Attachment
 ================
 
+.. important::
+	Структура устарела. При заполнении структуры MessageToPost используйте структуру DocumentAttachment.
+
 .. code-block:: protobuf
 
     message Torg13Attachment {
