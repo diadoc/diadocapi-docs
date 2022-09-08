@@ -17,4 +17,4 @@ SignatureRejectionDocflow
 - :doc:`SignatureRejection <SignedAttachmentV3>` - данные о файле отказа в подписи и подписи под ним
 - *IsFormal* - является ли отказ в подписи формализованным
 - :doc:`DeliveredAt <Timestamp>` - метка времени доставки отказа в подписи в ящик контрагента
-- *PlainText* - текст сообщения об отказе в подписи
+- *PlainText* - текст сообщения об отказе в подписи. Длина не более 5000 символов.
