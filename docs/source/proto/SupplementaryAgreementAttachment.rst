@@ -2,7 +2,7 @@ SupplementaryAgreementAttachment
 ================================
 
 .. important::
-	Структура устарела. При заполнении структуры MessageToPost используйте структуру DocumentAttachment.
+	Структура устарела. При заполнении структуры :doc:`MessageToPost` используйте структуру :doc:`DocumentAttachment`.
 
 .. code-block:: protobuf
 
