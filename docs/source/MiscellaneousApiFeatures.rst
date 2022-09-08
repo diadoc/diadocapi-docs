@@ -34,9 +34,11 @@
  - :doc:`http/PostMessage` — позволяет создать черновик.
  - :doc:`http/SendDraft` — отправляет сообщение, созданное из черновика.
  - :doc:`http/RecycleDraft` — удаляет неутилизированный черновик.
+ - :doc:`http/PrepareDocumentsToSign` — готовит черновик к подписанию.
 
 *Структуры для работы с черновиками:*
  - :doc:`proto/DraftToSend` — хранит данные для отправки сообщения на основе черновика.
+ - :doc:`DraftDocumentToPatch <proto/PrepareDocumentsToSignRequest>` — представляет ссылку на черновик.
 
 Подготовка печатных форм
 ------------------------
