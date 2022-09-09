@@ -1,5 +1,5 @@
-Интеграция с Диадоком
-=====================
+Варианты интеграции
+===================
 
 .. image:: ../_static/img/diadoc-api-integration-options.png
 	:align: center
@@ -29,7 +29,6 @@ HTTP API
 - `SAP модуль <https://www.diadoc.ru/integrations/sap>`__ — комплекс Контур-ERP для SAP. Обеспечивает бесшовную интеграцию SAP ERP с Диадоком.
 
 .. toctree::
-	:name: com
 	:hidden:
 
 	DiadocApiDll
