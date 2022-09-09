@@ -39,31 +39,11 @@
 	DataStructures
 	Authorization
 	ApiClientOperationPrinciple
-	temp
 	Counteragents
 	MiscellaneousApiFeatures
-	howto/index
 	docflows/index
-
-.. toctree::
-	:maxdepth: 1
-	:titlesonly:
-	:caption: Работа с API
-
-	API_Invoices
-	API_UniversalTransferDocument
-	API_Documents
-	API_Messages
-	API_Events
-	API_Organizations
-	API_Departments
-	API_Employees
-	API_Counteragents
-	API_Templates
-	API_Registration
-	Docflow API
-	CloudSignApi
-	API_Dss
+	howto/index
+	api_index
 
 .. toctree::
 	:maxdepth: 1
