@@ -35,38 +35,15 @@
 	:titlesonly:
 	:caption: Общее описание возможностей
 
-	Authorization
+	entities/index
 	DataStructures
+	Authorization
 	ApiClientOperationPrinciple
+	temp
 	Counteragents
 	MiscellaneousApiFeatures
-
-.. toctree::
-	:maxdepth: 1
-	:titlesonly:
-	:caption: Документооборот
-
-	docflows/AttachmentVersion
-	docflows/InvoiceDocflow
-	docflows/Torg12Docflow
-	docflows/AktDocflow
-	docflows/UtdDocflow
-	docflows/NonformalizedDocflow
-	docflows/TemplateDocflow
-	docflows/Workflows
-
-.. toctree::
-	:maxdepth: 1
-	:titlesonly:
-	:caption: Примеры использования
-
-	howto/marking_ttgis
-	howto/utd820
-	howto/example_send_invoice
-	howto/example_receive_invoice
-	howto/example_torg12
-	howto/example_acceptance_certificate
-	howto/tags
+	howto/index
+	docflows/index
 
 .. toctree::
 	:maxdepth: 1
