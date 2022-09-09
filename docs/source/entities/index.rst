@@ -7,4 +7,6 @@
 	:maxdepth: 1
 	:titlesonly:
 
+	message
+	entity
 	tags
