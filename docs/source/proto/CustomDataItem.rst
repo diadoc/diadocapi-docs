@@ -1,7 +1,7 @@
 CustomDataItem
 ==============
 
-Структура ``CustomDataItem`` представляет собой :doc:`тег документа <../howto/tags>`.
+Структура ``CustomDataItem`` представляет собой :doc:`тег документа <../entities/tag>`.
 
 .. code-block:: protobuf
 
@@ -19,7 +19,7 @@ CustomDataItem
 .. rubric:: Смотри также
 
 *Инструкции:*
-	- :doc:`../howto/tags`
+	- :doc:`../entities/tag`
 
 *Структура используется:*
 	- в структуре :doc:`DocumentInfoV3`,

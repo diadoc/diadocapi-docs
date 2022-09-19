@@ -11,4 +11,4 @@
 	message
 	entity
 	draft
-	tags
+	tag
