@@ -38,9 +38,7 @@
 	entities/index
 	DataStructures
 	Authorization
-	ApiClientOperationPrinciple
-	Counteragents
-	MiscellaneousApiFeatures
+	func_index
 	docflows/index
 	api_index
 	howto/index
