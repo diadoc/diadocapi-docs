@@ -11,17 +11,15 @@
 
 На основе API построены некоторые `готовые решения <howtostart/IntegrationOptions.html#id2>`__, которые можно использовать при разработке клиентских приложений.
 
-
 .. toctree::
 	:hidden:
-	:maxdepth: 1
 	:titlesonly:
 	:caption: История изменений
 
 	ReleaseNotes
  
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 	:titlesonly:
 	:caption: С чего начать
 
@@ -31,7 +29,7 @@
 	howtostart/quickstart
    
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 	:titlesonly:
 	:caption: Руководство по работе с API
 
