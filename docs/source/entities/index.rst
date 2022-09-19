@@ -7,6 +7,7 @@
 	:maxdepth: 1
 	:titlesonly:
 
+	box
 	message
 	entity
 	tags
