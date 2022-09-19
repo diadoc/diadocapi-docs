@@ -1,7 +1,7 @@
 SendDraft
 =========
 
-Метод ``SendDraft`` отправляет сообщение, созданное из :ref:`черновика <drafts-info>`.
+Метод ``SendDraft`` отправляет сообщение, созданное из :doc:`черновика <../entities/draft>`.
 
 .. http:post:: /SendDraft
 
@@ -31,7 +31,7 @@ SendDraft
 .. rubric:: Смотри также
 
 *Инструкции:*
-	- :ref:`Черновики <drafts-info>`
+	- :doc:`../entities/draft`
 
 *Другие методы для работы с черновиками:*
 	- :doc:`RecycleDraft` — удаляет неутилизированные черновики.

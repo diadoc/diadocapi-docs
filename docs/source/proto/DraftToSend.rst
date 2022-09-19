@@ -1,7 +1,7 @@
 DraftToSend
 ===========
 
-Структура ``DraftToSend`` хранит данные для отправки сообщения на основе черновика методом :doc:`../http/SendDraft`.
+Структура ``DraftToSend`` хранит данные для отправки сообщения на основе :doc:`черновика <../entities/draft>` методом :doc:`../http/SendDraft`.
 
 .. code-block:: protobuf
 
@@ -35,4 +35,4 @@ DraftToSend
 	- в теле запроса метода :doc:`../http/SendDraft`.
 
 *Инструкции:*
-	- :ref:`Черновики <drafts-info>`
+	- :doc:`../entities/draft`

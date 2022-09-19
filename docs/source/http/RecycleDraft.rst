@@ -1,7 +1,7 @@
 RecycleDraft
 ============
 
-Метод ``RecycleDraft`` удаляет еще не утилизированные :ref:`черновики <drafts-info>`.
+Метод ``RecycleDraft`` удаляет еще не утилизированные :doc:`черновики <../entities/draft>`.
 
 .. http:post:: /RecycleDraft
 
@@ -25,7 +25,7 @@ RecycleDraft
 .. rubric:: Смотри также
 
 *Инструкции:*
-	- :ref:`Черновики <drafts-info>`
+	- :doc:`../entities/draft`
 
 *Другие методы для работы с черновиками:*
 	- :doc:`PostMessage` — позволяет создать черновик.

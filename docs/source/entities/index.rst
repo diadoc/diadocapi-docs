@@ -10,4 +10,5 @@
 	box
 	message
 	entity
+	draft
 	tags
