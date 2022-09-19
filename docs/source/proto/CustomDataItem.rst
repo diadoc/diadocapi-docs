@@ -25,4 +25,5 @@ CustomDataItem
 	- в структуре :doc:`DocumentInfoV3`,
 	- в структуре :doc:`Document`,
 	- в структуре :doc:`Docflow`,
-	- во всех типах вложений.
+	- в структуре :doc:`DocumentAttachment`,
+	- в структуре :doc:`TemplateDocumentAttachment`.

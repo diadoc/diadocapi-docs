@@ -1,8 +1,10 @@
 Устаревшие методы и структуры
 =============================
 
+Методы
+------
+
 .. toctree::
-   :name: obsolete_methods
    :maxdepth: 1
    :glob:
    
@@ -27,3 +29,24 @@
    http/utd/ParseUniversalCorrectionDocumentSellerTitleXml
    http/utd/ParseUniversalTransferDocumentBuyerTitleXml
    http/utd/ParseUniversalTransferDocumentSellerTitleXml
+
+Структуры
+---------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   
+   proto/AcceptanceCertificateAttachment
+   proto/BasicDocumentAttachment
+   proto/ContractAttachment
+   proto/EncryptedInvoiceAttachment
+   proto/EncryptedXmlDocumentAttachment
+   proto/NonformalizedAttachment
+   proto/PriceListAttachment
+   proto/ReconciliationActAttachment
+   proto/ServiceDetailsAttachment
+   proto/SupplementaryAgreementAttachment
+   proto/Torg13Attachment
+   proto/TrustConnectionRequestAttachment
+   proto/XmlDocumentAttachment

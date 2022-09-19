@@ -2,7 +2,6 @@
 ===============
 
 .. toctree::
-	:name: protos
 	:maxdepth: 1
 	:glob:
 

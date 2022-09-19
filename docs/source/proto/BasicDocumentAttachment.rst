@@ -1,6 +1,9 @@
 BasicDocumentAttachment
 =======================
 
+.. important::
+	Структура устарела. При заполнении структуры :doc:`MessageToPost` используйте структуру :doc:`DocumentAttachment`.
+
 .. code-block:: protobuf
 
     message BasicDocumentAttachment {
