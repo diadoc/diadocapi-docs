@@ -42,8 +42,8 @@
 	Counteragents
 	MiscellaneousApiFeatures
 	docflows/index
-	howto/index
 	api_index
+	howto/index
 
 .. toctree::
 	:maxdepth: 1
