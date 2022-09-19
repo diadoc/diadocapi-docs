@@ -33,7 +33,7 @@
 .. toctree::
 	:maxdepth: 1
 	:titlesonly:
-	:caption: Общее описание возможностей
+	:caption: Руководство по работе с API
 
 	entities/index
 	DataStructures
