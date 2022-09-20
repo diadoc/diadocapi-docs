@@ -23,9 +23,10 @@
 	:titlesonly:
 	:caption: С чего начать
 
-	howtostart/IntegrationOptions
 	Overview
+	howtostart/IntegrationOptions
 	DataModel
+	howtostart/integration
 	howtostart/quickstart
    
 .. toctree::
@@ -36,7 +37,7 @@
 	entities/index
 	DataStructures
 	Authorization
-	func_index
+	features/index
 	docflows/index
 	api_index
 	howto/index

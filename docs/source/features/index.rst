@@ -7,6 +7,6 @@
 	:maxdepth: 1
 	:titlesonly:
 
-	ApiClientOperationPrinciple
-	Counteragents
-	MiscellaneousApiFeatures
+	../ApiClientOperationPrinciple
+	../Counteragents
+	../MiscellaneousApiFeatures
