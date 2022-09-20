@@ -37,7 +37,7 @@ AuthenticateConfirm
 
 .. rubric:: Смотри также
 
-*Инструкции:*
+*Руководства:*
 	- :doc:`../Authorization`
 
 *Метод для аутентификации:*

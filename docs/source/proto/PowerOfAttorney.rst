@@ -117,5 +117,5 @@ PowerOfAttorney
 	- в структуре :doc:`EmployeePowerOfAttorney`,
 	- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.
 
-*Инструкции:*
+*Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

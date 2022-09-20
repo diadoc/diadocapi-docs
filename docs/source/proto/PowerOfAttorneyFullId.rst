@@ -24,5 +24,5 @@ PowerOfAttorneyFullId
 	- в структуре :doc:`PowerOfAttorneyInfo`,
 	- в структуре :doc:`SignaturePowerOfAttorney`.
 
-*Инструкции:*
+*Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

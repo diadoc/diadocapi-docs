@@ -43,7 +43,7 @@ PrevalidatePowerOfAttorney
 
 .. rubric:: Смотри также
 
-*Инструкции:*
+*Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
 
 *Другие методы для работы с МЧД:*
