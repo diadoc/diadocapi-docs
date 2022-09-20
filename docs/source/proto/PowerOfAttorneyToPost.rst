@@ -29,5 +29,5 @@ PowerOfAttorneyToPost
 	- в структуре :doc:`DocumentSignature`,
 	- в структуре :doc:`DocumentSenderSignature`.
 	
-*Инструкции:*
+*Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

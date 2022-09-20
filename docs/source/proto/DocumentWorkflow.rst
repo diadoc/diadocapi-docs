@@ -25,5 +25,5 @@
 *Структура используется:*
 	- в структуре :ref:`DocumentVersionV2 <document-version2>`.
 	
-*Инструкции:*
+*Руководства:*
 	- :doc:`../docflows/Workflows`

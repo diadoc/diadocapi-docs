@@ -49,5 +49,5 @@ GetDocflowEventsRequest
 *Структура используется:*
 	- в теле запроса метода :doc:`../http/GetDocflowEvents`.
 
-*Инструкции:*
+*Руководства:*
 	- :doc:`../Docflow API`

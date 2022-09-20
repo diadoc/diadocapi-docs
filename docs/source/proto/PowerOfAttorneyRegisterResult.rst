@@ -54,5 +54,5 @@ PowerOfAttorneyRegisterResult
 *Структура используется:*
 	- в теле ответа метода :doc:`../http/RegisterPowerOfAttorneyResult`.
 	
-*Инструкции:*
+*Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

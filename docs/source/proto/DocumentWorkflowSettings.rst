@@ -181,5 +181,5 @@
 *Структура используется:*
 	- в теле ответа метода :doc:`../http/GetWorkflowsSettings`.
 	
-*Инструкции:*
+*Руководства:*
 	- :doc:`../docflows/Workflows`

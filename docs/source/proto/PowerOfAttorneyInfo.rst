@@ -20,5 +20,5 @@ PowerOfAttorneyInfo
 *Структура используется:*
 	- в структуре :doc:`Entity message`.
 	
-*Инструкции:*
+*Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
