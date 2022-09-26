@@ -10,5 +10,6 @@
 	:titlesonly:
 
 	../ApiClientOperationPrinciple
+	../howto/powerofattorney
 	../Counteragents
 	../MiscellaneousApiFeatures

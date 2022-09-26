@@ -8,7 +8,6 @@
 	:titlesonly:
 
 	marking_ttgis
-	powerofattorney
 	utd820
 	example_send_invoice
 	example_receive_invoice
