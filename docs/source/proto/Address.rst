@@ -28,7 +28,7 @@ Address
         required string Address = 2;
     }
 
-Обязательно должно быть заполнено одно из полей ``RussianAddress`` и ``ForeignAddress``.
+Обязательно должно быть заполнено одно из полей ``RussianAddress`` или ``ForeignAddress``.
 
 - ``RussianAddress`` — российский адрес организации, представленный структурой ``RussianAddress`` с полями:
 
