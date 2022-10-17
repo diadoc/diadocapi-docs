@@ -8,6 +8,10 @@
    :maxdepth: 1
    :glob:
    
+   http/CloudSign
+   http/CloudSignConfirm
+   http/CloudSignConfirmResult
+   http/CloudSignResult
    http/utd/ExtendedSignerDetails
    http/GenerateAcceptanceCertificateXmlForBuyer
    http/GenerateAcceptanceCertificateXmlForSeller
@@ -40,6 +44,7 @@
    proto/AcceptanceCertificateAttachment
    proto/BasicDocumentAttachment
    proto/ContractAttachment
+   proto/BasicDocumentInfo
    proto/EncryptedInvoiceAttachment
    proto/EncryptedXmlDocumentAttachment
    proto/NonformalizedAttachment

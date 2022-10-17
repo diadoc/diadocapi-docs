@@ -1,85 +1,88 @@
 GetForwardedDocumentEvents
 ==========================
+ 
+Метод ``GetForwardedDocumentEvents`` возвращает список событий пересылки документов в ящик ``boxId``.
+ 
+.. http:post:: /V2/GetForwardedDocumentEvents
 
-Имя ресурса: **/V2/GetForwardedDocumentEvents**
+	:queryparam boxId: идентификатор ящика организации.
 
-HTTP метод: **POST**
+	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
-Параметры строки запроса:
+	:Request Body: Тело запроса должно содержать структуру ``GetForwardedDocumentEventsRequest``:
 
--  *boxId* - идентификатор ящика;
+		.. code-block:: protobuf
 
-В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
+		    message GetForwardedDocumentEventsRequest
+		    {
+		        required TimeBasedFilter Filter = 1;
+		        optional bytes AfterIndexKey = 2;
+		        optional bool PopulateForwardedDocuments = 3 [default = false];
+		        optional bool InjectEntityContent = 4 [default = false];
+		    }
+	    ..
 
-Тело запроса должно содержать сериализованный протобуфер *GetForwardedDocumentEventsRequest*:
+		- ``Filter`` — фильтр событий, представленный структурой :doc:`../proto/TimeBasedFilter`.
+		- ``AfterIndexKey`` — уникальный ключ, позволяющий итерироваться по списку событий.
+		- ``PopulateForwardedDocuments`` — флаг, указывающий, что в ответе нужно заполнить метаифнормацию о документах. Метаинформация вернется в теле ответа метода в поле ``ForwardedDocumentEvent.ForwardedDocument``.
+		- ``InjectEntityContent`` — флаг, указывающий, что в ответе нужно вернуть содержимое документа и относящихся к нему сущностей.
 
-.. code-block:: protobuf
+	:statuscode 200: операция успешно завершена.
+	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
+	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
+	:statuscode 402: у организации с указанным идентификатором ``boxId`` отсутствует или закончилась подписка на API.
+	:statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен.
+	:statuscode 404: не найдено сообщение с заданным идентификатором.
+	:statuscode 405: используется неподходящий HTTP-метод.
+	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-    message GetForwardedDocumentEventsRequest
-    {
-        required TimeBasedFilter Filter = 1;
-        optional bytes AfterIndexKey = 2;
-        optional bool PopulateForwardedDocuments = 3 [default = false];
-        optional bool InjectEntityContent = 4 [default = false];
-    }
-            
+	:response Body: Тело ответа содержит список событий пересылки документов в ящик, представленный структурой  ``GetForwardedDocumentEventsResponse``:
 
-Тело ответа будет содержать сериализованный протобуфер *GetForwardedDocumentEventsResponse*:
+		.. code-block:: protobuf
 
-.. code-block:: protobuf
+		    message GetForwardedDocumentEventsResponse
+		    {
+		        required int32 TotalCount = 1;
+		        repeated ForwardedDocumentEvent Events = 2;
+		        required TotalCountType TotalCountType = 3;
+		    }
 
-    message GetForwardedDocumentEventsResponse
-    {
-        required int32 TotalCount = 1;
-        repeated ForwardedDocumentEvent Events = 2;
-        required TotalCountType TotalCountType = 3;
-    }
+		    message ForwardedDocumentEvent
+		    {
+		        required Timestamp Timestamp = 1;
+		        required ForwardedDocumentId ForwardedDocumentId = 2;
+		        required bytes IndexKey = 3;
+		        optional ForwardedDocument ForwardedDocument = 4;
+		    }
+	    ..
 
-    message ForwardedDocumentEvent
-    {
-        required Timestamp Timestamp = 1;
-        required ForwardedDocumentId ForwardedDocumentId = 2;
-        required bytes IndexKey = 3;
-        optional ForwardedDocument ForwardedDocument = 4;
-    }
-            
+		- ``TotalCount`` — общее количество событий, соответствующих заданным параметрам.
+		- ``Events`` — список событий, представленных структурой ``ForwardedDocumentEvent`` с полями:
 
-Метод позволяет получить список событий пересылки документов в ящик *boxId*.
+			- ``Timestamp`` — метка времени возникновения события, представленная структурой :doc:`../proto/Timestamp`.
+			- ``ForwardedDocumentId`` — идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
+			- ``IndexKey`` — ключ, используемый для постраничного получения списка событий. Может передаваться в качестве параметра запроса ``AfterIndexKey``.
+			- ``ForwardedDocument`` — пересланный документ, представленный структурой :doc:`../proto/ForwardedDocument`.
 
-Фильтр событий в запросе описывается структурой :doc:`../proto/TimeBasedFilter`. События в ответе описываются структурой *ForwardedDocumentEvent*.
+		- ``TotalCountType`` — параметр, отражающий, какое значение содержит поле ``TotalCount``, представленный структурой :doc:`../proto/TotalCountType`.
+		
 
-Поле *ForwardedDocumentEvent.IndexKey* можно использовать для итерирования списка, заполняя его значением поле *GetForwardedDocumentEventsRequest.AfterIndexKey*.
+Список ``GetForwardedDocumentEventsResponse.Events`` может содержать не более 100 элементов. Чтобы получить остальные элементы, вызовите метод ``GetForwardedDocumentEvents`` с теми же параметрами и с указанием ``AfterIndexKey``. В зависимости от значения параметра ``AfterIndexKey`` метод работает следующим образом:
 
-Флаг *GetForwardedDocumentEventsRequest.PopulateForwardedDocuments* управляет тем, будет ли сервер в выдаваемом списке событий заполнять метаинформацию о соответствующих документах (поле *ForwardedDocumentEvent.ForwardedDocument*).
+	- Если в запросе отсутствует параметр ``AfterIndexKey``, то метод вернет начало списка событий, удовлетворяющих фильтру.
+	- Если в запросе указан параметр ``AfterIndexKey``, то возвращенный список начнется с события, следующего за событием с ключом ``AfterIndexKey``; событие с ключом ``AfterIndexKey`` в этот список не попадает.
 
-Флаг *GetForwardedDocumentEventsRequest.InjectEntityContent* управляет тем, будет ли сервер вместе с метаинформацией о документе возвращать его контент и контент относящихся к нему сущностей.
+Пример использования (C#)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Возможные HTTP-коды возврата:
-
--  200 (OK) - операция успешно завершена;
-
--  400 (Bad Request) - данные в запросе имеют неверный формат или отсутствуют обязательные параметры;
-
--  401 (Unauthorized) - в запросе отсутствует HTTP-заголовок ``Authorization``, или в этом заголовке содержатся некорректные авторизационные данные;
-
-- 402 - у организации с указанным идентификатором ``boxId`` закончилась подписка на API.
-	
--  403 (Forbidden) - доступ к ящику с предоставленным авторизационным токеном запрещен;
-
--  404 (Not found) - не найдено сообщение/документ с заданным идентификатором;
-
--  405 (Method not allowed) - используется неподходящий HTTP-метод;
-
--  500 (Internal server error) - при обработке запроса возникла непредвиденная ошибка.
-
-Пример вычитывания списка пересланных документов
+Получение списка пересланных документов.
 
 .. code-block:: csharp
 
-	var diadoc = new DiadocApi(...);
-	var authToken = ...;
-	var myBoxId = ...;
-
+    var diadoc = new DiadocApi(...);
+    var authToken = ...;
+    var myBoxId = ...;
+ 
     var request = new GetForwardedDocumentEventsRequest { PopulateForwardedDocuments = true };
     while (true)
     {
@@ -94,4 +97,13 @@ HTTP метод: **POST**
             break;
         request.AfterIndexKey = response.Events.Last().IndexKey;
     }
-            
+
+
+----
+
+.. rubric:: Смотри также
+
+*Другие методы для работы с событиями:*
+	- :doc:`GetNewEvents` — возвращает ленту событий в ящике.
+	- :doc:`GetEvent` — возвращает информацию о конкретном событии.
+	- :doc:`GetLastEvent` — возвращает последнее событие в ящике.
