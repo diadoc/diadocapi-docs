@@ -43,8 +43,8 @@
    
    proto/AcceptanceCertificateAttachment
    proto/BasicDocumentAttachment
-   proto/ContractAttachment
    proto/BasicDocumentInfo
+   proto/ContractAttachment
    proto/EncryptedInvoiceAttachment
    proto/EncryptedXmlDocumentAttachment
    proto/NonformalizedAttachment
