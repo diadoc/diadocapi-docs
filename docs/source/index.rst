@@ -5,100 +5,42 @@
 .. _diadoc_logo: https://www.diadoc.ru/
 |diadoc_logo|_
 
-Диадок — юридически значимый онлайн-документооборот между организациями.
+Диадок — система обмена юридически-значимыми электронными документами между организациями.
 
-API Диадока — универсальный инструмент для интеграции учетных систем с Диадоком. API позволяет организации разработать собственное решение и реализовать в нем необходимую функциональность.
+`API Диадока <howtostart/IntegrationOptions.html#http-api>`__ — универсальный инструмент для интеграции учетных систем с Диадоком. API позволяет организации разработать собственное решение и реализовать в нем необходимую функциональность.
 
-На основе API построены некоторые :doc:`готовые решения <howtostart/IntegrationOptions>`, которые можно использовать при разработке клиентских приложений.
-
-Возможности API Диадока
-=======================
-
-- Создание документов в xml-формате, утвержденном ФНС
-- Отправка и получение документов из своей учетной системы
-- Автоматическое подписание документов КЭП
-- Согласование документов
-- Актуальные статусы документов онлайн
-- Выборка документов по заданным в поиске параметрам
-- Работа со списком контрагентов
-
+На основе API построены некоторые `готовые решения <howtostart/IntegrationOptions.html#id2>`__, которые можно использовать при разработке клиентских приложений.
 
 .. toctree::
-	:maxdepth: 1
+	:hidden:
 	:titlesonly:
 	:caption: История изменений
 
 	ReleaseNotes
-   
+ 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 	:titlesonly:
 	:caption: С чего начать
 
 	howtostart/IntegrationOptions
+	Overview
+	howtostart/integration
+	howtostart/quickstart
    
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 	:titlesonly:
-	:caption: Общее описание возможностей
+	:caption: Руководство по работе с API
 
-	Overview
-	IntegrationOptions_obsolete
 	DataModel
-	ApiClientOperationPrinciple
-	Counteragents
-	MiscellaneousApiFeatures
-
-.. toctree::
-	:maxdepth: 1
-	:titlesonly:
-	:caption: Документооборот
-
-	docflows/AttachmentVersion
-	http/GetDocumentTypes
-	docflows/InvoiceDocflow
-	docflows/Torg12Docflow
-	docflows/AktDocflow
-	docflows/UtdDocflow
-	docflows/NonformalizedDocflow
-	docflows/TemplateDocflow
-	docflows/Workflows
-
-.. toctree::
-	:maxdepth: 1
-	:titlesonly:
-	:caption: Примеры использования
-
-	howto/powerofattorney
-	howto/marking_ttgis
-	howto/utd820
-	howto/example_send_invoice
-	howto/example_receive_invoice
-	howto/example_torg12
-	howto/example_acceptance_certificate
-	howto/tags
-
-.. toctree::
-	:maxdepth: 1
-	:titlesonly:
-	:caption: Техническая документация
-
+	entities/index
+	features/index
 	DataStructures
 	Authorization
-	API_Invoices
-	API_UniversalTransferDocument
-	API_Documents
-	API_Messages
-	API_Events
-	API_Organizations
-	API_Departments
-	API_Employees
-	API_Counteragents
-	API_Templates
-	API_Registration
-	Docflow API
-	CloudSignApi
-	API_Dss
+	api_index
+	docflows/index
+	howto/index
 
 .. toctree::
 	:maxdepth: 1

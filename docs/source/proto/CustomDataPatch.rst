@@ -1,7 +1,7 @@
 CustomDataPatch
 ===============
 
-Структура ``CustomDataPatch`` хранит данные для операции изменения :doc:`тегов <../howto/tags>`.
+Структура ``CustomDataPatch`` хранит данные для операции изменения :doc:`тегов <../entities/tag>`.
 
 .. code-block:: protobuf
 
@@ -31,7 +31,7 @@ CustomDataPatch
 .. rubric:: Смотри также
 
 *Руководства:*
-	- :doc:`../howto/tags`
+	- :doc:`../entities/tag`
 
 *Структура используется:*
 	- в структуре :doc:`MessagePatchToPost`.
