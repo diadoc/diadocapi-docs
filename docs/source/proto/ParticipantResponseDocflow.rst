@@ -1,6 +1,8 @@
 ParticipantResponseDocflow
 ==========================
 
+Структура ``ParticipantResponseDocflow`` хранит информацию о состоянии ответного действия участника документооборота.
+
 .. code-block:: protobuf
 
     message ParticipantResponseDocflow
@@ -12,14 +14,21 @@ ParticipantResponseDocflow
         optional Timestamp SentAt = 5;
         optional Timestamp DeliveredAt = 6;
         required Documents.RecipientResponseStatus ResponseStatus = 7;
+        optional ConfirmationDocflow Confirmation = 8;
     }
 
-Структура содержит информацию о состоянии ответного действия участника документооборота. Содержится в структуре :doc:`DocflowV3`.
+- ``IsFinished`` — флаг, указывающий, что текущий документооборот завершен. От участника документооборота не требуются дополнительные действия.
+- ``Signature`` — информация о файле подписи, представленная структурой :doc:`SignatureV3`.
+- ``Title`` — информация о файле титула и подписи под ним, представленная структурой :doc:`SignedAttachmentV3`.
+- ``Rejection`` — информация об отказе в подписи, представленная структурой :doc:`SignatureRejectionDocflow`.
+- ``SentAt`` — :doc:`метка времени <Timestamp>` отправки ответа.
+- ``DeliveredAt`` — :doc:`метка времени <Timestamp>` доставки ответа в ящик отправителя.
+- ``ResponseStatus`` — статус ответа, принимает значения из перечисления :doc:`RecipientResponseStatus`.
+- ``Confirmation`` — информация о состоянии подтверждения даты доставки, представленная структурой :doc:`ConfirmationDocflow`.
 
-- *IsFinished* - признак того, что документооборот по ответному действию завершен, т. е. не требует дальнейших действий со стороны участника документооборота
-- :doc:`Signature <SignatureV3>` - данные о файле подписи участника документооборота
-- :doc:`Title <SignedAttachmentV3>` - данные о файле титула участника документооборота и подписи под ним
-- :doc:`Rejection <SignatureRejectionDocflow>` - данные об отказе в подписи участника документооборота
-- :doc:`SentAt <Timestamp>` - метка времени отправки ответа участника документооборота
-- :doc:`DeliveredAt <Timestamp>` - метка времени доставки ответа участника документооборота в ящик отправителя
-- :doc:`ResponseStatus <RecipientResponseStatus>` - статус ответа участника документооборота
+----
+
+.. rubric:: Смотри также
+
+*Структура используется:*
+	- в структуре :doc:`DocflowV3`.
