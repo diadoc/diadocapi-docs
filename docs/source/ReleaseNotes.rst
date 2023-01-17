@@ -1,6 +1,15 @@
 ﻿История изменений API
 =====================
 
+11.01.2021
+----------
+**SDK**: `C# 2.11.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.5>`__
+
+- Добавлена структура :doc:`proto/RoamingSendingStatus` для хранения информации о статусе отправки машиночитаемой доверенности (МЧД) в роуминг.
+- В структурах  :doc:`proto/PowerOfAttorneyInfo` и :doc:`proto/SignaturePowerOfAttorney` добавлено поле ``SendingStatus``.
+- В структуре :doc:`proto/DocflowStatusV3` добавлено поле ``GeneralRoamingSendingStatus``.
+- Реализована возможность получить информацию о функции роуминговых операторов ``SupportsPowerOfAttorney`` с помощью метода :doc:`http/GetRoamingOperators`.
+
 21.06.2022
 ----------
 **SDK**: `C# 2.11.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.0>`__

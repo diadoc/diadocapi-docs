@@ -10,6 +10,7 @@ SignaturePowerOfAttorney
         required PowerOfAttorneyFullId FullId = 2;
         optional PowerOfAttorneyValidationStatus Status = 3;
         repeated PowerOfAttorneyStatusChange StatusChanges = 4;
+        optional RoamingSendingStatus SendingStatus = 5;
     }
 
     message PowerOfAttorneyStatusChange (
@@ -22,8 +23,10 @@ SignaturePowerOfAttorney
 - ``Status`` — последний статус проверки МЧД, представленный структурой :doc:`PowerOfAttorneyValidationStatus`.
 - ``StatusChanges`` — история статусов МЧД, представленных структурой ``PowerOfAttorneyStatusChange`` с полями:
 
-	- ``Entity`` — идентификатор и время установки статуса, преставленныя структурой :doc:`Entity`.
+	- ``Entity`` — идентификатор и время установки статуса, преставленные структурой :doc:`Entity`.
 	- ``PowerOfAttorneyStatus`` — статус проверки МЧД, представленный структурой :doc:`PowerOfAttorneyValidationStatus`.
+
+- ``SendingStatus`` — статус отправки МЧД в роуминг, представленный структурой :doc:`RoamingSendingStatus`.
 
 ----
 
