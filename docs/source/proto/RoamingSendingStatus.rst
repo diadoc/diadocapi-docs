@@ -9,7 +9,7 @@ RoamingSendingStatus
         optional Severity Severity = 1 [default = UnknownSeverity];
         optional RoamingSendingStatusNamedId StatusNamedId = 2 [default = UnknownStatus];
         optional string StatusText = 3;
-        repeated RoamingSendingStatusError Errors = 4;
+        repeated RoamingSendingError Errors = 4;
     }
 
     enum RoamingSendingStatusNamedId {
