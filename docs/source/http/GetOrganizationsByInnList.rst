@@ -1,34 +1,34 @@
 GetOrganizationsByInnList
 =========================
 
-Метод позволяет для организации по списку ИНН получить статус контрагентов в Диадоке.
+Метод ``GetOrganizationsByInnList`` позволяет получить статус контрагентов в Диадоке по списку ИНН.
 
-Имя ресурса: **/GetOrganizationsByInnList**
+.. http:post:: /GetOrganizationsByInnList
 
-HTTP метод: **POST**
+	:queryparam myOrgId: идентификатор организации, для которой нужно получить статус контрагентов.
 
-Параметры строки запроса:
+	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
--  *myOrgId*: идентификатор организации, для которой нужно получить статус ее контрагентов;
+	:request Body: Тело запроса должно содержать структуру ``GetOrganizationsByInnListRequest``:
 
-В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../Authorization>`.
+		.. code-block:: protobuf
 
-В теле запроса должна содержатся структура :doc:`../proto/GetOrganizationsByInnListRequest`
+		    message GetOrganizationsByInnListRequest {
+		        repeated string InnList = 1;
+		    }
 
-В теле ответа содержится структура :doc:`GetOrganizationsByInnListResponse <../proto/GetOrganizationsByInnListRequest>`
+		..
 
-Если при вызове метода не передан параметр строки запроса *myOrgId*, то в теле ответа возвращается структура :doc:`GetOrganizationsByInnListResponse <../proto/GetOrganizationsByInnListRequest>`, где для вложенной структуры  :doc:`OrganizationWithCounteragentStatus <../proto/GetOrganizationsByInnListRequest>` значения поля *CounteragentStatus* всегда будет равно значению по умолчанию - *UnknownCounteragentStatus*.
+		- ``InnList`` — список ИНН организаций.
 
-Возможные HTTP-коды возврата:
+	:statuscode 200: операция успешно завершена.
+	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
+	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
+	:statuscode 402: у организации с указанным идентификатором ``boxId`` закончилась подписка на API.
+	:statuscode 405: используется неподходящий HTTP-метод.
+	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
--  *200 (OK)* - операция успешно завершена;
+	:response Body: Тело ответа содержит структуру :doc:`../proto/GetOrganizationsByInnListResponse`.
 
--  *400 (Bad Request)* - данные в запросе имеют неверный формат или отсутствуют обязательные параметры;
+Если при вызове метода не передать параметр строки запроса ``myOrgId``, то в теле ответа вернется структура :doc:`../proto/GetOrganizationsByInnListResponse`, где для вложенной структуры ``OrganizationWithCounteragentStatus`` значение поля ``CounteragentStatus`` для всех организаций будет равно ``NotInCounteragentList``.
 
--  *401 (Unauthorized)* - в запросе отсутствует HTTP-заголовок ``Authorization``, или в этом заголовке содержатся некорректные авторизационные данные;
-
-- 402 - у организации с указанным идентификатором ``boxId`` закончилась подписка на API.
-
--  *405 (Method not allowed)* - используется неподходящий HTTP-метод;
-
--  *500 (Internal server error)* - при обработке запроса возникла непредвиденная ошибка.
