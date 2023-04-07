@@ -1,7 +1,7 @@
 ﻿История изменений API
 =====================
 
-07.03.2023
+10.03.2023
 ----------
 **SDK**: `C# 2.11.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.6>`__
 
