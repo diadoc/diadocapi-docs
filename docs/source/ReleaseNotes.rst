@@ -1,6 +1,14 @@
 ﻿История изменений API
 =====================
 
+10.04.2023
+----------
+**SDK**: `C# 2.11.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.7>`__
+
+- В структуре :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` для поля ``SignerType`` добавлено новое значение — универсальный подписант.
+- В структуре :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` добавлено поле ``SignerUserDataXsdUrl``, которое содержит URL-путь метода, возвращающего файл XSD-схемы упрощённого XML подписанта.
+- В структурах :doc:`DraftDocumentToPatch <proto/PrepareDocumentsToSignRequest>`, :doc:`DocumentToPatch <proto/PrepareDocumentsToSignRequest>` и :doc:`ContentToPatch <proto/PrepareDocumentsToSignRequest>` добавлено поле ``SignerContent``.
+
 10.03.2023
 ----------
 **SDK**: `C# 2.11.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.6>`__
