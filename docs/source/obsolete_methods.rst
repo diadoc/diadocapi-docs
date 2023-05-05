@@ -8,10 +8,6 @@
    :maxdepth: 1
    :glob:
    
-   http/CloudSign
-   http/CloudSignConfirm
-   http/CloudSignConfirmResult
-   http/CloudSignResult
    http/utd/ExtendedSignerDetails
    http/GenerateAcceptanceCertificateXmlForBuyer
    http/GenerateAcceptanceCertificateXmlForSeller
