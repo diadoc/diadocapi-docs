@@ -37,22 +37,6 @@ GetMyCertificates
     {
         "Certificates": [
             {
-                "Thumbprint": "6B************************************D7",
-                "Type": "Dss",
-                "ValidFrom": 637033581700000000,
-                "ValidTo": 637428429700000000,
-                "PrivateKeyValidFrom": 637033581700000000,
-                "PrivateKeyValidTo": 637428429700000000,
-                "OrganizationName": "ООО Васильки",
-                "Inn": "60******43",
-                "UserFirstName": "Петр",
-                "UserMiddleName": "Алексеевич",
-                "UserLastName": "Иванов",
-                "UserShortName": "Иванов П. А.",
-                "IsDefault": false,
-                            "SubjectType": "LegalEntity"
-            },
-            {
                 "Thumbprint": "BA************************************81",
                 "Type": "Token",
                 "ValidFrom": 636965170070000000,

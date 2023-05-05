@@ -8,7 +8,6 @@ User
         optional string LastName = 2;
         optional string FirstName = 3;
         optional string MiddleName = 4;
-        repeated CertificateInfo CloudCertificates = 5;
     }
         
     message CertificateInfo {
@@ -27,19 +26,4 @@ User
 
 -  *FirstName* - Имя;
 
--  *MiddleName* - Отчество;
-
--  *CloudCertificates* - список Контур.Сертификатов, доступных данному пользователю;
-
-Информация о Контур.Сертификате.
-
--  *Thumbprint* - отпечаток сертификата;
-
--  *ValidFrom* - дата начала действия сертификата (ticks);
-
--  *ValidTo* - дата окончания действия сертификата (ticks);
-
--  *OrganizationName* - наименование организации, на которую выдан сертификат;
-
--  *Inn* - ИНН организации, на которую выдан сертификат;
-
+-  *MiddleName* - Отчество.

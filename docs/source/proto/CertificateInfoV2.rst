@@ -29,8 +29,6 @@ CertificateInfoV2
     enum CertificateType {
         Unknown = 0;
         Token = 1;
-        Dss = 2;
-        KonturCertificate = 3;
     }
 	
     enum CertificateSubjectType {
@@ -46,9 +44,7 @@ CertificateInfoV2
 - ``Type`` — тип сертификата, принимает значения из перечисления ``CertificateType``:
 
 	- ``Unknown`` — неизвестный тип сертификата, значение по умолчанию;
-	- ``Token`` — железный носитель;
-	- ``Dss`` — DSS-сертификат;
-	- ``KonturCertificate`` — Контур.Сертификат.
+	- ``Token`` — железный носитель.
 
 - ``ValidFrom`` — дата начала действия сертификата, ticks.
 - ``ValidTo`` — дата окончания действия сертификата, ticks.
