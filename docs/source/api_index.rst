@@ -19,5 +19,3 @@
 	API_Templates
 	API_Registration
 	Docflow API
-	CloudSignApi
-	API_Dss
