@@ -1,6 +1,13 @@
 ﻿История изменений API
 =====================
 
+19.05.2023
+----------
+**SDK**: `C# 2.11.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.8>`__
+
+- Добавлены новые версии методов :doc:`/V2/GenerateReceiptXml <http/GenerateReceiptXml>`, :doc:`/V2/GenerateSignatureRejectionXml <http/GenerateSignatureRejectionXml>`, :doc:`/V2/GenerateInvoiceCorrectionRequestXml <http/GenerateInvoiceCorrectionRequestXml>`. Методы генерируют технологические документы в формате, утвержденном приказом `№ ЕД-7-26/133@ <https://www.nalog.gov.ru/rn77/about_fts/docs/13194601/>`__.
+- Добавлены структуры для передачи в теле запроса новых версий методов: :doc:`proto/ReceiptGenerationRequestV2`, :doc:`proto/InvoiceCorrectionRequestGenerationRequestV2`, :doc:`proto/SignatureRejectionGenerationRequestV2`.
+
 10.04.2023
 ----------
 **SDK**: `C# 2.11.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.7>`__

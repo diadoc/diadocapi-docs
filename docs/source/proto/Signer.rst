@@ -1,6 +1,8 @@
 Signer
 ======
 
+Структура ``Signer`` представляет собой информацию о подписанте документа.
+
 .. code-block:: protobuf
 
     message Signer {
@@ -17,50 +19,33 @@ Signer
         required string Inn = 5;
         optional string SoleProprietorRegistrationCertificate = 6;
     }
-        
 
-Структура данных Signer представляет информацию о подписанте документа. Используется в рамках документооборота счетов-фактур (СФ/ИСФ/КСФ/ИКСФ, извещение о получении, уведомление об уточнении) и некоторых других документов.
+- ``SignerCertificate`` — :rfc:`X.509 <5280>` сертификат подписанта в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__ - кодировке.
+- ``SignerDetails`` — реквизиты подписанта. Представлены структурой ``SignerDetails`` с полями:
 
--  SignerCertificate - :rfc:`X.509 <5280>` сертификат подписанта в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__ - кодировке.
+	- ``Surname`` — фамилия подписанта. Должна совпадать с фамилией в сертификате, которым подписывается технологический документ.
+	- ``FirstName`` — имя подписанта. Должно совпадать с именем в сертификате, которым подписывается технологический документ.
+	- ``Patronymic`` — отчество подписанта. Необязательное поле. Должно совпадать с именем в сертификате, которым подписывается технологический документ.
 
--  SignerDetails - реквизиты подписанта в виде структуры данных SignerDetails.
+	- ``JobTitle`` — должность подписанта. Обязательно к заполнению в методах:
 
--  SignerCertificateThumbprint - отпечаток сертификата подписанта.
+		- :doc:`../http/GenerateInvoiceCorrectionRequestXml`
+		- :doc:`../http/GenerateReceiptXml`
+		- :doc:`../http/GenerateSignatureRejectionXml`
+		- :doc:`../http/GenerateRevocationRequestXml`
 
-Одно из полей SignerCertificate или SignerDetails должно быть обязательно заполнено. Если заполнено поле SignerCertificate, то реквизиты подписанта извлекаются из сертификата. Если заполнены оба поля SignerCertificate и SignerDetails, то используется поле SignerDetails.
+		Необязательно в методах:
 
-Структура данных SignerDetails содержит следующие поля:
+		- :doc:`../http/GenerateInvoiceXml`
+		- :doc:`../http/GenerateTorg12XmlForSeller`
+		- :doc:`../http/GenerateTorg12XmlForBuyer`
+		- :doc:`../http/GenerateAcceptanceCertificateXmlForSeller`
+		- :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`
 
--  Surname - фамилия подписанта.
+	- ``Inn`` - ИНН юридического лица подписанта или индивидуального предпринимателя.
+	- ``SoleProprietorRegistrationCertificate`` — реквизиты свидетельства о регистрации индивидуального предпринимателя. Необязательное поле.
 
--  FirstName - имя подписанта.
+- ``SignerCertificateThumbprint`` - отпечаток сертификата подписанта.
 
--  Patronymic - отчество подписанта (необязательно).
+Одно из полей ``SignerCertificate`` или ``SignerDetails`` должно быть заполнено. Если заполнено поле ``SignerCertificate``, реквизиты подписанта извлекаются из сертификата. Если заполнены оба поля — используется поле ``SignerDetails``.
 
--  JobTitle - должность подписанта. Обязательно к заполнению при использовании в методах:
-
-   -  :doc:`../http/GenerateInvoiceCorrectionRequestXml`
-
-   -  :doc:`../http/GenerateReceiptXml`
-
-   -  :doc:`../http/GenerateSignatureRejectionXml`
-
-   -  :doc:`../http/GenerateRevocationRequestXml`
-
-   Не обязательно в методах:
-
-   -  :doc:`../http/GenerateInvoiceXml`
-
-   -  :doc:`../http/GenerateTorg12XmlForSeller`
-
-   -  :doc:`../http/GenerateTorg12XmlForBuyer`
-
-   -  :doc:`../http/GenerateAcceptanceCertificateXmlForSeller`
-
-   -  :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`
-   
-   
-
--  Inn - ИНН юридического лица подписанта или индивидуального предпринимателя.
-
--  SoleProprietorRegistrationCertificate - реквизиты свидетельства о регистрации индивидуального предпринимателя (необязательно).
