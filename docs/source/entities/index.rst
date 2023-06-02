@@ -12,3 +12,4 @@
 	entity
 	draft
 	tag
+	packet
