@@ -1,6 +1,12 @@
 ﻿История изменений API
 =====================
 
+07.06.2023
+----------
+**SDK**: `Java 3.14.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.14.0>`__
+
+- Добавлена новая версия метода :doc:`/V2/GetWorkflowsSettings <http/GetWorkflowsSettings>`. Метод возвращает свойства всех видов документооборота.
+
 19.05.2023
 ----------
 **SDK**: `C# 2.11.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.8>`__ | `Java 3.13.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.13.0>`__
