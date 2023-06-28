@@ -11,6 +11,8 @@ PowerOfAttorney
         required PowerOfAttorneyConfidant Confidant = 3;
         required Timestamp StartAt = 4;
         required Timestamp ExpireAt = 5;
+        optional string System = 6;
+        optional string IdFile = 7;
     }
 
     message PowerOfAttorneyIssuer {
@@ -63,50 +65,52 @@ PowerOfAttorney
         required string Name = 3;
     }
    
-- ``FullId`` — идентификатор МЧД, представленный структурой :doc:`PowerOfAttorneyFullId`.
-- ``Issuer`` — данные о доверителе, представленные структурой ``PowerOfAttorneyIssuer`` с полями:
+- ``FullId`` — идентификатор МЧД. Представлен структурой :doc:`PowerOfAttorneyFullId`.
+- ``Issuer`` — данные о доверителе. Представлены структурой ``PowerOfAttorneyIssuer`` с полями:
 
-	- ``Type`` — тип доверителя, принимает значения из перечисления ``PowerOfAttorneyIssuerType``:
+	- ``Type`` — тип доверителя. Принимает значения из перечисления ``PowerOfAttorneyIssuerType``:
 	
 		- ``LegalEntity`` — юридическое лицо;
 		- ``ForeignEntity`` — иностранная организация;
 		- ``IndividualEntity`` — индивидуальный предприниматель;
 		- ``PhysicalEntity`` — физическое лицо.
 		
-	- ``LegalEntity`` — данные о юридическом лице. Используются в случае, если тип доверителя имеет значение ``Type=LegalEntity``. Представлены структурой ``PowerOfAttorneyIssuerLegalEntity`` с полями:
+	- ``LegalEntity`` — данные о юридическом лице. Используются, если тип доверителя имеет значение ``Type=LegalEntity``. Представлены структурой ``PowerOfAttorneyIssuerLegalEntity`` с полями:
 	
 		- ``Inn`` — ИНН доверителя.
 		- ``Kpp`` — КПП доверителя.
 		- ``OrganizationName`` — наименование организации.
 		
-	- ``ForeignEntity`` — данные об иностранной организации. Используются в случае, если тип доверителя имеет значение ``Type=ForeignEntity``. Представлены структурой ``PowerOfAttorneyIssuerForeignEntity`` с полями:
+	- ``ForeignEntity`` — данные об иностранной организации. Используются, если тип доверителя имеет значение ``Type=ForeignEntity``. Представлены структурой ``PowerOfAttorneyIssuerForeignEntity`` с полями:
 	
 		- ``Inn`` — ИНН доверителя.
 		- ``Kpp`` — КПП доверителя.
 		- ``OrganizationName`` — наименование организации.
 
-	- ``IndividualEntity`` — данные об индивидуальном предпринимателе. Используются в случае, если тип доверителя имеет значение ``Type=IndividualEntity``. Представлены структурой ``PowerOfAttorneyIssuerIndividualEntity`` с полями:
+	- ``IndividualEntity`` — данные об индивидуальном предпринимателе. Используются, если тип доверителя имеет значение ``Type=IndividualEntity``. Представлены структурой ``PowerOfAttorneyIssuerIndividualEntity`` с полями:
 	
 		- ``Inn`` — ИНН доверителя.
-		- ``OrganizationName`` — Наименование индивидуального предпринимателя.
+		- ``OrganizationName`` — наименование индивидуального предпринимателя.
 
-	- ``PhysicalEntity`` — данные о физическом лице. Используются в случае, если тип доверителя имеет значение ``Type=PhysicalEntity``. Представлены структурой ``PowerOfAttorneyIssuerPhysicalEntity`` с полями:
+	- ``PhysicalEntity`` — данные о физическом лице. Используются, если тип доверителя имеет значение ``Type=PhysicalEntity``. Представлены структурой ``PowerOfAttorneyIssuerPhysicalEntity`` с полями:
 	
 		- ``Inn`` — ИНН доверителя.
 		- ``PersonName`` — ФИО доверителя.
 	
-- ``Confidant`` — данные о представителе, представленные структурой ``PowerOfAttorneyConfidant`` с полями:
+- ``Confidant`` — данные о представителе. Представлены структурой ``PowerOfAttorneyConfidant`` с полями:
 
 	- ``PersonName`` — ФИО представителя.
 	- ``Inn`` — ИНН представителя: физического или юридического лица. В случае юридического лица используется ИНН уполномоченного представителя этой организации, который может действовать без доверенности.
-	- ``Organization`` — данные об организации. Используются в случае, если представителем является организация. Представлены структурой ``PowerOfAttorneyConfidantOrganization`` с полями:
+	- ``Organization`` — данные об организации. Используются, если представителем является организация. Представлены структурой ``PowerOfAttorneyConfidantOrganization`` с полями:
 	
 		- ``Inn`` — ИНН представителя.
 		- ``Kpp`` — КПП представителя.
 		- ``Name`` — наименование организации.
 
-- ``StartAt`` — дата начала действия МЧД, представленная структурой :doc:`Timestamp`.
-- ``ExpireAt`` — срок действия МЧД, представленный структурой :doc:`Timestamp`.
+- ``StartAt`` — дата начала действия МЧД. Представлена структурой :doc:`Timestamp`.
+- ``ExpireAt`` — срок действия МЧД. Представлен структурой :doc:`Timestamp`.
+- ``System`` — информация о системе хранения доверенности.
+- ``IdFile`` — имя xml-файла МЧД без расширения.
 
 ----
 

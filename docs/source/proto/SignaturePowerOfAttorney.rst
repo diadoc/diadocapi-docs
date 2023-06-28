@@ -11,22 +11,32 @@ SignaturePowerOfAttorney
         optional PowerOfAttorneyValidationStatus Status = 3;
         repeated PowerOfAttorneyStatusChange StatusChanges = 4;
         optional RoamingSendingStatus SendingStatus = 5;
+        optional PowerOfAttorneySendingType SendingType = 6;
     }
 
-    message PowerOfAttorneyStatusChange (
+    message PowerOfAttorneyStatusChange {
         required Entity Entity = 1;
         required PowerOfAttorneyValidationStatus PowerOfAttorneyStatus = 2;
     }
-   
-- ``Entity`` — сущность, содержащая идентификатор МЧД и время ее создания, преставленная структурой :doc:`Entity`.
-- ``FullId`` — идентификатор МЧД, представленный структурой :doc:`PowerOfAttorneyFullId`.
-- ``Status`` — последний статус проверки МЧД, представленный структурой :doc:`PowerOfAttorneyValidationStatus`.
-- ``StatusChanges`` — история статусов МЧД, представленных структурой ``PowerOfAttorneyStatusChange`` с полями:
+
+    enum PowerOfAttorneySendingType {
+        Metadata = 1;
+        File = 2;
+    }
+
+- ``Entity`` — сущность, содержащая идентификатор МЧД и время ее создания. Представлена структурой :doc:`Entity`.
+- ``FullId`` — идентификатор МЧД. Представлен структурой :doc:`PowerOfAttorneyFullId`.
+- ``Status`` — последний статус проверки МЧД. Представлен структурой :doc:`PowerOfAttorneyValidationStatus`.
+- ``StatusChanges`` — история статусов МЧД. Статусы представлены структурой ``PowerOfAttorneyStatusChange`` с полями:
 
 	- ``Entity`` — идентификатор и время установки статуса, преставленные структурой :doc:`Entity`.
 	- ``PowerOfAttorneyStatus`` — статус проверки МЧД, представленный структурой :doc:`PowerOfAttorneyValidationStatus`.
 
-- ``SendingStatus`` — статус отправки МЧД в роуминг, представленный структурой :doc:`RoamingSendingStatus`.
+- ``SendingStatus`` — статус отправки МЧД в роуминг. Представлен структурой :doc:`RoamingSendingStatus`.
+- ``SendingType`` — способ передачи МЧД. Принимает значения из перечисления ``PowerOfAttorneySendingType``:
+
+	- ``Metadata`` — МЧД передали в виде мета-информации.
+	- ``File`` — МЧД отправили в пакете с документом.
 
 ----
 

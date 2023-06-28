@@ -1,6 +1,18 @@
 ﻿История изменений API
 =====================
 
+22.06.2023
+----------
+**SDK**: `C# 2.12.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.12.0>`__
+
+- Реализована отправка и скачивание файла машиночитаемой доверенности (МЧД):
+
+	- реализован метод :doc:`http/GetPowerOfAttorneyContent` для получения содержимого МЧД и подписи под ней;
+	- добавлена структура :doc:`PowerOfAttorneyContent <http/GetPowerOfAttorneyContent>` для хранения содержимого МЧД и подписи под ней;
+	- в структуру :doc:`proto/PowerOfAttorneyToPost` добавлено поле ``Content``, в котором можно передать содержимое xml МЧД и подписи;
+	- в структуры :doc:`proto/PowerOfAttorneyInfo` и :doc:`proto/SignaturePowerOfAttorney` добавлено поле ``SendingType``, в котором возвращается информация о способе передачи МЧД;
+	- в структуру :doc:`proto/PowerOfAttorney` добавлены поля ``System`` и ``IdFile``. В поле ``System`` возвращается информация о системе хранения доверенности, в поле ``IdFile`` — имя xml-файла МЧД без расширения.
+
 19.05.2023
 ----------
 **SDK**: `C# 2.11.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.8>`__ | `Java 3.13.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.13.0>`__
