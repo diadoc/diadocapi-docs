@@ -13,7 +13,7 @@ GenerateInvoiceCorrectionRequestXml
 GenerateInvoiceCorrectionRequestXml V2
 --------------------------------------
 
-.. http:post:: /V2/GenerateSignatureRejectionXml
+.. http:post:: /V2/GenerateInvoiceCorrectionRequestXml
 
 	:queryparam boxId: идентификатор ящика организации.
 
@@ -42,7 +42,7 @@ GenerateInvoiceCorrectionRequestXml V2
 GenerateInvoiceCorrectionRequestXml
 -----------------------------------
 
-.. http:post:: /V2/GenerateSignatureRejectionXml
+.. http:post:: /GenerateInvoiceCorrectionRequestXml
 
 	:queryparam boxId: идентификатор ящика организации.
 	:queryparam messageId: идентификатор сообщения.
