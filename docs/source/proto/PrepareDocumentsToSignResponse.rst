@@ -1,6 +1,8 @@
 PrepareDocumentsToSignResponse
 ==============================
 
+Структура ``PrepareDocumentsToSignResponse`` представляет собой документы, подготовленные к подписанию и отправке.
+
 .. code-block:: protobuf
 
     message PrepareDocumentsToSignResponse {
@@ -12,17 +14,18 @@ PrepareDocumentsToSignResponse
         required string PatchedContentId = 2;
         optional bytes Content = 3;
     }
-        
 
-Структура данных PrepareDocumentsToSignResponse представляет документы, подготовленные к подписанию и отправке:
+- ``DocumentPatchedContents`` — список документов, подготовленных к подписанию и отправке. Каждый элемент списка представлен структурой ``DocumentPatchedContent`` с полями:
 
--  DocumentPatchedContents - список документов, подготовленных к подписанию и отправке. Каждый элемент списка представлен структурой типа DocumentPatchedContent.
+	- ``DocumentId`` — идентификатор документа, подготовленного к подписанию и отправке. Представлен структурой :doc:`DocumentId`.
 
-Структура данных DocumentPatchedContent представляет подготовленное к подписанию содержимое одного документа:
+	- ``PatchedContentId`` — идентификатор содержимого документа, подготовленного к подписанию и отправке. Идентификатор можно использовать при вызове метода :doc:`../http/SendDraft` в поле ``PatchedContentId`` структуры :doc:`DocumentSenderSignature <DocumentSenderSignature>`.
 
--  DocumentId - идентификатор документа, задаваемый структурой :doc:`DocumentId`, который был подготовлен к подписанию и
-   отправке.
+	- ``Content`` — подготовленное к подписанию содержимое документа. Формировать подпись нужно для содержимого.
 
--  PatchedContentId - идентификатор содержимого документа, подготовленного к подписанию и отправке. Этот идентификатор можно использовать при вызове метода :doc:`../http/SendDraft` в структуре :doc:`DocumentSenderSignature <DocumentSenderSignature>` в поле PatchedContentId.
+----
 
--  Content - подготовленное к подписанию содержимое документа. Формировать подпись необходимо именно для этого содержимого.
+.. rubric:: Смотри также
+
+*Структура используется:*
+	- в теле ответа метода :doc:`../http/PrepareDocumentsToSign`.
