@@ -1,6 +1,12 @@
 ﻿История изменений API
 =====================
 
+10.08.2023
+----------
+**SDK**: `C# 2.12.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.12.1>`__
+
+- В структуру :doc:`proto/PowerOfAttorneyToPost` добавлен флаг ``SendAsFile``. Флаг указывает, что МЧД нужно передать файлом.
+
 22.06.2023
 ----------
 **SDK**: `C# 2.12.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.12.0>`__

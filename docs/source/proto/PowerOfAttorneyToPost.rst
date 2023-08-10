@@ -9,6 +9,7 @@ PowerOfAttorneyToPost
         optional PowerOfAttorneyFullId FullId = 1;
         required bool UseDefault = 2;
         optional PowerOfAttorneySignedContent Content = 3;
+        optional bool SendAsFile = 4;
     }
 
     message PowerOfAttorneySignedContent {
@@ -22,6 +23,8 @@ PowerOfAttorneyToPost
 
 	- ``Content`` — файл МЧД. Представлен структурой :doc:`Content_v3`.
 	- ``Signature`` — файл подписи под МЧД. Представлен структурой :doc:`Content_v3`.
+
+- ``SendAsFile`` — флаг, указывающий, что МЧД нужно передать файлом. По умолчанию имеет значение ``false``. МЧД будет передана файлом, если заполнено поле ``FullId`` или ``UseDefault=true`` и ``SendAsFile=true``. Не передавайте МЧД файлом, если она не зарегистрирована в реестре доверенностей ФНС.
 
 В структуре ``PowerOfAttorneyToPost`` должно быть указано либо поле ``FullId``, либо значение ``UseDefault=true``, либо поле ``Content``. Иначе метод отправки вернет ошибку.
 Нельзя одновременно указывать значение в полях ``FullId`` и ``Content`` и параметр ``UseDefault=true``.
