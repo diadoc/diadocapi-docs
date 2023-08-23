@@ -13,3 +13,5 @@
 	example_receive_invoice
 	example_torg12
 	example_acceptance_certificate
+	example_torg2
+	example_ks2
