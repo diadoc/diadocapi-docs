@@ -26,7 +26,7 @@ GetPowerOfAttorneyContent
 
 		    message PowerOfAttorneyContent {
 		        required bytes Content = 1;
-		        requires bytes Signature = 2;
+		        required bytes Signature = 2;
 		    }
 
 		..
