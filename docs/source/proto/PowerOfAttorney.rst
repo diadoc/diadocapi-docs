@@ -13,6 +13,7 @@ PowerOfAttorney
         required Timestamp ExpireAt = 5;
         optional string System = 6;
         optional string IdFile = 7;
+        repeated PowerOfAttorney DelegationChain = 8;
     }
 
     message PowerOfAttorneyIssuer {
@@ -111,6 +112,7 @@ PowerOfAttorney
 - ``ExpireAt`` — срок действия МЧД. Представлен структурой :doc:`Timestamp`.
 - ``System`` — информация о системе хранения доверенности.
 - ``IdFile`` — имя xml-файла МЧД без расширения.
+- ``DelegationChain`` — список файлов передоверенной МЧД и родительских МЧД. Каждая доверенность представлена структурой ``PowerOfAttorney``. Список файлов вернется, если цепочку файлов МЧД передали в поле ``Contents`` структуры :doc:`PowerOfAttorneyToPost`. Возвращается только в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.
 
 ----
 
