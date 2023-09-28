@@ -3,7 +3,7 @@
 
 25.09.2023
 ----------
-**SDK**: `C# 2.13.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.13.0>`__
+**SDK**: `C# 2.13.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.13.0>`__ | `Java 3.15.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.2>`__
 
 - Добавлена поддержка машиночитаемых доверенностей (МЧД), выпущенных в рамках передоверия:
 
