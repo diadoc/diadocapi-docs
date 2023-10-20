@@ -26,7 +26,7 @@ DocumentSignature
 
 - ``IsApprovementSignature`` — является ли подпись согласующей или обычной.
 
-- ``SignatureNameOnShelf`` — имя подписи на «полке документов».
+- ``SignatureNameOnShelf`` — имя подписи на :doc:`полке документов<../entities/shelf>`.
 
 - ``PatchedContentId`` — идентификатор патча документа
 
