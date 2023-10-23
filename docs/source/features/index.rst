@@ -9,7 +9,7 @@
 	:maxdepth: 1
 	:titlesonly:
 
+	../Counteragents
 	../ApiClientOperationPrinciple
 	../howto/powerofattorney
-	../Counteragents
 	../MiscellaneousApiFeatures
