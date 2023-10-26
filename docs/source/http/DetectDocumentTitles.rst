@@ -1,18 +1,18 @@
 DetectDocumentTitles
 ====================
 
-Метод ``DetectDocumentTitles`` возвращает возможные типы переданного документа.
+Метод ``DetectDocumentTitles`` определяет возможные типы указанного документа.
 
 .. http:post:: /DetectDocumentTitles
 
 	:queryparam boxId: идентификатор ящика организации.
 
-	:request Body: Тело запроса должно хранить бинарное содержимое документа.
+	:request Body: Тело запроса должно содержать бинарные данные документа.
 
 .. http:get:: /DetectDocumentTitles
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam nameOnShelf: имя файла на «полке документов».
+	:queryparam nameOnShelf: имя файла на :doc:`полке документов<../entities/shelf>`.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -23,26 +23,28 @@ DetectDocumentTitles
 	:statuscode 404: не найден ящик с указанным идентификатором.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод можно использовать в двух случаях:
+	:response Body: Тело ответа содержит описание типов документов, представленное структурой ``DetectTitleResponse``:
 
-    - `POST` запрос с заполненным `body`
-    - `GET` запрос с `nameOnShelf` параметром, если контент был загружен на полку через :doc:`../http/ShelfUpload`
+		.. code-block:: protobuf
 
-Тело ответа будет содержать структуру *DetectTitleResponse* с описанием типов документов:
+			message DetectTitleResponse {
+				repeated DetectedDocumentTitle DocumentTitles = 1;
+			}
+			
+			message DetectedDocumentTitle {
+				required string TypeNamedId = 1;
+				required string Function = 2;
+				required string Version = 3;
+				required int32 TitleIndex = 4;
+				repeated Events.MetadataItem Metadata = 5;
+			}
 
-.. code-block:: protobuf
+		..
 
-    message DetectTitleResponse {
-        repeated DetectedDocumentTitle DocumentTitles = 1;
-    }
-    
-    message DetectedDocumentTitle {
-        required string TypeNamedId = 1;
-        required string Function = 2;
-        required string Version = 3;
-        required int32 TitleIndex = 4;
-        repeated Events.MetadataItem Metadata = 5;
-    }
+Метод можно использовать в двух вариантах:
 
+    - ``POST`` запрос с заполненным ``Request Body``,
+    - ``GET`` запрос с параметром ``nameOnShelf``, если содержимое документа было загружено на полку методом :doc:`../http/ShelfUpload`.
+	
 .. note::
-	Метод будет пытаться детектировать только по тем типам документов, которые доступны в конкретной организации.
+	Метод будет определять только те типы документов, которые доступны в текущей организации.
