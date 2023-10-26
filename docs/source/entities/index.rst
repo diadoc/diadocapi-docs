@@ -11,5 +11,6 @@
 	message
 	entity
 	draft
-	tag
 	packet
+	shelf
+	tag
