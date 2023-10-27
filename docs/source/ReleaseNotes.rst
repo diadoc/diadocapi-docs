@@ -154,7 +154,7 @@
 - Внесены изменения для работы с подтверждениями роумингового оператора:
 
  - Добавлен новый тип вложения :doc:`AttachmentType <proto/Entity message>` — ``RoamingConfirmation``. Он представляет собой подтверждение оператора, отправленное в роуминг или полученное из роуминга.
- - В структуру :doc:`proto/ConfirmationDocflow` добавлено новое поле ``RoamingConfirmation``. Оно содержит подтверждение оператора, отправленное в роуминг или полученное из роуминга, представленное структурой :doc:`OperatorConfirmationDocflow`.
+ - В структуру :doc:`proto/ConfirmationDocflow` добавлено новое поле ``RoamingConfirmation``. Оно содержит подтверждение оператора, отправленное в роуминг или полученное из роуминга, представленное структурой :doc:`proto/OperatorConfirmationDocflow`.
 
 
 06.10.2021
@@ -675,7 +675,7 @@
 ----------
 **SDK**: `C# 1.55.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.55.6>`__ | `Java 1.55.6 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.55.6>`__ | `C++ 1.55.6 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.55.6>`__
 
-- Добавлен механизм для отправки предопределенного титула получателя. Подробности на странице :doc:`/howto/example_predefined_recipient_title`.
+- Добавлен механизм для отправки предопределенного титула получателя. Подробности на странице :doc:`howto/example_predefined_recipient_title`.
 
 
 17.09.2018
@@ -1030,7 +1030,7 @@
 ----------
 **SDK**: `C# 1.38.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.38.3>`__
 
-- В структуре :doc:`OrganizationWithCounteragentStatus <proto/GetOrganizationsByInnListRequest>` добавлено поле ``LastEventTimestampTicks``.
+- В структуре :doc:`OrganizationWithCounteragentStatus<proto/GetOrganizationsByInnListResponse>` добавлено поле ``LastEventTimestampTicks``.
 
 
 23.12.2016
@@ -1367,7 +1367,7 @@
 - Добавлена возможность работы с документами, пересылаемыми внутри организации:
 
  - добавлены элементы в перечислениях :doc:`NonformalizedDocumentStatus <proto/NonformalizedDocumentMetadata>`, :doc:`BilateralDocumentStatus <proto/BilateralDocumentMetadata>` и :doc:`UnilateralDocumentStatus <proto/UnilateralDocumentMetadata>`;
- - добавлены поля для работы с подразделениями организации в структурах :doc:`proto/Department`, :doc:`Entity <proto/Entity message>`, :doc:`proto/Document`, :doc:`proto/Message` и :doc:`proto//MessageToPost`.
+ - добавлены поля для работы с подразделениями организации в структурах :doc:`proto/Department`, :doc:`Entity <proto/Entity message>`, :doc:`proto/Document`, :doc:`proto/Message` и :doc:`proto/MessageToPost`.
  
 - Расширены возможности работы с «черновиками», то есть с подготовленными, но не отправленными документами:
 

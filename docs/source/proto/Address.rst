@@ -55,6 +55,6 @@ Address
 
 *Структура используется:*
 	- в структуре :doc:`Organization`,
-	- в структуре :doc:`ExtendedOrganizationInfo`,
-	- в структуре :doc:`DepartmentToCreate`,
+	- в структуре :doc:`utd/ExtendedOrganizationInfo`,
+	- в структуре :doc:`Departments/DepartmentToCreate`,
 	- в структуре :doc:`Department`.
