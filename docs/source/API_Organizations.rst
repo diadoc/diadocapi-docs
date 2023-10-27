@@ -30,8 +30,7 @@ HTTP-интерфейс
 
    proto/Address
    proto/Department
-   proto/GetOrganizationsByInnListRequest
-   GetOrganizationsByInnListResponse <proto/GetOrganizationsByInnListRequest>
+   proto/GetOrganizationsByInnListResponse
    proto/Organization
    proto/OrganizationInfo
    proto/Organizations/AutoBlockStatus
