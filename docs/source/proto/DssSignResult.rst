@@ -8,8 +8,8 @@ DssSignResult
     message DssSignResult {
         optional DssOperationStatus OperationStatus = 1 [default = Unknown];
         repeated DssFileSigningResult FileSigningResults = 2;
-        optional DssConfirmType ConfirmType = 3;
-        optional DssOperator Operator = 4;
+        optional DssConfirmType ConfirmType = 3 [default = ComfirmTypeUnknown];
+        optional DssOperator Operator = 4 [default = OperatorUnknown];
         optional string PhoneLastNumbers = 5
     }
 
@@ -36,15 +36,16 @@ DssSignResult
     }
 
     enum DssComfirmType {
-        Unknown = -1;
+        ComfirmTypeUnknown = -1;
         None = 0;
         Sms = 1;
-        MyDss = 2; 
-        Applet = 3;   
+        MyDss = 2;
+        Applet = 3;
+        MobileSdk = 4;
     }
 
     enum DssOperator {
-        Unknown = 0;
+        OperatorUnknown = 0;
         Megafon = 1;
         Kontur = 2
     }
@@ -72,7 +73,7 @@ DssSignResult
 
 - ``ConfirmType`` — способ подтверждения. Принимает значение из перечисления ``DssConfirmType``: 
 
-	- ``Unknown`` — неизвестный статус. Возвращается, если клиент использует устаревшую версию SDK и не может интерпретировать статус, переданный сервером;
+	- ``ComfirmTypeUnknown`` — неизвестный статус. Возвращается, если клиент использует устаревшую версию SDK и не может интерпретировать статус, переданный сервером;
 	- ``None`` — неизвестный способ подтверждения;
 	- ``Sms`` — подтверждение с помощью SMS-сообщения;
 	- ``MyDss`` — подтверждение через мобильное приложение;
@@ -81,7 +82,7 @@ DssSignResult
 
 - ``DssOperator`` — оператор сертификата без носителя. Принимает значение из перечисления:
 
-	- ``Unknown`` — неизвестный оператор. Возвращается, если клиент использует устаревшую версию SDK и не может интерпретировать оператора, переданного сервером;
+	- ``OperatorUnknown`` — неизвестный оператор. Возвращается, если клиент использует устаревшую версию SDK и не может интерпретировать оператора, переданного сервером;
 	- ``Megafon`` — оператор "Мегафон";
 	- ``Kontur`` — оператор "СКБ Контур".
 
