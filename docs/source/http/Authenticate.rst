@@ -41,7 +41,7 @@ Authenticate v3
  Чтобы аутентифицироваться по логину и паролю, укажите в качестве параметра запроса ``type`` значение ``password``: ``type = password``.
  В теле запроса нужно передавать сериализованный объект в формате JSON или protobuf. Если вы передаете данные в формате JSON, укажите заголовок ``Content-Type: application/json``.
 
- .. code-block:: json     
+ .. code-block:: json
 
 	 {
 	     "login" : "login",

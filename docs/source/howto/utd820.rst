@@ -34,7 +34,7 @@
 
 В теле запроса должен содержаться упрощенный XML-файл, соответствующий XSD-схеме контракта для генерации титула. XSD-схема контракта, необходимого для генерации титула, может быть получена с помощью ссылки, доступной в поле ``UserDataXsdUrl`` контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, который можно получить с помощью метода-справочника :doc:`../http/GetDocumentTypes`.
 
-Вызовем метод :doc:`GetDocumentTypes` и найдем интересующие нас тип-функцию-версию. Для УПД в 820 формате возьмем следующие значения:
+Вызовем метод ``GetDocumentTypes`` и найдем интересующие нас тип-функцию-версию. Для УПД в 820 формате возьмем следующие значения:
 
 - ``TypeNamedId`` = ``UniversalTransferDocument``
 - ``Function`` = ``СЧФДОП``
@@ -43,7 +43,7 @@
 
 *Ответ метода GetDocumentTypes*:
 
-.. sourcecode:: json
+.. code-block:: json
 
     "Name": "UniversalTransferDocument",
     "Title": "УПД",
@@ -70,8 +70,8 @@
                                 "SignerType": 2,
                                 "ExtendedDocumentTitleType": 0
                             },
-                            "MetadataItems": [...],
-                            "EncryptedMetadataItems": [...]
+                            "MetadataItems": [],
+                            "EncryptedMetadataItems": []
                         }
                     ],
                     "IsActual": true,
@@ -248,7 +248,7 @@
 - Загрузить документ как Исходящий неотправленный. Это можно сделать через API или в веб-интерфейсе. В веб-интерфейсе подписать документ и отправить
 - Подписать и отправить документ полностью через API
 
-Для всех трех случаев необходимо использовать метод :doc:`..http/PostMessage` со структурой ``DocumentAttachment``. В зависимости от сценария отправки передаваемый контент в теле запроса будет разный.
+Для всех трех случаев необходимо использовать метод :doc:`../http/PostMessage` со структурой ``DocumentAttachment``. В зависимости от сценария отправки передаваемый контент в теле запроса будет разный.
 
 Рассмотрим пример третьего варианта, когда документ сразу подписывается и отправляется. Как сформировать подпись для документа определяет разработчик интеграционного решения.
 
@@ -321,7 +321,7 @@
  
 *Ответ метода GetDocumentTypes*:
 
-.. sourcecode:: json
+.. code-block:: json
 
     "Name": "UniversalTransferDocument",
     "Title": "УПД",
@@ -348,8 +348,8 @@
                                 "SignerType": 2,
                                 "ExtendedDocumentTitleType": 8
                             },
-                            "MetadataItems": [...],
-                            "EncryptedMetadataItems": [...]
+                            "MetadataItems": [],
+                            "EncryptedMetadataItems": []
                         }
                     ],
                     "IsActual": true,
