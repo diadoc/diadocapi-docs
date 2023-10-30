@@ -14,6 +14,7 @@ PowerOfAttorney
         optional string System = 6;
         optional string IdFile = 7;
         repeated PowerOfAttorney DelegationChain = 8;
+        required PowerOfAttorneyPermissionsInfo PermissionsInfo = 9;
     }
 
     message PowerOfAttorneyIssuer {
@@ -113,6 +114,7 @@ PowerOfAttorney
 - ``System`` — информация о системе хранения доверенности.
 - ``IdFile`` — имя xml-файла МЧД без расширения.
 - ``DelegationChain`` — список файлов передоверенной МЧД и родительских МЧД. Каждая доверенность представлена структурой ``PowerOfAttorney``. Список файлов вернется, если цепочку файлов МЧД передали в поле ``Contents`` структуры :doc:`PowerOfAttorneyToPost`. Возвращается только в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.
+- ``PermissionsInfo`` — информация о полномочиях из МЧД. Представлена структурой :doc:`PowerOfAttorneyPermissionsInfo`.
 
 ----
 

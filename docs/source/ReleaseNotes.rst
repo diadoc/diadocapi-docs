@@ -1,6 +1,13 @@
 ﻿История изменений API
 =====================
 
+30.10.2023
+----------
+**SDK**: `C# 2.14.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.2>`__
+
+- В структуру :doc:`proto/PowerOfAttorney` добавлено поле ``PermissionsInfo``, в котором возвращается информация о полномочиях из машиночитаемой доверенности.
+- Добавлена структура :doc:`proto/PowerOfAttorneyPermissionsInfo` для хранения информации о полномочиях из МЧД.
+
 25.09.2023
 ----------
 **SDK**: `C# 2.13.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.13.0>`__ | `Java 3.15.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.2>`__
