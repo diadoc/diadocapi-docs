@@ -1,15 +1,15 @@
 DetectDocumentTypes
 ===================
 
-Метод ``DetectDocumentTypes`` возвращает возможные типы переданного документа.
+Метод ``DetectDocumentTypes`` определяет возможные типы указанного документа.
 
 .. warning::
-	Метод считается устаревшим и не рекомендуются к использованию, т.к. он умеет детектировать только первые титулы документов. Вместо него используйте более универсальный метод :doc:`../http/DetectDocumentTitles`
+	Метод является устаревшим и не рекомендуются к использованию, т.к. он умеет детектировать только первые титулы документов. Вместо него используйте метод :doc:`../http/DetectDocumentTitles`
 
 .. http:post:: /DetectDocumentTypes
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam nameOnShelf: имя файла на «полке документов».
+	:queryparam nameOnShelf: имя файла на :doc:`полке документов<../entities/shelf>`.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -22,21 +22,23 @@ DetectDocumentTypes
 	:statuscode 404: не найден ящик с указанным идентификатором.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод можно использовать в двух случаях:
+	:response Body: Тело ответа содержит описание типов документов, представленное структурой ``DetectDocumentTypesResponse``:
 
-    - `POST` запрос с заполненным `body`
-    - `GET` запрос с `nameOnShelf` параметром
+		.. code-block:: protobuf
 
-Тело ответа будет содержать структуру *DetectDocumentTypesResponse* с описанием типов документов:
+			message DetectDocumentTypesResponse {
+				repeated DetectedDocumentType DocumentTypes = 1;
+			}
 
-.. code-block:: protobuf
+			message DetectedDocumentType {
+				required string TypeNamedId = 1;
+				required string Function = 2;
+				required string Version = 3;
+			}
+			
+		..
 
-    message DetectDocumentTypesResponse {
-        repeated DetectedDocumentType DocumentTypes = 1;
-    }
+Метод можно использовать в двух вариантах:
 
-    message DetectedDocumentType {
-        required string TypeNamedId = 1;
-        required string Function = 2;
-        required string Version = 3;
-    }
+    - ``POST`` запрос с заполненным ``Request Body``,
+    - ``GET`` запрос с параметром ``nameOnShelf``, если содержимое документа было загружено на полку методом :doc:`../http/ShelfUpload`.

@@ -79,7 +79,7 @@ PrepareDocumentsToSignRequest
 
 	- ``SignerContent`` — бинарное представление упрощенного XML-файла подписанта. XSD-схему можно получить с помощью метода :doc:`../http/GetDocumentTypes`. Ссылка на XSD-схему упрощенного XML подписанта вернется в поле ``SignerUserDataXsdUrl``.
 
-	----
+----
 
 .. rubric:: Смотри также
 

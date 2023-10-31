@@ -20,6 +20,7 @@ GetForwardedDocumentEvents
 		        optional bool PopulateForwardedDocuments = 3 [default = false];
 		        optional bool InjectEntityContent = 4 [default = false];
 		    }
+
 	    ..
 
 		- ``Filter`` — фильтр событий, представленный структурой :doc:`../proto/TimeBasedFilter`.
@@ -54,6 +55,7 @@ GetForwardedDocumentEvents
 		        required bytes IndexKey = 3;
 		        optional ForwardedDocument ForwardedDocument = 4;
 		    }
+
 	    ..
 
 		- ``TotalCount`` — общее количество событий, соответствующих заданным параметрам.

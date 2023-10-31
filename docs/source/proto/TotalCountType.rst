@@ -1,5 +1,5 @@
 TotalCountType
-========
+==============
 
 .. code-block:: protobuf
 

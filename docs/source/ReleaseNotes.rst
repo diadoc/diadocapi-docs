@@ -1,6 +1,13 @@
 ﻿История изменений API
 =====================
 
+30.10.2023
+----------
+**SDK**: `C# 2.14.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.2>`__
+
+- В структуру :doc:`proto/PowerOfAttorney` добавлено поле ``PermissionsInfo``, в котором возвращается информация о полномочиях из машиночитаемой доверенности.
+- Добавлена структура :doc:`proto/PowerOfAttorneyPermissionsInfo` для хранения информации о полномочиях из МЧД.
+
 25.09.2023
 ----------
 **SDK**: `C# 2.13.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.13.0>`__ | `Java 3.15.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.2>`__
@@ -154,7 +161,7 @@
 - Внесены изменения для работы с подтверждениями роумингового оператора:
 
  - Добавлен новый тип вложения :doc:`AttachmentType <proto/Entity message>` — ``RoamingConfirmation``. Он представляет собой подтверждение оператора, отправленное в роуминг или полученное из роуминга.
- - В структуру :doc:`proto/ConfirmationDocflow` добавлено новое поле ``RoamingConfirmation``. Оно содержит подтверждение оператора, отправленное в роуминг или полученное из роуминга, представленное структурой :doc:`OperatorConfirmationDocflow`.
+ - В структуру :doc:`proto/ConfirmationDocflow` добавлено новое поле ``RoamingConfirmation``. Оно содержит подтверждение оператора, отправленное в роуминг или полученное из роуминга, представленное структурой :doc:`proto/OperatorConfirmationDocflow`.
 
 
 06.10.2021
@@ -675,7 +682,7 @@
 ----------
 **SDK**: `C# 1.55.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.55.6>`__ | `Java 1.55.6 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.55.6>`__ | `C++ 1.55.6 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.55.6>`__
 
-- Добавлен механизм для отправки предопределенного титула получателя. Подробности на странице :doc:`/howto/example_predefined_recipient_title`.
+- Добавлен механизм для отправки предопределенного титула получателя. Подробности на странице :doc:`howto/example_predefined_recipient_title`.
 
 
 17.09.2018
@@ -1030,7 +1037,7 @@
 ----------
 **SDK**: `C# 1.38.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.38.3>`__
 
-- В структуре :doc:`OrganizationWithCounteragentStatus <proto/GetOrganizationsByInnListRequest>` добавлено поле ``LastEventTimestampTicks``.
+- В структуре :doc:`OrganizationWithCounteragentStatus<proto/GetOrganizationsByInnListResponse>` добавлено поле ``LastEventTimestampTicks``.
 
 
 23.12.2016
@@ -1367,7 +1374,7 @@
 - Добавлена возможность работы с документами, пересылаемыми внутри организации:
 
  - добавлены элементы в перечислениях :doc:`NonformalizedDocumentStatus <proto/NonformalizedDocumentMetadata>`, :doc:`BilateralDocumentStatus <proto/BilateralDocumentMetadata>` и :doc:`UnilateralDocumentStatus <proto/UnilateralDocumentMetadata>`;
- - добавлены поля для работы с подразделениями организации в структурах :doc:`proto/Department`, :doc:`Entity <proto/Entity message>`, :doc:`proto/Document`, :doc:`proto/Message` и :doc:`proto//MessageToPost`.
+ - добавлены поля для работы с подразделениями организации в структурах :doc:`proto/Department`, :doc:`Entity <proto/Entity message>`, :doc:`proto/Document`, :doc:`proto/Message` и :doc:`proto/MessageToPost`.
  
 - Расширены возможности работы с «черновиками», то есть с подготовленными, но не отправленными документами:
 
@@ -1377,7 +1384,7 @@
  - добавлена структура :doc:`proto/DraftToSend`;
  - структура ``RequestedSignature`` переименована в ``DocumentSignature``, подробнее в описании :doc:`proto/MessagePatchToPost`.
  
-- Добавлена возможность загружать большие по размеру документы в Диадок с помощью сервиса «полки документов». Для этих целей добавился метод :doc:`http/ShelfUpload` и обновилась структура :doc:`proto/SignedContent`, в которой добавлено поле ``NameOnShelf``, позволяющее сослаться на уже загруженный на «полку» файл.
+- Добавлена возможность загружать большие по размеру документы в Диадок с помощью сервиса :doc:`полки документов<entities/shelf>`. Для этих целей добавился метод :doc:`http/ShelfUpload` и обновилась структура :doc:`proto/SignedContent`, в которой добавлено поле ``NameOnShelf``, позволяющее сослаться на уже загруженный на полку файл.
 - Добавлена возможность восстанавливать ранее удаленные отдельные документы и сообщения целиком. Для этих целей добавлен метод :doc:`http/Restore`, а в структурах :doc:`EntityPatch <proto/MessagePatch>` и :doc:`proto/MessagePatch` добавлены поля, позволяющие узнать, были ли конкретный документ или сообщение восстановлены.
 - Добавлена возможность по :doc:`документу <proto/Document>` или :doc:`сообщению <proto/Message>` понять, является ли он юридически значимым. Для этих целей в каждую из названных структур добавлено поле ``IsTest``.
 - Добавлена возможность проводить эвристический семантический разбор строк, представляющих почтовый адрес в Российской Федерации. За это отвечает метод :doc:`http/ParseRussianAddress`.

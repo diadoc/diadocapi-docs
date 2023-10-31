@@ -16,4 +16,4 @@ OuterDocflow
 -  *ParentEntityId* - идентификатор сущности, по которой получено последнее состояние в рамках внешнего документооборота (сам документ либо запрос на аннулирование).
 -  *OuterDocflowEntityId* - идентификатор последнего полученного состояния в рамках данного внешнего документооборота.
 
-Сущность, на которую ссылается *OuterDocflowEntityId*, следует искать в структуре :doc:`OuterDocflowEntities <OuterDocflowEntitiesV3>`, которая находится, в зависимости от значения ParentEntityId, в структуре :doc:`DocflowV3` или :doc:`RevocationDocflowV3`.
+Сущность, на которую ссылается *OuterDocflowEntityId*, следует искать в структуре :doc:`OuterDocflowEntities`, которая находится, в зависимости от значения ParentEntityId, в структуре :doc:`DocflowV3` или :doc:`RevocationDocflowV3`.

@@ -26,17 +26,17 @@
     Authorization: DiadocAuth
     ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a,
     ddauth_token=3IU0iPhuhHPZ6lrlumGz4pICEedhQ1XmlMN1Pk8z0DJ51MXkcTi6Q3CODCC4xTMsjPFfhK6XM4kCJ4JJ42hlD499/Ui5WSq6lrPwcdp4IIKswVUwyE0ZiwhlpeOwRjNrvUX1yPrxr0dY8a0w8ePsc1DG8HAlZce8a0hZiWylMqu23d/vfzRFuA==
+	
 ..
 
 Получение авторизационного токена
 ---------------------------------
 
-В Диадоке существует четыре способа получения авторизационного токена:
+В Диадоке существуют следующие способы получения авторизационного токена:
 
 - по сертификату,
 - по логину и паролю,
-- по auth.sid,
-- доверительная аутентификация.
+- по auth.sid.
 
 Необязательно вызывать метод :doc:`http/Authenticate` перед каждым обращением к методам API Диадока — авторизационные токены можно кэшировать. Мы рекомендуем сохранить и использовать полученный токен в течение всего сеанса работы.
 
@@ -60,6 +60,7 @@
      Connection: Keep-Alive
 
      <Двоичное DER-представление X.509-сертификата пользователя>
+	 
  ..
 
  Успешный ответ сервера:
@@ -70,6 +71,7 @@
      Content-Length: 598
 
      <Двоичное DER-представление зашифрованного токена>
+	 
  ..
 
 2. Расшифруйте тело ответа метода :doc:`http/Authenticate` с помощью закрытого ключа сертификата пользователя.
@@ -93,6 +95,7 @@
      Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
      Content-Length: 1252
      Connection: Keep-Alive
+	 
  ..
 
  Успешный ответ сервера:
@@ -103,6 +106,7 @@
      Content-Length: 598
 
      <Авторизационный токен>
+	 
  ..
 
 Авторизация при вызове методов API

@@ -7,6 +7,7 @@ GenerateRevocationRequestXml
 	- :ref:`GenerateRevocationRequestXml_v2` — поддерживает несколько версий предложения об аннулировании.
 	- :ref:`GenerateRevocationRequestXml_v1` — устаревшая версия.
 
+
 .. _GenerateRevocationRequestXml_v2:
 
 v2
@@ -17,7 +18,7 @@ v2
 	:queryparam boxId: идентификатор ящика организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam attachmentId: идентификатор сущности документа, для которого нужно сгенерировать предложение об аннулировании.
-	:queryparam сontentTypeId: версия предложения об аннулировании, которое нужно сгенерировать. Принимает значения:
+	:queryparam contentTypeId: версия предложения об аннулировании, которое нужно сгенерировать. Принимает значения:
 	
 		- ``revocation_request_01`` — для предложения об аннулировании версии 1.01,
 		- ``revocation_request_02`` — для предложения об аннулировании версии 1.02.

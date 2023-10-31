@@ -3,6 +3,7 @@
 
 .. |diadoc_logo| image:: _static/diadoc-logo.png
 .. _diadoc_logo: https://www.diadoc.ru/
+
 |diadoc_logo|_
 
 Диадок — система обмена юридически-значимыми электронными документами между организациями.

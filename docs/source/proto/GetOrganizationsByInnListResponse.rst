@@ -50,7 +50,7 @@ GetOrganizationsByInnListResponse
 
 	- ``InvitationDocumentId`` — идентификатор документа, пришедшего вместе с приглашением. Представлен структурой :doc:`DocumentId`.
 
-	----
+----
 
 .. rubric:: Смотри также
 
