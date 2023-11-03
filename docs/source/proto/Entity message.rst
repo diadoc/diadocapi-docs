@@ -37,6 +37,8 @@ Entity
         optional RevocationRequestInfo RevocationRequestInfo = 30;
         optional string ContentTypeId = 31;
         optional PowerOfAtorneyInfo PowerOfAttorneyInfo = 32;
+        optional string AuthorUserId = 33;
+        optional MoveDocumentInfo MoveDocumentInfo = 34;
     }
 
     enum EntityType {
@@ -106,6 +108,11 @@ Entity
         // Неизвестные типы должны обрабатываться как Nonformalized
     }
 
+    message MoveDocumentInfo {
+        required string MovedFromDepartment = 1;
+        required string MovedToDepartment = 2; 
+    }
+
 - ``EntityType`` — тип сущности, принимает значение из перечисления ``EntityType``:
 
 	- ``Attachment`` — файл-вложение в сообщении
@@ -115,7 +122,7 @@ Entity
 
 - ``ParentEntityId`` — идентификатор родительской сущности. Например, для сущности с типом ``Signature`` это будет идентификатор соответствующей сущности с типом ``Attachment``.
 
-- ``Content`` — содержимое сущности, представленное структурой :doc:`Content`. Если у сущности не предусмотрено содержимое, то в поле ``Content`` вернется значение ``null``.
+- ``Content`` — содержимое сущности. Представлено структурой :doc:`Content`. Если у сущности не предусмотрено содержимое, то в поле ``Content`` вернется значение ``null``.
 
 	- ``Content.Size`` — размер содержимого в байтах
 	- ``Content.Data`` — если присутствует, содержит массив байтов с данными. Его нужно интерпретировать в зависимости от типа сущности ``EntityType`` и типа вложения ``AttachmentType``.
@@ -212,7 +219,7 @@ Entity
 	- ``RoamingNotification`` — роуминговая квитанция
 	- ``SupplementaryAgreement`` — дополнительное соглашение к договору
 	- ``CustomData`` — произвольные данные к документу
-	- ``MoveDocument`` — информация о перемещении документа в подразделение; является устаревшим, в ответе методов не возвращается
+	- ``MoveDocument`` — информация о перемещении документа в подразделение
 	- ``ResolutionRouteAssignment`` — информация о запуске документа по маршруту согласования
 	- ``ResolutionRouteRemoval`` — информация о снятии документа с маршрута согласования
 	- ``Title`` — титул документа. Возвращается для всех типов документов, кроме типов от 0 (``AttachmentType=Nonformalized``) до 51 (``AttachmentType=UniversalCorrectionDocumentBuyerTitle``). Это сделано для сохранения обратной совместимости: для первых титулов (титулов отправителя) с типами от ``Nonformalized`` до ``UniversalCorrectionDocumentBuyerTitle`` возвращается соответствующее значение, например, ``Invoice`` для счета-фактуры и т.п.
@@ -234,7 +241,7 @@ Entity
 
 - ``NotDeliveredEventId`` — идентификатор сообщения или патча, который не удалось доставить (например, из-за некорректности одной или нескольких подписей в нем). Получить недоставленный кусок сообщения можно с помощью метода :doc:`../http/GetEvent`, передав в качестве параметра ``eventId`` значение ``NotDeliveredEventId``. Возвращается только для сущности типа ``Attachment`` с типом вложения ``DeliveryFailureNotification``.
 
-- ``DocumentInfo`` — расширенная информация о документе, представляемом данной сущностью, представленная структурой :doc:`Document`. Возвращается только для сущности типа ``Attachment`` со следующими типами вложений:
+- ``DocumentInfo`` — расширенная информация о документе, представляемом данной сущностью. Представлена структурой :doc:`Document`. Возвращается только для сущности типа ``Attachment`` со следующими типами вложений:
 
 	- ``Nonformalized``
 	- ``Invoice``
@@ -256,15 +263,15 @@ Entity
 	- ``ServiceDetails``
 	- ``Title``
 
-- ``RawCreationDate`` — время создания сущности, представленное структурой :doc:`Timestamp`.
+- ``RawCreationDate`` — время создания сущности. Представлено структурой :doc:`Timestamp`.
 
-- ``ResolutionInfo`` — информация о согласовании, представленная структурой :doc:`ResolutionInfo <Resolution>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``Resolution``.
+- ``ResolutionInfo`` — информация о согласовании. Представлена структурой :doc:`ResolutionInfo <Resolution>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``Resolution``.
 
 - ``SignerDepartmentId`` — идентификатор подразделения, в котором лежала сущность в момент подписания. Возвращается только для сущности с типом ``Signature``.
 
-- ``ResolutionRequestInfo`` — информация о запросе согласования, представленная структурой :doc:`ResolutionRequestInfo <ResolutionRequest>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRequest``.
+- ``ResolutionRequestInfo`` — информация о запросе согласования. Представлена структурой :doc:`ResolutionRequestInfo <ResolutionRequest>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRequest``.
 
-- ``ResolutionRequestDenialInfo`` — информация об отказе в запросе подписи, представленная структурой :doc:`ResolutionRequestDenialInfo <ResolutionRequestDenial>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRequestDenial``.
+- ``ResolutionRequestDenialInfo`` — информация об отказе в запросе подписи. Представлена структурой :doc:`ResolutionRequestDenialInfo <ResolutionRequestDenial>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRequestDenial``.
 
 - ``NeedReceipt`` — флаг, указывающий, что от получателя требуется сформировать извещение о получении данного документа. Возвращается только для сущности с типом ``Attachment``.
 
@@ -274,11 +281,11 @@ Entity
 
 - ``AttachmentVersion`` — информация о версии XSD схемы, в соответствии с которой сформирована данная сущность.
 
-- ``ResolutionRouteAssignmentInfo`` — информация о запуске документа по маршруту согласования, представленная структурой :doc:`ResolutionRouteAssignmentInfo <ResolutionRouteInfo>`.  Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRouteAssignment``.
+- ``ResolutionRouteAssignmentInfo`` — информация о запуске документа по маршруту согласования. Представлена структурой :doc:`ResolutionRouteAssignmentInfo <ResolutionRouteInfo>`.  Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRouteAssignment``.
 
-- ``ResolutionRouteRemovalInfo`` — информация о снятии документа с маршрута согласования, представленная структурой :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRouteRemoval``.
+- ``ResolutionRouteRemovalInfo`` — информация о снятии документа с маршрута согласования. Представлена структурой :doc:`ResolutionRouteRemovalInfo <ResolutionRouteInfo>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRouteRemoval``.
 
-- ``CancellationInfo`` — информация об отмене сущности, представленная структурой :doc:`CancellationInfo`. Отмененной является сущность, которая указана родительской по отношению к данной. Например, это может быть идентификатор запроса на согласование. Возвращается только для сущности типа ``Attachment`` с типом вложения ``Cancellation``.
+- ``CancellationInfo`` — информация об отмене сущности. Представлена структурой :doc:`CancellationInfo`. Отмененной является сущность, которая указана родительской по отношению к данной. Например, это может быть идентификатор запроса на согласование. Возвращается только для сущности типа ``Attachment`` с типом вложения ``Cancellation``.
 
 - ``Labels`` — список меток сущности, представленные структурой :doc:`Labels <Labels>`.
 
@@ -286,18 +293,38 @@ Entity
 
 - ``TemplateTransformationInfos`` — информация о документе, созданном на основе шаблона. Возвращается только для сущности типа ``Attachment`` с типом вложения ``TemplateTransformation``.
 
-- ``TemplateRefusalInfo`` — информация об отклонении или отзыве шаблона, представленная структурой :doc:`TemplateRefusalInfo`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``TemplateRefusal``.
+- ``TemplateRefusalInfo`` — информация об отклонении или отзыве шаблона. Представлена структурой :doc:`TemplateRefusalInfo`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``TemplateRefusal``.
 
 - ``OuterDocflow`` — информация о внешнем документообороте, например, о статусе обработки документа с маркированными товарами в ГИС МТ «Честный ЗНАК». Представлена структурой :doc:`OuterDocflowInfo`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``OuterDocflow``.
 
-- ``RevocationRequestInfo`` — информация о соглашении об аннулировании, представленная структурой :doc:`RevocationRequestInfo <RevocationRequestInfo_Entity>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``RevocationRequest``.
+- ``RevocationRequestInfo`` — информация о соглашении об аннулировании. Представлена структурой :doc:`RevocationRequestInfo <RevocationRequestInfo_Entity>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``RevocationRequest``.
 
 - ``ContentTypeId`` — уникальный идентификатор контента документа. ``ContentTypeId`` будет единым для документов с одинаковой структурой и одинаковыми правилами обработки. Идентификатор будет свой для каждого типа документа, титула и служебного документа. Например, УПД 820 формата с функцией СЧФДОП будет иметь ``ContentTypeId=utd820_schfdop_orig_t1_05_01_01`` для первого титула и ``ContentTypeId=utd820_schfdop_t2_05_01_01`` для второго титула, а для отказа в подписи в формате уведомления об уточнении ``ContentTypeId=signature_rejection_02``.
 
-- ``PowerOfAttorneyInfo`` — информация о машиночитаемой доверенности и статусе ее проверки, представленная структурой :doc:`PowerOfAttorneyInfo`. Возвращается только для сущности типа ``Attachment`` с типами вложения ``PowerOfAttorney`` и ``PowerOfAttorneyStatus``. Статус проверки машиночитаемой доверенности ``PowerOfAttorneyValidationStatus`` возвращается только для сущности типа ``Attachment`` с типом вложения ``PowerOfAttorneyStatus``. Для машиночитаемой доверенности в поле ``ParentEntityId`` возвращается:
+- ``PowerOfAttorneyInfo`` — информация о машиночитаемой доверенности и статусе ее проверки. Представлена структурой :doc:`PowerOfAttorneyInfo`. Возвращается только для сущности типа ``Attachment`` с типами вложения ``PowerOfAttorney`` и ``PowerOfAttorneyStatus``. Статус проверки машиночитаемой доверенности ``PowerOfAttorneyValidationStatus`` возвращается только для сущности типа ``Attachment`` с типом вложения ``PowerOfAttorneyStatus``. Для машиночитаемой доверенности в поле ``ParentEntityId`` возвращается:
  
 	- для вложения с типом ``PowerOfAttorney`` — идентификатор подписи,
 	- для вложения с типом ``PowerOfAttorneyStatus`` — идентификатор МЧД.
+
+- ``AuthorUserId`` — идентификатор пользователя-автора сущности. Возвращается для сущностей типа ``Signature`` и ``Attachment`` со следующими типами вложений:
+
+	- ``Resolution``
+	- ``ResolutionRequest``
+	- ``ResolutionRequestDenial``
+	- ``ResolutionRouteAssignment``
+	- ``ResolutionRouteRemoval``
+	- ``OuterDocflow``
+	- ``TemplateTransformation``
+	- ``TemplateRefusal``
+	- ``CustomData``
+	- ``Edition``
+	- ``MoveDocument``
+	- ``RevocationRequest``
+
+- ``MoveDocumentInfo`` — информация о перемещении документа в другое подразделение. Возвращается только для сущности типа ``Attachment`` с типом вложения ``MoveDocument``. Представлена структурой ``MoveDocumentInfo`` с полями:
+
+	- ``MovedFromDepartment`` — подразделение, в которое переместили документ.
+	- ``MovedToDepartment`` — подразделение, из которого переместили документ.
 
 ----
 
