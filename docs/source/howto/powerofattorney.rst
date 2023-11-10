@@ -108,7 +108,10 @@
 Отправка документа
 ------------------
 
-Для отправки документа вызовите метод :doc:`../http/PostMessage` или :doc:`../http/SendDraft`. Эти методы принимают на вход структуры :doc:`../proto/SignedContent` и :doc:`../proto/DocumentSenderSignature`, которые хранят информацию о МЧД внутри структуры :doc:`../proto/PowerOfAttorneyToPost`. В теле запроса методов можно:
+Для отправки документа с МЧД вызовите метод :doc:`../http/PostMessage` или :doc:`../http/SendDraft`.
+Эти методы принимают на вход структуры :doc:`../proto/SignedContent` и :doc:`../proto/DocumentSenderSignature`, которые хранят информацию о МЧД внутри структуры :doc:`../proto/PowerOfAttorneyToPost`.
+
+Указать МЧД в теле запроса можно следующими способами:
 
 	- указать регистрационный номер МЧД и ИНН доверителя,
 	- указать признак «использовать МЧД по умолчанию»,

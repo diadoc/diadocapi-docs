@@ -35,7 +35,7 @@ PowerOfAttorneyToPost
 
 - ``UseXmlContent`` — флаг, указывающий, что МЧД нужно передать в содержимом документа. По умолчанию имеет значение ``false``. Можно использовать только для акта сверки и акта о приемке выполненных работ.
 
-В структуре ``PowerOfAttorneyToPost`` должно быть заполнено только одно из полей:
+В структуре ``PowerOfAttorneyToPost`` может быть заполнено только одно из полей:
 
 	- ``FullId``,
 	- ``Content``,
@@ -43,9 +43,9 @@ PowerOfAttorneyToPost
 	- ``UseDefault=true``,
 	- ``UseXmlContent=true``.
 
-Нельзя одновременно указывать значения в полях ``FullId``, ``Content`` и ``Contents``, параметр ``UseDefault=true`` и параметр ``UseXmlContent=true``, иначе метод отправки вернет ошибку.
+Нельзя одновременно указывать значения в полях ``FullId``, ``Content`` и ``Contents``, параметр ``UseDefault=true`` и параметр ``UseXmlContent=true``, иначе метод вернет ошибку.
 
-Если одновременно указны флаги ``SendAsFile=true`` и ``UseXmlContent=true``, МЧД будет передана в содержимом документа.
+Если одновременно указны флаги ``SendAsFile=true`` и ``UseXmlContent=true``, то МЧД будет передана в содержимом документа.
 
 .. note::
 

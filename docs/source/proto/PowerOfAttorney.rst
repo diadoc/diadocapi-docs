@@ -114,7 +114,7 @@ PowerOfAttorney
 - ``System`` — информация о системе хранения доверенности.
 - ``IdFile`` — имя xml-файла МЧД без расширения.
 - ``DelegationChain`` — список файлов передоверенной МЧД и родительских МЧД. Каждая доверенность представлена структурой ``PowerOfAttorney``. Список файлов вернется, если цепочку файлов МЧД передали в поле ``Contents`` структуры :doc:`PowerOfAttorneyToPost`. Возвращается только в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.
-- ``PermissionsInfo`` — информация о полномочиях из МЧД. Представлена структурой :doc:`PowerOfAttorneyPermissionsInfo`.
+- ``PermissionsInfo`` — информация о полномочиях из МЧД, представленная структурой :doc:`PowerOfAttorneyPermissionsInfo`.
 
 ----
 
