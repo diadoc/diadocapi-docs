@@ -2,7 +2,6 @@ ExtendedSignerDetailsToPost
 ===========================
 
 .. code-block:: protobuf
-   :emphasize-lines: 1-10
 
      message ExtendedSignerToPost {
          optional string JobTitle = 1; //Должность (Должн)
