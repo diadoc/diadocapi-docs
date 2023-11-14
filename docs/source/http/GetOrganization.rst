@@ -11,7 +11,7 @@ GetOrganization
 	:queryparam inn: ИНН организации. Необязательный параметр.
 	:queryparam kpp: КПП организации. Необязательный параметр.
 
-	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``ddauth_api_client_id``.
+	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``DiadocAuth ddauth_api_client_id``.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.

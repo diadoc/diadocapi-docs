@@ -9,7 +9,7 @@ AuthenticateConfirm
 	:queryparam thumbprint: отпечаток сертификата пользователя. Необязательный параметр. Если не указан, в теле запроса нужно передать сертификат пользователя, сериализованный в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__.
 	:queryparam saveBinding: флаг для :ref:`сохранения привязки пользователя доверенного сервиса <save_binding>`. Укажите значение ``true``, если нужно сохранить привязку. Необязательный параметр. По умолчанию имеет значение ``false``.
 
-	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``ddauth_api_client_id``.
+	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``DiadocAuth ddauth_api_client_id``.
 
 	:request Body: Если параметр ``thumbprint`` не указан, тело запроса должно содержать :rfc:`X.509 <5280>` сертификат пользователя, сериализованный в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__. Иначе может быть пустым.
 

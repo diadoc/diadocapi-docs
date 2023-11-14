@@ -4,7 +4,6 @@ UniversalTransferDocumentSellerTitleInfo
 .. warning:: Эта структура использовалась в методах :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../../http/utd/ParseUniversalTransferDocumentSellerTitleXml`, которые устарели с 1 октября 2021 года.
 
 .. code-block:: protobuf
-    :emphasize-lines: 1-22
 
     message UniversalTransferDocumentSellerTitleInfo {
         required FunctionType Function = 1;  // Функция документа // Функция

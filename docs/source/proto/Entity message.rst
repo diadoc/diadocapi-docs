@@ -37,6 +37,8 @@ Entity
         optional RevocationRequestInfo RevocationRequestInfo = 30;
         optional string ContentTypeId = 31;
         optional PowerOfAtorneyInfo PowerOfAttorneyInfo = 32;
+        optional string AuthorUserId = 33;
+        optional MoveDocumentInfo MoveDocumentInfo = 34;
     }
 
     enum EntityType {
@@ -104,6 +106,11 @@ Entity
         PowerOfAttorney = 77;
         PowerOfAttorneyStatus = 78;
         // Неизвестные типы должны обрабатываться как Nonformalized
+    }
+
+    message MoveDocumentInfo {
+        required string MovedFromDepartment = 1;
+        required string MovedToDepartment = 2; 
     }
 
 - ``EntityType`` — тип сущности, принимает значение из перечисления ``EntityType``:
@@ -212,7 +219,7 @@ Entity
 	- ``RoamingNotification`` — роуминговая квитанция
 	- ``SupplementaryAgreement`` — дополнительное соглашение к договору
 	- ``CustomData`` — произвольные данные к документу
-	- ``MoveDocument`` — информация о перемещении документа в подразделение; является устаревшим, в ответе методов не возвращается
+	- ``MoveDocument`` — информация о перемещении документа в подразделение
 	- ``ResolutionRouteAssignment`` — информация о запуске документа по маршруту согласования
 	- ``ResolutionRouteRemoval`` — информация о снятии документа с маршрута согласования
 	- ``Title`` — титул документа. Возвращается для всех типов документов, кроме типов от 0 (``AttachmentType=Nonformalized``) до 51 (``AttachmentType=UniversalCorrectionDocumentBuyerTitle``). Это сделано для сохранения обратной совместимости: для первых титулов (титулов отправителя) с типами от ``Nonformalized`` до ``UniversalCorrectionDocumentBuyerTitle`` возвращается соответствующее значение, например, ``Invoice`` для счета-фактуры и т.п.
@@ -298,6 +305,26 @@ Entity
  
 	- для вложения с типом ``PowerOfAttorney`` — идентификатор подписи,
 	- для вложения с типом ``PowerOfAttorneyStatus`` — идентификатор МЧД.
+
+- ``AuthorUserId`` — идентификатор пользователя-автора сущности. Возвращается для сущностей типа ``Signature`` и ``Attachment`` со следующими типами вложений:
+
+	- ``Resolution``
+	- ``ResolutionRequest``
+	- ``ResolutionRequestDenial``
+	- ``ResolutionRouteAssignment``
+	- ``ResolutionRouteRemoval``
+	- ``OuterDocflow``
+	- ``TemplateTransformation``
+	- ``TemplateRefusal``
+	- ``CustomData``
+	- ``Edition``
+	- ``MoveDocument``
+	- ``RevocationRequest``
+
+- ``MoveDocumentInfo`` — информация о перемещении документа в другое подразделение. Возвращается только для сущности типа ``Attachment`` с типом вложения ``MoveDocument``. Представлена структурой ``MoveDocumentInfo`` с полями:
+
+	- ``MovedFromDepartment`` — подразделение, в которое переместили документ.
+	- ``MovedToDepartment`` — подразделение, из которого переместили документ.
 
 ----
 

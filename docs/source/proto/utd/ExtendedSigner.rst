@@ -2,7 +2,6 @@ ExtendedSigner
 ==============
 
 .. code-block:: protobuf
-    :emphasize-lines: 1-6
 
     message ExtendedSigner {
         optional string BoxId = 1;

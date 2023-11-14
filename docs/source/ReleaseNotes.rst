@@ -1,6 +1,15 @@
 ﻿История изменений API
 =====================
 
+03.11.2023
+----------
+**SDK**: `C# 2.14.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.3>`__
+
+- В структуру :doc:`proto/Entity message` добавлены поля:
+
+	- ``AuthorUserId`` — хранит идентификатор пользователя-автора сущности;
+	- ``MoveDocumentInfo`` — хранит информацию о перемещении документа в другое подразделение.
+
 30.10.2023
 ----------
 **SDK**: `C# 2.14.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.2>`__

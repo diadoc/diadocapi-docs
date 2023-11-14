@@ -22,7 +22,7 @@ Authenticate v3
 		- ``certificate`` — сертификат,
 		- ``sid`` — auth.sid из API Аутентификатора.
 
-	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``ddauth_api_client_id``.
+	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``DiadocAuth ddauth_api_client_id``.
 
 	:request Body: Тело запроса зависит от способа аутентификации.
 
