@@ -48,6 +48,10 @@ Xml-файлы документов имеют сложную структуру
 	
 **Пример запроса**:
 
+.. container:: toggle
+
+    .. container:: header
+
     .. sourcecode:: http
 
         POST /ParseTitleXml?boxId=96339010-4c66-462d-a917-7f31bb8d80c4&documentTypeNamedId=UniversalTransferDocument&documentVersion=utd_05_01_05&documentFunction=СЧФДОП&titleIndex=0 HTTP/1.1
@@ -112,7 +116,11 @@ Xml-файлы документов имеют сложную структуру
 
 **Пример ответа**:
 
-::
+.. container:: toggle
+
+    .. container:: header
+
+  ::
 
     HTTP/1.1 200 OK
 
