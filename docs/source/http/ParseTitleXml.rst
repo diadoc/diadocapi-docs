@@ -46,13 +46,15 @@ Xml-файлы документов имеют сложную структуру
 	
 	:response Body: Тело ответа содержит сгенерированный упрощенный XML-файл. XSD-схема упрощенного XML-файла может быть получена с помощью ссылки, доступной в поле *UserDataXsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, который можно получить с помощью метода :doc:`GetDocumentTypes`.
 	
-**Пример запроса**:
+
 
 .. container:: toggle
 
     .. container:: header
 
-    .. sourcecode:: http
+      **Пример запроса**:
+
+    .. code-block:: http
 
         POST /ParseTitleXml?boxId=96339010-4c66-462d-a917-7f31bb8d80c4&documentTypeNamedId=UniversalTransferDocument&documentVersion=utd_05_01_05&documentFunction=СЧФДОП&titleIndex=0 HTTP/1.1
         Host: diadoc-api.kontur.ru
@@ -114,44 +116,45 @@ Xml-файлы документов имеют сложную структуру
           </Документ>
         </Файл>
 
-**Пример ответа**:
 
 .. container:: toggle
 
     .. container:: header
 
-  ::
+      **Пример ответа**:
 
-    HTTP/1.1 200 OK
+    .. code-block:: http
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <UniversalTransferDocument DocumentDate="23.05.2019" DocumentNumber="14456464" Currency="643" DocumentCreator="ЗАО &quot;Тестовая Василек&quot;, ИНН 1105198800, КПП 110519880" Function="СЧФДОП" DocumentName="Счет-фактура и документ об отгрузке товаров (выполнении работ), передаче имущественных прав (документ об оказании услуг)" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-      <Seller>
-        <OrganizationDetails OrgType="1" OrgName="ЗАО &quot;Тестовая Василек&quot;" Inn="1105198800" Kpp="110519880" FnsParticipantId="2BM-1105198800-2012052808170176862630000000000">
-          <Address>
-            <RussianAddress Region="63" ZipCode="443028" City="город Самара" Locality="поселок Мехзавод" Street="7-й квартал" Building="дом 14, 24" />
-          </Address>
-        </OrganizationDetails>
-      </Seller>
-      <Buyer>
-        <OrganizationDetails OrgType="1" OrgName="&quot;ЗАО Очень Древний Папирус&quot;" Inn="7750370238" Kpp="770100101" FnsParticipantId="2BM-7750370234-4012052808304878702630000000004">
-          <Address>
-            <ForeignAddress Country="643" Address="тракт Троицкий 46" />
-          </Address>
-        </OrganizationDetails>
-      </Buyer>
-      <Signers>
-        <SignerDetails LastName="АО" FirstName="ПФ" MiddleName="СКБ Контур" SignerPowers="5" SignerPowersBase="Есть" SignerStatus="1" SignerType="2" Inn="667010595160" />
-      </Signers>
-      <PaymentDocuments>
-        <Document Date="23.05.2019" Number="15" />
-      </PaymentDocuments>
-      <Table Total="66.00" TotalWithVatExcluded="66.00" Vat="NoVat">
-        <Item Product="кольцо" Subtotal="66.00" Unit="796" UnitName="шт" Quantity="6" Price="11.00" TaxRate="без НДС" SubtotalWithVatExcluded="66.00" />
-      </Table>
-      <TransferInfo OperationInfo="тест">
-        <TransferBases>
-          <TransferBase BaseDocumentName="Отсутствует" />
-        </TransferBases>
-      </TransferInfo>
-    </UniversalTransferDocument>
+      HTTP/1.1 200 OK
+
+      <?xml version="1.0" encoding="utf-8"?>
+      <UniversalTransferDocument DocumentDate="23.05.2019" DocumentNumber="14456464" Currency="643" DocumentCreator="ЗАО &quot;Тестовая Василек&quot;, ИНН 1105198800, КПП 110519880" Function="СЧФДОП" DocumentName="Счет-фактура и документ об отгрузке товаров (выполнении работ), передаче имущественных прав (документ об оказании услуг)" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <Seller>
+          <OrganizationDetails OrgType="1" OrgName="ЗАО &quot;Тестовая Василек&quot;" Inn="1105198800" Kpp="110519880" FnsParticipantId="2BM-1105198800-2012052808170176862630000000000">
+            <Address>
+              <RussianAddress Region="63" ZipCode="443028" City="город Самара" Locality="поселок Мехзавод" Street="7-й квартал" Building="дом 14, 24" />
+            </Address>
+          </OrganizationDetails>
+        </Seller>
+        <Buyer>
+          <OrganizationDetails OrgType="1" OrgName="&quot;ЗАО Очень Древний Папирус&quot;" Inn="7750370238" Kpp="770100101" FnsParticipantId="2BM-7750370234-4012052808304878702630000000004">
+            <Address>
+              <ForeignAddress Country="643" Address="тракт Троицкий 46" />
+            </Address>
+          </OrganizationDetails>
+        </Buyer>
+        <Signers>
+          <SignerDetails LastName="АО" FirstName="ПФ" MiddleName="СКБ Контур" SignerPowers="5" SignerPowersBase="Есть" SignerStatus="1" SignerType="2" Inn="667010595160" />
+        </Signers>
+        <PaymentDocuments>
+          <Document Date="23.05.2019" Number="15" />
+        </PaymentDocuments>
+        <Table Total="66.00" TotalWithVatExcluded="66.00" Vat="NoVat">
+          <Item Product="кольцо" Subtotal="66.00" Unit="796" UnitName="шт" Quantity="6" Price="11.00" TaxRate="без НДС" SubtotalWithVatExcluded="66.00" />
+        </Table>
+        <TransferInfo OperationInfo="тест">
+          <TransferBases>
+            <TransferBase BaseDocumentName="Отсутствует" />
+          </TransferBases>
+        </TransferInfo>
+      </UniversalTransferDocument>
