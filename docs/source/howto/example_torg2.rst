@@ -15,6 +15,118 @@
 
 Если на стороне интеграционного решения нельзя сформировать XML-документ, соответствущий утвержденному формату, то покупатель может сгенерировать файл титула с помощью метода :doc:`../http/GenerateTitleXml`.
 
+Для генерации титула покупателя методом :doc:`../http/GenerateTitleXml` понадобятся:
+
+		- ``documentTypeNamedId`` — тип документа;
+		- ``documentFunction`` — функция документа;
+		- ``documentVersion`` — версия документа;
+		- ``titleIndex`` — идентификатор титула документа.
+
+	В теле запроса нужно передать XML-файл ``UserDataXsd``, соответствующий XSD-схеме. ``UsedDataXsd`` содержит информацию для генерации титула, которую может заполнить только пользователь.
+
+Получить тип, функцию, версию, идентификатор титула и ссылку на скачивание XSD-схемы можно с помощью метода :doc:`../http/GetDocumentTypes`. В ответе метод возвращает описание всех типов документов, доступных в ящике.
+
+Ниже приведено тело ответа метода :doc:`../http/GetDocumentTypes`. Для упрощения из него удалены другие типы, функции, версии и информация о метаданных.
+
+.. container:: toggle
+
+  .. code-block:: protobuf
+
+      {
+        "Name": "Torg2",
+        "Title": "Акт об установленном расхождении ТОРГ-2",
+        "SupportedDocflows": [
+          0
+        ],
+        "RequiresFnsRegistration": true,
+        "Functions": [
+            {
+            "Name": "NoAdditionalInfo",
+            "Versions": [
+              {
+                "Version": "torg2_05_01_01",
+                "SupportsContentPatching": true,
+                "SupportsEncrypting": false,
+                "SupportsPredefinedRecipientTitle": false,
+                "SupportsAmendmentRequest": true,
+                "Titles": [
+                  {
+                    "Index": 0,
+                    "IsFormal": true,
+                    "XsdUrl": "/GetContent?typeNamedId=Torg2&function=NoAdditionalInfo&version=torg2_05_01_01&titleIndex=0&contentType=TitleXsd",
+                    "UserDataXsdUrl": "/GetContent?typeNamedId=Torg2&function=NoAdditionalInfo&version=torg2_05_01_01&titleIndex=0&contentType=UserContractXsd",
+                    "SignerInfo": {
+                      "SignerType": 2,
+                      "ExtendedDocumentTitleType": 9
+                    },
+                    "MetadataItems": [],
+                    "EncryptedMetadataItems": []
+                  }
+               ],
+               "IsActual": true,
+                "Workflows": [
+                  {
+                   "Id": 1,
+                    "IsDefault": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "WithAdditionalInfo",
+            "Versions": [
+              {
+                "Version": "torg2_05_01_01",
+                "SupportsContentPatching": true,
+                "SupportsEncrypting": false,
+                "SupportsPredefinedRecipientTitle": false,
+                "SupportsAmendmentRequest": true,
+                "Titles": [
+                  {
+                    "Index": 0,
+                    "IsFormal": true,
+                    "XsdUrl": "/GetContent?typeNamedId=Torg2&function=WithAdditionalInfo&version=torg2_05_01_01&titleIndex=0&contentType=TitleXsd",
+                    "UserDataXsdUrl": "/GetContent?typeNamedId=Torg2&function=WithAdditionalInfo&version=torg2_05_01_01&titleIndex=0&contentType=UserContractXsd",
+                    "SignerInfo": {
+                      "SignerType": 2,
+                      "ExtendedDocumentTitleType": 9
+                    },
+                    "MetadataItems": [],
+                    "EncryptedMetadataItems": []
+                  },
+                  {
+                    "Index": 1,
+                    "IsFormal": true,
+                    "XsdUrl": "/GetContent?typeNamedId=Torg2&function=WithAdditionalInfo&version=torg2_05_01_01&titleIndex=1&contentType=TitleXsd",
+                    "UserDataXsdUrl": "/GetContent?typeNamedId=Torg2&function=WithAdditionalInfo&version=torg2_05_01_01&titleIndex=1&contentType=UserContractXsd",
+                    "SignerInfo": {
+                      "SignerType": 2,
+                      "ExtendedDocumentTitleType": 10
+                    },
+                    "MetadataItems": [],
+                    "EncryptedMetadataItems": []
+                  }
+                ],
+                "IsActual": true,
+                "Workflows": [
+                  {
+                    "Id": 3,
+                    "IsDefault": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+
+- ``documentTypeNamedId`` = ``Torg2`` — имя типа документа,
+- ``documentFunction`` = ``NoAdditionalInfo`` — функция для однотитульного документа, ``WithAdditionalInfo`` — функция для двухтитульного,
+- ``documentVersion`` = ``torg2_05_01_01`` — версия формата,
+- ``titleIndex`` = ``0`` — титул покупателя,
+- ``UserDataXsdUrl`` —  URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью метода генерации.
+
 Отправка файла титула покупателя для акта об установленном расхождении ТОРГ-2
 -----------------------------------------------------------------------------
 
@@ -57,6 +169,26 @@
         optional bytes Signature = 2;
     }
 
+Пример тела запроса:
+
+::
+
+    "FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
+    "DocumentAttachments": [
+            {
+                "SignedContent":
+                {
+                    "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",        //контент xml-файла в кодировке base-64
+                    "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",       //контент файла подписи в кодировке base-64
+                },
+                "TypeNamedId": "Torg2",
+                "Function": "WithAdditionalInfo",
+                "Version": "torg2_05_01_01"
+            }
+        ]
+    }
+
 После отправки в теле ответа будет содержаться отправленное сообщение, сериализованное в протобуфер :doc:`../proto/Message`.
 
 Все дальнейшие действия происходят на стороне продавца.
@@ -94,7 +226,16 @@
 Формирование файла титула доп. сведений для акта об установленном расхождении ТОРГ-2
 ------------------------------------------------------------------------------------
 
-Файл титула дополнительных сведений можно сформировать как на стороне интеграционного решения, так и используя метод :doc:`../http/GenerateTitleXml`. 
+Файл титула дополнительных сведений можно сформировать как на стороне интеграционного решения, так и используя метод :doc:`../http/GenerateTitleXml`.
+
+Генерация титула с помощью метода :doc:`../http/GenerateTitleXml` выполняется аналогично титулу покупателя.
+
+Тип и версия файла такие же, как у титула покупателя, отличается номер титула, также возможна только одна функция:
+
+- ``documentTypeNamedId`` = ``Torg2`` — имя типа документа,
+- ``documentFunction`` = ``WithAdditionalInfo`` — функция документа,
+- ``documentVersion`` = ``torg2_05_01_01`` — версия формата,
+- ``titleIndex`` = ``1`` — титул доп. сведений.
 
 Отправка файла титула доп. сведений для акта об установленном расхождении ТОРГ-2
 --------------------------------------------------------------------------------
@@ -128,6 +269,25 @@
     message SignedContent {
         optional bytes Content = 1;
         optional bytes Signature = 2;
+    }
+
+Пример тела запроса:
+
+::
+
+    "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
+    "RecipientTitles":
+    [
+        {
+            "ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95",
+            "SignedContent":
+            {
+                "Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",        //контент xml-файла в кодировке base-64
+                "Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"        //контент файла подписи в кодировке base-64
+            }
+        }
+    ]
     }
 
 После отправки в теле ответа будет содержаться отправленное дополнение, сериализованное в протобуфер :doc:`../proto/MessagePatch`.

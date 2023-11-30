@@ -1,7 +1,8 @@
 Как отправить и получить товарную накладную ТОРГ-12 в рекомендованном ФНС формате
 =================================================================================
 
-Рассмотрим последовательность действий к функциям интеграторского интерфейса Диадока, которые требуется совершить при отправке товарной накладной ТОРГ-12.
+Сценарий работы с товарной накладной ТОРГ-12
+--------------------------------------------
 
 #. Продавец формирует файл титула продавца, подписывает и направляет покупателю.
 
@@ -15,27 +16,105 @@
 Формирование файла титула продавца для товарной накладной ТОРГ-12
 -----------------------------------------------------------------
 
-Если на стороне интеграционного решения не предусмотрено функциональности для формирования XML-документов, соответствущих утвержденным форматам, то продавец может сгенерировать файл титула, используя команду :doc:`../http/GenerateTitleXml`.
-	   
+Если на стороне интеграционного решения нельзя сформировать XML-документ, соответствущий утвержденному формату, то продавец может сгенерировать файл титула с помощью метода :doc:`../http/GenerateTitleXml`.
+
+Для генерации титула покупателя методом :doc:`../http/GenerateTitleXml` понадобятся:
+
+		- ``documentTypeNamedId`` — тип документа;
+		- ``documentFunction`` — функция документа;
+		- ``documentVersion`` — версия документа;
+		- ``titleIndex`` — идентификатор титула документа.
+
+	В теле запроса нужно передать XML-файл ``UserDataXsd``, соответствующий XSD-схеме. ``UsedDataXsd`` содержит информацию для генерации титула, которую может заполнить только пользователь.
+
+Получить тип, функцию, версию, идентификатор титула и ссылку на скачивание XSD-схемы можно с помощью метода :doc:`../http/GetDocumentTypes`. В ответе метод возвращает описание всех типов документов, доступных в ящике.
+
+Ниже приведено тело ответа метода :doc:`../http/GetDocumentTypes`. Для упрощения из него удалены другие типы, функции, версии и информация о метаданных.
+
+.. container:: toggle
+
+  .. code-block:: protobuf
+
+      {
+        "Name": "XmlTorg12",
+        "Title": "Накладная",
+        "SupportedDocflows": [
+          1,
+          0
+        ],
+        "RequiresFnsRegistration": false,
+        "Functions": [
+          {
+            "Name": "default",
+            "Versions": [
+              {
+                "Version": "tovtorg_05_02_01",
+                "SupportsContentPatching": true,
+                "SupportsEncrypting": false,
+                "SupportsPredefinedRecipientTitle": false,
+                "SupportsAmendmentRequest": false,
+                "Titles": [
+                  {
+                    "Index": 0,
+                    "IsFormal": true,
+                    "XsdUrl": "/GetContent?typeNamedId=XmlTorg12&function=default&version=tovtorg_05_02_01&titleIndex=0&contentType=TitleXsd",
+                    "UserDataXsdUrl": "/GetContent?typeNamedId=XmlTorg12&function=default&version=tovtorg_05_02_01&titleIndex=0&contentType=UserContractXsd",
+                    "SignerInfo": {
+                      "SignerType": 2,
+                      "ExtendedDocumentTitleType": 4
+                    },
+                    "MetadataItems": [],
+                    "EncryptedMetadataItems": []
+                  },
+                  {
+                    "Index": 1,
+                    "IsFormal": true,
+                    "XsdUrl": "/GetContent?typeNamedId=XmlTorg12&function=default&version=tovtorg_05_02_01&titleIndex=1&contentType=TitleXsd",
+                    "UserDataXsdUrl": "/GetContent?typeNamedId=XmlTorg12&function=default&version=tovtorg_05_02_01&titleIndex=1&contentType=UserContractXsd",
+                    "SignerInfo": {
+                      "SignerType": 2,
+                      "ExtendedDocumentTitleType": 5
+                    },
+                    "MetadataItems": [],
+                    "EncryptedMetadataItems": []
+                  }
+                ],
+                "IsActual": true,
+                "Workflows": [
+                  {
+                    "Id": 3,
+                    "IsDefault": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+
+- ``documentTypeNamedId`` = ``XmlTorg12`` — имя типа документа,
+- ``documentFunction`` = ``default`` — функция документа,
+- ``documentVersion`` = ``tovtorg_05_02_01`` — версия формата,
+- ``titleIndex`` = ``0`` — титул продавца,
+- ``UserDataXsdUrl`` —  URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью метода генерации.
 
 Отправка файла титула продавца для товарной накладной ТОРГ-12
 -------------------------------------------------------------
 
-После того, как у вас есть XML-файл титула продавца, его нужно отправить с помощью команды :doc:`../http/PostMessage`. 
+Титул продавца можно отправить с помощью метода :doc:`../http/PostMessage`. Формирование подписи происходит на стороне интеграционного решения
 
-Для этого нужно подготовить структуру :doc:`../proto/MessageToPost` следующим образом:
+Для этого подготовьте структуру :doc:`../proto/MessageToPost`:
 
--  в значение атрибута *FromBoxId* указываем идентификатор ящика отправителя;
+- в поле ``FromBoxId`` укажите идентификатор ящика отправителя;
+- в поле ``ToBoxId`` укажите идентификатор ящика получателя;
+- для передачи XML-файла титула отправителя акта сверки используйте вложенную структуру ``DocumentAttachment``:
 
--  в значение атрибута *ToBoxId* указываем идентификатор ящика получателя;
+	- XML-файл передайте в структуре ``SignedContent`` в поле ``Content``, подпись — в поле ``Signature``;
+	- ``TypeNamedId=XmlTorg12``;
+	- ``Function=default``;
+	- ``Version=tovtorg_05_02_01``.
 
--  для передачи XML-файла титула продавца товарной накладной ТОРГ-12 нужно использовать атрибут *XmlTorg12SellerTitles*, описываемый структурой *XmlDocumentAttachment*:
-
-	-  внутри структуры *XmlDocumentAttachment* находится вложенная структура *SignedContent*;
-	
-	-  сам XML-файл нужно передать в атрибут *Content*, подпись продавца в атрибут *Signature*.
-	   
-Описание структур, используемых при отправке товарной накладной ТОРГ-12:
+Описание структур, используемых при отправке титула отправителя акта сверки:
 
 .. code-block:: protobuf
 
@@ -45,7 +124,7 @@
         repeated DocumentAttachment DocumentAttachments = 34;
     }
 
-    message XmlDocumentAttachment {
+    message DocumentAttachment {
      required SignedContent SignedContent = 1;
      required string TypeNamedId = 12;
      optional string Function = 13;
@@ -57,18 +136,37 @@
         optional bytes Signature = 2;
     }
 
+Пример тела запроса:
+
+::
+
+    "FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
+    "DocumentAttachments": [
+            {
+                "SignedContent":
+                {
+                    "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",        //контент xml-файла в кодировке base-64
+                    "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",       //контент файла подписи в кодировке base-64
+                },
+                "TypeNamedId": "XmlTorg12",
+                "Function": "default",
+                "Version": "tovtorg_05_02_01"
+            }
+        ]
+    }
+
 После отправки в теле ответа будет содержаться отправленное сообщение, сериализованное в протобуфер :doc:`../proto/Message`.
 
-Все дальнейшие действия происходят на стороне покупателя.
+Все дальнейшие действия происходят на стороне получателя.
 
-Поиск товарной накладной ТОРГ-12
---------------------------------
+Получение файла титула отправителя для товарной накладной ТОРГ-12
+-----------------------------------------------------------------
 
-Сначала покупателю необходимо найти все входящие товарные накладные ТОРГ-12, которые требуется обработать. Для этого нужно воспользоваться методом :doc:`../http/GetDocuments`:
+Перед получением файла титула отправителя найдите все входящие накладные, которые нужно обработать. Для этого используйте метод :doc:`../http/GetDocuments`:
 
-  -  в значении параметра *boxId* указываем идентификатор ящика, в котором следует выполнить поиск входящих документов;
-
-  -  в параметр *filterCategory* указываем статус и тип документа: ``XmlTorg12.InboundNotFinished``.
+- в поле ``boxId`` укажите идентификатор ящика, в котором нужно найти входящие документы;
+- в поле ``filterCategory`` укажите статус и тип документа: ``XmlTorg12.InboundNotFinished``.
 
 Пример запроса на получение товарной накладной ТОРГ-12 выглядит следующим образом:
 
@@ -78,26 +176,18 @@
     Host: diadoc-api.kontur.ru
     Accept: application/json
     Content-Type: application/json charset=utf-8
-    Authorization: DiadocAuth ddauth_api_client_id=testClient-87e1638deae84c86b8e2069955c2825a0987
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
 
-В теле ответа вернется список документов в виде структуры *DocumentList* с вложенной структурой *Document*. Для каждого из этих документов запоминаем: *MessageId*, *EntityId*.
+В теле ответа вернется список документов в виде структуры ``DocumentList`` с вложенной структурой ``Document``. Чтобы получить документы, потребуются значения полей ``MessageId`` и ``EntityId``.
 
-Получение товарной накладной ТОРГ-12
-------------------------------------
-
-Теперь необходимо получить найденную товарную накладную :doc:`XmlTorg12 <../proto/Entity message>`.
-
-Чтобы получить товарную накладную ТОРГ-12 нужно вызвать метод :doc:`../http/GetMessage` и указать нужные GET-параметры ``boxId``, ``messageId``, ``entityId``.
-
-``BoxId`` - это идентификатор ящика получателя, ``messageId`` - идентификатор полученного сообщения с накладной ТОРГ-12, ``entityId`` - идентификатор товарной накладной. Их можно взять из структуры :doc:`../proto/Message`.
-
+Чтобы получить товарную накладную, вызовите метод :doc:`../http/GetMessage` и укажите GET-параметры: ``boxId``, ``messageId``, ``entityId``.
 ::
 
     GET /V3/GetMessage?messageId=bbcedb0d-ce34-4e0d-b321-3f600c920935&entityId=30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&boxId=db32772b-9256-49a8-a133-fda593fda38a HTTP/1.1
     Host: diadoc-api.kontur.ru
     Accept: application/json
     Content-Type: application/json charset=utf-8
-    Authorization: DiadocAuth ddauth_api_client_id=testClient-87e1638deae84c86b8e2069955c2825a0987
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
 
 Пример структуры товарной накладной ТОРГ-12 :doc:`XmlTorg12 <../proto/Entity message>` в теле ответа:
 
@@ -119,31 +209,38 @@
        "IsEncryptedContent": false
    }
 
+.. _create_buyer_title:
+
 Формирование файла титула покупателя для товарной накладной ТОРГ-12
 -------------------------------------------------------------------
 
-Файл титула покупателя можно сформировать как на стороне интеграционного решения, так и используя команду :doc:`../http/GenerateTitleXml`. 
+Файл титула покупателя можно сформировать как на стороне интеграционного решения, так и с помощью метода :doc:`../http/GenerateTitleXml`.
+
+Генерация титула покупателя с помощью метода :doc:`../http/GenerateTitleXml` выполняется аналогично титулу продавца.
+
+Тип, функция и версия файла такие же, как у титула продавца, отличается только номер титула:
+
+- ``documentTypeNamedId`` = ``XmlTorg12``,
+- ``documentFunction`` = ``default``,
+- ``documentVersion`` = ``tovtorg_05_02_01``,
+- ``titleIndex`` = ``1`` — титул покупателя.
 
 
 Отправка файла титула покупателя для товарной накладной ТОРГ-12
 ---------------------------------------------------------------
-После того, как у вас есть XML-файл титула покупателя, его нужно отправить с помощью команды :doc:`../http/PostMessagePatch`. 
 
-Для этого нужно подготовить структуру :doc:`../proto/MessagePatchToPost` следующим образом:
+Отправить титул покупателя можно с помощью метода :doc:`../http/PostMessagePatch`. Формирование подписи происходит на стороне интеграционного решения.
 
--  в значение атрибута *BoxId* указываем идентификатор ящика, в котором находится исходное сообщение;
+Для этого подготовьте структуру :doc:`../proto/MessagePatchToPost`:
 
--  в значение атрибута *MessageId* указываем идентификатор сообщения, к которому относится отправляемый патч;
+- в поле ``BoxId`` укажите идентификатор ящика, в котором находится исходное сообщение;
+- в поле ``MessageId`` укажите идентификатор сообщения, к которому относится дополнение;
+- чтобы передать XML-файла титула, используйте структуру ``RecipientTitleAttachment``:
 
--  для передачи XML-файла титула продавца товарной накладной ТОРГ-12 нужно использовать атрибут *XmlTorg12BuyerTitles*, описываемый структурой *ReceiptAttachment*:
+	- ``ParentEntityId`` — идентификатор титула продавца;
+	- XML-файл нужно передать во вложенной структуре ``SignedContent`` в поле ``Content``, подпись — в поле ``Signature``;
 
-    -  ParentEntityId - идентификатор документа, к которому относится титул покупателя; это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре :doc:`Entity <../proto/Entity message>`.);
-
-	-  внутри структуры *ReceiptAttachment* находится вложенная структура *SignedContent*;
-	
-	-  сам XML-файл нужно передать в атрибут *Content*, подпись продавца в атрибут *Signature*.
-	   
-Описание структур, используемых при отправке ответного титула товарной накладной ТОРГ-12:
+Описание структур, используемых при отправке ответного титула товарной накладной:
 
 .. code-block:: protobuf
 
@@ -161,6 +258,25 @@
     message SignedContent {
         optional bytes Content = 1;
         optional bytes Signature = 2;
+    }
+
+Пример тела запроса:
+
+::
+
+    "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
+    "RecipientTitles":
+    [
+        {
+            "ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95",
+            "SignedContent":
+            {
+                "Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",        //контент xml-файла в кодировке base-64
+                "Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"        //контент файла подписи в кодировке base-64
+            }
+        }
+    ]
     }
 
 После отправки в теле ответа будет содержаться отправленное дополнение, сериализованное в протобуфер :doc:`../proto/MessagePatch`.
