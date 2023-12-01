@@ -8,12 +8,12 @@ PowerOfAttorneySendingType
 	enum PowerOfAttorneySendingType {
 		Metadata = 1;
 		File = 2;
-		XmlContent - 3;
+		DocumentContent - 3;
 	}
 
 - ``Metadata`` — МЧД передали в виде мета-информации.
 - ``File`` — МЧД отправили в пакете с документом.
-- ``XmlContent`` — МЧД передали в содержимом документа.
+- ``DocumentContent`` — МЧД передали в содержимом документа.
 
 ----
 

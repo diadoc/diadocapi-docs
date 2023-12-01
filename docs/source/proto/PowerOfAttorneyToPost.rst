@@ -11,7 +11,7 @@ PowerOfAttorneyToPost
         optional PowerOfAttorneySignedContent Content = 3;
         optional bool SendAsFile = 4;
         repeated PowerOfAttorneySignedContent Contents = 5;
-        optional bool UseXmlContent = 6;
+        optional bool UseDocumentContent = 6;
     }
 
     message PowerOfAttorneySignedContent {
@@ -35,7 +35,7 @@ PowerOfAttorneyToPost
 	- ``Content`` — файл МЧД. Представлен структурой :doc:`Content_v3`.
 	- ``Signature`` — файл подписи под МЧД. Представлен структурой :doc:`Content_v3`.
 
-- ``UseXmlContent`` — флаг, указывающий, что МЧД передается в содержимом документа. По умолчанию имеет значение ``false``. Применимо только для актов сверки в формате приказа №405.
+- ``UseDocumentContent`` — флаг, указывающий, что МЧД передается в содержимом документа. По умолчанию имеет значение ``false``. Применимо только для актов сверки в формате приказа №405.
 
 В структуре ``PowerOfAttorneyToPost`` может быть заполнено только одно из полей:
 
@@ -43,11 +43,11 @@ PowerOfAttorneyToPost
 	- ``Content``,
 	- ``Contents``,
 	- ``UseDefault=true``,
-	- ``UseXmlContent=true``.
+	- ``UseDocumentContent=true``.
 
-Нельзя одновременно указывать значения в полях ``FullId``, ``Content`` и ``Contents``, параметр ``UseDefault=true`` и параметр ``UseXmlContent=true``, иначе метод вернет ошибку.
+Нельзя одновременно указывать значения в полях ``FullId``, ``Content`` и ``Contents``, параметр ``UseDefault=true`` и параметр ``UseDocumentContent=true``, иначе метод вернет ошибку.
 
-Если одновременно указны флаги ``SendAsFile=true`` и ``UseXmlContent=true``, то МЧД будет передана в содержимом документа.
+Если одновременно указны флаги ``SendAsFile=true`` и ``UseDocumentContent=true``, то МЧД будет передана в содержимом документа.
 
 .. note::
 
