@@ -22,7 +22,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.graphviz',
-    'sphinxcontrib.httpdomain'
+    'sphinxcontrib.httpdomain',
+    'sphinx_reredirects'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -369,3 +370,8 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'python': ('https://docs.python.org/', None)}
+
+# Redirecting old pages
+redirects = {
+     "howto/example_authorization": "../Authorization.html"
+}
