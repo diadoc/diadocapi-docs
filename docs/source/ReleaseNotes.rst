@@ -1,6 +1,15 @@
 ﻿История изменений API
 =====================
 
+20.12.2023
+----------
+**SDK**: `C# 2.14.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.5>`__
+
+- Добавлена поддержка передачи машиночитаемой доверенности в содержимом документа. МЧД в содержимом можно передать только для акта сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document?moduleId=1&documentId=425482>`__:
+
+	- в структуру :doc:`proto/PowerOfAttorneyToPost` добавлен флаг  ``UseDocumentContent``;
+	- в перечисление :doc:`proto/PowerOfAttorneySendingType` добавлено значение ``DocumentContent``. Значение будет возвращаться, если МЧД передали в содержимом документа.
+
 03.11.2023
 ----------
 **SDK**: `C# 2.14.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.3>`__
