@@ -25,4 +25,4 @@ PowerOfAttorneyToUpdate
 	- в теле запроса метода :doc:`../http/UpdateEmployeePowerOfAttorney`.
 
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`.

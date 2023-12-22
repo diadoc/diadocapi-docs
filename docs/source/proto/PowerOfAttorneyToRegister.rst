@@ -31,4 +31,4 @@ PowerOfAttorneyToRegister
 	- в теле запроса метода :doc:`../http/RegisterPowerOfAttorney`.
 	
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`.

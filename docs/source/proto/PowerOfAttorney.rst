@@ -126,4 +126,4 @@ PowerOfAttorney
 	- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.
 
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`.

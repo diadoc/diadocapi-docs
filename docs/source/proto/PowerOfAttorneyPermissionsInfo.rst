@@ -71,6 +71,6 @@ PowerOfAttorneyPermissionsInfo
 
 *Структура используется:*
 	- в структуре :doc:`PowerOfAttorney`.
-	
+
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`/howto/powerofattorney`.
