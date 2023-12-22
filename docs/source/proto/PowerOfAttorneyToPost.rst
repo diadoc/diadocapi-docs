@@ -35,17 +35,15 @@ PowerOfAttorneyToPost
 	- ``Content`` — файл МЧД. Представлен структурой :doc:`Content_v3`.
 	- ``Signature`` — файл подписи под МЧД. Представлен структурой :doc:`Content_v3`.
 
-- ``UseDocumentContent`` — флаг, указывающий, что МЧД передается в содержимом документа. По умолчанию имеет значение ``false``. Применимо только для актов сверки в формате приказа №405.
+- ``UseDocumentContent`` — флаг, указывающий, что МЧД передается в содержимом документа. По умолчанию имеет значение ``false``. Применимо только для актов сверки в формате приказа №405. Документ с МЧД в содержимом должен соответствовать :ref:`условиям <powerofattorney_send>`.
 
 В структуре ``PowerOfAttorneyToPost`` может быть заполнено только одно из полей:
 
 	- ``FullId``,
 	- ``Content``,
 	- ``Contents``,
-	- ``UseDefault=true``,
+	- ``UseDefault = true``,
 	- ``UseDocumentContent=true``.
-
-Нельзя одновременно указывать значения в полях ``FullId``, ``Content`` и ``Contents``, параметр ``UseDefault=true`` и параметр ``UseDocumentContent=true``, иначе метод вернет ошибку.
 
 Если одновременно указны флаги ``SendAsFile=true`` и ``UseDocumentContent=true``, то МЧД будет передана в содержимом документа.
 
@@ -63,4 +61,4 @@ PowerOfAttorneyToPost
 	- в структуре :doc:`DocumentSenderSignature`.
 	
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`.
