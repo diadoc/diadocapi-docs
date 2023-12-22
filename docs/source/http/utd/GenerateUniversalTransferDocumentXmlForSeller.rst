@@ -2,7 +2,7 @@ GenerateUniversalTransferDocumentXmlForSeller
 =============================================
 
 .. warning::
-	Этот метод устарел и не работает с 1 октября 2021 года. Для генерации документов используйте метод :doc:`../GenerateTitleXml`.
+	Метод устарел. Для генерации документов используйте метод :doc:`../GenerateTitleXml`.
 
 Имя ресурса: **/GenerateUniversalTransferDocumentXmlForSeller**
 

@@ -2,7 +2,7 @@ BasicDocumentInfo
 =================
 
 .. warning::
-	Эта структура относится к устаревшей версии Docflow API. Мы рекомендуем использовать последнюю версию :doc:`Docflow API<../Docflow API>` — V3.
+	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`Docflow API<../Docflow API>` — V3.
 
 Структура ``BasicDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>`:
 
