@@ -16,9 +16,7 @@
 Формирование файла титула продавца для товарной накладной ТОРГ-12
 -----------------------------------------------------------------
 
-Если на стороне интеграционного решения нельзя сформировать XML-документ, соответствущий утвержденному формату, то вы можете сгенерировать файл титула с помощью метода :doc:`../http/GenerateTitleXml`.
-
-Чтобы сгенерировать XML-файла документа, нужно передать в метод ``GenerateTitleXml`` следующие параметры:
+Cгенерировать файл титула, соответствущий утвержденному формату, можно с помощью метода :doc:`../http/GenerateTitleXml`. Для этого передайте в метод следующие параметры:
 
 		- ``documentTypeNamedId`` — тип документа;
 		- ``documentFunction`` — функция документа;
@@ -116,28 +114,6 @@
 	- ``Function=default``;
 	- ``Version=tovtorg_05_02_01``.
 
-Структуры, используемые при отправке титула продавца товарной накладной ТОРГ-12:
-
-.. code-block:: protobuf
-
-    message MessageToPost {
-        required string FromBoxId = 1;
-        optional string ToBoxId = 2;
-        repeated DocumentAttachment DocumentAttachments = 34;
-    }
-
-    message DocumentAttachment {
-     required SignedContent SignedContent = 1;
-     required string TypeNamedId = 12;
-     optional string Function = 13;
-     optional string Version = 14; 
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
-    }
-
 Пример тела запроса:
 
 ::
@@ -223,8 +199,6 @@
 Формирование файла титула покупателя для товарной накладной ТОРГ-12
 -------------------------------------------------------------------
 
-Файл титула покупателя можно сформировать как на стороне интеграционного решения, так и с помощью метода :doc:`../http/GenerateTitleXml`.
-
 Генерация титула покупателя с помощью метода :doc:`../http/GenerateTitleXml` выполняется аналогично титулу продавца.
 
 Тип, функция и версия файла такие же, как у титула продавца, отличается только номер титула:
@@ -248,26 +222,6 @@
 
 	- ``ParentEntityId`` — идентификатор титула продавца;
 	- XML-файл нужно передать в поле ``Content`` вложенной структуры ``SignedContent``, подпись — в поле ``Signature``;
-
-Структуры, использумые при отправке ответного титула товарной накладной:
-
-.. code-block:: protobuf
-
-    message MessagePatchToPost {
-        required string BoxId = 1;
-        optional string MessageId = 2;
-        repeated RecipientTitleAttachment RecipientTitles = 22;
-    }
-
-    message RecipientTitleAttachment  {
-	required string ParentEntityId = 1;
-        required SignedContent SignedContent = 1;
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
-    }
 
 Пример тела запроса:
 

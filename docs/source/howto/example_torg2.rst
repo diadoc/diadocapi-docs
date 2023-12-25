@@ -14,14 +14,12 @@
 Формирование файла титула покупателя для акта об установленном расхождении ТОРГ-2
 ---------------------------------------------------------------------------------
 
-Если на стороне интеграционного решения нельзя сформировать XML-документ, соответствущий утвержденному формату, то вы можете сгенерировать файл титула с помощью метода :doc:`../http/GenerateTitleXml`.
+Cгенерировать файл титула, соответствущий утвержденному формату, можно с помощью метода :doc:`../http/GenerateTitleXml`. Для этого передайте в метод следующие параметры:
 
-Чтобы сгенерировать XML-файла документа, нужно передать в метод ``GenerateTitleXml`` следующие параметры:
-
-		- ``documentTypeNamedId`` — тип документа;
-		- ``documentFunction`` — функция документа;
-		- ``documentVersion`` — версия документа;
-		- ``titleIndex`` — идентификатор титула документа.
+	- ``documentTypeNamedId`` — тип документа;
+	- ``documentFunction`` — функция документа;
+	- ``documentVersion`` — версия документа;
+	- ``titleIndex`` — идентификатор титула документа.
 
 В теле запроса нужно передать XML-файл ``UserDataXsd``, соответствующий XSD-схеме. ``UsedDataXsd`` содержит информацию для генерации титула, которую может заполнить только пользователь.
 
@@ -148,28 +146,6 @@
 	
 	- ``Version=torg2_05_01_01``.
 
-Структуры, использумые при отправке ТОРГ-2:
-
-.. code-block:: protobuf
-
-    message MessageToPost {
-        required string FromBoxId = 1;
-        optional string ToBoxId = 2;
-        repeated DocumentAttachment DocumentAttachments = 34;
-    }
-
-    message DocumentAttachment {
-     required SignedContent SignedContent = 1;
-     required string TypeNamedId = 12;
-     optional string Function = 13;
-     optional string Version = 14; 
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
-    }
-
 Пример тела запроса:
 
 ::
@@ -232,8 +208,6 @@
 Формирование файла титула доп. сведений для акта об установленном расхождении ТОРГ-2
 ------------------------------------------------------------------------------------
 
-Файл титула дополнительных сведений можно сформировать как на стороне интеграционного решения, так и используя метод :doc:`../http/GenerateTitleXml`.
-
 Генерация титула с помощью метода :doc:`../http/GenerateTitleXml` выполняется аналогично титулу покупателя.
 
 Тип и версия файла такие же, как у титула покупателя, отличается номер титула, также возможна только одна функция:
@@ -256,26 +230,6 @@
 
 	- ``ParentEntityId`` — идентификатор титула покупателя,
 	- XML-файл нужно передать в поле ``Content`` вложенной структуры ``SignedContent``, подпись — в поле ``Signature``.
-
-Структуры, использумые при отправке ответного титула ТОРГ-2:
-
-.. code-block:: protobuf
-
-    message MessagePatchToPost {
-        required string BoxId = 1;
-        optional string MessageId = 2;
-        repeated RecipientTitleAttachment RecipientTitles = 22;
-    }
-
-    message RecipientTitleAttachment  {
-	required string ParentEntityId = 1;
-        required SignedContent SignedContent = 1;
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
-    }
 
 Пример тела запроса:
 

@@ -13,9 +13,7 @@
 
 Формирование файла титула отправителя для акта сверки взаимных расчетов
 -----------------------------------------------------------------------
-Если на стороне интеграционного решения нельзя сформировать XML-документ, соответствующий утвержденному формату, то вы можете сгенерировать файл титула с помощью метода :doc:`../http/GenerateTitleXml`.
-
-Чтобы сгенерировать XML-файла документа, нужно передать в метод ``GenerateTitleXml`` следующие параметры:
+Cгенерировать файл титула, соответствущий утвержденному формату, можно с помощью метода :doc:`../http/GenerateTitleXml`. Для этого передайте в метод следующие параметры:
 
 		- ``documentTypeNamedId`` — тип документа;
 		- ``documentFunction`` — функция документа;
@@ -113,28 +111,6 @@
 	- ``Function=default``;
 	- ``Version=reconciliationact405_05_01_01``.
 
-Структуры, использумые при отправке титула отправителя акта сверки:
-
-.. code-block:: protobuf
-
-    message MessageToPost {
-        required string FromBoxId = 1;
-        optional string ToBoxId = 2;
-        repeated DocumentAttachment DocumentAttachments = 34;
-    }
-
-    message DocumentAttachment {
-     required SignedContent SignedContent = 1;
-     required string TypeNamedId = 12;
-     optional string Function = 13;
-     optional string Version = 14; 
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
-    }
-
 Пример тела запроса:
 
 ::
@@ -197,8 +173,6 @@
 Формирование файла титула получателя для акта сверки взаимных расчетов
 ----------------------------------------------------------------------
 
-Файл титула получателя сведений можно сформировать как на стороне интеграционного решения, так и используя метод :doc:`../http/GenerateTitleXml`.
-
 Генерация титула получателя с помощью метода :doc:`../http/GenerateTitleXml` выполняется аналогично титулу отправителя.
 
 Тип, функция и версия файла такие же, как у титула отправителя, отличается только номер титула:
@@ -221,26 +195,6 @@
 
 	- ``ParentEntityId`` — идентификатор титула отправителя;
 	- XML-файл нужно передать в поле ``Content`` вложенной структуры ``SignedContent``, подпись — в поле ``Signature``.
-
-Структуры, использумые при отправке ответного титула акта сверки:
-
-.. code-block:: protobuf
-
-    message MessagePatchToPost {
-        required string BoxId = 1;
-        optional string MessageId = 2;
-        repeated RecipientTitleAttachment RecipientTitles = 22;
-    }
-
-    message RecipientTitleAttachment  {
-	required string ParentEntityId = 1;
-        required SignedContent SignedContent = 1;
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
-    }
 
 Пример тела запроса:
 
