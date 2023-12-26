@@ -1,64 +1,87 @@
 ExtendedSignerDetailsToPost
 ===========================
 
+Структура ``ExtendedSignerToPost`` предназначена для записи информации о подписанте в базу данных.
+
 .. code-block:: protobuf
 
      message ExtendedSignerToPost {
-         optional string JobTitle = 1; //Должность (Должн)
-         optional string RegistrationCertificate = 2; //Реквизиты свидетельства о гос. регистрации индивидуального предпринимателя (СвГосРегИП)
-         required SignerType SignerType = 3 [default = LegalEntity]; // Тип подписанта (ФЛ/ИП/ЮЛ)
-         optional string SignerInfo = 4;             // Иные сведения, идентифицирующие физическое лицо (ИныеСвед)
-         required SignerPowers SignerPowers = 5;    // Область полномочий (ОблПолн)
-         required SignerStatus SignerStatus = 6;    // Статус (Статус)
-         optional string SignerPowersBase = 7;      // Основание полномочий (доверия) (ОснПолн)
-         optional string SignerOrgPowersBase = 8;   // Основание полномочий (доверия) организации (ОснПолнОрг)
+         optional string JobTitle = 1;
+         optional string RegistrationCertificate = 2;
+         required SignerType SignerType = 3 [default = LegalEntity];
+         optional string SignerInfo = 4;
+         required SignerPowers SignerPowers = 5;
+         required SignerStatus SignerStatus = 6;
+         optional string SignerPowersBase = 7;
+         optional string SignerOrgPowersBase = 8;
       }
 
      enum SignerType {
-         LegalEntity = 1;      // Представитель юридического лица (ФЛ)
-         IndividualEntity = 2; // Индивидуальный предприниматель (ИП)
-         PhysicalPerson = 3;   // Физическое лицо (ЮЛ)
-      }     
-     
+         LegalEntity = 1;
+         IndividualEntity = 2;
+         PhysicalPerson = 3;
+      }
+
      enum SignerPowers {
-         InvoiceSigner = 0;                 // лицо, ответственное за подписание счетов-фактур
-         PersonMadeOperation = 1;           // лицо, совершившее сделку, операцию
-         MadeAndSignOperation = 2;          // лицо, совершившее сделку, операцию и ответственное за её оформление;
-         PersonDocumentedOperation = 3;     // лицо, ответственное за оформление свершившегося события;
-         MadeOperationAndSignedInvoice = 4; // лицо, совершившее сделку, операцию и ответственное за подписание счетов-фактур;
-         MadeAndResponsibleForOperationAndSignedInvoice = 5; // лицо, совершившее сделку, операцию и ответственное за её оформление и за подписание счетов-фактур;
-         ResponsibleForOperationAndSignerForInvoice = 6;     // лицо, ответственное за оформление свершившегося события и за подписание счетов-фактур
-         ChairmanCommission = 7;            // председатель комиссии;
-         MemberCommission = 8;              // член комиссии;
-         PersonApprovedDocument = 21;       // лицо, в полномочия которого входит утверждение документа, оформляющего событие (факт хозяйственной жизни);
-         PersonConfirmedDocument = 22;      // лицо, в полномочия которого входит подтверждение оформленного события (факта хозяйственной жизни);
-         PersonAgreedOnDocument = 23;       // лицо, в полномочия которого входит согласование документа, оформляющего событие (факт хозяйственной жизни);
-         PersonOtherPower = 29;             // лицо с иными полномочиями;
+         InvoiceSigner = 0;
+         PersonMadeOperation = 1;
+         MadeAndSignOperation = 2;
+         PersonDocumentedOperation = 3;
+         MadeOperationAndSignedInvoice = 4;
+         MadeAndResponsibleForOperationAndSignedInvoice = 5;
+         ResponsibleForOperationAndSignerForInvoice = 6;
+         ChairmanCommission = 7;
+         MemberCommission = 8;
+         PersonApprovedDocument = 21;
+         PersonConfirmedDocument = 22;
+         PersonAgreedOnDocument = 23;
+         PersonOtherPower = 29;
      }
-     
+
      enum SignerStatus {
-        SellerEmployee = 1;             // Работник организации продавца товаров (работ, услуг, имущественных прав);
-        InformationCreatorEmployee = 2; // Работник организации - составителя информации продавца;
-        OtherOrganizationEmployee = 3;  // Работник иной уполномоченной организации;
-        AuthorizedPerson= 4;            // Уполномоченное физическое лицо (в том числе индивидуальный предприниматель)
-        BuyerEmployee = 5;                   // Работник организации - покупателя (для документов в формате приказа №820);
-        InformationCreatorBuyerEmployee = 6; // Работник организации - составителя файла обмена информации покупателя, если составитель файла обмена информации покупателя не является покупателем (для документов в формате приказа №820 и №423)
+        SellerEmployee = 1;
+        InformationCreatorEmployee = 2;
+        OtherOrganizationEmployee = 3;
+        AuthorizedPerson= 4;
+        BuyerEmployee = 5;
+        InformationCreatorBuyerEmployee = 6;
     }
 
-Структура данных *ExtendedSignerToPost* используется для записи данных о подписанте в базу данных и содержит следующие поля:
+- ``JobTitle`` — должность подписанта.
+- ``RegistrationCertificate`` — реквизиты свидетельства о регистрации индивидуального предпринимателя.
+- ``SignerType`` — тип подписанта. Необязательное поле. По умолчанию принимает значение ``LegalEntity``. Принимает значения из перечисления ``SignerType``:
 
--  *JobTitle* - должность подписанта.    
+	- ``LegalEntity`` — представитель юридического лица;
+	- ``IndividualEntity`` — индивидуальный предприниматель;
+	- ``PhysicalPerson`` — физическое лицо.
 
--  *RegistrationCertificate* - реквизиты свидетельства о регистрации индивидуального предпринимателя (необязательно).
+- ``SignerInfo`` — иные сведения, идентифицирующие подписанта.
 
--  *SignerType* - ТИП подписанта: индивидуальный предприниматель, юридическое или физическое лицо
+- ``SignerPowers`` — область полномочий подписанта, принимает значения из перечисления ``SignerPowers``:
 
--  *SignerInfo* - иные сведения, идентифицируеющие подписанта.
+	- ``InvoiceSigner`` — лицо, ответственное за подписание счетов-фактур;
+	- ``PersonMadeOperation`` — лицо, совершившее сделку, операцию;
+	- ``MadeAndSignOperation`` — лицо, совершившее сделку, операцию и ответственное за её оформление;
+	- ``PersonDocumentedOperation`` — лицо, ответственное за оформление свершившегося события;
+	- ``MadeOperationAndSignedInvoice`` — лицо, совершившее сделку, операцию и ответственное за подписание счетов-фактур;
+	- ``MadeAndResponsibleForOperationAndSignedInvoice`` — лицо, совершившее сделку, операцию и ответственное за её оформление и за подписание счетов-фактур;
+	- ``ResponsibleForOperationAndSignerForInvoice`` — лицо, ответственное за оформление свершившегося события и за подписание счетов-фактур;
+	- ``ChairmanCommission`` — председатель комиссии;
+	- ``MemberCommission`` — член комиссии;
+	- ``PersonApprovedDocument`` — лицо, в полномочия которого входит утверждение документа, оформляющего событие (факт хозяйственной жизни);
+	- ``PersonConfirmedDocument`` — лицо, в полномочия которого входит подтверждение оформленного события (факта хозяйственной жизни);
+	- ``PersonAgreedOnDocument``— лицо, в полномочия которого входит согласование документа, оформляющего событие (факт хозяйственной жизни);
+	- ``PersonOtherPower`` — лицо с иными полномочиями.
 
--  *SignerPowers* - область полномочий подписанта. Указывается из предложенного списка.
+- ``SignerStatus`` — статус подписанта. Принимает значения из перечисления ``SignerStatus``:
 
--  *SignerStatus* - статус подписанта. Указывается из предложенного списка.
+	- ``SellerEmployee`` — работник организации — продавца товаров, работ, услуг, имущественных прав;
+	- ``InformationCreatorEmployee`` — работник организации — составителя информации продавца;
+	- ``OtherOrganizationEmployee`` — работник иной уполномоченной организации;
+	- ``AuthorizedPerson`` — уполномоченное физическое лицо, в том числе индивидуальный предприниматель;
+	- ``BuyerEmployee`` — работник организации — покупателя. Используется для документов в формате приказа №820;
+	- ``InformationCreatorBuyerEmployee`` — работник организации — составителя файла обмена информации покупателя, если составитель файла обмена информации покупателя не является покупателем. Используется для документов в формате приказов №820 и №423.
 
--  *SignerPowersBase* - основания полномочий (доверия) подписанта. Обязателен, если SignerStatus = 4, "уполномоченное физическое лицо"
+- ``SignerPowersBase`` — основания полномочий подписанта. Обязательно, если ``SignerStatus = 4``.
 
--  *SignerOrgPowersBase* - Основания полномочий (доверия) организации. Обязателен, если SignerStatus = 3, "работник иной уполномоченной организации""
+- ``SignerOrgPowersBase`` — основания полномочий организации. Обязательно, если ``SignerStatus = 3``.
