@@ -7,7 +7,7 @@
 
 #. Подготовьте две тестовые организации:
 
-	#. Создайте два тестовых ящика с помощью `формы <https://diadoc-widget.kontur.ru/easyregistration/test>`__.
+	#. Создайте два тестовых ящика с помощью `формы <https://diadoc.kontur.ru/easyregistration>`__.
 	#. `Добавьте ящики в контрагенты <https://support.kontur.ru/pages/viewpage.action?pageId=83854105>`__ друг к другу с помощью веб-интерфейса Диадока .
 
 #. :doc:`Авторизуйтесь в системе <../Authorization>`, чтобы получить авторизационный токен.
