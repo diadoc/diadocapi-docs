@@ -1,7 +1,8 @@
 UniversalTransferDocumentBuyerTitleInfo 
 =======================================
 
-.. warning:: Эта структура использовалась в методах :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`, :doc:`../../http/utd/ParseUniversalTransferDocumentBuyerTitleXml` и :doc:`../../http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml`, которые устарели с 1 октября 2021 года.
+.. warning::
+	Структура используется устаревшими методами :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`, :doc:`../../http/utd/ParseUniversalTransferDocumentBuyerTitleXml` и :doc:`../../http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml`.
 
 .. code-block:: protobuf
 

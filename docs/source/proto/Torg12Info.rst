@@ -1,6 +1,9 @@
 Torg12Info
 ==========
 
+.. warning::
+	Структура используется устаревшим методом :doc:`../http/GenerateTorg12XmlForSeller`.
+
 .. code-block:: protobuf
 
     // титул продавца

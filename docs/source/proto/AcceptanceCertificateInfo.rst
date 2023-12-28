@@ -1,6 +1,9 @@
 AcceptanceCertificateInfo
 =========================
 
+.. warning::
+	Структура используется устаревшим методом :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`.
+
 .. code-block:: protobuf
 
     // титул исполнителя

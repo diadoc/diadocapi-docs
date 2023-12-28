@@ -1,6 +1,9 @@
 InvoiceCorrectionInfo
 =====================
 
+.. warning::
+	Структура используется устаревшим методом :doc:`../http/GenerateInvoiceXml`.
+
 .. code-block:: protobuf
 
     message InvoiceCorrectionInfo {
