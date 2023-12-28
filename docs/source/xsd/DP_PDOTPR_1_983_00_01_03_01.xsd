@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by SKS (GNIVC FNS RF) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:usch="http://www.unisoftware.ru/schematron-extensions" xmlns:sql="urn:schemas-microsoft-com:mapping-schema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Файл">
+		<xs:annotation>
+			<!---*******************************************************************************************************************************************************************************-->
+			<xs:appinfo>
+				<sch:pattern name="Проверка имени файла на соответствие значению атрибута @ИдФайл">
+					<sch:rule context="Файл">
+						<!--Проверка имени файла на соответствие ИдФайл-->
+						<sch:assert test="usch:getFileName() = @ИдФайл">
+							<usch:error code="0400400007" path="@ИдФайл" value-of-select="@ИдФайл" doc-id-path="usch:getFileName()" doc-id-caption="Файл">Имя файла обмена "<usch:value-of select="usch:getFileName()"/>" не совпадает со значением элемента ИдФайл "<usch:value-of select="@ИдФайл"/>"</usch:error>
+						</sch:assert>
+					</sch:rule>
+				</sch:pattern>
+			</xs:appinfo>
+			<!---*******************************************************************************************************************************************************************************-->
+			<xs:documentation>Подтверждение даты отправки документа</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Документ">
+					<xs:annotation>
+						<xs:documentation>Состав и структура документа</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ОперЭДО">
+								<xs:annotation>
+									<xs:documentation>Оператор электронного документооборота, подтвердивший дату отправки</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="НаимОрг" use="required">
+										<xs:annotation>
+											<xs:documentation>Наименование оператора электронного документооборота</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="1000"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ИННЮЛ" type="ИННЮЛТип" use="required">
+										<xs:annotation>
+											<xs:documentation>ИНН организации</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ИдОперЭДО" use="required">
+										<xs:annotation>
+											<xs:documentation>Идентификатор оператора электронного документооборота</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:length value="3"/>
+												<xs:pattern value="[A-Za-z0-9@.-]{3}"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="СведПодтв">
+								<xs:annotation>
+									<xs:documentation>Сведения подтверждения</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="СведОтпрФайл">
+											<xs:annotation>
+												<xs:documentation>Сведения по отправленному файлу</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ЭПОтпрФайл" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Электронная подпись под отправленным файлом</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="ИмяОтпрФайла" use="required">
+													<xs:annotation>
+														<xs:documentation>Имя отправленного файла</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="255"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="ДатаОтпр" type="ДатаТип" use="required">
+										<xs:annotation>
+											<xs:documentation>Дата отправки</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ВремяОтпр" type="ВремяТип" use="required">
+										<xs:annotation>
+											<xs:documentation>Время отправки</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="СвОтпрДок" type="УчастЭДОТип">
+								<xs:annotation>
+									<!---*************************************************************************************************************************************************************-->
+									<xs:appinfo>
+										<sch:pattern name="Наличие элемента СтрРег в зависимости от значения элемента ИдСтат">
+											<sch:rule context="СвОтпрДок">
+												<!--Контроль наличия элемента СтрРег в зависимости от от значения элемента ИдСтат-->
+												<sch:assert test="usch:iif( 
+						СвИнУчастНеУч/@ИдСтат='ЮЛ'   ,
+						count(СвИнУчастНеУч/@СтрРег)!=0  , 
+						( count(СвИнУчастНеУч/@СтрРег)!=0  or  count(СвИнУчастНеУч/@СтрРег)=0 ) 
+						)">
+													<usch:error code="0400400007" path="СвИнУчастНеУч/@СтрРег" value-of-select="count(СвИнУчастНеУч/@СтрРег)"> Не выполнено условие присутствия (отсутствия) элемента СтрРег при значении элемента ИдСтат, равном "<usch:value-of select="СвИнУчастНеУч/@ИдСтат"/>". </usch:error>
+												</sch:assert>
+											</sch:rule>
+										</sch:pattern>
+									</xs:appinfo>
+									<!---*************************************************************************************************************************************************************-->
+									<!---*************************************************************************************************************************************************************-->
+									<xs:appinfo>
+										<sch:pattern name="Наличие элемента Наим в зависимости от значения элемента ИдСтат">
+											<sch:rule context="СвОтпрДок">
+												<!--Контроль наличия элемента Наим в зависимости от от значения элемента ИдСтат-->
+												<sch:assert test="usch:iif( 
+						СвИнУчастНеУч/@ИдСтат='ФЛ'   ,
+						count(СвИнУчастНеУч/@Наим)!=0  , 
+						( count(СвИнУчастНеУч/@Наим)!=0  or  count(СвИнУчастНеУч/@Наим)=0 ) 
+						)">
+													<usch:error code="0400400007" path="СвИнУчастНеУч/@Наим" value-of-select="count(СвИнУчастНеУч/@Наим)"> Не выполнено условие присутствия (отсутствия) элемента Наим при значении элемента ИдСтат, равном "<usch:value-of select="СвИнУчастНеУч/@ИдСтат"/>". </usch:error>
+												</sch:assert>
+											</sch:rule>
+										</sch:pattern>
+									</xs:appinfo>
+									<!---*************************************************************************************************************************************************************-->
+									<!---*************************************************************************************************************************************************************-->
+									<xs:appinfo>
+										<sch:pattern name="Наличие элемента КодНПРег в зависимости от значения элемента ИдСтат и наличия элементов Наим и ИныеСвед">
+											<sch:rule context="СвОтпрДок">
+												<!--Контроль наличия элемента КодНПРег в зависимости от от значения элемента ИдСтат и наличия элементов Наим и ИныеСвед-->
+												<sch:assert test="usch:iif( 
+						count(СвИнУчастНеУч)!=0  and  СвИнУчастНеУч/@ИдСтат='ЮЛ'  and  count(СвИнУчастНеУч/@Наим)=0  and  count(СвИнУчастНеУч/@ИныеСвед)=0  ,
+						count(СвИнУчастНеУч/@КодНПРег)!=0  , 
+						( count(СвИнУчастНеУч/@КодНПРег)!=0  or  count(СвИнУчастНеУч/@КодНПРег)=0 ) 
+						)">
+													<usch:error code="0400400007" path="СвИнУчастНеУч/@КодНПРег" value-of-select="count(СвИнУчастНеУч/@КодНПРег)"> Не выполнено условие присутствия (отсутствия) элемента КодНПРег при значении элемента ИдСтат, равном "<usch:value-of select="СвИнУчастНеУч/@ИдСтат"/>"  и наличии (отсутсвии) элементов Наим и ИныеСвед. </usch:error>
+												</sch:assert>
+											</sch:rule>
+										</sch:pattern>
+									</xs:appinfo>
+									<!---*************************************************************************************************************************************************************-->
+									<!---*************************************************************************************************************************************************************-->
+									<xs:appinfo>
+										<sch:pattern name="Наличие элемента ИныеСвед в зависимости от значения элемента ИдСтат и наличия элементов Наим и КодНПРег">
+											<sch:rule context="СвОтпрДок">
+												<!--Контроль наличия элемента ИныеСвед в зависимости от от значения элемента ИдСтат и наличия элементов Наим и КодНПРег-->
+												<sch:assert test="usch:iif( 
+						count(СвИнУчастНеУч)!=0  and  СвИнУчастНеУч/@ИдСтат='ЮЛ'  and  count(СвИнУчастНеУч/@Наим)=0  and  count(СвИнУчастНеУч/@КодНПРег)=0  ,
+						count(@ИныеСвед)!=0  , 
+						( count(СвИнУчастНеУч/@ИныеСвед)!=0  or  count(СвИнУчастНеУч/@ИныеСвед)=0 ) 
+						)">
+													<usch:error code="0400400007" path="СвИнУчастНеУч/@ИныеСвед" value-of-select="count(СвИнУчастНеУч/@ИныеСвед)"> Не выполнено условие присутствия (отсутствия) элемента ИныеСвед при значении элемента ИдСтат, равном "<usch:value-of select="СвИнУчастНеУч/@ИдСтат"/>" и наличии (отсутсвии) элементов Наим и КодНПРег. </usch:error>
+												</sch:assert>
+											</sch:rule>
+										</sch:pattern>
+									</xs:appinfo>
+									<!---*************************************************************************************************************************************************************-->
+									<xs:documentation>Сведения об отправителе документа</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="СвПолДок" type="УчастЭДОТип">
+								<xs:annotation>
+									<!---*************************************************************************************************************************************************************-->
+									<xs:appinfo>
+										<sch:pattern name="Наличие элемента СтрРег в зависимости от значения элемента ИдСтат">
+											<sch:rule context="СвПолДок">
+												<!--Контроль наличия элемента СтрРег в зависимости от от значения элемента ИдСтат-->
+												<sch:assert test="usch:iif( 
+						СвИнУчастНеУч/@ИдСтат='ЮЛ'   ,
+						count(СвИнУчастНеУч/@СтрРег)!=0  , 
+						( count(СвИнУчастНеУч/@СтрРег)!=0  or  count(СвИнУчастНеУч/@СтрРег)=0 ) 
+						)">
+													<usch:error code="0400400007" path="СвИнУчастНеУч/@СтрРег" value-of-select="count(СвИнУчастНеУч/@СтрРег)"> Не выполнено условие присутствия (отсутствия) элемента СтрРег при значении элемента ИдСтат, равном "<usch:value-of select="СвИнУчастНеУч/@ИдСтат"/>". </usch:error>
+												</sch:assert>
+											</sch:rule>
+										</sch:pattern>
+									</xs:appinfo>
+									<!---*************************************************************************************************************************************************************-->
+									<!---*************************************************************************************************************************************************************-->
+									<xs:appinfo>
+										<sch:pattern name="Наличие элемента Наим в зависимости от значения элемента ИдСтат">
+											<sch:rule context="СвПолДок">
+												<!--Контроль наличия элемента Наим в зависимости от от значения элемента ИдСтат-->
+												<sch:assert test="usch:iif( 
+						СвИнУчастНеУч/@ИдСтат='ФЛ'   ,
+						count(СвИнУчастНеУч/@Наим)!=0  , 
+						( count(СвИнУчастНеУч/@Наим)!=0  or  count(СвИнУчастНеУч/@Наим)=0 ) 
+						)">
+													<usch:error code="0400400007" path="СвИнУчастНеУч/@Наим" value-of-select="count(СвИнУчастНеУч/@Наим)"> Не выполнено условие присутствия (отсутствия) элемента Наим при значении элемента ИдСтат, равном "<usch:value-of select="СвИнУчастНеУч/@ИдСтат"/>". </usch:error>
+												</sch:assert>
+											</sch:rule>
+										</sch:pattern>
+									</xs:appinfo>
+									<!---*************************************************************************************************************************************************************-->
+									<!---*************************************************************************************************************************************************************-->
+									<xs:appinfo>
+										<sch:pattern name="Наличие элемента РегНомер в зависимости от значения элемента ИдСтат и наличия элементов Наим и ИныеСвед">
+											<sch:rule context="СвПолДок">
+												<!--Контроль наличия элемента РегНомер в зависимости от от значения элемента ИдСтат и наличия элементов Наим и ИныеСвед-->
+												<sch:assert test="usch:iif( 
+						count(СвИнУчастНеУч)!=0  and  СвИнУчастНеУч/@ИдСтат='ЮЛ'  and  count(СвИнУчастНеУч/@Наим)=0  and  count(СвИнУчастНеУч/@ИныеСвед)=0  ,
+						count(СвИнУчастНеУч/@РегНомер)!=0  , 
+						( count(СвИнУчастНеУч/@РегНомер)!=0  or  count(СвИнУчастНеУч/@РегНомер)=0 ) 
+						)">
+													<usch:error code="0400400007" path="СвИнУчастНеУч/@РегНомер" value-of-select="count(СвИнУчастНеУч/@РегНомер)"> Не выполнено условие присутствия (отсутствия) элемента РегНомер при значении элемента ИдСтат, равном "<usch:value-of select="СвИнУчастНеУч/@ИдСтат"/>"  и наличии (отсутсвии) элементов Наим и ИныеСвед. </usch:error>
+												</sch:assert>
+											</sch:rule>
+										</sch:pattern>
+									</xs:appinfo>
+									<!---*************************************************************************************************************************************************************-->
+									<!---*************************************************************************************************************************************************************-->
+									<xs:appinfo>
+										<sch:pattern name="Наличие элемента ИныеСвед в зависимости от значения элемента ИдСтат и наличия элементов Наим и РегНомер">
+											<sch:rule context="СвПолДок">
+												<!--Контроль наличия элемента ИныеСвед в зависимости от от значения элемента ИдСтат и наличия элементов Наим и РегНомер-->
+												<sch:assert test="usch:iif( 
+						count(СвИнУчастНеУч)!=0  and  СвИнУчастНеУч/@ИдСтат='ЮЛ'  and  count(СвИнУчастНеУч/@Наим)=0  and  count(СвИнУчастНеУч/@РегНомер)=0  ,
+						count(@ИныеСвед)!=0  , 
+						( count(СвИнУчастНеУч/@ИныеСвед)!=0  or  count(СвИнУчастНеУч/@ИныеСвед)=0 ) 
+						)">
+													<usch:error code="0400400007" path="СвИнУчастНеУч/@ИныеСвед" value-of-select="count(СвИнУчастНеУч/@ИныеСвед)"> Не выполнено условие присутствия (отсутствия) элемента ИныеСвед при значении элемента ИдСтат, равном "<usch:value-of select="СвИнУчастНеУч/@ИдСтат"/>" и наличии (отсутсвии) элементов Наим и РегНомер. </usch:error>
+												</sch:assert>
+											</sch:rule>
+										</sch:pattern>
+									</xs:appinfo>
+									<!---*************************************************************************************************************************************************************-->
+									<xs:documentation>Сведения о получателе документа</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Подписант" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Сведения о лице, подписавшем документ в электронной форме</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ФИО" type="ФИОТип">
+											<xs:annotation>
+												<xs:documentation>Фамилия, имя, отчество (при наличии)</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Должность" use="required">
+										<xs:annotation>
+											<xs:documentation>Должность лица, подписавшего документ</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="1000"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="КНД" use="required">
+							<xs:annotation>
+								<xs:documentation>Код формы по КНД</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="КНДТип">
+									<xs:enumeration value="1115111"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдФайл" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор файла</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ВерсПрог" use="required">
+				<xs:annotation>
+					<xs:documentation>Версия программы, с помощью которой сформирован файл</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="40"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ВерсФорм" use="required">
+				<xs:annotation>
+					<xs:documentation>Версия формата</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="5"/>
+						<xs:enumeration value="1.03"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="УчастЭДОТип">
+		<xs:annotation>
+			<xs:documentation>Сведения об участнике электронного документооборота</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="ЮЛ" type="ЮЛТип">
+				<xs:annotation>
+					<xs:documentation>Сведения об организации</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ИП" type="ФЛТип">
+				<xs:annotation>
+					<xs:documentation>Сведения об индивидуальном предпринимателе</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ФЛ" type="ФЛТип">
+				<xs:annotation>
+					<xs:documentation>Сведения о физическом лице</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="СвИнУчастНеУч" type="СвИнУчЭДОНеУчТип">
+				<xs:annotation>
+					<xs:documentation>Сведения об иностранном лице, не состоящем на учете в налоговых органах в качестве налогоплательщика</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="ИдУчастЭДО" use="required">
+			<xs:annotation>
+				<xs:documentation>Идентификатор участника электронного документооборота в рамках выставления и получения первичных и иных документов, включая счета-фактуры</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="4"/>
+					<xs:maxLength value="46"/>
+					<xs:pattern value="[A-Za-z0-9@.-]{4,46}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="СвИнУчЭДОНеУчТип">
+		<xs:annotation>
+			<xs:documentation>Сведения об иностранном лице, не состоящем на учете в налоговых органах в качестве налогоплательщика</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="ИдСтат" use="required">
+			<xs:annotation>
+				<xs:documentation>Идентификация статуса</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="25"/>
+					<xs:enumeration value="ЮЛ"/>
+					<xs:enumeration value="ФЛ"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="СтрРег" type="ОКСМТип" use="optional">
+			<xs:annotation>
+				<xs:documentation>Страна регистрации иностранного лица</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Наим" use="optional">
+			<xs:annotation>
+				<xs:documentation>Наименование юридического лица полное/Фамилия, имя, отчество (при наличии) физического лица</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="1000"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="КодНПРег" use="optional">
+			<xs:annotation>
+				<xs:documentation>Код налогоплательщика в стране регистрации (инкорпорации) или аналог</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="50"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ИныеСвед" use="optional">
+			<xs:annotation>
+				<xs:documentation>Иные сведения об иностранном лице</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="255"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ЮЛТип">
+		<xs:annotation>
+			<xs:documentation>Сведения об организации</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="НаимОрг" use="required">
+			<xs:annotation>
+				<xs:documentation>Наименование организации </xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="1000"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ИННЮЛ" type="ИННЮЛТип" use="required">
+			<xs:annotation>
+				<xs:documentation>ИНН организации</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="КПП" type="КППТип" use="required">
+			<xs:annotation>
+				<xs:documentation>КПП </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ФЛТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о физическом лице, в том числе индивидуальном предпринимателе</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ФИО" type="ФИОТип">
+				<xs:annotation>
+					<xs:documentation>Фамилия, имя, отчество (при наличии)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="ИННФЛ" type="ИННФЛТип" use="required">
+			<xs:annotation>
+				<xs:documentation>ИНН физического лица, в том числе индивидуального предпринимателя</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ФИОТип">
+		<xs:annotation>
+			<xs:documentation>Фамилия, имя, отчество (при наличии) физического лица</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Фамилия" use="required">
+			<xs:annotation>
+				<xs:documentation>Фамилия</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="60"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Имя" use="required">
+			<xs:annotation>
+				<xs:documentation>Имя</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="60"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Отчество" use="optional">
+			<xs:annotation>
+				<xs:documentation>Отчество (при наличии)</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="60"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="ИННФЛТип">
+		<xs:annotation>
+			<xs:documentation>Идентификационный номер налогоплательщика - физического лица</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="12"/>
+			<xs:pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ИННЮЛТип">
+		<xs:annotation>
+			<xs:documentation>Идентификационный номер налогоплательщика - организации</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="10"/>
+			<xs:pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="КППТип">
+		<xs:annotation>
+			<xs:documentation>Код причины постановки на учет (КПП) - 5 и 6 знаки от 0-9 и A-Z</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="9"/>
+			<xs:pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})([0-9]{2})([0-9A-Z]{2})([0-9]{3})"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="КНДТип">
+		<xs:annotation>
+			<xs:documentation>Код из Классификатора налоговой документации</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="7"/>
+			<xs:pattern value="[0-9]{7}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ОКСМТип">
+		<xs:annotation>
+			<xs:documentation>Код из Общероссийского классификатора стран мира</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+			<xs:pattern value="[0-9]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ВремяТип">
+		<xs:annotation>
+			<xs:documentation>Время в формате ЧЧ.ММ.СС</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="8"/>
+			<xs:pattern value="([0-1]{1}[0-9]{1}|2[0-3]{1})\.([0-5]{1}[0-9]{1})\.([0-5]{1}[0-9]{1})"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ДатаТип">
+		<xs:annotation>
+			<xs:documentation>Дата в формате ДД.ММ.ГГГГ (01.01.1900 - 31.12.2099)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="10"/>
+			<xs:pattern value="((((0[1-9]{1}|1[0-9]{1}|2[0-8]{1})\.(0[1-9]{1}|1[0-2]{1}))|((29|30)\.(01|0[3-9]{1}|1[0-2]{1}))|(31\.(01|03|05|07|08|10|12)))\.((19|20)[0-9]{2}))|(29\.02\.((19|20)(((0|2|4|6|8)(0|4|8))|((1|3|5|7|9)(2|6)))))"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
