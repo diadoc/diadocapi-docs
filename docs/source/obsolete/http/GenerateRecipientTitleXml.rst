@@ -2,7 +2,7 @@ GenerateRecipientTitleXml
 ==========================
 
 .. warning::
-	Метод устарел. Для генерации документов используйте метод :doc:`GenerateTitleXml`.
+	Метод устарел. Для генерации документов используйте метод :doc:`../../http/GenerateTitleXml`.
 
 .. http:post:: /GenerateRecipientTitleXml
 
@@ -11,9 +11,9 @@ GenerateRecipientTitleXml
 	:queryparam senderTitleMessageId: идентификатор сообщения, содержащего соответствующий титул продавца.
 	:queryparam senderTitleAttachmentId: идентификатор сущности, представляющей титул продавца, для которого требуется изготовить титул заказчика.
 
-	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
+	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
 
-	:request Body: Тело запроса должно содержать заполненный XML-файл, соответствующий XSD-схеме контракта для генерации титула получателя данного типа документа. XSD-схема контракта, необходимого для генерации титула, может быть получена с помощью ссылки, доступной в поле *UserDataXsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, который можно получить с помощью метода :doc:`GetDocumentTypes`.
+	:request Body: Тело запроса должно содержать заполненный XML-файл, соответствующий XSD-схеме контракта для генерации титула получателя данного типа документа. XSD-схема контракта, необходимого для генерации титула, может быть получена с помощью ссылки, доступной в поле *UserDataXsdUrl* контракта :doc:`DocumentTitle <../../proto/DocumentTypeDescription>`, который можно получить с помощью метода :doc:`../../http/GetDocumentTypes`.
 	
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.

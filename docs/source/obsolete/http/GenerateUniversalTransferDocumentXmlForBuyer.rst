@@ -2,7 +2,7 @@ GenerateUniversalTransferDocumentXmlForBuyer
 =============================================
 
 .. warning::
-	Метод устарел. Для генерации документов используйте метод :doc:`../GenerateTitleXml`.
+	Метод устарел. Для генерации документов используйте метод :doc:`../../http/GenerateTitleXml`.
 
 Имя ресурса: **/GenerateUniversalTransferDocumentXmlForBuyer**
 
