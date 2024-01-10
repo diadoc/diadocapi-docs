@@ -36,11 +36,11 @@ Signer
 
 		Необязательно в методах:
 
-		- :doc:`../http/GenerateInvoiceXml`
-		- :doc:`../http/GenerateTorg12XmlForSeller`
-		- :doc:`../http/GenerateTorg12XmlForBuyer`
-		- :doc:`../http/GenerateAcceptanceCertificateXmlForSeller`
-		- :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`
+		- :doc:`../obsolete/http/GenerateInvoiceXml`
+		- :doc:`../obsolete/http/GenerateTorg12XmlForSeller`
+		- :doc:`../obsolete/http/GenerateTorg12XmlForBuyer`
+		- :doc:`../obsolete/http/GenerateAcceptanceCertificateXmlForSeller`
+		- :doc:`../obsolete/http/GenerateAcceptanceCertificateXmlForBuyer`
 
 	- ``Inn`` - ИНН юридического лица подписанта или индивидуального предпринимателя.
 	- ``SoleProprietorRegistrationCertificate`` — реквизиты свидетельства о регистрации индивидуального предпринимателя. Необязательное поле.
