@@ -2,7 +2,7 @@ UniversalCorrectionDocumentSellerTitleInfo
 ==========================================
 
 .. warning::
-	Структура используется устаревшими методами :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../../http/utd/ParseUniversalCorrectionDocumentSellerTitleXml`.
+	Структура используется устаревшими методами :doc:`../http/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../http/ParseUniversalCorrectionDocumentSellerTitleXml`.
 
 .. code-block:: protobuf
 
@@ -81,15 +81,15 @@ UniversalCorrectionDocumentSellerTitleInfo
     }
 
 
-Структура данных *UniversalCorrectionDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForSeller` с параметром ``correction = true``.
+Структура данных *UniversalCorrectionDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../http/GenerateUniversalTransferDocumentXmlForSeller` с параметром ``correction = true``.
 
 При заполнении структуры *UniversalCorrectionDocumentSellerTitleInfo* нужно иметь в виду:
 
 -  Первичные документы, к котором выставляются корректировочные документы заполняется в виде структуры *InvoiceForCorrectionInfo*,
 
--  Реквизиты продавца (*UniversalCorrectionDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalCorrectionDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
+-  Реквизиты продавца (*UniversalCorrectionDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalCorrectionDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 
--  Реквизиты подписанта документа *UniversalCorrectionDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`ExtendedSigner`.
+-  Реквизиты подписанта документа *UniversalCorrectionDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 

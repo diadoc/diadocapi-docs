@@ -94,24 +94,24 @@ TovTorgInfo
     }
 
 
-Структура данных *TovTorgSellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForSeller` с параметром `documentVersion=tovtorg_05_01_02`.
+Структура данных *TovTorgSellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForSeller` с параметром `documentVersion = tovtorg_05_01_02`.
 
 При заполнении структуры *TovTorgSellerTitleInfo* нужно иметь в виду:
 
--  Обязательные поля *TovTorgSellerTitleInfo.Seller* и *TovTorgSellerTitleInfo.Buyer* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`ExtendedOrganizationInfo <utd/ExtendedOrganizationInfo>`.
+-  Обязательные поля *TovTorgSellerTitleInfo.Seller* и *TovTorgSellerTitleInfo.Buyer* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`ExtendedOrganizationInfo <../../proto/utd/ExtendedOrganizationInfo>`.
 
--  Реквизиты грузоотправителя *TovTorgSellerTitleInfo.Shipper*, грузополучателя *TovTorgSellerTitleInfo.Consignee* и перевозчика *TovTorgSellerTitleInfo.Carrier* заполняются в виде структуры данных :doc:`utd/ExtendedOrganizationInfo`.
+-  Реквизиты грузоотправителя *TovTorgSellerTitleInfo.Shipper*, грузополучателя *TovTorgSellerTitleInfo.Consignee* и перевозчика *TovTorgSellerTitleInfo.Carrier* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedOrganizationInfo`.
 
--  Реквизиты подписантов накладной *TovTorgSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`utd/ExtendedSigner`.
+-  Реквизиты подписантов накладной *TovTorgSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 
--  Правила заполнения структуры *TovTorgSellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_TOVTORGPR_1_992_01_05_01_04.xsd>`.
+-  Правила заполнения структуры *TovTorgSellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_TOVTORGPR_1_992_01_05_01_04.xsd>`.
 
 Структура данных *TovTorgBuyerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForBuyer` с параметром `documentVersion=tovtorg_05_01_02`.
 
 При заполнении структуры *TovTorgBuyerTitleInfo* нужно иметь в виду:
 
--  Реквизиты подписантов накладной *TovTorgBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`utd/ExtendedSigner`.
+-  Реквизиты подписантов накладной *TovTorgBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 
--  Реквизиты должностных лиц *TovTorgBuyerTitleInfo.Employee* или *TovTorgBuyerTitleInfo.OtherIssuer* заполняются в виде структуры данных :doc:`Employee <utd/UniversalTransferDocumentSellerTitleInfo>` или :doc:`OtherIssuer <utd/UniversalTransferDocumentSellerTitleInfo>` соответственно.
+-  Реквизиты должностных лиц *TovTorgBuyerTitleInfo.Employee* или *TovTorgBuyerTitleInfo.OtherIssuer* заполняются в виде структуры данных :doc:`Employee <../proto/UniversalTransferDocumentSellerTitleInfo>` или :doc:`OtherIssuer <../proto/UniversalTransferDocumentSellerTitleInfo>` соответственно.
 
--  Правила заполнения структуры *TovTorgBuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_TOVTORGPOK_1_992_02_05_01_04.xsd>`.
+-  Правила заполнения структуры *TovTorgBuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_TOVTORGPOK_1_992_02_05_01_04.xsd>`.

@@ -2,7 +2,7 @@ UniversalTransferDocumentBuyerTitleInfo
 =======================================
 
 .. warning::
-	Структура используется устаревшими методами :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForBuyer`, :doc:`../../http/utd/ParseUniversalTransferDocumentBuyerTitleXml` и :doc:`../../http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml`.
+	Структура используется устаревшими методами :doc:`../http/GenerateUniversalTransferDocumentXmlForBuyer`, :doc:`../http/ParseUniversalTransferDocumentBuyerTitleXml` и :doc:`../http/ParseUniversalCorrectionDocumentBuyerTitleXml`.
 
 .. code-block:: protobuf
 
@@ -18,11 +18,11 @@ UniversalTransferDocumentBuyerTitleInfo
         repeated ExtendedSigner Signers = 9; // Подписант
     }
     
-Структура данных *UniversalTransferDocumentBuyerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForBuyer` в формате УПД и УКД.
+Структура данных *UniversalTransferDocumentBuyerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../http/GenerateUniversalTransferDocumentXmlForBuyer` в формате УПД и УКД.
 
 При заполнении структуры *UniversalTransferDocumentBuyerTitleInfo* нужно иметь в виду:
 
--  Реквизиты подписанта счета-фактуры *UniversalTransferDocumentBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`ExtendedSigner`.
+-  Реквизиты подписанта счета-фактуры *UniversalTransferDocumentBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 

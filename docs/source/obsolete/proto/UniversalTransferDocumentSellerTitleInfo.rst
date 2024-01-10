@@ -2,7 +2,7 @@ UniversalTransferDocumentSellerTitleInfo
 ========================================
 
 .. warning::
-	Структура используется устаревшими методами :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../../http/utd/ParseUniversalTransferDocumentSellerTitleXml`.
+	Структура используется устаревшими методами :doc:`../http/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../http/ParseUniversalTransferDocumentSellerTitleXml`.
 
 .. code-block:: protobuf
 
@@ -149,15 +149,15 @@ UniversalTransferDocumentSellerTitleInfo
     }
 
 
-Структура данных *UniversalTransferDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/utd/GenerateUniversalTransferDocumentXmlForSeller`. При заполнении структуры UniversalTransferDocumentSellerTitleInfo нужно иметь в виду:
+Структура данных *UniversalTransferDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../http/GenerateUniversalTransferDocumentXmlForSeller`. При заполнении структуры UniversalTransferDocumentSellerTitleInfo нужно иметь в виду:
 
--  Реквизиты продавца (*UniversalTransferDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalTransferDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
+-  Реквизиты продавца (*UniversalTransferDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalTransferDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedOrganizationInfo`.
 
--  Реквизиты грузоотправителя (*Shipper.OrgInfo*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`. Если проставлен флаг *Shipper.SameAsSeller*, то реквизиты грузоотправителя заполнять не нужно - будут использоваться соответствующие реквизиты продавца.
+-  Реквизиты грузоотправителя (*Shipper.OrgInfo*) заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedOrganizationInfo`. Если проставлен флаг *Shipper.SameAsSeller*, то реквизиты грузоотправителя заполнять не нужно - будут использоваться соответствующие реквизиты продавца.
 
--  Реквизиты грузополучателя (*UniversalTransferDocumentSellerTitleInfo.Consignee*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo <ExtendedOrganizationInfo>`.
+-  Реквизиты грузополучателя (*UniversalTransferDocumentSellerTitleInfo.Consignee*) заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedOrganizationInfo`.
 
--  Реквизиты подписанта документа *UniversalTransferDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`ExtendedSigner`.
+-  Реквизиты подписанта документа *UniversalTransferDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 

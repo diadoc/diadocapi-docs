@@ -2,9 +2,9 @@ BasicDocumentInfo
 =================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`Docflow API<../Docflow API>` — V3.
+	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
 
-Структура ``BasicDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>`:
+Структура ``BasicDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <../../proto/DocumentType>`:
 
 - ``XmlTorg12``,
 - ``XmlAcceptanceCertificate``,
@@ -33,4 +33,4 @@ BasicDocumentInfo
 .. rubric:: Смотри также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentInfo`.
+	- в структуре :doc:`../../proto/DocumentInfo`.

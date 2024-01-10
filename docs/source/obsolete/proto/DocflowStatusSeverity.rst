@@ -2,7 +2,7 @@ DocflowStatusSeverity
 =====================
 
 .. warning::
-	Этот параметр относится к устаревшей версии Docflow API. Мы рекомендуем использовать последнюю версию :doc:`Docflow API <../Docflow API>` — V3.
+	Перечисление относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
 
 .. code-block:: protobuf
 

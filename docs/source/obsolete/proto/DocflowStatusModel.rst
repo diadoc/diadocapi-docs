@@ -2,7 +2,7 @@ DocflowStatusModel
 ==================
 
 .. warning::
-	Эта структура относится к устаревшей версии Docflow API. Мы рекомендуем использовать последнюю версию :doc:`Docflow API <../Docflow API>` — V3. В нее включена аналогичная структура :doc:`DocflowStatusModelV3`.
+	Структура относится к устаревшей версии Docflow API. Используйте структуру :doc:`../../proto/DocflowStatusModelV3` последней версии :doc:`../../Docflow API` — V3.
 
 .. code-block:: protobuf
 

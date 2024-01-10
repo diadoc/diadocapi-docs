@@ -75,9 +75,9 @@ InvoiceCorrectionInfo
 
 Структура данных InvoiceCorrectionInfo представляет исходные данные для формирования корректировочного счета-фактуры в XML-формате при помощи метода :doc:`../http/GenerateInvoiceXml`. При заполнении структуры InvoiceCorrectionInfo нужно иметь в виду:
 
--  Реквизиты продавца (InvoiceCorrectionInfo.Seller) и покупателя (InvoiceCorrectionInfo.Buyer) заполняются в виде структуры данных :doc:`DiadocOrganizationInfo <OrganizationInfo>`.
+-  Реквизиты продавца (InvoiceCorrectionInfo.Seller) и покупателя (InvoiceCorrectionInfo.Buyer) заполняются в виде структуры данных :doc:`DiadocOrganizationInfo <../../proto/OrganizationInfo>`.
 
--  Реквизиты подписанта счета-фактуры InvoiceCorrectionInfo.Signer заполняются в виде структуры данных :doc:`Signer`.
+-  Реквизиты подписанта счета-фактуры InvoiceCorrectionInfo.Signer заполняются в виде структуры данных :doc:`../../proto/Signer`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 
@@ -91,4 +91,4 @@ InvoiceCorrectionInfo
 
 -  В зависимости от значения поля InvoiceFormatVersion, из сериализованной структуры :doc:`InvoiceCorrectionInfo`  обрабатываются поля, соответствующие указанной версии (указаны в комментариях к полям).
 
--  Правила заполнения структуры InvoiceCorrectionInfo повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме, v5.02 <../xsd/ON_KORSFAKT_1_911_01_05_02_02.xsd>`.
+-  Правила заполнения структуры InvoiceCorrectionInfo повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме, v5.02 <../../xsd/ON_KORSFAKT_1_911_01_05_02_02.xsd>`.

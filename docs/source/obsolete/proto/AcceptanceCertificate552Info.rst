@@ -78,18 +78,18 @@ AcceptanceCertificate552Info
 
 При заполнении структуры *AcceptanceCertificate552SellerTitleInfo* нужно иметь в виду:
 
--  Обязательные поля *AcceptanceCertificate552SellerTitleInfo.Seller* и *AcceptanceCertificate552SellerTitleInfo.Buyer* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`ExtendedOrganizationInfo <utd/ExtendedOrganizationInfo>`.
+-  Обязательные поля *AcceptanceCertificate552SellerTitleInfo.Seller* и *AcceptanceCertificate552SellerTitleInfo.Buyer* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`ExtendedOrganizationInfo <../../proto/utd/ExtendedOrganizationInfo>`.
 
 -  Основания задаются в виде структуры данных :doc:`GroundInfo <TovTorgInfo>`.
 
--  Реквизиты подписантов накладной *AcceptanceCertificate552SellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`utd/ExtendedSigner`.
+-  Реквизиты подписантов накладной *AcceptanceCertificate552SellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 
--  Правила заполнения структуры *AcceptanceCertificate552SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_REZRUISP_1_990_01_05_01_02.xsd>`.
+-  Правила заполнения структуры *AcceptanceCertificate552SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_REZRUISP_1_990_01_05_01_02.xsd>`.
 
 Структура данных *AcceptanceCertificate552BuyerInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer` с параметром `documentVersion=rezru_05_01_01`.
 
 При заполнении структуры *AcceptanceCertificate552BuyerInfo* нужно иметь в виду:
 
--  Реквизиты подписантов накладной *AcceptanceCertificate552BuyerInfo.Signers* заполняются в виде структуры данных :doc:`utd/ExtendedSigner`.
+-  Реквизиты подписантов накладной *AcceptanceCertificate552BuyerInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 
--  Правила заполнения структуры *AcceptanceCertificate552BuyerInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../xsd/DP_REZRUZAK_1_990_02_05_01_01.xsd>`.
+-  Правила заполнения структуры *AcceptanceCertificate552BuyerInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_REZRUZAK_1_990_02_05_01_01.xsd>`.
