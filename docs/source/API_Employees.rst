@@ -16,7 +16,6 @@ HTTP-интерфейс
    http/GetEmployee
    http/GetEmployees
    http/GetMyEmployee
-   http/GetMyPermissions
    http/GetMyUser
    http/GetOrganizationUsers
    http/GetSubscriptions

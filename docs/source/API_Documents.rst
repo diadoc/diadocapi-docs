@@ -51,13 +51,8 @@ HTTP-интерфейс
    :maxdepth: 1
    :titlesonly:
 
-   proto/AcceptanceCertificateAttachment
-   proto/AcceptanceCertificate552Info
-   proto/AcceptanceCertificateInfo
-   proto/BasicDocumentAttachment
    proto/BilateralDocumentMetadata
    proto/Content_v2
-   proto/ContractAttachment
    proto/CustomDataPatch
    proto/Document
    proto/DocumentList
@@ -69,14 +64,11 @@ HTTP-интерфейс
    proto/DraftToSend
    proto/ForwardedDocument
    proto/LastOuterDocflow
-   proto/NonformalizedAttachment
    proto/NonformalizedDocumentMetadata
    proto/Official   
    proto/OuterDocflowInfo
    proto/PrepareDocumentsToSignRequest
    proto/PrepareDocumentsToSignResponse
-   proto/PriceListAttachment
-   proto/ReconciliationActAttachment
    proto/Resolution
    proto/ResolutionRequest
    proto/ResolutionRequestDenial
@@ -84,13 +76,7 @@ HTTP-интерфейс
    proto/ResolutionStatus
    proto/RevocationRequestInfo   
    proto/RoamingNotification
-   proto/ServiceDetailsAttachment
    proto/SignatureRejectionInfo
    proto/Signer
    proto/StructuredDataAttachment
-   proto/Torg12Info
-   proto/TovTorgInfo
-   proto/Torg13Attachment
-   proto/TrustConnectionRequestAttachment
    proto/UnilateralDocumentMetadata
-   proto/XmlDocumentAttachment
