@@ -1,17 +1,17 @@
 DetectDocumentTypes
 ===================
 
-Метод ``DetectDocumentTypes`` определяет возможные типы указанного документа.
-
 .. warning::
-	Метод является устаревшим и не рекомендуются к использованию, т.к. он умеет детектировать только первые титулы документов. Вместо него используйте метод :doc:`../http/DetectDocumentTitles`
+	Метод устарел. Для определения типов используйте метод :doc:`../../http/DetectDocumentTitles`.
+
+Метод ``DetectDocumentTypes`` определяет возможные типы указанного документа.
 
 .. http:post:: /DetectDocumentTypes
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam nameOnShelf: имя файла на :doc:`полке документов<../entities/shelf>`.
+	:queryparam nameOnShelf: имя файла на :doc:`полке документов<../../entities/shelf>`.
 
-	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
+	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
 
 	:request Body: Тело запроса должно хранить бинарное содержимое документа.
 
@@ -41,4 +41,4 @@ DetectDocumentTypes
 Метод можно использовать в двух вариантах:
 
     - ``POST`` запрос с заполненным ``Request Body``,
-    - ``GET`` запрос с параметром ``nameOnShelf``, если содержимое документа было загружено на полку методом :doc:`../http/ShelfUpload`.
+    - ``GET`` запрос с параметром ``nameOnShelf``, если содержимое документа было загружено на полку методом :doc:`../../http/ShelfUpload`.
