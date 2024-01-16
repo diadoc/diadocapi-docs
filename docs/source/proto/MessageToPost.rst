@@ -76,43 +76,43 @@ MessageToPost
 Устаревшие поля
 ~~~~~~~~~~~~~~~
 
-- ``Invoices`` — список СФ/ИСФ/КСФ/ИКСФ в отправляемом сообщении, представленных структурой :doc:`XmlDocumentAttachment`.
+- ``Invoices`` — список СФ/ИСФ/КСФ/ИКСФ в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/XmlDocumentAttachment`.
 
-- ``NonformalizedDocuments`` — список неформализованных документов в отправляемом сообщении, представленных структурой :doc:`NonformalizedAttachment`.
+- ``NonformalizedDocuments`` — список неформализованных документов в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/NonformalizedAttachment`.
 
-- ``Torg12Documents`` — список товарных накладных ТОРГ-12 в отправляемом сообщении, представленных структурой :doc:`BasicDocumentAttachment`.
+- ``Torg12Documents`` — список товарных накладных ТОРГ-12 в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/BasicDocumentAttachment`.
 
-- ``TrustConnectionRequest`` — приглашение контрагента к обмену документами через Диадок, представленное структурой :doc:`TrustConnectionRequestAttachment`. Для отправки приглашения с вложенным документом используйте метод :doc:`../http/AcquireCounteragent`.
+- ``TrustConnectionRequest`` — приглашение контрагента к обмену документами через Диадок, представленное структурой :doc:`../obsolete/proto/TrustConnectionRequestAttachment`. Для отправки приглашения с вложенным документом используйте метод :doc:`../http/AcquireCounteragent`.
 
-- ``AcceptanceCertificates`` — список актов о выполнении работ или оказании услуг, представленных структурой :doc:`AcceptanceCertificateAttachment`.
+- ``AcceptanceCertificates`` — список актов о выполнении работ или оказании услуг, представленных структурой :doc:`../obsolete/proto/AcceptanceCertificateAttachment`.
 
-- ``ProformaInvoices`` — список счетов на оплату в отправляемом сообщении, представленных структурой :doc:`BasicDocumentAttachment`.
+- ``ProformaInvoices`` — список счетов на оплату в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/BasicDocumentAttachment`.
 
-- ``XmlTorg12SellerTitles`` — список титулов продавца для товарных накладных ТОРГ-12 в XML-формате в отправляемом сообщении, представленных структурой :doc:`XmlDocumentAttachment`.
+- ``XmlTorg12SellerTitles`` — список титулов продавца для товарных накладных ТОРГ-12 в XML-формате в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/XmlDocumentAttachment`.
 
-- ``XmlAcceptanceCertificateSellerTitles`` — список титулов исполнителя для актов о выполнении работ или оказании услуг в XML-формате в отправляемом сообщении, представленных структурой :doc:`XmlDocumentAttachment`.
+- ``XmlAcceptanceCertificateSellerTitles`` — список титулов исполнителя для актов о выполнении работ или оказании услуг в XML-формате в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/XmlDocumentAttachment`.
 
-- ``PriceLists`` — список ценовых листов в отправляемом сообщении, представленных структурой :doc:`PriceListAttachment`.
+- ``PriceLists`` — список ценовых листов в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/PriceListAttachment`.
 
-- ``CertificateRegistries`` — список реестров сертификатов в отправляемом сообщении, представленных структурой :doc:`NonformalizedAttachment`.
+- ``CertificateRegistries`` — список реестров сертификатов в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/NonformalizedAttachment`.
 
-- ``ReconciliationActs`` — список актов сверки в отправляемом сообщении, представленных структурой :doc:`ReconciliationActAttachment`.
+- ``ReconciliationActs`` — список актов сверки в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/ReconciliationActAttachment`.
 
-- ``Contracts`` — список договоров в отправляемом сообщении, представленных структурой :doc:`ContractAttachment`.
+- ``Contracts`` — список договоров в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/ContractAttachment`.
 
-- ``Torg13Documents`` — список накладных ТОРГ-13 в отправляемом сообщении, представленных структурой :doc:`Torg13Attachment`.
+- ``Torg13Documents`` — список накладных ТОРГ-13 в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/Torg13Attachment`.
 
-- ``ServiceDetailsDocuments`` — список детализаций в отправляемом сообщении, представленных структурой :doc:`ServiceDetailsAttachment`.
+- ``ServiceDetailsDocuments`` — список детализаций в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/ServiceDetailsAttachment`.
 
-- ``EncryptedInvoices`` — список зашифрованных счетов-фактур в отправляемом сообщении, представленных структурой :doc:`EncryptedInvoiceAttachment` 
+- ``EncryptedInvoices`` — список зашифрованных счетов-фактур в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/EncryptedInvoiceAttachment` 
 
-- ``EncryptedXmlTorg12SellerTitles`` — список зашифрованных формализованных накладных ТОРГ-12 в отправляемом сообщении, представленных структурой :doc:`EncryptedXmlDocumentAttachment`.
+- ``EncryptedXmlTorg12SellerTitles`` — список зашифрованных формализованных накладных ТОРГ-12 в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/EncryptedXmlDocumentAttachment`.
 
-- ``EncryptedXmlAcceptanceCertificateSellerTitles`` — список зашифрованных формализованных актов о выполнении работ или оказании услуг в отправляемом сообщении, представленных структурой :doc:`EncryptedXmlDocumentAttachment`.
+- ``EncryptedXmlAcceptanceCertificateSellerTitles`` — список зашифрованных формализованных актов о выполнении работ или оказании услуг в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/EncryptedXmlDocumentAttachment`.
 
-- ``SupplementaryAgreements`` — список дополнительных соглашений к договорам в отправляемом сообщении, представленных структурой :doc:`SupplementaryAgreementAttachment`.
+- ``SupplementaryAgreements`` — список дополнительных соглашений к договорам в отправляемом сообщении, представленных структурой :doc:`../obsolete/proto/SupplementaryAgreementAttachment`.
 
-- ``UniversalTransferDocumentSellerTitles`` — список титулов продавца универсального передаточного документа (УПД) в XML формате, представленных структурой :doc:`XmlDocumentAttachment`.
+- ``UniversalTransferDocumentSellerTitles`` — список титулов продавца универсального передаточного документа (УПД) в XML формате, представленных структурой :doc:`../obsolete/proto/XmlDocumentAttachment`.
 
 ----
 

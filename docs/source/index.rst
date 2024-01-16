@@ -39,7 +39,7 @@
 	features/index
 	DataStructures
 	Authorization
-	api_index
+	index_api
 	docflows/index
 	howto/index
 
@@ -50,4 +50,4 @@
 
 	http_methods
 	protos
-	obsolete_methods
+	obsolete/index

@@ -46,7 +46,6 @@ HTTP-интерфейс (устаревший)
    :glob:
 
    proto/Attachment
-   proto/BasicDocumentInfo
    proto/BilateralDocflow
    proto/BuyerTitleDocflow
    proto/CertificateChainElement
@@ -58,11 +57,8 @@ HTTP-интерфейс (устаревший)
    proto/DocflowV3
    proto/DocflowEvent
    proto/DocflowEventV3
-   proto/DocflowStatus
    proto/DocflowStatusV3
-   proto/DocflowStatusModel
    proto/DocflowStatusModelV3
-   proto/DocflowStatusSeverity
    proto/DocumentDateAndNumber
    proto/DocumentDirection
    proto/DocumentId

@@ -104,4 +104,4 @@ ExtendedSigner
 
     - ``AttachmentVersion = tovtorg_05_01_02`` или ``rezru_05_01_01``
 
-    - вызван метод :doc:`../../http/GenerateTorg12XmlForSeller`, :doc:`../../http/GenerateTorg12XmlForBuyer`, :doc:`../../http/GenerateAcceptanceCertificateXmlForSeller` или :doc:`../../http/GenerateAcceptanceCertificateXmlForBuyer`
+    - вызван метод :doc:`../../obsolete/http/GenerateTorg12XmlForSeller`, :doc:`../../obsolete/http/GenerateTorg12XmlForBuyer`, :doc:`../../obsolete/http/GenerateAcceptanceCertificateXmlForSeller` или :doc:`../../obsolete/http/GenerateAcceptanceCertificateXmlForBuyer`
