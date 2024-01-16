@@ -103,23 +103,16 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-#if not on_rtd:  # only import and set the theme if we're building docs locally
-    #import sphinx_rtd_theme
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_context = {
-  "display_github": True,
-  "github_user": "diadoc",
-  "github_repo": 'diadocapi-docs',
-  "github_version": "final",
-  "conf_py_path": "/docs/source/",
-  "source_suffix": '.rst',
+    "display_github": True,
+    "github_user": "diadoc",
+    "github_repo": 'diadocapi-docs',
+    "github_version": "final",
+    "conf_py_path": "/docs/source/",
+    "source_suffix": '.rst'
 }
-
-# otherwise, readthedocs.org uses their theme by default, so no need to specify it
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
@@ -237,7 +230,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'Diadoc.tex', u'Diadoc Documentation',u'Diadoc', 'manual'),
+    (master_doc, 'Diadoc.tex', u'Diadoc Documentation',u'Diadoc', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -266,8 +259,7 @@ latex_logo = '_static/diadoc-logo.png'
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'diadoc', u'Diadoc Documentation',
-     [author], 1)
+    (master_doc, 'diadoc', u'Diadoc Documentation', [author], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -280,9 +272,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'Diadoc', u'Diadoc Documentation',
-   author, 'Diadoc', 'One line description of project.',
-   'Miscellaneous'),
+    (master_doc, 'Diadoc', u'Diadoc Documentation', author, 'Diadoc',
+    'One line description of project.', 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
