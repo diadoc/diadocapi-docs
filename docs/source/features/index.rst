@@ -12,4 +12,5 @@
 	../Counteragents
 	../ApiClientOperationPrinciple
 	../howto/powerofattorney
+	docflow
 	../MiscellaneousApiFeatures
