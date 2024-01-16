@@ -7,8 +7,6 @@
 	:maxdepth: 1
 	:titlesonly:
 
-	features/docgenerate
 	features/docsend
 	features/docget
-	features/servicedocgenerate
-	features/docevents
+	features/docservice
