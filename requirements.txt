@@ -1,5 +1,6 @@
-Sphinx == 1.8.5
+Sphinx == 5.1.1
 sphinx-rtd-theme
 sphinxcontrib-httpdomain
+sphinx_reredirects
 recommonmark
-docutils==0.17.1
+docutils==0.19
