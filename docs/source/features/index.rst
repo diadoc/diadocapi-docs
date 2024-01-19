@@ -1,15 +1,16 @@
-Базовая функциональность
-========================
+Описание функциональности
+=========================
 
-В этом разделе описана базовая функциональность API Диадока.
+В этом разделе описана функциональность API Диадока.
 
 Перед выполнением любых действий в Диадоке нужно :doc:`авторизоваться <../Authorization>`.
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 	:titlesonly:
 
 	../Counteragents
 	../ApiClientOperationPrinciple
 	../howto/powerofattorney
+	docflow
 	../MiscellaneousApiFeatures

@@ -1,7 +1,8 @@
-﻿Как отправить и получить акт о выполнении работ/оказании услуг в рекомендованном ФНС формате
+Как отправить и получить акт о выполнении работ/оказании услуг в рекомендованном ФНС формате
 ============================================================================================
 
-Рассмотрим последовательность действий к функциям интеграторского интерфейса Диадока, которые требуется совершить при отправке акта о выполнении работ/оказании услуг.
+Сценарий работы с актом о выполнении работ/оказании услуг
+---------------------------------------------------------
 
 #. Исполнитель формирует файл титула исполнителя, подписывает и направляет заказчику.
 
@@ -15,62 +16,138 @@
 Формирование файла титула исполнителя для акта о выполнении работ/оказании услуг
 --------------------------------------------------------------------------------
 
-Если на стороне интеграционного решения не предусмотрено функциональности для формирования XML-документов, соответствущих утвержденным форматам, то исполнитель может сгенерировать файл титула, используя метод :doc:`../http/GenerateTitleXml`.
+Cгенерировать файл титула, соответствущий утвержденному формату, можно с помощью метода :doc:`../http/GenerateTitleXml`. Для этого передайте в метод следующие параметры:
 
+	- ``documentTypeNamedId`` — тип документа;
+	- ``documentFunction`` — функция документа;
+	- ``documentVersion`` — версия документа;
+	- ``titleIndex`` — идентификатор титула документа.
+
+В теле запроса нужно передать XML-файл ``UserDataXsd``, соответствующий XSD-схеме. ``UsedDataXsd`` содержит информацию для генерации титула, которую может заполнить только пользователь.
+
+Получить тип, функцию, версию, идентификатор титула и ссылку на скачивание XSD-схемы можно с помощью метода :doc:`../http/GetDocumentTypes`. В ответе метод возвращает описание всех типов документов, доступных в ящике.
+
+Ниже приведено тело ответа метода ``GetDocumentTypes``. Для упрощения из него удалены другие типы, функции, версии и информация о метаданных.
+
+.. container:: toggle
+
+  .. code-block:: protobuf
+
+      {
+        "Name": "XmlAcceptanceCertificate",
+        "Title": "Акт",
+        "SupportedDocflows": [
+          1,
+          0
+        ],
+        "RequiresFnsRegistration": true,
+        "Functions": [
+          {
+            "Name": "default",
+            "Versions": [
+                {
+                "Version": "rezru_05_02_01",
+                "SupportsContentPatching": true,
+                "SupportsEncrypting": true,
+                "SupportsPredefinedRecipientTitle": false,
+                "SupportsAmendmentRequest": false,
+                "Titles": [
+                  {
+                    "Index": 0,
+                    "IsFormal": true,
+                    "XsdUrl": "/GetContent?typeNamedId=XmlAcceptanceCertificate&function=default&version=rezru_05_02_01&titleIndex=0&contentType=TitleXsd",
+                    "UserDataXsdUrl": "/GetContent?typeNamedId=XmlAcceptanceCertificate&function=default&version=rezru_05_02_01&titleIndex=0&contentType=UserContractXsd",
+                    "SignerInfo": {
+                      "SignerType": 2,
+                      "ExtendedDocumentTitleType": 6
+                    },
+                    "MetadataItems": [],
+                    "EncryptedMetadataItems": []
+                  },
+                  {
+                    "Index": 1,
+                    "IsFormal": true,
+                    "XsdUrl": "/GetContent?typeNamedId=XmlAcceptanceCertificate&function=default&version=rezru_05_02_01&titleIndex=1&  contentType=TitleXsd",
+                    "UserDataXsdUrl": "/GetContent?typeNamedId=XmlAcceptanceCertificate&function=default&version=rezru_05_02_01&titleIndex=1&contentType=UserContractXsd",
+                    "SignerInfo": {
+                      "SignerType": 2,
+                      "ExtendedDocumentTitleType": 7
+                    },
+                    "MetadataItems": [],
+                    "EncryptedMetadataItems": []
+                  }
+                ],
+                "IsActual": true,
+                "Workflows": [
+                  {
+                    "Id": 3,
+                    "IsDefault": true
+                  },
+                  {
+                    "Id": 9,
+                    "IsDefault": false
+                  }
+                ]
+              }
+            ]
+        ]
+      }
+
+- ``documentTypeNamedId`` = ``XmlAcceptanceCertificate`` — имя типа документа,
+- ``documentFunction`` = ``default`` — функция документа,
+- ``documentVersion`` = ``rezru_05_02_01`` — версия формата,
+- ``titleIndex`` = ``0`` — титул исполнителя,
+- ``UserDataXsdUrl`` —  URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью метода генерации.
 
 Отправка файла титула исполнителя для акта о выполнении работ/оказании услуг
 ----------------------------------------------------------------------------
 
-После того, как у вас есть XML-файл титула исполнителя, его нужно отправить с помощью команды :doc:`../http/PostMessage`. 
+Полученный XML-файл титула исполнителя можно отправить с помощью метода :doc:`../http/PostMessage`. 
 
-Для этого нужно подготовить структуру :doc:`../proto/MessageToPost` следующим образом:
+В теле запроса метода передайте структуру :doc:`../proto/MessageToPost`, заполненную следующими данными:
 
--  в значение атрибута *FromBoxId* указываем идентификатор ящика отправителя;
+- в поле ``FromBoxId`` укажите идентификатор ящика отправителя;
+- в поле ``ToBoxId`` укажите идентификатор ящика получателя;
+- для передачи XML-файла титула отправителя акта сверки используйте вложенную структуру ``DocumentAttachment``:
 
--  в значение атрибута *ToBoxId* указываем идентификатор ящика получателя;
+	- XML-файл передайте в поле ``Content`` структуры ``SignedContent``, подпись — в поле ``Signature``;
+	- ``TypeNamedId=XmlAcceptanceCertificate``;
+	- ``Function=default``;
+	- ``Version=rezru_05_02_01``.
 
--  для передачи XML-файла титула исполнителя акта о выполнении работ/оказании услуг нужно использовать атрибут *XmlAcceptanceCertificateSellerTitles*, описываемый структурой *XmlDocumentAttachment*:
+Пример тела запроса:
 
-	-  внутри структуры *XmlDocumentAttachment* находится вложенная структура *SignedContent*;
-	
-	-  сам XML-файл нужно передать в атрибут *Content*, подпись исполнителя в атрибут *Signature*.
-	   
-Описание структур, используемых при отправке акта о выполнении работ/оказании услуг:
+::
 
-.. code-block:: protobuf
-
-    message MessageToPost {
-        required string FromBoxId = 1;
-        optional string ToBoxId = 2;
-        repeated DocumentAttachment DocumentAttachments = 34;
-    }
-
-   message DocumentAttachment {
-    required SignedContent SignedContent = 1;
-    required string TypeNamedId = 12;
-    optional string Function = 13;
-    optional string Version = 14;
-   }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
+    "FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
+    "DocumentAttachments": [
+            {
+                "SignedContent":
+                {
+                    "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",        //контент xml-файла в кодировке base-64
+                    "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",       //контент файла подписи в кодировке base-64
+                },
+                "TypeNamedId": "XmlAcceptanceCertificate",
+                "Function": "default",
+                "Version": "rezru_05_02_01"
+            }
+        ]
     }
 
 После отправки в теле ответа будет содержаться отправленное сообщение, сериализованное в протобуфер :doc:`../proto/Message`.
 
-Все дальнейшие действия происходят на стороне покупателя.
+Все дальнейшие действия происходят на стороне заказчика.
 
 Поиск акта о выполнении работ/оказании услуг
 --------------------------------------------
 
-Сначала покупателю необходимо найти все входящие акты о выполнении работ/оказании услуг, которые требуется обработать. Для этого нужно воспользоваться методом :doc:`../http/GetDocuments`:
+Чтобы найти все входящие акты, которые нужно обработать, используйте метод :doc:`../http/GetDocuments`:
 
-  -  в значении параметра *boxId* указываем идентификатор ящика, в котором следует выполнить поиск входящих документов;
+- в поле ``boxId`` укажите идентификатор ящика, в котором нужно найти входящие документы;
+- в поле ``filterCategory`` укажите статус и тип документа: ``XmlAcceptanceCertificate.InboundNotFinished``.
 
-  -  в параметр *filterCategory* указываем статус и тип документа: ``XmlAcceptanceCertificate.InboundNotFinished``.
-
-Пример запроса на получение акта о выполнении работ/оказании услуг выглядит следующим образом:
+Пример запроса на поиск акта о выполнении работ/оказании услуг:
 
 ::
 
@@ -78,18 +155,16 @@
     Host: diadoc-api.kontur.ru
     Accept: application/json
     Content-Type: application/json charset=utf-8
-    Authorization: DiadocAuth ddauth_api_client_id=testClient-87e1638deae84c86b8e2069955c2825a0987
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
 
-В теле ответа вернется список документов в виде структуры *DocumentList* с вложенной структурой *Document*. Для каждого из этих документов запоминаем: *MessageId*, *EntityId*.
+В теле ответа вернется список документов в виде структуры ``DocumentList`` с вложенной структурой ``Document``. Чтобы получить документы, потребуются значения полей ``MessageId`` и ``EntityId``.
 
 Получение акта о выполнении работ/оказании услуг
 ------------------------------------------------
 
-Теперь необходимо получить найденный акт :doc:`XmlAcceptanceCertificate <../proto/Entity message>`.
+Найденный документ можно получить с помощью метода :doc:`../http/GetMessage`. В запросе передайте параметры, вернувшиеся в теле ответа метода ``GetDocuments``: ``boxId``, ``messageId``, ``entityId``.
 
-Чтобы получить акт о выполнении работ/оказании услуг нужно вызвать метод :doc:`../http/GetMessage` и указать нужные GET-параметры ``boxId``, ``messageId``, ``entityId``.
-
-``BoxId`` - это идентификатор ящика получателя, ``messageId`` - идентификатор полученного сообщения с актом о выполнении работ/оказании услуг, ``entityId`` - идентификатор акта. Их можно взять из структуры :doc:`../proto/Message`.
+Пример запроса на получение акта о выполнении работ/оказании услуг:
 
 ::
 
@@ -97,7 +172,7 @@
     Host: diadoc-api.kontur.ru
     Accept: application/json
     Content-Type: application/json charset=utf-8
-    Authorization: DiadocAuth ddauth_api_client_id=testClient-87e1638deae84c86b8e2069955c2825a0987
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
 
 Пример структуры акта о выполнении работ/оказании услуг :doc:`XmlAcceptanceCertificate <../proto/Entity message>` в теле ответа:
 
@@ -119,48 +194,48 @@
        "IsEncryptedContent": false
    }
 
+.. _create_receipt:
+
 Формирование файла титула заказчика для акта о выполнении работ/оказании услуг
 ------------------------------------------------------------------------------
 
-Файл титула заказчика можно сформировать как на стороне интеграционного решения, так и используя команду :doc:`../http/GenerateTitleXml`.
+Генерация титула заказчика с помощью метода :doc:`../http/GenerateTitleXml` выполняется аналогично титулу исполнителя.
 
+- ``documentTypeNamedId`` = ``XmlAcceptanceCertificate`` — имя типа документа,
+- ``documentFunction`` = ``default`` — функция документа,
+- ``documentVersion`` = ``rezru_05_02_01`` — версия формата,
+- ``titleIndex`` = ``1`` — титул заказчика.
 
 Отправка файла титула заказчика для акта о выполнении работ/оказании услуг
 --------------------------------------------------------------------------
-После того, как у вас есть XML-файл титула заказчика, его нужно отправить с помощью команды :doc:`../http/PostMessagePatch`. 
+Отправить сформированный титул заказчика акта сверки можно с помощью метода :doc:`../http/PostMessagePatch`. 
 
-Для этого нужно подготовить структуру :doc:`../proto/MessagePatchToPost` следующим образом:
+В теле запроса метода передайте структуру :doc:`../proto/MessagePatchToPost`, заполненную следующими данными:
 
--  в значение атрибута *BoxId* указываем идентификатор ящика, в котором находится исходное сообщение;
+- в поле ``BoxId`` укажите идентификатор ящика, в котором находится исходное сообщение;
+- в поле ``MessageId`` укажите идентификатор сообщения, к которому относится дополнение;
+- чтобы передать XML-файл титула, используйте структуру ``RecipientTitleAttachment``:
 
--  в значение атрибута *MessageId* указываем идентификатор сообщения, к которому относится отправляемый патч;
+	- ``ParentEntityId`` — идентификатор титула исполнителя;
+	- XML-файл нужно передать  в поле ``Content`` вложенной структуры ``SignedContent``, подпись — в поле ``Signature``.
 
--  для передачи XML-файла титула исполнителя акта о выполнении работ/оказании услуг нужно использовать атрибут *XmlAcceptanceCertificateBuyerTitles*, описываемый структурой *ReceiptAttachment*:
+Пример тела запроса:
 
-    -  ParentEntityId - идентификатор документа, к которому относится титул заказчика; это идентификатор соответствующей сущности из родительского сообщения (поле EntityId в структуре :doc:`Entity <../proto/Entity message>`.);
+::
 
-	-  внутри структуры *ReceiptAttachment* находится вложенная структура *SignedContent*;
-	
-	-  сам XML-файл нужно передать в атрибут *Content*, подпись исполнителя в атрибут *Signature*.
-	   
-Описание структур, используемых при отправке акта о выполнении работ/оказании услуг:
-
-.. code-block:: protobuf
-
-    message MessagePatchToPost {
-        required string BoxId = 1;
-        optional string MessageId = 2;
-        repeated RecipientTitleAttachment RecipientTitles = 22;
-    }
-
-    message RecipientTitleAttachment {
-	required string ParentEntityId = 1;
-   	required SignedContent SignedContent = 2;
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
+    "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
+    "RecipientTitles":
+    [
+        {
+            "ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&",
+            "SignedContent":
+            {
+                "Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",        //контент xml-файла в кодировке base-64
+                "Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"        //контент файла подписи в кодировке base-64
+            }
+        }
+    ]
     }
 
 После отправки в теле ответа будет содержаться отправленное дополнение, сериализованное в протобуфер :doc:`../proto/MessagePatch`.

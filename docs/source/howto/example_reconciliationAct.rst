@@ -13,54 +13,132 @@
 
 Формирование файла титула отправителя для акта сверки взаимных расчетов
 -----------------------------------------------------------------------
-Если на стороне интеграционного решения нельзя сформировать XML-документ, соответствущий утвержденному формату, то отправитель может сгенерировать файл титула с помощью метода :doc:`../http/GenerateTitleXml`.
+Cгенерировать файл титула, соответствущий утвержденному формату, можно с помощью метода :doc:`../http/GenerateTitleXml`. Для этого передайте в метод следующие параметры:
+
+		- ``documentTypeNamedId`` — тип документа;
+		- ``documentFunction`` — функция документа;
+		- ``documentVersion`` — версия документа;
+		- ``titleIndex`` — идентификатор титула документа.
+
+В теле запроса нужно передать XML-файл ``UserDataXsd``, соответствующий XSD-схеме. ``UsedDataXsd`` содержит информацию для генерации титула, которую может заполнить только пользователь.
+
+Получить тип, функцию, версию, идентификатор титула и ссылку на скачивание XSD-схемы можно с помощью метода :doc:`../http/GetDocumentTypes`. В ответе метод возвращает описание всех типов документов, доступных в ящике.
+
+Ниже приведено тело ответа метода ``GetDocumentTypes``. Для упрощения из него удалены другие типы, функции, версии и информация о метаданных.
+
+.. container:: toggle
+
+  .. code-block:: protobuf
+
+      {
+          "Name": "ReconciliationAct",
+          "Title": "Акт сверки",
+          "SupportedDocflows": [
+              1,
+              0
+          ],
+          "RequiresFnsRegistration": true,
+          "Functions": [
+              {
+                  "Name": "default",
+                  "Versions": [
+                      {
+                      "Version": "reconciliationact405_05_01_01",
+                      "SupportsContentPatching": true,
+                      "SupportsEncrypting": false,
+                      "SupportsPredefinedRecipientTitle": false,
+                      "SupportsAmendmentRequest": true,
+                      "Titles": [
+                          {
+                          "Index": 0,
+                          "IsFormal": true,
+                          "XsdUrl": "/GetContent?typeNamedId=ReconciliationAct&function=default&version=reconciliationact405_05_01_01&titleIndex=0&contentType=TitleXsd",
+                          "UserDataXsdUrl": "/GetContent?typeNamedId=ReconciliationAct&function=default&version=reconciliationact405_05_01_01&titleIndex=0&contentType=UserContractXsd",
+                          "SignerInfo": {
+                          "SignerType": 3,
+                          "ExtendedDocumentTitleType": -1,
+                          "SignerUserDataXsdUrl": "/GetContent?typeNamedId=ReconciliationAct&function=default&version=reconciliationact405_05_01_01&titleIndex=0&contentType=SignerUserContractXsd"
+                          },
+                          "MetadataItems": [],
+                          "EncryptedMetadataItems": []
+                          },
+                          {
+                          "Index": 1,
+                          "IsFormal": true,
+                          "XsdUrl": "/GetContent?typeNamedId=ReconciliationAct&function=default&version=reconciliationact405_05_01_01&titleIndex=1&contentType=TitleXsd",
+                          "UserDataXsdUrl": "/GetContent?typeNamedId=ReconciliationAct&function=default&version=reconciliationact405_05_01_01&titleIndex=1&contentType=UserContractXsd",
+                          "SignerInfo": {
+                              "SignerType": 3,
+                              "ExtendedDocumentTitleType": -1,
+                              "SignerUserDataXsdUrl": "/GetContent?typeNamedId=ReconciliationAct&function=default&version=reconciliationact405_05_01_01&titleIndex=1&contentType=SignerUserContractXsd"
+                          },
+                          "MetadataItems": [],
+                          "EncryptedMetadataItems": []
+                          }
+                      ],
+                      "IsActual": true,
+                      "Workflows": [
+                      {
+                          "Id": 3,
+                          "IsDefault": true
+                      }
+                      ]
+                      }
+                  ]
+              }
+          ]
+      }
+
+- ``documentTypeNamedId`` = ``ReconciliationAct`` — имя типа документа,
+- ``documentFunction`` = ``default`` — функция документа,
+- ``documentVersion`` = ``reconciliationact405_05_01_01`` — версия формата,
+- ``titleIndex`` = ``0`` — титул отправителя,
+- ``UserDataXsdUrl`` —  URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью метода генерации.
 
 Отправка файла титула отправителя для акта сверки взаимных расчетов
 -------------------------------------------------------------------
 
-Титул отправителя можно отправить с помощью метода :doc:`../http/PostMessage`. 
+Полученный XML-файл титула отправителя можно отправить с помощью метода :doc:`../http/PostMessage`. 
 
-Для этого подготовьте структуру :doc:`../proto/MessageToPost`:
+В теле запроса метода передайте структуру :doc:`../proto/MessageToPost`, заполненную следующими данными:
 
 - в поле ``FromBoxId`` укажите идентификатор ящика отправителя;
 - в поле ``ToBoxId`` укажите идентификатор ящика получателя;
 - для передачи XML-файла титула отправителя акта сверки используйте вложенную структуру ``DocumentAttachment``:
 
-	- XML-файл передайте в структуре ``SignedContent`` в поле ``Content``, подпись — в поле ``Signature``;
+	- XML-файл передайте в поле ``Content`` структуры ``SignedContent``, подпись — в поле ``Signature``;
 	- ``TypeNamedId=ReconciliationAct``;
 	- ``Function=default``;
 	- ``Version=reconciliationact405_05_01_01``.
 
-Описание структур, используемых при отправке титула отправителя акта сверки:
+Пример тела запроса:
 
-.. code-block:: protobuf
+::
 
-    message MessageToPost {
-        required string FromBoxId = 1;
-        optional string ToBoxId = 2;
-        repeated DocumentAttachment DocumentAttachments = 34;
-    }
-
-    message DocumentAttachment {
-     required SignedContent SignedContent = 1;
-     required string TypeNamedId = 12;
-     optional string Function = 13;
-     optional string Version = 14; 
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
+    "FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
+    "DocumentAttachments": [
+            {
+                "SignedContent":
+                {
+                    "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",        //контент xml-файла в кодировке base-64
+                    "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",       //контент файла подписи в кодировке base-64
+                },
+                "TypeNamedId": "ReconciliationAct",
+                "Function": "default",
+                "Version": "reconciliationact405_05_01_01"
+            }
+        ]
     }
 
 После отправки в теле ответа будет содержаться отправленное сообщение, сериализованное в протобуфер :doc:`../proto/Message`.
 
 Все дальнейшие действия происходят на стороне получателя.
 
-Получение файла титула отправителя для акта сверки взаимных расчетов
---------------------------------------------------------------------
+Поиск акта сверки взаимных расчетов
+-----------------------------------
 
-Перед получением файла титула отправителя найдите все входящие акты сверки, которые нужно обработать. Для этого используйте метод :doc:`../http/GetDocuments`:
+Чтобы найти все входящие акты, которые нужно обработать, используйте метод :doc:`../http/GetDocuments`:
 
 - в поле ``boxId`` укажите идентификатор ящика, в котором нужно найти входящие документы;
 - в поле ``filterCategory`` укажите статус и тип документа: ``ReconciliationAct.InboundNotFinished``.
@@ -77,7 +155,12 @@
 
 В теле ответа вернется список документов в виде структуры ``DocumentList`` с вложенной структурой ``Document``. Чтобы получить документы, потребуются значения полей ``MessageId`` и ``EntityId``.
 
-Чтобы получить акт сверки, вызовите метод :doc:`../http/GetMessage` и укажите GET-параметры: ``boxId``, ``messageId``, ``entityId``.
+Получение акта сверки взаимных расчетов
+---------------------------------------
+
+Найденный документ можно получить с помощью метода :doc:`../http/GetMessage`. В запросе передайте параметры, вернувшиеся в теле ответа метода ``GetDocuments``: ``boxId``, ``messageId``, ``entityId``.
+
+Пример запроса на получение акта сверки:
 
 ::
 
@@ -90,40 +173,46 @@
 Формирование файла титула получателя для акта сверки взаимных расчетов
 ----------------------------------------------------------------------
 
-Файл титула получателя сведений можно сформировать как на стороне интеграционного решения, так и используя метод :doc:`../http/GenerateTitleXml`. 
+Генерация титула получателя с помощью метода :doc:`../http/GenerateTitleXml` выполняется аналогично титулу отправителя.
+
+Тип, функция и версия файла такие же, как у титула отправителя, отличается только номер титула:
+
+- ``documentTypeNamedId`` = ``ReconciliationAct`` — имя типа документа,
+- ``documentFunction`` = ``default`` — функция документа,
+- ``documentVersion`` = ``reconciliationact405_05_01_01`` — версия формата,
+- ``titleIndex`` = ``1`` — титул получателя.
 
 Отправка файла титула получателя для акта сверки взаимных расчетов
 ------------------------------------------------------------------
 
-Отправить титул получателя акта сверки можно с помощью метода :doc:`../http/PostMessagePatch`. 
+Отправить сформированный титул получателя акта сверки можно с помощью метода :doc:`../http/PostMessagePatch`. 
 
-Для этого подготовьте структуру :doc:`../proto/MessagePatchToPost`:
+В теле запроса метода передайте структуру :doc:`../proto/MessagePatchToPost`, заполненную следующими данными:
 
 - в поле ``BoxId`` укажите идентификатор ящика, в котором находится исходное сообщение;
 - в поле ``MessageId`` укажите идентификатор сообщения, к которому относится дополнение;
 - чтобы передать XML-файла титула, используйте структуру ``RecipientTitleAttachment``:
 
 	- ``ParentEntityId`` — идентификатор титула отправителя;
-	- XML-файл нужно передать во вложенной структуре ``SignedContent`` в поле ``Content``, подпись — в поле ``Signature``.
+	- XML-файл нужно передать в поле ``Content`` вложенной структуры ``SignedContent``, подпись — в поле ``Signature``.
 
-Описание структур, используемых при отправке ответного титула акта сверки:
+Пример тела запроса:
 
-.. code-block:: protobuf
+::
 
-    message MessagePatchToPost {
-        required string BoxId = 1;
-        optional string MessageId = 2;
-        repeated RecipientTitleAttachment RecipientTitles = 22;
-    }
-
-    message RecipientTitleAttachment  {
-	required string ParentEntityId = 1;
-        required SignedContent SignedContent = 1;
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
+    "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
+    "RecipientTitles":
+    [
+        {
+            "ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95",
+            "SignedContent":
+            {
+                "Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",        //контент xml-файла в кодировке base-64
+                "Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"        //контент файла подписи в кодировке base-64
+            }
+        }
+    ]
     }
 
 После отправки в теле ответа будет содержаться отправленное дополнение, сериализованное в протобуфер :doc:`../proto/MessagePatch`.
