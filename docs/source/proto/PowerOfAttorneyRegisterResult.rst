@@ -55,4 +55,4 @@ PowerOfAttorneyRegisterResult
 	- в теле ответа метода :doc:`../http/RegisterPowerOfAttorneyResult`.
 	
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`.

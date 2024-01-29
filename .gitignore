@@ -1,6 +1,4 @@
 docs/build
-docs/_build
-docs/source/_build
 .vscode
 ENV
 *.swp

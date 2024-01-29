@@ -66,4 +66,4 @@ PowerOfAttorneyValidationStatus
 	- в теле ответа метода :doc:`../http/PrevalidatePowerOfAttorney`.
 
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`.

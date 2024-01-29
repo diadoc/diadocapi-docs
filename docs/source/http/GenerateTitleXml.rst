@@ -31,9 +31,9 @@ GenerateTitleXml
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
 	:responseheader Content-Disposition: имя файла сгенерированного титула.
-	
+
 	:response Body: Тело ответа содержит сгенерированный XML-файл титула, построенный на основании данных из запроса в соответствии с XSD-схемой.
-	
+
 Генерация титула отправителя
 ----------------------------
 
@@ -43,58 +43,60 @@ GenerateTitleXml
 
  Ниже приведено тело ответа метода ``GetDocumentTypes``. Для упрощения из него удалены другие типы, функции, версии и информация о метаданных.
 
-.. sourcecode:: js 
+.. container:: toggle
 
-    "DocumentTypes": [
-        {
-            "Name": "Invoice",
-            "Title": "Счет-фактура",
-            "SupportedDocflows": [
-                0
-            ],
-            "RequiresFnsRegistration": true,
-            "Functions": [
-                {
-                    "Name": "default",
-                    "Versions": [
-                        {
-                            "Version": "utd820_05_01_02_hyphen",
-                            "SupportsContentPatching": true,
-                            "SupportsEncrypting": true,
-                            "SupportsPredefinedRecipientTitle": false,
-                            "SupportsAmendmentRequest": true,
-                            "Titles": [
-                                {
-                                    "Index": 0,
-                                    "IsFormal": true,
-                                    "XsdUrl": "/GetContent?typeNamedId=Invoice&function=default&version=utd820_05_01_02_hyphen&titleIndex=0&contentType=TitleXsd",
-                                    "UserDataXsdUrl": "/GetContent?typeNamedId=Invoice&function=default&version=utd820_05_01_02_hyphen&titleIndex=0&contentType=UserContractXsd",
-                                    "SignerInfo": {
-                                        "SignerType": 2,
-                                        "ExtendedDocumentTitleType": 0
+    .. sourcecode:: js 
+
+        "DocumentTypes": [
+            {
+                "Name": "Invoice",
+                "Title": "Счет-фактура",
+                "SupportedDocflows": [
+                    0
+                ],
+                "RequiresFnsRegistration": true,
+                "Functions": [
+                    {
+                        "Name": "default",
+                        "Versions": [
+                            {
+                                "Version": "utd820_05_01_02_hyphen",
+                                "SupportsContentPatching": true,
+                                "SupportsEncrypting": true,
+                                "SupportsPredefinedRecipientTitle": false,
+                                "SupportsAmendmentRequest": true,
+                                "Titles": [
+                                    {
+                                        "Index": 0,
+                                        "IsFormal": true,
+                                        "XsdUrl": "/GetContent?typeNamedId=Invoice&function=default&version=utd820_05_01_02_hyphen&titleIndex=0&contentType=TitleXsd",
+                                        "UserDataXsdUrl": "/GetContent?typeNamedId=Invoice&function=default&version=utd820_05_01_02_hyphen&titleIndex=0&contentType=UserContractXsd",
+                                        "SignerInfo": {
+                                            "SignerType": 2,
+                                            "ExtendedDocumentTitleType": 0
+                                        },
+                                        "MetadataItems": [...],
+                                        "EncryptedMetadataItems": [...]
+                                    }
+                                ],
+                                "IsActual": true,
+                                "Workflows": [
+                                    {
+                                        "Id": 17,
+                                        "IsDefault": true
                                     },
-                                    "MetadataItems": [...],
-                                    "EncryptedMetadataItems": [...]
-                                }
-                            ],
-                            "IsActual": true,
-                            "Workflows": [
-                                {
-                                    "Id": 17,
-                                    "IsDefault": true
-                                },
-                                {
-                                    "Id": 10,
-                                    "IsDefault": false
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-	
+                                    {
+                                        "Id": 10,
+                                        "IsDefault": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+
 Из полученной информации важны следующие значения:
 
  - ``documentTypeNamedId`` = ``Invoice`` — имя типа документа
@@ -134,123 +136,131 @@ GenerateTitleXml
     Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
     Content-Type: application/xml; charset=utf-8
 
-*Пример тела запроса (UserDataXml)*:
+.. container:: toggle
 
-.. sourcecode:: xml
+    .. container:: header
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<UniversalTransferDocumentWithHyphens Function="СЧФ"
-			DocumentDate="01.08.2019"
-			DocumentNumber="140"
-			DocumentCreator="1"
-			DocumentCreatorBase="1"
-			CircumFormatInvoice="1"
-			Currency="643" >
-		<Sellers>
-			<Seller>
-				<OrganizationDetails OrgType="2"
-						Inn="114500647890"
-						FnsParticipantId="2BM-participantId1"
-						OrgName="ИП Продавец Иван Иванович">
-					<Address>
-						<RussianAddress Region="02"/>
-					</Address>
-				</OrganizationDetails>
-			</Seller>
-		</Sellers>
-		<Buyers>
-			<Buyer>
-				<OrganizationReference OrgType="1"
-						BoxId="53d55d52-9317-4ad4-a7d9-5e9dd3cd6367"/>
-			</Buyer>
-		</Buyers>
-		<Table TotalWithVatExcluded="0" Vat="0" Total="0">
-			<Item Product="Товарная позиция"
-					Unit="796"
-					Quantity="0"
-					Price="0"
-					TaxRate="без НДС"
-					SubtotalWithVatExcluded="0"
-					Vat="0"
-					Subtotal="0"
-					Excise="10"/>
-		</Table>
-		<TransferInfo OperationInfo="Товары переданы"/>
-		<Signers>
-			<SignerDetails Inn="123456789047"
-					LastName="Подписантов"
-					FirstName="Иван"
-					MiddleName="Иванович"
-					RegistrationCertificate="1"
-					SignerPowers="0"
-					SignerType="3"
-					SignerStatus="1"
-					SignerPowersBase="Должностные обязанности"/>
-		</Signers>
-	</UniversalTransferDocumentWithHyphens>
+      **Пример тела запроса (UserDataXml)**:
 
-*Пример тела ответа*:
+    .. code-block:: xml
 
-::
+        <?xml version="1.0" encoding="utf-8"?>
+        <UniversalTransferDocumentWithHyphens Function="СЧФ"
+                DocumentDate="01.08.2019"
+                DocumentNumber="140"
+                DocumentCreator="1"
+                DocumentCreatorBase="1"
+                CircumFormatInvoice="1"
+                Currency="643" >
+            <Sellers>
+                <Seller>
+                    <OrganizationDetails OrgType="2"
+                            Inn="114500647890"
+                            FnsParticipantId="2BM-participantId1"
+                            OrgName="ИП Продавец Иван Иванович">
+                        <Address>
+                            <RussianAddress Region="02"/>
+                        </Address>
+                    </OrganizationDetails>
+                </Seller>
+            </Sellers>
+            <Buyers>
+                <Buyer>
+                    <OrganizationReference OrgType="1"
+                            BoxId="53d55d52-9317-4ad4-a7d9-5e9dd3cd6367"/>
+                </Buyer>
+            </Buyers>
+            <Table TotalWithVatExcluded="0" Vat="0" Total="0">
+                <Item Product="Товарная позиция"
+                        Unit="796"
+                        Quantity="0"
+                        Price="0"
+                        TaxRate="без НДС"
+                        SubtotalWithVatExcluded="0"
+                        Vat="0"
+                        Subtotal="0"
+                        Excise="10"/>
+            </Table>
+            <TransferInfo OperationInfo="Товары переданы"/>
+            <Signers>
+                <SignerDetails Inn="123456789047"
+                        LastName="Подписантов"
+                        FirstName="Иван"
+                        MiddleName="Иванович"
+                        RegistrationCertificate="1"
+                        SignerPowers="0"
+                        SignerType="3"
+                        SignerStatus="1"
+                        SignerPowersBase="Должностные обязанности"/>
+            </Signers>
+        </UniversalTransferDocumentWithHyphens>
 
-    HTTP/1.1 200 OK
+.. container:: toggle
 
-	<?xml version="1.0" encoding="windows-1251"?>
-	<Файл ИдФайл="ON_NSCHFDOPPR_2BM-9670670494-967001000-202201240241297341956_2BM-participantId1_20220303_c1ffd60b-0925-4e08-a133-cc55e9fc5b3b" ВерсФорм="5.01" ВерсПрог="Diadoc 1.0">
-	  <СвУчДокОбор ИдОтпр="2BM-participantId1" ИдПол="2BM-9670670494-967001000-202201240241297341956">
-		<СвОЭДОтпр ИННЮЛ="6663003127" ИдЭДО="2BM" НаимОрг="АО &quot;ПФ &quot;СКБ Контур&quot;" />
-	  </СвУчДокОбор>
-	  <Документ КНД="1115131" ВремИнфПр="09.16.16" ДатаИнфПр="03.03.2022" НаимЭконСубСост="1" Функция="СЧФ" ОснДоверОргСост="1">
-		<СвСчФакт НомерСчФ="140" ДатаСчФ="01.08.2019" КодОКВ="643">
-		  <СвПрод>
-			<ИдСв>
-			  <СвИП ИННФЛ="114500647890">
-				<ФИО Фамилия="Продавец" Имя="Иван" Отчество="Иванович" />
-			  </СвИП>
-			</ИдСв>
-			<Адрес>
-			  <АдрРФ КодРегион="02" />
-			</Адрес>
-		  </СвПрод>
-		  <СвПокуп>
-			<ИдСв>
-			  <СвЮЛУч НаимОрг="Документация-получатель" ИННЮЛ="9670670494" КПП="967001000" />
-			</ИдСв>
-			<Адрес>
-			  <АдрРФ Индекс="777777" КодРегион="50" Город="г. Москва" />
-			</Адрес>
-		  </СвПокуп>
-		  <ДопСвФХЖ1 НаимОКВ="Российский рубль" ОбстФормСЧФ="1" />
-		</СвСчФакт>
-		<ТаблСчФакт>
-		  <СведТов НомСтр="1" НаимТов="Товарная позиция" ОКЕИ_Тов="796" КолТов="0" ЦенаТов="0.00" СтТовБезНДС="0.00" НалСт="без НДС" СтТовУчНал="0.00">
-			<Акциз>
-			  <СумАкциз>10.00</СумАкциз>
-			</Акциз>
-			<СумНал>
-			  <СумНал>0.00</СумНал>
-			</СумНал>
-			<ДопСведТов НаимЕдИзм="шт" />
-		  </СведТов>
-		  <ВсегоОпл СтТовБезНДСВсего="0.00" СтТовУчНалВсего="0.00">
-			<СумНалВсего>
-			  <СумНал>0.00</СумНал>
-			</СумНалВсего>
-		  </ВсегоОпл>
-		</ТаблСчФакт>
-		<СвПродПер>
-		  <СвПер СодОпер="Товары переданы">
-			<ОснПер НаимОсн="Без документа-основания" />
-		  </СвПер>
-		</СвПродПер>
-		<Подписант ОснПолн="Должностные обязанности" ОблПолн="0" Статус="1">
-		  <ФЛ ИННФЛ="123456789047">
-			<ФИО Фамилия="Подписантов" Имя="Иван" Отчество="Иванович" />
-		  </ФЛ>
-		</Подписант>
-	  </Документ>
-	</Файл>
-	
+    .. container:: header
+
+      **Пример тела ответа**:
+
+    .. code-block:: xml
+
+        HTTP/1.1 200 OK
+
+        <?xml version="1.0" encoding="windows-1251"?>
+        <Файл ИдФайл="ON_NSCHFDOPPR_2BM-9670670494-967001000-202201240241297341956_2BM-participantId1_20220303_c1ffd60b-0925-4e08-a133-cc55e9fc5b3b" ВерсФорм="5.01" ВерсПрог="Diadoc 1.0">
+          <СвУчДокОбор ИдОтпр="2BM-participantId1" ИдПол="2BM-9670670494-967001000-202201240241297341956">
+            <СвОЭДОтпр ИННЮЛ="6663003127" ИдЭДО="2BM" НаимОрг="АО &quot;ПФ &quot;СКБ Контур&quot;" />
+          </СвУчДокОбор>
+          <Документ КНД="1115131" ВремИнфПр="09.16.16" ДатаИнфПр="03.03.2022" НаимЭконСубСост="1" Функция="СЧФ" ОснДоверОргСост="1">
+            <СвСчФакт НомерСчФ="140" ДатаСчФ="01.08.2019" КодОКВ="643">
+              <СвПрод>
+                <ИдСв>
+                  <СвИП ИННФЛ="114500647890">
+                    <ФИО Фамилия="Продавец" Имя="Иван" Отчество="Иванович" />
+                  </СвИП>
+                </ИдСв>
+                <Адрес>
+                  <АдрРФ КодРегион="02" />
+                </Адрес>
+              </СвПрод>
+              <СвПокуп>
+                <ИдСв>
+                  <СвЮЛУч НаимОрг="Документация-получатель" ИННЮЛ="9670670494" КПП="967001000" />
+                </ИдСв>
+                <Адрес>
+                  <АдрРФ Индекс="777777" КодРегион="50" Город="г. Москва" />
+                </Адрес>
+              </СвПокуп>
+              <ДопСвФХЖ1 НаимОКВ="Российский рубль" ОбстФормСЧФ="1" />
+            </СвСчФакт>
+            <ТаблСчФакт>
+              <СведТов НомСтр="1" НаимТов="Товарная позиция" ОКЕИ_Тов="796" КолТов="0" ЦенаТов="0.00" СтТовБезНДС="0.00" НалСт="без НДС" СтТовУчНал="0.00">
+                <Акциз>
+                  <СумАкциз>10.00</СумАкциз>
+                </Акциз>
+                <СумНал>
+                  <СумНал>0.00</СумНал>
+                </СумНал>
+                <ДопСведТов НаимЕдИзм="шт" />
+              </СведТов>
+              <ВсегоОпл СтТовБезНДСВсего="0.00" СтТовУчНалВсего="0.00">
+                <СумНалВсего>
+                  <СумНал>0.00</СумНал>
+                </СумНалВсего>
+              </ВсегоОпл>
+            </ТаблСчФакт>
+            <СвПродПер>
+              <СвПер СодОпер="Товары переданы">
+                <ОснПер НаимОсн="Без документа-основания" />
+              </СвПер>
+            </СвПродПер>
+            <Подписант ОснПолн="Должностные обязанности" ОблПолн="0" Статус="1">
+              <ФЛ ИННФЛ="123456789047">
+                <ФИО Фамилия="Подписантов" Имя="Иван" Отчество="Иванович" />
+              </ФЛ>
+            </Подписант>
+          </Документ>
+        </Файл>
+
 Полученное тело ответа содержит XML-файл первого титула документа.
 
 Генерация последующих титулов
@@ -267,147 +277,283 @@ GenerateTitleXml
 
 .. _generate_title_xml_poa:
 
-Генерация титула с машиночитаемой доверенностью
------------------------------------------------
+Генерация титула при подписании сертификатом физического лица
+-------------------------------------------------------------
+Большинство формализованных документов должны содержать в себе информацию о подписанте документа. При подписании документа юридического лица сертификатом, выданным на физическое лицо, в блоке Подписант невозможно заполнить поля, которых нет в сертификате, например, наименование организации, ИНН ЮЛ. Чтобы заполнить эти поля, укажите в ``UserDataXml`` информацию о МЧД:
 
-Чтобы сгенерировать титул с машиночитаемой доверенностью (МЧД), нужно указать информацию о МЧД для подписанта при формировании упрощенного титула ``UserDataXml``. Сделать это можно следующим образом:
-
-- если детали подписанта генерируются по сертификату ``SignerReference``, то для корректного формирования подписанта в титуле необходимо заполнить структуру ``PowerOfAttorney``: указать регистрационный номер МЧД и ИНН доверителя или использовать МЧД по умолчанию;
-
-- если при генерации детали подписанта задаются в явном виде с помощью структуры ``SignerDetails``, то в случае формирования подписанта по МЧД интегратор сам определяет необходимость использования ИНН подписанта и название организации для ЮЛ из МЧД.
+- если детали подписанта генерируются по сертификату ``SignerReference``, то заполните структуру :doc:`../proto/PowerOfAttorney`: укажите регистрационный номер МЧД и ИНН доверителя или используйте МЧД по умолчанию;
+- если при генерации детали подписанта задаются в явном виде с помощью структуры ``SignerDetails``, то в случае формирования подписанта по МЧД самостоятельно определите необходимость использования ИНН подписанта и название организации для ЮЛ из МЧД.
 
 *Структура PowerOfAttorney в XSD-схеме*
 
-.. sourcecode:: xml
+.. code-block:: xml
 
-	<xs:complexType name="PowerOfAttorney">
-	<xs:sequence>
-	  <xs:element name="FullId" minOccurs="0">
-		<xs:complexType>
-		  <xs:attribute name="RegistrationNumber" use="required" type="guid"/>
-		  <xs:attribute name="IssuerInn" use="required" type="inn"/>
-		</xs:complexType>
-	  </xs:element>
-	</xs:sequence>
-	<xs:attribute name="UseDefault" use="required">
-	  <xs:simpleType>
-		<xs:restriction base="xs:string">
-		  <xs:enumeration value="true" />
-		  <xs:enumeration value="false" />
-		</xs:restriction>
-	  </xs:simpleType>
-	</xs:attribute>
-	</xs:complexType>
+    <xs:complexType name="PowerOfAttorney">
+    <xs:sequence>
+      <xs:element name="FullId" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="RegistrationNumber" use="required" type="guid"/>
+          <xs:attribute name="IssuerInn" use="required" type="inn"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="UseDefault" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true" />
+          <xs:enumeration value="false" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    </xs:complexType>
 
-*Пример тела запроса для документа с МЧД*
+.. container:: toggle
 
-.. sourcecode:: xml
+    .. container:: header
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<UniversalTransferDocumentWithHyphens Function="СЧФ"
-			DocumentDate="01.08.2019"
-			DocumentNumber="140"
-			DocumentCreator="1"
-			DocumentCreatorBase="1"
-			CircumFormatInvoice="1"
-			Currency="643" >
-		<Sellers>
-			<Seller>
-				<OrganizationDetails OrgType="2"
-						Inn="114500647890"
-						FnsParticipantId="2BM-participantId1"
-						OrgName="ИП Продавец Иван Иванович">
-					<Address>
-						<RussianAddress Region="02"/>
-					</Address>
-				</OrganizationDetails>
-			</Seller>
-		</Sellers>
-		<Buyers>
-			<Buyer>
-				<OrganizationReference OrgType="1"
-						BoxId="53d55d52-9317-4ad4-a7d9-5e9dd3cd6367"/>
-			</Buyer>
-		</Buyers>
-		<Table TotalWithVatExcluded="0" Vat="0" Total="0">
-			<Item Product="Товарная позиция"
-					Unit="796"
-					Quantity="0"
-					Price="0"
-					TaxRate="без НДС"
-					SubtotalWithVatExcluded="0"
-					Vat="0"
-					Subtotal="0"
-					Excise="10"/>
-		</Table>
-		<TransferInfo OperationInfo="Товары переданы"/>
-		<Signers>
-			<SignerReference BoxId="74ef3a00-c625-3ef0-9b50-65bf7f96b9ae" CertificateThumbprint="8A80C2723DBC4F0A94F8CEE21C0A15A68A80C272">
-				<PowerOfAttorney UseDefault="false">
-					<FullId RegistrationNumber="4F73C574-CF7C-4664-91B9-48185BC66A27" IssuerInn="114500647890" />
-				</PowerOfAttorney> 
-			</SignerReference>
-		</Signers>
-	</UniversalTransferDocumentWithHyphens>
+      **Пример тела запроса для документа с МЧД**:
 
-*Пример тела ответа*
+    .. code-block:: xml
 
-::
+        <?xml version="1.0" encoding="utf-8"?>
+        <UniversalTransferDocumentWithHyphens Function="СЧФ"
+                DocumentDate="01.08.2019"
+                DocumentNumber="140"
+                DocumentCreator="1"
+                DocumentCreatorBase="1"
+                CircumFormatInvoice="1"
+                Currency="643" >
+            <Sellers>
+                <Seller>
+                    <OrganizationDetails OrgType="2"
+                            Inn="114500647890"
+                            FnsParticipantId="2BM-participantId1"
+                            OrgName="ИП Продавец Иван Иванович">
+                        <Address>
+                            <RussianAddress Region="02"/>
+                        </Address>
+                    </OrganizationDetails>
+                </Seller>
+            </Sellers>
+            <Buyers>
+                <Buyer>
+                    <OrganizationReference OrgType="1"
+                            BoxId="53d55d52-9317-4ad4-a7d9-5e9dd3cd6367"/>
+                </Buyer>
+            </Buyers>
+            <Table TotalWithVatExcluded="0" Vat="0" Total="0">
+                <Item Product="Товарная позиция"
+                        Unit="796"
+                        Quantity="0"
+                        Price="0"
+                        TaxRate="без НДС"
+                        SubtotalWithVatExcluded="0"
+                        Vat="0"
+                        Subtotal="0"
+                        Excise="10"/>
+            </Table>
+            <TransferInfo OperationInfo="Товары переданы"/>
+            <Signers>
+                <SignerReference BoxId="74ef3a00-c625-3ef0-9b50-65bf7f96b9ae" CertificateThumbprint="8A80C2723DBC4F0A94F8CEE21C0A15A68A80C272">
+                    <PowerOfAttorney UseDefault="false">
+                        <FullId RegistrationNumber="4F73C574-CF7C-4664-91B9-48185BC66A27" IssuerInn="114500647890" />
+                    </PowerOfAttorney> 
+                </SignerReference>
+            </Signers>
+        </UniversalTransferDocumentWithHyphens>
 
-    HTTP/1.1 200 OK
 
-	<?xml version="1.0" encoding="windows-1251"?>
-    <Файл ИдФайл="ON_NSCHFDOPPR_2BM-9670670494-967001000-202201240241297341956_2BM-participantId1_20220303_c1ffd60b-0925-4e08-a133-cc55e9fc5b3b" ВерсФорм="5.01" ВерсПрог="Diadoc 1.0">
-      <СвУчДокОбор ИдОтпр="2BM-participantId1" ИдПол="2BM-9670670494-967001000-202201240241297341956">
-            <СвОЭДОтпр ИННЮЛ="6663003127" ИдЭДО="2BM" НаимОрг="АО &quot;ПФ &quot;СКБ Контур&quot;" />
-      </СвУчДокОбор>
-      <Документ КНД="1115131" ВремИнфПр="09.16.16" ДатаИнфПр="03.03.2022" НаимЭконСубСост="1" Функция="СЧФ" ОснДоверОргСост="1">
-            <СвСчФакт НомерСчФ="140" ДатаСчФ="01.08.2019" КодОКВ="643">
-              <СвПрод>
-                    <ИдСв>
-                      <СвИП ИННФЛ="114500647890">
-                            <ФИО Фамилия="Продавец" Имя="Иван" Отчество="Иванович" />
-                      </СвИП>
-                    </ИдСв>
-                    <Адрес>
-                      <АдрРФ КодРегион="02" />
-                    </Адрес>
-              </СвПрод>
-              <СвПокуп>
-                    <ИдСв>
-                      <СвЮЛУч НаимОрг="Документация-получатель" ИННЮЛ="9670670494" КПП="967001000" />
-                    </ИдСв>
-                    <Адрес>
-                      <АдрРФ Индекс="777777" КодРегион="50" Город="г. Москва" />
-                    </Адрес>
-              </СвПокуп>
-              <ДопСвФХЖ1 НаимОКВ="Российский рубль" ОбстФормСЧФ="1" />
-            </СвСчФакт>
-            <ТаблСчФакт>
-              <СведТов НомСтр="1" НаимТов="Товарная позиция" ОКЕИ_Тов="796" КолТов="0" ЦенаТов="0.00" СтТовБезНДС="0.00" НалСт="без НДС" СтТовУчНал="0.00">
-                    <Акциз>
-                      <СумАкциз>10.00</СумАкциз>
-                    </Акциз>
-                    <СумНал>
-                      <СумНал>0.00</СумНал>
-                    </СумНал>
-                    <ДопСведТов НаимЕдИзм="шт" />
-              </СведТов>
-              <ВсегоОпл СтТовБезНДСВсего="0.00" СтТовУчНалВсего="0.00">
-                    <СумНалВсего>
-                      <СумНал>0.00</СумНал>
-                    </СумНалВсего>
-              </ВсегоОпл>
-            </ТаблСчФакт>
-            <СвПродПер>
-              <СвПер СодОпер="Товары переданы">
-                    <ОснПер НаимОсн="Без документа-основания" />
-              </СвПер>
-            </СвПродПер>
-            <Подписант ОснПолн="Должностные обязанности" ОблПолн="0" Статус="1">
-              <ЮЛ ИННЮЛ="114500647890" Должн="Сотрудник" НаимОрг="Тестовая организация">
-					<ФИО Фамилия="Тестовый" Имя="Сертификат" Отчество="Сертификатович" />
-			</ЮЛ>
-            </Подписант>
-      </Документ>
-    </Файл>
+.. container:: toggle
+
+    .. container:: header
+
+      **Пример тела ответа**:
+
+    .. code-block:: xml
+
+        HTTP/1.1 200 OK
+
+        <?xml version="1.0" encoding="windows-1251"?>
+        <Файл ИдФайл="ON_NSCHFDOPPR_2BM-9670670494-967001000-202201240241297341956_2BM-participantId1_20220303_c1ffd60b-0925-4e08-a133-cc55e9fc5b3b" ВерсФорм="5.01" ВерсПрог="Diadoc 1.0">
+          <СвУчДокОбор ИдОтпр="2BM-participantId1" ИдПол="2BM-9670670494-967001000-202201240241297341956">
+                <СвОЭДОтпр ИННЮЛ="6663003127" ИдЭДО="2BM" НаимОрг="АО &quot;ПФ &quot;СКБ Контур&quot;" />
+          </СвУчДокОбор>
+          <Документ КНД="1115131" ВремИнфПр="09.16.16" ДатаИнфПр="03.03.2022" НаимЭконСубСост="1" Функция="СЧФ" ОснДоверОргСост="1">
+                <СвСчФакт НомерСчФ="140" ДатаСчФ="01.08.2019" КодОКВ="643">
+                  <СвПрод>
+                        <ИдСв>
+                          <СвИП ИННФЛ="114500647890">
+                                <ФИО Фамилия="Продавец" Имя="Иван" Отчество="Иванович" />
+                          </СвИП>
+                        </ИдСв>
+                        <Адрес>
+                          <АдрРФ КодРегион="02" />
+                        </Адрес>
+                  </СвПрод>
+                  <СвПокуп>
+                        <ИдСв>
+                          <СвЮЛУч НаимОрг="Документация-получатель" ИННЮЛ="9670670494" КПП="967001000" />
+                        </ИдСв>
+                        <Адрес>
+                          <АдрРФ Индекс="777777" КодРегион="50" Город="г. Москва" />
+                        </Адрес>
+                  </СвПокуп>
+                  <ДопСвФХЖ1 НаимОКВ="Российский рубль" ОбстФормСЧФ="1" />
+                </СвСчФакт>
+                <ТаблСчФакт>
+                  <СведТов НомСтр="1" НаимТов="Товарная позиция" ОКЕИ_Тов="796" КолТов="0" ЦенаТов="0.00" СтТовБезНДС="0.00" НалСт="без НДС" СтТовУчНал="0.00">
+                        <Акциз>
+                          <СумАкциз>10.00</СумАкциз>
+                        </Акциз>
+                        <СумНал>
+                          <СумНал>0.00</СумНал>
+                        </СумНал>
+                        <ДопСведТов НаимЕдИзм="шт" />
+                  </СведТов>
+                  <ВсегоОпл СтТовБезНДСВсего="0.00" СтТовУчНалВсего="0.00">
+                        <СумНалВсего>
+                          <СумНал>0.00</СумНал>
+                        </СумНалВсего>
+                  </ВсегоОпл>
+                </ТаблСчФакт>
+                <СвПродПер>
+                  <СвПер СодОпер="Товары переданы">
+                        <ОснПер НаимОсн="Без документа-основания" />
+                  </СвПер>
+                </СвПродПер>
+                <Подписант ОснПолн="Должностные обязанности" ОблПолн="0" Статус="1">
+                  <ЮЛ ИННЮЛ="114500647890" Должн="Сотрудник" НаимОрг="Тестовая организация">
+                        <ФИО Фамилия="Тестовый" Имя="Сертификат" Отчество="Сертификатович" />
+                </ЮЛ>
+                </Подписант>
+          </Документ>
+        </Файл>
+
+Генерация титула с информацией о МЧД в содержимом документа
+-----------------------------------------------------------
+
+В новых форматах документов можно передавать информацию об МЧД в содержимом документа. Сейчас сгенерировать документ с МЧД в содержимом можно только для акта сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document?moduleId=1&documentId=425482>`_.
+
+Для генерации документа с МДЧ в содержимом заполните структуру ``PowerOfAttorney`` в XSD Универсального подписанта конкретного формата документа. В структуре можно указать сведения об электронной (элемент ``Electronic``) или бумажной доверенности (элемент ``Paper``). Электронную доверенность можно выбрать из хранилища Диадока (заполнение элемента ``Storage``) или указать данные вручную (заполнение элемента ``Manual``). Если вы выбираете доверенность из хранилища, можно использовать МЧД сотрудника по умолчанию (атрибут ``UseDefault = 1``) или указать другую, заполнив регистрационный номер и ИНН доверителя внутри структуры FullId при одновременном значении атрибута ``UseDefault = 0``.
+
+.. container:: toggle
+
+    .. container:: header
+
+      **Пример структуры PowerOfAttorney для универсального подписанта Акта сверки 405 формата**:
+
+    .. code-block:: xml
+
+        <xs:complexType name="PowerOfAttorney">
+            <xs:sequence>
+                <xs:element name="Electronic" type="Electronic" minOccurs="0">
+                    <xs:annotation>
+                       <xs:documentation>Электронная доверенность</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Paper" type="Paper" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Бумажная доверенности</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="Electronic">
+            <xs:sequence>
+                <xs:choice>
+                    <xs:element name="Storage" type="Storage">
+                        <xs:annotation>
+                            <xs:documentation>Автоматическое заполнение информации по доверенности на основе номера и ИНН</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="Manual" type="Manual">
+                        <xs:annotation>
+                            <xs:documentation>Ручное заполнение данных доверенности</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="Storage">
+            <xs:sequence>
+                <xs:element name="FullId" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="RegistrationNumber" type="guid" use="required">
+                            <xs:annotation>
+                                <xs:documentation>Номер доверенности</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="IssuerInn" type="inn" use="required">
+                            <xs:annotation>
+                                <xs:documentation>ИНН организации, выдавшей доверенность</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="UseDefault" use="required">
+                <xs:annotation>
+                    <xs:documentation>Автоматическое заполнение информации на основе доверенности, используемой сотрудником по умолчанию</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="true" />
+                        <xs:enumeration value="false" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+        <xs:complexType name="Manual">
+            <xs:attribute name="RegistrationNumber" type="guid">
+                <xs:annotation>
+                    <xs:documentation>Номер доверенности</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+                <xs:attribute name="RegistrationDate" type="date">
+            <xs:annotation>
+                    <xs:documentation>Дата совершения (выдачи) доверенности</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="InternalNumber" type="string50">
+                <xs:annotation>
+                    <xs:documentation>Внутренний регистрационный номер доверенности</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="InternalDate" type="date">
+                <xs:annotation>
+                    <xs:documentation>Дата внутренней регистрации доверенности</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="SystemId" type="string500">
+                <xs:annotation>
+                    <xs:documentation>Идентифицирующая информация об информационной системе, в которой осуществляется хранение доверенности</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+        <xs:complexType name="Paper">
+            <xs:annotation>
+                <xs:documentation>Сведения о доверенности, используемой для подтверждения полномочий на бумажном носителе</xs:documentation>
+            </xs:annotation>
+            <xs:sequence>
+                <xs:element name="Person" type="Fio" minOccurs="0">
+                   <xs:annotation>
+                        <xs:documentation>Фамилия, имя, отчество (при наличии) лица, подписавшего доверенность</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="InternalNumber" type="string50">
+                <xs:annotation>
+                    <xs:documentation>Внутренний регистрационный номер доверенности</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="RegistrationDate" type="date">
+                <xs:annotation>
+                    <xs:documentation>Дата совершения (выдачи) доверенности</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="IssuerInfo" type="string1000">
+                <xs:annotation>
+                    <xs:documentation>Сведения о доверителе</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>

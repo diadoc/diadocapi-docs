@@ -1,6 +1,15 @@
 ﻿История изменений API
 =====================
 
+20.12.2023
+----------
+**SDK**: `C# 2.14.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.5>`__
+
+- Добавлена возможность передать машиночитаемую доверенность в содержимом документа. МЧД в содержимом можно передать только для акта сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document?moduleId=1&documentId=425482>`__:
+
+	- в структуру :doc:`proto/PowerOfAttorneyToPost` добавлен флаг  ``UseDocumentContent``;
+	- в перечисление :doc:`proto/PowerOfAttorneySendingType` добавлено значение ``DocumentContent``. Значение будет возвращаться, если МЧД передали в содержимом документа.
+
 03.11.2023
 ----------
 **SDK**: `C# 2.14.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.3>`__
@@ -453,7 +462,7 @@
 ----------
 **SDK**: `C# 1.78.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.78.0>`__ | `Java 2.14.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.14.0>`__ | `C++ 1.76.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.76.0>`__
 
-- В метод :doc:`http/utd/GenerateUniversalTransferDocumentXmlForSeller` добавлен опциональный параметр ``documentVersion``.
+- В метод :doc:`obsolete/http/GenerateUniversalTransferDocumentXmlForSeller` добавлен опциональный параметр ``documentVersion``.
 
 
 14.07.2019
@@ -469,7 +478,7 @@
 **SDK**: `C# 1.76.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.76.0>`__ | `Java 2.12.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.12.0>`__ | `C++ 1.74.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.74.0>`__
 
 - Добавлен метод :doc:`http/GetMyEmployee`, возвращающий информацию о текущем сотруднике организации.
-- Метод :doc:`http/GetMyPermissions` объявлен устаревшим.
+- Метод :doc:`obsolete/http/GetMyPermissions` объявлен устаревшим.
 - Добавлена возможность управлять правом сотрудника удалять документы и черновики и восстанавливать документы с помощью метода :doc:`proto/EmployeePermissions`. В структуре :doc:`proto/OrganizationUserPermissions` добавлен флаг ``CanDeleteRestoreDocuments``.
 
 
@@ -477,7 +486,7 @@
 ----------
 **SDK**: `C# 1.75.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.75.0>`__ | `Java 2.11.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.11.1>`__ | `C++ 1.73.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.73.0>`__
 
-- Поле ``TransferDocDetails`` в структуре :doc:`EventContent <proto/utd/UniversalCorrectionDocumentSellerTitleInfo>`, соответствующее атрибуту *ПередатДокум* в УКД, стало необязательным.
+- Поле ``TransferDocDetails`` в структуре :doc:`EventContent <obsolete/proto/UniversalCorrectionDocumentSellerTitleInfo>`, соответствующее атрибуту *ПередатДокум* в УКД, стало необязательным.
 
 
 05.07.2019
@@ -505,8 +514,8 @@
  - через метод :doc:`http/GetDocumentTypes` можно найти версии с идентификатором ``utd820_05_01_01`` для всех типов документов, поддерживающих новый формат: счета-фактуры, акты, накладные, УПД, иУПД.
  - для генерации и парсинга документов новой версии доступны только обобщенные методы:
  
-  - :doc:`http/GenerateSenderTitleXml`,
-  - :doc:`http/GenerateRecipientTitleXml`,
+  - :doc:`obsolete/http/GenerateSenderTitleXml`,
+  - :doc:`obsolete/http/GenerateRecipientTitleXml`,
   - :doc:`http/ParseTitleXml`.
   
 - В структуры :doc:`proto/utd/ExtendedSigner` и :doc:`proto/DocumentTitleType` добавлены значения в для поддержки версий формата приказа №820.
@@ -606,15 +615,15 @@
 
 - Следующие методы генерации и парсинга документов получили поддержку ставки 20%:
 
- - :doc:`http/GenerateInvoiceXml` — для генерации счетов-фактур,
- - :doc:`http/GenerateTorg12XmlForSeller` — для генерации документов в формате приказа 551,
- - :doc:`http/GenerateAcceptanceCertificateXmlForSeller` — для генерации документов в формате приказа 552,
- - :doc:`http/utd/GenerateUniversalTransferDocumentXmlForSeller` — для генерации документов в форматах УПД и УКД,
- - :doc:`http/ParseInvoiceXml` — для парсинга счетов-фактур,
- - :doc:`http/ParseTorg12SellerTitleXml` — для парсинга документов в формате приказа 551,
- - :doc:`http/ParseAcceptanceCertificateSellerTitleXml` — для парсинга документов в формате приказа 552,
- - :doc:`http/utd/ParseUniversalTransferDocumentSellerTitleXml` — для парсинга документов в формате УПД,
- - :doc:`http/utd/ParseUniversalCorrectionDocumentSellerTitleXml` — для парсинга документов в формате УКД.
+ - :doc:`obsolete/http/GenerateInvoiceXml` — для генерации счетов-фактур,
+ - :doc:`obsolete/http/GenerateTorg12XmlForSeller` — для генерации документов в формате приказа 551,
+ - :doc:`obsolete/http/GenerateAcceptanceCertificateXmlForSeller` — для генерации документов в формате приказа 552,
+ - :doc:`obsolete/http/GenerateUniversalTransferDocumentXmlForSeller` — для генерации документов в форматах УПД и УКД,
+ - :doc:`obsolete/http/ParseInvoiceXml` — для парсинга счетов-фактур,
+ - :doc:`obsolete/http/ParseTorg12SellerTitleXml` — для парсинга документов в формате приказа 551,
+ - :doc:`obsolete/http/ParseAcceptanceCertificateSellerTitleXml` — для парсинга документов в формате приказа 552,
+ - :doc:`obsolete/http/ParseUniversalTransferDocumentSellerTitleXml` — для парсинга документов в формате УПД,
+ - :doc:`obsolete/http/ParseUniversalCorrectionDocumentSellerTitleXml` — для парсинга документов в формате УКД.
 
 
 14.12.2018
@@ -727,7 +736,7 @@
 ----------
 **SDK**: `C# 1.53.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.53.0>`__ | `Java 1.53.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.53.0>`__ | `C++ 1.53.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.53.0>`__
 
-- Добавлен обобщенный метод генерации титула отправителя :doc:`http/GenerateSenderTitleXml`.
+- Добавлен обобщенный метод генерации титула отправителя :doc:`obsolete/http/GenerateSenderTitleXml`.
 
 
 08.08.2018
@@ -790,8 +799,8 @@
 ----------
 **SDK**: `C# 1.51.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.6>`__
 
-- Добавлен обобщенный метод генерации титула получателя :doc:`http/GenerateRecipientTitleXml`.
-- Расширена структура :doc:`DocumentTitle <proto/DocumentTypeDescription>`: добавлено поле ``UserDataXsdUrl``, позволяющее узнать, по какой ссылке возможно загрузить XSD-схему контракта для генерации титула с помощью обобщенного метода генерации :doc:`http/GenerateRecipientTitleXml`.
+- Добавлен обобщенный метод генерации титула получателя :doc:`obsolete/http/GenerateRecipientTitleXml`.
+- Расширена структура :doc:`DocumentTitle <proto/DocumentTypeDescription>`: добавлено поле ``UserDataXsdUrl``, позволяющее узнать, по какой ссылке возможно загрузить XSD-схему контракта для генерации титула с помощью обобщенного метода генерации :doc:`obsolete/http/GenerateRecipientTitleXml`.
 
 
 23.04.2018
@@ -895,7 +904,7 @@
 - Добавлены методы для работы с шаблонами документов:
 
  - :doc:`http/PostTemplate` — для отправки шаблона документов,
- - :doc:`http/GetTemplate` — для получения отправленного шаблона.
+ - :doc:`obsolete/http/GetTemplate` — для получения отправленного шаблона.
  
 - В структуре ``Organization`` добавлено поле ``IsForeign``, отражающее статус иностранности организации.
 
@@ -942,7 +951,7 @@
 ----------
 **SDK**: `C# 1.46.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.46.1>`__ | `Java 1.46.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.46.1>`__ | `C++ 1.46.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.46.1>`__
 
-- Добавлены структуры :doc:`proto/TovTorgInfo` и :doc:`proto/AcceptanceCertificate552Info` для описания накладных и актов в формате приказов №551/552.
+- Добавлены структуры :doc:`obsolete/proto/TovTorgInfo` и :doc:`obsolete/proto/AcceptanceCertificate552Info` для описания накладных и актов в формате приказов №551/552.
 
 
 23.08.2017
@@ -951,7 +960,7 @@
 
 - Добавлена структура :doc:`proto/SignatureInfo`, содержащая информацию о подписи и сертификате.
 - Добавлен метод :doc:`http/GetSignatureInfo`, получающий на вход идентификаторы подписи и возвращающий данные в структуре :doc:`proto/SignatureInfo`.
-- В структуре :doc:`InvoiceItemAmountsDiff <proto/InvoiceCorrectionInfo>` поле ``Subtotal``, отражающее сумму с учетом налога, теперь является опциональным.
+- В структуре :doc:`InvoiceItemAmountsDiff <obsolete/proto/InvoiceCorrectionInfo>` поле ``Subtotal``, отражающее сумму с учетом налога, теперь является опциональным.
 - Добавлена вторая версия метода :doc:`ExtendedSignerDetails <http/utd/ExtendedSignerDetailsV2>`, принимающая на вход структуру :doc:`proto/DocumentTitleType`.
 
 
@@ -975,7 +984,7 @@
 ----------
 **SDK**: `C# 1.44 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.44>`__ | `Java 1.44 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.44>`__ | `C++ 1.44 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.44>`__
 
-- В структуре :doc:`proto/EncryptedXmlDocumentAttachment` добавлено поле ``DocumentName``, в котором указано наименование первичного документа, определенное организацией (*НаимДокОпр*).
+- В структуре :doc:`obsolete/proto/EncryptedXmlDocumentAttachment` добавлено поле ``DocumentName``, в котором указано наименование первичного документа, определенное организацией (*НаимДокОпр*).
 
 
 02.06.2017
@@ -1006,7 +1015,7 @@
 ----------
 **SDK**: `C# 1.41.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.41.1>`__ | `Java 1.41.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.41.1>`__ | `C++ 1.41.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.41.1>`__
 
-- Добавлена возможность отправлять неформализованные акты и акты сверки без указания номера документа: в структурах :doc:`proto/ReconciliationActAttachment` и :doc:`proto/AcceptanceCertificateAttachment` поле ``DocumentNumber`` стало необязательным.
+- Добавлена возможность отправлять неформализованные акты и акты сверки без указания номера документа: в структурах :doc:`obsolete/proto/ReconciliationActAttachment` и :doc:`obsolete/proto/AcceptanceCertificateAttachment` поле ``DocumentNumber`` стало необязательным.
 
 
 27.03.2017
@@ -1032,7 +1041,7 @@
 24.03.2017
 ----------
 
-- Добавлены методы для парсинга титулов УКД: :doc:`продавца <http/utd/ParseUniversalCorrectionDocumentSellerTitleXml>` и :doc:`покупателя <http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml>`.
+- Добавлены методы для парсинга титулов УКД: :doc:`продавца <obsolete/http/ParseUniversalCorrectionDocumentSellerTitleXml>` и :doc:`покупателя <obsolete/http/ParseUniversalCorrectionDocumentBuyerTitleXml>`.
 
 
 15.03.2017
@@ -1062,18 +1071,18 @@
  
 - Добавлены методы:
 
- - :doc:`http/utd/GenerateUniversalTransferDocumentXmlForSeller` — генерация титула продавца УПД и УКД,
- - :doc:`http/utd/GenerateUniversalTransferDocumentXmlForBuyer` — генерация титула покупателя УПД и УКД,
- - :doc:`http/utd/ParseUniversalTransferDocumentSellerTitleXml` — парсинг титула продавца УПД,
- - :doc:`http/utd/ParseUniversalTransferDocumentBuyerTitleXml` — парсинг титула покупателя УПД,
+ - :doc:`obsolete/http/GenerateUniversalTransferDocumentXmlForSeller` — генерация титула продавца УПД и УКД,
+ - :doc:`obsolete/http/GenerateUniversalTransferDocumentXmlForBuyer` — генерация титула покупателя УПД и УКД,
+ - :doc:`obsolete/http/ParseUniversalTransferDocumentSellerTitleXml` — парсинг титула продавца УПД,
+ - :doc:`obsolete/http/ParseUniversalTransferDocumentBuyerTitleXml` — парсинг титула покупателя УПД,
  - :doc:`http/utd/ExtendedSignerDetailsV2` — заполнение дополнительных данных (для УПД и УКД) о подписантах.
  
 - Добавлены структуры:
 
- - :doc:`proto/utd/UniversalTransferDocumentSellerTitleInfo` — для описания титула продавца УПД,
- - :doc:`proto/utd/UniversalTransferDocumentBuyerTitleInfo` — для описания титула покупателя УПД,
- - :doc:`proto/utd/UniversalCorrectionDocumentSellerTitleInfo` — для описания титула продавца УКД,
- - :doc:`proto/utd/UniversalTransferDocumentBuyerTitleInfo` — для описания титула покупателя УКД,
+ - :doc:`obsolete/proto/UniversalTransferDocumentSellerTitleInfo` — для описания титула продавца УПД,
+ - :doc:`obsolete/proto/UniversalTransferDocumentBuyerTitleInfo` — для описания титула покупателя УПД,
+ - :doc:`obsolete/proto/UniversalCorrectionDocumentSellerTitleInfo` — для описания титула продавца УКД,
+ - :doc:`obsolete/proto/UniversalTransferDocumentBuyerTitleInfo` — для описания титула покупателя УКД,
  - :doc:`proto/utd/UniversalDocumentMetadata` — для описания данных УПД и УКД,
  - :doc:`proto/utd/ExtendedOrganizationInfo` — для описания реквизитов продавца, покупателя и грузоотправителя, используемая в УПД и УКД,
  - :doc:`proto/utd/ExtendedSigner` — для описания реквизитов подписанта, используемая в УПД и УКД,
@@ -1168,7 +1177,7 @@
 
 - Добавлена возможность отправлять новый тип документа «Дополнительное соглашение к договору»:
 
- - в структуре :doc:`proto/MessageToPost` добавлена стуктура :doc:`proto/SupplementaryAgreementAttachment` для передачи дополнительного соглашения к договору;
+ - в структуре :doc:`proto/MessageToPost` добавлена стуктура :doc:`obsolete/proto/SupplementaryAgreementAttachment` для передачи дополнительного соглашения к договору;
  - в структуры :doc:`proto/Entity message` и :doc:`proto/DocumentType` добавлен новый тип для дополнительного соглашения к договору;
  - в структуре :doc:`proto/Document` добавлена вложенная структура :doc:`SupplementaryAgreementMetadata <proto/BilateralDocumentMetadata>` для описания метаданных дополнительного соглашения к договору;
  - в структуре :doc:`proto/DocumentInfo` добавлена вложенная структура :doc:`SupplementaryAgreementInfo <proto/SupplementaryAgreementDocumentInfo>` для описания метаданных дополнительного соглашения к договору.
@@ -1180,7 +1189,7 @@
 - Добавлена возможность отправлять зашифрованные товарные накладные и акты выполненных работ:
 
  - в структуре :doc:`proto/MessageToPost` добавлены поля ``EncryptedXmlTorg12SellerTitles`` и ``EncryptedXmlAcceptanceCertificateSellerTitles``;
- - добавлена структура :doc:`proto/EncryptedXmlDocumentAttachment` для передачи зашифрованных накладных и актов.
+ - добавлена структура :doc:`obsolete/proto/EncryptedXmlDocumentAttachment` для передачи зашифрованных накладных и актов.
 
 
 10.08.2015
@@ -1198,10 +1207,10 @@
  - в структурах :doc:`proto/Document` и :doc:`proto/Entity message` добавлен флаг ``IsEncryptedContent``:— он указывается для передачи контента в зашифрованном виде;
  - добавлены структуры для передачи зашифрованных счетов-фактур и метаданных для исправлений и корректировок:
  
-  - :doc:`proto/EncryptedInvoiceAttachment`
-  - :doc:`EncryptedDocumentMetadata <proto/EncryptedInvoiceAttachment>`
-  - :doc:`EncryptedInvoiceMetadata <proto/EncryptedInvoiceAttachment>`
-  - :doc:`EncryptedInvoiceCorrectionMetadata <proto/EncryptedInvoiceAttachment>`
+  - :doc:`obsolete/proto/EncryptedInvoiceAttachment`
+  - :doc:`EncryptedDocumentMetadata <obsolete/proto/EncryptedInvoiceAttachment>`
+  - :doc:`EncryptedInvoiceMetadata <obsolete/proto/EncryptedInvoiceAttachment>`
+  - :doc:`EncryptedInvoiceCorrectionMetadata <obsolete/proto/EncryptedInvoiceAttachment>`
   
  - в структуре :doc:`proto/MessageToPost` добавлено поле ``EncryptedInvoices`` для передачи зашифрованных счетов-фактур;
  - в структуре :doc:`proto/MessagePatchToPost` добавлено поле ``SignatureVerifications`` для передачи резльтатов проверки подписей на стороне получателя;
@@ -1235,9 +1244,9 @@
 13.04.2015
 ----------
 
-- Изменены структуры :doc:`proto/InvoiceInfo` и :doc:`proto/InvoiceCorrectionInfo`, которые предоставляют исходные данные для формирования СФ и КСФ в XML-формате с помощью метода :doc:`http/GenerateInvoiceXml`.
+- Изменены структуры :doc:`obsolete/proto/InvoiceInfo` и :doc:`obsolete/proto/InvoiceCorrectionInfo`, которые предоставляют исходные данные для формирования СФ и КСФ в XML-формате с помощью метода :doc:`obsolete/http/GenerateInvoiceXml`.
 - Добавлена возможность указывать версию формата СФ и КСФ и указывать поля, соответствующие новой версии XML-формата СФ.
-- Изменилась логика работы метода :doc:`http/ParseInvoiceXml` в зависимости от формата СФ.
+- Изменилась логика работы метода :doc:`obsolete/http/ParseInvoiceXml` в зависимости от формата СФ.
 
 .. warning::
  Версия сборки SDK не изменилась. Всем, кто скачал сборку в период с 10.04.2015-12.04.2015, необходимо скачать свежую сборку от 13.04.2015.
@@ -1246,7 +1255,7 @@
 10.04.2015
 ----------
 
-- Изменены структуры :doc:`proto/InvoiceInfo` и :doc:`proto/InvoiceCorrectionInfo`, которые предоставляют исходные данные для формирования СФ и КСФ в XML-формате с помощью метода :doc:`http/GenerateInvoiceXml`.
+- Изменены структуры :doc:`obsolete/proto/InvoiceInfo` и :doc:`obsolete/proto/InvoiceCorrectionInfo`, которые предоставляют исходные данные для формирования СФ и КСФ в XML-формате с помощью метода :doc:`obsolete/http/GenerateInvoiceXml`.
 - Добавлена возможность указывать версию формата СФ и КСФ.
 
 
@@ -1279,12 +1288,12 @@
 
 - Добавлена поддержка новых типов полуформализованных документов:
 
- - :doc:`протокол согласования цены <proto/NonformalizedAttachment>`
- - :doc:`реестр сертификатов <proto/NonformalizedAttachment>`
- - :doc:`акт сверки <proto/ReconciliationActAttachment>`
- - :doc:`договор <proto/ContractAttachment>`
- - :doc:`детализация <proto/ServiceDetailsAttachment>`
- - :doc:`накладная ТОРГ-13 <proto/Torg13Attachment>`
+ - :doc:`протокол согласования цены <obsolete/proto/NonformalizedAttachment>`
+ - :doc:`реестр сертификатов <obsolete/proto/NonformalizedAttachment>`
+ - :doc:`акт сверки <obsolete/proto/ReconciliationActAttachment>`
+ - :doc:`договор <obsolete/proto/ContractAttachment>`
+ - :doc:`детализация <obsolete/proto/ServiceDetailsAttachment>`
+ - :doc:`накладная ТОРГ-13 <obsolete/proto/Torg13Attachment>`
  
 
 05.02.2014
@@ -1356,7 +1365,7 @@
  - дата вступления ценового листа в силу
  - дата и номер договора, к которому относится ценовой лист.
  
-Для отправки ценовых листов через API при обращении к методу :doc:`http/PostMessage` заполните список :doc:`MessageToPost.PriceLists <proto/MessageToPost>`. Каждый элемент этого списка представляет собой структуру :doc:`proto/PriceListAttachment`.
+Для отправки ценовых листов через API при обращении к методу :doc:`http/PostMessage` заполните список :doc:`MessageToPost.PriceLists <proto/MessageToPost>`. Каждый элемент этого списка представляет собой структуру :doc:`obsolete/proto/PriceListAttachment`.
 При получение информации о документах через API с помощью методов :doc:`http/GetMessage`, :doc:`http/GetDocument` и т.п. для ценовых листов в структуре :doc:`proto/Document` заполняется поле :doc:`PriceListMetadata <proto/BilateralDocumentMetadata>`.
 При фильтрации документов методом :doc:`http/GetDocuments` можно использовать новый тип документов ``PriceList``.
 - Для получения списка пользователей конкретной организации добавлен метод :doc:`http/GetOrganizationUsers`.
@@ -1367,9 +1376,9 @@
 ----------
 
 - Добавлена возможность отправлять документы, подписанные тестовой подписью с помощью флага :doc:`SignedContent.SignWithTestSignature <proto/SignedContent>`.
-- Добавлены методы :doc:`http/ParseAcceptanceCertificateSellerTitleXml` и :doc:`http/ParseTorg12SellerTitleXml`, позволяющие преобразовывать xml-файлы формализованных актов (титул исполнителя) и ТОРГ-12 (титул продавца) в структуры :doc:`AcceptanceCertificateSellerTitleInfo <proto/AcceptanceCertificateInfo>` и :doc:`Torg12SellerTitleInfo <proto/Torg12Info>` соответственно.
+- Добавлены методы :doc:`obsolete/http/ParseAcceptanceCertificateSellerTitleXml` и :doc:`obsolete/http/ParseTorg12SellerTitleXml`, позволяющие преобразовывать xml-файлы формализованных актов (титул исполнителя) и ТОРГ-12 (титул продавца) в структуры :doc:`AcceptanceCertificateSellerTitleInfo <obsolete/proto/AcceptanceCertificateInfo>` и :doc:`Torg12SellerTitleInfo <obsolete/proto/Torg12Info>` соответственно.
 - Расширена функциональность метода :doc:`http/PostMessage`: с помощью флага :doc:`MessageToPost.DelaySend <proto/MessageToPost>` можно задержать отправку документа, чтобы была возможность провести его согласование. В связи с этим изменился набор возможных состояний документов, что требует обновления логики клиентских решений.
-- Чтобы определить, может ли пользователь запрашивать согласования, используйте флаг :doc:`OrganizationUserPermissions.CanRequestResolutions <proto/OrganizationUserPermissions>` в свойствах пользователя, возвращаемых методом :doc:`http/GetMyPermissions`.
+- Чтобы определить, может ли пользователь запрашивать согласования, используйте флаг :doc:`OrganizationUserPermissions.CanRequestResolutions <proto/OrganizationUserPermissions>` в свойствах пользователя, возвращаемых методом :doc:`obsolete/http/GetMyPermissions`.
 - В сообщение :doc:`EntityPatch <proto/MessagePatch>` добавлено поле ``ContentIsPatched``, через которое сервер выдает информацию о том, что исходный документ в процессе подписания был модифицирован. В документ была внедрена информация о том, кто подписал этот документ.
 - Изменена логика работы с перечислимыми типами: теперь в большинстве перечислений имеется специальное значение с именем ``UnknownИмяПеречисления``. Клиент получит такое значение только том случае, если есть рассогласование версий API между клиентом и сервером, и клиент не может правильно интерпретировать информацию, возвращаемую сервером (например, в случае добавления новых элементов к перечислению клиент будет получать вместо вновь добавленных элементов значение ``UnknownИмяПеречисления``). Клиент должен корректно обрабатывать такие ситуации, например, путем информирования пользователя о необходимости обновить интеграционный модуль.
 
@@ -1397,7 +1406,7 @@
 - Добавлена возможность восстанавливать ранее удаленные отдельные документы и сообщения целиком. Для этих целей добавлен метод :doc:`http/Restore`, а в структурах :doc:`EntityPatch <proto/MessagePatch>` и :doc:`proto/MessagePatch` добавлены поля, позволяющие узнать, были ли конкретный документ или сообщение восстановлены.
 - Добавлена возможность по :doc:`документу <proto/Document>` или :doc:`сообщению <proto/Message>` понять, является ли он юридически значимым. Для этих целей в каждую из названных структур добавлено поле ``IsTest``.
 - Добавлена возможность проводить эвристический семантический разбор строк, представляющих почтовый адрес в Российской Федерации. За это отвечает метод :doc:`http/ParseRussianAddress`.
-- Добавлена возможность выполнять трансформацию XML-файла СФ/ИСФ, сформированного в соответствии с :download:`XML-схемой <xsd/ON_SFAKT_1_897_01_05_01_02.xsd>`, в структуру :doc:`proto/InvoiceInfo`. За это отвечает метод :doc:`http/ParseInvoiceXml`.
+- Добавлена возможность выполнять трансформацию XML-файла СФ/ИСФ, сформированного в соответствии с :download:`XML-схемой <xsd/ON_SFAKT_1_897_01_05_01_02.xsd>`, в структуру :doc:`obsolete/proto/InvoiceInfo`. За это отвечает метод :doc:`obsolete/http/ParseInvoiceXml`.
 
 
 29.08.2012
@@ -1441,7 +1450,7 @@
  - ``Address`` — юридический адрес организации;
  - ``FnsParticipantId`` — уникальный идентификатор участника документооборота СФ, который должен указываться при формировании XML счетов-фактур.
  
-- Метод :doc:`http/GenerateInvoiceXml` теперь формирует не только XML-файлы счетов-фактур, но и XML-файлы исправлений счетов-фактур, корректировочных счетов-фактур и исправлений корректировочных счетов-фактур.
+- Метод :doc:`obsolete/http/GenerateInvoiceXml` теперь формирует не только XML-файлы счетов-фактур, но и XML-файлы исправлений счетов-фактур, корректировочных счетов-фактур и исправлений корректировочных счетов-фактур.
 
 
 11.05.2012
@@ -1457,10 +1466,10 @@
  
 - Добавлены методы, облегчающие процесс формирования корректных XML-файлов товарных накладных и актов:
 
- - :doc:`http/GenerateTorg12XmlForSeller`
- - :doc:`http/GenerateTorg12XmlForBuyer`
- - :doc:`http/GenerateAcceptanceCertificateXmlForSeller`
- - :doc:`http/GenerateAcceptanceCertificateXmlForBuyer`
+ - :doc:`obsolete/http/GenerateTorg12XmlForSeller`
+ - :doc:`obsolete/http/GenerateTorg12XmlForBuyer`
+ - :doc:`obsolete/http/GenerateAcceptanceCertificateXmlForSeller`
+ - :doc:`obsolete/http/GenerateAcceptanceCertificateXmlForBuyer`
  
  А в метод :doc:`http/GetDocuments` добавлена поддержка новых типов документов.
  
@@ -1472,7 +1481,7 @@
 04.04.2012
 ----------
 
-- Добавлена поддержка официально утвержденных версий форматов документов, фигурирующих в документообороте счетов-фактур. В связи с этим поменялись сигнатуры методов :doc:`http/GenerateInvoiceDocumentReceiptXml` и :doc:`http/GenerateInvoiceCorrectionRequestXml`. В SDK включены соответствующие XML-схемы, описывающие форматы документов, фигурирующих в документообороте счетов-фактур:
+- Добавлена поддержка официально утвержденных версий форматов документов, фигурирующих в документообороте счетов-фактур. В связи с этим поменялись сигнатуры методов :doc:`obsolete/http/GenerateInvoiceDocumentReceiptXml` и :doc:`http/GenerateInvoiceCorrectionRequestXml`. В SDK включены соответствующие XML-схемы, описывающие форматы документов, фигурирующих в документообороте счетов-фактур:
 
  - :download:`XML-схема счета-фактуры (СФ) <xsd/ON_SFAKT_1_897_01_05_01_02.xsd>`, эта же схема описывает формат исправления СФ (ИСФ);
  - :download:`XML-схема корректировочного счета-фактуры (КСФ) <xsd/ON_KORSFAKT_1_911_01_05_01_02.xsd>`, эта же схема описывает формат исправления КСФ (ИКСФ);
@@ -1483,7 +1492,7 @@
  
  Для обеспечения обратной совместимости с существующими пилотными проектами по итеграции Диадок в течение еще какого-то времени будет продолжать принимать счета-фактуры в старом формате. Однако такие документы не будут иметь юридической значимости.
  
-- Добавлен метод :doc:`http/GenerateInvoiceXml`, который облегчает процесс формирования корректного XML-файла счета-фактуры. Метод позволяет интегратору не погружаться в детали XML-формата СФ, а передавать в Диадок только необходимые первичные данные в виде структуры :doc:`proto/InvoiceInfo`. По этим данным метод ``GenerateInvoiceXml``, при необходимости дополнив их сведениями из своих справочников, сформирует корректный XML-файл счета-фактуры, который затем можно будет отправить методом :doc:`http/PostMessage` или загрузить в черновики методом ``PostDraft``. В структуре ``InvoiceInfo`` можно не заполнять реквизиты продавца и покупателя: достаточно указать идентификаторы их ящиков в Диадоке, и соответствующие реквизиты будут подставлены из справочника организаций Диадока.
+- Добавлен метод :doc:`obsolete/http/GenerateInvoiceXml`, который облегчает процесс формирования корректного XML-файла счета-фактуры. Метод позволяет интегратору не погружаться в детали XML-формата СФ, а передавать в Диадок только необходимые первичные данные в виде структуры :doc:`obsolete/proto/InvoiceInfo`. По этим данным метод ``GenerateInvoiceXml``, при необходимости дополнив их сведениями из своих справочников, сформирует корректный XML-файл счета-фактуры, который затем можно будет отправить методом :doc:`http/PostMessage` или загрузить в черновики методом ``PostDraft``. В структуре ``InvoiceInfo`` можно не заполнять реквизиты продавца и покупателя: достаточно указать идентификаторы их ящиков в Диадоке, и соответствующие реквизиты будут подставлены из справочника организаций Диадока.
 
 - Добавлена возможность работать с исправлениями счетов-фактур и корректировочными счетами-фактурами. Для этого введены :doc:`типы сущностей <proto/Entity message>`:
 
@@ -1528,7 +1537,7 @@
 
 - Добавлен метод :doc:`http/GetDocuments`, позволяющий быстро получать информацию о документах, например, о счетах-фактурах, в своем ящике, задавая различные критерии фильтрации документов.
 - Добавлен метод :doc:`http/GetDocument`, позволяющий получить всю метаинформацию об отдельном документе, зная его идентификатор.
-- Добавлена возможность с помощью методов :doc:`http/PostMessage` и ``PostDraft`` загружать в Диадок новые типы докуметов, в частности, товарные накладные (ТОРГ-12) и запросы на инициацию канала обмена документами через Диадок :doc:`TrustConnectionRequest <proto/TrustConnectionRequestAttachment>`.
+- Добавлена возможность с помощью методов :doc:`http/PostMessage` и ``PostDraft`` загружать в Диадок новые типы докуметов, в частности, товарные накладные (ТОРГ-12) и запросы на инициацию канала обмена документами через Диадок :doc:`TrustConnectionRequest <obsolete/proto/TrustConnectionRequestAttachment>`.
 - В структура :doc:`Entity <proto/Entity message>` добавлено поле ``DocumentInfo``. Для сущности типа ``Attachment`` это поле содержит дополнительную информацию о документе, представляемом этой сущностью.
 
 
@@ -1559,7 +1568,7 @@
 17.06.2011
 ----------
 
-- Добавлена возможность связывать документы в разных сообщениях. Для этого нужно заполнить структуру :doc:`proto/DocumentId`, например, в структуре :doc:`proto/XmlDocumentAttachment` при отправке корректировочного счета-фактуры.
+- Добавлена возможность связывать документы в разных сообщениях. Для этого нужно заполнить структуру :doc:`proto/DocumentId`, например, в структуре :doc:`obsolete/proto/XmlDocumentAttachment` при отправке корректировочного счета-фактуры.
 - Добавлена возможность отправить отказ от запрошенной подписи: в структуре :doc:`proto/MessagePatchToPost` добавлено необязательное поле ``RequestedSignatureRejections``.
 - Добавлена возможность отслеживания отдельных документов при отправке их через черновики: метод ``PostDraft`` возвращает вместе с идентификатором черновика еще и идентификатор сущности, в которую превращается загруженный документ.
 - Уведомления о невозможности доставки теперь ссылаются на недоставленные куски сообщения:

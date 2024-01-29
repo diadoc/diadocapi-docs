@@ -361,3 +361,41 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'python': ('https://docs.python.org/', None)}
+
+# Redirecting old pages
+redirects = {
+     "howto/example_authorization": "../Authorization.html",
+    
+    # redirect obsolete methods
+     "http/GenerateAcceptanceCertificateXmlForBuyer": "../obsolete/http/GenerateAcceptanceCertificateXmlForBuyer.html",
+     "http/GenerateAcceptanceCertificateXmlForSeller": "../obsolete/http/GenerateAcceptanceCertificateXmlForSeller.html",
+     "http/GenerateInvoiceXml": "../obsolete/http/GenerateInvoiceXml.html",
+     "http/GenerateRecipientTitleXml": "../obsolete/http/GenerateRecipientTitleXml.html",
+     "http/GenerateSenderTitleXml": "../obsolete/http/GenerateSenderTitleXml.html",
+     "http/GenerateTorg12XmlForBuyer": "../obsolete/http/GenerateTorg12XmlForBuyer.html",
+     "http/GenerateTorg12XmlForSeller": "../obsolete/http/GenerateTorg12XmlForSeller.html",
+     "http/GetMyPermissions": "../obsolete/http/GetMyPermissions.html",
+     "http/GetTemplate": "../obsolete/http/GetTemplate.html",
+     "http/ParseAcceptanceCertificateBuyerTitleXml": "../obsolete/http/ParseAcceptanceCertificateBuyerTitleXml.html",
+     "http/ParseAcceptanceCertificateSellerTitleXml": "../obsolete/http/ParseAcceptanceCertificateSellerTitleXml.html",
+     "http/ParseInvoiceXml": "../obsolete/http/ParseInvoiceXml.html",
+     "http/ParseTorg12BuyerTitleXml": "../obsolete/http/ParseTorg12BuyerTitleXml.html",
+     "http/ParseTorg12SellerTitleXml": "../obsolete/http/ParseTorg12SellerTitleXml.html",
+     "http/utd/ExtendedSignerDetails": "../obsolete/http/ExtendedSignerDetails.html",
+     "http/utd/GenerateUniversalTransferDocumentXmlForBuyer": "../obsolete/http/GenerateUniversalTransferDocumentXmlForBuyer.html",
+     "http/utd/GenerateUniversalTransferDocumentXmlForSeller": "../obsolete/http/GenerateUniversalTransferDocumentXmlForSeller.html",
+     "http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml": "../obsolete/http/ParseUniversalCorrectionDocumentBuyerTitleXml.html",
+     "http/utd/ParseUniversalCorrectionDocumentSellerTitleXml": "../obsolete/http/ParseUniversalCorrectionDocumentSellerTitleXml.html",
+     "http/utd/ParseUniversalTransferDocumentBuyerTitleXml": "../obsolete/http/ParseUniversalTransferDocumentBuyerTitleXml.html",
+     "http/utd/ParseUniversalTransferDocumentSellerTitleXml": "../obsolete/http/ParseUniversalTransferDocumentSellerTitleXml.html",
+     
+    # redirect obsolete structures
+     "proto/AcceptanceCertificate552Info": "../obsolete/proto/AcceptanceCertificate552Info.html",
+     "proto/AcceptanceCertificateAttachment": "../obsolete/proto/AcceptanceCertificateAttachment.html",
+     "proto/AcceptanceCertificateInfo": "../obsolete/proto/AcceptanceCertificateInfo.html",
+     "proto/BasicDocumentAttachment": "../obsolete/proto/BasicDocumentAttachment.html",
+     "proto/BasicDocumentInfo": "../obsolete/proto/BasicDocumentInfo.html",
+     "proto/ContractAttachment": "../obsolete/proto/ContractAttachment.html",
+     "proto/EncryptedInvoiceAttachment": "../obsolete/proto/EncryptedInvoiceAttachment.html",
+     "proto/EncryptedXmlDocumentAttachment": "../obsolete/proto/EncryptedXmlDocumentAttachment.html"
+}

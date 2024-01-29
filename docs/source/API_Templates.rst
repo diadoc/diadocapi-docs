@@ -11,7 +11,6 @@ HTTP-интерфейс
    :maxdepth: 1
    :titlesonly:
 
-   http/GetTemplate
    http/PostTemplate
    http/PostTemplatePatch
    http/TransformTemplateToMessage

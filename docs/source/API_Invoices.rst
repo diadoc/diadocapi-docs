@@ -25,9 +25,6 @@
 - :doc:`proto/utd/ExtendedOrganizationInfo`
 - :doc:`proto/utd/ExtendedSigner`
 - :doc:`proto/utd/ExtendedSignerDetailsToPost`
-- :doc:`proto/utd/UniversalCorrectionDocumentSellerTitleInfo`
 - :doc:`proto/utd/UniversalDocumentMetadata`
-- :doc:`proto/utd/UniversalTransferDocumentBuyerTitleInfo`
-- :doc:`proto/utd/UniversalTransferDocumentSellerTitleInfo`
 - :doc:`proto/PrepareDocumentsToSignRequest`
 - :doc:`proto/PrepareDocumentsToSignResponse`

@@ -12,19 +12,10 @@ PowerOfAttorneyInfo
         optional PowerOfAttorneySendingType SendingType = 4;
     }
 
-
-    enum PowerOfAttorneySendingType {
-        Metadata = 1;
-        File = 2;
-    }
-
 - ``FullId`` — идентификатор МЧД. Представлен структурой :doc:`PowerOfAttorneyFullId`.
 - ``Status`` — статус проверки МЧД. Представлен структурой :doc:`PowerOfAttorneyValidationStatus`.
 - ``SendingStatus`` — статус отправки МЧД в роуминг. Представлен структурой :doc:`RoamingSendingStatus`.
-- ``SendingType`` — способ передачи МЧД. Принимает значения из перечисления ``PowerOfAttorneySendingType``:
-
-	- ``Metadata`` — МЧД передали в виде мета-информации.
-	- ``File`` — МЧД отправили в пакете с документом.
+- ``SendingType`` — способ передачи МЧД. Принимает значения из перечисления :doc:`PowerOfAttorneySendingType`.
 
 ----
 
@@ -34,4 +25,4 @@ PowerOfAttorneyInfo
 	- в структуре :doc:`Entity message`.
 	
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`.

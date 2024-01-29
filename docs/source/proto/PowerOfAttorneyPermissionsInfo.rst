@@ -37,7 +37,7 @@ PowerOfAttorneyPermissionsInfo
 
 	- ``Type`` — тип полномочия. Может принимать значения:
 
-		- ``humanReadableText`` — текстовое полномочие,
+		- ``text`` — текстовое полномочие,
 		- ``machineReadable`` — машиночитаемое полномочие.
 
 	- ``TextPermission`` — текстовое содержание полномочия.
@@ -71,6 +71,6 @@ PowerOfAttorneyPermissionsInfo
 
 *Структура используется:*
 	- в структуре :doc:`PowerOfAttorney`.
-	
+
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`/howto/powerofattorney`.

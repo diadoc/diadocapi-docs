@@ -33,7 +33,7 @@ OrganizationInfo
     }
         
 
-Структура данных *OrganizationInfo* служит для представления реквизитов организаций-контрагентов при формировании счетов-фактур (см. :doc:`InvoiceInfo`), товарных накладных (см. :doc:`Torg12SellerTitleInfo <Torg12Info>`) и актов о выполнении работ / оказании услуг (см. :doc:`AcceptanceCertificateSellerTitleInfo <AcceptanceCertificateInfo>`) в XML-формате.
+Структура данных *OrganizationInfo* служит для представления реквизитов организаций-контрагентов при формировании счетов-фактур (см. :doc:`../obsolete/proto/InvoiceInfo`), товарных накладных (см. :doc:`Torg12SellerTitleInfo <../obsolete/proto/Torg12Info>`) и актов о выполнении работ / оказании услуг (см. :doc:`AcceptanceCertificateSellerTitleInfo <../obsolete/proto/AcceptanceCertificateInfo>`) в XML-формате.
 
 В зависимости от контекста использования структуры *OrganizationInfo* требования к обязательности заполнения ее полей могут меняться. Однако в любом случае всегда требуется указывать название организации (*OrganizationInfo.Name*) и ее адрес (:doc:`OrganizationInfo.Address <Address>`). 
 
