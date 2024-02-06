@@ -17,8 +17,7 @@
 	- документ с функциями СЧФДОП, ДОП, КСЧФДИС, ДИС;
 	- имя документа соответствует шаблону ON_**********PROS_.
 
-Порядок действий участников документооборота
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Порядок действий участников документооборота**
 
 Продавец:
 	- генерирует титул продавца с прослеживаемыми товарами,
@@ -39,116 +38,125 @@
 Получение статусов документов с прослеживаемыми товарами
 --------------------------------------------------------
 
-Получить статусы документов можно с помощью методов работы с событиями, документами и сообщениями или с помощью методов :doc:`../Docflow API`.
+Получить статусы документов можно следующими способами:
 
-Методы могут вернуть один или все статусы по документу. Последний полученный статус возвращают методы работы с документами: :doc:`../http/GetDocument`, :doc:`../http/GetDocumentsByMessageId` и :doc:`../http/GetDocuments`. Все полученные статусы вовзращают методы работы с сообщениями и событиями: :doc:`../http/GetMessage`, :doc:`../http/GetEvent`, :doc:`../http/GetNewEvents` и :doc:`../http/GetLastEvent`. Информацию о статусе документа с прослеживаемыми товарами содержит структура :doc:`../proto/OuterDocflowInfo`.
+- С помощью методов работы с событиями, документами и сообщениями.
 
-В ``Docflow API`` статусы можно получить с помощью методов :doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3` и :doc:`../http/GetDocflowEvents_V3`. Методы возвращают следующие структуры:
+	Методы могут вернуть один или все статусы по документу:
 
-- :doc:`../proto/OuterDocflow` содержит информацию о последнем полученном статусе,
-- :doc:`../proto/OuterDocflowEntities` содержит информацию обо всех полученных статусах.
+		- Последний полученный статус возвращают методы работы с документами: :doc:`../http/GetDocument`, :doc:`../http/GetDocumentsByMessageId` и :doc:`../http/GetDocuments`.
+		- Все полученные статусы вовзращают методы работы с сообщениями и событиями: :doc:`../http/GetMessage`, :doc:`../http/GetEvent`, :doc:`../http/GetNewEvents` и :doc:`../http/GetLastEvent`.
 
-Структуры ``OuterDocflowInfo``, ``OuterDocflow`` и ``OuterDocflowEntities`` могут содержать информацию о других внешних документооборотах. Статусам ПК ФНС соответствует идентификатор ``DocflowNamedId = PkFns``.
+	Информацию о статусе документа с прослеживаемыми товарами содержит структура :doc:`../proto/OuterDocflowInfo`.
 
-Пример структуры ``OuterDocflowInfo``:
+	Пример структуры ``OuterDocflowInfo``:
 
-.. sourcecode:: json
+    .. sourcecode:: json
 
-    "OuterDocflow": {
-        "DocflowNamedId": "PkFns",
-        "DocflowFriendlyName": "Прослеживание",
-        "Status": {
-            "NamedId": "SendingError",
-            "FriendlyName": "Возникла ошибка при проверке документа ПК ФНС",
-            "Type": "Warning",
-            "Details": [
-                {
-                    "Code": "markingfns:stage2:204004001",
-                    "Text": "Сертификат не действителен на момент проверки. УЦ не является доверенным"
-                },
-                {
-                    "Code": "markingfns:stage2:204001001",
-                    "Text": "ЭП не принадлежит отправителю документа. Корректная ЭП для проверки не обнаружена"
-                }
-            ]
-        }
-    }
-
-Пример структур ``OuterDocflow`` и ``OuterDocflowEntities``:
-
-.. container:: toggle
-
-    .. code-block:: json
-
-        "OuterDocflows": [
-            {
-                "DocflowNamedId": "PkFns",
-                "ParentEntityId": "ae9a5321-1465-44ff-8013-7f54f256cfcc",
-                "OuterDocflowEntityId": "27389c23-636b-4bb7-893a-9337ff2ddf06"
-            }
-        ],
-        "OuterDocflowEntities": [
-            {
-                "DocflowNamedId": "PkFns",
-                "DocflowFriendlyName": "Прослеживание",
-                "StatusEntities": [
+        "OuterDocflow": {
+            "DocflowNamedId": "PkFns",
+            "DocflowFriendlyName": "Прослеживание",
+            "Status": {
+                "NamedId": "SendingError",
+                "FriendlyName": "Возникла ошибка при проверке документа ПК ФНС",
+                "Type": "Warning",
+                "Details": [
                     {
-                        "Attachment": {
-                            "Attachment": {
-                                "Entity": {
-                                    "EntityId": "e0b747f5-c5bc-4576-a3f1-87b4cd841be2",
-                                    "CreationTimestamp": {
-                                        "Ticks": 638392637490604599
-                                    }
-                                },
-                                "DisplayFilename": ""
-                            },
-                            "ContentTypeId": ""
-                        },
-                        "Status": {
-                            "NamedId": "Sending",
-                            "FriendlyName": "Документ с прослеживаемым товаром был отправлен в ПК ФНС",
-                            "Type": "Normal",
-                            "Details": [
-                                {
-                                    "Text": "Документ с прослеживаемым товаром был отправлен в ПК ФНС"
-                                }
-                            ]
-                        }
+                        "Code": "markingfns:stage2:204004001",
+                        "Text": "Сертификат не действителен на момент проверки. УЦ не является доверенным"
                     },
                     {
-                        "Attachment": {
-                            "Attachment": {
-                                "Entity": {
-                                    "EntityId": "27389c23-636b-4bb7-893a-9337ff2ddf06",
-                                    "CreationTimestamp": {
-                                        "Ticks": 638392638790445714
-                                    }
-                                },
-                               "DisplayFilename": ""
-                            },
-                            "ContentTypeId": ""
-                        },
-                        "Status": {
-                            "NamedId": "SendingError",
-                            "FriendlyName": "Возникла ошибка при проверке документа ПК ФНС",
-                            "Type": "Warning",
-                            "Details": [
-                                {
-                                    "Code": "markingfns:stage2:204004001",
-                                    "Text": "Сертификат не действителен на момент проверки. УЦ не является доверенным"
-                                }
-                            ]
-                        }
+                        "Code": "markingfns:stage2:204001001",
+                        "Text": "ЭП не принадлежит отправителю документа. Корректная ЭП для проверки не обнаружена"
                     }
                 ]
             }
-        ]
+        }
+
+- С помощью методов :doc:`../Docflow API`.
+
+	Статусы можно получить с помощью методов :doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3` и :doc:`../http/GetDocflowEvents_V3`. Методы возвращают следующие структуры:
+
+		- :doc:`../proto/OuterDocflow` содержит информацию о последнем полученном статусе,
+		- :doc:`../proto/OuterDocflowEntities` содержит информацию обо всех полученных статусах.
+
+	Пример структур ``OuterDocflow`` и ``OuterDocflowEntities``:
+
+    .. container:: toggle
+
+        .. code-block:: json
+
+            "OuterDocflows": [
+                {
+                    "DocflowNamedId": "PkFns",
+                    "ParentEntityId": "ae9a5321-1465-44ff-8013-7f54f256cfcc",
+                    "OuterDocflowEntityId": "27389c23-636b-4bb7-893a-9337ff2ddf06"
+                }
+            ],
+            "OuterDocflowEntities": [
+                {
+                    "DocflowNamedId": "PkFns",
+                    "DocflowFriendlyName": "Прослеживание",
+                    "StatusEntities": [
+                        {
+                            "Attachment": {
+                                "Attachment": {
+                                    "Entity": {
+                                        "EntityId": "e0b747f5-c5bc-4576-a3f1-87b4cd841be2",
+                                        "CreationTimestamp": {
+                                            "Ticks": 638392637490604599
+                                        }
+                                    },
+                                    "DisplayFilename": ""
+                                },
+                                "ContentTypeId": ""
+                            },
+                            "Status": {
+                                "NamedId": "Sending",
+                                "FriendlyName": "Документ с прослеживаемым товаром был отправлен в ПК ФНС",
+                                "Type": "Normal",
+                                "Details": [
+                                    {
+                                        "Text": "Документ с прослеживаемым товаром был отправлен в ПК ФНС"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Attachment": {
+                                "Attachment": {
+                                    "Entity": {
+                                        "EntityId": "27389c23-636b-4bb7-893a-9337ff2ddf06",
+                                        "CreationTimestamp": {
+                                            "Ticks": 638392638790445714
+                                        }
+                                    },
+                                "DisplayFilename": ""
+                                },
+                                "ContentTypeId": ""
+                            },
+                            "Status": {
+                                "NamedId": "SendingError",
+                                "FriendlyName": "Возникла ошибка при проверке документа ПК ФНС",
+                                "Type": "Warning",
+                                "Details": [
+                                    {
+                                        "Code": "markingfns:stage2:204004001",
+                                        "Text": "Сертификат не действителен на момент проверки. УЦ не является доверенным"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+
+Структуры ``OuterDocflowInfo``, ``OuterDocflow`` и ``OuterDocflowEntities`` могут содержать информацию о других внешних документооборотах. Определить статусы ПК ФНС можно по идентификатору ``DocflowNamedId = PkFns``.
 
 Статусы документов с прослеживаемыми товарами
 ---------------------------------------------
 
-Структуры ``OuterDocflowInfo``, ``OuterDocflow`` и ``OuterDocflowEntities`` хранят информацию о статусах, описанных в таблице.
+Статусы, описанные в таблице, возвращаются в структурах ``OuterDocflowInfo``, ``OuterDocflow`` и ``OuterDocflowEntities``.
 
 .. table:: Описание статусов ПК ФНС
 
@@ -162,7 +170,7 @@
 	| PkFnsstatus    | SendingError    | Возникла ошибка при проверке документа ПК ФНС                 | Warning       |
 	+----------------+-----------------+---------------------------------------------------------------+---------------+
 
-Если на стороне ФНС возникла ошибка при проверке документа, то в поле ``Status.Details`` вернется список ошибок. Чтобы документ приняли, исправьте ошибки. После этого вы можете:
+Если на стороне ФНС возникла ошибка при проверке документа, то в поле ``Status.Details`` вернется список ошибок. Чтобы документ приняли, используйте один из способов:
 
-- аннулировать текущий документ и выставить новый,
-- отправить исправление или корректировку.
+- аннулируйте текущий документ, исправьте ошибки и выставьте новый,
+- исправьте ошибки и отправьте исправление или корректировку.
