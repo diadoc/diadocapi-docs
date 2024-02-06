@@ -17,7 +17,7 @@
 	- документ с функциями СЧФДОП, ДОП, КСЧФДИС, ДИС;
 	- имя документа соответствует шаблону ON_**********PROS_.
 
-**Порядок действий участников документооборота**
+**Порядок действий участников документооборота:**
 
 Продавец:
 	- генерирует титул продавца с прослеживаемыми товарами,
@@ -42,16 +42,16 @@
 
 - С помощью методов работы с событиями, документами и сообщениями.
 
-	Методы могут вернуть один или все статусы по документу:
+ Методы могут вернуть один или все статусы по документу:
 
-		- Последний полученный статус возвращают методы работы с документами: :doc:`../http/GetDocument`, :doc:`../http/GetDocumentsByMessageId` и :doc:`../http/GetDocuments`.
-		- Все полученные статусы вовзращают методы работы с сообщениями и событиями: :doc:`../http/GetMessage`, :doc:`../http/GetEvent`, :doc:`../http/GetNewEvents` и :doc:`../http/GetLastEvent`.
+	- Последний полученный статус возвращают методы работы с документами: :doc:`../http/GetDocument`, :doc:`../http/GetDocumentsByMessageId` и :doc:`../http/GetDocuments`.
+	- Все полученные статусы вовзращают методы работы с сообщениями и событиями: :doc:`../http/GetMessage`, :doc:`../http/GetEvent`, :doc:`../http/GetNewEvents` и :doc:`../http/GetLastEvent`.
 
-	Информацию о статусе документа с прослеживаемыми товарами содержит структура :doc:`../proto/OuterDocflowInfo`.
+ Информация о статусе документа с прослеживаемыми товарами содержится в структуре :doc:`../proto/OuterDocflowInfo`.
 
-	Пример структуры ``OuterDocflowInfo``:
+ Пример структуры ``OuterDocflowInfo``:
 
-    .. sourcecode:: json
+ .. sourcecode:: json
 
         "OuterDocflow": {
             "DocflowNamedId": "PkFns",
@@ -75,14 +75,14 @@
 
 - С помощью методов :doc:`../Docflow API`.
 
-	Статусы можно получить с помощью методов :doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3` и :doc:`../http/GetDocflowEvents_V3`. Методы возвращают следующие структуры:
+ Статусы можно получить с помощью методов :doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3` и :doc:`../http/GetDocflowEvents_V3`. Методы возвращают следующие структуры:
 
-		- :doc:`../proto/OuterDocflow` содержит информацию о последнем полученном статусе,
-		- :doc:`../proto/OuterDocflowEntities` содержит информацию обо всех полученных статусах.
+	- :doc:`../proto/OuterDocflow` содержит информацию о последнем полученном статусе,
+	- :doc:`../proto/OuterDocflowEntities` содержит информацию обо всех полученных статусах.
 
-	Пример структур ``OuterDocflow`` и ``OuterDocflowEntities``:
+ Пример структур ``OuterDocflow`` и ``OuterDocflowEntities``:
 
-    .. container:: toggle
+ .. container:: toggle
 
         .. code-block:: json
 
