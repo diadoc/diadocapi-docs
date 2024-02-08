@@ -18,7 +18,7 @@ HTTP-интерфейс
    http/GetOrganizationsByInnKpp
    http/GetOrganizationsByInnList
    http/ParseRussianAddress
-   http/Organizations/GetOrganizationFeatures
+   http/GetOrganizationFeatures
 
 Структуры данных
 ----------------

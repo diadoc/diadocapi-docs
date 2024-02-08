@@ -530,7 +530,7 @@
 ----------
 **SDK**: `C# 1.71.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.71.0>`__ | `Java 2.7.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.7.0>`__ | `C++ 1.69.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.69.0>`__
 
-- Добавлен метод :doc:`http/Organizations/GetOrganizationFeatures` для возвращения статуса блокировки ящика и прочих фич ящика.
+- Добавлен метод :doc:`http/GetOrganizationFeatures` для возвращения статуса блокировки ящика и прочих фич ящика.
 
 
 14.05.2019
