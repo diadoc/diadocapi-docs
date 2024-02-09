@@ -44,7 +44,7 @@ Counteragent
     }
 
 
-Структура данных *CounteragentList* представляет собой список контрагентов *Counteragent*, возвращаемый методом :doc:`../http/GetCounteragents`. Поле *CounteragentList.TotalCount* содержит общее количество контрагентов, удовлетворяющих фильтру.
+Структура данных *CounteragentList* представляет собой список :doc:`контрагентов <../entities/counteragent>`, возвращаемый методом :doc:`../http/GetCounteragents`. Поле *CounteragentList.TotalCount* содержит общее количество контрагентов, удовлетворяющих фильтру.
 
 - *TotalCountType* — параметр, отражающий, какое значение содержит поле *TotalCount*. Принимает одно из значений перечисления *TotalCountType*:
 
