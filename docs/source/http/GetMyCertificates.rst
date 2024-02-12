@@ -1,7 +1,7 @@
 GetMyCertificates
 =================
 
-Метод ``GetMyCertificates`` возвращает информацию о сертификатах, привязанных к сотруднику.
+Метод ``GetMyCertificates`` возвращает информацию о :doc:`сертификатах <../entities/certificate>`, привязанных к сотруднику.
 
 .. http:get:: /GetMyCertificates
 

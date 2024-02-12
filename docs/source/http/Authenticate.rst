@@ -19,7 +19,7 @@ Authenticate v3
 	:queryparam type: способ аутентификации. Параметр не может быть пустым. Может принимать значения:
 
 		- ``password`` — логин и пароль,
-		- ``certificate`` — сертификат,
+		- ``certificate`` — :doc:`сертификат <../entities/certificate>`,
 		- ``sid`` — auth.sid из API Аутентификатора.
 
 	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``DiadocAuth ddauth_api_client_id``.

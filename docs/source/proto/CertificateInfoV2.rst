@@ -1,7 +1,7 @@
 CertificateInfoV2
 =================
 
-Структура ``CertificateInfoV2`` хранит информацию о сертификате пользователя.
+Структура ``CertificateInfoV2`` хранит информацию о :doc:`сертификате <../entities/certificate>` пользователя.
 
 .. code-block:: protobuf
 
