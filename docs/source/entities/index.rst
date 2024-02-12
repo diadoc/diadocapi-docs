@@ -7,11 +7,12 @@
 	:maxdepth: 1
 	:titlesonly:
 
-	box
-	message
-	entity
-	draft
-	template
 	packet
 	shelf
+	certificate
+	message
+	entity
 	tag
+	draft
+	template
+	box
