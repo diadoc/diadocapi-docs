@@ -42,8 +42,8 @@ SignerPowers
 
 .. rubric:: Смотри также
 
-*Структура[/Перечисление] используется:*
+*Перечисление используется:*
 	- в структуре :doc:`ExtendedSignerDetailsToPost`
 	- в структуре :doc:`ExtendedSigner`, возвращаемой методом
 
-		- :doc:`../../http/ExtendedSignerDetails`.
+		- :doc:`../../http/utd/ExtendedSignerDetailsV2`.
