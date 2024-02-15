@@ -23,7 +23,4 @@ SignerType
 
 *Перечисление используется:*
 	- в структуре :doc:`ExtendedSignerToPost`,
-	- в структуре :doc:`ExtendedSigner`, возвращаемой методом
-
-		- :doc:`../../http/utd/ExtendedSignerDetailsV2`.
-	
+	- в структуре :doc:`utd/ExtendedSigner`, возвращаемой методом  :doc:`../http/utd/ExtendedSignerDetailsV2`.

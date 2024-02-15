@@ -24,7 +24,7 @@ ExtendedSignerDetails
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
 
-	:request Body: Тело запроса должно содержать отправляемое сообщение, сериализованное в протобуфер :doc:`../../proto/utd/ExtendedSignerToPost`.
+	:request Body: Тело запроса должно содержать отправляемое сообщение, сериализованное в протобуфер :doc:`../../proto/ExtendedSignerToPost`.
 	
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
