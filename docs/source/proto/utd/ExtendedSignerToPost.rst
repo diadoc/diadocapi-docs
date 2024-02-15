@@ -1,5 +1,5 @@
-ExtendedSignerDetailsToPost
-===========================
+ExtendedSignerToPost
+====================
 
 Структура ``ExtendedSignerToPost`` хранит информацию о подписанте.
 
