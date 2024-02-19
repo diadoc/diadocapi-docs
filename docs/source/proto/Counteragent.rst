@@ -17,6 +17,7 @@ Counteragent
         optional string MessageFromCounteragent = 6;
         optional string MessageToCounteragent = 7;
         optional DocumentId InvitationDocumentId = 8;
+        optional CounteragentGroup CounteragentGroupId = 9;
     }
 
     enum CounteragentStatus {
@@ -80,6 +81,8 @@ Counteragent
 -  *MessageToCounteragent* - текст последнего комментария, отправленного контрагенту, из истории взаимодействия ним.
 
 -  :doc:`InvitationDocumentId <DocumentId>` - ссылка на документ, который был отправлен вместе с приглашением. Данное поле заполняется независимо от наличия доступа к документу и, только в случае, если статус контрагента один из *IsMyCounteragent*, *InvitesMe*, *IsInvitedByMe*. Список статусов, для которых возвращается документ, может быть расширен в будущем.
+
+-  *CounteragentGroupId* — информация о группе контрагентов, в которую добавлен КА. Представлена структурой :doc:`CounteragentGroup`. Возвращается, если ``CounteragentStatus = IsMyCounteragent``.
 
 Структура данных *CounteragentCertificateList* представляет собой список сертификатов контрагента представленных в виде структуры *Certificate*.
 
