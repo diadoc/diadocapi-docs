@@ -53,25 +53,26 @@
 
  .. sourcecode:: json
 
-        "OuterDocflow": {
-            "DocflowNamedId": "PkFns",
-            "DocflowFriendlyName": "Прослеживание",
-            "Status": {
-                "NamedId": "SendingError",
-                "FriendlyName": "Возникла ошибка при проверке документа ПК ФНС",
-                "Type": "Warning",
-                "Details": [
-                    {
-                        "Code": "markingfns:stage2:204004001",
-                        "Text": "Сертификат не действителен на момент проверки. УЦ не является доверенным"
-                    },
-                    {
-                        "Code": "markingfns:stage2:204001001",
-                        "Text": "ЭП не принадлежит отправителю документа. Корректная ЭП для проверки не обнаружена"
-                    }
-                ]
+    "LastOuterDocflows": [
+        {
+            "ParentEntityId": "94a3c3cf-3346-456b-9713-533d1f37400e",
+            "OuterDocflow": {
+                "DocflowNamedId": "PkFns",
+                "DocflowFriendlyName": "Прослеживаемость",
+                "Status": {
+                    "NamedId": "SendingError",
+                    "FriendlyName": "Возникла ошибка при проверке документа ПК ФНС",
+                    "Type": "Warning",
+                    "Details": [
+                        {
+                            "Code": "204004001",
+                            "Text": "Сертификат не действителен на момент проверки. УЦ не является доверенным"
+                        }
+                    ]
+                }
             }
         }
+    ]
 
 - С помощью методов :doc:`../Docflow API`.
 
@@ -86,70 +87,70 @@
 
         .. code-block:: json
 
-            "OuterDocflows": [
-                {
-                    "DocflowNamedId": "PkFns",
-                    "ParentEntityId": "ae9a5321-1465-44ff-8013-7f54f256cfcc",
-                    "OuterDocflowEntityId": "27389c23-636b-4bb7-893a-9337ff2ddf06"
-                }
-            ],
-            "OuterDocflowEntities": [
-                {
-                    "DocflowNamedId": "PkFns",
-                    "DocflowFriendlyName": "Прослеживание",
-                    "StatusEntities": [
-                        {
-                            "Attachment": {
+                "OuterDocflows": [
+                    {
+                        "DocflowNamedId": "PkFns",
+                        "ParentEntityId": "94a3c3cf-3346-456b-9713-533d1f37400e",
+                        "OuterDocflowEntityId": "fb7f4120-41bb-4522-9d4c-273439d4025d"
+                    }
+                ],
+                "OuterDocflowEntities": [
+                    {
+                        "DocflowNamedId": "PkFns",
+                        "DocflowFriendlyName": "Прослеживаемость",
+                        "StatusEntities": [
+                            {
                                 "Attachment": {
-                                    "Entity": {
-                                        "EntityId": "e0b747f5-c5bc-4576-a3f1-87b4cd841be2",
-                                        "CreationTimestamp": {
-                                            "Ticks": 638392637490604599
-                                        }
+                                    "Attachment": {
+                                        "Entity": {
+                                            "EntityId": "fe2a6ea6-e145-4ea3-9fe0-d679cc57e49a",
+                                            "CreationTimestamp": {
+                                                "Ticks": 638439293343323627
+                                            }
+                                        },
+                                        "DisplayFilename": ""
                                     },
-                                    "DisplayFilename": ""
+                                    "ContentTypeId": ""
                                 },
-                                "ContentTypeId": ""
+                                "Status": {
+                                    "NamedId": "Sending",
+                                    "FriendlyName": "Документ с прослеживаемым товаром был отправлен в ПК ФНС",
+                                    "Type": "Normal",
+                                    "Details": []
+                                }
                             },
-                            "Status": {
-                                "NamedId": "Sending",
-                                "FriendlyName": "Документ с прослеживаемым товаром был отправлен в ПК ФНС",
-                                "Type": "Normal",
-                                "Details": [
-                                    {
-                                        "Text": "Документ с прослеживаемым товаром был отправлен в ПК ФНС"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "Attachment": {
+                            {
                                 "Attachment": {
-                                    "Entity": {
-                                        "EntityId": "27389c23-636b-4bb7-893a-9337ff2ddf06",
-                                        "CreationTimestamp": {
-                                            "Ticks": 638392638790445714
-                                        }
+                                    "Attachment": {
+                                        "Entity": {
+                                            "EntityId": "fb7f4120-41bb-4522-9d4c-273439d4025d",
+                                            "CreationTimestamp": {
+                                                "Ticks": 638439299095013730
+                                            }
+                                        },
+                                        "DisplayFilename": ""
                                     },
-                                "DisplayFilename": ""
+                                    "ContentTypeId": ""
                                 },
-                                "ContentTypeId": ""
-                            },
-                            "Status": {
-                                "NamedId": "SendingError",
-                                "FriendlyName": "Возникла ошибка при проверке документа ПК ФНС",
-                                "Type": "Warning",
-                                "Details": [
-                                    {
-                                        "Code": "markingfns:stage2:204004001",
-                                        "Text": "Сертификат не действителен на момент проверки. УЦ не является доверенным"
-                                    }
-                                ]
+                                "Status": {
+                                    "NamedId": "SendingError",
+                                    "FriendlyName": "Возникла ошибка при проверке документа ПК ФНС",
+                                    "Type": "Warning",
+                                    "Details": [
+                                        {
+                                            "Code": "204004001",
+                                            "Text": "Сертификат не действителен на момент проверки. УЦ не является доверенным"
+                                        },
+                                        {
+                                            "Code": "204001001",
+                                            "Text": "ЭП не принадлежит отправителю документа. Корректная ЭП для проверки не обнаружена"
+                                        }
+                                    ]
+                                }
                             }
-                        }
-                    ]
-                }
-            ]
+                        ]
+                    }
+                ]
 
 Структуры ``OuterDocflowInfo``, ``OuterDocflow`` и ``OuterDocflowEntities`` могут содержать информацию о других внешних документооборотах. Определить статусы ПК ФНС можно по идентификатору ``DocflowNamedId = PkFns``.
 
@@ -170,7 +171,4 @@
 	| PkFnsstatus    | SendingError    | Возникла ошибка при проверке документа ПК ФНС                 | Warning       |
 	+----------------+-----------------+---------------------------------------------------------------+---------------+
 
-Если на стороне ФНС возникла ошибка при проверке документа, то в поле ``Status.Details`` вернется список ошибок. Чтобы документ приняли, используйте один из способов:
-
-- аннулируйте текущий документ, исправьте ошибки и выставьте новый,
-- исправьте ошибки и отправьте исправление или корректировку.
+Если на стороне ФНС возникла ошибка при проверке документа, то в поле ``Status.Details`` вернется список ошибок. Чтобы документ приняли, исправьте ошибки и отправьте исправление или корректировку.
