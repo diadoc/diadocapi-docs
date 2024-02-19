@@ -20,3 +20,13 @@ CounteragentGroup
 - ``Departments``— подразделения, в которые группы могут отправлять документы. Представлены структурой ``DepartmentsInGroup`` с полями:
 
 	- ``DepartmentId`` — список идентификаторов подразделений.
+
+----
+
+.. rubric:: Смотри также
+
+*Структура используется:*
+	- в структуре :doc:`Counteragent`,
+	- в структуре :doc:`GetOrganizationsByInnListResponse`,
+	- в теле ответа метода :doc:`../http/CreateCounteragentGroup`,
+	- в теле ответа метода :doc:`../http/UpdateCounteragentGroup`,

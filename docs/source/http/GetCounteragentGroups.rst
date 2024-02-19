@@ -46,3 +46,14 @@ GetCounteragentGroups
 
 Метод не возвращает удаленные группы контрагентов.
 
+----
+
+.. rubric:: Смотри также
+
+*Другие методы для работы с группой контрагентов:*
+	- :doc:`CreateCounteragentGroup`,
+	- :doc:`UpdateCounteragentGroup`,
+	- :doc:`DeleteCounteragentGroup`,
+	- :doc:`AddCounteragentsInGroup`,
+	- :doc:`GetCounteragentsInGroup`.
+

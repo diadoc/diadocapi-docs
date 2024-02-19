@@ -24,7 +24,7 @@ CreateCounteragentGroup
 
 		..
 
-		- ``Name`` — имя группы. Должно быть уникально в рамках одного ящика. Текстовое поле, длина: 1-500 символов.
+		- ``Name`` — имя группы. Должно быть уникально в рамках одного ящика. Длина не должна превышать 500 символов.
 		- ``Departments`` — подразделения, в которые контрагенты группы могут отправлять документы. Представлены структурой ``DepartmentsInGroup`` с полями:
 
 			- ``DepartmentId`` — список идентификаторов подразделений.
@@ -42,3 +42,14 @@ CreateCounteragentGroup
 	:response Body: Тело ответа содержит структуру :doc:`../proto/CounteragentGroup`.
 
 Создать группу контрагентов может только администратор ящика.
+
+----
+
+.. rubric:: Смотри также
+
+*Другие методы для работы с группой контрагентов:*
+	- :doc:`UpdateCounteragentGroup`,
+	- :doc:`DeleteCounteragentGroup`,
+	- :doc:`AddCounteragentsInGroup`,
+	- :doc:`GetCounteragentGroups`,
+	- :doc:`GetCounteragentsInGroup`.

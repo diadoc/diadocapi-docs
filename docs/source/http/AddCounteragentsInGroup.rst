@@ -56,3 +56,14 @@ AddCounteragentsInGroup
 Методом ``AddCounteragentsInGroup`` можно добавить в группу только контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``. Узнать статус можно с помощью метода :doc:`GetOrganizationsByInnList`.
 
 Если статус контрагента отличается, то метод ``AddCounteragentsInGroup`` в поле ``Reason`` вернет сообщение «Контрагент не является партнером, назначить группу невозможно».
+
+----
+
+.. rubric:: Смотри также
+
+*Другие методы для работы с группой контрагентов:*
+	- :doc:`CreateCounteragentGroup`,
+	- :doc:`UpdateCounteragentGroup`,
+	- :doc:`DeleteCounteragentGroup`,
+	- :doc:`GetCounteragentGroups`,
+	- :doc:`GetCounteragentsInGroup`.

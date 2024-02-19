@@ -11,6 +11,7 @@ UpdateCounteragentGroup
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
 	:request Body: Тело запроса должно содержать структуру ``CounteragentGroupToUpdate``:
+
 		.. code-block:: protobuf
 
 		    message  CounteragentGroupToUpdate {  
@@ -26,6 +27,8 @@ UpdateCounteragentGroup
 		    message DepartmentsInGroup {
 		        repeated string DepartmentId = 1;
 		    }
+
+		..
 
 		- ``Name`` — наименование группы контрагентов.
 		- ``Departments`` — подразделения, в которые контрагенты группы могут отправлять документы. Представлены структурой ``CounteragentGroupDepartmentPatch`` с полями:
@@ -49,9 +52,19 @@ UpdateCounteragentGroup
 
 Изменить группу контрагентов может только администратор ящика.
 
-Чтобы изменить список подразделений, в которые группа КА может отправлять документы, используйте структуру ``CounteragentGroupDepartmentPatch``:
+Чтобы изменить список подразделений, в которые группа может отправлять документы, используйте структуру ``CounteragentGroupDepartmentPatch``:
 
 	- Чтобы добавить или удалить подразделения, передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и обновленным списком подразделений.
-	- Чтобы изменить список подразделений на "любое подразделение", передайте структуру ``CounteragentGroupDepartmentPatch`` только с параметром ``AnyDepartment = true``.
-	- Если группа может отправлять документы в любое подразделений, то для указания списка подразделений передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и списком конкретных подразделений.
+	- Чтобы изменить список подразделений на «любое подразделение», передайте структуру ``CounteragentGroupDepartmentPatch`` только с параметром ``AnyDepartment = true``.
+	- Если группа может отправлять документы в любое подразделение, то для указания списка подразделений передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и списком конкретных подразделений.
 
+----
+
+.. rubric:: Смотри также
+
+*Другие методы для работы с группой контрагентов:*
+	- :doc:`CreateCounteragentGroup`,
+	- :doc:`DeleteCounteragentGroup`,
+	- :doc:`AddCounteragentsInGroup`,
+	- :doc:`GetCounteragentGroups`,
+	- :doc:`GetCounteragentsInGroup`.
