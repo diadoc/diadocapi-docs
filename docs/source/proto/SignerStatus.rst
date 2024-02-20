@@ -6,7 +6,7 @@ SignerStatus
 .. code-block:: protobuf
 
     enum SignerStatus {
-        Unspecified = -1;
+        SignerStatusUnspecified = -1;
         SellerEmployee = 1;
         InformationCreatorEmployee = 2;
         OtherOrganizationEmployee = 3;
@@ -15,7 +15,7 @@ SignerStatus
         InformationCreatorBuyerEmployee = 6;
     }
 
-- ``Unspecified`` — неизвестный статус подписанта.
+- ``SignerStatusUnspecified`` — неизвестный статус подписанта.
 - ``SellerEmployee`` — работник организации-продавца товаров, работ, услуг, имущественных прав.
 - ``InformationCreatorEmployee`` — работник организации-составителя информации продавца.
 - ``OtherOrganizationEmployee`` — работник иной уполномоченной организации.

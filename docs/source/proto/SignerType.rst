@@ -6,13 +6,13 @@ SignerType
 .. code-block:: protobuf
 
     enum SignerType {
-        Unspecified = -1;
+        SignerTypeUnspecified = -1;
         LegalEntity = 1;
         IndividualEntity = 2;
         PhysicalPerson = 3;
     }
 
-- ``Unspecified`` — неизвестный тип подписанта.
+- ``SignerTypeUnspecified`` — неизвестный тип подписанта.
 - ``LegalEntity`` — представитель юридического лица.
 - ``IndividualEntity`` — индивидуальный предприниматель.
 - ``PhysicalPerson`` — физическое лицо.

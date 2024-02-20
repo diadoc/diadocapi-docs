@@ -7,7 +7,7 @@ SignerPowers
 
     
     enum SignerPowers {
-        Unspecified = -1;
+        SignerPowersUnspecified = -1;
         InvoiceSigner = 0;
         PersonMadeOperation = 1;
         MadeAndSignOperation = 2;
@@ -23,7 +23,7 @@ SignerPowers
         PersonOtherPower = 29;
     }
 
-- ``Unspecified`` — неизвестная область полномочий подписанта.
+- ``SignerPowersUnspecified`` — неизвестная область полномочий подписанта.
 - ``InvoiceSigner`` — лицо, ответственное за подписание счетов-фактур.
 - ``PersonMadeOperation`` — лицо, совершившее сделку, операцию.
 - ``MadeAndSignOperation`` — лицо, совершившее сделку, операцию и ответственное за её оформление.

@@ -19,13 +19,13 @@ ExtendedSigner
         optional string Inn = 5;
         optional string RegistrationCertificate = 6;
 
-        required SignerType SignerType = 7 [default = LegalEntity]; // Физическое лицо-Индивидуальный предприниматель – представитель юридического лица (ФЛ-ИП-ЮЛ)
-        optional string SignerOrganizationName = 8;                 // Наименование (НаимОрг)
-        optional string SignerInfo = 9;                             // Иные сведения, идентифицирующие физическое лицо (ИныеСвед)
-        required SignerPowers SignerPowers = 10;                    // Область полномочий (ОблПолн)
-        required SignerStatus SignerStatus = 11;                    // Статус (Статус)
-        optional string SignerPowersBase = 12;                      // Основание полномочий (доверия) (ОснПолн)
-        optional string SignerOrgPowersBase = 13;                   // Основание полномочий (доверия) организации (ОснПолнОрг)
+        required SignerType SignerType = 7 [default = SignerTypeUnspecified];        // Физическое лицо-Индивидуальный предприниматель – представитель юридического лица (ФЛ-ИП-ЮЛ)
+        optional string SignerOrganizationName = 8;                                  // Наименование (НаимОрг)
+        optional string SignerInfo = 9;                                              // Иные сведения, идентифицирующие физическое лицо (ИныеСвед)
+        required SignerPowers SignerPowers = 10 [default = SignerPowersUnspecified]; // Область полномочий (ОблПолн)
+        required SignerStatus SignerStatus = 11 [default = SignerStatusUnspecified]; // Статус (Статус)
+        optional string SignerPowersBase = 12;                                       // Основание полномочий (доверия) (ОснПолн)
+        optional string SignerOrgPowersBase = 13;                                    // Основание полномочий (доверия) организации (ОснПолнОрг)
     }
 
     message ExtendedSignerDetailsToPost {

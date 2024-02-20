@@ -8,17 +8,17 @@ ExtendedSignerToPost
      message ExtendedSignerToPost {
          optional string JobTitle = 1;
          optional string RegistrationCertificate = 2;
-         required SignerType SignerType = 3 [default = LegalEntity];
+         required SignerType SignerType = 3 [default = SignerTypeUnspecified];
          optional string SignerInfo = 4;
-         required SignerPowers SignerPowers = 5;
-         required SignerStatus SignerStatus = 6;
+         required SignerPowers SignerPowers = 5 [default = SignerPowersUnspecified];
+         required SignerStatus SignerStatus = 6 [default = SignerStatusUnspecified];
          optional string SignerPowersBase = 7;
          optional string SignerOrgPowersBase = 8;
       }
 
 - ``JobTitle`` — должность подписанта.
 - ``RegistrationCertificate`` — реквизиты свидетельства о регистрации индивидуального предпринимателя.
-- ``SignerType`` — тип подписанта, принимает значения из перечисления :doc:`SignerType`. По умолчанию имеет значение ``LegalEntity``.
+- ``SignerType`` — тип подписанта, принимает значения из перечисления :doc:`SignerType`. По умолчанию имеет значение ``SignerTypeUnspecified``.
 - ``SignerInfo`` — иные сведения, идентифицирующие подписанта.
 - ``SignerPowers`` — область полномочий подписанта, принимает значения из перечисления :doc:`SignerPowers`.
 - ``SignerStatus`` — статус подписанта, принимает значения из перечисления :doc:`SignerStatus`.
