@@ -41,7 +41,7 @@ ExtendedSignerDetails
 
    :requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
    
-   :request Body: Тело запроса должно содержать отправляемое сообщение, сериализованное в протобуфер :doc:`../../proto/ExtendedSignerToPost`.
+   :request Body: Тело запроса должно содержать отправляемое сообщение, сериализованное в протобуфер :doc:`../../proto/ExtendedSignerDetailsToPost`.
    
    :statuscode 200: операция успешно завершена.
    :statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -51,7 +51,7 @@ ExtendedSignerDetails
    :statuscode 405: используется неподходящий HTTP-метод.
    :statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-   :response Body: Тело ответа содержит отправленное сообщение, сериализованное в протобуфер :doc:`../../proto/utd/ExtendedSigner`.
+   :response Body: Тело ответа содержит отправленное сообщение, сериализованное в протобуфер :doc:`../../proto/ExtendedSignerDetails`.
 
 Проверка данных
 ---------------

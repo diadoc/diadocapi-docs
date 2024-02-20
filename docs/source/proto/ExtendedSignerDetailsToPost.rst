@@ -1,17 +1,17 @@
-ExtendedSignerToPost
-====================
+ExtendedSignerDetailsToPost
+===========================
 
-Структура ``ExtendedSignerToPost`` хранит информацию о подписанте.
+Структура ``ExtendedSignerDetailsToPost`` хранит информацию о подписанте.
 
 .. code-block:: protobuf
 
-     message ExtendedSignerToPost {
+     message ExtendedSignerDetailsToPost {
          optional string JobTitle = 1;
          optional string RegistrationCertificate = 2;
-         required SignerType SignerType = 3 [default = SignerTypeUnspecified];
+         optional SignerType SignerType = 3 [default = SignerTypeUnspecified];
          optional string SignerInfo = 4;
-         required SignerPowers SignerPowers = 5 [default = SignerPowersUnspecified];
-         required SignerStatus SignerStatus = 6 [default = SignerStatusUnspecified];
+         optional SignerPowers SignerPowers = 5 [default = SignerPowersUnspecified];
+         optional SignerStatus SignerStatus = 6 [default = SignerStatusUnspecified];
          optional string SignerPowersBase = 7;
          optional string SignerOrgPowersBase = 8;
       }

@@ -365,7 +365,7 @@ intersphinx_mapping = {'python': ('https://docs.python.org/', None)}
 # Redirecting old pages
 redirects = {
      "howto/example_authorization": "../Authorization.html",
-     "proto/utd/ExtendedSignerDetailsToPost": "../ExtendedSignerToPost.html",
+     "proto/utd/ExtendedSignerDetailsToPost": "../ExtendedSignerDetailsToPost.html",
     
     # redirect obsolete methods
      "http/GenerateAcceptanceCertificateXmlForBuyer": "../obsolete/http/GenerateAcceptanceCertificateXmlForBuyer.html",
