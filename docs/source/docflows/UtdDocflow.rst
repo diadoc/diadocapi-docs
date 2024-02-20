@@ -322,4 +322,4 @@ XSD-схемы первого и второго титулов УПД после
 
 - структура для описания реквизитов подписанта, используемая в УПД и УКД - :doc:`../proto/utd/ExtendedSigner`
 
-- структура для описания реквизитов подписанта, используемая в методе :doc:`../http/utd/ExtendedSignerDetailsV2` - :doc:`../proto/ExtendedSignerToPost`
+- структура для описания реквизитов подписанта, используемая в методе :doc:`../http/utd/ExtendedSignerDetailsV2` - :doc:`../proto/ExtendedSignerDetailsToPost`

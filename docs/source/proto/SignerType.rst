@@ -22,5 +22,5 @@ SignerType
 .. rubric:: Смотри также
 
 *Перечисление используется:*
-	- в структуре :doc:`ExtendedSignerToPost`,
+	- в структуре :doc:`ExtendedSignerDetailsToPost`,
 	- в структуре :doc:`utd/ExtendedSigner`, возвращаемой методом  :doc:`../http/utd/ExtendedSignerDetailsV2`.

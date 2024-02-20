@@ -334,7 +334,7 @@
 
 - Добавлено поле ``SupportsAmendmentRequest`` в ответ метода :doc:`http/GetDocumentTypes`.
 - Добавлены значения в структуры :doc:`http/utd/ExtendedSignerDetailsV2` и :doc:`proto/DocumentTitleType` для поддержки версий формата приказа №423.
-- Добавлены значения ``SignerPowers`` и ``SignerStatus`` в структуры :doc:`proto/utd/ExtendedSigner` и :doc:`proto/ExtendedSignerToPost`.
+- Добавлены значения ``SignerPowers`` и ``SignerStatus`` в структуры :doc:`proto/utd/ExtendedSigner` и :doc:`proto/ExtendedSignerDetailsToPost`.
 
 
 24.01.2020
@@ -1091,7 +1091,7 @@
  - :doc:`proto/utd/UniversalDocumentMetadata` — для описания данных УПД и УКД,
  - :doc:`proto/utd/ExtendedOrganizationInfo` — для описания реквизитов продавца, покупателя и грузоотправителя, используемая в УПД и УКД,
  - :doc:`proto/utd/ExtendedSigner` — для описания реквизитов подписанта, используемая в УПД и УКД,
- - :doc:`proto/ExtendedSignerToPost` — для описания реквизитов подписанта, используемая в методе :doc:`proto/utd/ExtendedOrganizationInfo`.
+ - :doc:`proto/ExtendedSignerDetailsToPost` — для описания реквизитов подписанта, используемая в методе :doc:`proto/utd/ExtendedOrganizationInfo`.
  
 - В структуре :doc:`proto/MessageToPost` добавлено поле ``UniversalTransferDocumentSellerTitles``:
 
