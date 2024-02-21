@@ -1,12 +1,12 @@
 GetCounteragentsInGroup
 =======================
 
-Метод ``GetCounteragentsInGroup`` предназначен для просмотра списка контрагентов в группе.
+Метод ``GetCounteragentsInGroup`` возращает список контрагентов в группе.
 
 .. http:get:: /GetCounteragentsInGroup
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam CounteragentGroupId: идентификатор группы контрагентов
+	:queryparam counteragentGroupId: идентификатор группы контрагентов
 	:queryparam offset: номер страницы, которую нужно получить. Необязательный параметр. По умолчанию равен 1.
 	:queryparam limit:  количество групп контрагентов на одной странице. Может принимать значения от 1 до 100. Необязательный параметр. По умолчанию равен 100.
 
@@ -29,18 +29,18 @@ GetCounteragentsInGroup
 		        required int32 TotalCount = 2;
 		    }
 
-		- ``CounteragentId`` — идентификатор контрагента.
+		- ``CounteragentId`` — список идентификаторов контрагентов.
 		- ``TotalCount`` — количество контрагентов в группе.
 
-Метод вернет идентификатор контрагента ``CounteragentId``, если ``CounteragentStatus = IsMyCounteragent``. Узнать статус можно с помощью метода :doc:`GetOrganizationsByInnList`.
+Метод вернет идентификаторы контрагентов ``CounteragentId``, если ``CounteragentStatus = IsMyCounteragent``. Узнать статус можно с помощью метода :doc:`GetOrganizationsByInnList`.
 
 ----
 
 .. rubric:: Смотри также
 
 *Другие методы для работы с группой контрагентов:*
-	- :doc:`CreateCounteragentGroup`,
-	- :doc:`UpdateCounteragentGroup`,
-	- :doc:`DeleteCounteragentGroup`,
-	- :doc:`AddCounteragentsInGroup`,
-	- :doc:`GetCounteragentGroups`.
+	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
+	- :doc:`UpdateCounteragentGroup` — редактирует группы контрагентов,
+	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
+	- :doc:`AddCounteragentsInGroup` — возращает список групп контрагентов,
+	- :doc:`GetCounteragentGroups` — возвращает список контрагентов в группе.

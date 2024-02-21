@@ -11,15 +11,9 @@ CounteragentGroup
         optional DepartmentsInGroup Departments = 3;
     }
 
-     message DepartmentsInGroup {
-        repeated string DepartmentId = 1;
-    }
-
 - ``CounteragentGroupId`` — идентификатор группы контрагентов.
-- ``Name`` — наименование группы контрагентов.
-- ``Departments``— подразделения, в которые группы могут отправлять документы. Представлены структурой ``DepartmentsInGroup`` с полями:
-
-	- ``DepartmentId`` — список идентификаторов подразделений.
+- ``Name`` — название группы контрагентов.
+- ``Departments``— подразделения, в которые группы могут отправлять документы. Представлены структурой :doc:`DepartmentsInGroup`.
 
 ----
 

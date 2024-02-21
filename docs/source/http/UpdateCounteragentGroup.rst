@@ -24,19 +24,13 @@ UpdateCounteragentGroup
 		        optional DepartmentsInGroup DepartmentId = 2;
 		    }
 
-		    message DepartmentsInGroup {
-		        repeated string DepartmentId = 1;
-		    }
-
 		..
 
 		- ``Name`` — наименование группы контрагентов.
 		- ``Departments`` — подразделения, в которые контрагенты группы могут отправлять документы. Представлены структурой ``CounteragentGroupDepartmentPatch`` с полями:
 
 			- ``AnyDepartment`` — флаг, указывающий, что документы можно отправлять в любое подразделение.
-			- ``DepartmentId`` — идентификатор подразделения. Нельзя указывать одновременно с ``AnyDepartment = true``. Представлен структурой ``DepartmentsInGroup`` с полями:
-
-				- ``DepartmentId`` — список идентификаторов подразделений.
+			- ``DepartmentId`` — идентификатор подразделения. Нельзя указывать одновременно с ``AnyDepartment = true``. Представлен структурой :doc:`../proto/DepartmentsInGroup`.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры, или невозможно изменить наименование группы по умолчанию.
@@ -52,7 +46,7 @@ UpdateCounteragentGroup
 
 Изменить группу контрагентов может только администратор ящика.
 
-Чтобы изменить список подразделений, в которые группа может отправлять документы, используйте структуру ``CounteragentGroupDepartmentPatch``:
+Изменить список подразделений, в которые группа может отправлять документы, можно одним из следующих способов:
 
 	- Чтобы добавить или удалить подразделения, передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и обновленным списком подразделений.
 	- Чтобы изменить список подразделений на «любое подразделение», передайте структуру ``CounteragentGroupDepartmentPatch`` только с параметром ``AnyDepartment = true``.
@@ -63,8 +57,8 @@ UpdateCounteragentGroup
 .. rubric:: Смотри также
 
 *Другие методы для работы с группой контрагентов:*
-	- :doc:`CreateCounteragentGroup`,
-	- :doc:`DeleteCounteragentGroup`,
-	- :doc:`AddCounteragentsInGroup`,
-	- :doc:`GetCounteragentGroups`,
-	- :doc:`GetCounteragentsInGroup`.
+	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
+	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
+	- :doc:`AddCounteragentsInGroup` — добавляет контрагентов в группу,
+	- :doc:`GetCounteragentGroups` — возвращает список групп контрагентов,
+	- :doc:`GetCounteragentsInGroup` — возвращает список контрагентов в группе.

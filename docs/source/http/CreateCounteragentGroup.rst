@@ -18,16 +18,10 @@ CreateCounteragentGroup
  		        optional DepartmentsInGroup Departments = 2;
 		    }
 
-		    message DepartmentsInGroup {
-		        repeated string DepartmentId = 1;
-		    }
-
 		..
 
 		- ``Name`` — имя группы. Должно быть уникально в рамках одного ящика. Длина не должна превышать 500 символов.
-		- ``Departments`` — подразделения, в которые контрагенты группы могут отправлять документы. Представлены структурой ``DepartmentsInGroup`` с полями:
-
-			- ``DepartmentId`` — список идентификаторов подразделений.
+		- ``Departments`` — подразделения, в которые контрагенты группы могут отправлять документы. Представлены структурой :doc:`../proto/DepartmentsInGroup`.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -48,8 +42,8 @@ CreateCounteragentGroup
 .. rubric:: Смотри также
 
 *Другие методы для работы с группой контрагентов:*
-	- :doc:`UpdateCounteragentGroup`,
-	- :doc:`DeleteCounteragentGroup`,
-	- :doc:`AddCounteragentsInGroup`,
-	- :doc:`GetCounteragentGroups`,
-	- :doc:`GetCounteragentsInGroup`.
+	- :doc:`UpdateCounteragentGroup` —  — редактирует группы контрагентов,
+	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
+	- :doc:`AddCounteragentsInGroup` — добавляет контрагентов в группу,
+	- :doc:`GetCounteragentGroups` — возвращает список групп контрагентов,
+	- :doc:`GetCounteragentsInGroup` — возвращает список контрагентов в группе.

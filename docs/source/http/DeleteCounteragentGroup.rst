@@ -22,15 +22,15 @@ DeleteCounteragentGroup
 
 Удалить группу контрагентов может только администратор ящика.
 
-При удалении группы КА всем контрагентам, находящимся в этой группе, назначается группа "по умолчанию".
+При удалении группы всем контрагентам, находящимся в этой группе, назначается группа "по умолчанию".
 
 ----
 
 .. rubric:: Смотри также
 
 *Другие методы для работы с группой контрагентов:*
-	- :doc:`CreateCounteragentGroup`,
-	- :doc:`UpdateCounteragentGroup`,
-	- :doc:`AddCounteragentsInGroup`,
-	- :doc:`GetCounteragentGroups`,
-	- :doc:`GetCounteragentsInGroup`.
+	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
+	- :doc:`UpdateCounteragentGroup` — редактирует группы контрагентов,
+	- :doc:`AddCounteragentsInGroup` — добавляет контрагентов в группу,
+	- :doc:`GetCounteragentGroups` — возвращает список групп контрагентов,
+	- :doc:`GetCounteragentsInGroup` — возвращает список контрагентов в группе.

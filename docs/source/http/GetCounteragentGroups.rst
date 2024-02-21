@@ -1,7 +1,7 @@
 GetCounteragentGroups
 =====================
 
-Метод ``GetCounteragentGroups`` предназначен для просмотра списка групп контрагентов.
+Метод ``GetCounteragentGroups`` возвращает список групп контрагентов.
 
 .. http:get:: /GetCounteragentGroups
 
@@ -11,7 +11,7 @@ GetCounteragentGroups
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
-	:request Body: Тело запроса может содержать структуру ``CounteragentGroupList``:
+	:request Body: Тело запроса необязательно. Может содержать структуру ``CounteragentGroupList``:
 
 		.. code-block:: protobuf
 
@@ -42,7 +42,7 @@ GetCounteragentGroups
 
 Для выполнения метода текущий пользователь должен иметь доступ к ящику.
 
-Если тело запроса не содержит структуру ``CounteragentGroupList``, метод вернет полный список групп контрагентов.
+Без тела запроса метод вернет полный список групп контрагентов.
 
 Метод не возвращает удаленные группы контрагентов.
 
@@ -51,9 +51,9 @@ GetCounteragentGroups
 .. rubric:: Смотри также
 
 *Другие методы для работы с группой контрагентов:*
-	- :doc:`CreateCounteragentGroup`,
-	- :doc:`UpdateCounteragentGroup`,
-	- :doc:`DeleteCounteragentGroup`,
-	- :doc:`AddCounteragentsInGroup`,
-	- :doc:`GetCounteragentsInGroup`.
+	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
+	- :doc:`UpdateCounteragentGroup` — редактирует группы контрагентов,
+	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
+	- :doc:`AddCounteragentsInGroup` — добавляет контрагентов в группу,
+	- :doc:`GetCounteragentsInGroup` — возвращает список контрагентов в группе.
 
