@@ -32,7 +32,7 @@ GetCounteragentsInGroup
 		- ``CounteragentId`` — список идентификаторов контрагентов.
 		- ``TotalCount`` — количество контрагентов в группе.
 
-Метод вернет идентификаторы контрагентов ``CounteragentId``, если ``CounteragentStatus = IsMyCounteragent``. Узнать статус можно с помощью метода :doc:`GetOrganizationsByInnList`.
+Метод вернет идентификатор контрагента ``CounteragentId``, если статус контрагента ``CounteragentStatus = IsMyCounteragent``. Узнать статус можно с помощью метода :doc:`GetOrganizationsByInnList`.
 
 ----
 
