@@ -29,6 +29,8 @@ ExtendedSignerDetails
         Torg2Buyer = 9;           // Данные для титула покупателя Торг-2
         Torg2AdditionalInfo = 10; // Данные для титула продавца Торг-2
         Ucd736Buyer = 11;         // Данные для титула покупателя УКД формата приказа 736
+        Utd970Seller =12;         // Данные для титула продавца УПД формата приказа 970
+        Utd970Buyer=13;           // Данные для титула покупателя УПД формата приказа 970
     }
 
 .. http:post:: /V2/ExtendedSignerDetails
@@ -39,7 +41,7 @@ ExtendedSignerDetails
 
    :requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
    
-   :request Body: Тело запроса должно содержать отправляемое сообщение, сериализованное в протобуфер :doc:`../../proto/utd/ExtendedSignerDetailsToPost`.
+   :request Body: Тело запроса должно содержать отправляемое сообщение, сериализованное в протобуфер :doc:`../../proto/ExtendedSignerDetailsToPost`.
    
    :statuscode 200: операция успешно завершена.
    :statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -49,7 +51,7 @@ ExtendedSignerDetails
    :statuscode 405: используется неподходящий HTTP-метод.
    :statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-   :response Body: Тело ответа содержит отправленное сообщение, сериализованное в протобуфер :doc:`../../proto/utd/ExtendedSigner`.
+   :response Body: Тело ответа содержит отправленное сообщение, сериализованное в протобуфер :doc:`../../proto/ExtendedSignerDetails`.
 
 Проверка данных
 ---------------

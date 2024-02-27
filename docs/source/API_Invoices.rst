@@ -24,7 +24,7 @@
 
 - :doc:`proto/utd/ExtendedOrganizationInfo`
 - :doc:`proto/utd/ExtendedSigner`
-- :doc:`proto/utd/ExtendedSignerDetailsToPost`
+- :doc:`proto/ExtendedSignerDetailsToPost`
 - :doc:`proto/utd/UniversalDocumentMetadata`
 - :doc:`proto/PrepareDocumentsToSignRequest`
 - :doc:`proto/PrepareDocumentsToSignResponse`

@@ -366,6 +366,7 @@ intersphinx_mapping = {'python': ('https://docs.python.org/', None)}
 redirects = {
      "howto/example_authorization": "../Authorization.html",
      "http/Organizations/GetOrganizationFeatures": "../GetOrganizationFeatures.html",
+     "proto/utd/ExtendedSignerDetailsToPost": "../ExtendedSignerDetailsToPost.html",
     
     # redirect obsolete methods
      "http/GenerateAcceptanceCertificateXmlForBuyer": "../obsolete/http/GenerateAcceptanceCertificateXmlForBuyer.html",
