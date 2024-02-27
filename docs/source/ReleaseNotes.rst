@@ -8,7 +8,8 @@
 - Добавили возможность указать расширенные данные подписанта для УПД, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__:
 
 	- в перечисление :doc:`proto/DocumentTitleType` добавили значения ``Utd970Seller = 12`` и ``Utd970Buyer = 13`` для титула продавца и покупателя УПД формата приказа 970 соответственно;
-	- в поле ``ExtendedDocumentTitleType`` структуры :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` добавили значения 12 и 13 для титула продавца и покупателя УПД формата приказа 970 соответственно.
+	- в поле ``ExtendedDocumentTitleType`` структуры :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` добавили значения 12 и 13 для титула продавца и покупателя УПД формата приказа 970 соответственно;
+	- в перечисления :doc:`proto/SignerType`, :doc:`proto/SignerStatus` и :doc:`proto/SignerPowers` добавили значение -1: в УПД нового формата нет полей с типом, статусом и областью полномочий подписанта.
 
 20.02.2024
 ----------
