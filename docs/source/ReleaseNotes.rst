@@ -3,11 +3,12 @@
 
 27.02.2024
 ----------
+**SDK**: `C# 2.14.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.6>`__
 
 - Добавили возможность указать расширенные данные подписанта для УПД, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__:
 
-	- в перечисление :doc:`proto/DocumentTitleType` и поле ``ExtendedDocumentTitleType`` структуры :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` добавили значения ``Utd970Seller = 12`` — титул продавца УПД формата приказа 970, ``Utd970Buyer = 13`` — титул покупателя УПД формата приказа 970;
-	- в перечисления :doc:`proto/SignerType`, :doc:`proto/SignerPowers` и :doc:`proto/SignerStatus` добавили значение ``SignerTypeUnspecified = -1`` — неизвестный тип подписанта, статуса или области полномочий.
+	- в перечисление :doc:`proto/DocumentTitleType` добавили значения ``Utd970Seller = 12`` и ``Utd970Buyer = 13`` для титула продавца и покупателя УПД формата приказа 970 соответственно;
+	- в поле ``ExtendedDocumentTitleType`` структуры :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` добавили значения 12 и 13 для титула продавца и покупателя УПД формата приказа 970 соответственно.
 
 02.02.2024
 ----------
