@@ -19,7 +19,7 @@ PowerOfAttorneyPrevalidateRequest
 	- ``Thumbprint`` — отпечаток сертификата.
 	- ``Content`` — сертификат пользователя, представленный структурой :doc:`../proto/Content_v3`.
 	
-	В структуре должно быть заполнено только одно из полей: ``Thumbprint`` или ``Content``.
+В структуре должно быть заполнено только одно из полей: ``Thumbprint`` или ``Content``.
 
 ----
 
