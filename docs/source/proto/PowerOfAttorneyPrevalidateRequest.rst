@@ -17,7 +17,9 @@ PowerOfAttorneyPrevalidateRequest
 - ``ConfidantCertificateToPrevalidate`` — данные о сертификате, которым планируется подписывать документ с МЧД. Представлены структурой ``ConfidantCertificateToPrevalidate`` с полями:
 
 	- ``Thumbprint`` — отпечаток сертификата.
-	- ``Content`` — сертификат пользователя, сериализованный в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__.
+	- ``Content`` — сертификат пользователя, представленный структурой :doc:`../proto/Content_v3`.
+	
+	В структуре должно быть заполнено только одно из полей: ``Thumbprint`` или ``Content``.
 
 ----
 
