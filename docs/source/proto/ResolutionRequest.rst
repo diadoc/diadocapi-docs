@@ -7,7 +7,7 @@ ResolutionRequestInfo
 .. code-block:: protobuf
 
     message ResolutionRequestInfo {
-        optional ResolutionRequestType RequestType = 1 [default = UnknownResolutionRequestType];
+        optional ResolutionRequestType Type = 1 [default = UnknownResolutionRequestType];
         required string Author = 2;
         optional ResolutionTarget Target = 3;
         optional string ResolvedWith = 4;
@@ -16,7 +16,7 @@ ResolutionRequestInfo
 
 Структура данных *ResolutionRequestInfo* содержит информацию о состоянии запроса на согласование и является частью структуры :doc:`Entity <Entity message>` в случае, когда сущность имеет тип *AttachmentType.ResolutionRequest*:
 
-- *ResolutionRequestType* - тип запроса на согласование.
+- *Type* - тип запроса на согласование.
 
 - *Author* - ФИО инициатора запроса.
 
