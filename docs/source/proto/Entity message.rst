@@ -262,6 +262,9 @@ Entity
 	- ``Torg13``
 	- ``ServiceDetails``
 	- ``Title``
+	- ``UniversalTransferDocument``
+	- ``UniversalCorrectionDocument``
+	- ``UniversalTransferDocumentRevision``
 
 - ``RawCreationDate`` — время создания сущности, представленное структурой :doc:`Timestamp`.
 
