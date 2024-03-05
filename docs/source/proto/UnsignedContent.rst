@@ -28,6 +28,6 @@ UnsignedContent
 .. rubric:: Смотри также
 
 *Структура используется:*
-	- в структуре :doc:`EditingPatch <MessagePatchToPost>`,
+	- в структуре :ref:`EditingPatch`,
 	- в структуре :doc:`TemplateDocumentAttachment`,
 	- в структуре :doc:`ContentToPatch <PrepareDocumentsToSignRequest>`.
