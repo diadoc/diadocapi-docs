@@ -48,6 +48,14 @@
   content: "";	
 }
 
+.rst-content table.docutils td:first-child {
+  border-left-width: thin;
+}
+
+.overflow-x-table-styles {
+  max-height: 600px;
+}
+
 @media screen and (max-width: 768px) {
   .github-link {
      display: none;
