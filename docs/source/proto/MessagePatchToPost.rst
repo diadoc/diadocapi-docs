@@ -77,7 +77,7 @@ MessagePatchToPost
 
 - ``ResolutionRouteAssignments`` — список операций по постановке документов на маршрут согласования. Каждый элемент списка представлен структурой :ref:`ResolutionRouteAssignment`. 
 
-- ``SignatureVerifications`` — список результатов проверки подписей на стороне получателя. Каждый элемент списка представлен структурой :ref:`SignatureVerification`.
+- ``SignatureVerifications`` — список результатов проверки подписей зашифрованных документов на стороне получателя. Каждый элемент списка представлен структурой :ref:`SignatureVerification`.
 
 - ``EditDocumentPacketCommands`` — список операций по изменению состава пакета у документов в исходном сообщении. Каждый элемент списка представлен структурой :ref:`EditDocumentPacketCommand`. 
 
@@ -253,7 +253,9 @@ ResolutionRouteAssignment
 SignatureVerification
 ---------------------
 
-Структура ``SignatureVerification`` представляет собой результат проверки подписей на стороне получателя.
+Структура ``SignatureVerification`` представляет собой результат проверки подписей зашифрованного документа на стороне получателя.
+
+Получатель с помощью метода :doc:`../http/GetCounteragentCertificates` может получить сертификаты отправителя документа, а затем с их помощью проверить подписи документа. Результаты  такой проверки можно внести в структуру ``SignatureVerification``.
 
 .. code-block:: protobuf
 
@@ -266,7 +268,7 @@ SignatureVerification
 
 ..
 
-- ``InitialDocumentId`` —  идентификатор документа.
+- ``InitialDocumentId`` —  идентификатор проверяемого зашифрованного документа.
 - ``IsValid`` — результат проверки документа.
 - ``ErrorMessage`` — текст с описанием результата проверки.
 - ``Labels`` — список :doc:`меток <Labels>`.
