@@ -98,9 +98,9 @@ TovTorgInfo
 
 При заполнении структуры *TovTorgSellerTitleInfo* нужно иметь в виду:
 
--  Обязательные поля *TovTorgSellerTitleInfo.Seller* и *TovTorgSellerTitleInfo.Buyer* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`ExtendedOrganizationInfo <../../proto/utd/ExtendedOrganizationInfo>`.
+-  Обязательные поля *TovTorgSellerTitleInfo.Seller* и *TovTorgSellerTitleInfo.Buyer* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`ExtendedOrganizationInfo`.
 
--  Реквизиты грузоотправителя *TovTorgSellerTitleInfo.Shipper*, грузополучателя *TovTorgSellerTitleInfo.Consignee* и перевозчика *TovTorgSellerTitleInfo.Carrier* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedOrganizationInfo`.
+-  Реквизиты грузоотправителя *TovTorgSellerTitleInfo.Shipper*, грузополучателя *TovTorgSellerTitleInfo.Consignee* и перевозчика *TovTorgSellerTitleInfo.Carrier* заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo`.
 
 -  Реквизиты подписантов накладной *TovTorgSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 

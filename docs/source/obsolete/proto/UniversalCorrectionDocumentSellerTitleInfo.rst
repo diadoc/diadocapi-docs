@@ -87,7 +87,7 @@ UniversalCorrectionDocumentSellerTitleInfo
 
 -  Первичные документы, к котором выставляются корректировочные документы заполняется в виде структуры *InvoiceForCorrectionInfo*,
 
--  Реквизиты продавца (*UniversalCorrectionDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalCorrectionDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedOrganizationInfo`.
+-  Реквизиты продавца (*UniversalCorrectionDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalCorrectionDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo`.
 
 -  Реквизиты подписанта документа *UniversalCorrectionDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 

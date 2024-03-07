@@ -1,6 +1,9 @@
 ExtendedOrganizationInfo
 ========================
 
+.. warning::
+	Структура используется в устаревших методах и структурах.
+
 .. code-block:: protobuf
 
     message ExtendedOrganizationInfo {
@@ -33,9 +36,9 @@ ExtendedOrganizationInfo
     }
         
 
-Структура данных *ExtendedOrganizationInfo* служит для представления реквизитов организаций-контрагентов при формировании счетов-фактур (см. :doc:`../../obsolete/proto/InvoiceInfo`), товарных накладных (см. :doc:`Torg12SellerTitleInfo <../../obsolete/proto/Torg12Info>`), актов о выполнении работ / оказании услуг (см. :doc:`AcceptanceCertificateSellerTitleInfo <../../obsolete/proto/AcceptanceCertificateInfo>`) и универсальных передаточных документов в "новом" XML-формате.
+Структура данных *ExtendedOrganizationInfo* служит для представления реквизитов организаций-контрагентов при формировании счетов-фактур (см. :doc:`InvoiceInfo`), товарных накладных (см. :doc:`Torg12SellerTitleInfo <Torg12Info>`), актов о выполнении работ / оказании услуг (см. :doc:`AcceptanceCertificateSellerTitleInfo <AcceptanceCertificateInfo>`) и универсальных передаточных документов в "новом" XML-формате.
 
-В зависимости от контекста использования структуры *ExtendedOrganizationInfo* требования к обязательности заполнения ее полей могут меняться. Однако в любом случае всегда требуется указывать название организации (*ExtendedOrganizationInfo.Name*) и ее адрес (:doc:`ExtendedOrganizationInfo.Address <../Address>`). 
+В зависимости от контекста использования структуры *ExtendedOrganizationInfo* требования к обязательности заполнения ее полей могут меняться. Однако в любом случае всегда требуется указывать название организации (*ExtendedOrganizationInfo.Name*) и ее адрес (:doc:`ExtendedOrganizationInfo.Address <../../proto/Address>`). 
 
 На текущий момент структура используется для заполнения сведений об организациях в документах в формате УПД.
 
@@ -49,7 +52,7 @@ ExtendedOrganizationInfo
 
 -  *Kpp* - КПП организации (КПП)
 
--  *Address* - адрес, передаётся в структуре :doc: `../Address` (Адрес)
+-  *Address* - адрес, передаётся в структуре :doc: `../../proto/Address` (Адрес)
 
 -  *FnsParticipantId* - ФНС идентификатор участника электронного документоооборота
 
@@ -61,7 +64,7 @@ ExtendedOrganizationInfo
 
 -  *Okdp* - код основного вида деятельности по ОКДП
 
--  *Phone* - номер контактного телефона и/или номер факса. (Тлф) В отличие от протобуфере :doc:`../OrganizationInfo` для телефона и факса используется одно поле
+-  *Phone* - номер контактного телефона и/или номер факса. (Тлф) В отличие от протобуфере :doc:`../../proto/OrganizationInfo` для телефона и факса используется одно поле
 
 -  *Email* - контактный Email (ЭлПочта)
 

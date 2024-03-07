@@ -383,13 +383,13 @@ redirects = {
      "http/ParseInvoiceXml": "../obsolete/http/ParseInvoiceXml.html",
      "http/ParseTorg12BuyerTitleXml": "../obsolete/http/ParseTorg12BuyerTitleXml.html",
      "http/ParseTorg12SellerTitleXml": "../obsolete/http/ParseTorg12SellerTitleXml.html",
-     "http/utd/ExtendedSignerDetails": "../obsolete/http/ExtendedSignerDetails.html",
-     "http/utd/GenerateUniversalTransferDocumentXmlForBuyer": "../obsolete/http/GenerateUniversalTransferDocumentXmlForBuyer.html",
-     "http/utd/GenerateUniversalTransferDocumentXmlForSeller": "../obsolete/http/GenerateUniversalTransferDocumentXmlForSeller.html",
-     "http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml": "../obsolete/http/ParseUniversalCorrectionDocumentBuyerTitleXml.html",
-     "http/utd/ParseUniversalCorrectionDocumentSellerTitleXml": "../obsolete/http/ParseUniversalCorrectionDocumentSellerTitleXml.html",
-     "http/utd/ParseUniversalTransferDocumentBuyerTitleXml": "../obsolete/http/ParseUniversalTransferDocumentBuyerTitleXml.html",
-     "http/utd/ParseUniversalTransferDocumentSellerTitleXml": "../obsolete/http/ParseUniversalTransferDocumentSellerTitleXml.html",
+     "http/utd/ExtendedSignerDetails": "../../obsolete/http/ExtendedSignerDetails.html",
+     "http/utd/GenerateUniversalTransferDocumentXmlForBuyer": "../../obsolete/http/GenerateUniversalTransferDocumentXmlForBuyer.html",
+     "http/utd/GenerateUniversalTransferDocumentXmlForSeller": "../../obsolete/http/GenerateUniversalTransferDocumentXmlForSeller.html",
+     "http/utd/ParseUniversalCorrectionDocumentBuyerTitleXml": "../../obsolete/http/ParseUniversalCorrectionDocumentBuyerTitleXml.html",
+     "http/utd/ParseUniversalCorrectionDocumentSellerTitleXml": "../../obsolete/http/ParseUniversalCorrectionDocumentSellerTitleXml.html",
+     "http/utd/ParseUniversalTransferDocumentBuyerTitleXml": "../../obsolete/http/ParseUniversalTransferDocumentBuyerTitleXml.html",
+     "http/utd/ParseUniversalTransferDocumentSellerTitleXml": "../../obsolete/http/ParseUniversalTransferDocumentSellerTitleXml.html",
      
     # redirect obsolete structures
      "proto/AcceptanceCertificate552Info": "../obsolete/proto/AcceptanceCertificate552Info.html",
@@ -399,5 +399,6 @@ redirects = {
      "proto/BasicDocumentInfo": "../obsolete/proto/BasicDocumentInfo.html",
      "proto/ContractAttachment": "../obsolete/proto/ContractAttachment.html",
      "proto/EncryptedInvoiceAttachment": "../obsolete/proto/EncryptedInvoiceAttachment.html",
-     "proto/EncryptedXmlDocumentAttachment": "../obsolete/proto/EncryptedXmlDocumentAttachment.html"
+     "proto/EncryptedXmlDocumentAttachment": "../obsolete/proto/EncryptedXmlDocumentAttachment.html",
+     "proto/utd/ExtendedOrganizationInfo": "../../obsolete/proto/ExtendedOrganizationInfo.html"
 }

@@ -78,7 +78,7 @@ AcceptanceCertificate552Info
 
 При заполнении структуры *AcceptanceCertificate552SellerTitleInfo* нужно иметь в виду:
 
--  Обязательные поля *AcceptanceCertificate552SellerTitleInfo.Seller* и *AcceptanceCertificate552SellerTitleInfo.Buyer* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`ExtendedOrganizationInfo <../../proto/utd/ExtendedOrganizationInfo>`.
+-  Обязательные поля *AcceptanceCertificate552SellerTitleInfo.Seller* и *AcceptanceCertificate552SellerTitleInfo.Buyer* позволяют задать участников электронного обмена, между которыми происходит передача товарной накладной. Необходимая информация об участниках задается в виде структуры данных :doc:`ExtendedOrganizationInfo`.
 
 -  Основания задаются в виде структуры данных :doc:`GroundInfo <TovTorgInfo>`.
 

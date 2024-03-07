@@ -1104,9 +1104,9 @@
  - :doc:`obsolete/proto/UniversalCorrectionDocumentSellerTitleInfo` — для описания титула продавца УКД,
  - :doc:`obsolete/proto/UniversalTransferDocumentBuyerTitleInfo` — для описания титула покупателя УКД,
  - :doc:`proto/utd/UniversalDocumentMetadata` — для описания данных УПД и УКД,
- - :doc:`proto/utd/ExtendedOrganizationInfo` — для описания реквизитов продавца, покупателя и грузоотправителя, используемая в УПД и УКД,
+ - :doc:`obsolete/proto/ExtendedOrganizationInfo` — для описания реквизитов продавца, покупателя и грузоотправителя, используемая в УПД и УКД,
  - :doc:`proto/utd/ExtendedSigner` — для описания реквизитов подписанта, используемая в УПД и УКД,
- - :doc:`proto/ExtendedSignerDetailsToPost` — для описания реквизитов подписанта, используемая в методе :doc:`proto/utd/ExtendedOrganizationInfo`.
+ - :doc:`proto/ExtendedSignerDetailsToPost` — для описания реквизитов подписанта, используемая в методе :doc:`obsolete/proto/ExtendedOrganizationInfo`.
  
 - В структуре :doc:`proto/MessageToPost` добавлено поле ``UniversalTransferDocumentSellerTitles``:
 
