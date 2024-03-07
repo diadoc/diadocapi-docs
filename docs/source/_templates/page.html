@@ -2,16 +2,33 @@
 
 {% block footer %}
  <script type="text/javascript">
- 	document.addEventListener('DOMContentLoaded', () => {
+ 	  document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.toggle').forEach(item => {
         const switcher = document.createElement('div');
+
         switcher.classList.add('switcher');
         switcher.addEventListener('click', () => {
           item.classList.toggle('open');
-        })
+        });
+
         item.appendChild(switcher);
       });
-    })
+
+      /* 
+        Ограничиваем высоту таблицы у которой есть горизонтальная прокрутка (быстрее видим горизонтальный скролл) 
+        setTimeout нужен для поиска таблиц на странице и накидывания стилей (одного DOMContentLoaded оказалось недостаточно...)
+      */
+      setTimeout(() => {
+          document.querySelectorAll('.wy-table-responsive').forEach(table => {
+          
+          const isOverflowX = ({ clientWidth, scrollWidth }) => scrollWidth > clientWidth;
+
+          if (isOverflowX(table)) {
+            table.classList.add('overflow-x-table-styles');
+          }
+        }) 
+      }, 100);
+    });
     /*
     $(document).ready(function() {
         $(".toggle > *").hide();
