@@ -8,7 +8,7 @@ UpdateEmployeePowerOfAttorney
 
 	:queryparam boxId: идентификатор ящика организации.
 	:queryparam userId: идентификатор сотрудника. Если не указан, то будет изменена МЧД пользователя, от имени которого вызывается метод.
-	:queryparam registraionNumber: регистрационный номер МЧД.
+	:queryparam registrationNumber: регистрационный номер МЧД.
 	:queryparam issuerInn: ИНН доверителя.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
