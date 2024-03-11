@@ -14,4 +14,5 @@
 	template
 	packet
 	shelf
+	signature
 	tag
