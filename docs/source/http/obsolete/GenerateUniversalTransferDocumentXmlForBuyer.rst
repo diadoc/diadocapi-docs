@@ -18,15 +18,15 @@ HTTP метод: **POST**
 
 В запросе должен присутствовать HTTP-заголовок ``Authorization`` с необходимыми данными для :doc:`авторизации <../../Authorization>`.
 
-В теле запроса должны содержаться данные для изготовления документов в формате УПД или УКД, в виде сериализованной структуры :doc:`../proto/UniversalTransferDocumentBuyerTitleInfo`.
+В теле запроса должны содержаться данные для изготовления документов в формате УПД или УКД, в виде сериализованной структуры :doc:`../../proto/obsolete/UniversalTransferDocumentBuyerTitleInfo`.
 
 В теле ответа содержится XML-файл, построенный на основании данных из запроса.
 
-Если структура :doc:`../proto/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УПД:
+Если структура :doc:`../../proto/obsolete/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УПД:
 
 -  файл изготавливается в соответствии со схемой второго титула формата УПД с той же версией, что и у первого титула,
 
-Если структура :doc:`../proto/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УКД:
+Если структура :doc:`../../proto/obsolete/UniversalTransferDocumentBuyerTitleInfo` заполнена для формата УКД:
 
 -  файл изготавливается в соответствии со схемой второго титула формата УКД с той же версией, что и у первого титула,
 

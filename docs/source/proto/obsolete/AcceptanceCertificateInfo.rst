@@ -2,7 +2,7 @@ AcceptanceCertificateInfo
 =========================
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`.
+	Структура используется устаревшим методом :doc:`../../http/obsolete/GenerateAcceptanceCertificateXmlForBuyer`.
 
 .. code-block:: protobuf
 
@@ -56,7 +56,7 @@ AcceptanceCertificateInfo
     }
         
 
-Структура данных *AcceptanceCertificateSellerTitleInfo* представляет исходные данные для формирования титула исполнителя для акта о выполнении работ/оказании услуг в XML-формате при помощи метода :doc:`../http/GenerateAcceptanceCertificateXmlForSeller`.
+Структура данных *AcceptanceCertificateSellerTitleInfo* представляет исходные данные для формирования титула исполнителя для акта о выполнении работ/оказании услуг в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateAcceptanceCertificateXmlForSeller`.
 
 При заполнении структуры *AcceptanceCertificateSellerTitleInfo* нужно иметь в виду:
 
@@ -68,7 +68,7 @@ AcceptanceCertificateInfo
 
 -  Правила заполнения структуры *AcceptanceCertificateSellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_IAKTPRM_1_987_00_05_01_02.xsd>`.
 
-Структура данных *AcceptanceCertificateBuyerTitleInfo* представляет исходные данные для формирования титула заказчика для акта о выполнении работ/оказании услуг в XML-формате при помощи метода :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`.
+Структура данных *AcceptanceCertificateBuyerTitleInfo* представляет исходные данные для формирования титула заказчика для акта о выполнении работ/оказании услуг в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateAcceptanceCertificateXmlForBuyer`.
 
 При заполнении структуры *AcceptanceCertificateBuyerTitleInfo* нужно иметь в виду:
 

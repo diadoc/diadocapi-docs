@@ -23,9 +23,9 @@ HTTP метод: **POST**
 
 В теле запроса должны содержаться данные для изготовления документов в формате УПД или УКД:
 
--  для УПД в виде сериализованной структуры :doc:`../proto/UniversalTransferDocumentSellerTitleInfo`,
+-  для УПД в виде сериализованной структуры :doc:`../../proto/obsolete/UniversalTransferDocumentSellerTitleInfo`,
 
--  для УКД в виде сериализованной структуры :doc:`../proto/UniversalCorrectionDocumentSellerTitleInfo`,
+-  для УКД в виде сериализованной структуры :doc:`../../proto/obsolete/UniversalCorrectionDocumentSellerTitleInfo`,
 
 В теле ответа содержится XML-файл, построенный на основании данных из запроса:
 

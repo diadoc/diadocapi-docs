@@ -2,7 +2,7 @@ AcceptanceCertificate552Info
 ============================
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer`.
+	Структура используется устаревшим методом :doc:`../../http/obsolete/GenerateAcceptanceCertificateXmlForBuyer`.
 
 .. code-block:: protobuf
 
@@ -74,7 +74,7 @@ AcceptanceCertificate552Info
         optional AdditionalInfoId AdditionalInfoId = 10;  // Информационное поле документа
     }
 
-Структура данных *AcceptanceCertificate552SellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateAcceptanceCertificateXmlForSeller` с параметром `documentVersion=rezru_05_01_01`.
+Структура данных *AcceptanceCertificate552SellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateAcceptanceCertificateXmlForSeller` с параметром `documentVersion=rezru_05_01_01`.
 
 При заполнении структуры *AcceptanceCertificate552SellerTitleInfo* нужно иметь в виду:
 
@@ -86,7 +86,7 @@ AcceptanceCertificate552Info
 
 -  Правила заполнения структуры *AcceptanceCertificate552SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_REZRUISP_1_990_01_05_01_02.xsd>`.
 
-Структура данных *AcceptanceCertificate552BuyerInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateAcceptanceCertificateXmlForBuyer` с параметром `documentVersion=rezru_05_01_01`.
+Структура данных *AcceptanceCertificate552BuyerInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateAcceptanceCertificateXmlForBuyer` с параметром `documentVersion=rezru_05_01_01`.
 
 При заполнении структуры *AcceptanceCertificate552BuyerInfo* нужно иметь в виду:
 

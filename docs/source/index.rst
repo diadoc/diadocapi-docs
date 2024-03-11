@@ -50,4 +50,4 @@
 
 	http_methods
 	protos
-	obsolete/index
+	index_obsolete

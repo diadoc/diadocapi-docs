@@ -2,7 +2,7 @@ TovTorgInfo
 ===========
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../http/GenerateTorg12XmlForSeller`.
+	Структура используется устаревшим методом :doc:`../../http/obsolete/GenerateTorg12XmlForSeller`.
 
 .. code-block:: protobuf
 
@@ -94,7 +94,7 @@ TovTorgInfo
     }
 
 
-Структура данных *TovTorgSellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForSeller` с параметром `documentVersion = tovtorg_05_01_02`.
+Структура данных *TovTorgSellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateTorg12XmlForSeller` с параметром `documentVersion = tovtorg_05_01_02`.
 
 При заполнении структуры *TovTorgSellerTitleInfo* нужно иметь в виду:
 
@@ -106,12 +106,12 @@ TovTorgInfo
 
 -  Правила заполнения структуры *TovTorgSellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_TOVTORGPR_1_992_01_05_01_04.xsd>`.
 
-Структура данных *TovTorgBuyerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForBuyer` с параметром `documentVersion=tovtorg_05_01_02`.
+Структура данных *TovTorgBuyerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateTorg12XmlForBuyer` с параметром `documentVersion=tovtorg_05_01_02`.
 
 При заполнении структуры *TovTorgBuyerTitleInfo* нужно иметь в виду:
 
 -  Реквизиты подписантов накладной *TovTorgBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
 
--  Реквизиты должностных лиц *TovTorgBuyerTitleInfo.Employee* или *TovTorgBuyerTitleInfo.OtherIssuer* заполняются в виде структуры данных :doc:`Employee <../proto/UniversalTransferDocumentSellerTitleInfo>` или :doc:`OtherIssuer <../proto/UniversalTransferDocumentSellerTitleInfo>` соответственно.
+-  Реквизиты должностных лиц *TovTorgBuyerTitleInfo.Employee* или *TovTorgBuyerTitleInfo.OtherIssuer* заполняются в виде структуры данных :doc:`Employee <UniversalTransferDocumentSellerTitleInfo>` или :doc:`OtherIssuer <UniversalTransferDocumentSellerTitleInfo>` соответственно.
 
 -  Правила заполнения структуры *TovTorgBuyerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_TOVTORGPOK_1_992_02_05_01_04.xsd>`.

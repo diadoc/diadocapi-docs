@@ -2,7 +2,7 @@ InvoiceInfo
 ===========
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../http/GenerateInvoiceXml`.
+	Структура используется устаревшим методом :doc:`../../http/obsolete/GenerateInvoiceXml`.
 
 .. code-block:: protobuf
 
@@ -83,7 +83,7 @@ InvoiceInfo
     }
         
 
-Структура данных *InvoiceInfo* представляет исходные данные для формирования счета-фактуры в XML-формате при помощи метода :doc:`../http/GenerateInvoiceXml`. При заполнении структуры InvoiceInfo нужно иметь в виду:
+Структура данных *InvoiceInfo* представляет исходные данные для формирования счета-фактуры в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateInvoiceXml`. При заполнении структуры InvoiceInfo нужно иметь в виду:
 
 -  Реквизиты продавца (*InvoiceInfo.Seller*) и покупателя (*InvoiceInfo.Buyer*) заполняются в виде структуры данных :doc:`DiadocOrganizationInfo <../../proto/OrganizationInfo>`.
 

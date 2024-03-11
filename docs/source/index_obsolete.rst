@@ -6,11 +6,11 @@
 	:glob:
 	:maxdepth: 1
    
-	http/*
+	http/obsolete/*
 
 .. toctree::
 	:caption: Структуры
 	:glob:
 	:maxdepth: 1
 
-	proto/*
+	proto/obsolete/*

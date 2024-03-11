@@ -2,7 +2,7 @@ InvoiceCorrectionInfo
 =====================
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../http/GenerateInvoiceXml`.
+	Структура используется устаревшим методом :doc:`../../http/obsolete/GenerateInvoiceXml`.
 
 .. code-block:: protobuf
 
@@ -73,7 +73,7 @@ InvoiceCorrectionInfo
     }
         
 
-Структура данных InvoiceCorrectionInfo представляет исходные данные для формирования корректировочного счета-фактуры в XML-формате при помощи метода :doc:`../http/GenerateInvoiceXml`. При заполнении структуры InvoiceCorrectionInfo нужно иметь в виду:
+Структура данных InvoiceCorrectionInfo представляет исходные данные для формирования корректировочного счета-фактуры в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateInvoiceXml`. При заполнении структуры InvoiceCorrectionInfo нужно иметь в виду:
 
 -  Реквизиты продавца (InvoiceCorrectionInfo.Seller) и покупателя (InvoiceCorrectionInfo.Buyer) заполняются в виде структуры данных :doc:`DiadocOrganizationInfo <../../proto/OrganizationInfo>`.
 

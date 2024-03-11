@@ -2,7 +2,7 @@ UniversalTransferDocumentBuyerTitleInfo
 =======================================
 
 .. warning::
-	Структура используется устаревшими методами :doc:`../http/GenerateUniversalTransferDocumentXmlForBuyer`, :doc:`../http/ParseUniversalTransferDocumentBuyerTitleXml` и :doc:`../http/ParseUniversalCorrectionDocumentBuyerTitleXml`.
+	Структура используется устаревшими методами :doc:`../../http/obsolete/GenerateUniversalTransferDocumentXmlForBuyer`, :doc:`../../http/obsolete/ParseUniversalTransferDocumentBuyerTitleXml` и :doc:`../../http/obsolete/ParseUniversalCorrectionDocumentBuyerTitleXml`.
 
 .. code-block:: protobuf
 
@@ -18,7 +18,7 @@ UniversalTransferDocumentBuyerTitleInfo
         repeated ExtendedSigner Signers = 9; // Подписант
     }
     
-Структура данных *UniversalTransferDocumentBuyerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../http/GenerateUniversalTransferDocumentXmlForBuyer` в формате УПД и УКД.
+Структура данных *UniversalTransferDocumentBuyerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateUniversalTransferDocumentXmlForBuyer` в формате УПД и УКД.
 
 При заполнении структуры *UniversalTransferDocumentBuyerTitleInfo* нужно иметь в виду:
 

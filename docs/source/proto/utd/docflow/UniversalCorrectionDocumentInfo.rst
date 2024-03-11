@@ -31,7 +31,7 @@ UniversalCorrectionDocumentInfo
 
 -  *Grounds* - описание оснований для данного документа.
 
--  *Function* - функция документа, описывается структурой :doc:`FunctionType <../../../obsolete/proto/UniversalTransferDocumentSellerTitleInfo>`.
+-  *Function* - функция документа, описывается структурой :doc:`FunctionType <../../obsolete/UniversalTransferDocumentSellerTitleInfo>`.
 
 -  :doc:`OriginalInvoiceDateAndNumber <../../DocumentDateAndNumber>` - дата и номер исходного УПД (заполняется, если корректировка была сформирована на УПД).
 

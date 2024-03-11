@@ -23,6 +23,6 @@ UniversalTransferDocumentInfo
 
 -  *Grounds* - описание оснований для данного документа.
 
--  *Function* - функция документа, описывается структурой :doc:`FunctionType <../../../obsolete/proto/UniversalTransferDocumentSellerTitleInfo>`.
+-  *Function* - функция документа, описывается структурой :doc:`FunctionType <../../obsolete/UniversalTransferDocumentSellerTitleInfo>`.
 
 -  :doc:`OriginalInvoiceDateAndNumber <../../DocumentDateAndNumber>` - только для *UniversalTransferDocumentRevision*: дата и номер исходного УПД.

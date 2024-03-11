@@ -2,7 +2,7 @@ UniversalTransferDocumentSellerTitleInfo
 ========================================
 
 .. warning::
-	Структура используется устаревшими методами :doc:`../http/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../http/ParseUniversalTransferDocumentSellerTitleXml`.
+	Структура используется устаревшими методами :doc:`../../http/obsolete/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../../http/obsolete/ParseUniversalTransferDocumentSellerTitleXml`.
 
 .. code-block:: protobuf
 
@@ -149,7 +149,7 @@ UniversalTransferDocumentSellerTitleInfo
     }
 
 
-Структура данных *UniversalTransferDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../http/GenerateUniversalTransferDocumentXmlForSeller`. При заполнении структуры UniversalTransferDocumentSellerTitleInfo нужно иметь в виду:
+Структура данных *UniversalTransferDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateUniversalTransferDocumentXmlForSeller`. При заполнении структуры UniversalTransferDocumentSellerTitleInfo нужно иметь в виду:
 
 -  Реквизиты продавца (*UniversalTransferDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalTransferDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo`.
 

@@ -49,7 +49,7 @@ DocumentInfo
 
 -  Поля, содержащие метаданные документа. В зависимости от типа документа заполняется только одно из полей:
 
-  -  :doc:`../obsolete/proto/BasicDocumentInfo` - для документов XmlTorg12, XmlAcceptanceCertificate, Torg12, AcceptanceCertificate, ProformaInvoice, Torg13.
+  -  :doc:`obsolete/BasicDocumentInfo` - для документов XmlTorg12, XmlAcceptanceCertificate, Torg12, AcceptanceCertificate, ProformaInvoice, Torg13.
 
   -  :doc:`InvoiceInfo <InvoiceDocumentInfo>` - для документов Invoice или InvoiceRevision.
 

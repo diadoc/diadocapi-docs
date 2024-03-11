@@ -2,7 +2,7 @@ UniversalCorrectionDocumentSellerTitleInfo
 ==========================================
 
 .. warning::
-	Структура используется устаревшими методами :doc:`../http/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../http/ParseUniversalCorrectionDocumentSellerTitleXml`.
+	Структура используется устаревшими методами :doc:`../../http/obsolete/GenerateUniversalTransferDocumentXmlForSeller` и :doc:`../../http/obsolete/ParseUniversalCorrectionDocumentSellerTitleXml`.
 
 .. code-block:: protobuf
 
@@ -81,7 +81,7 @@ UniversalCorrectionDocumentSellerTitleInfo
     }
 
 
-Структура данных *UniversalCorrectionDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../http/GenerateUniversalTransferDocumentXmlForSeller` с параметром ``correction = true``.
+Структура данных *UniversalCorrectionDocumentSellerTitleInfo* представляет исходные данные для формирования файлов в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateUniversalTransferDocumentXmlForSeller` с параметром ``correction = true``.
 
 При заполнении структуры *UniversalCorrectionDocumentSellerTitleInfo* нужно иметь в виду:
 

@@ -2,7 +2,7 @@ Torg12Info
 ==========
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../http/GenerateTorg12XmlForSeller`.
+	Структура используется устаревшим методом :doc:`../../http/obsolete/GenerateTorg12XmlForSeller`.
 
 .. code-block:: protobuf
 
@@ -81,7 +81,7 @@ Torg12Info
     }
         
 
-Структура данных *Torg12SellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForSeller`.
+Структура данных *Torg12SellerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateTorg12XmlForSeller`.
 
 При заполнении структуры *Torg12SellerTitleInfo* нужно иметь в виду:
 
@@ -95,7 +95,7 @@ Torg12Info
 
 -  Правила заполнения структуры *Torg12SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_OTORG12_1_986_00_05_01_02.xsd>`.
 
-Структура данных *Torg12BuyerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../http/GenerateTorg12XmlForBuyer`.
+Структура данных *Torg12BuyerTitleInfo* представляет исходные данные для формирования титула продавца для товарной накладной в XML-формате при помощи метода :doc:`../../http/obsolete/GenerateTorg12XmlForBuyer`.
 
 При заполнении структуры *Torg12BuyerTitleInfo* нужно иметь в виду:
 

@@ -17,10 +17,10 @@ ParseAcceptanceCertificateBuyerTitleXml
 
     - в теле запроса должен содержаться XML-файл акта, титул заказчика, удовлетворяющий :download:`XSD-схеме (DP_REZRUZAK_1_990_02_05_01_02.xsd) <../../xsd/DP_REZRUZAK_1_990_02_05_01_02.xsd>`;
 
-    - в теле ответа содержится сериализованная структура :doc:`AcceptanceCertificate552BuyerTitleInfo <../proto/AcceptanceCertificate552Info>`, построенная на основании данных запроса;
+    - в теле ответа содержится сериализованная структура :doc:`AcceptanceCertificate552BuyerTitleInfo <../../proto/obsolete/AcceptanceCertificate552Info>`, построенная на основании данных запроса;
 
     Если *documentVersion* не указан или равен ``act_05_01_02``:
 
     - в теле запроса должен содержаться XML-файл акта, титул заказчика, удовлетворяющий :download:`XSD-схеме (DP_ZAKTPRM_1_990_00_05_01_02.xsd) <../../xsd/DP_ZAKTPRM_1_990_00_05_01_02.xsd>`;
 
-    - в теле ответа содержится сериализованная структура :doc:`AcceptanceCertificateBuyerTitleInfo <../proto/AcceptanceCertificateInfo>`, построенная на основании данных запроса;
+    - в теле ответа содержится сериализованная структура :doc:`AcceptanceCertificateBuyerTitleInfo <../../proto/obsolete/AcceptanceCertificateInfo>`, построенная на основании данных запроса;

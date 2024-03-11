@@ -22,7 +22,7 @@
 Структуры
 ---------
 
-- :doc:`obsolete/proto/ExtendedOrganizationInfo`
+- :doc:`proto/obsolete/ExtendedOrganizationInfo`
 - :doc:`proto/utd/ExtendedSigner`
 - :doc:`proto/ExtendedSignerDetailsToPost`
 - :doc:`proto/utd/UniversalDocumentMetadata`
