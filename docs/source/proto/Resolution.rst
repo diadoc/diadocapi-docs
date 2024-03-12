@@ -1,27 +1,35 @@
 Resolution
 ==========
 
+На этой странице описаны следующие структуры:
+
+.. contents:: :local:
+
+.. _ResolutionInfo:
+
 ResolutionInfo
 --------------
+
+Структура ``ResolutionInfo`` содержит информацию о состоянии согласования.
 
 .. code-block:: protobuf
 
     message ResolutionInfo {
         optional ResolutionType ResolutionType = 1 [default = UnknownResolutionType];
-        required string Author = 2; // ФИО согласователя
+        required string Author = 2;
         optional string InitialRequestId = 3;
     }
 
-Структура данных *ResolutionInfo* содержит информацию о состоянии согласования.
-
-- :ref:`ResolutionType` - тип действия по согласованию.
-- *Author* - ФИО пользователя, совершившего согласование/отказ в согласовании.
-- *InitialRequestId* - идентификатор запроса, в ответ на который сформировано согласование.
+- ``ResolutionType`` — тип действия по согласованию, принимает значения из перечисления :ref:`ResolutionType`.
+- ``Author`` — ФИО пользователя, согласовавшего или отказавшего в согласовании.
+- ``InitialRequestId`` — идентификатор запроса, в ответ на который сформировано согласование.
 
 .. _ResolutionType:
 
 ResolutionType
 --------------
+
+Перечисление ``ResolutionType`` описывает тип действия по согласованию.
 
 .. code-block:: protobuf
 
@@ -32,16 +40,16 @@ ResolutionType
         UnknownResolutionType = 3;
     }
 
-Перечисление описывает тип действия по согласованию:
-
-- *UndefinedResolutionType* - отменить последнее согласование текущего пользователя.
-- *Approve* - согласовать документ.
-- *Disapprove* - отказать в согласовании документа.
-- *UnknownResolutionType* - неизвестное состояние (может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать состояние согласования, переданное сервером).
+- ``UndefinedResolutionType`` — отменить последнее согласование текущего пользователя.
+- ``Approve`` — согласовать документ.
+- ``Disapprove`` — отказать в согласовании документа.
+- ``UnknownResolutionType`` — неизвестное состояние. Возвращается в случае, если клиент использует устаревшую версию SDK и не может интерпретировать состояние согласования, переданное сервером.
 
 
 ResolutionAttachment
 --------------------
+
+Структура ``ResolutionAttachment`` содержит информацию о согласовании.
 
 .. code-block:: protobuf
 
@@ -52,10 +60,7 @@ ResolutionAttachment
         repeated string Labels = 4;
     }
 
-
-Структура данных *ResolutionAttachment* задает информацию о согласовании в методе :doc:`../http/PostMessagePatch`:
-
-- *InitialDocumentId* - идентификатор согласуемого документа
-- :ref:`ResolutionType` - тип действия по согласованию
-- *Comment* - комментарий к согласованию (отказу от согласования). Длина не более 5000 символов.
-- *Labels* - :doc:`метки <../proto/Labels>` согласования (отказа от согласования).
+- ``InitialDocumentId`` — идентификатор согласуемого документа
+- ``ResolutionType`` — тип действия по согласованию, принимает значения из перечисления :ref:`ResolutionType`.
+- ``Comment`` — комментарий к согласованию или отказу от согласования. Длина не должна превышать 5000 символов.
+- ``Labels`` — :doc:`метки <../proto/Labels>` согласования или отказа от согласования.

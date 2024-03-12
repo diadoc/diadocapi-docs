@@ -1,8 +1,16 @@
 ResolutionRequest
 =================
 
+На этой странице описаны следующие структуры:
+
+.. contents:: :local:
+
+.. _ResolutionRequestInfo:
+
 ResolutionRequestInfo
 ---------------------
+
+Структура ``ResolutionRequestInfo`` содержит информацию о состоянии запроса на согласование.
 
 .. code-block:: protobuf
 
@@ -14,24 +22,20 @@ ResolutionRequestInfo
         repeated ResolutionAction Actions = 5;
     }
 
-Структура данных *ResolutionRequestInfo* содержит информацию о состоянии запроса на согласование и является частью структуры :doc:`Entity <Entity message>` в случае, когда сущность имеет тип *AttachmentType.ResolutionRequest*:
-
-- *Type* - тип запроса на согласование.
-
-- *Author* - ФИО инициатора запроса.
-
-- *ResolutionTarget* - информация о том, кому направлен запрос.
-
-- *ResolvedWith* - идентификатор ответного действия (положительное/отрицательное согласование, отказ в запросе подписи).
-
-- *Actions* - действия, которые можно выполнить в рамках текущего запроса на согласование.
+- ``Type`` — тип запроса на согласование, представленный структурой :ref:`ResolutionRequestType`.
+- ``Author`` — ФИО инициатора запроса.
+- ``ResolutionTarget`` — информация о том, кому направлен запрос.
+- ``ResolvedWith`` — идентификатор ответного действия: положительное или отрицательное согласование, отказ в запросе подписи.
+- ``Actions`` — действия, которые можно выполнить в рамках текущего запроса на согласование.
 
 .. _ResolutionRequestType:
 
 ResolutionRequestType
 ---------------------
 
-.. code-block:: protobuf
+Перечисление ``ResolutionRequestType`` представляет собой тип запроса на согласование документа.
+
+.. code-block:: protobuf 
 
     enum ResolutionRequestType {
         UnknownResolutionRequestType = -1;
@@ -41,48 +45,55 @@ ResolutionRequestType
         Custom = 3;
     }
 
-Структура определяет тип запроса на согласования документа:
+- ``ApprovementRequest`` — запрос на согласование документа. В рамках запроса можно выполнитьодно из действий:
 
-- *ApprovementRequest* - запрос на согласование документа. Подразумевает два возможных действия --- Согласовать (*ApproveAction*) или Отказать в согласовании (*DisapproveAction*).
+	- согласовать — ``ApproveAction``,
+	- отказать в согласовании — ``DisapproveAction``.
 
-- *SignatureRequest* - запрос на подпись документа. В рамках запроса можно выполнить три действия --- Подписать завершающей подписью (*SignWithPrimarySignature*)/Отказать в подписи контрагенту (*RejectSigning*) или Отказать в подписи сотруднику (*DenySignatureRequest*), который запросил подпись.
+- ``SignatureRequest`` — запрос на подпись документа. В рамках запроса можно выполнитьодно из действий:
 
-- *ApprovementSignatureRequest* - запрос на согласующую подпись под документом. В рамках данного типа запроса можно либо Подписать согласующей подписью (*SignWithApprovementSignature*), либо Отказать в подписи сотруднику (*DenySignatureRequest*), который запросил подпись.
+	- подписать завершающей подписью — ``SignWithPrimarySignature``,
+	- отказать в подписи контрагенту — ``RejectSigning``,
+	- отказать в подписи сотруднику, запросившему подпись, — ``DenySignatureRequest``.
 
-- *Custom* - запрос был создан на основе шага маршрута согласования и не вписывается в стандартные типы.
+- ``ApprovementSignatureRequest`` — запрос на согласующую подпись под документом. В рамках типа запроса можно выполнить одно из действий:
 
-Действия, которые можно выполнить по каждому из запросов на согласования, перечислены в свойстве `Actions`.
+	- подписать согласующей подписью — ``SignWithApprovementSignature``,
+	- отказать в подписи сотруднику , запросившему подпись, — ``DenySignatureRequest``.
+
+- ``Custom`` — запрос создан на основе шага маршрута согласования и не вписывается в стандартные типы.
+
+Действия, которые можно выполнить по каждому из запросов на согласования, перечислены в поле ``Actions`` структуры :ref:`ResolutionRequestInfo`.
 
 .. _ResolutionTarget:
 
 ResolutionTarget
 ----------------
 
+Структура ``ResolutionTarget`` содержит информацию о том, кому направлен запрос на согласование.
+
 .. code-block:: protobuf
 
     message ResolutionTarget {
-    	optional string Department = 1;
-    	optional string DepartmentId = 2;
-    	optional string User = 3;
-    	optional string UserId = 4;
+        optional string Department = 1;
+        optional string DepartmentId = 2;
+        optional string User = 3;
+        optional string UserId = 4;
     }
 
-Структура содержит информацию о том, кому направлен запрос на согласование:
+- ``TargetDepartment`` — название подразделения, в которое направлен запрос.
+- ``TargetDepartmentId`` — идентификатор подразделения, в которое направлен запрос.
+- ``TargetUser`` — ФИО пользователя, которому направлен запрос.
+- ``TargetUserId`` — идентификатор пользователя, которому направлен запрос.
 
-- *TargetDepartment* - название подразделения, в которое направлен запрос.
-
-- *TargetDepartmentId* - идентификатор подразделения, в которое направлен запрос.
-
-- *TargetUser* - ФИО пользователя, которому направлен запрос.
-
-- *TargetUserId* - идентификатор пользователя, которому направлен запрос.
-
-Если запрос назначен на конкретного сотрудника, то будут заполены свойства *User* и *UserId*. Если на подразделение, то --- *Department* и *DepartmentId*.
+Если запрос отправлен конкретному сотруднику, то будут заполены свойства ``User`` и ``UserId``, если в подразделение — ``Department`` и ``DepartmentId``.
 
 .. _ResolutionAction:
 
 ResolutionAction
 ----------------
+
+Перечисление ``ResolutionAction`` описывает возможные действия по запросу на согласование.
 
 .. code-block:: protobuf
 
@@ -96,22 +107,17 @@ ResolutionAction
         RejectSigning = 6;
     }
 
-Перечисление описывает возможные действия по запросу на согласование:
-
-- *ApproveAction* - согласовать;
-
-- *DisapproveAction* - отказать в согласовании;
-
-- *SignWithApprovementSignature* - подписать согласующей подписью;
-
-- *SignWithPrimarySignature* - подписать завершающей подписью;
-
-- *DenySignatureRequest* - отказать в подписи сотруднику;
-
-- *RejectSigning* - отказать в подписи контрагенту.
+- ``ApproveAction`` — согласовать.
+- ``DisapproveAction`` — отказать в согласовании.
+- ``SignWithApprovementSignature`` — подписать согласующей подписью.
+- ``SignWithPrimarySignature`` — подписать завершающей подписью.
+- ``DenySignatureRequest`` — отказать в подписи сотруднику.
+- ``RejectSigning`` — отказать в подписи контрагенту.
 
 ResolutionRequestAttachment
 ---------------------------
+
+Структура ``ResolutionRequestAttachment`` содержит информацию для отправки запроса на согласование или подпись документа.
 
 .. code-block:: protobuf
 
@@ -124,24 +130,17 @@ ResolutionRequestAttachment
         repeated string Labels = 6;
     }
 
-Структура данных *ResolutionRequestAttachment* содержит информацию для отправки запроса на согласование (или подпись) документа в методе :doc:`../http/PostMessagePatch`
-
-- :ref:`Type <ResolutionRequestType>` - тип запроса на согласование. Допустимые значения --- *ApprovementRequest*, *SignatureRequest* и *ApprovementSignatureRequest*.
-
--  *InitialDocumentId* - идентификатор документа, для которого формируется запрос на согласование.
-
--  *TargetUserId* - идентификатор пользователя, которому будет направлен запрос на согласование.
-
--  *TargetDepartmentId* - идентификатор подразделения, которому будет направлен запрос на согласование.
-
-    Ровно одно из полей *TargetUserId* или *TargetDepartmentId* должно быть заполнено.
-
--  *Comment* - комментарий к запросу согласования. Длина не более 500 символов.
-
--  *Labels* - :doc:`метки <../proto/Labels>` запроса на согласование.
+- ``InitialDocumentId`` — идентификатор документа, для которого формируется запрос на согласование.
+- ``ResolutionRequestType`` — тип запроса на согласование, представленный структурой :ref:`ResolutionRequestType`. Может принимать значения ``ApprovementRequest``, ``SignatureRequest`` и ``ApprovementSignatureRequest``.
+- ``TargetUserId`` — идентификатор пользователя, которому будет направлен запрос на согласование.
+- ``TargetDepartmentId`` — идентификатор подразделения, которому будет направлен запрос на согласование. Обязательно, если не заполнено ``TargetUserId``.
+- ``Comment`` — комментарий к запросу согласования. Длина не должна превышать 500 символов.
+- ``Labels`` — :doc:`метки <../proto/Labels>` запроса на согласование.
 
 ResolutionRequestCancellationAttachment
 ---------------------------------------
+
+Структура ``ResolutionRequestCancellationAttachment`` содержит информацию для отправки отмены запроса на согласование документа.
 
 .. code-block:: protobuf
 
@@ -151,10 +150,6 @@ ResolutionRequestCancellationAttachment
         repeated string Labels = 3;
     }
 
-Структура данных *ResolutionRequestCancellationAttachment* содержит информацию для отправки отмены запроса на согласование документа в методе :doc:`../http/PostMessagePatch`.
-
--  *InitialResolutionRequestId* - идентификатор отменяемого запроса на согласование.
-
--  *Comment* - комментарий к отмене запроса на согласование. Максимально допустимая длина - 256 символов.
-
--  *Labels* - :doc:`метки <../proto/Labels>` отмены запроса на согласование.
+- ``InitialResolutionRequestId`` — идентификатор отменяемого запроса на согласование.
+- ``Comment`` — комментарий к отмене запроса на согласование. Длина не должна превышать 256 символов.
+- ``Labels`` — :doc:`метки <../proto/Labels>` отмены запроса на согласование.
