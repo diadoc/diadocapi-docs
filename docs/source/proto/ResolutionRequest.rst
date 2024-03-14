@@ -1,7 +1,7 @@
 ResolutionRequest
 =================
 
-На этой странице описаны следующие структуры:
+На этой странице описаны следующие структуры и перечисления:
 
 .. contents:: :local:
 
@@ -44,6 +44,8 @@ ResolutionRequestType
         ApprovementSignatureRequest = 2;
         Custom = 3;
     }
+
+- ``UnknownResolutionRequestType`` — неизвестный тип. Возвращается в случае, если клиент использует устаревшую версию SDK и не может интерпретировать состояние согласования, переданное сервером.
 
 - ``ApprovementRequest`` — запрос на согласование документа. В рамках запроса можно выполнить одно из действий:
 
@@ -107,12 +109,15 @@ ResolutionAction
         RejectSigning = 6;
     }
 
+- ``UnknownAction`` — неизвестное действие. Возвращается в случае, если клиент использует устаревшую версию SDK и не может интерпретировать состояние согласования, переданное сервером.
 - ``ApproveAction`` — согласовать.
 - ``DisapproveAction`` — отказать в согласовании.
 - ``SignWithApprovementSignature`` — подписать согласующей подписью.
 - ``SignWithPrimarySignature`` — подписать завершающей подписью.
 - ``DenySignatureRequest`` — отказать в подписи сотруднику.
 - ``RejectSigning`` — отказать в подписи контрагенту.
+
+.. _ResolutionRequestAttachment:
 
 ResolutionRequestAttachment
 ---------------------------
@@ -131,7 +136,7 @@ ResolutionRequestAttachment
     }
 
 - ``InitialDocumentId`` — идентификатор документа, для которого формируется запрос на согласование.
-- ``Type`` — тип запроса на согласование. Принимает следующие значения из перечисления:ref:`ResolutionRequestType`:
+- ``Type`` — тип запроса на согласование. Принимает следующие значения из перечисления :ref:`ResolutionRequestType`:
 
 	- ``ApprovementRequest``,
 	- ``SignatureRequest``,
@@ -141,6 +146,8 @@ ResolutionRequestAttachment
 - ``TargetDepartmentId`` — идентификатор подразделения, в которое будет направлен запрос на согласование. Обязательно, если не заполнено ``TargetUserId``.
 - ``Comment`` — комментарий к запросу согласования. Длина не должна превышать 500 символов.
 - ``Labels`` — :doc:`метки <../proto/Labels>` запроса на согласование.
+
+.. _ResolutionRequestCancellationAttachment:
 
 ResolutionRequestCancellationAttachment
 ---------------------------------------

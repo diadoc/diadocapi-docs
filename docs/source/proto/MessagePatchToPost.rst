@@ -46,7 +46,7 @@ MessagePatchToPost
 
 - ``CorrectionRequests`` — список уведомлений об уточнении СФ/ИСФ/КСФ/ИКСФ, подлежащих отправке и предусмотренных порядком обмена электронными счетами-фактурами. Каждый элемент списка представлен структурой :ref:`CorrectionRequestAttachment`.
 
-- ``Signatures`` — список подписей под документами, представленных структурой :doc:`DocumentSignature`.
+- ``Signatures`` — список :doc:`подписей <../entities/signature>` под документами, представленных структурой :doc:`DocumentSignature`.
 
 - ``RequestedSignatureRejections`` — список отказов в формировании запрошенной подписи. Каждый элемент списка представлен структурой :ref:`RequestedSignatureRejection`. Поле устарело, вместо него используйте поле ``XmlSignatureRejections``.
 
