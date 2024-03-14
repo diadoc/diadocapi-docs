@@ -29,7 +29,7 @@ ResolutionInfo
 ResolutionType
 --------------
 
-Перечисление ``ResolutionType`` описывает тип действия по согласованию.
+Перечисление ``ResolutionType`` представляет собой тип действия по согласованию.
 
 .. code-block:: protobuf
 

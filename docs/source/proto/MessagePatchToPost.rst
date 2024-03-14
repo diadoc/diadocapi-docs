@@ -54,11 +54,11 @@ MessagePatchToPost
 
 - ``XmlAcceptanceCertificateBuyerTitles`` — список титулов заказчика для актов о выполнении работ или оказании услуг в XML-формате, подлежащих отправке. Каждый элемент списка представлен структурой :ref:`RecipientTitleAttachment`. Поле устарело, вместо него используйте поле ``RecipientTitles``.
 
-- ``Resolutions`` — список действий по согласованию к документам сообщения, к которому относится дополнение. Каждый элемент списка представлен структурой :doc:`ResolutionAttachment <Resolution>`.
+- ``Resolutions`` — список действий по согласованию к документам сообщения, к которому относится дополнение. Каждый элемент списка представлен структурой :ref:`ResolutionAttachment`.
 
-- ``ResolutionRequests`` — список запросов на согласование или подпись документа. Каждый элемент списка представлен структурой :doc:`ResolutionRequestAttachment <ResolutionRequest>`.
+- ``ResolutionRequests`` — список запросов на согласование или подпись документа. Каждый элемент списка представлен структурой :ref:`ResolutionRequestAttachment`.
 
-- ``ResolutionRequestCancellations`` — список действий, отменяющих отправленные ранее запросы на согласование документа. Каждый элемент списка представлен структурой :doc:`ResolutionRequestCancellationAttachment <ResolutionRequest>`.
+- ``ResolutionRequestCancellations`` — список действий, отменяющих отправленные ранее запросы на согласование документа. Каждый элемент списка представлен структурой :ref:`ResolutionRequestCancellationAttachment`.
 
 - ``ResolutionRequestDenials`` — список действий по отказу от запроса подписи. Отказ аннулирует ошибочный отправленный запрос на подпись со стороны получателя запроса. Каждый элемент списка представлен структурой :ref:`ResolutionRequestDenialAttachment`.
 
