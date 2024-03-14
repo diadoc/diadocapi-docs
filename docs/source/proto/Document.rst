@@ -1,6 +1,8 @@
 Document
 ========
 
+Структура ``Document`` хранит информацию об одном документе в Диадоке.
+
 .. code-block:: protobuf
 
     message Document {
@@ -16,51 +18,51 @@ Document
         optional string FileName = 10;
         optional string DocumentDate = 11;
         optional string DocumentNumber = 12;
-        optional NonformalizedDocument.NonformalizedDocumentMetadata NonformalizedDocumentMetadata = 13;
-        optional InvoiceDocument.InvoiceMetadata InvoiceMetadata = 14;
-        optional BilateralDocument.TrustConnectionRequestMetadata TrustConnectionRequestMetadata = 15;
-        optional BilateralDocument.BasicDocumentMetadata Torg12Metadata = 16;
-        optional InvoiceDocument.InvoiceRevisionMetadata InvoiceRevisionMetadata = 17;
-        optional InvoiceDocument.InvoiceCorrectionMetadata InvoiceCorrectionMetadata = 18;
-        optional InvoiceDocument.InvoiceCorrectionRevisionMetadata InvoiceCorrectionRevisionMetadata = 19;
-        optional AcceptanceCertificateDocument.AcceptanceCertificateMetadata AcceptanceCertificateMetadata = 20;
-        optional UnilateralDocument.ProformaInvoiceMetadata ProformaInvoiceMetadata = 21;
-        optional BilateralDocument.BasicDocumentMetadata XmlTorg12Metadata = 22;
-        optional BilateralDocument.BasicDocumentMetadata XmlAcceptanceCertificateMetadata = 23;
+        optional NonformalizedDocument.NonformalizedDocumentMetadata NonformalizedDocumentMetadata = 13; // Устаревшая структура
+        optional InvoiceDocument.InvoiceMetadata InvoiceMetadata = 14; // Устаревшая структура
+        optional BilateralDocument.TrustConnectionRequestMetadata TrustConnectionRequestMetadata = 15; // Устаревшая структура
+        optional BilateralDocument.BasicDocumentMetadata Torg12Metadata = 16; // Устаревшая структура
+        optional InvoiceDocument.InvoiceRevisionMetadata InvoiceRevisionMetadata = 17; // Устаревшая структура
+        optional InvoiceDocument.InvoiceCorrectionMetadata InvoiceCorrectionMetadata = 18; // Устаревшая структура
+        optional InvoiceDocument.InvoiceCorrectionRevisionMetadata InvoiceCorrectionRevisionMetadata = 19; // Устаревшая структура
+        optional AcceptanceCertificateDocument.AcceptanceCertificateMetadata AcceptanceCertificateMetadata = 20; // Устаревшая структура
+        optional UnilateralDocument.ProformaInvoiceMetadata ProformaInvoiceMetadata = 21; // Устаревшая структура
+        optional BilateralDocument.BasicDocumentMetadata XmlTorg12Metadata = 22; // Устаревшая структура
+        optional BilateralDocument.BasicDocumentMetadata XmlAcceptanceCertificateMetadata = 23; // Устаревшая структура
         optional bool IsDeleted = 24 [default = false];
         optional string DepartmentId = 25;
         optional bool IsTest = 26 [default = false];
         optional string FromDepartmentId = 27;
         optional string ToDepartmentId = 28;
-        optional BilateralDocument.PriceListMetadata PriceListMetadata = 29;
+        optional BilateralDocument.PriceListMetadata PriceListMetadata = 29; // Устаревшая структура
         optional string CustomDocumentId = 30;
         optional ResolutionStatus ResolutionStatus = 31;
         optional RevocationStatus RevocationStatus = 32 [default = UnknownRevocationStatus];
         optional sfixed64 SendTimestampTicks = 33;
         optional sfixed64 DeliveryTimestampTicks = 34;
         repeated ForwardDocumentEvent ForwardDocumentEvents = 35;
-        optional BilateralDocument.BilateralDocumentMetadata ReconciliationActMetadata = 38;
-        optional BilateralDocument.ContractMetadata ContractMetadata = 39;
-        optional BilateralDocument.BasicDocumentMetadata Torg13Metadata = 40;
-        optional UnilateralDocument.ServiceDetailsMetadata ServiceDetailsMetadata = 41;
+        optional BilateralDocument.BilateralDocumentMetadata ReconciliationActMetadata = 38; // Устаревшая структура
+        optional BilateralDocument.ContractMetadata ContractMetadata = 39; // Устаревшая структура
+        optional BilateralDocument.BasicDocumentMetadata Torg13Metadata = 40; // Устаревшая структура
+        optional UnilateralDocument.ServiceDetailsMetadata ServiceDetailsMetadata = 41; // Устаревшая структура
         optional RoamingNotificationStatus RoamingNotificationStatus = 42 [default = UnknownRoamingNotificationStatus];
-        optional bool HasCustomPrintForm = 43 [default = false]; // Deprecated
+        optional bool HasCustomPrintForm = 43 [default = false];
         repeated CustomDataItem CustomData = 44;
         optional string PacketId = 45;
         optional DocumentDirection DocumentDirection = 46 [default = UnknownDocumentDirection];
         optional sfixed64 LastModificationTimestampTicks = 47;
         optional bool IsEncryptedContent = 48;
         optional SenderSignatureStatus SenderSignatureStatus = 49 [default = UnknownSenderSignatureStatus];
-        optional BilateralDocument.SupplementaryAgreementMetadata SupplementaryAgreementMetadata = 50;
+        optional BilateralDocument.SupplementaryAgreementMetadata SupplementaryAgreementMetadata = 50; // Устаревшая структура
         optional bool IsRead = 51 [default = false];
         optional string RoamingNotificationStatusDescription = 52;
         optional bool PacketIsLocked = 53 [default = false];
-        optional NonformalizedDocumentMetadata PriceListAgreementMetadata = 54;
-        optional NonformalizedDocumentMetadata CertificateRegistryMetadata = 55;
-        optional UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 56;
+        optional NonformalizedDocumentMetadata PriceListAgreementMetadata = 54; // Устаревшая структура
+        optional NonformalizedDocumentMetadata CertificateRegistryMetadata = 55; // Устаревшая структура
+        optional UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 56; // Устаревшая структура
         optional UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
-        optional UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
-        optional UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
+        optional UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58; // Устаревшая структура
+        optional UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59; // Устаревшая структура
         optional string ResolutionRouteId = 60 [default = ""];
         optional string AttachmentVersion = 61;
         optional ProxySignatureStatus ProxySignatureStatus = 62 [default = UnknownProxySignatureStatus];
@@ -86,199 +88,182 @@ Document
     }
 
     enum RoamingNotificationStatus {
-        UnknownRoamingNotificationStatus = 0; // Reserved status to report to legacy clients for newly introduced statuses
+        UnknownRoamingNotificationStatus = 0;
         NotificationStatusNone = 1;
         NotificationStatusSuccess = 2;
         NotificationStatusError = 3;
     }
 
-Структура данных *Document* содержит информацию об одном документе в Диадоке, которую можно получить, например, при помощи метода :doc:`../http/GetDocument`:
+- ``IndexKey`` — уникальный ключ документа, который можно передавать в метод :doc:`../http/GetDocuments` в качестве параметра ``afterIndexKey`` для итерирования по всему отфильтрованному списку.
 
--  *IndexKey* - уникальный ключ документа, который можно передавать в метод :doc:`../http/GetDocuments` в качестве параметра *afterIndexKey* для итерирования по всему отфильтрованному списку.
+- ``MessageId`` — идентификатор сообщения, содержащего документ.
 
--  *MessageId* - идентификатор сообщения, содержащего данный документ.
+- ``EntityId`` — идентификатор соответствующей документу сущности типа ``LetterAttachment`` внутри сообщения.
 
--  *EntityId* - идентификатор соответствующей документу сущности типа *LetterAttachment* внутри сообщения.
+- ``CreationTimestampTicks`` — :doc:`метка времени <Timestamp>` создания документа.
 
--  *CreationTimestampTicks* - :doc:`метка времени <Timestamp>` создания данного документа.
+- ``CounteragentBoxId`` — идентификатор ящика контрагента.
 
--  *CounteragentBoxId* - идентификатор Диадок-ящика контрагента по данному документу.
+	- Если документ исходящий — это идентификатор ящика получателя. Если документ входящий — идентификатор ящика отправителя;
+	- Если документ находится в черновиках, поле ``CounteragentBoxId`` может быть пустым.
 
-    В случае исходящего документа - это идентификатор ящика получателя, в случае входящего документа - идентификатор ящика отправителя;
+- ``InitialDocumentIds`` — список идентификаторов исходных документов, к которым привязывается этот документ. Каждый идентификатор представлен структурой :doc:`DocumentId`.
 
-    Если документ находится в черновиках, то поле *CounteragentBoxId* может быть не заполнено.
+- ``SubordinateDocumentIds`` — список идентификаторов документов, которые ссылаются на этот документ. Каждый идентификатор представлен структурой :doc:`DocumentId`.
 
--  *DocumentType* (устаревшее, см. *TypeNamedId*) - тип документа, принимает одно из значений перечислимого типа :doc:`DocumentType`. В зависимости от типа документа заполняется одно из полей *Document.XxxMetadata*. Для новых типов значение всегда будет равно `UnknownDocumentType`.
+- ``Content`` — содержимое документа, представленное структурой :doc:`Content`. При получении документов списком (например, при помощи метода :doc:`../http/GetDocuments`) поле ``Content.Data`` не заполняется из соображений производительности.
 
--  *InitialDocumentIds* - список идентификаторов документов, на которые ссылается данный;
+- ``FileName`` — имя файла документа при загрузке в Диадок.
 
-    каждый такой идентификатор задается структурой :doc:`DocumentId`.
+- ``IsDeleted`` — флаг, указывающий, что документ был удален.
 
--  *SubordinateDocumentIds* - список идентификаторов документов, которые ссылаются на данный;
+- ``DepartmentId`` — идентификатор подразделения, в котором находится документ.
 
-    каждый такой идентификатор задается структурой :doc:`DocumentId`.
+- ``IsTest`` — флаг, указывающий, что документ является тестовым и не имеет юридической силы, так как ящик одного из контрагентов тестовый.
 
--  *Content* - содержимое документа.
+- ``FromDepartmentId`` — идентификатор подразделения, из которого отправляется документ.
 
-    Поле *Content.Size* определяет размер содержимого в байтах.
+- ``ToDepartmentId`` — идентификатор подразделения, в которое отправляется документ.
 
-    Поле *Content.Data* содержит собственно данные.
+- ``CustomDocumentId`` — идентификатор документа, определяемый внешней системой.
 
-    При получении документов списком (например, при помощи метода :doc:`../http/GetDocuments`) поле *Content.Data* не заполняется из соображений производительности.
+- ``ResolutionStatus`` — текущий статус согласования документа, представленный структурой :doc:`ResolutionStatus`.
 
--  *FileName* - имя файла документа, которое у него было при загрузке в Диадок.
+- ``RevocationStatus`` — статус аннулирования документа, принимает значения из перечисления :doc:`RevocationStatus`.
 
--  *DocumentDate* (устаревшее, см. *Metadata*) - дата формирования документа в формате ДД.ММ.ГГГГ; может отличаться от даты загрузки его в Диадок.
+- ``SendTimestampTicks`` — :doc:`метка времени <Timestamp>` отправки документа.
 
--  *DocumentNumber* (устаревшее, см. *Metadata*) - номер документа.
+- ``DeliveryTimestampTicks`` — :doc:`метка времени <Timestamp>` доставки документа.
 
--  *IsDeleted* - флаг, показывающий, был ли удален данный документ.
+- ``ForwardDocumentEvents`` — список событий пересылки документа третьей стороне. Каждое событие представлено структурой :doc:`ForwardDocumentEvent`. Документ можно переслать нескольким получателям, а также несколько раз одному получателю.
 
--  *DepartmentId* - идентификатор подразделения, в котором находится документ.
+- ``RoamingNotificationStatus`` — статус доставки в роуминг. Может принимать значения:
 
--  *IsTest* - флаг, показывающий, что данный документ является тестовым и не имеет юридической силы, т.к. один из контрагентов не присоединился к регламенту Диадока.
+	- ``RoamingNotificationStatusNone`` — документ не роуминговый или без подтверждения доставки в роуминг;
+	- ``RoamingNotificationStatusSuccess`` — документ с подтверждением успешной доставки в роуминг;
+	- ``RoamingNotificationStatusError`` — документ с ошибкой доставки в роуминг;
+	- ``UnknownRoamingNotificationStatus`` — неизвестный роуминговый статус документа. Может выдаваться, если клиент использует устаревшую версию SDK и не может интерпретировать роуминговый статус документа, переданный сервером.
 
--  *FromDepartmentId* - идентификатор подразделения, из которого отправляется документ.
+- ``CustomData`` — список пользовательских данных (:doc:`тегов <../entities/tag>`), привязанных к документу. Каждый тег представлен структурой :doc:`CustomDataItem`.
 
--  *ToDepartmentId* - идентификатор подразделения, в которое отправляется документ.
+- ``PacketId`` — идентификатор пакета, в котором находится документ.
 
--  *CustomDocumentId* - идентификатор документа, определяемый внешней системой.
-   
--  *IsEncryptedContent* - флаг, показывающий, что контент передаваемого документа зашифрован.
+- ``DocumentDirection`` — направление движения документа, принимает значения из перечисления :doc:`DocumentDirection`.
 
--  :doc:`SenderSignatureStatus` - статус подписи отправителя.
+- ``LastModificationTimestampTicks`` — :doc:`метка времени <Timestamp>` изменения документа.
 
--  :doc:`NonformalizedDocumentMetadata` (устаревшее, см. *Metadata*, *RecipientReceiptMetadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для неформализованных документов.
+- ``IsEncryptedContent`` — флаг, указывающий, что содержимое передаваемого документа зашифровано.
 
--  :doc:`InvoiceMetadata <InvoiceDocumentMetadata>` (устаревшее, см. *Metadata*, *RecipientReceiptMetadata*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты специфичные для счетов-фактур.
+- ``SenderSignatureStatus`` — статус подписи отправителя, принимает значения из перечисления :doc:`SenderSignatureStatus`.
 
--  :doc:`InvoiceRevisionMetadata <InvoiceDocumentMetadata>` (устаревшее, см. *Metadata*, *RecipientReceiptMetadata*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты специфичные для исправлений счетов-фактур.
+- ``IsRead`` — флаг, указывающий, что документ был прочитан сотрудником организации.
 
--  :doc:`InvoiceCorrectionMetadata <InvoiceDocumentMetadata>` (устаревшее, см. *Metadata*, *RecipientReceiptMetadata*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты специфичные для корректировочных счетов-фактур.
+- ``RoamingNotificationStatusDescription`` — текстовое описание ошибки при доставке документов в роуминг. Обычно поле заполняется, когда статус доставки в роуминг ``RoamingNotificationStatus`` принимает значение ``RoamingNotificationStatusError``.
 
--  :doc:`InvoiceCorrectionRevisionMetadata <InvoiceDocumentMetadata>` (устаревшее, см. *Metadata*, *RecipientReceiptMetadata*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты специфичные для исправлений корректировочных счетов-фактур.
+- ``PacketIsLocked`` — флаг, указывающий, что пакет закрытый.
 
--  :doc:`TrustConnectionRequestMetadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata*, *RecipientResponseStatus*) - дополнительные атрибуты специфичные для документов типа TrustConnectionRequest.
+- ``ResolutionRouteId`` — идентификатор маршрута согласования, на котором находится документ.
 
--  :doc:`Torg12Metadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для товарных накладных ТОРГ-12.
+- ``ProxySignatureStatus``— статус промежуточной подписи, принимает значения из перечисления :doc:`ProxySignatureStatus`.
 
--  :doc:`AcceptanceCertificateMetadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для актов о выполнении работ (оказании услуг).
+- ``TypeNamedId`` — идентификатор типа документа. Полный список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
 
--  :doc:`ProformaInvoiceMetadata <UnilateralDocumentMetadata>` (устаревшее, см. *Metadata*) - дополнительные атрибуты специфичные для счетов на оплату.
+- ``Function`` — функция документа. Полный список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
 
--  :doc:`XmlTorg12Metadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для товарных накладных ТОРГ-12 в XML-формате.
+- ``WorkflowId`` — идентификатор :doc:`вида документооборота <../docflows/Workflows>`, по которому запущен документ.
 
--  :doc:`XmlAcceptanceCertificateMetadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для актов о выполнении работ (оказании услуг) в XML-формате.
+- ``Title`` — название документа. Например, "Счет-фактура №123 от 26.02.18".
 
--  :doc:`PriceListMetadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для ценовых листов.
+- ``Metadata`` — список метаданных документа. Представлены структурой :doc:`../proto/MetadataItem`. Набор возможных значений для конкретного типа можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
 
--  :doc:`PriceListAgreementMetadata <NonformalizedDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для протоколов согласования цены.
+- ``RecipientReceiptMetadata`` — свойство, отвечающее за состояние извещения о получении документа со стороны получателя. Представлено структурой :doc:`RecipientReceiptMetadata`.
 
--  :doc:`CertificateRegistryMetadata <NonformalizedDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для реестров сертификатов.
+- ``ConfirmationMetadata`` — свойство, отвечающее за состояние подтверждения оператором даты отправки или получения документа. Представлено структурой :doc:`ConfirmationMetadata`.
 
--  :doc:`ReconciliationActMetadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для актов сверки.
+- ``RecipientResponseStatus`` — свойство, отвечающее за состояние ответного действия получателя — ответную подпись или подписание ответного титула. Принимает значения из перечисления :doc:`RecipientResponseStatus`.
 
--  :doc:`ContractMetadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для договоров.
+- ``AmendmentRequestMetadata`` — свойство, отвечающее за состояние уведомления об уточнении. Представлено структурой :doc:`AmendmentRequestMetadata`.
 
--  :doc:`Torg13Metadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для накладных ТОРГ-13.
+- ``Origin``— свойство, позволяющее узнать, из какой сущности был создан документ, например, из черновика или шаблона. Представлено структурой :doc:`Origin`.
 
--  :doc:`SupplementaryAgreementMetadata <BilateralDocumentMetadata>` (устаревшее, см. *Metadata* и *RecipientResponseStatus*) - дополнительные атрибуты специфичные для типа документа дополнительное соглашение к договору.
+- ``EditingSettingId`` — идентификатор настройки документа, если он был создан из шаблона с редактируемыми полями.
 
--  :doc:`ResolutionStatus <ResolutionStatus>` - текущий статус согласования данного документа.
+- ``LockMode``— режим блокировки сообщения, принимает значения из перечисления :doc:`LockMode`. 
 
--  :doc:`ServiceDetailsMetadata <UnilateralDocumentMetadata>` (устаревшее, см. *Metadata*) - дополнительные атрибуты специфичные для детализаций.
+- ``SenderReceiptMetadata`` — свойство, отвечающее за состояние извещения о получении титула получателя. Представлено структурой :doc:`SenderReceiptMetadata`. 
 
--  :doc:`UniversalTransferDocumentMetadata <utd/UniversalDocumentMetadata>` (устаревшее, см. *Metadata*, *RecipientResponseStatus*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты, специфичные для УПД
+- ``Version`` — идентификатор версии документа.
 
--  :doc:`UniversalTransferDocumentRevisionMetadata <utd/UniversalDocumentMetadata>` (устаревшее, см. *Metadata*, *RecipientResponseStatus*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты, специфичные для исправлений УПД
+- ``LastOuterDocflows``— информация о состоянии внешнего документооборота по документу, представленная структурой :doc:`LastOuterDocflow`.
 
--  :doc:`UniversalCorrectionDocumentMetadata <utd/UniversalDocumentMetadata>` (устаревшее, см. *Metadata*, *RecipientResponseStatus*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты, специфичные для УКД
+- ``ProxyBoxId`` — идентификатор ящика промежуточного получателя.
 
--  :doc:`UniversalCorrectionDocumentRevisionMetadata <utd/UniversalDocumentMetadata>` (устаревшее, см. *Metadata*, *RecipientResponseStatus*, *ConfirmationMetadata* и *AmendmentRequestMetadata*) - дополнительные атрибуты, специфичные для исправлений УКД
+- ``ProxyDepartmentId`` — идентификатор подразделения промежуточного получателя.
 
--  :doc:`RevocationStatus` - статус аннулирования документа.
+- ``DocflowStatus``— информация о статусе документооборота, представленная структурой :doc:`DocflowStatusV3`.
 
--  *SendTimestampTicks* - Необязательная :doc:`метка времени <Timestamp>` отправки данного документа.
+Устаревшие поля
+~~~~~~~~~~~~~~~
 
--  *DeliveryTimestampTicks* - Необязательная :doc:`метка времени <Timestamp>` доставки данного документа.
+- ``DocumentType`` — тип документа, принимает значения из перечисления :doc:`DocumentType`. Для новых типов значение всегда будет равно ``UnknownDocumentType``. Используйте поле ``TypeNamedId``.
 
--  *ForwardDocumentEvents* - Список :doc:`событий пересылки <ForwardDocumentEvent>` данного документа третьей стороне. Документ может быть переслан нескольким получателям, а также - несколько раз одному получателю.
+- ``DocumentDate`` — дата формирования документа в формате ДД.ММ.ГГГГ. Может отличаться от даты загрузки документа в Диадок. Используйте поле ``Metadata``.
 
--  *RoamingNotificationStatus* - статус доставки в роуминг. Возможные значения:
+- ``DocumentNumber`` — номер документа. Используйте поле ``Metadata``.
 
-   -  *RoamingNotificationStatusNone* (документ не роуминговый, или документ без подтверждения доставки в роуминг)
+- ``NonformalizedDocumentMetadata`` — дополнительные атрибуты неформализованных документов. Представлены структурой :doc:`NonformalizedDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientReceiptMetadata`` и ``RecipientResponseStatus``.
 
-   -  *RoamingNotificationStatusSuccess* (документ с подтверждением успешной доставки в роуминг)
+- ``InvoiceMetadata`` — дополнительные атрибуты счетов-фактур. Представлены структурой :doc:`InvoiceDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-   -  *RoamingNotificationStatusError* (документ с ошибкой доставки в роуминг)
-   
-   -  *UnknownRoamingNotificationStatus* (неизвестный роуминговый статус документа; может выдаваться лишь в случае, когда клиент использует устаревшую версию SDK и не может интерпретировать роуминговый статус документа, переданный сервером)
+- ``InvoiceRevisionMetadata`` — дополнительные атрибуты исправлений счетов-фактур. Представлены структурой :doc:`InvoiceDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
--  *HasCustomPrintForm* - флаг, показывающий, что данный документ имеет нестандартную печатную форму. Свойство более **не поддерживается**. Значение всегда *false*. В случае необходимости используйте метод :doc:`../http/DetectCustomPrintForms`.
+- ``InvoiceCorrectionMetadata`` — дополнительные атрибуты корректировочных счетов-фактур. Представлены структурой :doc:`InvoiceDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- *IsRead* - флаг, указывающий на то, что документ был прочитан сотрудником организации.
+- ``InvoiceCorrectionRevisionMetadata`` — дополнительные атрибуты исправлений корректировочных счетов-фактур. Представлены структурой :doc:`InvoiceDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- *RoamingNotificationStatusDescription* - текстовое описание ошибки при доставке документов в роуминг. Обычно это поле заполняется, когда статус доставки в роуминг *RoamingNotificationStatus* имеет значение *RoamingNotificationStatusError*.
+- ``TrustConnectionRequestMetadata`` — дополнительные атрибуты документов типа ``TrustConnectionRequest``. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля  ``Metadata``, ``RecipientResponseStatus``.
 
-- *ResolutionRouteId* - идентификатор маршрута согласования, на котором находится документ (если документ находится на маршруте согласования).
+- ``Torg12Metadata`` — дополнительные атрибуты товарных накладных ТОРГ-12. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- *AttachmentVersion* - информация о версии XSD схемы, в соответствии с которой сформирован документ. Устарело. Используйте Version.
+- ``AcceptanceCertificateMetadata`` — дополнительные атрибуты актов о выполнении работ или оказании услуг. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- :doc:`ProxySignatureStatus` - статус промежуточной подписи.
+- ``ProformaInvoiceMetadata`` — дополнительные атрибуты счетов на оплату. Представлены структурой :doc:`UnilateralDocumentMetadata`. Используйте поле ``Metadata``.
 
-- *TypeNamedId* - строковый идентификатор типа документа. Его следует использовать вместо свойства *DocumentType*. Может принимать значения "Nonformalized", "Invoice", "Torg12", "XmlTorg12" и другие. Полный список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
+- ``XmlTorg12Metadata`` — дополнительные атрибуты товарных накладных ТОРГ-12 в XML-формате. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- *Function* — функция документа.
+- ``XmlAcceptanceCertificateMetadata`` — дополнительные атрибуты специфичные для актов о выполнении работ или оказании услуг в XML-формате. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
- Для документов типа УПД (``UniversalTransferDocument``) и ИУПД  (``UniversalTransferDocumentRevision``) может принимать значения:
- 
- - "СЧФ"
- - "ДОП"
- - "СЧФДОП"
- - "СвРК"
- - "СвЗК"
-	
- Для документов типа УКД (``UniversalCorrectionDocument``) и ИУКД (``UniversalCorrectionDocumentRevision``) может принимать значения:
- 
- - "КСЧФ"
- - "ДИС"
- - "КСЧФДИС"
- - "СвИСРК"
- - "СвИСЗК"
-	
- Для всех остальных типов принимает значение ``default``. 
+- ``PriceListMetadata`` — дополнительные атрибуты ценовых листов. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- *WorkflowId* - идентификатор вида документооборота :doc:`DocumentWorkflow`, по которому запущен документ. Подробно о видах документооборота написано на странице :doc:`../docflows/Workflows`.
+- ``PriceListAgreementMetadata`` — дополнительные атрибуты протоколов согласования цены. Представлены структурой :doc:`NonformalizedDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- *Title* - название документа. Например, "Счет-фактура №123 от 26.02.18".
+- ``CertificateRegistryMetadata`` — дополнительные атрибуты реестров сертификатов. Представлены структурой :doc:`NonformalizedDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- *Metadata* - массив пар "ключ-значение", определямых типом документа. Примеры возможных значения ключей: "FileName", "DocumentDate", "DocumentNumber" и другие. Более подробную информацию см. :doc:`../proto/MetadataItem`. Набор возможных значений для конкретного типа можно узнать с помощью метода :doc:`../http/GetDocumentTypes`.
+- ``ReconciliationActMetadata`` — дополнительные атрибуты актов сверки. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля устаревшее, см. ``Metadata`` и ``RecipientResponseStatus``.
 
-- :doc:`RecipientReceiptMetadata <RecipientReceiptMetadata>` - свойство, отвечающее за состояние извещения о получении документа со стороны получателя.
+- ``ContractMetadata`` — дополнительные атрибуты договоров. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- :doc:`ConfirmationMetadata <ConfirmationMetadata>` - свойство, отвечающее за состояние подтверждения оператором даты отправки/получения документа. Актуально, например, для счетов-фактур и УПД/УКД с некоторыми функциями.
+- ``Torg13Metadata`` — дополнительные атрибуты накладных ТОРГ-13. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- :doc:`RecipientResponseStatus <RecipientResponseStatus>` - свойство, отвечающее за состояние ответного действия получателя - ответную подпись или подписание ответного титула.
+- ``SupplementaryAgreementMetadata`` — дополнительные атрибуты дополнительного соглашения к договору. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- :doc:`AmendmentRequestMetadata <AmendmentRequestMetadata>` - свойство, отвечающее за состояние уведомления об уточнении. Актуально, например, для счетов-фактур, УПД и некоторых версий актов и накладных.
+- ``ServiceDetailsMetadata`` — дополнительные атрибуты детализаций. Представлены структурой :doc:`UnilateralDocumentMetadata`. Используйте поле ``Metadata``.
 
-- :doc:`Origin <Origin>` - свойство, позволяющее узнать, из какой сущности был создан документ. Например, из черновика или шаблона.
+- ``UniversalTransferDocumentMetadata`` — дополнительные атрибуты УПД. Представлены структурой :doc:`utd/UniversalDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- *EditingSettingId* - необязательный идентификатор :ref:`настройки документа <editing_settings>`, если он был создан из шаблона с возможностью редактирования полей.
+- ``UniversalTransferDocumentRevisionMetadata`` — дополнительные атрибуты исправлений УПД. Представлены структурой :doc:`utd/UniversalDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- :doc:`LockMode <LockMode>` - режим блокировки сообщения.
+- ``UniversalCorrectionDocumentMetadata`` — дополнительные атрибуты УКД. Представлены структурой :doc:`utd/UniversalDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- :doc:`SenderReceiptMetadata <SenderReceiptMetadata>` - свойство, отвечающее за состояние извещения о получении титула получателя.
+- ``UniversalCorrectionDocumentRevisionMetadata`` — дополнительные атрибуты исправлений УКД. Представлены структурой :doc:`utd/UniversalDocumentMetadata`. AmendmentRequestMetadata ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- *Version* - идентификатор версии документа.
+- ``AttachmentVersion`` — информация о версии XSD схемы, в соответствии с которой сформирован документ.
 
-- :doc:`LastOuterDocflows <LastOuterDocflow>` - информация о состоянии внешнего документооборота по документу, например, о статусе обработки документа с маркированными товарами в ГИС МТ "Честный ЗНАК".
+- ``HasCustomPrintForm`` — флаг, указывающий, что документ имеет нестандартную печатную форму. Значение всегда ``false``. Для выявления нестандартной печатной формы используйте метод :doc:`../http/DetectCustomPrintForms`.
 
-- *ProxyBoxId* - идентификатор ящика промежуточного получателя.
+----
 
-- *ProxyDepartmentId* - идентификатор подразделения промежуточного получателя.
+.. rubric:: Смотри также
 
-- :doc:`DocflowStatus <DocflowStatusV3>` - информация о статусе документооборота.
-
-.. warning::
-    Свойства *NonformalizedDocumentMetadata*, *InvoiceMetadata*, *InvoiceRevisionMetadata*, *InvoiceCorrectionMetadata*, *InvoiceCorrectionRevisionMetadata*, *TrustConnectionRequestMetadata*, *Torg12Metadata*, *AcceptanceCertificateMetadata*, *ProformaInvoiceMetadata*, *XmlTorg12Metadata*, *XmlAcceptanceCertificateMetadata*, *PriceListMetadata*, *PriceListAgreementMetadata*, *CertificateRegistryMetadata*, *ReconciliationActMetadata*, *ContractMetadata*, *Torg13Metadata*, *SupplementaryAgreementMetadata*, *ServiceDetailsMetadata*, *UniversalTransferDocumentMetadata*, *UniversalTransferDocumentRevisionMetadata*, *UniversalCorrectionDocumentMetadata* и *UniversalCorrectionDocumentRevisionMetadata*, *HasCustomPrintForm* считаются **устаревшими** и **не рекомендованы** к использованию. В будущем они будут удалены.
+*Структура используется:*
+	- в теле ответа метода :doc:`../http/GetDocument`.
