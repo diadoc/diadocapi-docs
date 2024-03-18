@@ -1,7 +1,7 @@
 Document
 ========
 
-Структура ``Document`` хранит информацию об одном документе в Диадоке.
+Структура ``Document`` хранит информацию о документе.
 
 .. code-block:: protobuf
 
@@ -18,33 +18,33 @@ Document
         optional string FileName = 10;
         optional string DocumentDate = 11;
         optional string DocumentNumber = 12;
-        optional NonformalizedDocument.NonformalizedDocumentMetadata NonformalizedDocumentMetadata = 13; // Устаревшая структура
-        optional InvoiceDocument.InvoiceMetadata InvoiceMetadata = 14; // Устаревшая структура
-        optional BilateralDocument.TrustConnectionRequestMetadata TrustConnectionRequestMetadata = 15; // Устаревшая структура
-        optional BilateralDocument.BasicDocumentMetadata Torg12Metadata = 16; // Устаревшая структура
-        optional InvoiceDocument.InvoiceRevisionMetadata InvoiceRevisionMetadata = 17; // Устаревшая структура
-        optional InvoiceDocument.InvoiceCorrectionMetadata InvoiceCorrectionMetadata = 18; // Устаревшая структура
-        optional InvoiceDocument.InvoiceCorrectionRevisionMetadata InvoiceCorrectionRevisionMetadata = 19; // Устаревшая структура
-        optional AcceptanceCertificateDocument.AcceptanceCertificateMetadata AcceptanceCertificateMetadata = 20; // Устаревшая структура
-        optional UnilateralDocument.ProformaInvoiceMetadata ProformaInvoiceMetadata = 21; // Устаревшая структура
-        optional BilateralDocument.BasicDocumentMetadata XmlTorg12Metadata = 22; // Устаревшая структура
-        optional BilateralDocument.BasicDocumentMetadata XmlAcceptanceCertificateMetadata = 23; // Устаревшая структура
+        optional NonformalizedDocument.NonformalizedDocumentMetadata NonformalizedDocumentMetadata = 13;
+        optional InvoiceDocument.InvoiceMetadata InvoiceMetadata = 14;
+        optional BilateralDocument.TrustConnectionRequestMetadata TrustConnectionRequestMetadata = 15;
+        optional BilateralDocument.BasicDocumentMetadata Torg12Metadata = 16;
+        optional InvoiceDocument.InvoiceRevisionMetadata InvoiceRevisionMetadata = 17;
+        optional InvoiceDocument.InvoiceCorrectionMetadata InvoiceCorrectionMetadata = 18;
+        optional InvoiceDocument.InvoiceCorrectionRevisionMetadata InvoiceCorrectionRevisionMetadata = 19;
+        optional AcceptanceCertificateDocument.AcceptanceCertificateMetadata AcceptanceCertificateMetadata = 20;
+        optional UnilateralDocument.ProformaInvoiceMetadata ProformaInvoiceMetadata = 21;
+        optional BilateralDocument.BasicDocumentMetadata XmlTorg12Metadata = 22;
+        optional BilateralDocument.BasicDocumentMetadata XmlAcceptanceCertificateMetadata = 23;
         optional bool IsDeleted = 24 [default = false];
         optional string DepartmentId = 25;
         optional bool IsTest = 26 [default = false];
         optional string FromDepartmentId = 27;
         optional string ToDepartmentId = 28;
-        optional BilateralDocument.PriceListMetadata PriceListMetadata = 29; // Устаревшая структура
+        optional BilateralDocument.PriceListMetadata PriceListMetadata = 29;
         optional string CustomDocumentId = 30;
         optional ResolutionStatus ResolutionStatus = 31;
         optional RevocationStatus RevocationStatus = 32 [default = UnknownRevocationStatus];
         optional sfixed64 SendTimestampTicks = 33;
         optional sfixed64 DeliveryTimestampTicks = 34;
         repeated ForwardDocumentEvent ForwardDocumentEvents = 35;
-        optional BilateralDocument.BilateralDocumentMetadata ReconciliationActMetadata = 38; // Устаревшая структура
-        optional BilateralDocument.ContractMetadata ContractMetadata = 39; // Устаревшая структура
-        optional BilateralDocument.BasicDocumentMetadata Torg13Metadata = 40; // Устаревшая структура
-        optional UnilateralDocument.ServiceDetailsMetadata ServiceDetailsMetadata = 41; // Устаревшая структура
+        optional BilateralDocument.BilateralDocumentMetadata ReconciliationActMetadata = 38;
+        optional BilateralDocument.ContractMetadata ContractMetadata = 39;
+        optional BilateralDocument.BasicDocumentMetadata Torg13Metadata = 40;
+        optional UnilateralDocument.ServiceDetailsMetadata ServiceDetailsMetadata = 41;
         optional RoamingNotificationStatus RoamingNotificationStatus = 42 [default = UnknownRoamingNotificationStatus];
         optional bool HasCustomPrintForm = 43 [default = false];
         repeated CustomDataItem CustomData = 44;
@@ -53,20 +53,19 @@ Document
         optional sfixed64 LastModificationTimestampTicks = 47;
         optional bool IsEncryptedContent = 48;
         optional SenderSignatureStatus SenderSignatureStatus = 49 [default = UnknownSenderSignatureStatus];
-        optional BilateralDocument.SupplementaryAgreementMetadata SupplementaryAgreementMetadata = 50; // Устаревшая структура
+        optional BilateralDocument.SupplementaryAgreementMetadata SupplementaryAgreementMetadata = 50;
         optional bool IsRead = 51 [default = false];
         optional string RoamingNotificationStatusDescription = 52;
         optional bool PacketIsLocked = 53 [default = false];
-        optional NonformalizedDocumentMetadata PriceListAgreementMetadata = 54; // Устаревшая структура
-        optional NonformalizedDocumentMetadata CertificateRegistryMetadata = 55; // Устаревшая структура
-        optional UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 56; // Устаревшая структура
+        optional NonformalizedDocumentMetadata PriceListAgreementMetadata = 54;
+        optional NonformalizedDocumentMetadata CertificateRegistryMetadata = 55;
+        optional UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 56;
         optional UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
-        optional UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58; // Устаревшая структура
-        optional UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59; // Устаревшая структура
+        optional UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
+        optional UniversalCorrectionDocumentRevisionMetadata UniversalCorrectionDocumentRevisionMetadata = 59;
         optional string ResolutionRouteId = 60 [default = ""];
         optional string AttachmentVersion = 61;
         optional ProxySignatureStatus ProxySignatureStatus = 62 [default = UnknownProxySignatureStatus];
-
         required string TypeNamedId = 63;
         required string Function = 64;
         required int32 WorkflowId = 65;
@@ -100,9 +99,9 @@ Document
 
 - ``EntityId`` — идентификатор соответствующей документу сущности типа ``LetterAttachment`` внутри сообщения.
 
-- ``CreationTimestampTicks`` — :doc:`метка времени <Timestamp>` создания документа.
+- ``CreationTimestampTicks`` — время создания документа, представленная структурой :doc:`Timestamp`.
 
-- ``CounteragentBoxId`` — идентификатор ящика контрагента.
+- ``CounteragentBoxId`` — идентификатор ящика контрагента. Значение зависит от направления документа относительно текущего ящика:
 
 	- Если документ исходящий — это идентификатор ящика получателя. Если документ входящий — идентификатор ящика отправителя;
 	- Если документ находится в черновиках, поле ``CounteragentBoxId`` может быть пустым.
@@ -127,17 +126,17 @@ Document
 
 - ``CustomDocumentId`` — идентификатор документа, определяемый внешней системой.
 
-- ``ResolutionStatus`` — текущий статус согласования документа, представленный структурой :doc:`ResolutionStatus`.
+- ``ResolutionStatus`` — статус согласования документа, представленный структурой :doc:`ResolutionStatus`.
 
 - ``RevocationStatus`` — статус аннулирования документа, принимает значения из перечисления :doc:`RevocationStatus`.
 
-- ``SendTimestampTicks`` — :doc:`метка времени <Timestamp>` отправки документа.
+- ``SendTimestampTicks`` — время отправки документа, представленное структурой :doc:`Timestamp`.
 
-- ``DeliveryTimestampTicks`` — :doc:`метка времени <Timestamp>` доставки документа.
+- ``DeliveryTimestampTicks`` — время доставки документа, представленное структурой :doc:`Timestamp`.
 
-- ``ForwardDocumentEvents`` — список событий пересылки документа третьей стороне. Каждое событие представлено структурой :doc:`ForwardDocumentEvent`. Документ можно переслать нескольким получателям, а также несколько раз одному получателю.
+- ``ForwardDocumentEvents`` — список событий пересылки документа третьей стороне. Каждое событие представлено структурой :doc:`ForwardDocumentEvent`. Документ можно переслать нескольким получателям и несколько раз одному получателю.
 
-- ``RoamingNotificationStatus`` — статус доставки в роуминг. Может принимать значения:
+- ``RoamingNotificationStatus`` — статус доставки в роуминг, принимает значения из перечисления ``RoamingNotificationStatus``:
 
 	- ``RoamingNotificationStatusNone`` — документ не роуминговый или без подтверждения доставки в роуминг;
 	- ``RoamingNotificationStatusSuccess`` — документ с подтверждением успешной доставки в роуминг;
@@ -150,7 +149,7 @@ Document
 
 - ``DocumentDirection`` — направление движения документа, принимает значения из перечисления :doc:`DocumentDirection`.
 
-- ``LastModificationTimestampTicks`` — :doc:`метка времени <Timestamp>` изменения документа.
+- ``LastModificationTimestampTicks`` — время изменения документа, представленное структурой :doc:`Timestamp`.
 
 - ``IsEncryptedContent`` — флаг, указывающий, что содержимое передаваемого документа зашифровано.
 
@@ -158,7 +157,7 @@ Document
 
 - ``IsRead`` — флаг, указывающий, что документ был прочитан сотрудником организации.
 
-- ``RoamingNotificationStatusDescription`` — текстовое описание ошибки при доставке документов в роуминг. Обычно поле заполняется, когда статус доставки в роуминг ``RoamingNotificationStatus`` принимает значение ``RoamingNotificationStatusError``.
+- ``RoamingNotificationStatusDescription`` — текстовое описание ошибки, возникшей при доставке документов в роуминг. Поле заполняется, когда статус доставки в роуминг ``RoamingNotificationStatus`` принимает значение ``RoamingNotificationStatusError``.
 
 - ``PacketIsLocked`` — флаг, указывающий, что пакет закрытый.
 
@@ -166,31 +165,31 @@ Document
 
 - ``ProxySignatureStatus``— статус промежуточной подписи, принимает значения из перечисления :doc:`ProxySignatureStatus`.
 
-- ``TypeNamedId`` — идентификатор типа документа. Полный список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
+- ``TypeNamedId`` — идентификатор типа документа. Список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
 
-- ``Function`` — функция документа. Полный список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
+- ``Function`` — функция документа. Список возможных значений можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
 
 - ``WorkflowId`` — идентификатор :doc:`вида документооборота <../docflows/Workflows>`, по которому запущен документ.
 
 - ``Title`` — название документа. Например, "Счет-фактура №123 от 26.02.18".
 
-- ``Metadata`` — список метаданных документа. Представлены структурой :doc:`../proto/MetadataItem`. Набор возможных значений для конкретного типа можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
+- ``Metadata`` — список метаданных документа. Каждый элемент списка представлен структурой :doc:`../proto/MetadataItem`. Набор возможных значений для конкретного типа можно получить с помощью метода :doc:`../http/GetDocumentTypes`.
 
-- ``RecipientReceiptMetadata`` — свойство, отвечающее за состояние извещения о получении документа со стороны получателя. Представлено структурой :doc:`RecipientReceiptMetadata`.
+- ``RecipientReceiptMetadata`` — состояние извещения о получении документа со стороны получателя. Представлено структурой :doc:`RecipientReceiptMetadata`.
 
-- ``ConfirmationMetadata`` — свойство, отвечающее за состояние подтверждения оператором даты отправки или получения документа. Представлено структурой :doc:`ConfirmationMetadata`.
+- ``ConfirmationMetadata`` — состояние подтверждения оператором даты отправки или получения документа. Представлено структурой :doc:`ConfirmationMetadata`.
 
-- ``RecipientResponseStatus`` — свойство, отвечающее за состояние ответного действия получателя — ответную подпись или подписание ответного титула. Принимает значения из перечисления :doc:`RecipientResponseStatus`.
+- ``RecipientResponseStatus`` — состояние ответного действия получателя — ответную подпись или подписание ответного титула. Принимает значения из перечисления :doc:`RecipientResponseStatus`.
 
-- ``AmendmentRequestMetadata`` — свойство, отвечающее за состояние уведомления об уточнении. Представлено структурой :doc:`AmendmentRequestMetadata`.
+- ``AmendmentRequestMetadata`` — состояние уведомления об уточнении. Представлено структурой :doc:`AmendmentRequestMetadata`.
 
-- ``Origin``— свойство, позволяющее узнать, из какой сущности был создан документ, например, из черновика или шаблона. Представлено структурой :doc:`Origin`.
+- ``Origin``— сущность, из которой был создан документ, например, из черновика или шаблона. Представлено структурой :doc:`Origin`.
 
-- ``EditingSettingId`` — идентификатор настройки документа, если он был создан из шаблона с редактируемыми полями.
+- ``EditingSettingId`` — идентификатор :ref:`настройки редактирования <editing_settings>` документа, если он был создан из шаблона с редактируемыми полями.
 
 - ``LockMode``— режим блокировки сообщения, принимает значения из перечисления :doc:`LockMode`. 
 
-- ``SenderReceiptMetadata`` — свойство, отвечающее за состояние извещения о получении титула получателя. Представлено структурой :doc:`SenderReceiptMetadata`. 
+- ``SenderReceiptMetadata`` — состояние извещения о получении титула получателя. Представлено структурой :doc:`SenderReceiptMetadata`. 
 
 - ``Version`` — идентификатор версии документа.
 
@@ -215,15 +214,15 @@ Document
 
 - ``InvoiceMetadata`` — дополнительные атрибуты счетов-фактур. Представлены структурой :doc:`InvoiceDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
+- ``TrustConnectionRequestMetadata`` — дополнительные атрибуты документов типа ``TrustConnectionRequest``. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля  ``Metadata``, ``RecipientResponseStatus``.
+
+- ``Torg12Metadata`` — дополнительные атрибуты товарных накладных ТОРГ-12. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
+
 - ``InvoiceRevisionMetadata`` — дополнительные атрибуты исправлений счетов-фактур. Представлены структурой :doc:`InvoiceDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
 - ``InvoiceCorrectionMetadata`` — дополнительные атрибуты корректировочных счетов-фактур. Представлены структурой :doc:`InvoiceDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
 - ``InvoiceCorrectionRevisionMetadata`` — дополнительные атрибуты исправлений корректировочных счетов-фактур. Представлены структурой :doc:`InvoiceDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
-
-- ``TrustConnectionRequestMetadata`` — дополнительные атрибуты документов типа ``TrustConnectionRequest``. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля  ``Metadata``, ``RecipientResponseStatus``.
-
-- ``Torg12Metadata`` — дополнительные атрибуты товарных накладных ТОРГ-12. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
 - ``AcceptanceCertificateMetadata`` — дополнительные атрибуты актов о выполнении работ или оказании услуг. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
@@ -231,13 +230,9 @@ Document
 
 - ``XmlTorg12Metadata`` — дополнительные атрибуты товарных накладных ТОРГ-12 в XML-формате. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``XmlAcceptanceCertificateMetadata`` — дополнительные атрибуты специфичные для актов о выполнении работ или оказании услуг в XML-формате. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
+- ``XmlAcceptanceCertificateMetadata`` — дополнительные атрибуты актов о выполнении работ или оказании услуг в XML-формате. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
 - ``PriceListMetadata`` — дополнительные атрибуты ценовых листов. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
-
-- ``PriceListAgreementMetadata`` — дополнительные атрибуты протоколов согласования цены. Представлены структурой :doc:`NonformalizedDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
-
-- ``CertificateRegistryMetadata`` — дополнительные атрибуты реестров сертификатов. Представлены структурой :doc:`NonformalizedDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
 - ``ReconciliationActMetadata`` — дополнительные атрибуты актов сверки. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля устаревшее, см. ``Metadata`` и ``RecipientResponseStatus``.
 
@@ -245,9 +240,15 @@ Document
 
 - ``Torg13Metadata`` — дополнительные атрибуты накладных ТОРГ-13. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
+- ``ServiceDetailsMetadata`` — дополнительные атрибуты детализаций. Представлены структурой :doc:`UnilateralDocumentMetadata`. Используйте поле ``Metadata``.
+
+- ``HasCustomPrintForm`` — флаг, указывающий, что документ имеет нестандартную печатную форму. Значение всегда ``false``. Для выявления нестандартной печатной формы используйте метод :doc:`../http/DetectCustomPrintForms`.
+
 - ``SupplementaryAgreementMetadata`` — дополнительные атрибуты дополнительного соглашения к договору. Представлены структурой :doc:`BilateralDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``ServiceDetailsMetadata`` — дополнительные атрибуты детализаций. Представлены структурой :doc:`UnilateralDocumentMetadata`. Используйте поле ``Metadata``.
+- ``PriceListAgreementMetadata`` — дополнительные атрибуты протоколов согласования цены. Представлены структурой :doc:`NonformalizedDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
+
+- ``CertificateRegistryMetadata`` — дополнительные атрибуты реестров сертификатов. Представлены структурой :doc:`NonformalizedDocumentMetadata`. Используйте поля ``Metadata`` и ``RecipientResponseStatus``.
 
 - ``UniversalTransferDocumentMetadata`` — дополнительные атрибуты УПД. Представлены структурой :doc:`utd/UniversalDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
@@ -255,11 +256,9 @@ Document
 
 - ``UniversalCorrectionDocumentMetadata`` — дополнительные атрибуты УКД. Представлены структурой :doc:`utd/UniversalDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- ``UniversalCorrectionDocumentRevisionMetadata`` — дополнительные атрибуты исправлений УКД. Представлены структурой :doc:`utd/UniversalDocumentMetadata`. AmendmentRequestMetadata ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
+- ``UniversalCorrectionDocumentRevisionMetadata`` — дополнительные атрибуты исправлений УКД. Представлены структурой :doc:`utd/UniversalDocumentMetadata`. Используйте поля ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
 - ``AttachmentVersion`` — информация о версии XSD схемы, в соответствии с которой сформирован документ.
-
-- ``HasCustomPrintForm`` — флаг, указывающий, что документ имеет нестандартную печатную форму. Значение всегда ``false``. Для выявления нестандартной печатной формы используйте метод :doc:`../http/DetectCustomPrintForms`.
 
 ----
 
