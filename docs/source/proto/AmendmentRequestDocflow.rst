@@ -34,4 +34,4 @@ AmendmentRequestDocflow
 	- в структуре :doc:`DocflowV3`.
 
 *Методы для работы с уведомлением об уточнении:*
-	- :doc:`../http/GenerateInvoiceCorrectionRequestXml` — генерирует xml-файл уведомления об уточнении счета-фактуры..
+	- :doc:`../http/GenerateInvoiceCorrectionRequestXml` — генерирует XML-файл уведомления об уточнении счета-фактуры..
