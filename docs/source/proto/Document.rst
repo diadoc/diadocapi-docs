@@ -18,7 +18,7 @@ Document
         optional string FileName = 10;
         optional string DocumentDate = 11;
         optional string DocumentNumber = 12;
-        optional NonformalizedDocument.NonformalizedDocumentMetadata NonformalizedDocumentMetadata = 13;
+        optional NonformalizedDocument.obsolete/NonformalizedDocumentMetadata obsolete/NonformalizedDocumentMetadata = 13;
         optional InvoiceDocument.InvoiceMetadata InvoiceMetadata = 14;
         optional BilateralDocument.TrustConnectionRequestMetadata TrustConnectionRequestMetadata = 15;
         optional BilateralDocument.BasicDocumentMetadata Torg12Metadata = 16;
@@ -41,7 +41,7 @@ Document
         optional sfixed64 SendTimestampTicks = 33;
         optional sfixed64 DeliveryTimestampTicks = 34;
         repeated ForwardDocumentEvent ForwardDocumentEvents = 35;
-        optional BilateralDocument.BilateralDocumentMetadata ReconciliationActMetadata = 38;
+        optional BilateralDocument.obsolete/BilateralDocumentMetadata ReconciliationActMetadata = 38;
         optional BilateralDocument.ContractMetadata ContractMetadata = 39;
         optional BilateralDocument.BasicDocumentMetadata Torg13Metadata = 40;
         optional UnilateralDocument.ServiceDetailsMetadata ServiceDetailsMetadata = 41;
@@ -57,8 +57,8 @@ Document
         optional bool IsRead = 51 [default = false];
         optional string RoamingNotificationStatusDescription = 52;
         optional bool PacketIsLocked = 53 [default = false];
-        optional NonformalizedDocumentMetadata PriceListAgreementMetadata = 54;
-        optional NonformalizedDocumentMetadata CertificateRegistryMetadata = 55;
+        optional obsolete/NonformalizedDocumentMetadata PriceListAgreementMetadata = 54;
+        optional obsolete/NonformalizedDocumentMetadata CertificateRegistryMetadata = 55;
         optional UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 56;
         optional UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
         optional UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
@@ -211,53 +211,53 @@ Document
 
 - ``DocumentNumber`` — номер документа. Теперь номер возвращается в поле ``Metadata``.
 
-- ``NonformalizedDocumentMetadata`` — дополнительные атрибуты неформализованных документов, представленные структурой :doc:`NonformalizedDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata`` и ``RecipientResponseStatus``.
+- ``obsolete/NonformalizedDocumentMetadata`` — дополнительные атрибуты неформализованных документов, представленные структурой :doc:`obsolete/NonformalizedDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata`` и ``RecipientResponseStatus``.
 
-- ``InvoiceMetadata`` — дополнительные атрибуты счетов-фактур, представленные структурой :doc:`InvoiceDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
+- ``InvoiceMetadata`` — дополнительные атрибуты счетов-фактур, представленные структурой :doc:`obsolete/InvoiceDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- ``TrustConnectionRequestMetadata`` — дополнительные атрибуты документов типа ``TrustConnectionRequest``, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях  ``Metadata``, ``RecipientResponseStatus``.
+- ``TrustConnectionRequestMetadata`` — дополнительные атрибуты документов типа ``TrustConnectionRequest``, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях  ``Metadata``, ``RecipientResponseStatus``.
 
-- ``Torg12Metadata`` — дополнительные атрибуты товарных накладных ТОРГ-12, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``Torg12Metadata`` — дополнительные атрибуты товарных накладных ТОРГ-12, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``InvoiceRevisionMetadata`` — дополнительные атрибуты исправлений счетов-фактур, представленные структурой :doc:`InvoiceDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
+- ``InvoiceRevisionMetadata`` — дополнительные атрибуты исправлений счетов-фактур, представленные структурой :doc:`obsolete/InvoiceDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- ``InvoiceCorrectionMetadata`` — дополнительные атрибуты корректировочных счетов-фактур, представленные структурой :doc:`InvoiceDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
+- ``InvoiceCorrectionMetadata`` — дополнительные атрибуты корректировочных счетов-фактур, представленные структурой :doc:`obsolete/InvoiceDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- ``InvoiceCorrectionRevisionMetadata`` — дополнительные атрибуты исправлений корректировочных счетов-фактур, представленные структурой :doc:`InvoiceDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
+- ``InvoiceCorrectionRevisionMetadata`` — дополнительные атрибуты исправлений корректировочных счетов-фактур, представленные структурой :doc:`obsolete/InvoiceDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- ``AcceptanceCertificateMetadata`` — дополнительные атрибуты актов о выполнении работ или оказании услуг, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``AcceptanceCertificateMetadata`` — дополнительные атрибуты актов о выполнении работ или оказании услуг, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``ProformaInvoiceMetadata`` — дополнительные атрибуты счетов на оплату, представленные структурой :doc:`UnilateralDocumentMetadata`. Теперь атрибуты возвращаются в поле ``Metadata``.
+- ``ProformaInvoiceMetadata`` — дополнительные атрибуты счетов на оплату, представленные структурой :doc:`obsolete/UnilateralDocumentMetadata`. Теперь атрибуты возвращаются в поле ``Metadata``.
 
-- ``XmlTorg12Metadata`` — дополнительные атрибуты товарных накладных ТОРГ-12 в XML-формате, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``XmlTorg12Metadata`` — дополнительные атрибуты товарных накладных ТОРГ-12 в XML-формате, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``XmlAcceptanceCertificateMetadata`` — дополнительные атрибуты актов о выполнении работ или оказании услуг в XML-формате, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``XmlAcceptanceCertificateMetadata`` — дополнительные атрибуты актов о выполнении работ или оказании услуг в XML-формате, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``PriceListMetadata`` — дополнительные атрибуты ценовых листов, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``PriceListMetadata`` — дополнительные атрибуты ценовых листов, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``ReconciliationActMetadata`` — дополнительные атрибуты актов сверки, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``ReconciliationActMetadata`` — дополнительные атрибуты актов сверки, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``ContractMetadata`` — дополнительные атрибуты договоров, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``ContractMetadata`` — дополнительные атрибуты договоров, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``Torg13Metadata`` — дополнительные атрибуты накладных ТОРГ-13, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``Torg13Metadata`` — дополнительные атрибуты накладных ТОРГ-13, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``ServiceDetailsMetadata`` — дополнительные атрибуты детализаций, представленные структурой :doc:`UnilateralDocumentMetadata`. Теперь атрибуты возвращаются в поле ``Metadata``.
+- ``ServiceDetailsMetadata`` — дополнительные атрибуты детализаций, представленные структурой :doc:`obsolete/UnilateralDocumentMetadata`. Теперь атрибуты возвращаются в поле ``Metadata``.
 
 - ``HasCustomPrintForm`` — флаг, указывающий, что документ имеет нестандартную печатную форму. Значение всегда ``false``. Для выявления нестандартной печатной формы используйте метод :doc:`../http/DetectCustomPrintForms`.
 
-- ``SupplementaryAgreementMetadata`` — дополнительные атрибуты дополнительного соглашения к договору, представленные структурой :doc:`BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``SupplementaryAgreementMetadata`` — дополнительные атрибуты дополнительного соглашения к договору, представленные структурой :doc:`obsolete/BilateralDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``PriceListAgreementMetadata`` — дополнительные атрибуты протоколов согласования цены, представленные структурой :doc:`NonformalizedDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``PriceListAgreementMetadata`` — дополнительные атрибуты протоколов согласования цены, представленные структурой :doc:`obsolete/NonformalizedDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``CertificateRegistryMetadata`` — дополнительные атрибуты реестров сертификатов, представленные структурой :doc:`NonformalizedDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
+- ``CertificateRegistryMetadata`` — дополнительные атрибуты реестров сертификатов, представленные структурой :doc:`obsolete/NonformalizedDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata`` и ``RecipientResponseStatus``.
 
-- ``UniversalTransferDocumentMetadata`` — дополнительные атрибуты УПД, представленные структурой :doc:`utd/UniversalDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
+- ``UniversalTransferDocumentMetadata`` — дополнительные атрибуты УПД, представленные структурой :doc:`obsolete/UniversalDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- ``UniversalTransferDocumentRevisionMetadata`` — дополнительные атрибуты исправлений УПД, представленные структурой :doc:`utd/UniversalDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
+- ``UniversalTransferDocumentRevisionMetadata`` — дополнительные атрибуты исправлений УПД, представленные структурой :doc:`obsolete/UniversalDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- ``UniversalCorrectionDocumentMetadata`` — дополнительные атрибуты УКД, представленные структурой :doc:`utd/UniversalDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
+- ``UniversalCorrectionDocumentMetadata`` — дополнительные атрибуты УКД, представленные структурой :doc:`obsolete/UniversalDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- ``UniversalCorrectionDocumentRevisionMetadata`` — дополнительные атрибуты исправлений УКД, представленные структурой :doc:`utd/UniversalDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
+- ``UniversalCorrectionDocumentRevisionMetadata`` — дополнительные атрибуты исправлений УКД, представленные структурой :doc:`obsolete/UniversalDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
 - ``AttachmentVersion`` — информация о версии XSD схемы, в соответствии с которой сформирован документ.
 
