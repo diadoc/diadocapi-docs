@@ -13,6 +13,6 @@
 	draft
 	template
 	packet
-	shelf
 	signature
+	shelf
 	tag
