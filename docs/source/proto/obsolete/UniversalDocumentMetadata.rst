@@ -1,6 +1,9 @@
 UniversalDocumentMetadata
 =========================
 
+.. warning::
+	Структура используется в устаревших полях структуры :doc:`../Document`.
+
 .. code-block:: protobuf
 
     message UniversalTransferDocumentMetadata {

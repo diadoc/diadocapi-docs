@@ -1103,7 +1103,7 @@
  - :doc:`proto/obsolete/UniversalTransferDocumentBuyerTitleInfo` — для описания титула покупателя УПД,
  - :doc:`proto/obsolete/UniversalCorrectionDocumentSellerTitleInfo` — для описания титула продавца УКД,
  - :doc:`proto/obsolete/UniversalTransferDocumentBuyerTitleInfo` — для описания титула покупателя УКД,
- - :doc:`proto/utd/UniversalDocumentMetadata` — для описания данных УПД и УКД,
+ - :doc:`proto/obsolete/UniversalDocumentMetadata` — для описания данных УПД и УКД,
  - :doc:`proto/obsolete/ExtendedOrganizationInfo` — для описания реквизитов продавца, покупателя и грузоотправителя, используемая в УПД и УКД,
  - :doc:`proto/utd/ExtendedSigner` — для описания реквизитов подписанта, используемая в УПД и УКД,
  - :doc:`proto/ExtendedSignerDetailsToPost` — для описания реквизитов подписанта, используемая в методе :doc:`proto/obsolete/ExtendedOrganizationInfo`.
@@ -1199,7 +1199,7 @@
 
  - в структуре :doc:`proto/MessageToPost` добавлена стуктура :doc:`proto/obsolete/SupplementaryAgreementAttachment` для передачи дополнительного соглашения к договору;
  - в структуры :doc:`proto/Entity message` и :doc:`proto/DocumentType` добавлен новый тип для дополнительного соглашения к договору;
- - в структуре :doc:`proto/Document` добавлена вложенная структура :doc:`SupplementaryAgreementMetadata <proto/BilateralDocumentMetadata>` для описания метаданных дополнительного соглашения к договору;
+ - в структуре :doc:`proto/Document` добавлена вложенная структура :doc:`SupplementaryAgreementMetadata <proto/obsolete/BilateralDocumentMetadata>` для описания метаданных дополнительного соглашения к договору;
  - в структуре :doc:`proto/DocumentInfo` добавлена вложенная структура :doc:`SupplementaryAgreementInfo <proto/SupplementaryAgreementDocumentInfo>` для описания метаданных дополнительного соглашения к договору.
 
 
@@ -1386,7 +1386,7 @@
  - дата и номер договора, к которому относится ценовой лист.
  
 Для отправки ценовых листов через API при обращении к методу :doc:`http/PostMessage` заполните список :doc:`MessageToPost.PriceLists <proto/MessageToPost>`. Каждый элемент этого списка представляет собой структуру :doc:`proto/obsolete/PriceListAttachment`.
-При получение информации о документах через API с помощью методов :doc:`http/GetMessage`, :doc:`http/GetDocument` и т.п. для ценовых листов в структуре :doc:`proto/Document` заполняется поле :doc:`PriceListMetadata <proto/BilateralDocumentMetadata>`.
+При получение информации о документах через API с помощью методов :doc:`http/GetMessage`, :doc:`http/GetDocument` и т.п. для ценовых листов в структуре :doc:`proto/Document` заполняется поле :doc:`PriceListMetadata <proto/obsolete/BilateralDocumentMetadata>`.
 При фильтрации документов методом :doc:`http/GetDocuments` можно использовать новый тип документов ``PriceList``.
 - Для получения списка пользователей конкретной организации добавлен метод :doc:`http/GetOrganizationUsers`.
 - В структуре :doc:`proto/Organization` добавлено поле ``IfnsCode``, позволяющее получить код налоговой инспекции — место подачи декларации по НДС.
@@ -1411,7 +1411,7 @@
 
 - Добавлена возможность работы с документами, пересылаемыми внутри организации:
 
- - добавлены элементы в перечислениях :doc:`NonformalizedDocumentStatus <proto/NonformalizedDocumentMetadata>`, :doc:`BilateralDocumentStatus <proto/BilateralDocumentMetadata>` и :doc:`UnilateralDocumentStatus <proto/UnilateralDocumentMetadata>`;
+ - добавлены элементы в перечислениях :doc:`NonformalizedDocumentStatus <proto/obsolete/NonformalizedDocumentMetadata>`, :doc:`BilateralDocumentStatus <proto/obsolete/BilateralDocumentMetadata>` и :doc:`UnilateralDocumentStatus <proto/obsolete/UnilateralDocumentMetadata>`;
  - добавлены поля для работы с подразделениями организации в структурах :doc:`proto/Department`, :doc:`Entity <proto/Entity message>`, :doc:`proto/Document`, :doc:`proto/Message` и :doc:`proto/MessageToPost`.
  
 - Расширены возможности работы с «черновиками», то есть с подготовленными, но не отправленными документами:
@@ -1520,7 +1520,7 @@
  - ``Attachment/InvoiceCorrection`` — корректировочный счет-фактура;
  - ``Attachment/InvoiceCorrectionRevision`` — исправление корректировочного счета-фактуры.
  
- Для связывания исправлений и корректировок с оригинальными СФ нужно использовать уже имеющийся в Диадоке механизм установки ссылок между документами, находящимися в разных сообщениях. Кроме того, в структуре :doc:`Document.InvoiceMetadata <proto/InvoiceDocumentMetadata>`, описывающей метаданные счета-фактуры в Диадоке, добавлено поле ``InvoiceAmendmentFlags``, которое отражает статус счета-фактуры с точки зрения наличия уведомления об уточнении или отправленного исправления/корректировки. Например, при отправке корректировочного счета-фактуры, у исходного счета-фактуры, по которому было запрошено уточнение, поле ``Document.InvoiceMetadata.InvoiceAmendmentFlags`` поменяет свое значение с ``AmendmentRequested`` на ``AmendmentRequested\Corrected``.
+ Для связывания исправлений и корректировок с оригинальными СФ нужно использовать уже имеющийся в Диадоке механизм установки ссылок между документами, находящимися в разных сообщениях. Кроме того, в структуре :doc:`Document.InvoiceMetadata <proto/obsolete/InvoiceDocumentMetadata>`, описывающей метаданные счета-фактуры в Диадоке, добавлено поле ``InvoiceAmendmentFlags``, которое отражает статус счета-фактуры с точки зрения наличия уведомления об уточнении или отправленного исправления/корректировки. Например, при отправке корректировочного счета-фактуры, у исходного счета-фактуры, по которому было запрошено уточнение, поле ``Document.InvoiceMetadata.InvoiceAmendmentFlags`` поменяет свое значение с ``AmendmentRequested`` на ``AmendmentRequested\Corrected``.
  
 - Добавлен метод :doc:`http/GetInvoiceCorrectionRequestInfo`, который возвращает информацию, содержащуюся в уведомлении об уточнении счета-фактуры, без необходимости уметь разбирать соответствующий XML-формат, утвержденный ФНС, что в какой-то степени упрощает работу интегратора. В частности, метод ``GetInvoiceCorrectionRequestInfo`` позволяет получить текст уведомления об уточнении.
 - Добавлены методы :doc:`http/PostMessage` и ``PostDraft`` позволяющие загружать в Диадок акты о выполнении работ/оказании услуг (новый тип документов :doc:`Attachment/AcceptanceCertificate <proto/Entity message>`). Поддержка нового типа документов добавлена и в метод :doc:`http/GetDocuments`.
