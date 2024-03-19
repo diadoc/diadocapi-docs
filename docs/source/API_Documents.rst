@@ -51,7 +51,6 @@ HTTP-интерфейс
    :maxdepth: 1
    :titlesonly:
 
-   proto/BilateralDocumentMetadata
    proto/Content_v2
    proto/CustomDataPatch
    proto/Document
@@ -64,7 +63,6 @@ HTTP-интерфейс
    proto/DraftToSend
    proto/ForwardedDocument
    proto/LastOuterDocflow
-   proto/NonformalizedDocumentMetadata
    proto/Official   
    proto/OuterDocflowInfo
    proto/PrepareDocumentsToSignRequest
@@ -79,4 +77,3 @@ HTTP-интерфейс
    proto/SignatureRejectionInfo
    proto/Signer
    proto/StructuredDataAttachment
-   proto/UnilateralDocumentMetadata

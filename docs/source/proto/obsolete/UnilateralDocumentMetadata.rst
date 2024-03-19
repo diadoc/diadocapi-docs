@@ -1,6 +1,9 @@
 UnilateralDocumentMetadata
 ==========================
 
+.. warning::
+	Структура используется в устаревших полях структуры :doc:`../Document`.
+
 .. code-block:: protobuf
 
     message ProformaInvoiceMetadata {
@@ -26,7 +29,7 @@ UnilateralDocumentMetadata
     }
         
 
-Структура ProformaInvoiceMetadata содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для счетов на оплату:
+Структура ProformaInvoiceMetadata содержит дополнительные атрибуты документа (в структуре :doc:`../Document`) специфичные для счетов на оплату:
 
 -  DocumentStatus определяет состояние, в котором находится данный документ; принимает одно из значений перечисления UnilateralDocumentStatus.
 
@@ -36,7 +39,7 @@ UnilateralDocumentMetadata
 
 -  Grounds - основания для счета; представляются в виде неформализованной строки текста, например, "Договор №1234, Заказ №321".
 
-Структура ServiceDetailsMetadata содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для счетов на оплату:
+Структура ServiceDetailsMetadata содержит дополнительные атрибуты документа (в структуре :doc:`../Document`) специфичные для счетов на оплату:
 
 -  DocumentStatus определяет состояние, в котором находится данный документ; принимает одно из значений перечисления UnilateralDocumentStatus.
 

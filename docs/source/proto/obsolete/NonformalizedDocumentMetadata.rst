@@ -1,6 +1,9 @@
 NonformalizedDocumentMetadata
 =============================
 
+.. warning::
+	Структура используется в устаревших полях структуры :doc:`../Document`.
+
 .. code-block:: protobuf
 
     message NonformalizedDocumentMetadata {
@@ -31,7 +34,7 @@ NonformalizedDocumentMetadata
     }
         
 
-Структура данных NonformalizedDocumentMetadata содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для неформализованных документов:
+Структура данных NonformalizedDocumentMetadata содержит дополнительные атрибуты документа (в структуре :doc:`../Document`) специфичные для неформализованных документов:
 
 -  DocumentStatus определяет состояние, в котором находится данный документ; возможные варианты:
 

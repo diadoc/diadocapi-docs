@@ -1,6 +1,9 @@
 BilateralDocumentMetadata
 =========================
 
+.. warning::
+	Структура используется в устаревших полях структуры :doc:`../Document`.
+
 .. code-block:: protobuf
 
     message TrustConnectionRequestMetadata {
@@ -115,7 +118,7 @@ BilateralDocumentMetadata
     }
         
 
-Структура *BasicDocumentMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для двусторонних первичных бухгалтерских документов (например, для товарных накладных ТОРГ-12):
+Структура *BasicDocumentMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`../Document`) специфичные для двусторонних первичных бухгалтерских документов (например, для товарных накладных ТОРГ-12):
 
 -  *DocumentStatus* определяет состояние, в котором находится данный первичный документ; принимает одно из значений перечисления *BilateralDocumentStatus*
 
@@ -125,11 +128,11 @@ BilateralDocumentMetadata
 
 -  *Grounds* - основания для первичного документа; представляются в виде неформализованной строки текста, например, "Договор №1234, Заказ №321".
 
-Структура *TrustConnectionRequestMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для документов типа *TrustConnectionRequest*:
+Структура *TrustConnectionRequestMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`../Document`) специфичные для документов типа *TrustConnectionRequest*:
 
 -  *TrustConnectionRequestStatus* определяет состояние, в котором находится данный документ; принимает одно из значений перечисления BilateralDocumentStatus.
 
-Структура *PriceListMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для ценовых листов:
+Структура *PriceListMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`../Document`) специфичные для ценовых листов:
 
 -  *DocumentStatus* определяет состояние, в котором находится данный ценовой лист; принимает одно из значений перечисления BilateralDocumentStatus.
 
@@ -139,11 +142,11 @@ BilateralDocumentMetadata
 
 -  *ContractDocumentNumber* - номер договора, к которому относится ценовой лист.
 
-Структура *BilateralDocumentMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`):
+Структура *BilateralDocumentMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`../Document`):
 
 -  *DocumentStatus* определяет состояние, в котором находится данный документ; принимает одно из значений перечисления BilateralDocumentStatus.
 
-Структура *ContractMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`), специфичные для договоров:
+Структура *ContractMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`../Document`), специфичные для договоров:
 
 -  *DocumentStatus* определяет состояние, в котором находится данный документ; принимает одно из значений перечисления BilateralDocumentStatus.
 
@@ -151,7 +154,7 @@ BilateralDocumentMetadata
 
 -  *ContractPrice* - цена, указанная в договоре.
 
-Структура *SupplementaryAgreementMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`), специфичные для дополнительного соглашения к договору:
+Структура *SupplementaryAgreementMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`../Document`), специфичные для дополнительного соглашения к договору:
 
 -  *DocumentStatus* определяет состояние, в котором находится данный документ; принимает одно из значений перечисления *BilateralDocumentStatus*.
 
@@ -198,7 +201,7 @@ BilateralDocumentMetadata
 -  *InternalInvalidRecipientSignature* (документ внутренний, документооборот не завершен, поскольку подпись получателя не
    является корректной).
 
-Структура *AcceptanceCertificateMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`Document`) специфичные для актов о выполнении работ / оказании услуг. Описание полей - аналогично структуре *BasicDocumentMetadata*, отличается только тип поля *DocumentStatus* (см. описание перечисления AcceptanceCertificateDocumentMetadata).
+Структура *AcceptanceCertificateMetadata* содержит дополнительные атрибуты документа (в структуре :doc:`../Document`) специфичные для актов о выполнении работ / оказании услуг. Описание полей - аналогично структуре *BasicDocumentMetadata*, отличается только тип поля *DocumentStatus* (см. описание перечисления AcceptanceCertificateDocumentMetadata).
 
 Перечисление *AcceptanceCertificateDocumentStatus* задает возможные варианты состояний, в которых может находиться акт о выполнении работ/оказании услуг. Содержит все значения из перечисления BilateralDocumentStatus и дополнительно еще несколько возможных значений:
 
