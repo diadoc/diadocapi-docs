@@ -5,11 +5,11 @@ Authenticate
 
 Версии метода:
 
-	- :ref:`Authenticate-v3`.
+	- :ref:`Authenticate_v3`.
 	- Authenticate v2 — устаревшая версия.
 	- Authenticate — устаревшая версия.
 
-.. _Authenticate-v3:
+.. _Authenticate_v3:
 
 Authenticate v3
 ---------------
@@ -36,11 +36,11 @@ Authenticate v3
 
 В Диадоке существуют следующие способы аутентификации:
 
-- :ref:`по логину и паролю <auth-login>`,
-- :ref:`по сертификату <auth-cert>`,
-- :ref:`по auth.sid <auth-sid>`.
+- :ref:`по логину и паролю <auth_login>`,
+- :ref:`по сертификату <auth_cert>`,
+- :ref:`по auth.sid <auth_sid>`.
 
-.. _auth-login:
+.. _auth_login:
 
 Аутентификация по логину и паролю
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +99,7 @@ Authenticate v3
 
 ..
 
-.. _auth-cert:
+.. _auth_cert:
 
 Аутентификация по сертификату
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,7 +142,7 @@ Authenticate v3
 
 ..
 
-.. _auth-sid:
+.. _auth_sid:
 
 Аутентификация по auth.sid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
