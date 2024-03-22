@@ -1,7 +1,7 @@
 GetCounteragentCertificates
 ===========================
 
-Метод ``GetCounteragentCertificates`` возвращает сертификаты контрагента.
+Метод ``GetCounteragentCertificates`` возвращает сертификаты :doc:`контрагента <../entities/counteragent>`.
 
 .. http:get:: /GetCounteragentCertificates
 
