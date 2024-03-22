@@ -32,7 +32,6 @@ v1.21
 		        optional string Inn = 2;
 		        optional string MessageToCounteragent = 3;
 		        optional InvitationDocument InvitationDocument = 4;
-		        optional string CounteragentGroupId = 5;
 		    }
 
 		    message InvitationDocument {
@@ -51,8 +50,6 @@ v1.21
 			- ``SignedContent`` — содержимое файла документа с электронной подписью, представленный структурой :doc:`../proto/SignedContent`.
 			- ``FileName`` — имя файла.
 			- ``SignatureRequested`` — флаг, указывающий, что от контрагента требуется ответная подпись.
-
-		- ``CounteragentGroupId`` — идентификатор группы контрагентов.
 
 		При заполнении структуры руководствуйтесь следующими рекомендациями:
 

@@ -1,13 +1,12 @@
-GetCounteragentGroups
-=====================
+GetCounteragentGroup
+====================
 
-Метод ``GetCounteragentGroups`` возвращает список групп контрагентов.
+Метод ``GetCounteragentGroup`` возвращает информацию о группе контрагентов.
 
-.. http:get:: /GetCounteragentGroups
+.. http:get:: /GetCounteragentGroup
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam page: номер страницы, которую нужно получить. Необязательный параметр. По умолчанию равен 1.
-	:queryparam count: количество групп контрагентов на одной странице. Может принимать значение от 1 до 50. Необязательный параметр, по умолчанию равен 50.
+	:queryparam CounteragentGroupId: идентификатор группы контрагентов, обязательный.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -16,26 +15,15 @@ GetCounteragentGroups
 	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
 	:statuscode 402: у организации с указанным идентификатором ``boxId`` закончилась подписка на API.
 	:statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен или запрос сделан не от имени сотрудника организации с разрешением ``CanManageCounteragents``.
+	:statuscode 404: не найдена группа контрагентов с идентификатором ``CounteragentGroupId``.
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-	:response Body: Тело ответа содержит структуру ``CounteragentGroupsList``:
-
-		.. code-block:: protobuf
-
-		    message CounteragentGroupsList { 
-		        repeated CounteragentGroup Groups = 1;
-		        required int32 TotalCount = 2;
-		    }
-
-		- ``Group`` — список групп контрагентов. Каждый элемент списка представлен структурой :doc:`../proto/CounteragentGroup`.
-		- ``TotalCount`` — количество групп контрагентов.
+	:response Body: Тело ответа содержит структуру :doc:`../proto/CounteragentGroup`.
 
 Для работы с этим методом пользователь должен быть сотрудником этой организации с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
 
-Метод не возвращает удаленные группы контрагентов.
-
-----
+	----
 
 .. rubric:: Смотри также
 
@@ -43,7 +31,6 @@ GetCounteragentGroups
 	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
 	- :doc:`UpdateCounteragentGroup` — редактирует группы контрагентов,
 	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
-	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу,
-	- :doc:`GetCounteragentsFromGroup` — возвращает список контрагентов в группе,
-	- :doc:`GetCounteragentGroup` — возвращает информацию о группе контрагентов.
-
+	- :doc:`AddCounteragentToGroup` — возращает список групп контрагентов,
+	- :doc:`GetCounteragentGroups` — возвращает список групп контрагентов,
+	- :doc:`GetCounteragentsFromGroup` — возращает список контрагентов в группе.

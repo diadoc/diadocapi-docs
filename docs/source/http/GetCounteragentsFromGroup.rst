@@ -1,14 +1,14 @@
-GetCounteragentsInGroup
-=======================
+GetCounteragentsFromGroup
+=========================
 
-Метод ``GetCounteragentsInGroup`` возращает список контрагентов в группе.
+Метод ``GetCounteragentsFromGroup`` возращает список контрагентов в группе.
 
-.. http:get:: /GetCounteragentsInGroup
+.. http:get:: /GetCounteragentsFromGroup
 
 	:queryparam boxId: идентификатор ящика организации.
 	:queryparam counteragentGroupId: идентификатор группы контрагентов
-	:queryparam offset: номер страницы, которую нужно получить. Необязательный параметр. По умолчанию равен 1.
-	:queryparam limit:  количество групп контрагентов на одной странице. Может принимать значения от 1 до 100. Необязательный параметр. По умолчанию равен 100.
+	:queryparam afterIndexKey: уникальный ключ, позволяющий итерироваться по списку контрагентов. Необязательный параметр.
+	:queryparam count: максимальное количество контрагентов в ответе. Может принимать значения от 1 до 100. Необязательный параметр. По умолчанию равен 100.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -18,19 +18,24 @@ GetCounteragentsInGroup
 	:statuscode 402: у организации с указанным идентификатором ``boxId`` закончилась подписка на API.
 	:statuscode 404: не найдена группа контрагентов с идентификатором ``CounteragentGroupId``.
 	:statuscode 405: используется неподходящий HTTP-метод.
+	:statuscode 409: с контрагентом не установлены партнерские отношения.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-	:response Body: Тело ответа содержит структуру ``CounteragentInGroupResponse``:
+	:response Body: Тело ответа содержит структуру ``CounteragentFromGroupResponse``:
 
 		.. code-block:: protobuf
 
-		    message CounteragentInGroupResponse { 
-		        repeated string CounteragentId = 1;
+		    message CounteragentFromGroupResponse { 
+		        repeated string CounteragentBoxId = 1;
 		        required int32 TotalCount = 2;
+		        optional string AfterIndexKey = 3;
 		    }
 
-		- ``CounteragentId`` — список идентификаторов контрагентов.
+		- ``CounteragentId`` — список идентификаторов ящиков контрагентов.
 		- ``TotalCount`` — количество контрагентов в группе.
+		- ``AfterIndexKey`` — ключ для постраничного получения списка контрагентов.
+
+Получить список контрагентов в группе может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
 
 Метод вернет идентификатор контрагента ``CounteragentId``, если статус контрагента ``CounteragentStatus = IsMyCounteragent``. Узнать статус можно с помощью метода :doc:`GetOrganizationsByInnList`.
 
@@ -42,5 +47,6 @@ GetCounteragentsInGroup
 	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
 	- :doc:`UpdateCounteragentGroup` — редактирует группы контрагентов,
 	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
-	- :doc:`AddCounteragentsInGroup` — возращает список групп контрагентов,
-	- :doc:`GetCounteragentGroups` — возвращает список контрагентов в группе.
+	- :doc:`AddCounteragentToGroup` — возращает список групп контрагентов,
+	- :doc:`GetCounteragentGroups` — возвращает список контрагентов в группе,
+	- :doc:`GetCounteragentGroup` — возвращает информацию о группе контрагентов.

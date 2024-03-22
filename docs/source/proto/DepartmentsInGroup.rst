@@ -16,7 +16,6 @@ DepartmentsInGroup
 .. rubric:: Смотри также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/UpdateCounteragentGroup`,
 	- в теле запроса метода :doc:`../http/CreateCounteragentGroup`,
 	- в структуре :doc:`CounteragentGroup`, возвращаемой методами
 
