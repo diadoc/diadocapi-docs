@@ -6,7 +6,7 @@ GetCounteragentGroup
 .. http:get:: /GetCounteragentGroup
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam CounteragentGroupId: идентификатор группы контрагентов, обязательный.
+	:queryparam CounteragentGroupId: идентификатор группы контрагентов.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -21,7 +21,7 @@ GetCounteragentGroup
 
 	:response Body: Тело ответа содержит структуру :doc:`../proto/CounteragentGroup`.
 
-Для работы с этим методом пользователь должен быть сотрудником этой организации с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
+Получить информацию о группе контрагентов может только сотрудник организации с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
 
 ----
 
