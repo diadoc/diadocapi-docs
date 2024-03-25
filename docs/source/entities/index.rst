@@ -7,11 +7,12 @@
 	:maxdepth: 1
 	:titlesonly:
 
-	box
-	message
-	entity
-	draft
-	template
+	counteragent
 	packet
 	shelf
+	message
+	entity
 	tag
+	draft
+	template
+	box
