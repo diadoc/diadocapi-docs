@@ -1,6 +1,11 @@
 PowerOfAttorney
 ===============
 
+На этой странице помимо ``PowerOfAttorney`` описаны следующие структуры и перечисления:
+
+.. contents:: :local:
+
+
 Структура ``PowerOfAttorney`` предназначена для хранения информации о машиночитаемой доверенности (МЧД).
 
 .. code-block:: protobuf
@@ -15,7 +20,27 @@ PowerOfAttorney
         optional string IdFile = 7;
         repeated PowerOfAttorney DelegationChain = 8;
         required PowerOfAttorneyPermissionsInfo PermissionsInfo = 9;
+        optional PowerOfAttorneyDelegationInfo DelegationInfo = 10;
     }
+
+- ``FullId`` — идентификатор МЧД, представленный структурой :doc:`PowerOfAttorneyFullId`.
+- ``Issuer`` — данные о доверителе, представленные структурой :ref:`PowerOfAttorneyIssuer`.
+- ``Confidant`` — данные о представителе, представленные структурой :ref:`PowerOfAttorneyConfidant`.
+- ``StartAt`` — дата начала действия МЧД, представленная структурой :doc:`Timestamp`.
+- ``ExpireAt`` — срок действия МЧД, представленный структурой :doc:`Timestamp`.
+- ``System`` — информация о системе хранения доверенности.
+- ``IdFile`` — имя XML-файла МЧД без расширения.
+- ``DelegationChain`` — список файлов передоверенной МЧД и родительских МЧД. Каждая доверенность представлена структурой ``PowerOfAttorney``. Список вернется только в том случае, если в поле ``Contents`` структуры :doc:`PowerOfAttorneyToPost` была указана цепочка файлов МЧД. Список хранится в порядке от корневой МЧД (элемент с индексом ``0``) к дочерней, сама конечная МЧД в список не включена. Возвращается только методом :doc:`../http/GetPowerOfAttorneyInfo`.
+- ``PermissionsInfo`` — информация о полномочиях из МЧД, представленная структурой :doc:`PowerOfAttorneyPermissionsInfo`.
+- ``DelegationInfo`` — данные о предыдущих МЧД, представленные структурой :ref:`PowerOfAttorneyDelegationInfo`. Заполняется только в случае, если МЧД выпущена в порядке передоверия. Для цепочки передоверия из двух МЧД номер корневой доверенности и доверенности, на основании которой осуществляется передоверие, совпадают.
+
+
+.. _PowerOfAttorneyIssuer:
+
+PowerOfAttorneyIssuer
+---------------------
+
+Структура ``PowerOfAttorneyIssuer`` хранит данные о доверителе.
 
     message PowerOfAttorneyIssuer {
         optional PowerOfAttorneyIssuerType Type = 1 [default = UnknownIssuerType];
@@ -25,6 +50,20 @@ PowerOfAttorney
         optional PowerOfAttorneyIssuerPhysicalEntity PhysicalEntity = 5;
     }
 
+- ``Type`` — тип доверителя, принимает значение из перечисления :ref:`PowerOfAttorneyIssuerType`.
+- ``LegalEntity`` — данные о юридическом лице, представленные структурой :ref:`PowerOfAttorneyIssuerLegalEntity`. Заполняется только в случае, если тип доверителя имеет значение ``Type = LegalEntity``.
+- ``ForeignEntity`` — данные об иностранной организации, представленные структурой :ref:`PowerOfAttorneyIssuerForeignEntity`. Заполняется только в случае, если тип доверителя имеет значение ``Type = ForeignEntity``.
+- ``IndividualEntity`` — данные об индивидуальном предпринимателе, представленные структурой :ref:`PowerOfAttorneyIssuerIndividualEntity`. Заполняется в случае, если тип доверителя имеет значение ``Type = IndividualEntity``.
+- ``PhysicalEntity`` — данные о физическом лице, представленные структурой :ref:`PowerOfAttorneyIssuerPhysicalEntity`. Заполняется в случае, если тип доверителя имеет значение ``Type = PhysicalEntity``.
+
+
+.. _PowerOfAttorneyIssuerType:
+
+PowerOfAttorneyIssuerType
+-------------------------
+
+Перечисление ``PowerOfAttorneyIssuerType`` представляет собой тип доверителя.
+
     enum PowerOfAttorneyIssuerType {
         UnknownIssuerType = 0;
         LegalEntity = 1;
@@ -33,11 +72,36 @@ PowerOfAttorney
         PhysicalEntity = 4;
     }
 
+- ``LegalEntity`` — юридическое лицо;
+- ``ForeignEntity`` — иностранная организация;
+- ``IndividualEntity`` — индивидуальный предприниматель;
+- ``PhysicalEntity`` — физическое лицо.
+
+
+.. _PowerOfAttorneyIssuerLegalEntity:
+
+PowerOfAttorneyIssuerLegalEntity
+--------------------------------
+
+Структура ``PowerOfAttorneyIssuerLegalEntity`` хранит данные об иностранной организации, являющейся доверителем.
+
     message PowerOfAttorneyIssuerLegalEntity {
         required string Inn = 1;
         required string Kpp = 2;
         required string OrganizationName = 3;
     }
+
+- ``Inn`` — ИНН доверителя.
+- ``Kpp`` — КПП доверителя.
+- ``OrganizationName`` — наименование организации.
+
+
+.. _PowerOfAttorneyIssuerForeignEntity:
+
+PowerOfAttorneyIssuerForeignEntity
+----------------------------------
+
+Структура ``PowerOfAttorneyIssuerForeignEntity`` хранит данные о юридическом лице, являющимся доверителем.
 
     message PowerOfAttorneyIssuerForeignEntity {
         optional string Inn = 1;
@@ -45,15 +109,49 @@ PowerOfAttorney
         required string OrganizationName = 3;
     }
 
+- ``Inn`` — ИНН доверителя.
+- ``Kpp`` — КПП доверителя.
+- ``OrganizationName`` — наименование организации.
+
+
+.. _PowerOfAttorneyIssuerIndividualEntity:
+
+PowerOfAttorneyIssuerIndividualEntity
+-------------------------------------
+
+Структура ``PowerOfAttorneyIssuerIndividualEntity`` хранит данные об индивидуальном предпринимателе, являющимся доверителем.
+
     message PowerOfAttorneyIssuerIndividualEntity {
         required string Inn = 1;
         required string OrganizationName = 3;
     }
 
+- ``Inn`` — ИНН доверителя.
+- ``OrganizationName`` — наименование индивидуального предпринимателя.
+
+
+.. _PowerOfAttorneyIssuerPhysicalEntity:
+
+PowerOfAttorneyIssuerPhysicalEntity
+-----------------------------------
+
+Структура ``PowerOfAttorneyIssuerPhysicalEntity`` хранит данные о физическом лице, являющимся доверителем.
+
     message PowerOfAttorneyIssuerPhysicalEntity {
         required string Inn = 1;
         optional FullName PersonName = 2;
     }
+
+- ``Inn`` — ИНН доверителя.
+- ``PersonName`` — ФИО доверителя, представленные структурой :doc:`FullName`.
+
+
+.. _PowerOfAttorneyConfidant:
+
+PowerOfAttorneyConfidant
+------------------------
+
+Структура ``PowerOfAttorneyConfidant`` хранит данные о представителе.
 
     message PowerOfAttorneyConfidant {
         required FullName PersonName = 1;
@@ -61,60 +159,44 @@ PowerOfAttorney
         optional PowerOfAttorneyConfidantOrganization Organization = 3;
     }
 
+- ``PersonName`` — ФИО представителя, представленные структурой :doc:`FullName`.
+- ``Inn`` — ИНН представителя: физического или юридического лица. В случае юридического лица используется ИНН уполномоченного представителя этой организации, который может действовать без доверенности.
+- ``Organization`` — данные об организации, представленные структурой :ref:`PowerOfAttorneyConfidantOrganization`. Заполняется только в случае, если представителем является организация.
+
+
+.. _PowerOfAttorneyConfidantOrganization:
+
+PowerOfAttorneyConfidantOrganization
+------------------------------------
+
+Структура ``PowerOfAttorneyConfidantOrganization`` хранит данные об организации-представителе.
+
     message PowerOfAttorneyConfidantOrganization {
         required string Inn = 1;
         optional string Kpp = 2;
         required string Name = 3;
     }
-   
-- ``FullId`` — идентификатор МЧД, представленный структурой :doc:`PowerOfAttorneyFullId`.
-- ``Issuer`` — данные о доверителе, представленные структурой ``PowerOfAttorneyIssuer`` с полями:
 
-	- ``Type`` — тип доверителя, принимает значения из перечисления ``PowerOfAttorneyIssuerType``:
-	
-		- ``LegalEntity`` — юридическое лицо;
-		- ``ForeignEntity`` — иностранная организация;
-		- ``IndividualEntity`` — индивидуальный предприниматель;
-		- ``PhysicalEntity`` — физическое лицо.
-		
-	- ``LegalEntity`` — данные о юридическом лице. Используются в случае, если тип доверителя имеет значение ``Type=LegalEntity``. Представлены структурой ``PowerOfAttorneyIssuerLegalEntity`` с полями:
-	
-		- ``Inn`` — ИНН доверителя.
-		- ``Kpp`` — КПП доверителя.
-		- ``OrganizationName`` — наименование организации.
-		
-	- ``ForeignEntity`` — данные об иностранной организации. Используются в случае, если тип доверителя имеет значение ``Type=ForeignEntity``. Представлены структурой ``PowerOfAttorneyIssuerForeignEntity`` с полями:
-	
-		- ``Inn`` — ИНН доверителя.
-		- ``Kpp`` — КПП доверителя.
-		- ``OrganizationName`` — наименование организации.
+- ``Inn`` — ИНН представителя.
+- ``Kpp`` — КПП представителя.
+- ``Name`` — наименование организации.
 
-	- ``IndividualEntity`` — данные об индивидуальном предпринимателе. Используются в случае, если тип доверителя имеет значение ``Type=IndividualEntity``. Представлены структурой ``PowerOfAttorneyIssuerIndividualEntity`` с полями:
-	
-		- ``Inn`` — ИНН доверителя.
-		- ``OrganizationName`` — наименование индивидуального предпринимателя.
 
-	- ``PhysicalEntity`` — данные о физическом лице. Используются в случае, если тип доверителя имеет значение ``Type=PhysicalEntity``. Представлены структурой ``PowerOfAttorneyIssuerPhysicalEntity`` с полями:
-	
-		- ``Inn`` — ИНН доверителя.
-		- ``PersonName`` — ФИО доверителя, представленные структурой :doc:`FullName`.
-	
-- ``Confidant`` — данные о представителе, представленные структурой ``PowerOfAttorneyConfidant`` с полями:
+.. _PowerOfAttorneyDelegationInfo:
 
-	- ``PersonName`` — ФИО представителя, представленные структурой :doc:`FullName`.
-	- ``Inn`` — ИНН представителя: физического или юридического лица. В случае юридического лица используется ИНН уполномоченного представителя этой организации, который может действовать без доверенности.
-	- ``Organization`` — данные об организации. Используются в случае, если представителем является организация. Представлены структурой ``PowerOfAttorneyConfidantOrganization`` с полями:
-	
-		- ``Inn`` — ИНН представителя.
-		- ``Kpp`` — КПП представителя.
-		- ``Name`` — наименование организации.
+PowerOfAttorneyDelegationInfo
+-----------------------------
 
-- ``StartAt`` — дата начала действия МЧД, представленная структурой :doc:`Timestamp`.
-- ``ExpireAt`` — срок действия МЧД, представленный структурой :doc:`Timestamp`.
-- ``System`` — информация о системе хранения доверенности.
-- ``IdFile`` — имя xml-файла МЧД без расширения.
-- ``DelegationChain`` — список файлов передоверенной МЧД и родительских МЧД. Каждая доверенность представлена структурой ``PowerOfAttorney``. Список вернется только в том случае, если в поле ``Contents`` структуры :doc:`PowerOfAttorneyToPost` была указана цепочка файлов МЧД. Список хранится в порядке от корневой МЧД (элемент с индексом ``0``) к дочерней, сама конечная МЧД в список не включена. Возвращается только методом :doc:`../http/GetPowerOfAttorneyInfo`.
-- ``PermissionsInfo`` — информация о полномочиях из МЧД, представленная структурой :doc:`PowerOfAttorneyPermissionsInfo`.
+Структура ``PowerOfAttorneyDelegationInfo`` хранит данные о предыдущих МЧД.
+
+    message PowerOfAttorneyDelegationInfo {
+        required string RootRegistrationNumber = 1;
+        optional string ParentRegistrationNumber = 2;
+    }
+
+- ``RootRegistrationNumber`` — регистрационный номер корневой (первоначальной) доверенности.
+- ``ParentRegistrationNumber`` — регистрационный номер доверенности, на основании которой осуществляется передоверие.
+
 
 ----
 
