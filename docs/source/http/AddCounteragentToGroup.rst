@@ -6,8 +6,8 @@ AddCounteragentToGroup
 .. http:post:: /AddCounteragentToGroup
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam CounteragentGroupId: идентификатор группы контрагентов.
-	:queryparam CounteragentBoxId: идентификатор ящика контрагента.
+	:queryparam counteragentGroupId: идентификатор группы контрагентов.
+	:queryparam counteragentBoxId: идентификатор ящика контрагента.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -23,7 +23,7 @@ AddCounteragentToGroup
 
 Добавить контрагентов в группу может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
 
-Метод ``AddCounteragentToGroup`` добавляет в группу только контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``. Иначе метод вернет ошибку ``409 (Conflict )``.
+Метод ``AddCounteragentToGroup`` добавляет в группу только контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``, иначе метод вернет ошибку ``409 (Conflict )``.
 
 Узнать статус контрагента можно с помощью метода :doc:`GetOrganizationsByInnList`.
 
@@ -33,7 +33,8 @@ AddCounteragentToGroup
 
 *Другие методы для работы с группой контрагентов:*
 	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
-	- :doc:`UpdateCounteragentGroup` — редактирует группы контрагентов,
+	- :doc:`UpdateCounteragentGroup` — редактирует группу контрагентов,
 	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
 	- :doc:`GetCounteragentGroups` — возвращает список групп контрагентов,
-	- :doc:`GetCounteragentsFromGroup` — возвращает список контрагентов в группе.
+	- :doc:`GetCounteragentsFromGroup` — возвращает список контрагентов в группе,
+	- :doc:`GetCounteragentGroup` — возвращает информацию о группе контрагентов.

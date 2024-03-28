@@ -1,12 +1,12 @@
 UpdateCounteragentGroup
 =======================
 
-Метод ``UpdateCounteragentGroup`` предназначен для редактирования группы контрагентов.
+Метод ``UpdateCounteragentGroup`` позволяет редактировать группу контрагентов.
 
 .. http:post:: /UpdateCounteragentGroup
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam CounteragentGroupId: идентификатор группы контрагентов.
+	:queryparam counteragentGroupId: идентификатор группы контрагентов.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -26,7 +26,7 @@ UpdateCounteragentGroup
 
 		..
 
-		- ``Name`` — наименование группы контрагентов.
+		- ``Name`` — название группы контрагентов.
 		- ``GroupDepartments`` — подразделения, в которые контрагенты группы могут отправлять документы. Представлены структурой ``CounteragentGroupDepartmentPatch`` с полями:
 
 			- ``AnyDepartment`` — флаг, указывающий, что документы можно отправлять в любое подразделение.
@@ -50,7 +50,7 @@ UpdateCounteragentGroup
 
 	- Чтобы добавить или удалить подразделения, передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и обновленным списком подразделений.
 	- Чтобы изменить список подразделений на «любое подразделение», передайте структуру ``CounteragentGroupDepartmentPatch`` только с флагом ``AnyDepartment = true``.
-	- Если группа может отправлять документы в любое подразделение, то для указания списка подразделений передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и списком конкретных подразделений.
+	- Чтобы указать список конкретных подразделений для группы с разрешением отправлять документы в любое подразделение, передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и списком подразделений.
 
 ----
 

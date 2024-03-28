@@ -1,7 +1,7 @@
 GetCounteragentsFromGroup
 =========================
 
-Метод ``GetCounteragentsFromGroup`` возращает список контрагентов в группе.
+Метод ``GetCounteragentsFromGroup`` возращает список контрагентов, состоящих в указанной в группе.
 
 .. http:get:: /GetCounteragentsFromGroup
 
@@ -37,7 +37,7 @@ GetCounteragentsFromGroup
 
 Получить список контрагентов в группе может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
 
-Метод вернет только идентификаторы контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``. Узнать статус можно с помощью метода :doc:`GetOrganizationsByInnList`.
+Метод вернет только идентификаторы контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``. Узнать статус контрагента можно с помощью метода :doc:`GetOrganizationsByInnList`.
 
 ----
 
@@ -45,8 +45,8 @@ GetCounteragentsFromGroup
 
 *Другие методы для работы с группой контрагентов:*
 	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
-	- :doc:`UpdateCounteragentGroup` — редактирует группы контрагентов,
+	- :doc:`UpdateCounteragentGroup` — редактирует группу контрагентов,
 	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
-	- :doc:`AddCounteragentToGroup` — возращает список групп контрагентов,
-	- :doc:`GetCounteragentGroups` — возвращает список контрагентов в группе,
+	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу,
+	- :doc:`GetCounteragentGroups` — возвращает список групп контрагентов,
 	- :doc:`GetCounteragentGroup` — возвращает информацию о группе контрагентов.

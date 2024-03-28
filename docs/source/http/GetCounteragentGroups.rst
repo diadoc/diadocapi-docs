@@ -1,7 +1,7 @@
 GetCounteragentGroups
 =====================
 
-Метод ``GetCounteragentGroups`` возвращает список групп контрагентов.
+Метод ``GetCounteragentGroups`` возвращает список групп контрагентов указанной организации.
 
 .. http:get:: /GetCounteragentGroups
 
@@ -41,7 +41,7 @@ GetCounteragentGroups
 
 *Другие методы для работы с группой контрагентов:*
 	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
-	- :doc:`UpdateCounteragentGroup` — редактирует группы контрагентов,
+	- :doc:`UpdateCounteragentGroup` — редактирует группу контрагентов,
 	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
 	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу,
 	- :doc:`GetCounteragentsFromGroup` — возвращает список контрагентов в группе,

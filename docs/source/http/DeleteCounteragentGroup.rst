@@ -6,7 +6,7 @@ DeleteCounteragentGroup
 .. http:post:: /DeleteCounteragentGroup
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam CounteragentGroupId: идентификатор группы контрагентов.
+	:queryparam counteragentGroupId: идентификатор группы контрагентов.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 

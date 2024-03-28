@@ -16,7 +16,7 @@ GetOrganizationsByInnListResponse
         optional string MessageFromCounteragent = 4;
         optional string MessageToCounteragent = 5;
         optional DocumentId InvitationDocumentId = 6;
-        optional CounteragentGroup CounteragentGroupId = 7;
+        optional string CounteragentGroupId = 7;
     }
 
     enum CounteragentStatus {
@@ -51,7 +51,7 @@ GetOrganizationsByInnListResponse
 
 	- ``InvitationDocumentId`` — идентификатор документа, пришедшего вместе с приглашением. Представлен структурой :doc:`DocumentId`.
 
-	- ``CounteragentGroupId`` — информация о группе контрагентов, представленная структурой :doc:`CounteragentGroup`. Возвращается, если ``CounteragentStatus = IsMyCounteragent``.
+	- ``CounteragentGroupId`` — идентификатор группы, в которую добавлен контрагент. Возвращается, если статус контрагента ``CounteragentStatus = IsMyCounteragent``.
 
 ----
 

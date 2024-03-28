@@ -6,7 +6,7 @@ GetCounteragentGroup
 .. http:get:: /GetCounteragentGroup
 
 	:queryparam boxId: идентификатор ящика организации.
-	:queryparam CounteragentGroupId: идентификатор группы контрагентов.
+	:queryparam counteragentGroupId: идентификатор группы контрагентов.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -29,8 +29,8 @@ GetCounteragentGroup
 
 *Другие методы для работы с группой контрагентов:*
 	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
-	- :doc:`UpdateCounteragentGroup` — редактирует группы контрагентов,
+	- :doc:`UpdateCounteragentGroup` — редактирует группу контрагентов,
 	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
-	- :doc:`AddCounteragentToGroup` — возращает список групп контрагентов,
+	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу,
 	- :doc:`GetCounteragentGroups` — возвращает список групп контрагентов,
-	- :doc:`GetCounteragentsFromGroup` — возращает список контрагентов в группе.
+	- :doc:`GetCounteragentsFromGroup` — возвращает список контрагентов в группе.

@@ -23,4 +23,4 @@ CounteragentGroup
 	- в структуре :doc:`Counteragent`,
 	- в структуре :doc:`GetOrganizationsByInnListResponse`,
 	- в теле ответа метода :doc:`../http/CreateCounteragentGroup`,
-	- в теле ответа метода :doc:`../http/UpdateCounteragentGroup`,
+	- в теле ответа метода :doc:`../http/UpdateCounteragentGroup`.
