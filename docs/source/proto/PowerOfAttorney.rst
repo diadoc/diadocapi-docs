@@ -42,6 +42,8 @@ PowerOfAttorneyIssuer
 
 Структура ``PowerOfAttorneyIssuer`` хранит данные о доверителе.
 
+.. code-block:: protobuf
+
     message PowerOfAttorneyIssuer {
         optional PowerOfAttorneyIssuerType Type = 1 [default = UnknownIssuerType];
         optional PowerOfAttorneyIssuerLegalEntity LegalEntity = 2;
@@ -64,6 +66,8 @@ PowerOfAttorneyIssuerType
 
 Перечисление ``PowerOfAttorneyIssuerType`` представляет собой тип доверителя.
 
+.. code-block:: protobuf
+
     enum PowerOfAttorneyIssuerType {
         UnknownIssuerType = 0;
         LegalEntity = 1;
@@ -85,6 +89,8 @@ PowerOfAttorneyIssuerLegalEntity
 
 Структура ``PowerOfAttorneyIssuerLegalEntity`` хранит данные об иностранной организации, являющейся доверителем.
 
+.. code-block:: protobuf
+
     message PowerOfAttorneyIssuerLegalEntity {
         required string Inn = 1;
         required string Kpp = 2;
@@ -102,6 +108,8 @@ PowerOfAttorneyIssuerForeignEntity
 ----------------------------------
 
 Структура ``PowerOfAttorneyIssuerForeignEntity`` хранит данные о юридическом лице, являющимся доверителем.
+
+.. code-block:: protobuf
 
     message PowerOfAttorneyIssuerForeignEntity {
         optional string Inn = 1;
@@ -121,6 +129,8 @@ PowerOfAttorneyIssuerIndividualEntity
 
 Структура ``PowerOfAttorneyIssuerIndividualEntity`` хранит данные об индивидуальном предпринимателе, являющимся доверителем.
 
+.. code-block:: protobuf
+
     message PowerOfAttorneyIssuerIndividualEntity {
         required string Inn = 1;
         required string OrganizationName = 3;
@@ -137,6 +147,8 @@ PowerOfAttorneyIssuerPhysicalEntity
 
 Структура ``PowerOfAttorneyIssuerPhysicalEntity`` хранит данные о физическом лице, являющимся доверителем.
 
+.. code-block:: protobuf
+
     message PowerOfAttorneyIssuerPhysicalEntity {
         required string Inn = 1;
         optional FullName PersonName = 2;
@@ -152,6 +164,8 @@ PowerOfAttorneyConfidant
 ------------------------
 
 Структура ``PowerOfAttorneyConfidant`` хранит данные о представителе.
+
+.. code-block:: protobuf
 
     message PowerOfAttorneyConfidant {
         required FullName PersonName = 1;
@@ -171,6 +185,8 @@ PowerOfAttorneyConfidantOrganization
 
 Структура ``PowerOfAttorneyConfidantOrganization`` хранит данные об организации-представителе.
 
+.. code-block:: protobuf
+
     message PowerOfAttorneyConfidantOrganization {
         required string Inn = 1;
         optional string Kpp = 2;
@@ -188,6 +204,8 @@ PowerOfAttorneyDelegationInfo
 -----------------------------
 
 Структура ``PowerOfAttorneyDelegationInfo`` хранит данные о предыдущих МЧД.
+
+.. code-block:: protobuf
 
     message PowerOfAttorneyDelegationInfo {
         required string RootRegistrationNumber = 1;
