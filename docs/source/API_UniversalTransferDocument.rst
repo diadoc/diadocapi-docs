@@ -7,7 +7,6 @@
 -------------
 
 .. toctree::
-   :name: utdGeneration
    :maxdepth: 1
    :titlesonly:
    :glob:
@@ -19,7 +18,6 @@
 ------------
 
 .. toctree::
-   :name: utdSign
    :maxdepth: 1
    :titlesonly:
    :glob:
