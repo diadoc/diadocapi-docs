@@ -259,7 +259,7 @@ Document
 
 - ``UniversalCorrectionDocumentRevisionMetadata`` — дополнительные атрибуты исправлений УКД, представленные структурой :doc:`obsolete/UniversalDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientResponseStatus``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
-- ``AttachmentVersion`` — информация о версии XSD схемы, в соответствии с которой сформирован документ.
+- ``AttachmentVersion`` — информация о версии XSD схемы, в соответствии с которой сформирован документ. Теперь версия возвращается в поле ``Version``.
 
 ----
 

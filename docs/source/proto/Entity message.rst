@@ -282,7 +282,7 @@ Entity
 
 - ``IsEncryptedContent`` — флаг, указывающий, зашифрован ли контент документа.
 
-- ``AttachmentVersion`` — информация о версии XSD схемы, в соответствии с которой сформирована данная сущность.
+- ``AttachmentVersion`` — информация о версии XSD схемы, в соответствии с которой сформирована данная сущность. Поле устарело, используйте значение поля ``Version``.
 
 - ``ResolutionRouteAssignmentInfo`` — информация о запуске документа по маршруту согласования, представленная структурой :doc:`ResolutionRouteAssignmentInfo <ResolutionRouteInfo>`.  Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRouteAssignment``.
 
