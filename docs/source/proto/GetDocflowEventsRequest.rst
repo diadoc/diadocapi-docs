@@ -1,7 +1,7 @@
 GetDocflowEventsRequest
 =======================
 
-Структура ``GetDocflowEventsRequest`` представляет собой запрос на получение списка событий методом :doc:`../http/GetDocflowEvents`.
+Структура ``GetDocflowEventsRequest`` представляет собой запрос на получение списка событий методом :doc:`../http/GetDocflowEvents_V3`.
 
 .. code-block:: protobuf
 
@@ -47,7 +47,7 @@ GetDocflowEventsRequest
 .. rubric:: Смотри также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/GetDocflowEvents`.
+	- в теле запроса метода :doc:`../http/GetDocflowEvents_V3`.
 
 *Руководства:*
 	- :doc:`../Docflow API`

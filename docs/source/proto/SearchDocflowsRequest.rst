@@ -1,7 +1,7 @@
 SearchDocflowsRequest
 =====================
 
-Структура ``SearchDocflowsRequest`` представляет собой запрос для поиска документов методом :doc:`../http/SearchDocflows`.
+Структура ``SearchDocflowsRequest`` представляет собой запрос для поиска документов методом :doc:`../http/SearchDocflows_V3`.
 
 .. code-block:: protobuf
 
@@ -29,4 +29,4 @@ SearchDocflowsRequest
 .. rubric:: Смотри также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/SearchDocflows`.
+	- в теле запроса метода :doc:`../http/SearchDocflows_V3`.

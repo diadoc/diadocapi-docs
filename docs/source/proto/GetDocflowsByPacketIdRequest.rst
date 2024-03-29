@@ -1,7 +1,7 @@
 GetDocflowsByPacketIdRequest
 ============================
 
-Структура ``GetDocflowsByPacketIdRequest`` представляет собой запрос для получения документов методом :doc:`../http/GetDocflowsByPacketId`.
+Структура ``GetDocflowsByPacketIdRequest`` представляет собой запрос для получения документов методом :doc:`../http/GetDocflowsByPacketId_V3`.
 
 .. code-block:: protobuf
 
@@ -23,4 +23,7 @@ GetDocflowsByPacketIdRequest
 .. rubric:: Смотри также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/GetDocflowsByPacketId`.
+	- в теле запроса метода :doc:`../http/GetDocflowsByPacketId_V3`.
+
+*Руководства:*
+	- :doc:`../Docflow API`

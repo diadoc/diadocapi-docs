@@ -11,7 +11,7 @@ Document
         required string EntityId = 3;
         required sfixed64 CreationTimestampTicks = 4;
         optional string CounteragentBoxId = 5;
-        optional DocumentType DocumentType = 6 [default = UnknownDocumentType];
+        optional DocumentType DocumentType = 6;
         repeated DocumentId InitialDocumentIds = 7;
         repeated DocumentId SubordinateDocumentIds = 8;
         optional Content Content = 9;
@@ -205,7 +205,7 @@ Document
 Устаревшие поля
 ~~~~~~~~~~~~~~~
 
-- ``DocumentType`` — тип документа, принимает значения из перечисления :doc:`DocumentType`. Для новых типов значение всегда будет равно ``UnknownDocumentType``. Теперь тип документа возвращается в поле ``TypeNamedId``.
+- ``DocumentType`` — тип документа, принимает значения из перечисления :doc:`obsolete/DocumentType`. Для новых типов значение всегда будет равно ``UnknownDocumentType``. Теперь тип документа возвращается в поле ``TypeNamedId``.
 
 - ``DocumentDate`` — дата формирования документа в формате ДД.ММ.ГГГГ. Может отличаться от даты загрузки документа в Диадок. Теперь дата формирования возвращается в поле ``Metadata``.
 

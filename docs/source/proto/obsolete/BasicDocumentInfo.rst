@@ -4,14 +4,14 @@ BasicDocumentInfo
 .. warning::
 	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
 
-Структура ``BasicDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <../../proto/DocumentType>`:
+Структура ``BasicDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>`:
 
-- ``XmlTorg12``,
-- ``XmlAcceptanceCertificate``,
-- ``Torg12``,
-- ``AcceptanceCertificate``,
-- ``ProformaInvoice``, 
-- ``Torg13``.
+   - ``XmlTorg12``,
+   - ``XmlAcceptanceCertificate``,
+   - ``Torg12``,
+   - ``AcceptanceCertificate``,
+   - ``ProformaInvoice``, 
+   - ``Torg13``.
 
 .. code-block:: protobuf
 
@@ -33,4 +33,4 @@ BasicDocumentInfo
 .. rubric:: Смотри также
 
 *Структура используется:*
-	- в структуре :doc:`../../proto/DocumentInfo`.
+	- в структуре :doc:`DocumentInfo`.
