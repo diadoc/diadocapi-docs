@@ -11,7 +11,6 @@ HTTP-интерфейс версии 3
 -----------------------
 
 .. toctree::
-   :name: toc5
    :maxdepth: 2
    :titlesonly:
 
@@ -24,66 +23,41 @@ HTTP-интерфейс версии 3
 ----------------
 
 .. toctree::
-   :name: toc4
    :maxdepth: 2
    :titlesonly:
    :glob:
 
    proto/Attachment
-   proto/BilateralDocflow
-   proto/BuyerTitleDocflow
    proto/CertificateChainElement
    proto/CertificateVerificationResult
    proto/Content
-   proto/ContractDocumentInfo
    proto/CustomDataItem
-   proto/Docflow
    proto/DocflowV3
-   proto/DocflowEvent
    proto/DocflowEventV3
    proto/DocflowStatusV3
    proto/DocflowStatusModelV3
    proto/DocumentDateAndNumber
    proto/DocumentDirection
    proto/DocumentId
-   proto/DocumentInfo
    proto/DocumentInfoV3
-   proto/DocumentType
-   proto/DocumentWithDocflow
    proto/DocumentWithDocflowV3
    proto/Entity
-   proto/FetchedDocument
    proto/FetchedDocumentV3
    proto/GetDocflowBatchRequest
-   proto/GetDocflowBatchResponse
    proto/GetDocflowBatchResponseV3
    proto/GetDocflowEventsRequest
-   proto/GetDocflowEventsResponse
    proto/GetDocflowEventsResponseV3
    proto/GetDocflowRequest
    proto/GetDocflowsByPacketIdRequest
-   proto/GetDocflowsByPacketIdResponse
    proto/GetDocflowsByPacketIdResponseV3
-   proto/InboundInvoiceDocflow
-   proto/InboundInvoiceReceiptDocflow
-   proto/InvoiceConfirmationDocflow
-   proto/InvoiceCorrectionDocumentInfo
-   proto/InvoiceCorrectionRequestDocflow
-   proto/InvoiceDocumentInfo
-   proto/OutboundInvoiceDocflow
    proto/OuterDocflow
    proto/OuterDocflowEntities
-   proto/PriceListDocumentInfo
-   proto/ReceiptDocflow
-   proto/RecipientSignatureDocflow
-   proto/RecipientSignatureRejectionDocflow
    proto/ResolutionDocflowV3
-   proto/RevocationDocflow
    proto/RevocationDocflowV3
    proto/ResolutionEntitiesV3
    proto/ResolutionStatusDocflow
    proto/SearchDocflowsRequest
-   proto/SearchDocflowsResponse
+   proto/SearchDocflowsResponseV3
    proto/SearchScope
    proto/Signature
    proto/SignatureVerificationResult
@@ -91,21 +65,55 @@ HTTP-интерфейс версии 3
    proto/SortDirection
    proto/TimeBasedFilter
    proto/Timestamp
-   proto/UnilateralDocflow
-   proto/utd/docflow/*
-   proto/XmlBilateralDocflow
 
 Устаревший HTTP-интерфейс
 -------------------------
 
 Мы не рекомендуем использовать этот интерфейс в интеграционных решениях.
 
+Методы
+~~~~~~
+
 .. toctree::
-   :name: toc3
    :maxdepth: 2
    :titlesonly:
 
-   http/GetDocflows
-   http/GetDocflowsByPacketId
-   http/SearchDocflows
-   http/GetDocflowEvents
+   http/obsolete/GetDocflows
+   http/obsolete/GetDocflowsByPacketId
+   http/obsolete/SearchDocflows
+   http/obsolete/GetDocflowEvents
+   
+Структуры
+~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
+   proto/obsolete/BilateralDocflow
+   proto/obsolete/BuyerTitleDocflow
+   proto/obsolete/ContractDocumentInfo
+   proto/obsolete/Docflow
+   proto/obsolete/DocflowEvent
+   proto/obsolete/DocumentInfo
+   proto/obsolete/DocumentType
+   proto/obsolete/DocumentWithDocflow
+   proto/obsolete/FetchedDocument
+   proto/obsolete/GetDocflowBatchResponse
+   proto/obsolete/GetDocflowEventsResponse
+   proto/obsolete/GetDocflowsByPacketIdResponse
+   proto/obsolete/InboundInvoiceDocflow
+   proto/obsolete/InboundInvoiceReceiptDocflow
+   proto/obsolete/InvoiceConfirmationDocflow
+   proto/obsolete/InvoiceCorrectionDocumentInfo
+   proto/obsolete/InvoiceCorrectionRequestDocflow
+   proto/obsolete/InvoiceDocumentInfo
+   proto/obsolete/OutboundInvoiceDocflow
+   proto/obsolete/PriceListDocumentInfo
+   proto/obsolete/ReceiptDocflow
+   proto/obsolete/RecipientSignatureDocflow
+   proto/obsolete/RecipientSignatureRejectionDocflow
+   proto/obsolete/RevocationDocflow
+   proto/obsolete/SearchDocflowsResponse
+   proto/obsolete/UnilateralDocflow
+   proto/obsolete/XmlBilateralDocflow
