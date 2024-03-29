@@ -1,15 +1,18 @@
 GetDocflowsByPacketId
 ======================
 
+.. warning::
+	Метод относится к устаревшей версии Docflow API. Используйте метод :doc:`../GetDocflowsByPacketId_V3` последней версии :doc:`../../Docflow API` — V3.
+
 Метод ``GetDocflowsByPacketId`` возвращает список документов, находящихся в пакете.
 
 .. http:post:: /V2/GetDocflowsByPacketId
 
 	:queryparam boxId: идентификатор ящика организации.
 
-	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
+	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
 	
-	:request Body: Тело запроса должно содержать структуру :doc:`../proto/GetDocflowsByPacketIdRequest`.
+	:request Body: Тело запроса должно содержать структуру :doc:`../../proto/GetDocflowsByPacketIdRequest`.
 	
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -19,13 +22,13 @@ GetDocflowsByPacketId
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-	:response Body: Тело ответа содержит список документов, представленный структурой :doc:`../proto/GetDocflowsByPacketIdResponse`.
+	:response Body: Тело ответа содержит список документов, представленный структурой :doc:`../../proto/obsolete/GetDocflowsByPacketIdResponse`.
 	
 В ответе вернутся только те документы, к которым у пользователя есть доступ.
 
-Список документов в ответе может содержать не более 100 элементов. Если документов больше, их можно получить постранично. Для получения очередной страницы передайте в поле запроса :doc:`GetDocflowsByPacketIdRequest.AfterIndexKey <../proto/GetDocflowsByPacketIdRequest>` индекс последнего документа предыдущей страницы.
+Список документов в ответе может содержать не более 100 элементов. Если документов больше, их можно получить постранично. Для получения очередной страницы передайте в поле запроса :doc:`GetDocflowsByPacketIdRequest.AfterIndexKey <../../proto/GetDocflowsByPacketIdRequest>` индекс последнего документа предыдущей страницы.
 
-При вызове метода можно указать максимальное количество элементов на странице в поле :doc:`GetDocflowsByPacketIdRequest.Count <../proto/GetDocflowsByPacketIdRequest>`, но оно не должно превышать 100 элементов.
+При вызове метода можно указать максимальное количество элементов на странице в поле :doc:`GetDocflowsByPacketIdRequest.Count <../../proto/GetDocflowsByPacketIdRequest>`, но оно не должно превышать 100 элементов.
 
 Метод не гарантирует, что все страницы, кроме последней, будут содержать одинаковое максимальное количество документов. При разработке интеграционного решения учитывайте, что в очередной странице может не быть ни одного документа.
 
@@ -57,3 +60,13 @@ SDK
         if (response.NextPageIndexKey == null)
             break;
     }
+
+----
+
+.. rubric:: Смотри также
+
+*Другие методы для работы с Docflow:*
+	- :doc:`../../Docflow API`.
+
+*Руководства:*
+	- :doc:`../../Docflow API`
