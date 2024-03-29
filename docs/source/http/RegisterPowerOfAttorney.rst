@@ -22,7 +22,7 @@ RegisterPowerOfAttorney
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
 	:response Body: Тело ответа содержит идентификатор операции ``taskId`` в структуре :doc:`../proto/AsyncMethodResult`. По этому идентификатору с помощью метода :doc:`RegisterPowerOfAttorneyResult` можно узнать результат обработки запроса.
-	
+
 ----
 
 .. rubric:: Смотри также

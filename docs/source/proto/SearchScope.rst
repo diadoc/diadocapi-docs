@@ -1,6 +1,8 @@
 SearchScope
 ===========
 
+Перечисление ``SearchScope`` задает область поиска метода :doc:`../http/SearchDocflows_V3`.
+
 .. code-block:: protobuf
 
     enum SearchScope
@@ -12,10 +14,15 @@ SearchScope
         SearchScopeInternal = 4;
     }
 
-Задает область поиска метода :doc:`../http/SearchDocflows`.
+- ``SearchScopeAny`` — все документы в ящике.
+- ``SearchScopeIncoming`` — входящие.
+- ``SearchScopeOutgoing`` — исходящие.
+- ``SearchScopeDeleted`` — удаленные.
+- ``SearchScopeInternal`` — внутренние.
 
--  *SearchScopeAny* - все документы в ящике.
--  *SearchScopeIncoming* - входящие.
--  *SearchScopeOutgoing* - исходящие.
--  *SearchScopeDeleted* - удаленные.
--  *SearchScopeInternal* - внутренние.
+----
+
+.. rubric:: Смотри также
+
+*Перечисление используется:*
+	- в структуре :doc:`SearchDocflowsRequest`.

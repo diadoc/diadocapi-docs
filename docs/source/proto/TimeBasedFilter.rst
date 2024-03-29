@@ -1,6 +1,8 @@
 TimeBasedFilter
 ===============
 
+Структура ``TimeBasedFilter`` представляет собой фильтр, позволяющий ограничить по времени возвращаемые методом :doc:`../http/GetDocflowEvents_V3` события и указать порядок их сортировки.
+
 .. code-block:: protobuf
 
    message TimeBasedFilter
@@ -10,8 +12,14 @@ TimeBasedFilter
        optional SortDirection SortDirection = 3 [default = Ascending];
    }
 
-Структура представляет фильтр, который можно передать на :doc:`вход <GetDocflowEventsRequest>` методу :doc:`../http/GetDocflowEvents`. Фильтр позволяет ограничить по времени возвращаемые методом события и указать порядок их сортировки.
+- ``FromTimestamp`` — нижняя граница времени, представленная структурой :doc:`Timestamp`.
+- ``ToTimestamp`` — верхняя граница времени, представленная структурой :doc:`Timestamp`.
+- ``SortDirection`` — порядок сортировки событий, представленный структурой :doc:`SortDirection`.
 
--  :doc:`FromTimestamp <Timestamp>` - нижняя граница.
--  :doc:`ToTimestamp <Timestamp>` - верхняя граница.
--  :doc:`SortDirection` - порядок сортировки событий.
+----
+
+.. rubric:: Смотри также
+
+*Структура используется:*
+	- в структуре :doc:`GetDocflowEventsRequest`,
+	- в структуре ``GetForwardedDocumentEventsRequest``, передаваемой в теле запроса метода :doc:`../http/GetForwardedDocumentEvents`.
