@@ -445,7 +445,6 @@ redirects = {
      "proto/RecipientSignatureDocflow": "obsolete/RecipientSignatureDocflow.html",
      "proto/RecipientSignatureRejectionDocflow": "obsolete/RecipientSignatureRejectionDocflow.html",
      "proto/ReconciliationActAttachment": "obsolete/ReconciliationActAttachment.html",
-     "proto/ResolutionStatusDocflow": "obsolete/ResolutionStatusDocflow.html",
      "proto/RevocationDocflow": "obsolete/RevocationDocflow.html",
      "proto/SearchDocflowsResponse": "obsolete/SearchDocflowsResponse.html",
      "proto/ServiceDetailsAttachment": "obsolete/ServiceDetailsAttachment.html",
