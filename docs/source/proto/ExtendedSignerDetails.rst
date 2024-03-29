@@ -33,17 +33,24 @@ ExtendedSignerDetails
 - ``SignerStatus`` — статус подписанта, принимает значения из перечисления :doc:`SignerStatus`.
 - ``SignerPowersBase`` — основания полномочий (доверия) подписанта. Обязателен, если ``SignerStatus = 4``.
 - ``SignerOrgPowersBase`` — основания полномочий (доверия) организации. Обязателен, если ``SignerStatus = 3``.
-- ``SignerOrganizationName`` — наименование организации. Обязателен, если выполняются следующие условия:
+- ``SignerOrganizationName`` — наименование организации. Обязателен при вызове метода :doc:`../../http/PrepareDocumentsToSign`, если одновременно выполняются следующие условия:
 
-	- ``SignerType = LegalEntity``
+	- ``SignerType = LegalEntity``,
+	- поле ``TypeNamedId`` структуры :doc:`PrepareDocumentsToSignRequest` имеет значение ``XmlAcceptanceCertificate`` или ``XmlTorg12``,
+	- поле ``Version`` структуры :doc:`PrepareDocumentsToSignRequest` имеет одно из следующих значений:
 
-	- ``AttachmentVersion = tovtorg_05_01_02`` или ``rezru_05_01_01``
-
-	- вызван один из методов: :doc:`../http/obsolete/GenerateTorg12XmlForSeller`, :doc:`../http/obsolete/GenerateTorg12XmlForBuyer`, :doc:`../http/obsolete/GenerateAcceptanceCertificateXmlForSeller`, :doc:`../http/obsolete/GenerateAcceptanceCertificateXmlForBuyer`.
+		- ``tovtorg_05_01_02``,
+		- ``tovtorg_05_01_03``,
+		- ``tovtorg_05_01_04``,
+		- ``tovtorg_05_02_01``,
+		- ``rezru_05_01_01``,
+		- ``rezru_05_01_02``,
+		- ``rezru_05_02_01``.
 
 ----
 
 .. rubric:: Смотри также
 
 *Структура используется:*
+	- в структуре :doc:`utd/ExtendedSigner`,
 	- в теле ответа метода :doc:`../../http/utd/ExtendedSignerDetailsV2`.

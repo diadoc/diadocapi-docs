@@ -94,7 +94,7 @@
 
 Указать настройки редактирования можно только для :doc:`шаблона <entities/template>` или документа с :ref:`отложенной отправкой <doc_delaysend>`. Для этого используйте следующие методы:
 
-	- :doc:`http/PostTemplate` — для :ref:`шаблона <template_editing>`; укажите идентификатор настройки редактирования в поле ``EditingSettingId`` структуры :doc:`proto/TemplateDocumentAttachment`,
+	- :doc:`http/PostTemplate` — для шаблона; чтобы заполнить настройки редактирования, следуйте :ref:`инструкции <template_editing>`.
 	- :doc:`http/PostMessage` с параметром ``DelaySend`` — для исходящего неотправленного документа; укажите идентификатор настройки редактирования в поле ``EditingSettingId`` структуры :doc:`proto/DocumentAttachment`.
 
 Добавление метки технологического партнера

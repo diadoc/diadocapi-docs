@@ -24,7 +24,7 @@ PrepareDocumentsToSignRequest
         required DocumentId DocumentId = 1;
         optional Signer Signer = 2;
         repeated ExtendedSigner ExtendedSigner = 3;
-         optional bytes SignerContent = 4;
+        optional bytes SignerContent = 4;
     }
 
     message ContentToPatch {
