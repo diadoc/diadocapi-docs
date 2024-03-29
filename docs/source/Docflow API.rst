@@ -1,7 +1,7 @@
 Docflow API
 ===========
 
-**Docflow API**   это набор структур данных и HTTP интерфейс для работы в Диадоке. 
+**Docflow API** это набор структур данных и HTTP интерфейс для работы в Диадоке. 
 
 С помощью Docflow API можно получать из системы данные о документах и следить за происходящими в ящиках событиями. Этот подход является альтернативой чтению событий через :doc:`http/GetNewEvents`.
 
@@ -19,22 +19,6 @@ HTTP-интерфейс версии 3
    http/GetDocflowsByPacketId_V3
    http/SearchDocflows_V3
    http/GetDocflowEvents_V3
-
-
-HTTP-интерфейс (устаревший)
----------------------------
-
-.. toctree::
-   :name: toc3
-   :maxdepth: 2
-   :titlesonly:
-
-   http/GetDocflows
-   http/GetDocflowsByPacketId
-   http/SearchDocflows
-   http/GetDocflowEvents
-
-
 
 Структуры данных
 ----------------
@@ -110,3 +94,18 @@ HTTP-интерфейс (устаревший)
    proto/UnilateralDocflow
    proto/utd/docflow/*
    proto/XmlBilateralDocflow
+
+Устаревший HTTP-интерфейс
+-------------------------
+
+Мы не рекомендуем использовать этот интерфейс в интеграционных решениях.
+
+.. toctree::
+   :name: toc3
+   :maxdepth: 2
+   :titlesonly:
+
+   http/GetDocflows
+   http/GetDocflowsByPacketId
+   http/SearchDocflows
+   http/GetDocflowEvents
