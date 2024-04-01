@@ -1,13 +1,22 @@
-AutosignReceiptsResult
+AutoSignReceiptsResult
 ======================
+
+Структура ``AutoSignReceiptsResult`` представляет собой состояние задачи на подписание извещений о получении InvoiceReceipt.
 
 .. code-block:: protobuf
 
-            message AutosignReceiptsResult {
+            message AutoSignReceiptsResult {
                 required int64 SignedReceiptsCount = 1;
                 required string NextBatchKey = 2;
             }
 
 
-- *SignedReceiptsCount* - Количество подписанных уведомлений.
-- *NextBatchKey* - Идентификатор следующей пачки уведомлений для подписания.
+- ``SignedReceiptsCount`` — количество подписанных извещений.
+- ``NextBatchKey`` — идентификатор следующей пачки извещений для подписания.
+
+----
+
+.. rubric:: См. также
+
+*Структура используется:*
+	- в теле ответа метода :doc:`../http/AutoSignReceiptsResult`.
