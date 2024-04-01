@@ -103,7 +103,7 @@ GetForwardedDocumentEvents
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Другие методы для работы с событиями:*
 	- :doc:`GetNewEvents` — возвращает ленту событий в ящике.

@@ -36,7 +36,7 @@ SignedContent
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в структуре :doc:`MessagePatchToPost` в теле запроса метода :doc:`../http/PostMessagePatch`,

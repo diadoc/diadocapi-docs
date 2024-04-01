@@ -16,7 +16,7 @@ SearchDocflowsResponseV3
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в теле ответа метода :doc:`../http/SearchDocflows_V3`.

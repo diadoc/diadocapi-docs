@@ -20,7 +20,7 @@ GetDocflowsByPacketIdRequest
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в теле запроса метода :doc:`../http/GetDocflowsByPacketId`.

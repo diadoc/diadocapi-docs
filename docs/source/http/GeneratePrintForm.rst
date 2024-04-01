@@ -32,7 +32,7 @@ GeneratePrintForm
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Другие методы для работы с печатными формами:*
 	- :doc:`GenerateForwardedDocumentPrintForm` — генерирует печатную форму пересланного документа.

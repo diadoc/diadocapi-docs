@@ -19,7 +19,7 @@ PowerOfAttorneyInfo
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в структуре :doc:`Entity message`.

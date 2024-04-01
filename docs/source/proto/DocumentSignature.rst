@@ -50,7 +50,7 @@ DocumentSignature
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в структуре :doc:`MessageToPost` при отправке документов методом :doc:`../http/PostMessagePatch`.

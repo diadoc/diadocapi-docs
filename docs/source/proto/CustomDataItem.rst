@@ -16,7 +16,7 @@ CustomDataItem
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Руководства:*
 	- :doc:`../entities/tag`

@@ -40,7 +40,7 @@ SignerPowers
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Перечисление используется:*
 	- в структуре :doc:`ExtendedSignerDetailsToPost`,
