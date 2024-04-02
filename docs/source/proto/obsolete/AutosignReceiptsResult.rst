@@ -1,7 +1,10 @@
 AutoSignReceiptsResult
 ======================
 
-Структура ``AutoSignReceiptsResult`` представляет собой состояние задачи на подписание извещений о получении InvoiceReceipt.
+.. warning::
+	Структура используется устаревшим методом :doc:`../../http/obsolete/AutoSignReceiptsResult`.
+
+Структура ``AutoSignReceiptsResult`` представляет собой состояние задачи на подписание извещений о получении ``InvoiceReceipt``.
 
 .. code-block:: protobuf
 
@@ -19,4 +22,4 @@ AutoSignReceiptsResult
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/AutoSignReceiptsResult`.
+	- в теле ответа метода :doc:`../../http/obsolete/AutoSignReceiptsResult`.

@@ -430,5 +430,10 @@ redirects = {
      "proto/utd/UniversalCorrectionDocumentSellerTitleInfo": "../obsolete/UniversalCorrectionDocumentSellerTitleInfo.html",
      "proto/utd/UniversalDocumentMetadata": "../obsolete/UniversalDocumentMetadata.html",
      "proto/utd/UniversalTransferDocumentBuyerTitleInfo": "../obsolete/UniversalTransferDocumentBuyerTitleInfo.html",
-     "proto/utd/UniversalTransferDocumentSellerTitleInfo": "../obsolete/UniversalTransferDocumentSellerTitleInfo.html"
+     "proto/utd/UniversalTransferDocumentSellerTitleInfo": "../obsolete/UniversalTransferDocumentSellerTitleInfo.html",
+     
+     # cloud sign methods and structures
+     "http/AutoSignReceipts": "obsolete/AutoSignReceipts.html",
+     "http/AutoSignReceiptsResult": "obsolete/AutoSignReceiptsResult.html",
+     "proto/AutoSignReceiptsResult": "obsolete/AutoSignReceiptsResult.html"
 }
