@@ -5,7 +5,7 @@ GeneratePrintForm
 
 .. http:get:: /GeneratePrintForm
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam documentId: идентификатор документа в сообщении, для которого нужно сгенерировать печатную форму.
 	

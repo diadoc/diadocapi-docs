@@ -5,7 +5,7 @@ GetBox
 
 .. http:get:: /GetBox
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	
 	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``DiadocAuth ddauth_api_client_id``.
 	

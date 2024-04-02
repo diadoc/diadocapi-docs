@@ -7,7 +7,7 @@ GenerateTorg12XmlForBuyer
 .. http:post:: /GenerateTorg12XmlForBuyer
 
 	:queryparam documentVersion: версия документа.
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../../entities/box>` организации.
 	:queryparam sellerTitleMessageId: идентификатор сообщения, содержащего соответствующий титул продавца.
 	:queryparam sellerTitleAttachmentId: идентификатор сущности, представляющей титул продавца, для которого требуется изготовить титул заказчика.
 

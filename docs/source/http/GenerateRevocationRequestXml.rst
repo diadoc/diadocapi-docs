@@ -15,7 +15,7 @@ v2
 
 .. http:post:: /V2/GenerateRevocationRequestXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam attachmentId: идентификатор сущности документа, для которого нужно сгенерировать предложение об аннулировании.
 	:queryparam contentTypeId: версия предложения об аннулировании, которое нужно сгенерировать. Принимает значения:
@@ -57,7 +57,7 @@ v1
 
 .. http:post:: /GenerateRevocationRequestXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam attachmentId: идентификатор сущности документа, для которого нужно сгенерировать предложение об аннулировании.
 

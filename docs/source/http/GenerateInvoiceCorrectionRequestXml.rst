@@ -15,7 +15,7 @@ GenerateInvoiceCorrectionRequestXml V2
 
 .. http:post:: /V2/GenerateInvoiceCorrectionRequestXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -44,7 +44,7 @@ GenerateInvoiceCorrectionRequestXml
 
 .. http:post:: /GenerateInvoiceCorrectionRequestXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam attachmentId: идентификатор сущности СФ/ИСФ/КСФ/ИКСФ, для которой нужно сформировать уведомление об уточнении.
 

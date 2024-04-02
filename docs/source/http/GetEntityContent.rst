@@ -5,7 +5,7 @@ GetEntityContent
 
 .. http:get:: /V4/GetEntityContent
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam entityId: идентификатор сущности.
 

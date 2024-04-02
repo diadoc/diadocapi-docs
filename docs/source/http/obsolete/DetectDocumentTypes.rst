@@ -8,7 +8,7 @@ DetectDocumentTypes
 
 .. http:post:: /DetectDocumentTypes
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../../entities/box>` организации.
 	:queryparam nameOnShelf: имя файла на :doc:`полке документов<../../entities/shelf>`.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.

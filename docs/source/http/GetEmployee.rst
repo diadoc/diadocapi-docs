@@ -6,7 +6,7 @@ GetEmployee
 
 .. http:get:: /GetEmployee
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam userId: идентификатор пользователя.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.

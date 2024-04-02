@@ -5,7 +5,7 @@ Restore
 
 .. http:post:: /Restore
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam documentId: идентификатор документа в сообщении. Необязательный параметр.
 	

@@ -7,7 +7,7 @@ GenerateAcceptanceCertificateXmlForBuyer
 .. http:post:: /GenerateAcceptanceCertificateXmlForBuyer
 
 	:queryparam documentVersion: версия документа.
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../../entities/box>` организации.
 	:queryparam sellerTitleMessageId: идентификатор сообщения, содержащего соответствующий титул исполнителя.
 	:queryparam sellerTitleAttachmentId: идентификатор сущности, представляющей титул исполнителя, для которого требуется изготовить титул заказчика.
 

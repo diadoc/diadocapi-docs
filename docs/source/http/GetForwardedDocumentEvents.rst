@@ -1,11 +1,11 @@
 GetForwardedDocumentEvents
 ==========================
  
-Метод ``GetForwardedDocumentEvents`` возвращает список событий пересылки документов в ящик ``boxId``.
+Метод ``GetForwardedDocumentEvents`` возвращает список событий пересылки документов в указанный ящик.
  
 .. http:post:: /V2/GetForwardedDocumentEvents
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 

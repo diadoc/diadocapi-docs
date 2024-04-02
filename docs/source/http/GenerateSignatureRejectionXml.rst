@@ -16,7 +16,7 @@ GenerateSignatureRejectionXml V2
 
 .. http:post:: /V2/GenerateSignatureRejectionXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -45,7 +45,7 @@ GenerateSignatureRejectionXml
 
 .. http:post:: /GenerateSignatureRejectionXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam attachmentId: идентификатор документа, для которого требуется сформировать отказ в подписи или идентификатор сущности предложения об аннулировании, для которой требуется сформировать отказ.
 

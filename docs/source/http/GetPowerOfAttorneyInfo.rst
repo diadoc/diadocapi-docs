@@ -5,7 +5,7 @@ GetPowerOfAttorneyInfo
 
 .. http:get:: /GetPowerOfAttorneyInfo
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения, в котором находится МЧД.
 	:queryparam entityId: идентификатор МЧД.
 

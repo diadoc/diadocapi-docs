@@ -15,7 +15,7 @@ GenerateReceiptXml V2
 
 .. http:post:: /V2/GenerateReceiptXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -56,7 +56,7 @@ GenerateReceiptXml
 
 .. http:post:: /GenerateReceiptXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam attachmentId: идентификатор :doc:`сущности <../proto/Entity message>`, для которой требуется сформировать ИоП.
 

@@ -5,7 +5,7 @@ GetNewEvents
 
 .. http:get:: /V7/GetNewEvents
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam afterEventId: идентификатор последнего полученного события. Параметр устарел. Рекомендуем использовать параметр ``afterIndexKey``.
 	:queryparam afterIndexKey: уникальный ключ, позволяющий итерироваться по списку событий. Нельзя указывать одновременно с ``afterEventId``. Необязательный параметр.
 	:queryparam departmentId: идентификатор подразделения, из которого производится выборка документов.
