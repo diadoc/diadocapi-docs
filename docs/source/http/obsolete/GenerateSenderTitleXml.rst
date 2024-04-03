@@ -6,7 +6,7 @@ GenerateSenderTitleXml
 
 .. http:post:: /GenerateSenderTitleXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../../entities/box>` организации.
 	:queryparam documentTypeNamedId: уникальный строковый идентификатор типа документа.
 	:queryparam documentFunction: строковый идентификатор функции, уникальный в рамках типа документа.
 	:queryparam documentVersion: строковый идентификатор версии, уникальный в рамках функции типа документа.

@@ -7,7 +7,7 @@ GenerateRecipientTitleXml
 .. http:post:: /GenerateRecipientTitleXml
 
 	:queryparam documentVersion: строковый идентификатор версии типа документа. Если не указан, то по умолчанию используется значение версии взятое из документа, для которого выполняется генерация титула.
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../../entities/box>` организации.
 	:queryparam senderTitleMessageId: идентификатор сообщения, содержащего соответствующий титул продавца.
 	:queryparam senderTitleAttachmentId: идентификатор сущности, представляющей титул продавца, для которого требуется изготовить титул заказчика.
 

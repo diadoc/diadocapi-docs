@@ -8,7 +8,7 @@ GetTemplate
 
 .. http:get:: /GetTemplate
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../../entities/box>` организации.
 	:queryparam templateId: идентификатор сообщения.
 	:queryparam entityId: идентификатор документа из сообщения. Необязательный параметр; если указан, то возвращаются только сущности, связанные с данным документом.
 
