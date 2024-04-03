@@ -458,6 +458,7 @@ redirects = {
      "proto/UnilateralDocumentMetadata": "obsolete/UnilateralDocumentMetadata.html",
      "proto/XmlBilateralDocflow": "obsolete/XmlBilateralDocflow.html",
      "proto/XmlDocumentAttachment": "obsolete/XmlDocumentAttachment.html",
+     "proto/DocumentWorkflowSettings": "obsolete/DocumentWorkflowSettings.html",
      "proto/utd/ExtendedOrganizationInfo": "../obsolete/ExtendedOrganizationInfo.html",
      "proto/utd/UniversalCorrectionDocumentSellerTitleInfo": "../obsolete/UniversalCorrectionDocumentSellerTitleInfo.html",
      "proto/utd/UniversalDocumentMetadata": "../obsolete/UniversalDocumentMetadata.html",

@@ -116,7 +116,7 @@
 
 - Реализована возможность получения свойств :doc:`вида документооборота <../proto/DocumentWorkflow>`:
 
- - добавлена структура :doc:`proto/DocumentWorkflowSettings` для хранения свойств вида документооборота;
+ - добавлена структура :doc:`proto/obsolete/DocumentWorkflowSettings` для хранения свойств вида документооборота;
  - реализован метод :doc:`http/GetWorkflowsSettings` для получения свойств вида документооборота.
  
 

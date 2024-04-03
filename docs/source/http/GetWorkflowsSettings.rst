@@ -48,7 +48,7 @@ GetWorkflowsSettings
 	:statuscode 404: не найден ящик с указанным идентификатором.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 	
-	:response Body: Тело ответа содержит коллекцию структур :doc:`../proto/DocumentWorkflowSettings`, содержащих свойства вида документооборота.
+	:response Body: Тело ответа содержит коллекцию структур :doc:`../proto/obsolete/DocumentWorkflowSettings`, содержащих свойства вида документооборота.
 
 ----
 

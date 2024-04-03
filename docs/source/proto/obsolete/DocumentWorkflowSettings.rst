@@ -1,9 +1,12 @@
 ﻿DocumentWorkflowSettings
 ========================
 
-Структура ``DocumentWorkflowSettings`` используется для хранения информации о свойствах вида документооборота :doc:`../proto/DocumentWorkflow`.
+.. warning::
+	Структура используется устаревшим методом :ref:`GetWorkflowsSettings_v1`.
 
-Подробно о видах документооборота написано на странице :doc:`../docflows/Workflows`.
+Структура ``DocumentWorkflowSettings`` используется для хранения информации о свойствах вида документооборота :doc:`../../proto/DocumentWorkflow`.
+
+Подробно о видах документооборота написано на странице :doc:`../../docflows/Workflows`.
 
 .. code-block:: protobuf
 
@@ -172,14 +175,14 @@
 
 
 .. note::
-	На странице :doc:`../docflows/Workflows` приведена справочная таблица со свойствами всех видов документооборота.
+	На странице :doc:`../../docflows/Workflows` приведена справочная таблица со свойствами всех видов документооборота.
 	
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/GetWorkflowsSettings`.
+	- в теле ответа метода :ref:`GetWorkflowsSettings_v1`.
 	
 *Руководства:*
-	- :doc:`../docflows/Workflows`
+	- :doc:`../../docflows/Workflows`
