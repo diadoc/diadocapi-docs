@@ -15,7 +15,7 @@ GetWorkflowsSettings V2
 
 .. http:get:: /V2/GetWorkflowsSettings
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -36,7 +36,7 @@ GetWorkflowsSettings
 
 .. http:get:: /GetWorkflowsSettings
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -52,7 +52,7 @@ GetWorkflowsSettings
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Руководства:*
 	- :doc:`../docflows/Workflows`

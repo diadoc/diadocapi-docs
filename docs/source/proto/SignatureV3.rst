@@ -28,7 +28,7 @@ SignatureV3
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в теле ответа метода :doc:`V3/GetDocflowEvents <../http/GetDocflowEvents_V3>`,

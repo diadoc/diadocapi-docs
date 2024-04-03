@@ -5,7 +5,7 @@ PrevalidatePowerOfAttorney
 
 .. http:post:: /PrevalidatePowerOfAttorney
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam registrationNumber: регистрационный номер МЧД.
 	:queryparam issuerInn: ИНН доверителя.
 
@@ -41,7 +41,7 @@ PrevalidatePowerOfAttorney
 	
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

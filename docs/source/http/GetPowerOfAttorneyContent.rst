@@ -14,7 +14,7 @@ v2
 
 .. http:get:: /V2/GetPowerOfAttorneyContent
 
-	:queryparam boxid: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageid: идентификатор сообщения.
 	:queryparam entityid: идентификатор МЧД.
 
@@ -61,7 +61,7 @@ v1
 
 .. http:get:: /GetPowerOfAttorneyContent
 
-	:queryparam boxid: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageid: идентификатор сообщения.
 	:queryparam entityid: идентификатор МЧД.
 
@@ -92,7 +92,7 @@ v1
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

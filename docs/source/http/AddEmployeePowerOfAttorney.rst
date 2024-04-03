@@ -5,7 +5,7 @@ AddEmployeePowerOfAttorney
 
 .. http:post:: /AddEmployeePowerOfAttorney
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam userId: идентификатор сотрудника, к которому требуется привязывать МЧД. Если не указан, то МЧД будет привязана к пользователю, от имени которого вызывается метод.
 	:queryparam registraionNumber: регистрационный номер МЧД.
 	:queryparam issuerInn: ИНН доверителя.
@@ -29,7 +29,7 @@ AddEmployeePowerOfAttorney
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

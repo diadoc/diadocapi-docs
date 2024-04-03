@@ -3,7 +3,7 @@ GetDocument
 
 .. http:get:: /V3/GetDocument
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения, содержащего искомый документ.
 	:queryparam entityId: идентификатор сущности типа ``LetterAttachment`` внутри сообщения ``messageId``, представляющей искомый документ.
 	:queryparam injectEntityContent: параметр, указывающий нужно ли возвращать содержимое документа. Если имеет значение ``true``, то содержимое документа будет добавлено в поле ответа ``Content.Data``. Необязательный параметр, по умолчанию равен ``true``.

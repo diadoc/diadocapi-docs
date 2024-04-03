@@ -5,7 +5,7 @@ GetSignatureInfo
 
 .. http:get:: /GetSignatureInfo
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam messageId: идентификатор сообщения.
 	:queryparam entityId: идентификатор подписи, относящейся к этому документу.
 	

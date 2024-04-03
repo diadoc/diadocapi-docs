@@ -5,7 +5,7 @@ DeleteEmployeePowerOfAttorney
 
 .. http:post:: /DeleteEmployeePowerOfAttorney
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam userId: идентификатор сотрудника, от которого требуется отвязать МЧД. Если не указан, то МЧД будет отвязана от пользователя, от имени которого вызывается метод.
 	:queryparam registrationNumber: регистрационный номер МЧД.
 	:queryparam issuerInn: ИНН доверителя.
@@ -30,7 +30,7 @@ DeleteEmployeePowerOfAttorney
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

@@ -8,7 +8,7 @@ GetDepartment
 
 .. http:get:: /admin/GetDepartment
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../../entities/box>` организации.
 	:queryparam departmentId: идентификатор подразделения организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.

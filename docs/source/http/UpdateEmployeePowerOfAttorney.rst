@@ -6,7 +6,7 @@ UpdateEmployeePowerOfAttorney
 
 .. http:post:: /UpdateEmployeePowerOfAttorney
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam userId: идентификатор сотрудника. Если не указан, то будет изменена МЧД пользователя, от имени которого вызывается метод.
 	:queryparam registrationNumber: регистрационный номер МЧД.
 	:queryparam issuerInn: ИНН доверителя.
@@ -35,7 +35,7 @@ UpdateEmployeePowerOfAttorney
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

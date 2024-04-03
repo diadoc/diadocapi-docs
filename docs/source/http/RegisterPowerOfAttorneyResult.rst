@@ -5,7 +5,7 @@ RegisterPowerOfAttorneyResult
 
 .. http:get:: /RegisterPowerOfAttorneyResult
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam taskId: идентификатор операции, полученный методом :doc:`RegisterPowerOfAttorney`.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
@@ -25,7 +25,7 @@ RegisterPowerOfAttorneyResult
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

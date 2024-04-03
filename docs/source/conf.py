@@ -466,5 +466,10 @@ redirects = {
      "proto/utd/docflow/InboundUniversalTransferDocumentDocflow": "../../obsolete/InboundUniversalTransferDocumentDocflow.html",
      "proto/utd/docflow/OutboundUniversalTransferDocumentDocflow": "../../obsolete/OutboundUniversalTransferDocumentDocflow.html",
      "proto/utd/docflow/UniversalCorrectionDocumentInfo": "../../obsolete/UniversalCorrectionDocumentInfo.html",
-     "proto/utd/docflow/UniversalTransferDocumentInfo": "../../obsolete/UniversalTransferDocumentInfo.html"
+     "proto/utd/docflow/UniversalTransferDocumentInfo": "../../obsolete/UniversalTransferDocumentInfo.html",
+     
+     # cloud sign methods and structures
+     "http/AutoSignReceipts": "obsolete/AutoSignReceipts.html",
+     "http/AutoSignReceiptsResult": "obsolete/AutoSignReceiptsResult.html",
+     "proto/AutoSignReceiptsResult": "obsolete/AutoSignReceiptsResult.html"
 }

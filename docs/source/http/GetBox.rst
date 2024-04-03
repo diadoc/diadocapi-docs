@@ -1,11 +1,11 @@
 GetBox
 ======
 
-Метод ``GetBox`` возвращает информацию о ящике с указанным идентификатором.
+Метод ``GetBox`` возвращает информацию о :doc:`ящике <../entities/box>` с указанным идентификатором.
 
 .. http:get:: /GetBox
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	
 	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``DiadocAuth ddauth_api_client_id``.
 	

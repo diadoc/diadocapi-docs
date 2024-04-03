@@ -5,7 +5,7 @@ GetDocflows (версия 3)
 
 .. http:post:: /V3/GetDocflows
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 

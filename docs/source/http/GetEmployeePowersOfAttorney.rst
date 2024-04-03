@@ -5,7 +5,7 @@ GetEmployeePowersOfAttorney
 
 .. http:get:: /GetEmployeePowersOfAttorney
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam userId: идентификатор сотрудника. Если не указан, то метод вернет МЧД пользователя, от имени которого вызывается метод.
 	:queryparam onlyActual: признак того, что нужно возвращать только действующие МЧД. По умолчанию имеет значение ``false``.
 
@@ -38,7 +38,7 @@ GetEmployeePowersOfAttorney
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Руководства:*
 	- :doc:`Как работать с МЧД <../howto/powerofattorney>`

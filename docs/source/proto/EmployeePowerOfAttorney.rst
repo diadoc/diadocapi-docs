@@ -15,7 +15,7 @@ EmployeePowerOfAttorney
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в структуре ``EmployeePowerOfAttorneyList``, возвращаемой методом :doc:`../http/GetEmployeePowersOfAttorney`,

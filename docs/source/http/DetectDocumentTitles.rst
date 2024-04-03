@@ -5,14 +5,14 @@ DetectDocumentTitles
 
 .. http:post:: /DetectDocumentTitles
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:request Body: Тело запроса должно содержать бинарные данные документа.
 
 
 .. http:get:: /DetectDocumentTitles
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam nameOnShelf: имя файла на :doc:`полке документов<../entities/shelf>`.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.

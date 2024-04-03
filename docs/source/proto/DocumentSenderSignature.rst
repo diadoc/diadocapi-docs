@@ -27,7 +27,7 @@ DocumentSenderSignature
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в структуре :doc:`DraftToSend` при отправке документов методом :doc:`../http/SendDraft`.

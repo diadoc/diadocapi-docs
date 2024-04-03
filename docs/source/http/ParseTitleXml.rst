@@ -24,7 +24,7 @@ Xml-файлы документов имеют сложную структуру
 
 .. http:post:: /ParseTitleXml
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam documentTypeNamedId: уникальный строковый идентификатор типа документа.
 	:queryparam documentFunction: строковый идентификатор функции, уникальный в рамках типа документа.
 	:queryparam documentVersion: строковый идентификатор версии типа документа, уникальный в рамках функции типа документа.

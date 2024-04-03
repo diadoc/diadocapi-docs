@@ -5,7 +5,7 @@ DssSignResult
 
 .. http:get:: /DssSignResult
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 	:queryparam taskId: идентификатор операции, полученный методом :doc:`DssSign`.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.

@@ -5,7 +5,7 @@ GetLastEvent
 
 .. http:get:: /GetLastEvent
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -33,7 +33,7 @@ GetLastEvent
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Другие методы для работы с событиями:*
 	- :doc:`GetNewEvents` — возвращает ленту событий в ящике.

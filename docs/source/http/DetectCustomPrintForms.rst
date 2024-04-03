@@ -7,7 +7,7 @@ DetectCustomPrintForms
 
 .. http:post:: /DetectCustomPrintForms
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
@@ -55,7 +55,7 @@ DetectCustomPrintForms
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Другие методы для работы с печатными формами:*
 	- :doc:`GeneratePrintForm` — генерирует печатную форму документа по его идентификатору.

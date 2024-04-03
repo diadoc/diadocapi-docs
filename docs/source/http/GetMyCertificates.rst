@@ -5,7 +5,7 @@ GetMyCertificates
 
 .. http:get:: /GetMyCertificates
 
-	:queryparam boxId: идентификатор ящика сотрудника.
+	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` сотрудника.
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 

@@ -19,7 +19,7 @@ GetDocflowsByPacketIdResponse
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в теле ответа метода :doc:`../../http/obsolete/GetDocflowsByPacketId`.

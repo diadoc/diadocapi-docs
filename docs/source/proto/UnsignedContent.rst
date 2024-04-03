@@ -25,7 +25,7 @@ UnsignedContent
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в структуре :ref:`EditingPatch`,

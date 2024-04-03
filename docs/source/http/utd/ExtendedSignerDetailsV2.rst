@@ -35,7 +35,7 @@ ExtendedSignerDetails
 
 .. http:post:: /V2/ExtendedSignerDetails
 
-   :queryparam string boxId: идентификатор ящика, для которого нужно заполнить данные о подписанте.
+   :queryparam string boxId: идентификатор :doc:`ящика <../../entities/box>` организации, для которого нужно заполнить данные о подписанте.
    :queryparam string thumbprint: отпечаток сертификата, для которого нужно заполнить дополнительные данные о подписанте.
    :queryparam int documentTitleType: тип титула, для которого нужно заполнить дополнительные данные о подписанте.
 
@@ -60,7 +60,7 @@ ExtendedSignerDetails
 
 .. http:get:: /V2/ExtendedSignerDetails
 
-	:queryparam string boxId: идентификатор ящика, для которого нужно заполнить данные о подписанте
+	:queryparam string boxId: идентификатор :doc:`ящика <../../entities/box>` организации, для которого нужно заполнить данные о подписанте
 	:queryparam string thumbprint: отпечаток сертификата, для которого нужно заполнить дополнтиельные данные о подписанте
 	:queryparam int documentTitleType: тип титула, для которого нужно заполнить дополнительные данные о подписанте
 

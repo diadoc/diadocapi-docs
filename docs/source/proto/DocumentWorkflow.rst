@@ -20,7 +20,7 @@
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в структуре :ref:`DocumentVersionV2 <document-version2>`.
