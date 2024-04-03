@@ -36,7 +36,7 @@ DocumentType
         UniversalCorrectionDocumentRevision = 50;
     }
 
-- ``UnknownDocumentType`` — неизвестный тип документа; теперь возвращается для любого типа документа.
+- ``UnknownDocumentType`` — неизвестный тип документа; возвращается только в устаревшей версии Docflow API.
 - ``Nonformalized`` — неформализованный документ.
 - ``Invoice`` — счет-фактура.
 - ``InvoiceRevision`` — исправление счета-фактуры.
