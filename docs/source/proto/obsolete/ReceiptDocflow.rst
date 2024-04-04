@@ -19,7 +19,7 @@ ReceiptDocflow
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в структуре :doc:`BilateralDocflow`,
