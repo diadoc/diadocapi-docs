@@ -38,4 +38,4 @@ ResolutionStatusDocflow
 .. rubric:: См. также
 
 *Перечисление используется:*
-	- в структуре :doc:`ResolutionDocflowV3`,
+	- в структуре :doc:`ResolutionDocflowV3`

@@ -52,7 +52,4 @@ OutboundUniversalTransferDocumentDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`Docflow`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`Docflow`

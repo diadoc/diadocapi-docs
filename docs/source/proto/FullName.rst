@@ -20,8 +20,8 @@ FullName
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`EmployeeToCreateByLogin <EmployeeToCreate>`,
-	- в структуре :doc:`PowerOfAttorneyIssuerPhysicalEntity <PowerOfAttorney>`,
-	- в структуре :doc:`PowerOfAttorneyConfidant <PowerOfAttorney>`,
-	- в структуре :doc:`UserFullNamePatch <UserToUpdate>`,
-	- в структуре :doc:`UserV2`.
+	- в структуре :doc:`EmployeeToCreateByLogin <EmployeeToCreate>`
+	- в структуре :doc:`PowerOfAttorneyIssuerPhysicalEntity <PowerOfAttorney>`
+	- в структуре :doc:`PowerOfAttorneyConfidant <PowerOfAttorney>`
+	- в структуре :doc:`UserFullNamePatch <UserToUpdate>`
+	- в структуре :doc:`UserV2`

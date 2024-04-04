@@ -108,4 +108,4 @@ OrganizationNotFound — Организация не найдена
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/Register`.
+	- в теле ответа метода :doc:`../http/Register`

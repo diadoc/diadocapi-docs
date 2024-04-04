@@ -30,5 +30,5 @@ RevocationStatus
 .. rubric:: См. также
 
 *Перечисление используется:*
-	- в структуре :doc:`RevocationDocflowV3`,
-	- в структуре :doc:`Document`.
+	- в структуре :doc:`RevocationDocflowV3`
+	- в структуре :doc:`Document`

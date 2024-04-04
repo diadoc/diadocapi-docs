@@ -74,4 +74,4 @@ CertificateInfoV2
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/GetMyCertificates`.
+	- в теле ответа метода :doc:`../http/GetMyCertificates`

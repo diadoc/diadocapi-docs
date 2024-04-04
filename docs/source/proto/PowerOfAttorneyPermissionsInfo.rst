@@ -70,7 +70,7 @@ PowerOfAttorneyPermissionsInfo
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`PowerOfAttorney`.
+	- в структуре :doc:`PowerOfAttorney`
 
 *Руководства:*
-	- :doc:`/howto/powerofattorney`.
+	- :doc:`/howto/powerofattorney`

@@ -22,7 +22,7 @@ PowerOfAttorneyToUpdate
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/UpdateEmployeePowerOfAttorney`.
+	- в теле запроса метода :doc:`../http/UpdateEmployeePowerOfAttorney`
 
 *Руководства:*
-	- :doc:`../howto/powerofattorney`.
+	- :doc:`../howto/powerofattorney`

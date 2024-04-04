@@ -26,9 +26,6 @@ BuyerTitleDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`,
-	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`,
-	- в структуре :doc:`XmlBilateralDocflow`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`
+	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`
+	- в структуре :doc:`XmlBilateralDocflow`

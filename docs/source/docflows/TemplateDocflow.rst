@@ -199,7 +199,7 @@
 .. rubric:: См. также
 
 *Определение:*
- - :doc:`../entities/template`
+	- :doc:`../entities/template`
 
 *Структуры и методы для работы с шаблонами:*
- - :doc:`../API_Templates`
+	- :doc:`../API_Templates`

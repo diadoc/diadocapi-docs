@@ -41,7 +41,7 @@ GetEmployeePowersOfAttorney
 .. rubric:: См. также
 
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`
 
 *Другие методы для работы с МЧД:*
 	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД.

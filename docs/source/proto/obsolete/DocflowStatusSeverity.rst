@@ -22,4 +22,4 @@ DocflowStatusSeverity
 .. rubric:: См. также
 
 *Перечисление используется:*
-	- в структуре :doc:`DocflowStatusModel`.
+	- в структуре :doc:`DocflowStatusModel`

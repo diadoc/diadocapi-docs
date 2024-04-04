@@ -29,4 +29,4 @@ SearchDocflowsRequest
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/SearchDocflows_V3`.
+	- в теле запроса метода :doc:`../http/SearchDocflows_V3`

@@ -22,7 +22,4 @@ SearchDocflowsResponse
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/SearchDocflows`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в теле ответа метода :doc:`../../http/obsolete/SearchDocflows`

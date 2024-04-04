@@ -25,4 +25,4 @@ SearchScope
 .. rubric:: См. также
 
 *Перечисление используется:*
-	- в структуре :doc:`SearchDocflowsRequest`.
+	- в структуре :doc:`SearchDocflowsRequest`

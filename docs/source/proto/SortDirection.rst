@@ -21,4 +21,4 @@ SortDirection
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`TimeBasedFilter`.
+	- в структуре :doc:`TimeBasedFilter`

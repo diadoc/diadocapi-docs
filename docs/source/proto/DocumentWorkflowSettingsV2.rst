@@ -147,7 +147,7 @@ DocumentWorkflowSettingsV2
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/GetWorkflowsSettings`.
+	- в теле ответа метода :doc:`../http/GetWorkflowsSettings`
 	
 *Руководства:*
 	- :doc:`../docflows/Workflows`

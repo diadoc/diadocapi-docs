@@ -353,4 +353,4 @@ EditingPatch
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/PostMessagePatch`.
+	- в теле запроса метода :doc:`../http/PostMessagePatch`

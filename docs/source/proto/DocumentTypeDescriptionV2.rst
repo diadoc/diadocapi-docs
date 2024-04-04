@@ -39,7 +39,7 @@ DocumentFunctionV2
     }
 
 - ``Name`` — строковой идентификатор функции. Уникальный в рамках типа документа.
-- ``Versions`` — cписок версий документа. Каждая версия представлена структурой :ref:`DocumentVersionV2 <document-version2>`.
+- ``Versions`` — cписок версий документа. Каждая версия представлена структурой :ref:`document-version2`.
 
 .. _document-version2:
 
@@ -198,4 +198,4 @@ DocumentMetadataItemV2
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/GetDocumentTypes`.
+	- в теле ответа метода :doc:`../http/GetDocumentTypes`

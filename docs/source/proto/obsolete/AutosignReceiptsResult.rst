@@ -22,4 +22,4 @@ AutoSignReceiptsResult
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/AutoSignReceiptsResult`.
+	- в теле ответа метода :doc:`../../http/obsolete/AutoSignReceiptsResult`

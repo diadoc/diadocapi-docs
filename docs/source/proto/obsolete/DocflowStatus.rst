@@ -32,4 +32,4 @@ DocflowStatus
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`Docflow`.
+	- в структуре :doc:`Docflow`

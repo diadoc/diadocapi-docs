@@ -21,5 +21,5 @@ Attachment
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`SignedAttachment`,
-	- в структуре :doc:`SignedAttachmentV3`.
+	- в структуре :doc:`SignedAttachment`
+	- в структуре :doc:`SignedAttachmentV3`

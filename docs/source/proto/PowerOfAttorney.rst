@@ -121,9 +121,9 @@ PowerOfAttorney
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`PowerOfAttorneyRegisterResult`,
-	- в структуре :doc:`EmployeePowerOfAttorney`,
-	- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`.
+	- в структуре :doc:`PowerOfAttorneyRegisterResult`
+	- в структуре :doc:`EmployeePowerOfAttorney`
+	- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`
 
 *Руководства:*
-	- :doc:`../howto/powerofattorney`.
+	- :doc:`../howto/powerofattorney`

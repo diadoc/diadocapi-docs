@@ -21,5 +21,5 @@ TimeBasedFilter
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`GetDocflowEventsRequest`,
-	- в структуре ``GetForwardedDocumentEventsRequest``, передаваемой в теле запроса метода :doc:`../http/GetForwardedDocumentEvents`.
+	- в структуре :doc:`GetDocflowEventsRequest`
+	- в структуре ``GetForwardedDocumentEventsRequest``, используемой в теле запроса метода :doc:`../http/GetForwardedDocumentEvents`

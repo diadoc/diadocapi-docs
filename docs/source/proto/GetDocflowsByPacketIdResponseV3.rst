@@ -19,4 +19,4 @@ GetDocflowsByPacketIdResponseV3
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/GetDocflowsByPacketId_V3`.
+	- в теле ответа метода :doc:`../http/GetDocflowsByPacketId_V3`

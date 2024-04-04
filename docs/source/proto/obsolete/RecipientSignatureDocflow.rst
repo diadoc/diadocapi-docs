@@ -24,8 +24,5 @@ RecipientSignatureDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`BilateralDocflow`,
-	- в структуре :doc:`RevocationDocflow`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`BilateralDocflow`
+	- в структуре :doc:`RevocationDocflow`

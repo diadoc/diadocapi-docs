@@ -38,13 +38,13 @@ UpdateEmployeePowerOfAttorney
 .. rubric:: См. также
 
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`
 
 *Другие методы для работы с МЧД:*
-	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД.
-	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД.
-	- :doc:`GetEmployeePowersOfAttorney` — возвращает МЧД, привязанные к сотруднику.
-	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику.
-	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника.
-	- :doc:`PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД.
-	- :doc:`GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом.
+	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД
+	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД
+	- :doc:`GetEmployeePowersOfAttorney` — возвращает МЧД, привязанные к сотруднику
+	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику
+	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника
+	- :doc:`PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД
+	- :doc:`GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом

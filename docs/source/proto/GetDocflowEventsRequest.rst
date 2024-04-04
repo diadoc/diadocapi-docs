@@ -47,7 +47,4 @@ GetDocflowEventsRequest
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/GetDocflowEvents_V3`.
-
-*Руководства:*
-	- :doc:`../Docflow API`
+	- в теле запроса метода :doc:`../http/GetDocflowEvents_V3`

@@ -24,8 +24,5 @@ InboundInvoiceReceiptDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`InboundInvoiceDocflow`,
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`InboundInvoiceDocflow`
+	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`

@@ -119,4 +119,4 @@ MessageToPost
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/PostMessage`.
+	- в теле запроса метода :doc:`../http/PostMessage`

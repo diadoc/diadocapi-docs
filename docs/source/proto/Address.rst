@@ -54,7 +54,7 @@ Address
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`Organization`,
-	- в структуре :doc:`obsolete/ExtendedOrganizationInfo`,
-	- в структуре :doc:`Departments/DepartmentToCreate`,
-	- в структуре :doc:`Department`.
+	- в структуре :doc:`Organization`
+	- в структуре :doc:`obsolete/ExtendedOrganizationInfo`
+	- в структуре :doc:`Departments/DepartmentToCreate`
+	- в структуре :doc:`Department`

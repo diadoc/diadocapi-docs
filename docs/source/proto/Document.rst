@@ -266,4 +266,4 @@ Document
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/GetDocument`.
+	- в теле ответа метода :doc:`../http/GetDocument`

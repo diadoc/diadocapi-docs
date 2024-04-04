@@ -31,4 +31,4 @@ ParticipantResponseDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocflowV3`.
+	- в структуре :doc:`DocflowV3`

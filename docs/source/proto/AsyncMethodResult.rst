@@ -14,4 +14,8 @@ AsyncMethodResult
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа парных методов :doc:`../http/RegisterPowerOfAttorney` и :doc:`../http/RegisterPowerOfAttorneyResult`.
+	- в теле ответа парных методов:
+
+	  - :doc:`../http/AcquireCounteragent` и :doc:`../http/AcquireCounteragentResult`
+	  - :doc:`../http/DssSign` и :doc:`../http/DssSignResult`
+	  - :doc:`../http/RegisterPowerOfAttorney` и :doc:`../http/RegisterPowerOfAttorneyResult`

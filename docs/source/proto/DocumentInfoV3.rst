@@ -120,7 +120,4 @@ DocumentInfoV3
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentWithDocflowV3`.
-
-*Руководства:*
-	- :doc:`../Docflow API`
+	- в структуре :doc:`DocumentWithDocflowV3`

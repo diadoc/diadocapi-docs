@@ -84,4 +84,4 @@ PrepareDocumentsToSignRequest
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/PrepareDocumentsToSign`.
+	- в теле запроса метода :doc:`../http/PrepareDocumentsToSign`

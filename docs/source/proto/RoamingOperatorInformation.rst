@@ -30,4 +30,4 @@ RoamingOperatorInformation
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/GetRoamingOperators`.
+	- в теле ответа метода :doc:`../http/GetRoamingOperators`

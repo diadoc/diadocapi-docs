@@ -35,7 +35,7 @@ SignaturePowerOfAttorney
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`SignatureV3`.
-	
+	- в структуре :doc:`SignatureV3`
+
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`

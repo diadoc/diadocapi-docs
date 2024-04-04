@@ -60,10 +60,10 @@ PowerOfAttorneyValidationStatus
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`PowerOfAttorneyInfo`,
-	- в структуре :doc:`SignaturePowerOfAttorney`,
-	- в структуре :doc:`DocflowStatusV3`,
-	- в теле ответа метода :doc:`../http/PrevalidatePowerOfAttorney`.
+	- в структуре :doc:`PowerOfAttorneyInfo`
+	- в структуре :doc:`SignaturePowerOfAttorney`
+	- в структуре :doc:`DocflowStatusV3`
+	- в теле ответа метода :doc:`../http/PrevalidatePowerOfAttorney`
 
 *Руководства:*
-	- :doc:`../howto/powerofattorney`.
+	- :doc:`../howto/powerofattorney`

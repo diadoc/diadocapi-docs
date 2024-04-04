@@ -58,7 +58,7 @@ DetectCustomPrintForms
 .. rubric:: См. также
 
 *Другие методы для работы с печатными формами:*
-	- :doc:`GeneratePrintForm` — генерирует печатную форму документа по его идентификатору.
-	- :doc:`GenerateForwardedDocumentPrintForm` — генерирует печатную форму пересланного документа.
-	- :doc:`GeneratePrintFormFromAttachment` — возвращает идентификатор, с помощью которого можно получить печатную форму документа по его содержимому.
-	- :doc:`GetGeneratedPrintForm` — генерирует печатную форму документа.
+	- :doc:`GeneratePrintForm` — генерирует печатную форму документа по его идентификатору
+	- :doc:`GenerateForwardedDocumentPrintForm` — генерирует печатную форму пересланного документа
+	- :doc:`GeneratePrintFormFromAttachment` — возвращает идентификатор, с помощью которого можно получить печатную форму документа по его содержимому
+	- :doc:`GetGeneratedPrintForm` — генерирует печатную форму документа

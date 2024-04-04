@@ -23,7 +23,4 @@ GetDocflowsByPacketIdRequest
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/GetDocflowsByPacketId_V3`.
-
-*Руководства:*
-	- :doc:`../Docflow API`
+	- в теле запроса метода :doc:`../http/GetDocflowsByPacketId_V3`

@@ -26,4 +26,4 @@ DocflowStatusModelV3
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocflowStatusV3`.
+	- в структуре :doc:`DocflowStatusV3`

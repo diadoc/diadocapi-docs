@@ -32,7 +32,7 @@ DraftToSend
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/SendDraft`.
+	- в теле запроса метода :doc:`../http/SendDraft`
 
-*Руководства:*
+*Определение:*
 	- :doc:`../entities/draft`

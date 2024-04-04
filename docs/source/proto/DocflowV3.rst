@@ -41,8 +41,4 @@ DocflowV3
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentWithDocflowV3`, возвращаемой методами
-
-		- :doc:`../http/GetDocflows_V3`,
-		- :doc:`../http/GetDocflowsByPacketId_V3`,
-		- :doc:`../http/SearchDocflows_V3`.
+	- в структуре :doc:`DocumentWithDocflowV3`

@@ -26,7 +26,4 @@ SupplementaryAgreementDocumentInfo
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentInfo`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`DocumentInfo`

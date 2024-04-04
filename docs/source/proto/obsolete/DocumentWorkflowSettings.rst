@@ -182,7 +182,4 @@
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :ref:`GetWorkflowsSettings_v1`.
-	
-*Руководства:*
-	- :doc:`../../docflows/Workflows`
+	- в теле ответа метода :ref:`GetWorkflowsSettings_v1`

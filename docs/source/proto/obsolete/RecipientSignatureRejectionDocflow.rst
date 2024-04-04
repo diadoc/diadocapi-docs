@@ -24,11 +24,8 @@ RecipientSignatureRejectionDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`BilateralDocflow`,
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`,
-	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`,
-	- в структуре :doc:`RevocationDocflow`,
-	- в структуре :doc:`XmlBilateralDocflow`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`BilateralDocflow`
+	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`
+	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`
+	- в структуре :doc:`RevocationDocflow`
+	- в структуре :doc:`XmlBilateralDocflow`

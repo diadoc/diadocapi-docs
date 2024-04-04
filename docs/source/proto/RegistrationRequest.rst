@@ -20,4 +20,4 @@ RegistrationRequest
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/Register`.
+	- в теле запроса метода :doc:`../http/Register`

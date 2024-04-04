@@ -20,4 +20,4 @@ AmendmentRequestMetadata
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`Document`.
+	- в структуре :doc:`Document`

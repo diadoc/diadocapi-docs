@@ -334,11 +334,5 @@ Entity
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`Message`, возвращаемой методами
-	
-		- :doc:`../http/GetMessage`,
-		- :doc:`../http/GetNewEvents`,
-		- :doc:`../http/GetLastEvent`,
-		- :doc:`../http/GetEvent`,
-		
-	- в структуре :doc:`MessagePatch`.
+	- в структуре :doc:`Message`
+	- в структуре :doc:`MessagePatch`

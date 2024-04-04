@@ -30,8 +30,8 @@ CustomDataPatch
 
 .. rubric:: См. также
 
-*Руководства:*
-	- :doc:`../entities/tag`
-
 *Структура используется:*
-	- в структуре :doc:`MessagePatchToPost`.
+	- в структуре :doc:`MessagePatchToPost`
+
+*Определение:*
+	- :doc:`../entities/tag`

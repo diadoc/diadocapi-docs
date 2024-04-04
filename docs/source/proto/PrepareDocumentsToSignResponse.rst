@@ -28,4 +28,4 @@ PrepareDocumentsToSignResponse
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/PrepareDocumentsToSign`.
+	- в теле ответа метода :doc:`../http/PrepareDocumentsToSign`

@@ -22,7 +22,4 @@ FetchedDocument
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`GetDocflowsByPacketIdResponse`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`GetDocflowsByPacketIdResponse`

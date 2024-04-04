@@ -26,7 +26,7 @@ PowerOfAttorneyPrevalidateRequest
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/PrevalidatePowerOfAttorney`.
-	
+	- в теле запроса метода :doc:`../http/PrevalidatePowerOfAttorney`
+
 *Руководства:*
-	- :doc:`../howto/powerofattorney`.
+	- :doc:`../howto/powerofattorney`

@@ -34,7 +34,4 @@ DocflowEvent
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`GetDocflowEventsResponse`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`GetDocflowEventsResponse`

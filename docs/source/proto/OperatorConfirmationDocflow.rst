@@ -19,4 +19,4 @@ OperatorConfirmationDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`ConfirmationDocflow`.
+	- в структуре :doc:`ConfirmationDocflow`

@@ -18,9 +18,9 @@ EmployeePowerOfAttorney
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре ``EmployeePowerOfAttorneyList``, возвращаемой методом :doc:`../http/GetEmployeePowersOfAttorney`,
-	- в теле ответа метода :doc:`../http/AddEmployeePowerOfAttorney`,
-	- в теле ответа метода :doc:`../http/UpdateEmployeePowerOfAttorney`.
+	- в структуре ``EmployeePowerOfAttorneyList``, возвращаемой методом :doc:`../http/GetEmployeePowersOfAttorney`
+	- в теле ответа метода :doc:`../http/AddEmployeePowerOfAttorney`
+	- в теле ответа метода :doc:`../http/UpdateEmployeePowerOfAttorney`
 
 *Руководства:*
-	- :doc:`Как работать с МЧД <../howto/powerofattorney>`
+	- :doc:`../howto/powerofattorney`

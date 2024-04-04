@@ -52,7 +52,7 @@ PowerOfAttorneyRegisterResult
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/RegisterPowerOfAttorneyResult`.
-	
+	- в теле ответа метода :doc:`../http/RegisterPowerOfAttorneyResult`
+
 *Руководства:*
-	- :doc:`../howto/powerofattorney`.
+	- :doc:`../howto/powerofattorney`

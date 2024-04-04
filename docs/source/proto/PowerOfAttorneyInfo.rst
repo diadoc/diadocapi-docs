@@ -22,7 +22,7 @@ PowerOfAttorneyInfo
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`Entity message`.
-	
+	- в структуре :doc:`Entity message`
+
 *Руководства:*
-	- :doc:`../howto/powerofattorney`.
+	- :doc:`../howto/powerofattorney`

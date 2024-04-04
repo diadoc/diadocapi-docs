@@ -31,7 +31,4 @@ AmendmentRequestDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocflowV3`.
-
-*Методы для работы с уведомлением об уточнении:*
-	- :doc:`../http/GenerateInvoiceCorrectionRequestXml` — генерирует XML-файл уведомления об уточнении счета-фактуры..
+	- в структуре :doc:`DocflowV3`

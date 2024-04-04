@@ -18,12 +18,12 @@ CustomDataItem
 
 .. rubric:: См. также
 
-*Руководства:*
-	- :doc:`../entities/tag`
-
 *Структура используется:*
-	- в структуре :doc:`DocumentInfoV3`,
-	- в структуре :doc:`Document`,
-	- в структуре :doc:`obsolete/Docflow`,
-	- в структуре :doc:`DocumentAttachment`,
-	- в структуре :doc:`TemplateDocumentAttachment`.
+	- в структуре :doc:`DocumentInfoV3`
+	- в структуре :doc:`Document`
+	- в структуре :doc:`obsolete/Docflow`
+	- в структуре :doc:`DocumentAttachment`
+	- в структуре :doc:`TemplateDocumentAttachment`
+
+*Определение:*
+	- :doc:`../entities/tag`

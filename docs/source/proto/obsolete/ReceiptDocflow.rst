@@ -22,15 +22,12 @@ ReceiptDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`BilateralDocflow`,
-	- в структуре :doc:`InboundInvoiceDocflow`,
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`,
-	- в структуре :doc:`InvoiceConfirmationDocflow`,
-	- в структуре :doc:`InvoiceCorrectionRequestDocflow`,
-	- в структуре :doc:`OutboundInvoiceDocflow`,
-	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`,
-	- в структуре :doc:`UnilateralDocflow`,
-	- в структуре :doc:`XmlBilateralDocflow`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`BilateralDocflow`
+	- в структуре :doc:`InboundInvoiceDocflow`
+	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`
+	- в структуре :doc:`InvoiceConfirmationDocflow`
+	- в структуре :doc:`InvoiceCorrectionRequestDocflow`
+	- в структуре :doc:`OutboundInvoiceDocflow`
+	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`
+	- в структуре :doc:`UnilateralDocflow`
+	- в структуре :doc:`XmlBilateralDocflow`

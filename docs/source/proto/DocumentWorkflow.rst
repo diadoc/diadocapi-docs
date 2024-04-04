@@ -1,7 +1,7 @@
 ﻿DocumentWorkflow
 ================
 
-Структура ``DocumentWorkflow`` представляет вид документооборота для версии документа :ref:`DocumentVersionV2 <document-version2>`.
+Структура ``DocumentWorkflow`` представляет вид документооборота для версии документа :ref:`document-version2`.
 
 Подробно о видах документооборота написано на странице :doc:`../docflows/Workflows`.
 
@@ -23,7 +23,7 @@
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :ref:`DocumentVersionV2 <document-version2>`.
+	- в структуре :ref:`document-version2`
 	
 *Руководства:*
 	- :doc:`../docflows/Workflows`

@@ -20,5 +20,8 @@ PowerOfAttorneySendingType
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`PowerOfAttorneyInfo`,
-	- в структуре :doc:`SignaturePowerOfAttorney`.
+	- в структуре :doc:`PowerOfAttorneyInfo`
+	- в структуре :doc:`SignaturePowerOfAttorney`
+
+*Руководства:*
+	- :doc:`../howto/powerofattorney`

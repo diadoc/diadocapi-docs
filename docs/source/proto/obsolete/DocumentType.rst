@@ -66,5 +66,5 @@ DocumentType
 .. rubric:: См. также
 
 *Перечисление используется:*
-	- в структуре :doc:`../Document`,
-	- в структуре :doc:`DocumentInfo`.
+	- в структуре :doc:`../Document`
+	- в структуре :doc:`DocumentInfo`

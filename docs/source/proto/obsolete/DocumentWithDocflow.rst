@@ -34,11 +34,8 @@ DocumentWithDocflow
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocflowEvent`,
-	- в структуре :doc:`FetchedDocument`,
-	- в структуре :doc:`../ForwardedDocument`,
-	- в структуре :doc:`GetDocflowBatchResponse`,
-	- в структуре :doc:`SearchDocflowsResponse`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в структуре :doc:`DocflowEvent`
+	- в структуре :doc:`FetchedDocument`
+	- в структуре :doc:`../ForwardedDocument`
+	- в структуре :doc:`GetDocflowBatchResponse`
+	- в структуре :doc:`SearchDocflowsResponse`

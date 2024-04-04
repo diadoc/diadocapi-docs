@@ -22,7 +22,4 @@ GetDocflowsByPacketIdResponse
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/GetDocflowsByPacketId`.
-
-*Руководства:*
-	- :doc:`../../Docflow API`
+	- в теле ответа метода :doc:`../../http/obsolete/GetDocflowsByPacketId`
