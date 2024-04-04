@@ -17,10 +17,10 @@ CounteragentGroup
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`Counteragent`,
-	- в структуре :doc:`GetOrganizationsByInnListResponse`,
-	- в теле ответа метода :doc:`../http/CreateCounteragentGroup`,
-	- в теле ответа метода :doc:`../http/UpdateCounteragentGroup`.
+	- в теле ответа метода :doc:`../http/CreateCounteragentGroup`
+	- в теле ответа метода :doc:`../http/UpdateCounteragentGroup`
+	- в теле ответа метода :doc:`../http/GetCounteragentGroup`
+	- в структуре ``CounteragentGroupsList``, возвращаемой методом :doc:`../http/GetCounteragentGroups`

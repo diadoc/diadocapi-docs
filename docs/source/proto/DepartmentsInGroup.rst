@@ -13,11 +13,9 @@ DepartmentsInGroup
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../http/CreateCounteragentGroup`,
-	- в структуре :doc:`CounteragentGroup`, возвращаемой методами
-
-		- :doc:`../http/CreateCounteragentGroup`,
-		- :doc:`../http/UpdateCounteragentGroup`.
+	- в структуре ``CounteragentGroupToCreate`` в теле запроса метода :doc:`../http/CreateCounteragentGroup`
+	- в структуре ``CounteragentGroupToUpdate`` в теле запроса метода :doc:`../http/UpdateCounteragentGroup`
+	- в структуре :doc:`CounteragentGroup`

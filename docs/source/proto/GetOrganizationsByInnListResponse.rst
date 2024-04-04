@@ -51,11 +51,11 @@ GetOrganizationsByInnListResponse
 
 	- ``InvitationDocumentId`` — идентификатор документа, пришедшего вместе с приглашением. Представлен структурой :doc:`DocumentId`.
 
-	- ``CounteragentGroupId`` — идентификатор группы, в которую добавлен контрагент. Возвращается, если статус контрагента ``CounteragentStatus = IsMyCounteragent``.
+	- ``CounteragentGroupId`` — идентификатор группы, в которую добавлен контрагент. Возвращается, если статус контрагента ``CounteragentStatus = IsMyCounteragent``. Группа контрагентов представлена структурой :doc:`CounteragentGroup`.
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Структура используется:*
 	- в теле ответа метода :doc:`../http/GetOrganizationsByInnList`.

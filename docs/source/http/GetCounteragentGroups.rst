@@ -12,7 +12,7 @@ GetCounteragentGroups
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
 	:statuscode 200: операция успешно завершена.
-	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры, или невозможно изменить наименование группы по умолчанию.
+	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
 	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
 	:statuscode 402: у организации с указанным идентификатором ``boxId`` закончилась подписка на API.
 	:statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен или запрос сделан не от имени сотрудника организации с разрешением ``CanManageCounteragents``.
@@ -37,13 +37,13 @@ GetCounteragentGroups
 
 ----
 
-.. rubric:: Смотри также
+.. rubric:: См. также
 
 *Другие методы для работы с группой контрагентов:*
-	- :doc:`CreateCounteragentGroup` — создает группу контрагентов,
-	- :doc:`UpdateCounteragentGroup` — редактирует группу контрагентов,
-	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов,
-	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу,
-	- :doc:`GetCounteragentsFromGroup` — возвращает список контрагентов в группе,
-	- :doc:`GetCounteragentGroup` — возвращает информацию о группе контрагентов.
+	- :doc:`CreateCounteragentGroup` — создает группу контрагентов
+	- :doc:`UpdateCounteragentGroup` — редактирует группу контрагентов
+	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов
+	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу
+	- :doc:`GetCounteragentsFromGroup` — возвращает список контрагентов в группе
+	- :doc:`GetCounteragentGroup` — возвращает информацию о группе контрагентов
 
