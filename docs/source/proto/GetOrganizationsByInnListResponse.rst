@@ -13,9 +13,10 @@ GetOrganizationsByInnListResponse
         required Organization Organization = 1;
         optional CounteragentStatus CounteragentStatus = 2 [default = UnknownCounteragentStatus];
         optional sfixed64 LastEventTimestampTicks = 3;
-       	optional string MessageFromCounteragent = 4;
-    	optional string MessageToCounteragent = 5;
+        optional string MessageFromCounteragent = 4;
+        optional string MessageToCounteragent = 5;
         optional DocumentId InvitationDocumentId = 6;
+        optional string CounteragentGroupId = 7;
     }
 
     enum CounteragentStatus {
@@ -49,6 +50,8 @@ GetOrganizationsByInnListResponse
 	- ``MessageToCounteragent`` — сообщение, отправленное контрагенту вместе с приглашением.
 
 	- ``InvitationDocumentId`` — идентификатор документа, пришедшего вместе с приглашением. Представлен структурой :doc:`DocumentId`.
+
+	- ``CounteragentGroupId`` — идентификатор группы, в которую добавлен контрагент. Возвращается, если статус контрагента ``CounteragentStatus = IsMyCounteragent``. Группа контрагентов представлена структурой :doc:`CounteragentGroup`.
 
 ----
 
