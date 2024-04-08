@@ -5,9 +5,9 @@
 ----------
 **SDK**: `C# 3.15.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F3.15.0>`__ | `Java 3.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.16.0>`__
 
-- Поддержали работу с группами контрагентов:
+- Добавили возможность работы с группами контрагентов:
 
-	- Реализовали следующие методы:
+	- Реализовали методы:
 
 		- :doc:`http/CreateCounteragentGroup` — создает группу контрагентов,
 		- :doc:`http/UpdateCounteragentGroup` — редактирует группу контрагентов,
@@ -17,7 +17,7 @@
 		- :doc:`http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе,
 		- :doc:`http/GetCounteragentGroup` — возвращает информацию о группе контрагентов.
 
-	- Добавили следующие структуры:
+	- Добавили структуры:
 
 		- :doc:`proto/CounteragentGroup` — представляет собой группу контрагентов,
 		- :doc:`proto/DepartmentsInGroup` — представляет собой список идентификаторов подразделений, в которые группа контрагентов может отправлять документы.
