@@ -109,7 +109,7 @@ html_context = {
     "display_github": True,
     "github_user": "diadoc",
     "github_repo": 'diadocapi-docs',
-    "github_version": "final",
+    "github_version": "master",
     "conf_py_path": "/docs/source/",
     "source_suffix": '.rst'
 }
