@@ -27,10 +27,10 @@ PowerOfAttorneyRegisterResult
 	- ``Unknown`` — неизвестный статус;
 	- ``Queued`` — операция в очереди;
 	- ``Processing`` — операция выполняется;
-	- ``Done`` — операция завершена;
+	- ``Done`` — операция успешно завершена;
 	- ``Error`` — ошибка при выполнении операции.
 
-- ``PowerOfAttorney`` — информация о МЧД, представленная структурой :doc:`PowerOfAttorney`.
+- ``PowerOfAttorney`` — информация о МЧД, представленная структурой :doc:`PowerOfAttorney`. Возвращается, если ``OperationStatus = Done``.
 - ``Status`` — статус МЧД, представленный структурой ``PowerOfAttorneyStatus`` с полями:
 
 	- ``Status`` — строка со статусом МЧД. Принимает значения:
@@ -42,7 +42,7 @@ PowerOfAttorneyRegisterResult
 		
 	- ``LastCheckAt`` — дата последней проверки, если такая выполнялась. Представлена структурой :doc:`Timestamp`.
 	
-- ``Errors`` — список ошибок, которые возникли при регистрации МЧД, представленых структурой ``PowerOfAttorneyOperationError`` с полями:
+- ``Errors`` — список ошибок, которые возникли при регистрации МЧД. Возвращается, если ``OperationStatus = Error``. Каждый элемент списка представлен структурой ``PowerOfAttorneyOperationError`` с полями:
 
 	- ``Code`` — код ошибки.
 	- ``Text`` — текст ошибки.
