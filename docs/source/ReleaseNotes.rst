@@ -1,6 +1,38 @@
 ﻿История изменений API
 =====================
 
+08.04.2024
+----------
+
+- Добавили возможность работы с МЧД, выпущенной в порядке передоверия.
+
+	- Метод :doc:`http/GetRoamingOperators` теперь может вернуть значение ``SupportPowerOfAttorneyDelegationChain``: эта функция означает, что оператор поддерживает передоверие МЧД.
+	- В структуру :doc:`proto/PowerOfAttorney` добавили поля ``DelegationChain`` и ``DelegationInfo``. Они хранят данные о предыдущих МЧД для доверенностей, выпущенных в порядке передоверия.
+
+
+08.04.2024
+----------
+**SDK**: `C# 2.15.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.15.0>`__ | `Java 3.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.16.0>`__
+
+- Добавили возможность работы с группами контрагентов:
+
+	- Реализовали методы:
+
+		- :doc:`http/CreateCounteragentGroup` — создает группу контрагентов,
+		- :doc:`http/UpdateCounteragentGroup` — редактирует группу контрагентов,
+		- :doc:`http/DeleteCounteragentGroup` — удаляет группу контрагентов,
+		- :doc:`http/AddCounteragentToGroup` — добавляет контрагента в группу,
+		- :doc:`http/GetCounteragentGroups` — возвращает список групп контрагентов,
+		- :doc:`http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе,
+		- :doc:`http/GetCounteragentGroup` — возвращает информацию о группе контрагентов.
+
+	- Добавили структуры:
+
+		- :doc:`proto/CounteragentGroup` — представляет собой группу контрагентов,
+		- :doc:`proto/DepartmentsInGroup` — представляет собой список идентификаторов подразделений, в которые группа контрагентов может отправлять документы.
+
+	- Добавили поле ``CounteragentGroupId`` в структуры :doc:`proto/Counteragent` и :doc:`proto/GetOrganizationsByInnListResponse`. В поле возвращается идентификатор группы, в которую добавлен контрагент.
+
 27.02.2024
 ----------
 **SDK**: `C# 2.14.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.6>`__
@@ -86,7 +118,7 @@
 **SDK**: `C# 2.11.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.7>`__
 
 - В структуре :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` для поля ``SignerType`` добавлено новое значение — универсальный подписант.
-- В структуре :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` добавлено поле ``SignerUserDataXsdUrl``, которое содержит URL-путь метода, возвращающего файл XSD-схемы упрощённого XML подписанта.
+- В структуре :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` добавлено поле ``SignerUserDataXsdUrl``, которое содержит URL-путь метода, возвращающего файл XSD-схемы упрощенного XML подписанта.
 - В структурах :doc:`DraftDocumentToPatch <proto/PrepareDocumentsToSignRequest>`, :doc:`DocumentToPatch <proto/PrepareDocumentsToSignRequest>` и :doc:`ContentToPatch <proto/PrepareDocumentsToSignRequest>` добавлено поле ``SignerContent``.
 
 10.03.2023
@@ -116,7 +148,7 @@
 
 - Реализована возможность получения свойств :doc:`вида документооборота <../proto/DocumentWorkflow>`:
 
- - добавлена структура :doc:`proto/DocumentWorkflowSettings` для хранения свойств вида документооборота;
+ - добавлена структура :doc:`proto/obsolete/DocumentWorkflowSettings` для хранения свойств вида документооборота;
  - реализован метод :doc:`http/GetWorkflowsSettings` для получения свойств вида документооборота.
  
 
@@ -398,7 +430,7 @@
 - Следующие методы теперь могут возвращать неточное количество событий ``TotalCount``:
 
  - :doc:`http/GetNewEvents`
- - :doc:`http/GetDocflowEvents`
+ - :doc:`http/obsolete/GetDocflowEvents`
  - :doc:`http/GetDocflowEvents_V3`
  - :doc:`http/GetForwardedDocumentEvents`
 
@@ -652,7 +684,7 @@
 
 - Добавлено поле ``Version`` в следующие структуры:
 
- - :doc:`proto/DocumentInfo`
+ - :doc:`proto/obsolete/DocumentInfo`
  - :doc:`proto/Document`
  - :doc:`Entity <proto/Entity message>`
 
@@ -797,7 +829,7 @@
 ----------
 **SDK**: `C# 1.51.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.9>`__ | `Java 1.51.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.9>`__ | `C++ 1.51.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.9>`__
 
-- В структуре :doc:`proto/Docflow` добавлено поле :doc:`proto/Docflow_RoamingNotification`, содержащее данные о доставке документа в роуминг.
+- В структуре :doc:`proto/obsolete/Docflow` добавлено поле :doc:`proto/Docflow_RoamingNotification`, содержащее данные о доставке документа в роуминг.
 
 
 25.06.2018
@@ -989,7 +1021,7 @@
 **SDK**: `C# 1.44.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.44.2>`__ | `Java 1.44.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.44.2>`__ | `C++ 1.44.2 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.44.2>`__
 
 - В структуре :doc:`proto/Organization` добавлено поле ``CertificateOfRegistryInfo``, в котором указана информация о свидетельстве о государственной регистрации.
-- В структуре :doc:`proto/DocumentInfo` добавлено поле ``AttachmentVersion``, в котором указана версия документа.
+- В структуре :doc:`proto/obsolete/DocumentInfo` добавлено поле ``AttachmentVersion``, в котором указана версия документа.
 
 
 29.06.2017
@@ -1125,13 +1157,13 @@
 
  - добавлены структуры для описания документооборота УПД:
  
-  - :doc:`proto/utd/docflow/InboundUniversalTransferDocumentDocflow` — входящий УПД,
-  - :doc:`proto/utd/docflow/OutboundUniversalTransferDocumentDocflow` — исходящий УПД,
-  - :doc:`proto/utd/docflow/UniversalTransferDocumentInfo` — дополнительные данные о УПД,
-  - :doc:`proto/utd/docflow/UniversalCorrectionDocumentInfo` — дополнительные данные о УКД;
+  - :doc:`proto/obsolete/InboundUniversalTransferDocumentDocflow` — входящий УПД,
+  - :doc:`proto/obsolete/OutboundUniversalTransferDocumentDocflow` — исходящий УПД,
+  - :doc:`proto/obsolete/UniversalTransferDocumentInfo` — дополнительные данные о УПД,
+  - :doc:`proto/obsolete/UniversalCorrectionDocumentInfo` — дополнительные данные о УКД;
   
- - в структуре :doc:`proto/Docflow` добавлены поля ``InboundUniversalTransferDocumentDocflow`` и ``OutboundUniversalTransferDocumentDocflow``;
- - в структуре :doc:`proto/DocumentInfo` добавлены поля ``UniversalTransferDocumentInfo`` и ``UniversalCorrectionDocumentInfo``.
+ - в структуре :doc:`proto/obsolete/Docflow` добавлены поля ``InboundUniversalTransferDocumentDocflow`` и ``OutboundUniversalTransferDocumentDocflow``;
+ - в структуре :doc:`proto/obsolete/DocumentInfo` добавлены поля ``UniversalTransferDocumentInfo`` и ``UniversalCorrectionDocumentInfo``.
 
 
 10.10.2016
@@ -1198,9 +1230,9 @@
 - Добавлена возможность отправлять новый тип документа «Дополнительное соглашение к договору»:
 
  - в структуре :doc:`proto/MessageToPost` добавлена стуктура :doc:`proto/obsolete/SupplementaryAgreementAttachment` для передачи дополнительного соглашения к договору;
- - в структуры :doc:`proto/Entity message` и :doc:`proto/DocumentType` добавлен новый тип для дополнительного соглашения к договору;
+ - в структуры :doc:`proto/Entity message` и :doc:`proto/obsolete/DocumentType` добавлен новый тип для дополнительного соглашения к договору;
  - в структуре :doc:`proto/Document` добавлена вложенная структура :doc:`SupplementaryAgreementMetadata <proto/obsolete/BilateralDocumentMetadata>` для описания метаданных дополнительного соглашения к договору;
- - в структуре :doc:`proto/DocumentInfo` добавлена вложенная структура :doc:`SupplementaryAgreementInfo <proto/SupplementaryAgreementDocumentInfo>` для описания метаданных дополнительного соглашения к договору.
+ - в структуре :doc:`proto/obsolete/DocumentInfo` добавлена вложенная структура :doc:`SupplementaryAgreementInfo <proto/obsolete/SupplementaryAgreementDocumentInfo>` для описания метаданных дополнительного соглашения к договору.
 
 
 10.08.2015
