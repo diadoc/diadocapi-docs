@@ -3,7 +3,7 @@ DetectCustomPrintForms
 
 Метод ``DetectCustomPrintForms`` выявляет нестандартную печатную форму у документов из списка.
 
-Получить печатную форму документа можно с помощью метода :doc:`../http/GeneratePrintForm`.
+Получить печатную форму документа можно с помощью метода :doc:`GeneratePrintForm`.
 
 .. http:post:: /DetectCustomPrintForms
 
@@ -52,3 +52,13 @@ DetectCustomPrintForms
 			- ``HasCustomPrintForm`` — флаг, показывающий, что данный документ имеет нестандартную печатную форму.
 
 Метод обрабатывает за один запрос не более 100 документов.
+
+----
+
+.. rubric:: Смотри также
+
+*Другие методы для работы с печатными формами:*
+	- :doc:`GeneratePrintForm` — генерирует печатную форму документа по его идентификатору.
+	- :doc:`GenerateForwardedDocumentPrintForm` — генерирует печатную форму пересланного документа.
+	- :doc:`GeneratePrintFormFromAttachment` — возвращает идентификатор, с помощью которого можно получить печатную форму документа по его содержимому.
+	- :doc:`GetGeneratedPrintForm` — генерирует печатную форму документа.
