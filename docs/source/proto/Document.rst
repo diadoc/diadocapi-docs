@@ -18,7 +18,7 @@ Document
         optional string FileName = 10;
         optional string DocumentDate = 11;
         optional string DocumentNumber = 12;
-        optional NonformalizedDocument.obsolete/NonformalizedDocumentMetadata obsolete/NonformalizedDocumentMetadata = 13;
+        optional NonformalizedDocument.NonformalizedDocumentMetadata NonformalizedDocumentMetadata = 13;
         optional InvoiceDocument.InvoiceMetadata InvoiceMetadata = 14;
         optional BilateralDocument.TrustConnectionRequestMetadata TrustConnectionRequestMetadata = 15;
         optional BilateralDocument.BasicDocumentMetadata Torg12Metadata = 16;
@@ -41,7 +41,7 @@ Document
         optional sfixed64 SendTimestampTicks = 33;
         optional sfixed64 DeliveryTimestampTicks = 34;
         repeated ForwardDocumentEvent ForwardDocumentEvents = 35;
-        optional BilateralDocument.obsolete/BilateralDocumentMetadata ReconciliationActMetadata = 38;
+        optional BilateralDocument.BilateralDocumentMetadata ReconciliationActMetadata = 38;
         optional BilateralDocument.ContractMetadata ContractMetadata = 39;
         optional BilateralDocument.BasicDocumentMetadata Torg13Metadata = 40;
         optional UnilateralDocument.ServiceDetailsMetadata ServiceDetailsMetadata = 41;
@@ -57,8 +57,8 @@ Document
         optional bool IsRead = 51 [default = false];
         optional string RoamingNotificationStatusDescription = 52;
         optional bool PacketIsLocked = 53 [default = false];
-        optional obsolete/NonformalizedDocumentMetadata PriceListAgreementMetadata = 54;
-        optional obsolete/NonformalizedDocumentMetadata CertificateRegistryMetadata = 55;
+        optional NonformalizedDocumentMetadata PriceListAgreementMetadata = 54;
+        optional NonformalizedDocumentMetadata CertificateRegistryMetadata = 55;
         optional UniversalTransferDocumentMetadata UniversalTransferDocumentMetadata = 56;
         optional UniversalTransferDocumentRevisionMetadata UniversalTransferDocumentRevisionMetadata = 57;
         optional UniversalCorrectionDocumentMetadata UniversalCorrectionDocumentMetadata = 58;
@@ -211,7 +211,7 @@ Document
 
 - ``DocumentNumber`` — номер документа. Теперь номер возвращается в поле ``Metadata``.
 
-- ``obsolete/NonformalizedDocumentMetadata`` — дополнительные атрибуты неформализованных документов, представленные структурой :doc:`obsolete/NonformalizedDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata`` и ``RecipientResponseStatus``.
+- ``NonformalizedDocumentMetadata`` — дополнительные атрибуты неформализованных документов, представленные структурой :doc:`obsolete/NonformalizedDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata`` и ``RecipientResponseStatus``.
 
 - ``InvoiceMetadata`` — дополнительные атрибуты счетов-фактур, представленные структурой :doc:`obsolete/InvoiceDocumentMetadata`. Теперь атрибуты возвращаются в полях ``Metadata``, ``RecipientReceiptMetadata``, ``ConfirmationMetadata`` и ``AmendmentRequestMetadata``.
 
