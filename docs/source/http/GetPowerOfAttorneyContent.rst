@@ -5,7 +5,7 @@ GetPowerOfAttorneyContent
 
 Версии метода:
 	- :ref:`GetPowerOfAttorneyContent_v2` — возвращает файлы передоверенной МЧД и родительских МЧД.
-	- :ref:`GetPowerOfAttorneyContent_v1`.
+	- :ref:`GetPowerOfAttorneyContent_v1` — метод устарел.
 	
 .. _GetPowerOfAttorneyContent_v2:
 
@@ -52,7 +52,10 @@ v2
 			- ``Signature`` — подпись под МЧД.
 			- ``PowerOfAttorneyFullId`` — идентификатор МЧД. Представлен структурой :doc:`../proto/PowerOfAttorneyFullId`.
 
-		- ``DelegationChain`` — список файлов родительских МЧД. Каждая МЧД представлена структурой ``PowerOfAttorneyContentV2``. Возвращается, если цепочку файлов МЧД передали в поле ``Contents`` структуры :doc:`../proto/PowerOfAttorneyToPost`.
+		- ``DelegationChain`` — список предыдущих МЧД для доверенности, выпущенной в порядке передоверия. Каждая МЧД представлена структурой ``PowerOfAttorneyContentV2``. Список хранится в порядке от корневой МЧД (элемент с индексом ``0``) к дочерней, сама конечная МЧД в список не включена.  Заполняется только в случаях:
+
+			- если при отправке документов в поле ``Contents`` структуры :doc:`PowerOfAttorneyToPost` была указана цепочка файлов МЧД;
+			- если по идентификатору ``FullId`` удалось получить цепочку доверенностей из сервиса ФНС.
 
 .. _GetPowerOfAttorneyContent_v1:
 
