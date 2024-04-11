@@ -5,7 +5,7 @@ GetCounteragentsFromGroup
 
 .. http:get:: /GetCounteragentsFromGroup
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../../entities/box>` организации.
 	:queryparam counteragentGroupId: идентификатор группы контрагентов
 	:queryparam afterIndexKey: уникальный ключ, позволяющий итерироваться по списку контрагентов. Необязательный параметр.
 	:queryparam count: максимальное количество контрагентов в ответе. Может принимать значения от 1 до 100. Необязательный параметр. По умолчанию равен 100.

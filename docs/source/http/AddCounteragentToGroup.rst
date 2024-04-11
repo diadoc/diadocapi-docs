@@ -5,7 +5,7 @@ AddCounteragentToGroup
 
 .. http:post:: /AddCounteragentToGroup
 
-	:queryparam boxId: идентификатор ящика организации.
+	:queryparam boxId: идентификатор :doc:`ящика <../../entities/box>` организации.
 	:queryparam counteragentGroupId: идентификатор группы контрагентов.
 	:queryparam counteragentBoxId: идентификатор ящика контрагента.
 
