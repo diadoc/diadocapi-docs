@@ -1,6 +1,16 @@
 ﻿История изменений API
 =====================
 
+11.04.2024
+----------
+**SDK**: `C# 2.15.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.15.0>`__ | `Java 3.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.16.0>`__
+
+- Добавили возможность работы с МЧД, выпущенной в порядке передоверия.
+
+	- Метод :doc:`http/GetRoamingOperators` теперь может вернуть значение ``SupportPowerOfAttorneyDelegationChain``: эта функция означает, что оператор поддерживает работу с МЧД, выпущенной в порядке передоверия.
+	- В структуру :doc:`proto/PowerOfAttorney` добавили поля ``DelegationChain`` и ``DelegationInfo``. Они хранят данные о предыдущих МЧД для доверенностей, выпущенных в порядке передоверия.
+
+
 08.04.2024
 ----------
 **SDK**: `C# 2.15.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.15.0>`__ | `Java 3.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.16.0>`__
@@ -24,9 +34,17 @@
 
 	- Добавили поле ``CounteragentGroupId`` в структуры :doc:`proto/Counteragent` и :doc:`proto/GetOrganizationsByInnListResponse`. В поле возвращается идентификатор группы, в которую добавлен контрагент.
 
+
+06.03.2024
+----------
+**SDK**: `C# 2.14.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.7>`__ | `Java 3.15.8 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.8>`__
+
+- Добавили возможность :doc:`указать метку технологического партнера <MiscellaneousApiFeatures>`.
+
+
 27.02.2024
 ----------
-**SDK**: `C# 2.14.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.6>`__
+**SDK**: `C# 2.14.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.6>`__ | `Java 3.15.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.7>`__
 
 - Добавили возможность указать расширенные данные подписанта для УПД, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__:
 
@@ -34,42 +52,55 @@
 	- в поле ``ExtendedDocumentTitleType`` структуры :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` добавили значения 12 и 13 для титула продавца и покупателя УПД формата приказа 970 соответственно;
 	- в перечисления :doc:`proto/SignerType`, :doc:`proto/SignerStatus` и :doc:`proto/SignerPowers` добавили значение -1: в УПД нового формата нет полей с типом, статусом и областью полномочий подписанта.
 
+
 20.02.2024
 ----------
 
 - Добавили возможность получить статусы документов с прослеживаемыми товарами. Подробнее о прослеживаемости на странице :doc:`howto/tracing`.
+
 
 02.02.2024
 ----------
 
 - Добавили возможность передать МЧД в содержимом документа для акта о приемке выполненных работ КС-2 формата, утвержденного приказом `№ ЕД-7-26/691@ <https://normativ.kontur.ru/document?moduleId=1&documentId=431929>`__.
 
+
 20.12.2023
 ----------
-**SDK**: `C# 2.14.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.5>`__
+**SDK**: `C# 2.14.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.5>`__ | `Java 3.15.5 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.5>`__
 
 - Добавлена возможность передать машиночитаемую доверенность в содержимом документа. МЧД в содержимом можно передать только для акта сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document?moduleId=1&documentId=425482>`__:
 
 	- в структуру :doc:`proto/PowerOfAttorneyToPost` добавлен флаг  ``UseDocumentContent``;
 	- в перечисление :doc:`proto/PowerOfAttorneySendingType` добавлено значение ``DocumentContent``. Значение будет возвращаться, если МЧД передали в содержимом документа.
 
-03.11.2023
+
+02.11.2023
 ----------
-**SDK**: `C# 2.14.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.3>`__
+**SDK**: `C# 2.14.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.3>`__ | `Java 3.15.4 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.4>`__ | `C++ 1.92.14 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.14>`__
 
 - В структуру :doc:`proto/Entity message` добавлены поля:
 
 	- ``AuthorUserId`` — хранит идентификатор пользователя-автора сущности;
 	- ``MoveDocumentInfo`` — хранит информацию о перемещении документа в другое подразделение.
 
-30.10.2023
+
+24.10.2023
 ----------
-**SDK**: `C# 2.14.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.2>`__
+**SDK**: `C# 2.14.2 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.2>`__ | `Java 3.15.3 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.3>`__
 
 - В структуру :doc:`proto/PowerOfAttorney` добавлено поле ``PermissionsInfo``, в котором возвращается информация о полномочиях из машиночитаемой доверенности.
 - Добавлена структура :doc:`proto/PowerOfAttorneyPermissionsInfo` для хранения информации о полномочиях из МЧД.
 
-25.09.2023
+
+18.10.2023
+----------
+**SDK**: `C# 2.14.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.0>`__
+
+- В перечисление :doc:`proto/obsolete/DocumentType` добавлено значение ``MesNotification``.
+
+
+22.09.2023
 ----------
 **SDK**: `C# 2.13.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.13.0>`__ | `Java 3.15.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.2>`__
 
@@ -79,11 +110,13 @@
 	- в структуру :doc:`proto/PowerOfAttorney` добавлено поле ``DelegationChain``, в котором возвращается список файлов передоверенной МЧД и родительских МЧД;
 	- в структуру :doc:`proto/PowerOfAttorneyToPost` добавлено поле ``Contents``, в котором можно передать как один файл МЧД, так и цепочку файлов в случае передоверия.
 
-10.08.2023
+
+09.08.2023
 ----------
 **SDK**: `C# 2.12.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.12.1>`__
 
 - В структуру :doc:`proto/PowerOfAttorneyToPost` добавлен флаг ``SendAsFile``. Флаг указывает, что МЧД нужно передать файлом.
+
 
 22.06.2023
 ----------
@@ -97,12 +130,25 @@
 	- в структуры :doc:`proto/PowerOfAttorneyInfo` и :doc:`proto/SignaturePowerOfAttorney` добавлено поле ``SendingType``, в котором возвращается информация о способе передачи МЧД;
 	- в структуру :doc:`proto/PowerOfAttorney` добавлены поля ``System`` и ``IdFile``. В поле ``System`` возвращается информация о системе хранения доверенности, в поле ``IdFile`` — имя xml-файла МЧД без расширения.
 
+
 19.05.2023
 ----------
 **SDK**: `C# 2.11.8 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.8>`__ | `Java 3.13.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.13.0>`__
 
-- Добавлены новые версии методов :doc:`/V2/GenerateReceiptXml <http/GenerateReceiptXml>`, :doc:`/V2/GenerateSignatureRejectionXml <http/GenerateSignatureRejectionXml>`, :doc:`/V2/GenerateInvoiceCorrectionRequestXml <http/GenerateInvoiceCorrectionRequestXml>`. Методы генерируют технологические документы в формате, утвержденном приказом `№ ЕД-7-26/133@ <https://www.nalog.gov.ru/rn77/about_fts/docs/13194601/>`__.
-- Добавлены структуры для передачи в теле запроса новых версий методов: :doc:`proto/ReceiptGenerationRequestV2`, :doc:`proto/InvoiceCorrectionRequestGenerationRequestV2`, :doc:`proto/SignatureRejectionGenerationRequestV2`.
+- Добавлены новые версии методов:
+
+  - :doc:`/V2/GenerateReceiptXml <http/GenerateReceiptXml>`
+  - :doc:`/V2/GenerateSignatureRejectionXml <http/GenerateSignatureRejectionXml>`
+  - :doc:`/V2/GenerateInvoiceCorrectionRequestXml <http/GenerateInvoiceCorrectionRequestXml>`
+  
+  Методы генерируют технологические документы в формате, утвержденном приказом `№ ЕД-7-26/133@ <https://www.nalog.gov.ru/rn77/about_fts/docs/13194601/>`__.
+
+- Добавлены структуры для передачи в теле запроса новых версий методов:
+
+  - :doc:`proto/ReceiptGenerationRequestV2`
+  - :doc:`proto/InvoiceCorrectionRequestGenerationRequestV2`
+  - :doc:`proto/SignatureRejectionGenerationRequestV2`
+
 
 10.04.2023
 ----------
@@ -112,11 +158,13 @@
 - В структуре :doc:`SignerInfoV2 <proto/DocumentTypeDescriptionV2>` добавлено поле ``SignerUserDataXsdUrl``, которое содержит URL-путь метода, возвращающего файл XSD-схемы упрощенного XML подписанта.
 - В структурах :doc:`DraftDocumentToPatch <proto/PrepareDocumentsToSignRequest>`, :doc:`DocumentToPatch <proto/PrepareDocumentsToSignRequest>` и :doc:`ContentToPatch <proto/PrepareDocumentsToSignRequest>` добавлено поле ``SignerContent``.
 
+
 10.03.2023
 ----------
 **SDK**: `C# 2.11.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.6>`__ | `Java 3.14.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.14.0>`__
 
 - Добавлена новая версия метода :doc:`/V2/GetWorkflowsSettings <http/GetWorkflowsSettings>`. Метод возвращает свойства всех видов документооборота.
+
 
 11.01.2023
 ----------
@@ -127,11 +175,20 @@
 - В структуре :doc:`proto/DocflowStatusV3` добавлено поле ``GeneralRoamingSendingStatus``.
 - Реализована возможность получить информацию о функции роуминговых операторов ``SupportsPowerOfAttorney`` с помощью метода :doc:`http/GetRoamingOperators`.
 
+
+14.07.2022
+----------
+**SDK**: `C# 2.11.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.3>`__ | `Java 3.12.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.12.0>`__ | `C++ 1.92.11 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.11>`__
+
+- В структуру :doc:`proto/CertificateInfoV2` добавлено поле ``SubjectType`` для определения типа владельца сертификата.
+
+
 21.06.2022
 ----------
 **SDK**: `C# 2.11.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.0>`__
 
 - Реализована возможность получения информации о функциях роуминговых операторов с помощью метода :doc:`../http/GetRoamingOperators`.
+
 
 05.04.2022
 ----------
@@ -154,7 +211,8 @@
 ----------
 **SDK**: `C# 2.9.29 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.29>`__ | `Java 3.9.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.9>`__ | `C++ 1.92.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.9>`__
 
-- Изменена структура :doc:`CounteragentList <proto/Counteragent>`: добавлено поле ``CounteragentList.TotalCountType``, которое отражает количество контрагентов, возвращаемых в поле ``TotalCount``. Для поля ``TotalCount`` введено ограничение значения: теперь в нем возвращает значение не больше 10000. Это ограничение введено для повышения производительности метода поиска контрагентов.
+- В структуру :doc:`CounteragentList <proto/Counteragent>` добавлено поле ``TotalCountType``, которое отражает количество контрагентов, возвращаемых в поле ``TotalCount``.
+- Для поля ``TotalCount`` введено ограничение значения: теперь в нем возвращает значение не больше 10000. Это ограничение введено для повышения производительности метода поиска контрагентов.
 
 
 21.02.2022
