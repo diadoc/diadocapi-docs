@@ -5,7 +5,7 @@
 ----------
 **SDK**: `C# 2.16.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.16.0>`__ | `Java 3.17.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.17.0>`__
 
-- Добавили возможность работы с МЧД, выпущенной в порядке передоверия.
+- Добавили возможность работы с МЧД, выпущенной в порядке передоверия:
 
 	- Метод :doc:`http/GetRoamingOperators` теперь может вернуть значение ``SupportPowerOfAttorneyDelegationChain``: эта функция означает, что оператор поддерживает работу с МЧД, выпущенной в порядке передоверия.
 	- В структуру :doc:`proto/PowerOfAttorney` добавили поля ``DelegationChain`` и ``DelegationInfo``. Они хранят данные о предыдущих МЧД для доверенностей, выпущенных в порядке передоверия.
