@@ -3,7 +3,7 @@
 
 11.04.2024
 ----------
-**SDK**: `C# 2.15.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.15.0>`__ | `Java 3.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.16.0>`__
+**SDK**: `C# 2.16.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.16.0>`__ | `Java 3.17.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.17.0>`__
 
 - Добавили возможность работы с МЧД, выпущенной в порядке передоверия.
 
