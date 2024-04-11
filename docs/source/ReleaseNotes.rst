@@ -6,7 +6,7 @@
 
 - Добавили возможность работы с МЧД, выпущенной в порядке передоверия.
 
-	- Метод :doc:`http/GetRoamingOperators` теперь может вернуть значение ``SupportPowerOfAttorneyDelegationChain``: эта функция означает, что оператор поддерживает передоверие МЧД.
+	- Метод :doc:`http/GetRoamingOperators` теперь может вернуть значение ``SupportPowerOfAttorneyDelegationChain``: эта функция означает, что оператор поддерживает работу с МЧД с передоверием.
 	- В структуру :doc:`proto/PowerOfAttorney` добавили поля ``DelegationChain`` и ``DelegationInfo``. Они хранят данные о предыдущих МЧД для доверенностей, выпущенных в порядке передоверия.
 
 27.02.2024
