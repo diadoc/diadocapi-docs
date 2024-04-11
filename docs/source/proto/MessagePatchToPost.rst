@@ -54,15 +54,15 @@ MessagePatchToPost
 
 - ``XmlAcceptanceCertificateBuyerTitles`` — список титулов заказчика для актов о выполнении работ или оказании услуг в XML-формате, подлежащих отправке. Каждый элемент списка представлен структурой :ref:`RecipientTitleAttachment`. Поле устарело, вместо него используйте поле ``RecipientTitles``.
 
-- ``Resolutions`` — список действий по согласованию к документам сообщения, к которому относится дополнение. Каждый элемент списка представлен структурой :ref:`ResolutionAttachment`.
+- ``Resolutions`` — список действий по согласованию к документам сообщения, к которому относится дополнение. Каждый элемент списка представлен структурой :doc:`ResolutionAttachment`.
 
-- ``ResolutionRequests`` — список запросов на согласование или подпись документа. Каждый элемент списка представлен структурой :ref:`ResolutionRequestAttachment`.
+- ``ResolutionRequests`` — список запросов на согласование или подпись документа. Каждый элемент списка представлен структурой :doc:`ResolutionRequestAttachment`.
 
-- ``ResolutionRequestCancellations`` — список действий, отменяющих отправленные ранее запросы на согласование документа. Каждый элемент списка представлен структурой :ref:`ResolutionRequestCancellationAttachment`.
+- ``ResolutionRequestCancellations`` — список действий, отменяющих отправленные ранее запросы на согласование документа. Каждый элемент списка представлен структурой :doc:`ResolutionRequestCancellationAttachment`.
 
-- ``ResolutionRequestDenials`` — список действий по отказу от запроса подписи. Отказ аннулирует ошибочный отправленный запрос на подпись со стороны получателя запроса. Каждый элемент списка представлен структурой :ref:`ResolutionRequestDenialAttachment`.
+- ``ResolutionRequestDenials`` — список действий по отказу от запроса подписи. Отказ аннулирует ошибочный отправленный запрос на подпись со стороны получателя запроса. Каждый элемент списка представлен структурой :doc:`ResolutionRequestDenialAttachment`.
 
-- ``ResolutionRequestDenialCancellations`` — список действий, отменяющих отказы от запросов подписей. При выполнении действий исходные запросы на подпись восстанавливаются. Каждый элемент списка представлен структурой :ref:`ResolutionRequestDenialCancellationAttachment`.
+- ``ResolutionRequestDenialCancellations`` — список действий, отменяющих отказы от запросов подписей. При выполнении действий исходные запросы на подпись восстанавливаются. Каждый элемент списка представлен структурой :doc:`ResolutionRequestDenialCancellationAttachment`.
 
 - ``RevocationRequests`` — список предложений об аннулировании документов. Каждый элемент списка представлен структурой :ref:`RevocationRequestAttachment`.
 

@@ -69,9 +69,9 @@ HTTP-интерфейс
    proto/OuterDocflowInfo
    proto/PrepareDocumentsToSignRequest
    proto/PrepareDocumentsToSignResponse
-   proto/Resolution
-   proto/ResolutionRequest
-   proto/ResolutionRequestDenial
+   proto/ResolutionInfo
+   proto/ResolutionRequestInfo
+   proto/ResolutionRequestDenialInfo
    proto/ResolutionRoute
    proto/ResolutionStatus
    proto/RevocationRequestInfo   

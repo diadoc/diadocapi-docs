@@ -367,6 +367,9 @@ redirects = {
      "howto/example_authorization": "../Authorization.html",
      "http/Organizations/GetOrganizationFeatures": "../GetOrganizationFeatures.html",
      "proto/utd/ExtendedSignerDetailsToPost": "../ExtendedSignerDetailsToPost.html",
+     "proto/Resolution": "ResolutionInfo.html",
+     "proto/ResolutionRequest": "ResolutionRequestInfo.html",
+     "proto/ResolutionRequestDenial": "ResolutionRequestDenialInfo.html",
     
     # redirect obsolete methods
      "http/DetectDocumentTypes": "obsolete/DetectDocumentTypes.html",

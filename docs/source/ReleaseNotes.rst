@@ -592,8 +592,8 @@
 ----------
 **SDK**: `C# 1.65.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.65.0>`__ | `Java 2.1.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.1.0>`__ | `C++ 1.65.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.65.0>`__
 
-- В структуре :doc:`ResolutionRequestType <proto/ResolutionRequest>` добавлен тип согласования ``Custom``.
-- В структуре :doc:`ResolutionRequestInfo <proto/ResolutionRequest>` добавлено свойство ``Actions``, в котором перечислены доступные действия для запроса согласования.
+- В структуре :doc:`ResolutionRequestType <proto/ResolutionRequestInfo>` добавлен тип согласования ``Custom``.
+- В структуре :doc:`ResolutionRequestInfo <proto/ResolutionRequestInfo>` добавлено свойство ``Actions``, в котором перечислены доступные действия для запроса согласования.
 - В структуре :doc:`ResolutionStatusType <proto/ResolutionStatus>` добавлен тип запроса согласования ``ActionsRequested``, который соответствует типу ``Custom``.
 - В структуре :doc:`ResolutionStatus <proto/ResolutionDocflowV3>` добавлено свойство ``ActionsRequested``.
 - В структуре :doc:`ResolutionRequestV3 <proto/ResolutionEntitiesV3>` добавлено свойство ``Actions``, в котором перечислены доступные действия для запроса согласования.
@@ -859,11 +859,11 @@
  - :doc:`CorrectionRequestAttachment <proto/MessagePatchToPost>`
  - :doc:`DocumentSignature <proto/MessagePatchToPost>`
  - :doc:`SignatureVerification <proto/MessagePatchToPost>`
- - :doc:`ResolutionAttachment <proto/Resolution>`
- - :doc:`ResolutionRequestAttachment <proto/ResolutionRequest>`
+ - :doc:`proto/ResolutionAttachment`
+ - :doc:`proto/ResolutionRequestAttachment`
  - :doc:`ResolutionRouteAssignment <proto/MessagePatchToPost>`
- - :doc:`ResolutionRequestCancellationAttachment <proto/ResolutionRequest>`
- - :doc:`ResolutionRequestDenialAttachment <proto/ResolutionRequestDenial>`
+ - :doc:`proto/ResolutionRequestCancellationAttachment`
+ - :doc:`proto/ResolutionRequestDenialAttachment`
  - :doc:`RequestedSignatureRejection <proto/MessagePatchToPost>`
  - :doc:`RevocationRequestAttachment <proto/MessagePatchToPost>`
  - :doc:`XmlSignatureRejectionAttachment <proto/MessagePatchToPost>`
@@ -1174,7 +1174,7 @@
 19.01.2016
 ----------
 
-- Значения перечисления ``ResolutionType`` (:doc:`proto/Resolution`) синхронизированы со значениями, возвращаемые с сервера (значение ``Undefined`` заменено на ``UndefinedResolutionType``).
+- Значения перечисления :doc:`proto/ResolutionType` синхронизированы со значениями, возвращаемые с сервера (значение ``Undefined`` заменено на ``UndefinedResolutionType``).
 - В структуре :doc:`proto/MessageToPost` добавлен флаг залоченного пакета ``LockPacket``.
 
 
@@ -1443,10 +1443,10 @@
 - В структуре :doc:`Entity <proto/Entity message>` добавлено поле ``RawCreationDate``, содержащее :doc:`метку времени <proto/Timestamp>` создания сущности. Это поле заполняется для всех сущностей, его можно использовать для получения времени подписания или согласования документа.
 - Добавлена возможность осуществлять согласование или отказ в согласовании документов через API:
 
- - добавлена структура :doc:`proto/Resolution`;
+ - добавлена структура :doc:`proto/ResolutionInfo`;
  - в структуре :doc:`proto/MessagePatchToPost` добавлено поле ``Resolutions``;
  - все действия по согласованию видны в структуре :doc:`proto/Message` как сущности с типом :doc:`Attachment/Resolution <proto/Entity message>`; содержимое этой сущности — байты строки комментария к согласованию в кодировке UTF-8;
- - в структуре :doc:`Entity <proto/Entity message>` добавлено поле ``ResolutionInfo``, содержащее тип действия по согласованию и ФИО согласователя в виде новой структуры :doc:`ResolutionInfo <proto/Resolution>`.
+ - в структуре :doc:`Entity <proto/Entity message>` добавлено поле ``ResolutionInfo``, содержащее тип действия по согласованию и ФИО согласователя в виде новой структуры :doc:`proto/ResolutionInfo`.
 
 
 26.06.2012
