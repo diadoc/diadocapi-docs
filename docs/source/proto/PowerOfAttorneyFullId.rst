@@ -18,10 +18,10 @@ PowerOfAttorneyFullId
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`PowerOfAttorneyToRegister`
 	- в структуре :doc:`PowerOfAttorney`
-	- в структуре :doc:`PowerOfAttorneyToPost`
 	- в структуре :doc:`PowerOfAttorneyInfo`
+	- в структуре :doc:`PowerOfAttorneyToPost`
+	- в структуре :doc:`PowerOfAttorneyToRegister`
 	- в структуре :doc:`SignaturePowerOfAttorney`
 
 *Руководства:*

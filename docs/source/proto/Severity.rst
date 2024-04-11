@@ -24,6 +24,6 @@ Severity
 .. rubric:: См. также
 
 *Перечисление используется:*
-	- в структуре :doc:`RoamingSendingStatus`
 	- в структуре :doc:`DocflowStatusModelV3`
 	- в структуре :doc:`PowerOfAttorneyValidationStatus`
+	- в структуре :doc:`RoamingSendingStatus`

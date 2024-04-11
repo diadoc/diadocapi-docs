@@ -43,6 +43,6 @@ RoamingSendingStatus
 .. rubric:: См. также
 
 *Структура используется:*
+	- в структуре :doc:`DocflowStatusV3`
 	- в структуре :doc:`PowerOfAttorneyInfo`
 	- в структуре :doc:`SignaturePowerOfAttorney`
-	- в структуре :doc:`DocflowStatusV3`

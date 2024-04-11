@@ -20,7 +20,7 @@ CounteragentGroup
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/CreateCounteragentGroup`
-	- в теле ответа метода :doc:`../http/UpdateCounteragentGroup`
-	- в теле ответа метода :doc:`../http/GetCounteragentGroup`
 	- в структуре ``CounteragentGroupsList``, возвращаемой методом :doc:`../http/GetCounteragentGroups`
+	- в теле ответа метода :doc:`../http/CreateCounteragentGroup`
+	- в теле ответа метода :doc:`../http/GetCounteragentGroup`
+	- в теле ответа метода :doc:`../http/UpdateCounteragentGroup`

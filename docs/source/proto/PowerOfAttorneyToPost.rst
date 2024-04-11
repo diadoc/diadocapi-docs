@@ -56,9 +56,9 @@ PowerOfAttorneyToPost
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`SignedContent`
-	- в структуре :doc:`DocumentSignature`
 	- в структуре :doc:`DocumentSenderSignature`
+	- в структуре :doc:`DocumentSignature`
+	- в структуре :doc:`SignedContent`
 
 *Руководства:*
 	- :doc:`../howto/powerofattorney`

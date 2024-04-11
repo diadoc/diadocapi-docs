@@ -225,8 +225,8 @@ PowerOfAttorneyDelegationInfo
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`PowerOfAttorneyRegisterResult`
 	- в структуре :doc:`EmployeePowerOfAttorney`
+	- в структуре :doc:`PowerOfAttorneyRegisterResult`
 	- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`
 
 *Руководства:*
