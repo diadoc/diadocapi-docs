@@ -44,10 +44,11 @@ GetEmployeePowersOfAttorney
 	- :doc:`../howto/powerofattorney`
 
 *Другие методы для работы с МЧД:*
-	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД.
-	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД.
-	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику.
-	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника.
-	- :doc:`UpdateEmployeePowerOfAttorney` — изменяет параметр МЧД «Использовать по умолчанию».
-	- :doc:`PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД.
-	- :doc:`GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом.
+	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику
+	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника
+	- :doc:`GetPowerOfAttorneyContent` — возвращает содержимое файлов МЧД и родительских МЧД
+	- :doc:`GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом
+	- :doc:`PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД
+	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД
+	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД
+	- :doc:`UpdateEmployeePowerOfAttorney` — изменяет параметр МЧД «Использовать по умолчанию»
