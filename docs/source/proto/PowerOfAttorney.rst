@@ -91,7 +91,7 @@ PowerOfAttorneyIssuerType
 PowerOfAttorneyIssuerLegalEntity
 --------------------------------
 
-Структура ``PowerOfAttorneyIssuerLegalEntity`` хранит данные об иностранной организации, являющейся доверителем.
+Структура ``PowerOfAttorneyIssuerLegalEntity`` хранит данные о юридическом лице, являющимся доверителем.
 
 .. code-block:: protobuf
 
@@ -111,7 +111,7 @@ PowerOfAttorneyIssuerLegalEntity
 PowerOfAttorneyIssuerForeignEntity
 ----------------------------------
 
-Структура ``PowerOfAttorneyIssuerForeignEntity`` хранит данные о юридическом лице, являющимся доверителем.
+Структура ``PowerOfAttorneyIssuerForeignEntity`` хранит данные об иностранной организации, являющейся доверителем.
 
 .. code-block:: protobuf
 
