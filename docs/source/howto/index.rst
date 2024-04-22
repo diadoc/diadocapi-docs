@@ -9,6 +9,7 @@
 
 	marking_ttgis
 	tracing
+	utd970
 	utd820
 	example_send_invoice
 	example_receive_invoice
