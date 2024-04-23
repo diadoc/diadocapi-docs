@@ -1,6 +1,8 @@
 BoxEventList
 ============
 
+Структура ``BoxEventList`` представляет собой список событий в :doc:`ящике<../entities/box>`.
+
 .. code-block:: protobuf
 
     message BoxEventList {
@@ -8,8 +10,14 @@ BoxEventList
         optional int32 TotalCount = 2;
         required TotalCountType TotalCountType = 3;
     }
-        
 
-Структура данных *BoxEventList* представляет собой список событий :doc:`BoxEvent`, возвращаемый методом :doc:`../http/GetNewEvents`. 
+- ``Events`` — список событий в ящике. Каждый элемент списка представлен структурой :doc:`BoxEvent`.
+- ``TotalCount`` — количество событий, удовлетворяющих запросу.
+- ``TotalCountType`` — параметр, указывающий, является ли значение ``TotalCount`` точным или подсчет был ограничен. Принимает значения из перечисления :doc:`TotalCountType`.
 
-Поле *BoxEventList.TotalCount* содержит количество событий, удовлетворяющих запросу. Поле *BoxEventList.TotalCountType* типа :doc:`TotalCountType` указывает, точно ли посчитан *TotalCount* или подсчет был ограничен после соответствующего значения.
+----
+
+.. rubric:: См. также
+
+*Структура используется:*
+	- в теле ответа метода :doc:`../http/GetNewEvents`

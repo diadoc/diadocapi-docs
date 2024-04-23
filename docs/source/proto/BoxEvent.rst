@@ -1,7 +1,7 @@
 BoxEvent
 ========
 
-Структура ``BoxEvent`` представляет собой событие в ящике.
+Структура ``BoxEvent`` представляет собой событие в :doc:`ящике<../entities/box>`.
 
 .. code-block:: protobuf
 
