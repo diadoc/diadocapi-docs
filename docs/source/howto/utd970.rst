@@ -52,7 +52,7 @@ Cгенерировать файл титула, соответствующий 
                   "SupportsContentPatching": true,
                   "SupportsEncrypting": false,
                   "SupportsPredefinedRecipientTitle": false,
-                 "SupportsAmendmentRequest": true,
+                  "SupportsAmendmentRequest": true,
                   "Titles": [
                     {
                       "Index": 0,
@@ -74,9 +74,9 @@ Cгенерировать файл титула, соответствующий 
                       "Id": 17,
                       "IsDefault": true
                     },
-                     {
-                      "Id": 10,
-                      "IsDefault": false
+                      {
+                        "Id": 10,
+                        "IsDefault": false
                       }
                   ]
                 }
