@@ -9,6 +9,7 @@
 
 	counteragent
 	packet
+	signature
 	shelf
 	certificate
 	message

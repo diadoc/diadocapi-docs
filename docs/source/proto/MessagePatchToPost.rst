@@ -46,12 +46,7 @@ MessagePatchToPost
 
 - ``CorrectionRequests`` — список уведомлений об уточнении СФ/ИСФ/КСФ/ИКСФ, подлежащих отправке и предусмотренных порядком обмена электронными счетами-фактурами. Каждый элемент списка представлен структурой :ref:`CorrectionRequestAttachment`.
 
-- ``Signatures`` — список подписей под документами, представленных структурой :doc:`DocumentSignature`. Подписи могут быть:
-
-	- подписями отправителя — для отправки документов, сохраненных без отправки,
-	- подписями получателя — для двусторонних документов с запросом подписи,
-	- согласующими подписями под документом,
-	- ответными подписями под запросом на аннулирование документа.
+- ``Signatures`` — список :doc:`подписей <../entities/signature>` под документами, представленных структурой :doc:`DocumentSignature`.
 
 - ``RequestedSignatureRejections`` — список отказов в формировании запрошенной подписи. Каждый элемент списка представлен структурой :ref:`RequestedSignatureRejection`. Поле устарело, вместо него используйте поле ``XmlSignatureRejections``.
 
@@ -59,15 +54,15 @@ MessagePatchToPost
 
 - ``XmlAcceptanceCertificateBuyerTitles`` — список титулов заказчика для актов о выполнении работ или оказании услуг в XML-формате, подлежащих отправке. Каждый элемент списка представлен структурой :ref:`RecipientTitleAttachment`. Поле устарело, вместо него используйте поле ``RecipientTitles``.
 
-- ``Resolutions`` — список действий по согласованию к документам сообщения, к которому относится дополнение. Каждый элемент списка представлен структурой :doc:`ResolutionAttachment <Resolution>`.
+- ``Resolutions`` — список действий по согласованию к документам сообщения, к которому относится дополнение. Каждый элемент списка представлен структурой :doc:`ResolutionAttachment`.
 
-- ``ResolutionRequests`` — список запросов на согласование или подпись документа. Каждый элемент списка представлен структурой :doc:`ResolutionRequestAttachment <ResolutionRequest>`.
+- ``ResolutionRequests`` — список запросов на согласование или подпись документа. Каждый элемент списка представлен структурой :doc:`ResolutionRequestAttachment`.
 
-- ``ResolutionRequestCancellations`` — список действий, отменяющих отправленные ранее запросы на согласование документа. Каждый элемент списка представлен структурой :doc:`ResolutionRequestCancellationAttachment <ResolutionRequest>`.
+- ``ResolutionRequestCancellations`` — список действий, отменяющих отправленные ранее запросы на согласование документа. Каждый элемент списка представлен структурой :doc:`ResolutionRequestCancellationAttachment`.
 
-- ``ResolutionRequestDenials`` — список действий по отказу от запроса подписи. Отказ аннулирует ошибочный отправленный запрос на подпись со стороны получателя запроса. Каждый элемент списка представлен структурой :doc:`ResolutionRequestDenialAttachment <ResolutionRequestDenial>`.
+- ``ResolutionRequestDenials`` — список действий по отказу от запроса подписи. Отказ аннулирует ошибочный отправленный запрос на подпись со стороны получателя запроса. Каждый элемент списка представлен структурой :doc:`ResolutionRequestDenialAttachment`.
 
-- ``ResolutionRequestDenialCancellations`` — список действий, отменяющих отказы от запросов подписей. При выполнении действий исходные запросы на подпись восстанавливаются. Каждый элемент списка представлен структурой :doc:`ResolutionRequestDenialCancellationAttachment <ResolutionRequestDenial>`.
+- ``ResolutionRequestDenialCancellations`` — список действий, отменяющих отказы от запросов подписей. При выполнении действий исходные запросы на подпись восстанавливаются. Каждый элемент списка представлен структурой :doc:`ResolutionRequestDenialCancellationAttachment`.
 
 - ``RevocationRequests`` — список предложений об аннулировании документов. Каждый элемент списка представлен структурой :ref:`RevocationRequestAttachment`.
 

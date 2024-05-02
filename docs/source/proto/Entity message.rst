@@ -268,13 +268,13 @@ Entity
 
 - ``RawCreationDate`` — время создания сущности, представленное структурой :doc:`Timestamp`.
 
-- ``ResolutionInfo`` — информация о согласовании, представленная структурой :doc:`ResolutionInfo <Resolution>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``Resolution``.
+- ``ResolutionInfo`` — информация о согласовании, представленная структурой :doc:`ResolutionInfo`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``Resolution``.
 
 - ``SignerDepartmentId`` — идентификатор подразделения, в котором лежала сущность в момент подписания. Возвращается только для сущности с типом ``Signature``.
 
-- ``ResolutionRequestInfo`` — информация о запросе согласования, представленная структурой :doc:`ResolutionRequestInfo <ResolutionRequest>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRequest``.
+- ``ResolutionRequestInfo`` — информация о запросе согласования, представленная структурой :doc:`ResolutionRequestInfo`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRequest``.
 
-- ``ResolutionRequestDenialInfo`` — информация об отказе в запросе подписи, представленная структурой :doc:`ResolutionRequestDenialInfo <ResolutionRequestDenial>`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRequestDenial``.
+- ``ResolutionRequestDenialInfo`` — информация об отказе в запросе подписи, представленная структурой :doc:`ResolutionRequestDenialInfo`. Возвращается только для сущности типа ``Attachment`` с типом вложения ``ResolutionRequestDenial``.
 
 - ``NeedReceipt`` — флаг, указывающий, что от получателя требуется сформировать извещение о получении данного документа. Возвращается только для сущности с типом ``Attachment``.
 
