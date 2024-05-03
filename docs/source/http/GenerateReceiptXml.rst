@@ -93,3 +93,10 @@ GenerateReceiptXml
 
 .. warning::
 	Методы ``GenerateDocumentReceiptXml`` и ``GenerateInvoiceDocumentReceiptXml`` расширены и поддерживают весь функционал нового метода, но считаются устаревшими и не рекомендуются к использованию.
+
+----
+
+.. rubric:: См. также
+
+*Руководства:*
+	- :doc:`../features/docservice`
