@@ -43,10 +43,4 @@ GetCounteragentsFromGroup
 
 .. rubric:: См. также
 
-*Другие методы для работы с группой контрагентов:*
-	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу
-	- :doc:`CreateCounteragentGroup` — создает группу контрагентов
-	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов
-	- :doc:`GetCounteragentGroup` — возвращает информацию о группе контрагентов
-	- :doc:`GetCounteragentGroups` — возвращает список групп контрагентов
-	- :doc:`UpdateCounteragentGroup` — редактирует группу контрагентов
+.. include:: ../reused_text/counteragentgroup.txt
