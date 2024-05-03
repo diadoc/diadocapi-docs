@@ -36,15 +36,6 @@ GenerateForwardedDocumentPrintForm
 
 .. rubric:: См. также
 
-*Другие методы для работы с печатными формами:*
-	- :doc:`DetectCustomPrintForms` — выявляет нестандартную печатную форму у документов из списка
-	- :doc:`GeneratePrintForm` — генерирует печатную форму документа по его идентификатору
-	- :doc:`GeneratePrintFormFromAttachment` — возвращает идентификатор, с помощью которого можно получить печатную форму документа по его содержимому
-	- :doc:`GetGeneratedPrintForm` — генерирует печатную форму документа
+.. include:: ../reused_text/printform.txt
 
-*Другие методы для работы с пересланными документами:*
-	- :doc:`ForwardDocument` — пересылает документ в указанный ящик
-	- :doc:`GenerateForwardedDocumentProtocol` — позволяет адресату пересылки документа выгрузить протокол состояния документа на момент пересылки
-	- :doc:`GetForwardedDocumentEvents` — возвращает список событий пересылки документов в ящик
-	- :doc:`GetForwardedDocuments` — возвращает пересланные в ящик документы по их идентификаторам
-	- :doc:`GetForwardedEntityContent` — возвращает бинарное представление сущности пересланного документа
+.. include:: ../reused_text/forwardeddocument.txt

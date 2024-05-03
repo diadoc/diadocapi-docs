@@ -27,6 +27,4 @@ RecycleDraft
 *Определение:*
 	- :doc:`../entities/draft`
 
-*Другие методы для работы с черновиками:*
-	- :doc:`PostMessage` — позволяет создать черновик
-	- :doc:`SendDraft` — отправляет сообщение, созданное из черновика
+.. include:: ../reused_text/draft.txt

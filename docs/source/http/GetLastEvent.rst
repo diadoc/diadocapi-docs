@@ -35,7 +35,4 @@ GetLastEvent
 
 .. rubric:: См. также
 
-*Другие методы для работы с событиями:*
-	- :doc:`GetEvent` — возвращает информацию о конкретном событии
-	- :doc:`GetForwardedDocumentEvents` — возвращает список событий пересылки документов в ящик
-	- :doc:`GetNewEvents` — возвращает ленту событий в ящике
+.. include:: ../reused_text/event.txt

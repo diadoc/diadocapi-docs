@@ -28,15 +28,4 @@ GetPowerOfAttorneyInfo
 
 .. rubric:: См. также
 
-*Руководства:*
-	- :doc:`../howto/powerofattorney`
-
-*Другие методы для работы с МЧД:*
-	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику
-	- :doc:`DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника
-	- :doc:`GetEmployeePowersOfAttorney` — возвращает МЧД, привязанные к сотруднику
-	- :doc:`GetPowerOfAttorneyContent` — возвращает содержимое файлов МЧД и родительских МЧД
-	- :doc:`PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД
-	- :doc:`RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД
-	- :doc:`RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД
-	- :doc:`UpdateEmployeePowerOfAttorney` — изменяет параметр МЧД «Использовать по умолчанию»
+.. include:: ../reused_text/powerofattorney.txt

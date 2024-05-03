@@ -1,36 +1,6 @@
 Работа с машиночитаемой доверенностью
 =====================================
 
----
-
-*Методы для работы с МЧД:*
-	- :doc:`../http/AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику
-	- :doc:`../http/DeleteEmployeePowerOfAttorney` — отвязывает МЧД от сотрудника
-	- :doc:`../http/GetEmployeePowersOfAttorney` — возвращает МЧД, привязанные к сотруднику
-	- :doc:`../http/GetPowerOfAttorneyContent` — возвращает содержимое файлов МЧД и родительских МЧД
-	- :doc:`../http/GetPowerOfAttorneyInfo` — возвращает информацию о МЧД, отправленной с документом
-	- :doc:`../http/PrevalidatePowerOfAttorney` — выполняет предварительную проверку МЧД
-	- :doc:`../http/RegisterPowerOfAttorney` — отправляет запрос на регистрацию МЧД
-	- :doc:`../http/RegisterPowerOfAttorneyResult` — возвращает результат регистрации МЧД
-	- :doc:`../http/UpdateEmployeePowerOfAttorney` — изменяет параметр МЧД «Использовать по умолчанию»
-
-*Структуры для работы с МЧД:*
-	- :doc:`../proto/EmployeePowerOfAttorney` — хранит информацию о МЧД, привязанной к сотруднику
-	- :doc:`../proto/PowerOfAttorney` — хранит информацию о МЧД
-	- :doc:`../proto/PowerOfAttorneyFullId` — хранит идентификатор МЧД
-	- :doc:`../proto/PowerOfAttorneyInfo` — хранит информацию о МЧД и статусе ее проверки
-	- :doc:`../proto/PowerOfAttorneyPermissionsInfo` — хранит информацию о полномочиях из машиночитаемой доверенности
-	- :doc:`../proto/PowerOfAttorneyPrevalidateRequest` — хранит данные для предварительной проверки МЧД
-	- :doc:`../proto/PowerOfAttorneyRegisterResult` — хранит данные о результате регистрации МЧД
-	- :doc:`../proto/PowerOfAttorneySendingType` — представляет собой способ передачи МЧД
-	- :doc:`../proto/PowerOfAttorneyToPost` — предназначена для заполнения данных о МЧД при отправке документов
-	- :doc:`../proto/PowerOfAttorneyToRegister` — хранит данные для регистрации МЧД
-	- :doc:`../proto/PowerOfAttorneyToUpdate` — используется для обновления настроек МЧД для сотрудника
-	- :doc:`../proto/PowerOfAttorneyValidationStatus` — хранит информацию о статусе проверки МЧД
-	- :doc:`../proto/SignaturePowerOfAttorney` — хранит информацию о МЧД, использованной при подписании документа, и статусе ее проверки
-
----
-
 .. contents:: :local:
 	:depth: 3
 
