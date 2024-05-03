@@ -13,11 +13,20 @@
 В API контрагент представлен структурой :doc:`../proto/Counteragent`.
 
 *Руководства:*
- - :doc:`../Counteragents`
+	- :doc:`../Counteragents`
 
 *Методы для работы с контрагентами:*
- - :doc:`../http/GetCounteragents` — осуществляет поиск контрагентов по указанным параметрам.
- - :doc:`../http/GetCounteragent` — возвращает информацию о контрагенте.
- - :doc:`../http/AcquireCounteragent` — отправляет контрагенту приглашение к обмену документами.
- - :doc:`../http/BreakWithCounteragent` — разрывает отношения между контрагентами, а также отзывает или отклоняет приглашение к обмену документами.
- - :doc:`../http/GetCounteragentCertificates` — возвращает сертификаты контрагента.
+	- :doc:`../http/GetCounteragents` — осуществляет поиск контрагентов по указанным параметрам.
+	- :doc:`../http/GetCounteragent` — возвращает информацию о контрагенте.
+	- :doc:`../http/AcquireCounteragent` — отправляет контрагенту приглашение к обмену документами.
+	- :doc:`../http/BreakWithCounteragent` — разрывает отношения между контрагентами, а также отзывает или отклоняет приглашение к обмену документами.
+	- :doc:`../http/GetCounteragentCertificates` — возвращает сертификаты контрагента.
+
+*Методы для работы с группой контрагентов:*
+	- :doc:`../AddCounteragentToGroup` — добавляет контрагентов в группу
+	- :doc:`../CreateCounteragentGroup` — создает группу контрагентов
+	- :doc:`../DeleteCounteragentGroup` — удаляет группу контрагентов
+	- :doc:`../GetCounteragentGroup` — возвращает информацию о группе контрагентов
+	- :doc:`../GetCounteragentGroups` — возвращает список групп контрагентов
+	- :doc:`../GetCounteragentsFromGroup` — возвращает список контрагентов в группе
+	- :doc:`../UpdateCounteragentGroup` — редактирует группу контрагентов
