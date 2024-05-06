@@ -23,10 +23,10 @@
 	- :doc:`../http/GetCounteragentCertificates` — возвращает сертификаты контрагента.
 
 *Методы для работы с группой контрагентов:*
-	- :doc:`../AddCounteragentToGroup` — добавляет контрагентов в группу
-	- :doc:`../CreateCounteragentGroup` — создает группу контрагентов
-	- :doc:`../DeleteCounteragentGroup` — удаляет группу контрагентов
-	- :doc:`../GetCounteragentGroup` — возвращает информацию о группе контрагентов
-	- :doc:`../GetCounteragentGroups` — возвращает список групп контрагентов
-	- :doc:`../GetCounteragentsFromGroup` — возвращает список контрагентов в группе
-	- :doc:`../UpdateCounteragentGroup` — редактирует группу контрагентов
+	- :doc:`../http/AddCounteragentToGroup` — добавляет контрагентов в группу
+	- :doc:`../http/CreateCounteragentGroup` — создает группу контрагентов
+	- :doc:`../http/DeleteCounteragentGroup` — удаляет группу контрагентов
+	- :doc:`../http/GetCounteragentGroup` — возвращает информацию о группе контрагентов
+	- :doc:`../http/GetCounteragentGroups` — возвращает список групп контрагентов
+	- :doc:`../http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе
+	- :doc:`../http/UpdateCounteragentGroup` — редактирует группу контрагентов
