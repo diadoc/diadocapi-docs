@@ -9,11 +9,13 @@
 
 Отличия шаблона от других сущностей приведено в :ref:`таблице <template_draft_delaysend>`.
 
-Представление в API
--------------------
+
+----
+
+.. rubric:: Представление в API
 
 *Руководства:*
- - :doc:`../docflows/TemplateDocflow`
+	- :doc:`../docflows/TemplateDocflow`
 
 *Структуры и методы для работы с шаблонами:*
- - :doc:`../API_Templates`
+	- :doc:`../API_Templates`

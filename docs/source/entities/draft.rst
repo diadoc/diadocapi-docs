@@ -9,18 +9,20 @@
 
 Отличия черновика от других сущностей приведено в :ref:`таблице <template_draft_delaysend>`.
 
-Представление в API
--------------------
+
+----
+
+.. rubric:: Представление в API
 
 *Руководства:*
- - :ref:`doc_draft`
-
-*Структуры для работы с черновиками:*
- - :doc:`../proto/DraftToSend` — хранит данные для отправки сообщения на основе черновика.
- - :doc:`DraftDocumentToPatch <../proto/PrepareDocumentsToSignRequest>` — представляет собой ссылку на черновик.
+	- :ref:`doc_draft`
 
 *Методы для работы с черновиками:*
- - :doc:`../http/PostMessage` — позволяет создать черновик.
- - :doc:`../http/PrepareDocumentsToSign` — готовит черновик к подписанию.
- - :doc:`../http/SendDraft` — отправляет сообщение, созданное из черновика.
- - :doc:`../http/RecycleDraft` — удаляет неутилизированный черновик.
+	- :doc:`../http/PostMessage` — позволяет создать черновик
+	- :doc:`../http/PrepareDocumentsToSign` — готовит черновик к подписанию
+	- :doc:`../http/SendDraft` — отправляет сообщение, созданное из черновика
+	- :doc:`../http/RecycleDraft` — удаляет неутилизированный черновик
+
+*Структуры для работы с черновиками:*
+	- :doc:`../proto/DraftToSend` — хранит данные для отправки сообщения на основе черновика
+	- :doc:`DraftDocumentToPatch <../proto/PrepareDocumentsToSignRequest>` — представляет собой ссылку на черновик

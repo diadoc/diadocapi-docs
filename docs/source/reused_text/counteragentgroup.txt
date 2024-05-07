@@ -1,7 +1,7 @@
 *Руководства:*
 	- :doc:`../Counteragents`
 
-*Методы для работы с группой контрагентов:*
+*Методы для работы с группами контрагентов:*
 	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу
 	- :doc:`CreateCounteragentGroup` — создает группу контрагентов
 	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов
