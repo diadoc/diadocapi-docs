@@ -4,7 +4,7 @@
 25.04.2024
 ----------
 
-**SDK**: `C# 2.17.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.17.0>`__
+**SDK**: `C# 2.17.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.17.0>`__ | `Java 3.18.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.18.0>`__
 
 - Реализовали метод :doc:`http/GetCounteragentEvents` для получения ленты событий по изменению отношений с контрагентами.
 - Добавили структуры:
