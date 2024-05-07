@@ -5,15 +5,15 @@ RecipientResponseStatus
 
 .. code-block:: protobuf
 
-   enum RecipientResponseStatus {
-      RecipientResponseStatusUnknown = 0;
-      RecipientResponseStatusNotAcceptable = 1;
-      WaitingForRecipientSignature = 2;
-      WithRecipientSignature = 3;
-      RecipientSignatureRequestRejected = 4;
-      InvalidRecipientSignature = 5;
-      WithRecipientPartiallySignature = 6
-   }
+    enum RecipientResponseStatus {
+        RecipientResponseStatusUnknown = 0;
+        RecipientResponseStatusNotAcceptable = 1;
+        WaitingForRecipientSignature = 2;
+        WithRecipientSignature = 3;
+        RecipientSignatureRequestRejected = 4;
+        InvalidRecipientSignature = 5;
+        WithRecipientPartiallySignature = 6
+    }
 
 - ``RecipientResponseStatusNotAcceptable`` — значение сейчас не возвращается методами API.
 

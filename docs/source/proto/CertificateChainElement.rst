@@ -5,11 +5,11 @@ CertificateChainElement
 
 .. code-block:: protobuf
 
-   message CertificateChainElement
-   {
-      required int32 CertificateChainStatusFlags = 1;
-      required bytes DerCertificate = 2;
-   }
+    message CertificateChainElement
+    {
+        required int32 CertificateChainStatusFlags = 1;
+        required bytes DerCertificate = 2;
+    }
 
 - ``CertificateChainStatusFlags`` — статус элемента цепочки сертификатов. Представляет собой комбинацию битовых флагов из .NET-перечисления `System.Security.Cryptography.X509Certificates.X509ChainStatusFlags <https://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.x509chainstatusflags.aspx>`__.
 	
