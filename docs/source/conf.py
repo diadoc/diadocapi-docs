@@ -380,7 +380,7 @@ redirects = {
     "howto/example_authorization": "../Authorization.html",
     "howto/powerofattorney": "../instructions/powerofattorney.html",
 
-    "howtostart/DiadocApiDll": "integrationOptions.html",
+    "howtostart/DiadocApiDll": "integrationChoise.html",
 
     "http/Organizations/GetOrganizationFeatures": "../GetOrganizationFeatures.html",
 
