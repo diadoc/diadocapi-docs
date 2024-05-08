@@ -9,8 +9,8 @@
 	:maxdepth: 1
 	:titlesonly:
 
-	../Counteragents
+	counteragents
 	documents
-	../howto/powerofattorney
+	powerofattorney
 	docflow
-	../MiscellaneousApiFeatures
+	other

@@ -1,5 +1,5 @@
 *Руководства:*
-	- :doc:`../howto/powerofattorney`
+	- :doc:`../instructions/powerofattorney`
 
 *Методы для работы с МЧД:*
 	- :doc:`AddEmployeePowerOfAttorney` — привязывает МЧД к сотруднику

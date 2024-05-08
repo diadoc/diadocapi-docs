@@ -38,4 +38,4 @@ SignaturePowerOfAttorney
 	- в структуре :doc:`SignatureV3`
 
 *Руководства:*
-	- :doc:`../howto/powerofattorney`
+	- :doc:`../instructions/powerofattorney`

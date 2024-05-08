@@ -25,4 +25,4 @@ PowerOfAttorneyFullId
 	- в структуре :doc:`SignaturePowerOfAttorney`
 
 *Руководства:*
-	- :doc:`../howto/powerofattorney`
+	- :doc:`../instructions/powerofattorney`

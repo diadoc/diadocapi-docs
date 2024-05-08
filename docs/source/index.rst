@@ -35,7 +35,7 @@
 	:titlesonly:
 
 	DataModel
-	features/index
+	instructions/index
 	DataStructures
 	Authorization
 	index_api

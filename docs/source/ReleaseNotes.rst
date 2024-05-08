@@ -39,7 +39,7 @@
 ----------
 **SDK**: `C# 2.14.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.7>`__ | `Java 3.15.8 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.8>`__
 
-- Добавили возможность :doc:`указать метку технологического партнера <MiscellaneousApiFeatures>`.
+- Добавили возможность :doc:`указать метку технологического партнера <instructions/other>`.
 
 
 27.02.2024
@@ -204,7 +204,7 @@
 ----------
 **SDK**: `Java 3.9.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.9>`__
 
-- В Java SDK реализована функциональность для :doc:`работы с машиночитаемой доверенностью <howto/powerofattorney>`.
+- В Java SDK реализована функциональность для :doc:`работы с машиночитаемой доверенностью <instructions/powerofattorney>`.
 
 
 23.02.2022
@@ -219,7 +219,7 @@
 ----------
 **SDK**: `C# 2.9.28 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.28>`__
 
-- API Диадока теперь поддерживает :doc:`работу с машиночитаемой доверенностью <howto/powerofattorney>` (МЧД).
+- API Диадока теперь поддерживает :doc:`работу с машиночитаемой доверенностью <instructions/powerofattorney>` (МЧД).
 
 - Реализованы методы для работы с машиночитаемой доверенностью.
 

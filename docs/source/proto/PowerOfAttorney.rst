@@ -230,4 +230,4 @@ PowerOfAttorneyDelegationInfo
 	- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`
 
 *Руководства:*
-	- :doc:`../howto/powerofattorney`
+	- :doc:`../instructions/powerofattorney`

@@ -29,4 +29,4 @@ PowerOfAttorneyPrevalidateRequest
 	- в теле запроса метода :doc:`../http/PrevalidatePowerOfAttorney`
 
 *Руководства:*
-	- :doc:`../howto/powerofattorney`
+	- :doc:`../instructions/powerofattorney`

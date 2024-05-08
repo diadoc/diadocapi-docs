@@ -61,4 +61,4 @@ PowerOfAttorneyToPost
 	- в структуре :doc:`SignedContent`
 
 *Руководства:*
-	- :doc:`../howto/powerofattorney`
+	- :doc:`../instructions/powerofattorney`

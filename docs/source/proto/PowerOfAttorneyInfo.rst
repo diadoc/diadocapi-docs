@@ -25,4 +25,4 @@ PowerOfAttorneyInfo
 	- в структуре :doc:`Entity message`
 
 *Руководства:*
-	- :doc:`../howto/powerofattorney`
+	- :doc:`../instructions/powerofattorney`

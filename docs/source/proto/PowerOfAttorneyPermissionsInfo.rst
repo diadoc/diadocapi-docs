@@ -73,4 +73,4 @@ PowerOfAttorneyPermissionsInfo
 	- в структуре :doc:`PowerOfAttorney`
 
 *Руководства:*
-	- :doc:`/howto/powerofattorney`
+	- :doc:`/instructions/powerofattorney`

@@ -1,5 +1,5 @@
 *Руководства:*
-	- :doc:`../Counteragents`
+	- :doc:`../instructions/counteragents`
 
 *Методы для работы с группами контрагентов:*
 	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу
