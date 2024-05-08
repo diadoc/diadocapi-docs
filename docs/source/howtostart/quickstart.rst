@@ -16,7 +16,7 @@
 
 #. Получите идентификатор ящика организации-контрагента с помощью метода :doc:`../http/GetCounteragents`.
 
-#. Подготовьте документ на отправку и подпишите его тестовой подписью: заполните структуру :doc:`../proto/DocumentAttachment` и укажите флаг :doc:`SignedContent.SignWithTestSignature <../proto/SignedContent>`.
+#. Подготовьте документ на отправку и подпишите его тестовой подписью: заполните структуру :doc:`../proto/DocumentAttachment` и укажите флаг :doc:`SignedContent.SignWithTestSignature <../proto/SignedContent>`. Обратите внимание, что Диадок не создает :doc:`файл подписи <../entities/signature>`, его нужно сгенерировать самостоятельно.
 
 #. Отправьте документ: заполните структуру :doc:`../proto/MessageToPost`, добавьте в нее информацию о документе в структуре ``DocumentAttachment`` и отправьте с помощью метода :doc:`../http/PostMessage`.
 
