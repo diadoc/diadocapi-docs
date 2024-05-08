@@ -30,8 +30,7 @@
 	howtostart/quickstart
    
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+	:maxdepth: 3
 	:caption: Руководство по работе с API
 
 	DataModel
