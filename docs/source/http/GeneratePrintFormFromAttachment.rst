@@ -26,4 +26,4 @@ GeneratePrintFormFromAttachment
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/printform.txt
+.. include:: ../reused_text/printform_seealso.txt

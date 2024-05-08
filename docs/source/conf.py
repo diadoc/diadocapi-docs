@@ -368,6 +368,8 @@ redirects = {
     "Counteragents": "instructions/counteragents.html",
     "MiscellaneousApiFeatures": "instructions/other.html",
     "Overview": "howtostart/overview.html",
+    "http_methods": "index_http.html",
+    "protos": "index_proto.html",
 
     "features/docflow": "../instructions/docflow.html",
     "features/docget": "../instructions/docget.html",

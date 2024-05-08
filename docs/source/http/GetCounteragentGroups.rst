@@ -39,4 +39,4 @@ GetCounteragentGroups
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/counteragentgroup.txt
+.. include:: ../reused_text/counteragentgroup_seealso.txt

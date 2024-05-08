@@ -33,4 +33,4 @@ SendDraft
 *Определение:*
 	- :doc:`../entities/draft`
 
-.. include:: ../reused_text/draft.txt
+.. include:: ../reused_text/draft_seealso.txt

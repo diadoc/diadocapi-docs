@@ -35,19 +35,19 @@
 	:titlesonly:
 
 	DataModel
+	entities/index
 	instructions/index
 	DataStructures
 	Authorization
 	index_api
 	docflows/index
 	howto/index
-	entities/index
 
 .. toctree::
 	:caption: Справочная информация
 	:maxdepth: 1
 	:titlesonly:
 
-	http_methods
-	protos
+	index_http
+	index_proto
 	index_obsolete

@@ -43,4 +43,4 @@ PrevalidatePowerOfAttorney
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/powerofattorney.txt
+.. include:: ../reused_text/powerofattorney_seealso.txt

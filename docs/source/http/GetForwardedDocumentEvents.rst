@@ -105,4 +105,4 @@ GetForwardedDocumentEvents
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/event.txt
+.. include:: ../reused_text/event_seealso.txt
