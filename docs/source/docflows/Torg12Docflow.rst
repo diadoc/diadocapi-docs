@@ -34,7 +34,7 @@
 
   -  :download:`XSD-схема титула покупателя электронной накладной <../xsd/DP_TOVTORGPOK_1_992_02_05_01_04.xsd>`.
   
-  Последние версии xsd-схем для первого и второго титула товарной накладной формата 551 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, в результате вызова метода :doc:`../http/GetDocumentTypes`.
+  Последние версии xsd-схем для первого и второго титула товарной накладной формата 551 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitleV2 <../proto/DocumentTypeDescriptionV2>`, в результате вызова метода :doc:`../http/GetDocumentTypes`.
 
 
 .. csv-table:: Соответствие формата накладных и AttachmentVersion

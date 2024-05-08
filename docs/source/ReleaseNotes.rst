@@ -541,7 +541,7 @@
 **SDK**: `Java 2.16.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.16.0>`__ | `C++ 1.78.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.78.0>`__
 
 - В Java и C++ SDK добавлен метод :doc:`http/GenerateTitleXml`, позволяющий сгенерировать любой титул любого типа документа.
-- В Java и C++ SDK в структуре :doc:`DocumentTitle <proto/DocumentTypeDescription>` добавлено поле ``Index`` для обозначения порядкового номера титула в документе.
+- В Java и C++ SDK в структуре :doc:`DocumentTitle <proto/obsolete/DocumentTypeDescription>` добавлено поле ``Index`` для обозначения порядкового номера титула в документе.
 
 
 16.08.2019
@@ -556,7 +556,7 @@
 **SDK**: `C# 1.79.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.79.0>`__ 
 
 - В C# SDK добавлен метод :doc:`http/GenerateTitleXml`, позволяющий сгенерировать любой титул любого типа документа.
-- В C# SDK в структуре :doc:`DocumentTitle <proto/DocumentTypeDescription>` добавлено поле ``Index`` для обозначения порядкового номера титула в документе.
+- В C# SDK в структуре :doc:`DocumentTitle <proto/obsolete/DocumentTypeDescription>` добавлено поле ``Index`` для обозначения порядкового номера титула в документе.
 
 
 05.08.2019
@@ -787,7 +787,7 @@
 ----------
 **SDK**: `C# 1.56.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.56.0>`__ | `Java 1.56.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.56.0>`__ | `C++ 1.56.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.56.0>`__
 
-- В структуре :doc:`DocumentTitle <proto/DocumentTypeDescription>` добавлена информация о типе подписанта ``SignerInfo``, необходимого для подписания титула.
+- В структуре :doc:`DocumentTitle <proto/obsolete/DocumentTypeDescription>` добавлена информация о типе подписанта ``SignerInfo``, необходимого для подписания титула.
 
 
 04.10.2018
@@ -901,7 +901,7 @@
 **SDK**: `C# 1.51.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.6>`__
 
 - Добавлен обобщенный метод генерации титула получателя :doc:`http/obsolete/GenerateRecipientTitleXml`.
-- Расширена структура :doc:`DocumentTitle <proto/DocumentTypeDescription>`: добавлено поле ``UserDataXsdUrl``, позволяющее узнать, по какой ссылке возможно загрузить XSD-схему контракта для генерации титула с помощью обобщенного метода генерации :doc:`http/obsolete/GenerateRecipientTitleXml`.
+- Расширена структура :doc:`DocumentTitle <proto/obsolete/DocumentTypeDescription>`: добавлено поле ``UserDataXsdUrl``, позволяющее узнать, по какой ссылке возможно загрузить XSD-схему контракта для генерации титула с помощью обобщенного метода генерации :doc:`http/obsolete/GenerateRecipientTitleXml`.
 
 
 23.04.2018

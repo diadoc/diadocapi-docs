@@ -34,7 +34,7 @@
 
 -  :download:`XSD-схема титула заказчика электронного акта <../xsd/DP_REZRUZAK_1_990_02_05_01_02.xsd>`.
 
-XSD-схемы  первого и второго титулов акта последней версии формата 552 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitle <../proto/DocumentTypeDescription>`, в результате вызова метода :doc:`../http/GetDocumentTypes`.
+XSD-схемы  первого и второго титулов акта последней версии формата 552 могут быть получены с помощью ссылки, доступной в поле *XsdUrl* контракта :doc:`DocumentTitleV2 <../proto/DocumentTypeDescriptionV2>`, в результате вызова метода :doc:`../http/GetDocumentTypes`.
 
 .. csv-table:: Соответствие формата накладных и AttachmentVersion
    :header: "Структура", "Форматы", "Функция", "AttachmentVersion"

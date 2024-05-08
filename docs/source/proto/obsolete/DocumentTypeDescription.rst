@@ -1,6 +1,9 @@
 ﻿DocumentTypeDescription
 =======================
 
+.. warning::
+	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/DocumentTypeDescriptionV2` последней версии :doc:`../../Docflow API` — V3.
+
 .. code-block:: protobuf
 
     message DocumentTypeDescription {
@@ -62,11 +65,11 @@ DocumentVersion
 -  *Version* - строковой идентификатор версии, уникальный в рамках функции документа
 -  *SupportsContentPatching* - поддерживается патчинг
 -  *SupportsEncrypting* - поддерживается отправка зашифрованных документов
--  *SupportsPredefinedRecipientTitle* - поддерживается отправка предопределенного титула. Подробнее здесь: :doc:`../howto/example_predefined_recipient_title`.
+-  *SupportsPredefinedRecipientTitle* - поддерживается отправка предопределенного титула. Подробнее здесь: :doc:`../../howto/example_predefined_recipient_title`.
 -  *SupportsAmendmentRequest* - поддерживается отправка запроса на уточнение.
 -  :ref:`Titles <document_title>` - описания титулов документа
 -  *IsActual* - версия актуальна
--  :doc:`Workflows <DocumentWorkflow>` - виды документооборота
+-  :doc:`Workflows <../DocumentWorkflow>` - виды документооборота
 
 
 .. _document_title:
@@ -91,7 +94,7 @@ DocumentTitle
 -  *Index* - числовой идентификатор титула. По смыслу означает, в каком порядке титулы загружаются контрагентами. Всегда начинается с 0.
 -  *IsFormal* - титул формализованный
 -  *XsdUrl* - URL-путь метода, возвращающего файл XSD-схемы титула
--  *UserDataXsdUrl* - URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью обобщённого метода генерации. Может отсутствовать, тогда это означает, что генерация титула под этим индексом нереализована. Для генерации титулов используется метод :doc:`GenerateTitleXml <../http/GenerateTitleXml>`.
+-  *UserDataXsdUrl* - URL-путь метода, возвращающего файл XSD-схемы контракта для генерации титула с помощью обобщённого метода генерации. Может отсутствовать, тогда это означает, что генерация титула под этим индексом нереализована. Для генерации титулов используется метод :doc:`GenerateTitleXml <../../http/GenerateTitleXml>`.
 -  :ref:`SignerInfo <signer-info>` - описание подписанта титула
 -  :ref:`MetadataItems <document-metadata-item>` - описания метаданных документа
 -  :ref:`EncryptedMetadataItems <document-metadata-item>` - описания метаданных для отправки зашифрованного документа
@@ -120,11 +123,11 @@ SignerInfo
 
     -  *None* - подписант отсутствует в контенте документа. Формируется только файл открепленной подписи. Используется для неформализованных документов
 
-    -  *Signer* - простой подписант. Используется для документов форматов :doc:`@93/@172 <../docflows/AttachmentVersion>` и своих типов документов не на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
+    -  *Signer* - простой подписант. Используется для документов форматов :doc:`@93/@172 <../../docflows/AttachmentVersion>` и своих типов документов не на базе формата :doc:`@155 <../../docflows/AttachmentVersion>`
 
-    -  *ExtendedSigner* - расширенный подписант. Используется для документов форматов :doc:`@155/@551/@552/@820 <../docflows/AttachmentVersion>` и своих типов на базе формата :doc:`@155 <../docflows/AttachmentVersion>`
+    -  *ExtendedSigner* - расширенный подписант. Используется для документов форматов :doc:`@155/@551/@552/@820 <../../docflows/AttachmentVersion>` и своих типов на базе формата :doc:`@155 <../../docflows/AttachmentVersion>`
 
--  :doc:`DocumentTitleType <DocumentTitleType>` - Тип титула документа, для которого нужно заполнить дополнительные данные о подписанте. Для типов подписанта *None* и *Signer* значение всегда равно *Absent*.
+-  :doc:`DocumentTitleType <../DocumentTitleType>` - Тип титула документа, для которого нужно заполнить дополнительные данные о подписанте. Для типов подписанта *None* и *Signer* значение всегда равно *Absent*.
 
 .. _document-metadata-item:
 

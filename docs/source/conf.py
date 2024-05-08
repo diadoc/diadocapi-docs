@@ -423,6 +423,7 @@ redirects = {
      "proto/DocflowStatusSeverity": "obsolete/DocflowStatusSeverity.html",
      "proto/DocumentInfo": "obsolete/DocumentInfo.html",
      "proto/DocumentType": "obsolete/DocumentType.html",
+     "proto/DocumentTypeDescription": "obsolete/DocumentTypeDescription.html",
      "proto/DocumentWithDocflow": "obsolete/DocumentWithDocflow.html",
      "proto/EncryptedInvoiceAttachment": "obsolete/EncryptedInvoiceAttachment.html",
      "proto/EncryptedXmlDocumentAttachment": "obsolete/EncryptedXmlDocumentAttachment.html",
