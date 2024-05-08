@@ -365,6 +365,7 @@ intersphinx_mapping = {'python': ('https://docs.python.org/', None)}
 # Redirecting old pages
 redirects = {
      "howto/example_authorization": "../Authorization.html",
+     "howtostart/DiadocApiDll": "IntegrationOptions.html",
      "http/Organizations/GetOrganizationFeatures": "../GetOrganizationFeatures.html",
      "proto/utd/ExtendedSignerDetailsToPost": "../ExtendedSignerDetailsToPost.html",
      "proto/Resolution": "ResolutionInfo.html",
