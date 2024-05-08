@@ -24,8 +24,8 @@
 	:titlesonly:
 	:caption: С чего начать
 
-	howtostart/IntegrationOptions
-	Overview
+	howtostart/overview
+	howtostart/integrationOptions
 	howtostart/integration
 	howtostart/quickstart
    
