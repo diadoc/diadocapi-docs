@@ -6,11 +6,11 @@
 Перед выполнением любых действий в Диадоке нужно :doc:`авторизоваться <../Authorization>`.
 
 .. toctree::
-	:maxdepth: 2
+	:maxdepth: 1
 	:titlesonly:
 
 	../Counteragents
-	../ApiClientOperationPrinciple
+	documents
 	../howto/powerofattorney
 	docflow
 	../MiscellaneousApiFeatures

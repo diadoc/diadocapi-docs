@@ -31,7 +31,6 @@
 ------------
 
 .. toctree::
-   :name: utdParsing
    :maxdepth: 1
    :titlesonly:
    :glob:
@@ -42,7 +41,6 @@
 ----------------
 
 .. toctree::
-   :name: toc4
    :maxdepth: 1
    :titlesonly:
    :glob:

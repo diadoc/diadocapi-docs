@@ -13,39 +13,40 @@
 На основе API построены некоторые `готовые решения <howtostart/IntegrationOptions.html#id2>`__, которые можно использовать при разработке клиентских приложений.
 
 .. toctree::
+	:caption: История изменений
 	:hidden:
 	:titlesonly:
-	:caption: История изменений
 
 	ReleaseNotes
- 
+
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
 	:caption: С чего начать
+	:maxdepth: 1
+	:titlesonly:
 
 	howtostart/overview
 	howtostart/integrationOptions
 	howtostart/integration
 	howtostart/quickstart
-   
+
 .. toctree::
-	:maxdepth: 3
 	:caption: Руководство по работе с API
+	:maxdepth: 1
+	:titlesonly:
 
 	DataModel
-	entities/index
 	features/index
 	DataStructures
 	Authorization
 	index_api
 	docflows/index
 	howto/index
+	entities/index
 
 .. toctree::
+	:caption: Справочная информация
 	:maxdepth: 1
 	:titlesonly:
-	:caption: Справочная информация
 
 	http_methods
 	protos

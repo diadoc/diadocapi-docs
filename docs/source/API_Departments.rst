@@ -5,7 +5,7 @@ HTTP-интерфейс
 --------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
 
    http/Departments/GetDepartment
@@ -18,7 +18,7 @@ HTTP-интерфейс
 ----------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
 
    proto/Address

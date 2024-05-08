@@ -2,8 +2,9 @@
 ==============
 
 .. toctree::
-   :maxdepth: 1
-   :glob:
-   
-   http/*
-   http/utd/*
+	:maxdepth: 1
+	:titlesonly:
+	:glob:
+
+	http/*
+	http/utd/*

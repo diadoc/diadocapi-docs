@@ -3,14 +3,16 @@
 
 .. toctree::
 	:caption: Методы
-	:glob:
 	:maxdepth: 1
-   
+	:titlesonly:
+	:glob:
+
 	http/obsolete/*
 
 .. toctree::
 	:caption: Структуры
-	:glob:
 	:maxdepth: 1
+	:titlesonly:
+	:glob:
 
 	proto/obsolete/*
