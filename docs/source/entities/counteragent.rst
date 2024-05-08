@@ -14,6 +14,8 @@
 
 В API контрагент представлен структурой :doc:`../proto/Counteragent`.
 
+.. rubric:: См. также
+
 *Руководства:*
 	- :doc:`../Counteragents`
 

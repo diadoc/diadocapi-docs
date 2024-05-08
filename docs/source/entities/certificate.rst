@@ -47,6 +47,8 @@
 
 В API сертификат представлен структурой :doc:`../proto/CertificateInfoV2`.
 
+.. rubric:: См. также
+
 *Методы для работы с сертификатами:*
  - :doc:`../http/GetMyCertificates` — возвращает информацию о сертификатах, привязанных к сотруднику
  - :doc:`../http/GetCounteragentCertificates` — возвращает сертификаты контрагента
