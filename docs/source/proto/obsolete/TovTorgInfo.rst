@@ -102,7 +102,7 @@ TovTorgInfo
 
 -  Реквизиты грузоотправителя *TovTorgSellerTitleInfo.Shipper*, грузополучателя *TovTorgSellerTitleInfo.Consignee* и перевозчика *TovTorgSellerTitleInfo.Carrier* заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo`.
 
--  Реквизиты подписантов накладной *TovTorgSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
+-  Реквизиты подписантов накладной *TovTorgSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/ExtendedSigner`.
 
 -  Правила заполнения структуры *TovTorgSellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_TOVTORGPR_1_992_01_05_01_04.xsd>`.
 
@@ -110,7 +110,7 @@ TovTorgInfo
 
 При заполнении структуры *TovTorgBuyerTitleInfo* нужно иметь в виду:
 
--  Реквизиты подписантов накладной *TovTorgBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
+-  Реквизиты подписантов накладной *TovTorgBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/ExtendedSigner`.
 
 -  Реквизиты должностных лиц *TovTorgBuyerTitleInfo.Employee* или *TovTorgBuyerTitleInfo.OtherIssuer* заполняются в виде структуры данных :doc:`Employee <UniversalTransferDocumentSellerTitleInfo>` или :doc:`OtherIssuer <UniversalTransferDocumentSellerTitleInfo>` соответственно.
 

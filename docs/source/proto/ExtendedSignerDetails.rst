@@ -52,5 +52,5 @@ ExtendedSignerDetails
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`utd/ExtendedSigner`
-	- в теле ответа метода :doc:`../../http/utd/ExtendedSignerDetailsV2`
+	- в структуре :doc:`ExtendedSigner`
+	- в теле ответа метода :doc:`../../http/ExtendedSignerDetailsV2`

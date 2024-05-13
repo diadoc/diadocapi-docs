@@ -34,7 +34,7 @@
 	- дату и время формирования файлов,
 	- идентификатор файла.
 
-Данные подписанта, в зависимости от его типа, можно указать в структурах :doc:`../proto/Signer` или :doc:`../proto/utd/ExtendedSigner` или в поле ``SignerContent``. Чтобы определить тип подписанта, используйте метод :doc:`../http/GetDocumentTypes`, тип подписанта вернется в поле ``SignerType`` структуры :doc:`SignerInfoV2 <../proto/DocumentTypeDescriptionV2>`.
+Данные подписанта, в зависимости от его типа, можно указать в структурах :doc:`../proto/Signer` или :doc:`../proto/ExtendedSigner` или в поле ``SignerContent``. Чтобы определить тип подписанта, используйте метод :doc:`../http/GetDocumentTypes`, тип подписанта вернется в поле ``SignerType`` структуры :doc:`SignerInfoV2 <../proto/DocumentTypeDescriptionV2>`.
 
 В зависимости от типа подписанта заполните его следующим образом:
 

@@ -270,7 +270,7 @@
  
 - Реализована подготовка к подписанию документа с машиночитаемой доверенностью (МЧД).
  
- Метод :doc:`http/PrepareDocumentsToSign` теперь может подготовить к подписанию документ с МЧД. Для этого в структуру :doc:`proto/utd/ExtendedSigner` включена структура :doc:`proto/PowerOfAttorneyToPost`, содержащая данные о МЧД.
+ Метод :doc:`http/PrepareDocumentsToSign` теперь может подготовить к подписанию документ с МЧД. Для этого в структуру :doc:`proto/ExtendedSigner` включена структура :doc:`proto/PowerOfAttorneyToPost`, содержащая данные о МЧД.
 
 
 26.01.2022
@@ -294,7 +294,7 @@
 ----------
 **SDK**: `C# 2.9.21 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.21>`__
 
-- В структуру :doc:`http/utd/ExtendedSignerDetailsV2` добавлено значение ``Ucd736Buyer``  для поддержки формата приказа №736.
+- В структуру :doc:`http/ExtendedSignerDetailsV2` добавлено значение ``Ucd736Buyer``  для поддержки формата приказа №736.
 
 
 20.09.2021
@@ -429,8 +429,8 @@
 **SDK**: `C# 2.2.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.2.0>`__ | `Java 3.2.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.2.0>`__ | `C++ 1.83.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.83.0>`__
 
 - Добавлено поле ``SupportsAmendmentRequest`` в ответ метода :doc:`http/GetDocumentTypes`.
-- Добавлены значения в структуры :doc:`http/utd/ExtendedSignerDetailsV2` и :doc:`proto/DocumentTitleType` для поддержки версий формата приказа №423.
-- Добавлены значения ``SignerPowers`` и ``SignerStatus`` в структуры :doc:`proto/utd/ExtendedSigner` и :doc:`proto/ExtendedSignerDetailsToPost`.
+- Добавлены значения в структуры :doc:`http/ExtendedSignerDetailsV2` и :doc:`proto/DocumentTitleType` для поддержки версий формата приказа №423.
+- Добавлены значения ``SignerPowers`` и ``SignerStatus`` в структуры :doc:`proto/ExtendedSigner` и :doc:`proto/ExtendedSignerDetailsToPost`.
 
 
 24.01.2020
@@ -619,7 +619,7 @@
   - :doc:`http/obsolete/GenerateRecipientTitleXml`,
   - :doc:`http/ParseTitleXml`.
   
-- В структуры :doc:`proto/utd/ExtendedSigner` и :doc:`proto/DocumentTitleType` добавлены значения в для поддержки версий формата приказа №820.
+- В структуры :doc:`proto/ExtendedSigner` и :doc:`proto/DocumentTitleType` добавлены значения в для поддержки версий формата приказа №820.
 
 
 16.05.2019
@@ -1062,7 +1062,7 @@
 - Добавлена структура :doc:`proto/SignatureInfo`, содержащая информацию о подписи и сертификате.
 - Добавлен метод :doc:`http/GetSignatureInfo`, получающий на вход идентификаторы подписи и возвращающий данные в структуре :doc:`proto/SignatureInfo`.
 - В структуре :doc:`InvoiceItemAmountsDiff <proto/obsolete/InvoiceCorrectionInfo>` поле ``Subtotal``, отражающее сумму с учетом налога, теперь является опциональным.
-- Добавлена вторая версия метода :doc:`ExtendedSignerDetails <http/utd/ExtendedSignerDetailsV2>`, принимающая на вход структуру :doc:`proto/DocumentTitleType`.
+- Добавлена вторая версия метода :doc:`ExtendedSignerDetails <http/ExtendedSignerDetailsV2>`, принимающая на вход структуру :doc:`proto/DocumentTitleType`.
 
 
 13.07.2017
@@ -1176,7 +1176,7 @@
  - :doc:`http/obsolete/GenerateUniversalTransferDocumentXmlForBuyer` — генерация титула покупателя УПД и УКД,
  - :doc:`http/obsolete/ParseUniversalTransferDocumentSellerTitleXml` — парсинг титула продавца УПД,
  - :doc:`http/obsolete/ParseUniversalTransferDocumentBuyerTitleXml` — парсинг титула покупателя УПД,
- - :doc:`http/utd/ExtendedSignerDetailsV2` — заполнение дополнительных данных (для УПД и УКД) о подписантах.
+ - :doc:`http/ExtendedSignerDetailsV2` — заполнение дополнительных данных (для УПД и УКД) о подписантах.
  
 - Добавлены структуры:
 
@@ -1186,7 +1186,7 @@
  - :doc:`proto/obsolete/UniversalTransferDocumentBuyerTitleInfo` — для описания титула покупателя УКД,
  - :doc:`proto/obsolete/UniversalDocumentMetadata` — для описания данных УПД и УКД,
  - :doc:`proto/obsolete/ExtendedOrganizationInfo` — для описания реквизитов продавца, покупателя и грузоотправителя, используемая в УПД и УКД,
- - :doc:`proto/utd/ExtendedSigner` — для описания реквизитов подписанта, используемая в УПД и УКД,
+ - :doc:`proto/ExtendedSigner` — для описания реквизитов подписанта, используемая в УПД и УКД,
  - :doc:`proto/ExtendedSignerDetailsToPost` — для описания реквизитов подписанта, используемая в методе :doc:`proto/obsolete/ExtendedOrganizationInfo`.
  
 - В структуре :doc:`proto/MessageToPost` добавлено поле ``UniversalTransferDocumentSellerTitles``:

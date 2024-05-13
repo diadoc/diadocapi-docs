@@ -30,4 +30,4 @@ ExtendedSignerDetailsToPost
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../../http/utd/ExtendedSignerDetailsV2`
+	- в теле запроса метода :doc:`../../http/ExtendedSignerDetailsV2`

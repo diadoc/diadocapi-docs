@@ -17,5 +17,5 @@ ExtendedSigner
 - ``BoxId`` — идентификатор ящика организации.
 - ``SignerCertificate`` — :rfc:`X.509 <5280>` сертификат подписанта в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__ - кодировке.
 - ``SignerCertificateThumbprint`` — отпечаток сертификата подписанта.
-- ``SignerDetails`` — реквизиты подписанта, представленные структурой :doc:`../ExtendedSignerDetails`.
-- ``PowerOfAttorney`` — данные машиночитаемой доверенности, представленные структурой :doc:`../PowerOfAttorneyToPost`.
+- ``SignerDetails`` — реквизиты подписанта, представленные структурой :doc:`ExtendedSignerDetails`.
+- ``PowerOfAttorney`` — данные машиночитаемой доверенности, представленные структурой :doc:`PowerOfAttorneyToPost`.

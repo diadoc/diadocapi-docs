@@ -22,7 +22,7 @@ UniversalTransferDocumentBuyerTitleInfo
 
 При заполнении структуры *UniversalTransferDocumentBuyerTitleInfo* нужно иметь в виду:
 
--  Реквизиты подписанта счета-фактуры *UniversalTransferDocumentBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
+-  Реквизиты подписанта счета-фактуры *UniversalTransferDocumentBuyerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/ExtendedSigner`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 

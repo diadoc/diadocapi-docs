@@ -28,5 +28,5 @@ SignerStatus
 .. rubric:: См. также
 
 *Перечисление используется:*
-	- в структуре :doc:`utd/ExtendedSigner`
+	- в структуре :doc:`ExtendedSigner`
 	- в структуре :doc:`ExtendedSignerDetailsToPost`

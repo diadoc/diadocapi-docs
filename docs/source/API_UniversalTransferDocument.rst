@@ -22,7 +22,7 @@
    :titlesonly:
    :glob:
 
-   http/utd/ExtendedSignerDetailsV2
+   http/ExtendedSignerDetailsV2
    http/PrepareDocumentsToSign
    http/PostMessage
    http/PostMessagePatch
@@ -45,6 +45,5 @@
    :titlesonly:
    :glob:
 
-   proto/utd/*
    proto/PrepareDocumentsToSignRequest
    proto/PrepareDocumentsToSignResponse

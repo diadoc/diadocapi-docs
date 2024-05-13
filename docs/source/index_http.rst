@@ -7,4 +7,3 @@
 	:glob:
 
 	http/*
-	http/utd/*

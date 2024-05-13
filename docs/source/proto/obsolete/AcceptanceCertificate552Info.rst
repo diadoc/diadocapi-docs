@@ -82,7 +82,7 @@ AcceptanceCertificate552Info
 
 -  Основания задаются в виде структуры данных :doc:`GroundInfo <TovTorgInfo>`.
 
--  Реквизиты подписантов накладной *AcceptanceCertificate552SellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
+-  Реквизиты подписантов накладной *AcceptanceCertificate552SellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/ExtendedSigner`.
 
 -  Правила заполнения структуры *AcceptanceCertificate552SellerTitleInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_REZRUISP_1_990_01_05_01_02.xsd>`.
 
@@ -90,6 +90,6 @@ AcceptanceCertificate552Info
 
 При заполнении структуры *AcceptanceCertificate552BuyerInfo* нужно иметь в виду:
 
--  Реквизиты подписантов накладной *AcceptanceCertificate552BuyerInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
+-  Реквизиты подписантов накладной *AcceptanceCertificate552BuyerInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/ExtendedSigner`.
 
 -  Правила заполнения структуры *AcceptanceCertificate552BuyerInfo* повторяют требования формата ФНС, зафиксированные в следующей :download:`XML-схеме <../../xsd/DP_REZRUZAK_1_990_02_05_01_01.xsd>`.

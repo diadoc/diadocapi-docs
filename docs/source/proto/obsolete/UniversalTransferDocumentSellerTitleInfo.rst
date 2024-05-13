@@ -157,7 +157,7 @@ UniversalTransferDocumentSellerTitleInfo
 
 -  Реквизиты грузополучателя (*UniversalTransferDocumentSellerTitleInfo.Consignee*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo`.
 
--  Реквизиты подписанта документа *UniversalTransferDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
+-  Реквизиты подписанта документа *UniversalTransferDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/ExtendedSigner`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 

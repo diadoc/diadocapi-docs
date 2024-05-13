@@ -89,7 +89,7 @@ UniversalCorrectionDocumentSellerTitleInfo
 
 -  Реквизиты продавца (*UniversalCorrectionDocumentSellerTitleInfo.Seller*) и покупателя (*UniversalCorrectionDocumentSellerTitleInfo.Buyer*) заполняются в виде структуры данных :doc:`ExtendedOrganizationInfo`.
 
--  Реквизиты подписанта документа *UniversalCorrectionDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/utd/ExtendedSigner`.
+-  Реквизиты подписанта документа *UniversalCorrectionDocumentSellerTitleInfo.Signers* заполняются в виде структуры данных :doc:`../../proto/ExtendedSigner`.
 
 -  Даты документов должны указываться в формате ДД.ММ.ГГГГ.
 
