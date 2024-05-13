@@ -34,7 +34,7 @@ HTTP-интерфейс
    proto/EmployeeSubscriptions
    proto/EmployeeToCreate
    proto/EmployeeToUpdate
-   proto/OrganizationUser
+   proto/OrganizationUsersList
    proto/OrganizationUserPermissions
    proto/Subscription
    proto/SubscriptionsToUpdate
