@@ -384,6 +384,7 @@ redirects = {
 
     "http/Organizations/GetOrganizationFeatures": "../GetOrganizationFeatures.html",
 
+    "proto/OrganizationUser": "OrganizationUsersList.html",
     "proto/Resolution": "ResolutionInfo.html",
     "proto/ResolutionRequest": "ResolutionRequestInfo.html",
     "proto/ResolutionRequestDenial": "ResolutionRequestDenialInfo.html",
