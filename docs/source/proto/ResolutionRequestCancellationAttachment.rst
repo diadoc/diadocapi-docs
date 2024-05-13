@@ -13,7 +13,7 @@ ResolutionRequestCancellationAttachment
 
 - ``InitialResolutionRequestId`` — идентификатор отменяемого запроса на согласование.
 - ``Comment`` — комментарий к отмене запроса на согласование. Длина не должна превышать 256 символов.
-- ``Labels`` — :doc:`метки <../proto/Labels>` отмены запроса на согласование.
+- ``Labels`` — :doc:`метки <../entities/label>` отмены запроса на согласование.
 
 ----
 

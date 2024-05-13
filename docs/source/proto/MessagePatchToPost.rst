@@ -104,7 +104,7 @@ ReceiptAttachment
 
 - ``ParentEntityId`` — идентификатор документа, к которому относится извещение. Принимает значение одной из :doc:`сущностей <Entity message>` родительского сообщения (поле ``EntityId``).
 - ``SignedContent`` — содержимое файла извещения вместе с электронной подписью, представленное структурой :doc:`SignedContent`.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 
 
 .. _CorrectionRequestAttachment:
@@ -126,7 +126,7 @@ CorrectionRequestAttachment
 
 - ``ParentEntityId`` — идентификатор СФ/ИСФ/КСФ/ИКСФ, к которому относится уведомление. Принимает значение одной из :doc:`сущностей <Entity message>` родительского сообщения (поле ``EntityId``).
 - ``SignedContent`` — содержимое файла уведомления с электронной подписью, представленное структурой :doc:`SignedContent`.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 
 
 .. _RequestedSignatureRejection:
@@ -148,7 +148,7 @@ RequestedSignatureRejection
 
 - ``ParentEntityId`` — идентификатор документа, к которому относится отказ. Принимает значение одной из :doc:`сущностей <Entity message>` родительского сообщения (поле ``EntityId``).
 - ``SignedContent`` — причина отказа с электронной подписью, представленный структурой :doc:`SignedContent`. Текст причины отказа должен быть указан в поле ``SignedContent.Content`` в кодировке UTF-8.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 
 
 .. _RecipientTitleAttachment:
@@ -171,7 +171,7 @@ RecipientTitleAttachment
 
 - ``ParentEntityId`` — идентификатор титула исполнителя. Принимает значение одной из :doc:`сущностей <Entity message>` родительского сообщения (поле ``EntityId``).
 - ``SignedContent`` — содержимое XML-файла титула с электронной подписью, представленное структурой :doc:`SignedContent`.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 - ``NeedReceipt`` — необязательный признак того, что от получателя требуется сформировать извещение о получении данного документа.
 
 
@@ -194,7 +194,7 @@ RevocationRequestAttachment
 
 - ``ParentEntityId`` — идентификатор документа, к которому относится предложение. Принимает значение одной из :doc:`сущностей <Entity message>` родительского сообщения (поле ``EntityId``).
 - ``SignedContent`` — содержимое файла предложения с электронной подписью, представленное структурой :doc:`SignedContent`.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 
 
 .. _XmlSignatureRejectionAttachment:
@@ -216,7 +216,7 @@ XmlSignatureRejectionAttachment
 
 - ``ParentEntityId`` — идентификатор предложения об аннулировании или документа, к которому относится это действие. Принимает значение одной из :doc:`сущностей <Entity message>` родительского сообщения (поле ``EntityId``).
 - ``SignedContent`` — содержимое файла отказа с электронной подписью, представленное структурой :doc:`SignedContent`.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 
 
 .. _ResolutionRouteAssignment:
@@ -240,7 +240,7 @@ ResolutionRouteAssignment
 - ``InitialDocumentId`` — идентификатор документа, который нужно поставить на маршрут согласования.
 - ``RouteId`` — идентификатор маршрута согласования, на который нужно поставить документ.
 - ``Comment`` — текстовый комментарий. Длина не должна превышать 500 символов.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 
 
 .. _SignatureVerification:
@@ -266,7 +266,7 @@ SignatureVerification
 - ``InitialDocumentId`` —  идентификатор проверяемого зашифрованного документа.
 - ``IsValid`` — результат проверки документа.
 - ``ErrorMessage`` — текст с описанием результата проверки.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 
 
 .. _EditDocumentPacketCommand:
@@ -318,7 +318,7 @@ ResolutionRouteRemoval
 - ``ParentEntityId`` — идентификатор документа, который нужно снять с маршрута согласования.
 - ``RouteId`` — идентификатор маршрута согласования, с которого нужно снять документ.
 - ``Comment`` — текстовый комментарий. Длина не должна превышать 500 символов.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 
 
 .. _EditingPatch:
@@ -340,7 +340,7 @@ EditingPatch
 
 - ``ParentEntityId`` — идентификатор документа, контент которого нужно отредактировать. Принимает значение одной из :doc:`сущностей <Entity message>` родительского сообщения (поле ``EntityId``).
 - ``Content`` — новое содержимое документа, представленное структурой :doc:`UnsignedContent`.
-- ``Labels`` — список :doc:`меток <Labels>`.
+- ``Labels`` — список :doc:`меток <../entities/label>`.
 
 
 ----

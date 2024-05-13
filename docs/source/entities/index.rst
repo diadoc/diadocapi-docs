@@ -8,6 +8,7 @@
 	:titlesonly:
 
 	counteragent
+	label
 	packet
 	signature
 	shelf

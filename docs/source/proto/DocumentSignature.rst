@@ -30,7 +30,7 @@ DocumentSignature
 
 - ``PatchedContentId`` — идентификатор патча документа
 
-- ``Labels`` — :doc:`метки <../proto/Labels>` подписи.
+- ``Labels`` — :doc:`метки <../entities/label>` подписи.
 
 - ``PowerOfAttorney`` — данные машиночитаемой доверенности, представленные структурой :doc:`PowerOfAttorneyToPost`.
 

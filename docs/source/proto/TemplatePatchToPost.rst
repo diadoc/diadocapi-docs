@@ -28,4 +28,4 @@ TemplateRefusalAttachment
 
 - *DocumentId* - идентификатор документа.
 - *Comment* - комментарий к отклонению или отзыву. Длина не более 2000 символов.
-- *Labels* - :doc:`метки <Labels>` извещения о получении.
+- *Labels* - :doc:`метки <../entities/label>` извещения о получении.

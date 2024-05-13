@@ -932,7 +932,7 @@
 ----------
 **SDK**: `C# 1.51 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51>`__ | `Java 1.51 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51>`__ | `C++ 1.51 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51>`__
 
-- Добавлены метки :doc:`proto/Labels`.
+- Добавлены метки :doc:`entities/label`.
 - Свойство ``Labels`` добавлено в следующие структуры:
 
  - :doc:`Entity <proto/Entity message>`
