@@ -1,7 +1,7 @@
 *Определение:*
 	- :doc:`../entities/counteragent`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/counteragents`
 
 *Методы для работы с группами контрагентов:*

@@ -23,5 +23,5 @@ PowerOfAttorneySendingType
 	- в структуре :doc:`PowerOfAttorneyInfo`
 	- в структуре :doc:`SignaturePowerOfAttorney`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/powerofattorney`

@@ -72,5 +72,5 @@ GenerateInvoiceCorrectionRequestXml
 
 .. rubric:: См. также
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/docservice`

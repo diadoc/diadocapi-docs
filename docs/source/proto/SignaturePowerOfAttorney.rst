@@ -37,5 +37,5 @@ SignaturePowerOfAttorney
 *Структура используется:*
 	- в структуре :doc:`SignatureV3`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/powerofattorney`

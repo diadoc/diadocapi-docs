@@ -84,5 +84,5 @@ v1
 
 .. rubric:: См. также
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/docservice`

@@ -54,5 +54,5 @@ GetWorkflowsSettings
 
 .. rubric:: См. также
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../docflows/Workflows`

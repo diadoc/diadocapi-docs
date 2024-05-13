@@ -149,5 +149,5 @@ DocumentWorkflowSettingsV2
 *Структура используется:*
 	- в теле ответа метода :doc:`../http/GetWorkflowsSettings`
 	
-*Руководства:*
+*Инструкции:*
 	- :doc:`../docflows/Workflows`

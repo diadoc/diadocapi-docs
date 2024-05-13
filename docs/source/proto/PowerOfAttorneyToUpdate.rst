@@ -24,5 +24,5 @@ PowerOfAttorneyToUpdate
 *Структура используется:*
 	- в теле запроса метода :doc:`../http/UpdateEmployeePowerOfAttorney`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/powerofattorney`

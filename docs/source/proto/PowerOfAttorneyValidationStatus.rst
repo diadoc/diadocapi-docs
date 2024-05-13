@@ -65,5 +65,5 @@ PowerOfAttorneyValidationStatus
 	- в структуре :doc:`SignaturePowerOfAttorney`
 	- в теле ответа метода :doc:`../http/PrevalidatePowerOfAttorney`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/powerofattorney`

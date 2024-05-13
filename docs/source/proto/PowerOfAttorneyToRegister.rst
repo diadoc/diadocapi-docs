@@ -30,5 +30,5 @@ PowerOfAttorneyToRegister
 *Структура используется:*
 	- в теле запроса метода :doc:`../http/RegisterPowerOfAttorney`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/powerofattorney`

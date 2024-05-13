@@ -229,5 +229,5 @@ PowerOfAttorneyDelegationInfo
 	- в структуре :doc:`PowerOfAttorneyRegisterResult`
 	- в теле ответа метода :doc:`../http/GetPowerOfAttorneyInfo`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/powerofattorney`

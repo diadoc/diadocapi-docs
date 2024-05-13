@@ -27,5 +27,5 @@ BoxEvent
 	- в теле ответа метода :doc:`../http/GetEvent`
 	- в теле ответа метода :doc:`../http/GetLastEvent`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/docflow`

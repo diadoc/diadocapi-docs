@@ -22,5 +22,5 @@ EmployeePowerOfAttorney
 	- в теле ответа метода :doc:`../http/AddEmployeePowerOfAttorney`
 	- в теле ответа метода :doc:`../http/UpdateEmployeePowerOfAttorney`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/powerofattorney`
