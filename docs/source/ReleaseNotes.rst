@@ -180,7 +180,7 @@
 ----------
 **SDK**: `C# 2.11.3 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.3>`__ | `Java 3.12.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.12.0>`__ | `C++ 1.92.11 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.11>`__
 
-- В структуру :doc:`proto/CertificateInfoV2` добавлено поле ``SubjectType`` для определения типа владельца сертификата.
+- В структуру :doc:`CertificateInfoV2 <proto/CertificateList>` добавлено поле ``SubjectType`` для определения типа владельца сертификата.
 
 
 21.06.2022

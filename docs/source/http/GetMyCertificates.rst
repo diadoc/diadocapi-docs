@@ -15,7 +15,7 @@ GetMyCertificates
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-	:response Body: Тело ответа содержит список сертификатов, представленный структурой :doc:`CertificateList <../proto/CertificateInfoV2>`.
+	:response Body: Тело ответа содержит список сертификатов, представленный структурой :doc:`../proto/CertificateList`.
 
 Примеры ответов
 ^^^^^^^^^^^^^^^
