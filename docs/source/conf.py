@@ -383,7 +383,7 @@ redirects = {
     "howtostart/DiadocApiDll": "integrationChoise.html",
 
     "http/Organizations/GetOrganizationFeatures": "../GetOrganizationFeatures.html",
-    "http/ExtendedSignerDetailsV2": "../ExtendedSignerDetailsV2.html",
+    "http/utd/ExtendedSignerDetailsV2": "../ExtendedSignerDetailsV2.html",
 
     "proto/Labels": "../entities/label.html",
     "proto/OrganizationUser": "OrganizationUsersList.html",
@@ -391,7 +391,7 @@ redirects = {
     "proto/ResolutionRequest": "ResolutionRequestInfo.html",
     "proto/ResolutionRequestDenial": "ResolutionRequestDenialInfo.html",
     "proto/utd/ExtendedSignerDetailsToPost": "../ExtendedSignerDetailsToPost.html",
-    "proto/ExtendedSigner": "../ExtendedSigner.html",
+    "proto/utd/ExtendedSigner": "../ExtendedSigner.html",
 
     # redirect obsolete methods
     "http/DetectDocumentTypes": "obsolete/DetectDocumentTypes.html",
