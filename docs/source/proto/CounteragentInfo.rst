@@ -19,7 +19,7 @@ CounteragentInfo
 - ``CounteragentBoxId`` — идентификатор ящика контрагента.
 - ``Status`` — статус контрагента. Принимает значения из перечисления :doc:`CounteragentStatus`.
 - ``EventTimestampTicks`` — время последнего изменения статуса контрагента. Возвращается целое число тиков, прошедших с момента времени 00:00:00 01.01.0001.
-- ``LastEventComment`` — текст сообщения из последнего взаимодействия с контрагентом.
+- ``LastEventComment`` — текст сообщения из последнего взаимодействия с контрагентом. Если статус контрагента ``CounteragentStatus = IsMyCounteragent``, текст последнего сообщения будет отображаться в поле ``MessageFromCounteragent`` или ``MessageToCounteragent``.
 - ``MessageFromCounteragent`` — текст сообщения, полученного от контрагента.
 - ``MessageToCounteragent`` — текст сообщения, отправленнонго контрагенту.
 - ``InvitationDocumentId`` — идентификатор документа, отправленного вместе с приглашением. Представлен структурой :doc:`DocumentId`.
