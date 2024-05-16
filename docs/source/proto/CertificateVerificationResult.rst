@@ -1,7 +1,7 @@
 CertificateVerificationResult
 =============================
 
-Структура ``CertificateVerificationResult`` представляет собой информацию о проверке :doc:`сертификата <../entities/certificate>`.
+Структура ``CertificateVerificationResult`` хранит информацию о проверке :doc:`сертификата <../entities/certificate>`.
 
 .. code-block:: protobuf
 
@@ -13,7 +13,7 @@ CertificateVerificationResult
    }
 
 - ``IsValid`` — флаг, указывающий, все ли проверки сертификата прошли успешно.
-- ``CertificateChain`` — информация о цепочке сертификатов, участвовавших в проверке ЭП. Представлена структурой :doc:`CertificateChainElement`. Первый элемент в массиве описывает конечный сертификат пользователя, а последний — сертификат корневого УЦ.
+- ``CertificateChain`` — информация о цепочке сертификатов, участвовавших в проверке :doc:`электронной подписи <../entities/signature>`. Представлена структурой :doc:`CertificateChainElement`. Первый элемент в массиве описывает конечный сертификат пользователя, а последний — сертификат корневого УЦ.
 - ``VerificationTime`` — время проверки, представленное структурой :doc:`Timestamp`.
 
 ----
