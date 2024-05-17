@@ -392,6 +392,7 @@ redirects = {
     "proto/ResolutionRequestDenial": "ResolutionRequestDenialInfo.html",
     "proto/utd/ExtendedSignerDetailsToPost": "../ExtendedSignerDetailsToPost.html",
     "proto/utd/ExtendedSigner": "../ExtendedSigner.html",
+    "proto/CertificateInfoV2": "CertificateList.html",
 
     # redirect obsolete methods
     "http/DetectDocumentTypes": "obsolete/DetectDocumentTypes.html",
