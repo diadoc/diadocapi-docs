@@ -37,6 +37,13 @@
 
 В API сущность сообщения представлена структурой :doc:`Entity <../proto/Entity message>`.
 
+*Методы для работы с сущностью:*
+	- :doc:`../http/GetEntityContent` — возвращает содержимое сущности сообщения
+	- :doc:`../http/GetForwardedEntityContent` — возвращает содержимое сущности пересланного документа
+
+*Структуры для работы с сущностью:*
+	- :doc:`../proto/Entity message` — представляет собой сущность сообщения
+
 
  .. |image0| image:: ../_static/img/diadoc-api-data-model-parent-entity.png
  .. |image1| image:: ../_static/img/diadoc-api-data-model-initial-document.png

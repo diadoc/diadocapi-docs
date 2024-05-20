@@ -18,12 +18,13 @@
 	- :doc:`../instructions/counteragents`
 
 *Методы для работы с контрагентами:*
-	- :doc:`../http/GetCounteragents` — осуществляет поиск контрагентов по указанным параметрам
-	- :doc:`../http/GetCounteragent` — возвращает информацию о контрагенте
 	- :doc:`../http/AcquireCounteragent` — отправляет контрагенту приглашение к обмену документами
+	- :doc:`../http/AcquireCounteragentResult` — возвращает идентификатор приглашенной организации
 	- :doc:`../http/BreakWithCounteragent` — разрывает отношения между контрагентами, а также отзывает или отклоняет приглашение к обмену документами
+	- :doc:`../http/GetCounteragent` — возвращает информацию о контрагенте
 	- :doc:`../http/GetCounteragentCertificates` — возвращает сертификаты контрагента
 	- :doc:`../http/GetCounteragentEvents` — возвращает список событий по изменению отношений с контрагентами
+	- :doc:`../http/GetCounteragents` — осуществляет поиск контрагентов по указанным параметрам
 
 *Методы для работы с группами контрагентов:*
 	- :doc:`../http/AddCounteragentToGroup` — добавляет контрагентов в группу

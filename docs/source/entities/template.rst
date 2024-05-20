@@ -14,8 +14,20 @@
 
 .. rubric:: Представление в API
 
+В API шаблон представлен структурой :doc:`../proto/Template`.
+
 *Инструкции:*
 	- :doc:`../docflows/TemplateDocflow`
 
-*Структуры и методы для работы с шаблонами:*
-	- :doc:`../API_Templates`
+*Методы для работы с [сущность]:*
+	- :doc:`../http/PostTemplate` — отправляет шаблон документа
+	- :doc:`../http/PostTemplatePatch` — отправляет дополнение к шаблону документа
+	- :doc:`../http/TransformTemplateToMessage` — cоздает из шаблона :ref:`исходящее неотправленное сообщение <doc_delaysend>`
+
+*Структуры для работы с [сущность]:*
+	- :doc:`../proto/DocumentTransformation` — хранит информацию о документе для трансформации из шаблона
+	- :doc:`../proto/Template` — представляет собой шаблон документа
+	- :doc:`../proto/TemplateDocumentAttachment` — представляет собой любой документ в шаблоне
+	- :doc:`../proto/TemplatePatchToPost` — представляет собой дополнение к шаблону
+	- :doc:`../proto/TemplateToPost` — представляет собой шаблон для отправки
+	- :doc:`../proto/TemplateTransformationToPost` — хранит информацию для создания документов на основе шаблона
