@@ -45,7 +45,7 @@
 
 .. rubric:: Представление в API
 
-В API сертификат представлен структурой :doc:`../proto/CertificateInfoV2`.
+В API сертификат представлен структурой :doc:`CertificateInfoV2 <../proto/CertificateList>`.
 
 *Методы для работы с сертификатами:*
  - :doc:`../http/GetMyCertificates` — возвращает информацию о сертификатах, привязанных к сотруднику
