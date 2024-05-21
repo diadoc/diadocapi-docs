@@ -1,0 +1,304 @@
+Работа с документами 970 формата
+================================
+
+.. contents:: :local:
+	:depth: 1
+
+Утвержденный `приказом ФНС РФ от 19.12.2018 № ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__ формат распространяется на следующие типы документов:
+
+	- счета-фактуры,
+	- накладные, акты и другие первичные документы,
+	- УПД.
+
+Ниже представлен сценарий работы с документами формата № 970 на примере УПД. Описанные методы и подходы можно использовать также для работы с накладными, актами и счетами-фактурами.
+
+#. Продавец формирует титул продавца, подписывает и направляет покупателю.
+
+#. Покупатель получает подписанный титул продавца.
+
+#. Покупатель формирует титул покупателя, подписывает своей электронной подписью и направляет продавцу.
+
+Формирование титула продавца
+----------------------------
+
+Cгенерировать файл титула, соответствующий утвержденному формату, можно с помощью метода :doc:`../http/GenerateTitleXml`. Узнать тип, функцию и версию документа можно с помощью метода :doc:`../http/GetDocumentTypes`. Для титула продавца УПД формата 970 значения следующие:
+
+	- ``documentTypeNamedId = UniversalTransferDocument`` — имя типа документа,
+	- ``documentFunction = СЧФ`` — функция документа,
+	- ``documentVersion = utd970_05_02_01`` — версия формата,
+	- ``titleIndex = 0`` — титул продавца.
+
+В теле запроса нужно передать XML-файл ``UserDataXsd``, соответствующий XSD-схеме. ``UsedDataXsd`` содержит информацию для генерации титула, которую может заполнить только пользователь. Метод ``GetDocumentTypes`` вернет ссылку на получение файла XSD-схемы в поле ``UserDataXsdUrl`` структуры :ref:`document-title_v2`.
+
+Ниже приведено тело ответа метода ``GetDocumentTypes``. Для упрощения из него удалены другие типы, функции, версии и информация о метаданных.
+
+.. container:: toggle
+
+  .. code-block:: protobuf
+
+        {
+          "Name": "UniversalTransferDocument",
+           "Title": "УПД",
+           "SupportedDocflows": [
+             0
+           ],
+          "RequiresFnsRegistration": true,
+          "Functions": [
+             {
+               "Name": "СЧФ",
+               "Versions": [
+                {
+                  "Version": "utd970_05_02_01",
+                  "SupportsContentPatching": true,
+                  "SupportsEncrypting": false,
+                  "SupportsPredefinedRecipientTitle": false,
+                  "SupportsAmendmentRequest": true,
+                  "Titles": [
+                    {
+                      "Index": 0,
+                      "IsFormal": true,
+                      "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=TitleXsd",
+                      "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd",
+                      "SignerInfo": {
+                        "SignerType": 3,
+                        "ExtendedDocumentTitleType": 12,
+                        "SignerUserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=SignerUserContractXsd"
+                    },
+                      "MetadataItems": [],
+                      "EncryptedMetadataItems": []
+                }
+                  ],
+                 "IsActual": true,
+                 "Workflows": [
+                   {
+                      "Id": 17,
+                      "IsDefault": true
+                    },
+                      {
+                        "Id": 10,
+                        "IsDefault": false
+                      }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+
+Пример тела запроса и тела ответа есть в описании метода ``GenerateTitleXml``.
+
+После генерации с титулом можно выполнить следующие действия:
+
+	- загрузить документ как :doc:`черновик <../entities/draft>` и отправить его позже через API или веб-интерфейс,
+	- загрузить документ как :ref:`исходящий неотправленный документ <doc_delaysend>` и отправить его позже через API или веб-интерфейс,
+	- подписать и отправить документ.
+
+Все сценарии можно реализовать с помощью метода :doc:`../http/PostMessage`. 
+
+Отправка титула продавца
+------------------------
+
+Чтобы отправить титул, в теле запроса метода ``PostMessage`` передайте структуру :doc:`../proto/MessageToPost`, заполненную следующими данными:
+
+- в поле ``FromBoxId`` укажите идентификатор ящика отправителя;
+- в поле ``ToBoxId`` укажите идентификатор ящика получателя;
+- для передачи XML-файла титула продавца используйте вложенную структуру ``DocumentAttachment``:
+
+	- XML-файл передайте в поле ``Content`` структуры ``SignedContent``;
+	- подпись передайте в поле ``Signature`` структуры ``SignedContent``;
+	- ``TypeNamedId = UniversalTransferDocument``;
+	- ``Function = СЧФ``;
+	- ``Version = utd970_05_02_01``.
+
+Пример тела запроса:
+
+::
+
+    "FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
+    "DocumentAttachments": [
+            {
+                "SignedContent":
+                {
+                    "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",        //контент xml-файла в кодировке base-64
+                    "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",       //контент файла подписи в кодировке base-64
+                },
+                "TypeNamedId": "UniversalTransferDocument",
+                "Function": "СЧФ",
+                "Version": "utd970_05_02_01"
+            }
+        ]
+    }
+
+Получение служебных документов
+------------------------------
+
+Получение подтверждения оператора
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+После отправки документа Диадок автоматически формирует подтверждение оператора о дате получения титула УПД. Получить подтверждение оператора можно с помощью метода :doc:`../http/GetMessage`. В запросе нужно передать идентификаторы ящика, сообщения и отправленного титула покупателя УПД.
+
+В ответе метод вернет структуру :doc:`../proto/Message` с вложенной структурой :doc:`../proto/Entity`. Подтверждение оператора будет представлено структурой ``Entity`` со следующими полями:
+
+	- ``EntityType = Attachment``,
+	- ``AttachmentType = InvoiceConfirmation``.
+
+Пример запроса на получение подтверждения оператора:
+
+::
+
+    GET /V5/GetMessage?boxId=db32772b-9256-49a8-a133-fda593fda38a&messageId=bbcedb0d-ce34-4e0d-b321-3f600c920935entityId=30cf2c07-7297-4d48-bc6f-ca7a80e2cf95 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Accept: application/json
+    Content-Type: application/json charset=utf-8
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+
+Получение извещения о получении титула продавца
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+После получения титула продавца покупатель формирует извещение о получении титула и отправляет его продавцу. Получить извещение о получении можно с помощью метода :doc:`../http/GetMessage`. В запросе нужно передать идентификаторы ящика, сообщения и отправленного титула покупателя УПД.
+
+В ответе метод вернет структуру :doc:`../proto/Message` с вложенной структурой :doc:`../proto/Entity`. Подтверждение оператора будет представлено структурой ``Entity`` со следующими полями:
+
+	- ``EntityType = Attachment``,
+	- ``AttachmentType = InvoiceReceipt``.
+
+Поиск и получение документа формата 970
+---------------------------------------
+
+Чтобы найти все входящие документы, которые нужно обработать, используйте метод :doc:`../http/GetDocuments`:
+
+- в поле ``boxId`` укажите идентификатор ящика, в котором нужно найти входящие документы;
+- в поле ``filterCategory`` укажите статус и тип документа ``UniversalTransferDocument.InboundNotFinished``.
+
+Пример запроса на поиск УПД:
+
+::
+
+    GET /V3/GetDocuments?filterCategory=UniversalTransferDocument.InboundNotFinished&boxId=db32772b-9256-49a8-a133-fda593fda38a HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Accept: application/json
+    Content-Type: application/json charset=utf-8
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+
+В теле ответа вернется список документов в виде структуры ``DocumentList`` с вложенной структурой ``Document``. Определить УПД формата 970 можно по полю ``Version = utd970_05_02_01``.
+
+Найденный документ можно получить с помощью метода :doc:`../http/GetMessage`. В запросе передайте параметры, вернувшиеся в теле ответа метода ``GetDocuments``: ``boxId``, ``messageId``, ``entityId``.
+
+Пример запроса на получение УПД:
+
+::
+
+    GET /V3/GetMessage?messageId=bbcedb0d-ce34-4e0d-b321-3f600c920935&entityId=30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&boxId=db32772b-9256-49a8-a133-fda593fda38a HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Accept: application/json
+    Content-Type: application/json charset=utf-8
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+
+Формирование и отправка извещения о получении
+---------------------------------------------
+
+После получения титула продавца нужно сформировать и отправить извещение о получении (ИоП).
+
+Сформировать извещение о получении можно с помощью метода :doc:`../http/GenerateReceiptXml`. В запросе нужно передать идентификаторы ящика, сообщения и полученного титула продавца.
+
+Пример запроса на формирование извещения о получении:
+
+::
+
+    GET V2/GenerateReceiptXml?boxid=db32772b-9256-49a8-a133-fda593fda38a HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Accept: application/json
+    Content-Type: application/json charset=utf-8
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+
+Пример тела запроса:
+
+::
+
+    {
+        "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
+        "AttachmentId": "30cf2c07-7297-4d48-bc6f-ca7a80e2cf95",
+        "SignerContent": "PD94bWwgdmVyc2l...LDQudC7Pg==",        //бинарное представление xml-файла универсального подписанта
+    }
+
+В ответе метод вернет XML-файл ИоПа для сущности ``attachmentId`` из сообщения ``messageId`` в ящике ``boxId``.
+
+Сформированное извещение о получении документа можно отправить с помощью метода :doc:`../http/PostMessagePatch`.
+
+В теле запроса метода передайте структуру :doc:`../proto/MessagePatchToPost`, заполненную следующими данными:
+
+- в поле ``BoxId`` укажите идентификатор ящика, в котором находится исходное сообщение;
+- в поле ``MessageId`` укажите идентификатор сообщения, к которому относится дополнение;
+- чтобы передать XML-файл титула, используйте структуру :ref:`ReceiptAttachment`:
+
+	- ``ParentEntityId`` — идентификатор титула продавца;
+	- XML-файл передайте в поле ``Content`` вложенной структуры ``SignedContent``;
+	- подпись передайте в поле ``Signature`` структуры ``SignedContent``,
+	- в поле ``Labels`` передайте :doc:`метки <../entities/label>`, если необходимо.
+
+Пример тела запроса:
+
+::
+
+    "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
+    "Receipts":
+    [
+        {
+            "ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&",
+            "SignedContent":
+            {
+                "Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",        //контент xml-файла в кодировке base-64
+                "Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"        //контент файла подписи в кодировке base-64
+            },
+            "Label": "text"
+        }
+    ]
+    }
+
+Формирование титула покупателя
+------------------------------
+
+Генерация титула покупателя с помощью метода :doc:`../http/GenerateTitleXml` выполняется аналогично титулу продавца.
+
+- ``documentTypeNamedId`` = ``UniversalTransferDocument`` — имя типа документа,
+- ``documentFunction`` = ``СЧФ`` — функция документа,
+- ``documentVersion`` = ``utd970_05_02_01`` — версия формата,
+- ``titleIndex`` = ``1`` — титул покупателя.
+
+Отправка титула покупателя
+--------------------------
+
+Отправить сформированный титул покупателя можно с помощью метода :doc:`../http/PostMessagePatch`. 
+
+В теле запроса метода передайте структуру :doc:`../proto/MessagePatchToPost`, заполненную следующими данными:
+
+- в поле ``BoxId`` укажите идентификатор ящика, в котором находится исходное сообщение;
+- в поле ``MessageId`` укажите идентификатор сообщения, к которому относится дополнение;
+- чтобы передать XML-файл титула, используйте структуру :ref:`RecipientTitleAttachment`:
+
+	- ``ParentEntityId`` — идентификатор титула продавца;
+	- XML-файл передайте в поле ``Content`` вложенной структуры ``SignedContent``;
+	- подпись передайте в поле ``Signature`` структуры ``SignedContent``.
+
+Пример тела запроса:
+
+::
+
+    "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+    "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
+    "RecipientTitles":
+    [
+        {
+            "ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&",
+            "SignedContent":
+            {
+                "Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",        //контент xml-файла в кодировке base-64
+                "Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"        //контент файла подписи в кодировке base-64
+            }
+        }
+    ]
+    }
+
+После отправки в теле ответа будет содержаться отправленное дополнение, сериализованное в протобуфер :doc:`../proto/MessagePatch`.

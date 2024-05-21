@@ -1,17 +1,29 @@
 ﻿История изменений API
 =====================
 
+21.05.2024
+----------
+
+- Реализовали работу с документами формата, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__:
+
+	- добавили версии ``utd970_05_02_01`` для всех документов, поддерживающих новый формат: УПД, счета-фактуры, акты и накладные,
+	- добавили XSD-схемы для генерации документов, их можно получить с помощью метода :doc:`http/GetDocumentTypes` или скачать на страницах :doc:`docflows/Torg12Docflow` и :doc:`docflows/AktDocflow`,
+	- реализовали генерацию документов нового формата с помощью метода :doc:`http/GenerateTitleXml`,
+	- реализовали парсинг документов нового формата с помощью метода :doc:`http/ParseTitleXml`.
+
 25.04.2024
 ----------
 
 **SDK**: `C# 2.17.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.17.0>`__ | `Java 3.18.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.18.0>`__
 
-- Реализовали метод :doc:`http/GetCounteragentEvents` для получения ленты событий по изменению отношений с контрагентами.
-- Добавили структуры:
+- Добавили возможность получить ленту событий по изменению отношений с контрагентами:
 
-	- :doc:`proto/BoxCounteragentEventList` — представляет собой список событий по изменению отношений с контрагентами,
-	- :doc:`BoxCounteragentEvent <proto/BoxCounteragentEventList>` — представляет собой событие по изменению отношений с контрагентом,
-	- :doc:`proto/CounteragentInfo` — содержит информацию о контрагенте.
+	- Реализовали метод :doc:`http/GetCounteragentEvents` для получения ленты событий.
+	- Добавили структуры:
+
+		- :doc:`proto/BoxCounteragentEventList` — представляет собой список событий по изменению отношений с контрагентами,
+		- :doc:`BoxCounteragentEvent <proto/BoxCounteragentEventList>` — представляет собой событие по изменению отношений с контрагентом,
+		- :doc:`proto/CounteragentInfo` — содержит информацию о контрагенте.
 
 11.04.2024
 ----------
