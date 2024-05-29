@@ -97,7 +97,7 @@
 .. image:: ../_static/img/diadoc-api-generate-xml-schema1.png
 	:align: center
 
-Как формировать *UserDataXml* — выбор разработчика интеграционного решения. Один из путей — это кодогенерация из xsd-схемы упрощённого титула. Ссылка на схему находится в поле ``UserDataXsdUrl`` ответа метода :doc:`../http/GetDocumentTypes`, приведенного выше.
+Как формировать *UserDataXml* — выбор разработчика интеграционного решения. Один из путей — это кодогенерация из xsd-схемы упрощенного титула. Ссылка на схему находится в поле ``UserDataXsdUrl`` ответа метода :doc:`../http/GetDocumentTypes`, приведенного выше.
 
 В C# SDK для всех версий формата приказа №820 есть `пример кодогенерации <https://github.com/diadoc/diadocsdk-csharp/tree/master/src/DataXml>`_. 
 
