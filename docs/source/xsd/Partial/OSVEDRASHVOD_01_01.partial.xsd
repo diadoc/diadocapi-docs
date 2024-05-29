@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="WaterConsumptionInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Tables">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Table" maxOccurs="30">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Indications" maxOccurs="30">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Indication" maxOccurs="30">
+														<xs:complexType>
+															<xs:attribute name="Id" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="36"/>
+																		<xs:minLength value="1"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="CalculationType" use="required">
+																<xs:annotation>
+																	<xs:documentation>Тип расчета</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="21"/>
+																		<xs:enumeration value="31"/>
+																		<xs:enumeration value="36"/>
+																		<xs:enumeration value="51"/>
+																		<xs:enumeration value="54"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="NewIndication" use="required">
+																<xs:annotation>
+																	<xs:documentation>Показания счетчика(новое значение)</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:nonNegativeInteger">
+																		<xs:totalDigits value="21"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="AdditionalInfo" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Примечание код</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="1"/>
+																		<xs:enumeration value="2"/>
+																		<xs:enumeration value="3"/>
+																		<xs:enumeration value="4"/>
+																		<xs:enumeration value="5"/>
+																		<xs:enumeration value="6"/>
+																		<xs:enumeration value="7"/>
+																		<xs:enumeration value="8"/>
+																		<xs:enumeration value="9"/>
+																		<xs:enumeration value="10"/>
+																		<xs:enumeration value="11"/>
+																		<xs:enumeration value="12"/>
+																		<xs:enumeration value="13"/>
+																		<xs:enumeration value="14"/>
+																		<xs:enumeration value="15"/>
+																		<xs:enumeration value="16"/>
+																		<xs:enumeration value="17"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="ClientNumber" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="36"/>
+												<xs:minLength value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Contractor" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="LastName" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="60"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="FirstName" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="60"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="MiddleName" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="60"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Phone" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="255"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

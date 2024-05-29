@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="ReconciliationAct">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ContractBalance">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Остатки задолженности по договору отгрузки
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="OtherRealisation">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Остатки по прочей реализации
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:attribute name="ConsultingServices" type="decimal19" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Остатки по комплексу консультационных услуг
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="Software" type="decimal19" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Остатки по доступу к программному обеспечению и эл.базам
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="TotalSum" type="decimal19" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                Остаток кредиторской задолженности перед контрагентом по доступу к программному обеспечению и эл.базам
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="SpareParts" type="decimal19" use="required">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Остатки по зап. частям
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="RetroDiscount" type="decimal19" use="required">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Остатки по ретро-скидкам
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="DemonstrationVehicles" type="decimal19" use="required">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Остатки по демонстрационным транспортным средствам
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="Interest" type="decimal19" use="required">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Остатки по процентам
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="Prepayment" type="decimal19" use="required">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Остатки по предоплате за ТС
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="Advance" type="decimal19" use="required">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Остатки по авансовым платежам
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="TotalSum" type="decimal19" use="required">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Остаток кредиторской задолженности перед контрагентом всего по договору отгрузки
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="VehiclesBalance">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Остатки задолженности по ТС
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:attribute name="TotalSum" type="decimal19" use="required">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Остаток кредиторской задолженности перед контрагентом всего по ТС
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="decimal19">
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="19"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
