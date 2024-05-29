@@ -20,6 +20,13 @@
   border: none;
 }
 
+.rst-content table.docutils td,
+.rst-content table.field-list td,
+.wy-table td {
+  background-color: transparent;
+  vertical-align: baseline;
+}
+
 .github-link {
   position: fixed;
   bottom: 0;
