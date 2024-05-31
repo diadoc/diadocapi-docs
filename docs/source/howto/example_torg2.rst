@@ -29,7 +29,7 @@ Cгенерировать файл титула, соответствущий `�
 
 .. container:: toggle
 
-  .. code-block:: protobuf
+  .. code-block:: json
 
       {
         "Name": "Torg2",

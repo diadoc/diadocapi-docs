@@ -31,7 +31,7 @@ GenerateSenderTitleXml
 	
 **Пример запроса**:
 
-    .. sourcecode:: http
+    .. code-block:: http
 
         POST /GenerateSenderTitleXml?boxId=a96be310-0982-461a-8b2a-91d198b7861c&documentTypeNamedId=UniversalTransferDocument&documentFunction=ДОП&documentVersion=utd_05_01_04 HTTP/1.1
         Host: diadoc-api.kontur.ru

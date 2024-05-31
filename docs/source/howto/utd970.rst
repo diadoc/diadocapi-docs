@@ -2,7 +2,7 @@
 ================================
 
 .. contents:: :local:
-	:depth: 1
+	:depth: 3
 
 Утвержденный `приказом ФНС РФ от 19.12.2018 № ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__ формат распространяется на следующие типы документов:
 
@@ -34,7 +34,7 @@ Cгенерировать файл титула, соответствующий 
 
 .. container:: toggle
 
-  .. code-block:: protobuf
+  .. code-block:: json
 
         {
           "Name": "UniversalTransferDocument",

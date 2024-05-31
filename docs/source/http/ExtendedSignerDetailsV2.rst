@@ -80,7 +80,7 @@ ExtendedSignerDetails
 
 **Пример POST запроса**:
 
-   .. sourcecode:: http
+   .. code-block:: http
 
       POST /V2/ExtendedSignerDetails?boxId=48ad04b4-af63-4a72-901c-f19b698c31cc&thumbprint=B8C080A89A5F643A&documentTitleType=0 HTTP/1.1
       Host: diadoc-api.kontur.ru

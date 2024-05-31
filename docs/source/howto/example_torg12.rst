@@ -31,7 +31,7 @@ Cгенерировать файл титула, соответствущий у
 
 .. container:: toggle
 
-  .. code-block:: protobuf
+  .. code-block:: json
 
       {
         "Name": "XmlTorg12",

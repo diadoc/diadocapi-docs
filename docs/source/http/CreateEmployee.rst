@@ -38,7 +38,7 @@ CreateEmployee
 Пример запроса
 ^^^^^^^^^^^^^^
 
-.. sourcecode:: http
+.. code-block:: http
 
     POST /CreateEmployee?boxId=994cf191-8322-40eb-8d79-f1196f8ec357 HTTP/1.1
     Host: diadoc-api.kontur.ru
@@ -120,7 +120,7 @@ CreateEmployee
 Пример запроса
 ^^^^^^^^^^^^^^
 
-.. sourcecode:: http
+.. code-block:: http
 
     POST /CreateEmployee?boxId=994cf191-8322-40eb-8d79-f1196f8ec357 HTTP/1.1
     Host: diadoc-api.kontur.ru
