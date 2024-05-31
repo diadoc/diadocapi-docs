@@ -67,7 +67,7 @@
 
 .. container:: toggle
 
- .. code-block:: xml
+ .. code-block:: json
 
    "FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
    "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
@@ -186,7 +186,7 @@
 
 .. container:: toggle
 
- .. code-block:: xml
+ .. code-block:: json
 
    "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
    "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",

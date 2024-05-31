@@ -73,11 +73,16 @@
 
 Из этого ответа можно получить следующие данные:
 
-	- тип документа хранится в поле ``DocumentTypeDescriptionV2.Name``: ``TypeNamedId`` = ``UniversalTransferDocument``,
-	- функция документа хранится в поле ``DocumentTypeDescriptionV2.Functions[]``: ``Function`` = ``УПД``,
-	- версия документа хранится в поле ``DocumentTypeDescriptionV2.Functions[].Versions[]``: ``Version`` = ``utd970_05_02_01``,
-	- идентификатор титула документа хранится в поле ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[]``: ``IndexTitle`` = ``0`` (титул продавца),
-	- ссылка для получения XSD-схемы хранится в поле ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].UserDataXsdUrl``: ``UserDataXsdUrl`` = ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd``.
+	- тип документа хранится в поле ``DocumentTypeDescriptionV2.Name``: 
+	   ``TypeNamedId`` = ``UniversalTransferDocument``,
+	- функция документа хранится в поле ``DocumentTypeDescriptionV2.Functions[]``:
+	   ``Function`` = ``УПД``,
+	- версия документа хранится в поле ``DocumentTypeDescriptionV2.Functions[].Versions[]``:
+	   ``Version`` = ``utd970_05_02_01``,
+	- идентификатор титула документа хранится в поле ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[]``:
+	   ``IndexTitle`` = ``0`` (титул продавца),
+	- ссылка для получения XSD-схемы хранится в поле ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].UserDataXsdUrl``:
+	   ``UserDataXsdUrl`` = ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd``.
 
 Чтобы получить XSD-схему для формирования ``UserDataXml``, вызовите метод по ссылке из поля ``UserDataXsdUrl``.
 

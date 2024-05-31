@@ -190,7 +190,7 @@
 
 .. container:: toggle
 
- .. code-block:: xml
+ .. code-block:: json
 
    {
       "FromBoxId": "a96be310-0982-461a-8b2a-91d198b7861c",
@@ -379,7 +379,7 @@
     
 *Тело запроса*:
  
-.. code-block:: xml
+.. code-block:: json
  
     "BoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15",
     "MessageId": "93bdfb88-7b80-484d-883d-765102ca5af5",
