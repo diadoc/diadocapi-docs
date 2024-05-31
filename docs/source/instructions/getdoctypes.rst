@@ -23,53 +23,53 @@
 
  .. code-block:: json
 
-   "Name": "UniversalTransferDocument",
-   "Title": "УПД",
-   "SupportedDocflows": [ 
-     0
-   ],
-   "RequiresFnsRegistration": true,
-   "Functions": [
-   {
-     "Name": "СЧФ",
-     "Versions": [
-     {
-        "Version": "utd970_05_02_01",
-        "SupportsContentPatching": true,
-        "SupportsEncrypting": false,
-        "SupportsPredefinedRecipientTitle": false,
-        "SupportsAmendmentRequest": true,
-        "Titles": [
-        {
-          "Index": 0,
-          "IsFormal": true,
-          "XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=TitleXsd",
-          "UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd",
-          "SignerInfo":
-          {
-            "SignerType": 3,
-            "ExtendedDocumentTitleType": 12,
-            "SignerUserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=SignerUserContractXsd"
-          },
-          "MetadataItems": [],
-          "EncryptedMetadataItems": []
-        }
-        ],
-        "IsActual": true,
-        "Workflows": [
-        {
-          "Id": 17,
-          "IsDefault": true
-        },
-        {
-          "Id": 10,
-          "IsDefault": false
-        }
-        ]
-     }
-     ]
-   }
-   ]
+	"Name": "UniversalTransferDocument",
+	"Title": "УПД",
+	"SupportedDocflows": [ 
+		0
+	],
+	"RequiresFnsRegistration": true,
+	"Functions": [
+	{
+		"Name": "СЧФ",
+		"Versions": [
+		{
+			"Version": "utd970_05_02_01",
+			"SupportsContentPatching": true,
+			"SupportsEncrypting": false,
+			"SupportsPredefinedRecipientTitle": false,
+			"SupportsAmendmentRequest": true,
+			"Titles": [
+			{
+				"Index": 0,
+				"IsFormal": true,
+				"XsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=TitleXsd",
+				"UserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd",
+				"SignerInfo":
+				{
+					"SignerType": 3,
+					"ExtendedDocumentTitleType": 12,
+					"SignerUserDataXsdUrl": "/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=SignerUserContractXsd"
+				},
+				"MetadataItems": [],
+				"EncryptedMetadataItems": []
+			}
+			],
+			"IsActual": true,
+			"Workflows": [
+			{
+				"Id": 17,
+				"IsDefault": true
+			},
+			{
+				"Id": 10,
+				"IsDefault": false
+			}
+			]
+		}
+		]
+	}
+	]
 
 
 .. _doctype_title:
