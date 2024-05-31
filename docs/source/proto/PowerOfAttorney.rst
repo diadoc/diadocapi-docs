@@ -6,7 +6,7 @@ PowerOfAttorney
 .. contents:: :local:
 
 
-Структура ``PowerOfAttorney`` предназначена для хранения информации о машиночитаемой доверенности (МЧД).
+Структура ``PowerOfAttorney`` хранит информацию о машиночитаемой доверенности (МЧД).
 
 .. code-block:: protobuf
 
