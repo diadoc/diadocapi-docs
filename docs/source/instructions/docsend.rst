@@ -37,6 +37,7 @@
 
 В ответе метод ``PrepareDocumentsToSign`` возвращает список документов, подготовленных к подписанию и отправке.
 
+
 .. _doc_send:
 
 Отправка сообщения
@@ -48,8 +49,8 @@
 
 В теле запроса метода нужно передать структуру :doc:`../proto/MessageToPost`. Структура должна содержать идентификаторы ящиков участников документооборота и набор отправляемых документов:
 
-	- ``FromBoxId`` — идентификатор ящика отправителя. Можно указать только тот ящик, к которому у пользователя есть доступ с текущим авторизационным токеном.
-	- ``ToBoxId`` — идентификатор ящика получателя.
+	- ``FromBoxId`` — идентификатор :doc:`ящика <../entities/box>` отправителя. Можно указать только тот ящик, к которому у пользователя есть доступ с текущим авторизационным токеном.
+	- ``ToBoxId`` — идентификатор :doc:`ящика <../entities/box>` получателя.
 	- ``DocumentAttachment`` — вложенная структура для передачи XML-файла документа:
 
 		- ``SignedContent.Content`` — XML-файл документа,
@@ -63,35 +64,36 @@
 			- использовать флаг ``PowerOfAttorneyToPost.UseDefault = true``, если у пользователя установлена МЧД по умолчанию;
 			- передать файл доверенности и подпись к ней во вложенной структуре ``PowerOfAttorneyToPost.Contents``; файл передается в поле ``Content``, подпись — в поле ``Signature``.
 
-**Пример заполнения структуры MessageToPost:**
+Обратите внимание, что API Диадока не создает :doc:`файл подписи <../entities/signature>`, его нужно сгенерировать самостоятельно.
+
+**Пример тела запроса метода PostMessage:**
 
 .. container:: toggle
 
  .. code-block:: json
 
-   "FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
-   "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
-   "DocumentAttachments": [
-         {
-            "SignedContent":
-            {
-               "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",      //контент xml-файла в кодировке base-64
-               "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",      //контент файла подписи в кодировке base-64
-               {
-                  "PowerOfAttorney":
-                     "FullId":
-                     {
-                        "RegistrationNumber": "регистрационный номер МЧД",
-                        "IssuerInn": "ИНН доверителя"
-                     },
-               },
-            },
-            "TypeNamedId": "тип документа",
-            "Function": "функция документа",
-            "Version": "версия документа"
-         }
-      ]
-   }
+	"FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+	"ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
+		"DocumentAttachments": [
+		{
+			"SignedContent":
+			{
+				"Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",		// содержимое XML-файла в кодировке base-64
+				"Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",		// содержимое файла подписи в кодировке base-64
+				{
+					"PowerOfAttorney":
+					"FullId":
+					{
+						"RegistrationNumber": "регистрационный номер МЧД",
+						"IssuerInn": "ИНН доверителя"
+					},
+				},
+			},
+			"TypeNamedId": "тип документа",
+			"Function": "функция документа",
+			"Version": "версия документа"
+		}
+	]
 
 После вызова метода :doc:`../http/PostMessage` в ящике отправителя формируется:
 
@@ -180,30 +182,56 @@
 	+---------------------------------+-----------------------------------------------------+---------------------------------------+----------------------------------------------------+
 
 
+.. _doc_patch:
+
 Дополнение сообщения
 --------------------
 
-Сформированные сообщения можно дополнять :doc:`служебными документами <docservice>` и титулами последующих участников с помощью метода :doc:`../http/PostMessagePatch`, в который передается структура :doc:`../proto/MessagePatchToPost`. Эта структура должна содержать идентификатор :doc:`ящика <../entities/box>`, хранящего сообщение, и идентификатор цепочки документооборота, которую нужно дополнить новым документом.
+Сформированные сообщения можно дополнять :doc:`служебными документами <docservice>` и титулами последующих участников с помощью метода :doc:`../http/PostMessagePatch`.
+
+Эта структура должна содержать идентификатор :doc:`ящика <../entities/box>`, хранящего сообщение, и идентификатор цепочки документооборота, которую нужно дополнить новым документом.
 Пользователь, вызывающий метод, должен иметь доступ к ящику, в котором хранится сообщение.
 
-**Пример заполнения структуры MessagePatchToPost:**
+В теле запроса метода передайте структуру :doc:`../proto/MessagePatchToPost`, заполненную следующими данными:
+
+	- ``BoxId`` — идентификатор :doc:`ящика <../entities/box>`, в котором находится исходное сообщение.
+	- ``MessageId`` — идентификатор сообщения, к которому относится дополнение.
+	- ``RecipientTitles`` — вложенная структура для передачи XML-файла титула:
+
+		- ``ParentEntityId`` — идентификатор титула продавца,
+		- ``SignedContent.Content`` — XML-файл документа,
+		- ``SignedContent.Signature`` — файл подписи.
+
+Обратите внимание, что API Диадока не создает :doc:`файл подписи <../entities/signature>`, его нужно сгенерировать самостоятельно.
+
+**Пример HTTP-запроса метода PostMessagePatch:**
+
+.. code-block:: http
+
+	POST /V3/PostMessagePatch HTTP/1.1
+	Host: diadoc-api.kontur.ru
+	Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+	Content-Type: application/json; charset=utf-8
+
+**Пример тела запроса метода PostMessagePatch:**
 
 .. container:: toggle
 
  .. code-block:: json
 
-   "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
-   "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
-   "RecipientTitles": [
-         {
-            "ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&",
-            "SignedContent":
-            {
-               "Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",      // содержимое XML-файла в кодировке base-64
-               "Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"      // содержимое файла подписи в кодировке base-64
-            }
-         }
-      ]
-   }
+	"BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+	"MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
+	"RecipientTitles": [
+		{
+			"ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&",
+			"SignedContent":
+			{
+				"Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",      // содержимое XML-файла в кодировке base-64
+				"Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"      // содержимое файла подписи в кодировке base-64
+			}
+		}
+	]
+
+После отправки в теле ответа метода вернется отправленное дополнение, представленное структурой :doc:`../proto/MessagePatch`.
 
 В результате работы метода сообщение будет обновлено в ящиках всех участников документооборота. В ящике получателя обновление может произойти с задержкой.
