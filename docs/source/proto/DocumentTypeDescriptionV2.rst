@@ -72,12 +72,12 @@ DocumentVersionV2
 - ``SupportsEncrypting`` — флаг, указывающий, что тип поддерживает отправку зашифрованных документов.
 - ``SupportsPredefinedRecipientTitle``— флаг, указывающий, что тип поддерживает отправкуа :doc:`предопределенного титула получателя <../howto/example_predefined_recipient_title>`.
 - ``SupportsAmendmentRequest``— флаг, указывающий, что тип поддерживает отправку запрос на уточнение.
-- ``Titles`` — список титулов документов. Каждый титул представлен структурой :ref:`document-title_v2`.
+- ``Titles`` — список титулов документов. Каждый титул представлен структурой :ref:`document-title2`.
 - ``IsActual`` — флаг, указывающий, что версия документа актуальна.
 - ``Workflows`` — список видов документооборота для текущего типа. Каждый вид представлен структурой :doc:`DocumentWorkflow`.
 
 
-.. _document-title_v2:
+.. _document-title2:
 
 DocumentTitleV2
 ---------------
