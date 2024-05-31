@@ -43,53 +43,55 @@
 ------------------
 
 Подписать и отправить исходящие сообщения можно с помощью метода :doc:`../http/PostMessage`.
+
 Обратите внимание, что API Диадока не создает :doc:`файл подписи <../entities/signature>`, его нужно сгенерировать самостоятельно.
 
 В теле запроса метода нужно передать структуру :doc:`../proto/MessageToPost`. Структура должна содержать идентификаторы ящиков участников документооборота и набор отправляемых документов:
 
-	- укажите идентификатор ящика отправителя в поле ``FromBoxId``. Можно указать только тот ящик, к которому у пользователя есть доступ с текущим авторизационным токеном;
-	- укажите идентификатор ящика получателя в поле ``ToBoxId``;
-	- используйте вложенную структуру ``DocumentAttachment`` для передачи XML-файла:
+	- ``FromBoxId`` — идентификатор ящика отправителя. Можно указать только тот ящик, к которому у пользователя есть доступ с текущим авторизационным токеном.
+	- ``ToBoxId`` — идентификатор ящика получателя.
+	- ``DocumentAttachment`` — вложенная структура для передачи XML-файла документа:
 
-		- XML-файл передайте в поле ``Content`` структуры ``SignedContent``;
-		- подпись перейдайте в поле ``Signature`` структуры ``SignedContent``;
-		- укажите тип документа в поле ``TypeNamedId``;
-		- укажите функцию документа в поле ``Function``;
-		- укажите версию документа в поле ``Version``.
+		- ``SignedContent.Content`` — XML-файл документа,
+		- ``SignedContent.Signature`` — файл подписи,
+		- ``TypeNamedId`` — тип документа,
+		- ``Function`` — функция документа,
+		- ``Version`` — версия документа,
+		- ``SignedContent.PowerOfAttorneyToPost`` — машиночитаемая доверенность (МЧД). Указать ее можно следующими способами:
 
-	- передать машиночитаемую доверенность (МЧД) можно во вложенной структуре :doc:`../proto/PowerOfAttorneyToPost`. Это можно сделать следующими способами:
+			- указать регистрационный номер МЧД в формате GUID и ИНН доверителя во вложенной структуре ``PowerOfAttorneyToPost.PowerOfAttorneyFullId`` в полях ``RegistrationNumber`` и ``IssuerInn`` соответственно,
+			- использовать флаг ``PowerOfAttorneyToPost.UseDefault = true``, если у пользователя установлена МЧД по умолчанию;
+			- передать файл доверенности и подпись к ней во вложенной структуре ``PowerOfAttorneyToPost.Contents``; файл передается в поле ``Content``, подпись — в поле ``Signature``.
 
-		- указать регистрационный номер МЧД в формате GUID в поле ``RegistrationNumber`` и ИНН доверителя в поле ``IssuerInn`` вложенной структуры :doc:`../proto/PowerOfAttorneyFullId`;
-		- использовать флаг ``UseDefault = true``, если у пользователя установлена МЧД по умолчанию;
-		- передать файл доверенности и подпись к ней во вложенной структуре ``Contents``. Файл передается в поле ``Content``, подпись — в поле ``Signature``.
+**Пример заполнения структуры MessageToPost:**
 
-Пример заполнения структуры ``MessageToPost``:
+.. container:: toggle
 
-::
+ .. code-block:: xml
 
-    "FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
-    "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
-    "DocumentAttachments": [
+   "FromBoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+   "ToBoxId": "13254c42-b4f7-4fd3-3324-0094aeb0f15a",
+   "DocumentAttachments": [
+         {
+            "SignedContent":
             {
-                "SignedContent":
-                {
-                    "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",        //контент xml-файла в кодировке base-64
-                    "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",       //контент файла подписи в кодировке base-64
-                    {
-                        "PowerOfAttorney":
-                            "FullId":
-                           {
-                                "RegistrationNumber": "регистрационный номер МЧД",
-                                "IssuerInn": "ИНН доверителя"
-                            },
-                    },
-                },
-                "TypeNamedId": "тип документа",
-                "Function": "функция документа",
-                "Version": "версия документа"
-            }
-        ]
-    }
+               "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",      //контент xml-файла в кодировке base-64
+               "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",      //контент файла подписи в кодировке base-64
+               {
+                  "PowerOfAttorney":
+                     "FullId":
+                     {
+                        "RegistrationNumber": "регистрационный номер МЧД",
+                        "IssuerInn": "ИНН доверителя"
+                     },
+               },
+            },
+            "TypeNamedId": "тип документа",
+            "Function": "функция документа",
+            "Version": "версия документа"
+         }
+      ]
+   }
 
 После вызова метода :doc:`../http/PostMessage` в ящике отправителя формируется:
 
@@ -182,20 +184,22 @@
 
 Пример заполнения структуры :doc:`../proto/MessagePatchToPost`:
 
-::
+.. container:: toggle
 
-    "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
-    "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
-    "RecipientTitles": [
+ .. code-block:: xml
+
+   "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+   "MessageId": "bbcedb0d-ce34-4e0d-b321-3f600c920935",
+   "RecipientTitles": [
+         {
+            "ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&",
+            "SignedContent":
             {
-                "ParentEntityId":"30cf2c07-7297-4d48-bc6f-ca7a80e2cf95&",
-                "SignedContent":
-                {
-                    "Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",        //контент xml-файла в кодировке base-64
-                    "Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"        //контент файла подписи в кодировке base-64
-                }
+               "Content": "PD94bWwgdmVyc2l...LDQudC7Pg==",      // содержимое XML-файла в кодировке base-64
+               "Signature": "MIIN5QYJKoZIhvc...KsTM6zixgz"      // содержимое файла подписи в кодировке base-64
             }
-        ]
-    }
+         }
+      ]
+   }
 
 В результате работы метода сообщение будет обновлено в ящиках всех участников документооборота. В ящике получателя обновление может произойти с задержкой.
