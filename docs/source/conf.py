@@ -365,7 +365,6 @@ intersphinx_mapping = {'python': ('https://docs.python.org/', None)}
 # Redirecting old pages
 redirects = {
     "ru/latest/index": "../../index.html",
-    #"ru/latest/*": "../../index.html",
 
     "ApiClientOperationPrinciple": "instructions/documents.html",
     "Counteragents": "instructions/counteragents.html",
