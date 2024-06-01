@@ -103,7 +103,7 @@
 						</xs:annotation>
 						<xs:attribute name="Name" use="required">
 							<xs:annotation>
-								<xs:documentation>КорСчет - Корреспондентский счёт</xs:documentation>
+								<xs:documentation>НаимДокОтгр - Наименование документа об отгрузке</xs:documentation>
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
@@ -115,7 +115,7 @@
 
 						<xs:attribute name="Number" use="required">
 							<xs:annotation>
-								<xs:documentation>НомерСчета - номер банковского счета</xs:documentation>
+								<xs:documentation>НомДокОтгр - Номер документа об отгрузке</xs:documentation>
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
@@ -127,7 +127,7 @@
 
 						<xs:attribute name="Date" use="optional">
 							<xs:annotation>
-								<xs:documentation>НаимБанк - название банка</xs:documentation>
+								<xs:documentation>ДатаДокОтгр - Дата документа об отгрузке</xs:documentation>
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:annotation>
