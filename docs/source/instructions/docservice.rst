@@ -20,7 +20,7 @@
 	- ``EntityType = Attachment``,
 	- ``AttachmentType = InvoiceConfirmation``.
 
-**Пример HTTP-запроса:**
+**Пример HTTP-запроса метода GetMessage:**
 
 .. code-block:: http
 
@@ -67,7 +67,7 @@
 
 Сформировать ИоП можно с помощью метода :doc:`../http/GenerateReceiptXml`. В запросе нужно передать идентификаторы ящика, сообщения и полученного титула продавца.
 
-**Пример HTTP-запроса на формирование ИоП:**
+**Пример HTTP-запроса метода GenerateReceiptXml:**
 
 .. code-block:: http
 

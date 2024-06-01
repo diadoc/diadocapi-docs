@@ -1,7 +1,7 @@
 SignatureV3
 ===========
 
-Структура ``SignatureV3`` представляет информацию о :doc:`подписи <../entities/signature>` под документом.
+Структура ``SignatureV3`` хранит информацию об :doc:`электронной подписи <../entities/signature>` под документом.
 
 .. code-block:: protobuf
 

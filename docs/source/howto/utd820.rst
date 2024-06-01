@@ -32,9 +32,9 @@
 
 Для генерации титула продавца используйте метод :doc:`../http/GenerateTitleXml`. Инструкция о генерации приведена на странице :doc:`../instructions/generation`.
 
-Чтобы сгенерировать титул продавца, нужно получить необходимую информацию из метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../instructions/getdoctypes`.
+Чтобы сгенерировать титул продавца, нужно получить необходимую информацию из метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена в разделе :ref:`doctype_title`.
 
-Из ответа метода ``GetDocumentTypes`` для УПД в 820 формате возьмем следующие значения:
+Из ответа метода ``GetDocumentTypes`` для УПД в 820 формате возьмем следующие значения для параметров метода ``GenerateTitleXml``:
 
 	- ``documentTypeNamedId = UniversalTransferDocument``,
 	- ``documentFunction = СЧФДОП``,
@@ -45,7 +45,7 @@
 
 С помощью полученных данных можно сгенерировать титул продавца методом :doc:`../http/GenerateTitleXml`.
 
-**Пример HTTP-запроса:**
+**Пример HTTP-запроса метода GenerateTitleXml:**
 
 .. code-block:: http
 
@@ -276,7 +276,7 @@
 	- из ответов методов :doc:`../http/GetNewEvents`, :doc:`../http/GetDocflowEvents_V3`,  :doc:`../http/GetDocflows_V3`, :doc:`../http/GetMessage`, :doc:`../http/GetDocument`,
 	- с помощью метода детектирования :doc:`../http/DetectDocumentTitles`.
 
-**Пример HTTP-запроса:**
+**Пример HTTP-запроса метода ParseTitleXml:**
 
 .. code-block:: http
 
@@ -299,9 +299,9 @@
 
 Для генерации титула покупателя используйте метод :doc:`../http/GenerateTitleXml`. Инструкция о генерации приведена на странице :doc:`../instructions/generation`.
 
-Чтобы сгенерировать титул продавца, нужно получить необходимую информацию из метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../instructions/getdoctypes`.
+Чтобы сгенерировать титул покупателя, нужно получить необходимую информацию из метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена в разделе :ref:`doctype_title`.
 
-Из ответа метода ``GetDocumentTypes`` для УПД в 820 формате возьмем те же значения, что и для титула продавца, но номер титула будет другой:
+Из ответа метода ``GetDocumentTypes`` для УПД в 820 формате возьмем те же значения для параметров метода ``GenerateTitleXml``, что и для титула продавца, но номер титула будет другой:
 
 	- ``documentTypeNamedId`` = ``UniversalTransferDocument``,
 	- ``documentFunction`` = ``СЧФДОП``,
@@ -312,7 +312,7 @@
 
 С помощью полученных данных можно сгенерировать титул покупателя методом :doc:`../http/GenerateTitleXml`.
 
-**Пример HTTP-запроса:**
+**Пример HTTP-запроса метода GenerateTitleXml:**
 
 .. code-block:: http
 
@@ -377,7 +377,7 @@
 XSD-схемы и UserDataXsd
 -----------------------
 
-Актуальные XSD-схемы и ``UserDataXml`` можно получить с помощью метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../instructions/getdoctypes`.
+Актуальные XSD-схемы и ``UserDataXml`` можно получить с помощью метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена в разделе :ref:`doctype_title`.
 
 XSD-схемы для версии титулов версии **utd820_05_01_02_hyphen**:
 

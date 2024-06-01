@@ -83,31 +83,17 @@
 	- функция документа,
 	- версия документа,
 	- идентификатор титула документа,
-	- XSD-схему для формирования упрощенного XML-файла ``UserDataXml``.
+	- XSD-схема для формирования упрощенного XML-файла ``UserDataXml``.
 
 Из полученного выше ответа метода ``GetDocumentTypes`` получаем следующие данные:
 
-	- тип документа хранится в поле ``DocumentTypeDescriptionV2.Name``:
+	- ``DocumentTypeDescriptionV2.Name`` — тип документа: ``UniversalTransferDocument``,
+	- ``DocumentTypeDescriptionV2.Functions[].Name`` — функция документа: ``СЧФ``,
+	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Version`` — версия документа: ``utd970_05_02_01``,
+	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].Index`` — идентификатор титула документа: ``0`` (титул продавца),
+	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].UserDataXsdUrl`` — ссылка для получения XSD-схемы упрощенного XML-фала титула: ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd``.
 
-	   ``TypeNamedId`` = ``UniversalTransferDocument``,
-
-	- функция документа хранится в поле ``DocumentTypeDescriptionV2.Functions[]``:
-
-	   ``Function`` = ``УПД``,
-
-	- версия документа хранится в поле ``DocumentTypeDescriptionV2.Functions[].Versions[]``:
-
-	   ``Version`` = ``utd970_05_02_01``,
-
-	- идентификатор титула документа хранится в поле ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[]``:
-
-	   ``IndexTitle`` = ``0`` (титул продавца),
-
-	- ссылка для получения XSD-схемы хранится в поле ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].UserDataXsdUrl``:
-
-	   ``UserDataXsdUrl`` = ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd``.
-
-Чтобы получить XSD-схему для формирования ``UserDataXml``, вызовите метод по ссылке из поля ``UserDataXsdUrl``.
+Чтобы получить XSD-схему для формирования ``UserDataXml``, вызовите метод ``GetContent`` по ссылке из поля ``UserDataXsdUrl``.
 
 Полученные значения можно использовать для :doc:`генерации формализованного документа<generation>`.
 
@@ -117,8 +103,10 @@
 Данные для универсального подписанта
 ------------------------------------
 
-Для формирования упрощенного XML-файла подписанта нужно получить его XSD-схему.
+Чтобы сформировать упрощенный XML-файл подписанта, нужно получить его XSD-схему.
 
-Из полученного выше ответа метода ``GetDocumentTypes`` возьмем ссылку для получения XSD-схемы: она возвращается в поле ``SignerUserDataXsdUrl``.
+Из полученного выше ответа метода ``GetDocumentTypes`` возьмем ссылку для получения XSD-схемы — она возвращается в поле ``SignerUserDataXsdUrl``:
 
-Чтобы получить XSD-схему, вызовите метод по ссылке из поля ``SignerUserDataXsdUrl``. В ответ метод вернет файл XSD-схемы SignerUserData.xsd.
+	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].SignerInfo.SignerUserDataXsdUrl`` — ссылка для получения XSD-схемы упрощенного XML-фала подписанта: ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=SignerUserContractXsd``.
+
+Чтобы получить XSD-схему для формирования XML-блока подписанта, вызовите метод  ``GetContent`` по ссылке из поля ``SignerUserDataXsdUrl``. В ответ метод вернет файл XSD-схемы SignerUserData.xsd.

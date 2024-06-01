@@ -1,6 +1,8 @@
 Signature
 =========
 
+Структура ``Signature`` хранит информацию об :doc:`электронной подписи <../entities/signature>` под документом.
+
 .. code-block:: protobuf
 
    message Signature
@@ -11,8 +13,6 @@ Signature
        optional bool IsValid = 4;
        optional SignatureVerificationResult VerificationResult = 5;
    }
-
-Структура представляет информацию о подписи под документом.
 
 -  :doc:`Entity` - информация о содержимом подписи.
 -  *SignerBoxId* - идентификатор ящика, от имени которого была поставлена подпись.
