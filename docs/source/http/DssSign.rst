@@ -26,7 +26,7 @@ DssSign
 Пример запроса
 --------------
 
-.. sourcecode:: http
+.. code-block:: http
 
     POST /DssSign?boxId=54e9ca30-09c3-4bc9-926f-8f3c1ab56ca3&certificateThumbprint=8A80C2723DBC4F0A94F8CEE21C0A15A68A80C272 HTTP/1.1
     Host: diadoc-api.kontur.ru

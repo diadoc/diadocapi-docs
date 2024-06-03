@@ -51,7 +51,7 @@
 
  Пример структуры ``OuterDocflowInfo``:
 
- .. sourcecode:: json
+ .. code-block:: json
 
     "LastOuterDocflows": [
         {

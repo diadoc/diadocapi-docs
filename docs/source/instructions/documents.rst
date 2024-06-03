@@ -7,6 +7,8 @@
 	:maxdepth: 1
 	:titlesonly:
 
+	getdoctypes
+	generation
 	docsend
 	docget
 	docservice

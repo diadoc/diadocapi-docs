@@ -36,7 +36,7 @@ Register
 С телом сертификата
 ~~~~~~~~~~~~~~~~~~~
 
-.. sourcecode:: http
+.. code-block:: http
 
     POST /Register HTTP/1.1
     Host: diadoc-api.kontur.ru
@@ -50,7 +50,7 @@ Register
 С отпечатком сертификата
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. sourcecode:: http
+.. code-block:: http
 
     POST /Register HTTP/1.1
     Host: diadoc-api.kontur.ru

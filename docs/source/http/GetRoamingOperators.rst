@@ -32,7 +32,7 @@ GetRoamingOperators
 
 **Пример ответа метода:**
 
-.. sourcecode:: js 
+.. code-block:: json
 
     {
         "RoamingOperators": [

@@ -1,7 +1,7 @@
 DocumentSenderSignature
 =======================
 
-Структура ``DocumentSenderSignature`` предназначена для представления :doc:`электронной подписи <../entities/signature>` к документам отправляемого черновика:
+Структура ``DocumentSenderSignature`` представляет собой :doc:`электронную подпись <../entities/signature>` (ЭП) к данным в отправляемом черновике.
 
 .. code-block:: protobuf
 
