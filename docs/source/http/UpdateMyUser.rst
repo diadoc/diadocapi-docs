@@ -25,7 +25,7 @@ UpdateMyUser
 
 **Пример запроса**:
 
-.. sourcecode:: http
+.. code-block:: http
 
     POST /UpdateMyUser HTTP/1.1
     Host: diadoc-api.kontur.ru
@@ -52,7 +52,7 @@ UpdateMyUser
 
 **Пример запроса для обновления ФИО**:
 
-.. sourcecode:: http
+.. code-block:: http
 
     POST /UpdateMyUser HTTP/1.1
     Host: diadoc-api.kontur.ru

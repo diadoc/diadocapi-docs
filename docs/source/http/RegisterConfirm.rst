@@ -25,7 +25,7 @@ RegisterConfirm
 С телом сертификата
 ~~~~~~~~~~~~~~~~~~~
 
-.. sourcecode:: http
+.. code-block:: http
 
     POST /RegisterConfirm HTTP/1.1
     Host: diadoc-api.kontur.ru
@@ -41,7 +41,7 @@ RegisterConfirm
 С отпечатком сертификата
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. sourcecode:: http
+.. code-block:: http
 
     POST /RegisterConfirm HTTP/1.1
     Host: diadoc-api.kontur.ru

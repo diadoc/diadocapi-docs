@@ -79,7 +79,7 @@
 
 Пример структуры, которая вернется в ответе:
 
-.. sourcecode:: json
+.. code-block:: json
 
    "OuterDocflowInfo":
    {
@@ -115,7 +115,7 @@
 
 Пример структуры, которая вернется в ответе:
 
-.. sourcecode:: json
+.. code-block:: json
 
    "OuterDocflows": [
       {

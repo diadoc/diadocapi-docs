@@ -15,7 +15,7 @@ GenerateSenderTitleXml
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
 
-	:request Body: Тело запроса должно содержать заполненный XML-файл, соответствующий XSD-схеме контракта для генерации титула отправителя данного типа документа. XSD-схема контракта, необходимого для генерации титула, может быть получена с помощью ссылки, доступной в поле *UserDataXsdUrl* контракта :doc:`DocumentTitle <../../proto/obsolete/DocumentTypeDescription>`, который можно получить с помощью метода :doc:`../../http/GetDocumentTypes`.
+	:request Body: Тело запроса должно содержать заполненный XML-файл, соответствующий XSD-схеме контракта для генерации титула отправителя данного типа документа. XSD-схема контракта, необходимого для генерации титула, может быть получена с помощью ссылки, доступной в поле *UserDataXsdUrl* контракта :doc:`DocumentTitle <../../proto/obsolete/DocumentTypeDescription>`, который можно получить с помощью метода :doc:`../../http/GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../../instructions/getdoctypes`.
 	
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
@@ -31,7 +31,7 @@ GenerateSenderTitleXml
 	
 **Пример запроса**:
 
-    .. sourcecode:: http
+    .. code-block:: http
 
         POST /GenerateSenderTitleXml?boxId=a96be310-0982-461a-8b2a-91d198b7861c&documentTypeNamedId=UniversalTransferDocument&documentFunction=ДОП&documentVersion=utd_05_01_04 HTTP/1.1
         Host: diadoc-api.kontur.ru

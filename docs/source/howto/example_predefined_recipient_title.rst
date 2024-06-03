@@ -11,7 +11,7 @@
 
 Примеры использования (C#)
 --------------------------
-Узнать версию типа, которая поддерживает такую отправку, можно через метод :doc:`../http/GetDocumentTypes` (поле SupportsPredefinedRecipientTitle = true).
+Узнать версию типа, которая поддерживает такую отправку, можно через метод :doc:`../http/GetDocumentTypes` (поле SupportsPredefinedRecipientTitle = true). Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../instructions/getdoctypes`.
 
 Сейчас отправить документ с двумя титулами сразу можно через шаблоны:
 

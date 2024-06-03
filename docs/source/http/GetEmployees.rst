@@ -33,7 +33,7 @@ GetEmployees
 Пример запроса
 ~~~~~~~~~~~~~~
 
-.. sourcecode:: http
+.. code-block:: http
 
     GET /GetEmployees?boxId=994cf191-8322-40eb-8d79-f1196f8ec357&page=2&count=10 HTTP/1.1
     Host: diadoc-api.kontur.ru
