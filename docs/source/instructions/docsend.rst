@@ -28,7 +28,7 @@
 	- расширенный подписант — при вызове метода ``PrepareDocumentsToSign`` заполните структуру ``ExtendedSigner``.
 	- универсальный подписант — передайте бинарное представление упрощенного XML-файла подписанта в поле ``SignerContent``. Чтобы подготовить упрощенный XML-файл подписанта, выполните следующие действия: 
 
-		#. :ref:`Получите файл XSD-схемы упрощенного XML подписанта <doctype_signer>`.
+		#. Получите файл XSD-схемы упрощенного XML подписанта с помощью метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных для подписанта из метода ``GetDocumentTypes`` приведена в разделе :ref:`doctype_signer`.
 		#. По полученной схеме подготовьте упрощенный XML-файл подписанта одним из следующих способов:
 
 			- Используйте кодогенерацию в SDK. В C# SDK для всех версий формата 970 есть `пример кодогенерации <https://github.com/diadoc/diadocsdk-csharp/tree/master/src/DataXml/Utd970/V050201>`_ для подписанта. Кодогенерация осуществляется `инструментом xsd.exe <https://docs.microsoft.com/ru-ru/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe>`_. Чтобы воспользоваться ей в C#-клиенте, нужно заполнить объект ``Signer`` и `сериализовать его в XML <https://github.com/diadoc/diadocsdk-csharp/blob/master/src/XmlSerializerExtensions.cs>`_.

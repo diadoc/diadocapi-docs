@@ -49,7 +49,7 @@ PrepareDocumentsToSignRequest
 
 	- ``ExtendedSigner`` — информация о подписанте документа. Представлена структурой :doc:`ExtendedSigner`. Если у документа больше одного подписанта, вернется ошибка ``400 (Bad Request)``. Используется для документов форматов :doc:`@155/@189/@551/@552/@736/@820 <../docflows/AttachmentVersion>` и своих типов на базе форматов :doc:`@155/@820 <../docflows/AttachmentVersion>`.
 
-	- ``SignerContent`` — бинарное представление упрощенного XML-файла подписанта. XSD-схему можно получить с помощью метода :doc:`../http/GetDocumentTypes`. Ссылка на XSD-схему упрощенного XML подписанта вернется в поле ``SignerUserDataXsdUrl``.
+	- ``SignerContent`` — бинарное представление упрощенного XML-файла подписанта. XSD-схему можно получить с помощью метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных для подписанта из метода ``GetDocumentTypes`` приведена в разделе :ref:`doctype_signer`.
 
 - ``Documents`` — список патчей документов, которые нужно подготовить к подписанию и отправке. Отправить патчи можно с помощью метода :doc:`../http/PostMessagePatch`. Каждый элемент списка представлен структурой ``DocumentToPatch`` с полями:
 
@@ -59,7 +59,7 @@ PrepareDocumentsToSignRequest
 
 	- ``ExtendedSigner`` — информация о подписанте документа. Представлена структурой :doc:`ExtendedSigner`. Если у документа больше одного подписанта, вернется ошибка ``400 (Bad Request)``. Используется для документов форматов :doc:`@155/@189/@551/@552/@736/@820 <../docflows/AttachmentVersion>` и своих типов на базе форматов :doc:`@155/@820 <../docflows/AttachmentVersion>`.
 
-	- ``SignerContent`` — бинарное представление упрощенного XML-файла подписанта. XSD-схему можно получить с помощью метода :doc:`../http/GetDocumentTypes`. Ссылка на XSD-схему упрощенного XML подписанта вернется в поле ``SignerUserDataXsdUrl``.
+	- ``SignerContent`` — бинарное представление упрощенного XML-файла подписанта. XSD-схему можно получить с помощью метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных для подписанта из метода ``GetDocumentTypes`` приведена в разделе :ref:`doctype_signer`.
 
 - ``Contents`` — список документов, которые нужно подготовить к подписанию и отправке. Отправить документы можно с помощью метода :doc:`../http/PostMessage`. Каждый элемент списка представлен структурой ``ContentToPatch`` с полями:
 
@@ -77,7 +77,7 @@ PrepareDocumentsToSignRequest
 
 	- ``ExtendedSigner`` — информация о подписанте документа. Представлена структурой :doc:`ExtendedSigner`. Если у документа больше одного подписанта, вернется ошибка ``400 (Bad Request)``. Используется для документов форматов :doc:`@155/@189/@551/@552/@736/@820 <../docflows/AttachmentVersion>` и своих типов на базе форматов :doc:`@155/@820 <../docflows/AttachmentVersion>`.
 
-	- ``SignerContent`` — бинарное представление упрощенного XML-файла подписанта. XSD-схему можно получить с помощью метода :doc:`../http/GetDocumentTypes`. Ссылка на XSD-схему упрощенного XML подписанта вернется в поле ``SignerUserDataXsdUrl``.
+	- ``SignerContent`` — бинарное представление упрощенного XML-файла подписанта. XSD-схему можно получить с помощью метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных для подписанта из метода ``GetDocumentTypes`` приведена в разделе :ref:`doctype_signer`.
 
 ----
 
