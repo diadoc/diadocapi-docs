@@ -15,4 +15,4 @@ SignatureRejectionGenerationRequestV2
 - ``ErrorMessage`` — необязательный текст комментария к отказу. Максимально допустимая длина 5000 символов.
 - ``MessageId`` — идентификатор сообщения.
 - ``AttachmentId`` — идентификатор :doc:`сущности <../proto/Entity message>`, для которой требуется сформировать файл отказа от подписи.
-- ``SignerContent`` — бинарное представление xml-файла универсального подписанта. Файл формируется в соответствии с :download:`XSD-схемой <../xsd/TechnologicalSigner133UserContract1505.xsd>`.
+- ``SignerContent`` — бинарное представление xml-файла универсального подписанта. Файл формируется в соответствии с :download:`XSD-схемой <../xsd/TechnologicalSigner133UserContract1505.xsd>`. Подробнее о формировании файла в разделе :ref:`universal_signer`.

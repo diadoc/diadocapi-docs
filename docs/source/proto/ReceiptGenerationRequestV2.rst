@@ -13,4 +13,4 @@ ReceiptGenerationRequestV2
 
 - ``MessageId`` — идентификатор сообщения.
 - ``AttachmentId`` — идентификатор :doc:`сущности <../proto/Entity message>`, для которой нужно сформировать ИоП.
-- ``SignerContent`` — бинарное представление xml-файла универсального подписанта. Файл формируется в соответствии с :download:`XSD-схемой <../xsd/TechnologicalSigner133UserContract1505.xsd>`.
+- ``SignerContent`` — бинарное представление XML-файла универсального подписанта. Файл формируется в соответствии с :download:`XSD-схемой <../xsd/TechnologicalSigner133UserContract1505.xsd>`. Подробнее о формировании файла в разделе :ref:`universal_signer`.
