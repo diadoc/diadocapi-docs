@@ -235,7 +235,7 @@
 ----------
 **SDK**: `C# 2.9.29 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.9.29>`__ | `Java 3.9.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.9.9>`__ | `C++ 1.92.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.92.9>`__
 
-- В структуру :doc:`CounteragentList <proto/Counteragent>` добавлено поле ``TotalCountType``, которое отражает количество контрагентов, возвращаемых в поле ``TotalCount``.
+- В структуру :doc:`proto/CounteragentList` добавлено поле ``TotalCountType``, которое отражает количество контрагентов, возвращаемых в поле ``TotalCount``.
 - Для поля ``TotalCount`` введено ограничение значения: теперь в нем возвращает значение не больше 10000. Это ограничение введено для повышения производительности метода поиска контрагентов.
 
 
@@ -1328,7 +1328,7 @@
 
 - Добавлена возможность отправлять зашифрованные счета-фактуры:
 
- - добавлены структуры :doc:`CounteragentCertificateList <proto/Counteragent>` и :doc:`Certificate <proto/Counteragent>` для описания списка сертификатов контрагента;
+ - добавлены структуры :doc:`proto/CounteragentCertificateList` и :doc:`Certificate <proto/CounteragentCertificateList>` для описания списка сертификатов контрагента;
  - в структурах :doc:`proto/Document` и :doc:`proto/Entity message` добавлен флаг ``IsEncryptedContent``:— он указывается для передачи контента в зашифрованном виде;
  - добавлены структуры для передачи зашифрованных счетов-фактур и метаданных для исправлений и корректировок:
  
