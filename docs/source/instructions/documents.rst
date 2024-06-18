@@ -4,7 +4,7 @@
 В этом разделе описана работа с документами через API Диадока.
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 3
 	:titlesonly:
 
 	getdoctypes
@@ -12,3 +12,4 @@
 	docsend
 	docget
 	docservice
+	formal

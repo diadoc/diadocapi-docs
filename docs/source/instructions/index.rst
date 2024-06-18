@@ -6,7 +6,7 @@
 Перед выполнением любых действий в Диадоке нужно :doc:`авторизоваться <../Authorization>`.
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 3
 	:titlesonly:
 
 	counteragents
