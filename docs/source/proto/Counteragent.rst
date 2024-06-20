@@ -1,13 +1,9 @@
 Counteragent
 ============
 
-.. code-block:: protobuf
+Структура ``Counteragent`` хранит информацию о контрагенте.
 
-    message CounteragentList {
-        required int32 TotalCount = 1;
-        repeated Counteragent Counteragents = 2;
-        required TotalCountType TotalCountType = 3;
-    }
+.. code-block:: protobuf
 
     message Counteragent {
         optional string IndexKey = 1;
@@ -20,58 +16,39 @@ Counteragent
         optional string CounteragentGroupId = 9;
     }
 
-    enum CounteragentStatus {
-        UnknownCounteragentStatus = 0;
-        IsMyCounteragent = 1;
-        InvitesMe = 2;
-        IsInvitedByMe = 3;
-        RejectsMe = 5;
-        IsRejectedByMe = 6;
-        NotInCounteragentList = 7;
-    }
-	
-    enum TotalCountType {
-        UnknownCountType = 0;
-        Equal = 1;
-        GreaterThanOrEqual = 2;
-    }
+- ``IndexKey`` — уникальный ключ контрагента, который можно передавать в метод :doc:`../http/GetCounteragents` в качестве параметра ``afterIndexKey`` для итерирования по всему отфильтрованному списку.
 
-    message CounteragentCertificateList {
-        repeated Certificate Certificates = 1;
-    }
+- ``Organization`` — информация об организации-контрагенте, представленная структурой :doc:`Organization`.
 
-    message Certificate {
-        required bytes RawCertificateData = 1;
-    }
+- ``CurrentStatus`` — текущий статус отношения партнерства с контрагентом. Может меняться со временем. Принимает значения из перечисления :doc:`CounteragentStatus`.
 
+- ``LastEventTimestampTicks`` — время последнего события из истории взаимодействия с контрагентом, представляет собой целое число тиков, прошедших с момента времени 00:00:00 01.01.0001.
 
-Структура данных *CounteragentList* представляет собой список :doc:`контрагентов <../entities/counteragent>`, возвращаемый методом :doc:`../http/GetCounteragents`. Поле *CounteragentList.TotalCount* содержит общее количество контрагентов, удовлетворяющих фильтру.
+- ``MessageFromCounteragent`` — текст последнего комментария, полученного от контрагента.
 
-- *TotalCountType* — параметр, отражающий, какое значение содержит поле *TotalCount*. Принимает одно из значений перечисления *TotalCountType*:
+- ``MessageToCounteragent`` — текст последнего комментария, отправленного контрагенту.
 
- - *Equal* — поле *TotalCount* содержит точное количество контрагентов, удовлетворяющих запросу. Этот параметр используется при количестве контрагентов меньше 10000.
- - *GreaterThanOrEqual* — поле *TotalCount* возвращает значение 10000, при этом реальное количество контрагентов может быть больше. Это ограничение введено для того, чтобы увеличить производительность метода при больших количествах контрагентов. При этом ограничение влияет только на значение поля *TotalCount*, но вы по-прежнему можете получить весь список контрагентов, используя параметр *IndexKey*.
+- ``InvitationDocumentId`` — идентификатор документа, отправленного вместе с приглашением. Представлен структурой :doc:`DocumentId`. Поле заполняется независимо от наличия доступа к документу. Возвращается, если статус контрагента принимает одно из следующих значений:
 
-Структура данных *Counteragent* содержит информацию об одном контрагенте:
+	- ``CounteragentStatus = IsMyCounteragent``,
+	- ``CounteragentStatus = InvitesMe``,
+	- ``CounteragentStatus = IsInvitedByMe``.
 
--  *IndexKey* - уникальный ключ контрагента, который можно передавать в метод :doc:`../http/GetCounteragents` в качестве параметра afterIndexKey для итерирования по всему отфильтрованному списку.
+	Список статусов, для которых возвращается документ, может быть расширен в будущем. 
 
--  *Organization* - информация об организации-контрагенте, представленная в виде структуры :doc:`Organization`.
+- ``CounteragentGroupId`` — идентификатор группы, в которую добавлен контрагент. Возвращается, если статус контрагента ``CounteragentStatus = IsMyCounteragent``. Группа контрагентов представлена структурой :doc:`CounteragentGroup`.
 
--  *CurrentStatus* - текущий статус отношения партнерства с данным контрагентом; может меняться со временем. Принимает значения из перечисления :doc:`CounteragentStatus`
+----
 
--  *LastEventTimestampTicks* - :doc:`метка времени <Timestamp>` последнего события из истории взаимодействия с данным контрагентом.
+.. rubric:: См. также
 
--  *MessageFromCounteragent* - текст последнего комментария, полученного от контрагента, из истории взаимодействия ним.
+*Структура используется:*
+	- в структуре ``CounteragentList``, возвращаемой методом :doc:`../http/GetCounteragents`
+	- в теле ответа метода :doc:`../http/GetCounteragent`
 
--  *MessageToCounteragent* - текст последнего комментария, отправленного контрагенту, из истории взаимодействия ним.
+*Определение:*
+	- :doc:`../entities/counteragent`
 
--  :doc:`InvitationDocumentId <DocumentId>` - ссылка на документ, который был отправлен вместе с приглашением. Данное поле заполняется независимо от наличия доступа к документу и, только в случае, если статус контрагента один из *IsMyCounteragent*, *InvitesMe*, *IsInvitedByMe*. Список статусов, для которых возвращается документ, может быть расширен в будущем.
+*Руководства:*
+	- :doc:`../instructions/counteragents`
 
--  *CounteragentGroupId* — идентификатор группы, в которую добавлен контрагент. Возвращается, если статус контрагента ``CounteragentStatus = IsMyCounteragent``. Группа контрагентов представлена структурой :doc:`CounteragentGroup`.
-
-Структура данных *CounteragentCertificateList* представляет собой список сертификатов контрагента представленных в виде структуры *Certificate*.
-
-Структура *Certificate* представляет собой один сертификат:
-
--  *RawCertificateData* - сам сертификат, сериализованный в массив байтов в DER-кодировке.

@@ -29,7 +29,19 @@ v2
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-	:response Body: Тело ответа содержит список контрагентов организации ``myOrgId``, находящихся в статусе ``counteragentStatus``. Список представлен структурой :doc:`CounteragentList <../proto/Counteragent>`. В поле ``TotalCount`` указано количество всех контрагентов, удовлетворяющих запросу.
+	:response Body: Тело ответа содержит список контрагентов организации ``myOrgId``, находящихся в статусе ``counteragentStatus``. Список представлен структурой ``CounteragentList``:
+
+		.. code-block:: protobuf
+
+		    message CounteragentList {
+		        required int32 TotalCount = 1;
+		        repeated Counteragent Counteragents = 2;
+		        required TotalCountType TotalCountType = 3;
+		    }
+
+		- ``TotalCount`` — количество контрагентов, удовлетворяющих запросу.
+		- ``Counteragents`` — список контрагентов. Каждый элемент списка представлен структурой :doc:`../proto/Counteragent`.
+		- ``TotalCountType`` — параметр, указывающий, является ли значение ``TotalCount`` точным или подсчет был ограничен максимальным количеством элементов в списке. Принимает значения из перечисления :doc:`../proto/TotalCountType`.
 
 Пользователь может запрашивать и производить действия со списком контрагентов организации ``myOrgId``, если у него есть доступ к ящику этой организации.
 
