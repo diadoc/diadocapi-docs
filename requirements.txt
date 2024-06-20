@@ -2,5 +2,6 @@ Sphinx == 5.1.1
 sphinx-rtd-theme
 sphinxcontrib-httpdomain
 sphinx_reredirects
+sphinx-tabs
 recommonmark
-docutils==0.19
+docutils == 0.19
