@@ -1,5 +1,5 @@
 Content_v2
-===========
+==========
 
 Структура ``Content_v2`` представляет собой содержимое документа.
 
@@ -7,12 +7,14 @@ Content_v2
 
 .. code-block:: protobuf
 
-	message Content_v2 {
-		optional bytes Content = 1;
-		optional string NameOnShelf = 2;
-		optional string PatchedContentId = 3;
-	}
+    message Content_v2 {
+        optional bytes Content = 1;
+        optional string NameOnShelf = 2;
+        optional string PatchedContentId = 3;
+    }
 
-- ``Content`` — содержимое в виде бинарных данных.
+- ``Content`` — содержимое документа в виде бинарных данных.
 - ``NameOnShelf`` — имя файла на :doc:`полке документов<../entities/shelf>`.
 - ``PatchedContentId`` — идентификатор документа, подготовленного к отправке методом :doc:`../http/PrepareDocumentsToSign`.
+
+В структуре должно быть заполнено только одно из перечисленных выше полей.
