@@ -85,7 +85,7 @@
 			Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
 			Content-Type: application/xml; charset=utf-8
 
-**Пример тела запроса (UserDataXml):**
+**Пример тела запроса метода GenerateTitleXml (UserDataXml):**
 
 .. tabs::
 
@@ -303,7 +303,7 @@
 				</Signers>
 			</UniversalTransferDocumentWithHyphens>
 
-**Пример тела ответа (титул продавца):**
+**Пример тела ответа метода GenerateTitleXml (титул продавца):**
 
 .. tabs::
 
@@ -585,7 +585,7 @@
 
 Сформированный титул продавца можно подписать и отправить покупателю с помощью метода :doc:`../http/PostMessage`. Инструкция об отправке документа приведена в разделе :ref:`doc_send`.
 
-**Пример тела запроса:**
+**Пример тела запроса метода PostMessage:**
 
 .. tabs::
 
@@ -660,7 +660,9 @@
 	- в поле ``boxId`` укажите идентификатор ящика, в котором нужно найти входящие документы;
 	- в поле ``filterCategory`` укажите статус и тип документа ``UniversalTransferDocument.InboundNotFinished``.
 
-**Пример запроса на поиск УПД:**
+HTTP-запрос на поиск УПД будет выглядеть следующим образом:
+
+**Пример HTTP-запроса метода GetDocuments:**
 
 .. code-block:: http
 
@@ -677,7 +679,9 @@
 
 Найденный документ можно получить с помощью метода :doc:`../http/GetMessage`. В запросе передайте параметры, вернувшиеся в теле ответа метода ``GetDocuments``: ``boxId``, ``messageId``, ``entityId``.
 
-**Пример запроса на получение УПД:**
+HTTP-запрос на получение УПД будет выглядеть следующим образом:
+
+**Пример HTTP-запроса метода GetMessage:**
 
 .. code-block:: http
 
@@ -765,7 +769,7 @@
 			Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
 			Content-Type: application/xml; charset=utf-8
 
-**Пример тела запроса (UserDataXml):**
+**Пример тела запроса метода GenerateTitleXml (UserDataXml):**
 
 .. tabs::
 
@@ -774,6 +778,8 @@
 		.. container:: toggle
 
 		 .. code-block:: xml
+
+			HTTP/1.1 200 OK
 
 			<?xml version="1.0" encoding="utf-8"?>
 			<UniversalTransferDocumentBuyerTitle DocumentCreator="ИП Покупатель Иван Иванович" OperationContent="Принято без претензий" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -789,13 +795,15 @@
 				</Signers>
 			</UniversalTransferDocumentBuyerTitle>
 
-**Пример тела ответа (титул покупателя):**
+**Пример тела ответа метода GenerateTitleXml (титул покупателя):**
 
 .. tabs::
 
 	.. tab:: УПД 820
 
 		.. code-block:: xml
+
+			HTTP/1.1 200 OK
 
 			<?xml version="1.0" encoding="windows-1251"?>
 			<Файл ИдФайл="ON_NSCHFDOPPOK_2BM-participantId1_2BM-participantid2_f3caa5ab-5033-431f-ba0d-3312ee82b25b" ВерсФорм="5.01" ВерсПрог="Diadoc 1.0">
