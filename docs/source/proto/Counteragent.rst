@@ -43,7 +43,7 @@ Counteragent
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`CounteragentList`
+	- в структуре ``CounteragentList``, возвращаемой методом :doc:`../http/GetCounteragents`
 	- в теле ответа метода :doc:`../http/GetCounteragent`
 
 *Определение:*

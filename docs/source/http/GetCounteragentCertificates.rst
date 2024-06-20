@@ -19,6 +19,20 @@ GetCounteragentCertificates
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 	
-	:response Body: Тело ответа содержит информацию о сертификатах контрагента ``counteragentOrgId``, представленную структурой :doc:`../proto/CounteragentCertificateList`.
+	:response Body: Тело ответа содержит структуру ``CounteragentCertificateList``:
+
+		.. code-block:: protobuf
+
+		    message CounteragentCertificateList {
+		        repeated Certificate Certificates = 1;
+		    }
+
+		    message Certificate {
+		        required bytes RawCertificateData = 1;
+		    }
+
+		- ``Certificates`` — список сертификатов контрагента. Каждый элемент списка представлен структурой ``Certificate`` с полями:
+
+			- ``RawCertificateData`` — сертификат, сериализованный в массив байтов в DER-кодировке.
 
 Организация имеет право запрашивать список сертификатов контрагента ``counteragentOrgId``, если у нее включена возможность отправки зашифрованных документов. Эта возможность указана в поле :doc:`Organization.Box.EncryptedDocumentsAllowed <../proto/Box>`.
