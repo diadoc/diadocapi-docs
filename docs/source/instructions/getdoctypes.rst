@@ -7,15 +7,17 @@
 Каждый документ в Диадоке имеет свой тип. Тип определяет свойства документа, его поведение и требования к содержимому.
 
 
+.. _doctype_getdata:
+
 Получение данных о типе документа
 ---------------------------------
 
 Чтобы получить данные о типе документа:
 
-	#. Вызовите метод :doc:`../http/GetDocumentTypes`. В ответе метод ``GetDocumentTypes`` возвращает описание всех типов документов, доступных пользователю в Диадоке. Каждый элемент в списке ответа представлен структурой :doc:`../proto/DocumentTypeDescriptionV2`.
+	#. Вызовите метод :doc:`../http/GetDocumentTypes`. В ответе метод ``GetDocumentTypes`` возвращает описание всех типов документов, доступных пользователю в Диадоке в указанном ящике. Каждый элемент в списке ответа представлен структурой :doc:`../proto/DocumentTypeDescriptionV2`.
 	#. Среди полученного списка найдите описание типа, который требуется для вашего решения.
 
-Ниже приведен пример ответа метода ``GetDocumentTypes``. Так как количество типов документов в Диадоке большое, для простоты приведем только часть ответа, описывающую УПД формата 970.
+Ниже приведен пример ответа метода ``GetDocumentTypes``. Так как количество типов документов в Диадоке большое, для простоты приведем только часть ответа, описывающую УПД формата 970 с функцией СЧФ.
 
 **Пример тела ответа метода GetDocumentTypes:**
 
@@ -85,7 +87,7 @@
 	- идентификатор титула документа,
 	- XSD-схема для формирования упрощенного XML-файла UserDataXml.
 
-Из полученного выше ответа метода ``GetDocumentTypes`` получаем следующие данные:
+Из :ref:`полученного выше <doctype_getdata>` ответа метода ``GetDocumentTypes`` получаем следующие данные:
 
 	- ``DocumentTypeDescriptionV2.Name`` — тип документа: ``UniversalTransferDocument``,
 	- ``DocumentTypeDescriptionV2.Functions[].Name`` — функция документа: ``СЧФ``,
@@ -93,7 +95,9 @@
 	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].Index`` — идентификатор титула документа: ``0`` (титул продавца),
 	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].UserDataXsdUrl`` — ссылка для получения XSD-схемы упрощенного XML-фала титула: ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd``.
 
-Чтобы получить XSD-схему для формирования UserDataXml, вызовите метод ``GetContent`` по ссылке из поля ``UserDataXsdUrl``.
+Чтобы получить упрощенную XSD-схему для формирования UserDataXml, вызовите метод ``GetContent`` по ссылке из поля ``UserDataXsdUrl``.
+
+Ссылка для получения полной XSD-схемы титула хранится в поле ``XsdUrl``.
 
 Полученные значения можно использовать для :doc:`генерации формализованного документа<generation>`.
 
@@ -105,7 +109,7 @@
 
 Чтобы сформировать упрощенный XML-файл подписанта, нужно получить его XSD-схему.
 
-Из полученного выше ответа метода ``GetDocumentTypes`` возьмем ссылку для получения XSD-схемы — она возвращается в поле ``SignerUserDataXsdUrl``:
+Из :ref:`полученного выше <doctype_getdata>` ответа метода ``GetDocumentTypes`` возьмем ссылку для получения XSD-схемы подписанта — она возвращается в поле ``SignerUserDataXsdUrl``:
 
 	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].SignerInfo.SignerUserDataXsdUrl`` — ссылка для получения XSD-схемы упрощенного XML-фала подписанта: ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=SignerUserContractXsd``.
 

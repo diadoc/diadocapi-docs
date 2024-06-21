@@ -859,4 +859,5 @@ XSD-схемы и UserDataXsd
 .. rubric:: См. также
 
 *Инструкции:*
-	- :doc:`documents`
+	- :doc:`getdoctypes`
+	- :doc:`generation`
