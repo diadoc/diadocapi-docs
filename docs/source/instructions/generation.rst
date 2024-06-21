@@ -785,7 +785,7 @@ XSD-схемы для каждой настройки редактировани
 
 *Инструкции:*
 	- :doc:`powerofattorney`
-	- :doc:`../howto/marking_ttgis`
+	- :doc:`../howto/tracing`
 
 *Методы для работы с титулами:*
 	- :doc:`../http/GenerateTitleXml` — генерирует XML-файл любого титула для любого типа документа
