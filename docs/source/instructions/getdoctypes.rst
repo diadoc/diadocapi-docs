@@ -83,7 +83,7 @@
 	- функция документа,
 	- версия документа,
 	- идентификатор титула документа,
-	- XSD-схема для формирования упрощенного XML-файла ``UserDataXml``.
+	- XSD-схема для формирования упрощенного XML-файла UserDataXml.
 
 Из полученного выше ответа метода ``GetDocumentTypes`` получаем следующие данные:
 
@@ -93,7 +93,7 @@
 	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].Index`` — идентификатор титула документа: ``0`` (титул продавца),
 	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].UserDataXsdUrl`` — ссылка для получения XSD-схемы упрощенного XML-фала титула: ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd``.
 
-Чтобы получить XSD-схему для формирования ``UserDataXml``, вызовите метод ``GetContent`` по ссылке из поля ``UserDataXsdUrl``.
+Чтобы получить XSD-схему для формирования UserDataXml, вызовите метод ``GetContent`` по ссылке из поля ``UserDataXsdUrl``.
 
 Полученные значения можно использовать для :doc:`генерации формализованного документа<generation>`.
 
