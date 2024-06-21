@@ -784,8 +784,8 @@ XSD-схемы для каждой настройки редактировани
 .. rubric:: См. также
 
 *Инструкции:*
-	- :doc:`powerofattorney`
 	- :doc:`../howto/tracing`
+	- :doc:`powerofattorney`
 
 *Методы для работы с титулами:*
 	- :doc:`../http/GenerateTitleXml` — генерирует XML-файл любого титула для любого типа документа
