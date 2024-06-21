@@ -779,8 +779,6 @@ HTTP-запрос на получение УПД будет выглядеть �
 
 		 .. code-block:: xml
 
-			HTTP/1.1 200 OK
-
 			<?xml version="1.0" encoding="utf-8"?>
 			<UniversalTransferDocumentBuyerTitle DocumentCreator="ИП Покупатель Иван Иванович" OperationContent="Принято без претензий" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 				<Signers>
