@@ -73,7 +73,7 @@
 
    Кроме этого получаем значение поля ``UserDataXsdUrl`` — ссылку для получения XSD-схемы упрощенного XML-фала титула: ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=UserContractXsd``.
 
-   Вызвав метод ``GetContent`` по указанной ссылке, получим упрощенную смеху UserDataXsd.
+   Вызвав метод ``GetContent`` по указанной ссылке, получим упрощенную схему UserDataXsd.
 
 #. Подготовка содержимого титула.
 
