@@ -28,16 +28,49 @@
           }
         }) 
       }, 100);
+
+      addFeedbackBanner();
     });
-    /*
-    $(document).ready(function() {
-        $(".toggle > *").hide();
-        $(".toggle .header").show();
-        $(".toggle .header").click(function() {
-            $(this).parent().children().not(".header").toggle(400);
-            $(this).parent().children(".header").toggleClass("open");
-        })
-    });
-    */
+
+    // Создание баннера обратной связи
+    function addFeedbackBanner() {
+      if (window.localStorage.getItem("feedbackBanner") === "hidden") {
+        return;
+      }
+
+      // поправить после того как Аня скажет как будет формирование ссылки идти
+      const getFormLink = () => {
+        return "https://forms.kontur.ru/form/59f74360-79cd-4309-93c1-f98cea15b7b5";
+      }
+
+      // обработчик закрытия баннера обратной связи
+      // @param feedbackBannerContainer HTMLDivElement контейнер баннера обратной связи
+      const onCloseFeedbackBanner = (feedbackBannerContainer) => {
+        feedbackBannerContainer.className = "hiddenFeedbackBannerContainer"
+        window.localStorage.setItem("feedbackBanner", "hidden");
+      }
+
+      const feedbackBannerContainer = document.createElement("div");
+      const feedbackBannerCloseButton = document.createElement("button");
+      const feedbackLink = document.createElement("a");
+      const feedbackDescriptionTextNode = document.createTextNode("Оставьте обратную связь");
+      const feedbackCloseTextNode = document.createTextNode("Закрыть");
+
+      feedbackLink.className = "feedbackLink";
+      feedbackLink.href = getFormLink();
+      feedbackLink.appendChild(feedbackDescriptionTextNode);
+      feedbackLink.onclick = () => onCloseFeedbackBanner(feedbackBannerContainer);
+
+      feedbackBannerCloseButton.className = "feedbackBannerCloseButton";
+      feedbackBannerCloseButton.onclick = () => onCloseFeedbackBanner(feedbackBannerContainer);
+      feedbackBannerCloseButton.appendChild(feedbackCloseTextNode);
+
+      feedbackBannerContainer.appendChild(feedbackLink);
+      feedbackBannerContainer.appendChild(feedbackBannerCloseButton);
+
+      feedbackBannerContainer.className = "feedbackBannerContainer"
+
+      document.body.appendChild(feedbackBannerContainer);
+    }
 </script>
 {% endblock %}
