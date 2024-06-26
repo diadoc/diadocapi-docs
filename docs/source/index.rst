@@ -51,3 +51,10 @@
 	index_http
 	index_proto
 	index_obsolete
+
+.. toctree::
+	:caption: Контакты
+	:maxdepth: 1
+	:titlesonly:
+
+	contacts
