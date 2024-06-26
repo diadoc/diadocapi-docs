@@ -12,4 +12,5 @@
 	docsend
 	docget
 	docservice
+	template
 	formal

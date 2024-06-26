@@ -14,4 +14,3 @@
 	AktDocflow
 	UtdDocflow
 	NonformalizedDocflow
-	TemplateDocflow

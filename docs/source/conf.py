@@ -369,8 +369,11 @@ redirects = {
     "Counteragents": "instructions/counteragents.html",
     "MiscellaneousApiFeatures": "instructions/other.html",
     "Overview": "howtostart/overview.html",
+
     "http_methods": "index_http.html",
     "protos": "index_proto.html",
+
+    "docflows/TemplateDocflow": "../instructions/template.html",
 
     "features/docflow": "../instructions/docflow.html",
     "features/docget": "../instructions/docget.html",
@@ -398,6 +401,8 @@ redirects = {
     "proto/CertificateInfoV2": "CertificateList.html",
 
     # redirect obsolete methods
+    "http/AutoSignReceipts": "obsolete/AutoSignReceipts.html",
+    "http/AutoSignReceiptsResult": "obsolete/AutoSignReceiptsResult.html",
     "http/DetectDocumentTypes": "obsolete/DetectDocumentTypes.html",
     "http/GenerateAcceptanceCertificateXmlForBuyer": "obsolete/GenerateAcceptanceCertificateXmlForBuyer.html",
     "http/GenerateAcceptanceCertificateXmlForSeller": "obsolete/GenerateAcceptanceCertificateXmlForSeller.html",
@@ -435,6 +440,7 @@ redirects = {
     "proto/AcceptanceCertificate552Info": "obsolete/AcceptanceCertificate552Info.html",
     "proto/AcceptanceCertificateAttachment": "obsolete/AcceptanceCertificateAttachment.html",
     "proto/AcceptanceCertificateInfo": "obsolete/AcceptanceCertificateInfo.html",
+    "proto/AutoSignReceiptsResult": "obsolete/AutoSignReceiptsResult.html",
     "proto/BasicDocumentAttachment": "obsolete/BasicDocumentAttachment.html",
     "proto/BasicDocumentInfo": "obsolete/BasicDocumentInfo.html",
     "proto/BilateralDocflow": "obsolete/BilateralDocflow.html",
@@ -497,10 +503,5 @@ redirects = {
     "proto/utd/docflow/InboundUniversalTransferDocumentDocflow": "../../obsolete/InboundUniversalTransferDocumentDocflow.html",
     "proto/utd/docflow/OutboundUniversalTransferDocumentDocflow": "../../obsolete/OutboundUniversalTransferDocumentDocflow.html",
     "proto/utd/docflow/UniversalCorrectionDocumentInfo": "../../obsolete/UniversalCorrectionDocumentInfo.html",
-    "proto/utd/docflow/UniversalTransferDocumentInfo": "../../obsolete/UniversalTransferDocumentInfo.html",
-
-    # cloud sign methods and structures
-    "http/AutoSignReceipts": "obsolete/AutoSignReceipts.html",
-    "http/AutoSignReceiptsResult": "obsolete/AutoSignReceiptsResult.html",
-    "proto/AutoSignReceiptsResult": "obsolete/AutoSignReceiptsResult.html"
+    "proto/utd/docflow/UniversalTransferDocumentInfo": "../../obsolete/UniversalTransferDocumentInfo.html"
 }
