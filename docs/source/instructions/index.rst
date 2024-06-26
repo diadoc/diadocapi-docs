@@ -13,4 +13,8 @@
 	documents
 	powerofattorney
 	docflow
+
+.. toctree::
+	:maxdepth: 3
+
 	other
