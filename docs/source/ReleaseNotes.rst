@@ -1,6 +1,15 @@
 ﻿История изменений API
 =====================
 
+
+26.06.2024
+----------
+
+**SDK**: `C# 2.19.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.19.0>`__ | `Java 3.19.0<https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.19.0>`__
+
+- Расширили структуру :doc:`proto/Address`: в структуру ``RussianAddress`` добавили поле ``OtherInformation``.
+
+
 21.05.2024
 ----------
 
@@ -10,6 +19,7 @@
 	- добавили XSD-схемы для генерации документов, их можно получить с помощью метода :doc:`http/GetDocumentTypes` или скачать на страницах :doc:`docflows/Torg12Docflow` и :doc:`docflows/AktDocflow`,
 	- реализовали генерацию документов нового формата с помощью метода :doc:`http/GenerateTitleXml`,
 	- реализовали парсинг документов нового формата с помощью метода :doc:`http/ParseTitleXml`.
+
 
 25.04.2024
 ----------
@@ -24,6 +34,7 @@
 		- :doc:`proto/BoxCounteragentEventList` — представляет собой список событий по изменению отношений с контрагентами,
 		- :doc:`BoxCounteragentEvent <proto/BoxCounteragentEventList>` — представляет собой событие по изменению отношений с контрагентом,
 		- :doc:`proto/CounteragentInfo` — содержит информацию о контрагенте.
+
 
 11.04.2024
 ----------

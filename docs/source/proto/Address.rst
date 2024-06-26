@@ -21,12 +21,14 @@ Address
         optional string Building = 7;
         optional string Block = 8;
         optional string Apartment = 9;
+        optional string OtherInformation = 10;
     }
 
     message ForeignAddress {
         required string Country = 1;
         required string Address = 2;
     }
+
 
 Обязательно должно быть заполнено одно из полей ``RussianAddress`` или ``ForeignAddress``.
 
@@ -41,6 +43,7 @@ Address
 	- ``Building`` — дом.
 	- ``Block`` — корпус.
 	- ``Apartment`` — квартира.
+	- ``OtherInformation`` — иные сведения.
 
 - ``ForeignAddress`` — иностранный адрес организации, представленный структурой ``ForeignAddress`` с полями:
 
