@@ -38,3 +38,167 @@
 - :doc:`../http/GetOrganizationsByInnList` — возвращает организации и их статусы по указанному списку ИНН.
 - :doc:`../http/GetBox` — по идентификатору ящика возвращает информацию об организации, которой он принадлежит.
 - :doc:`../http/GetOrganization` — по идентификатору организации возвращает принадлежащий ей ящик и ее данные: например, ИНН, КПП, название и т.п.
+
+Группы контрагентов
+-------------------
+
+Контрагентов из списка можно распределить по группам и для каждой группы указать, в какие подразделения контрагенты из нее смогут отправлять документы. Это может быть полезно в случае, если разные подразделения организации работают с документами от разных контрагентов.
+
+По умолчанию все контрагенты могут отправлять документы в любое подразделение организации.
+
+Для работы с группами контрагентов используйте следующие методы:
+
+	- :doc:`../http/CreateCounteragentGroup` — создает группу контрагентов,
+	- :doc:`../http/AddCounteragentToGroup` — добавляет контрагентов в группу,
+	- :doc:`../http/UpdateCounteragentGroup` — редактирует группу контрагентов,
+	- :doc:`../http/DeleteCounteragentGroup` — удаляет группу контрагентов,
+	- :doc:`../http/GetCounteragentGroups` — возвращает список групп контрагентов,
+	- :doc:`../http/GetCounteragentGroup` — возвращает информацию о группе контрагентов,
+	- :doc:`../http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе.
+
+Создание группы контрагентов
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Чтобы настроить работу группы контрагентов, администратор ящика должен выполнить следующие действия:
+
+	- С помощью метода ``CreateCounteragentGroup`` создать группу и указать, в какие подразделения контрагенты группы смогут отправлять документы. В ответе метод вернет идентификатор группы контрагентов ``CounteragentGroupId``.
+	- С помощью метода ``AddCounteragentToGroup`` добавить контрагентов в созданную группу ``CounteragentGroupId``. Вызвать метод нужно столько раз, сколько контрагентов должно быть в группе.
+
+**Пример HTTP-запроса метода CreateCounteragentGroup:**
+
+.. code-block:: http
+
+    POST /CreateCounteragentGroup?boxId=74ef3a00-c625-4ef0-9b50-65bf7f96b9ae HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+    Content-Type: application/json
+
+**Пример тела запроса метода CreateCounteragentGroup:**
+
+.. code-block:: json
+
+    {
+        "Name": "Группа2",
+        "Department": [
+            {
+                "DepartmentId": "16703d96-93a5-43a8-b2b6-c9c2f5b89451"
+            }
+        ]
+    }
+
+**Пример ответа метода CreateCounteragentGroup:**
+
+.. code-block:: json
+
+    {
+        "CounteragentGroupId": "35263ada-3620-4225-86e6-9a4bd1797fdc",
+        "Name": "Группа2"
+    }
+
+**Пример HTTP-запроса метода AddCounteragentToGroup:**
+
+.. code-block:: http
+
+    POST /AddCounteragentToGroup?boxId=74ef3a00-c625-4ef0-9b50-65bf7f96b9ae&counteragentGroupId=35263ada-3620-4225-86e6-9a4bd1797fdc&counteragentBoxId=75337378-b1dd-4eb6-8b08-210f175b31a8 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+
+Получение списка групп контрагентов
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Чтобы отредактировать, удалить или получить информацию о конкретной группе, нужно получить ее идентификатор ``CounteragentGroupId``. Это можно сделать с помощью метода ``GetCounteragentGroups``. Метод возвращает идентификатор группы, название и список подразделений, в которое контрагенты группы могут отправлять документы.
+
+**Пример HTTP-запроса метода GetCounteragentGroups:**
+
+.. code-block:: http
+
+    GET /GetCounteragentGroups?boxId=74ef3a00-c625-4ef0-9b50-65bf7f96b9ae HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+
+**Пример ответа метода GetCounteragentGroups:**
+
+.. code-block:: json
+
+    {
+        "Groups": [
+            {
+                "CounteragentGroupId": "00000000-0000-0000-0000-000000000000",
+                "Name": "По умолчанию"
+            },
+            {
+                "CounteragentGroupId": "df6218d0-59bd-44ad-8d56-6e4bfe5fdd2b",
+                "Name": "Группа"
+            },
+            {
+                "CounteragentGroupId": "982e047f-bc5c-44e4-a24b-d1ba93f2fd6f",
+                "Name": "Новая группа 3",
+                "Departments": {
+                    "DepartmentIds": [
+                        "16703d96-93a5-43a8-b2b6-c9c2f5b89451"
+                    ]
+                }
+            },
+            {
+                "CounteragentGroupId": "2691abaa-a8ec-4fd5-b2d3-894b434e9643",
+                "Name": "Новая группа 4",
+                "Departments": {
+                    "DepartmentIds": [
+                        "1da985dd-611f-4b2c-8938-211943f0706e"
+                    ]
+                }
+            }
+        ],
+        "TotalCount": 4
+    }
+
+Редактирование группы контрагентов
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+С помощью метода :doc:`../http/UpdateCounteragentGroup` можно изменить название группы и список подразделений, в которое контрагенты группы могут отправлять документы.
+
+**Пример HTTP-запроса метода UpdateCounteragentGroup:**
+
+.. code-block:: http
+
+    POST /UpdateCounteragentGroup?boxId=74ef3a00-c625-4ef0-9b50-65bf7f96b9ae&counteragentGroupId=35263ada-3620-4225-86e6-9a4bd1797fdc HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+
+**Пример тела запроса метода UpdateCounteragentGroup:**
+
+.. code-block:: json
+
+    {
+        "Name": "Группа22",
+        "GroupDepartment": [
+            {
+                "DepartmentId": "16703d96-93a5-43a8-b2b6-c9c2f5b89451"
+            }
+        ]
+    }
+
+Получение списка контрагентов группы
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+При удалении группы, всем контрагентам из нее назначается группа «по умолчанию»: контрагенты смогут отправлять документы в любое подразделение организации. Чтобы проверить, какие контрагенты состоят в группе и, при необходимости, добавить их в новую, используйте метод ``GetCounteragentsFromGroup``.
+
+**Пример HTTP-запроса метода GetCounteragentsFromGroup:**
+
+.. code-block:: http
+
+    GET /GetCounteragentsFromGroup?boxId=74ef3a00-c625-4ef0-9b50-65bf7f96b9ae&counteragentGroupId=2691abaa-a8ec-4fd5-b2d3-894b434e9643 HTTP/1.1
+    Host: diadoc-api.kontur.ru
+    Authorization: DiadocAuth ddauth_api_client_id={{ключ разработчика}}, ddauth_token={{авторизационный токен}}
+
+**Пример тела ответа метода GetCounteragentsFromGroup:**
+
+.. code-block:: json
+
+    {
+        "CounteragentBoxId": [
+            "63ea3407-215c-46ba-99f8-9d8e600233e7"
+        ],
+        "TotalCount": 1,
+        "AfterIndexKey": "08D5F86E341FB6DE0734EA635C21BA4699F89D8E600233E7"
+    }
