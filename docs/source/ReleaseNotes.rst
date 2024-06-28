@@ -5,7 +5,7 @@
 26.06.2024
 ----------
 
-**SDK**: `C# 2.19.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.19.0>`__ | `Java 3.19.0<https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.19.0>`__
+**SDK**: `C# 2.19.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.19.0>`__ | `Java 3.19.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.19.0>`__
 
 - Расширили структуру :doc:`proto/Address`: в структуру ``RussianAddress`` добавили поле ``OtherInformation``.
 
