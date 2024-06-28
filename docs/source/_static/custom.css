@@ -131,15 +131,16 @@
 
 .feedbackBannerContainer {
   display: flex;
-  flex-flow: column nowrap;
-  gap: 8px;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
   position: fixed;
   top: 16px;
   right: 16px;
   padding: 12px;
-  width: 160px;
-  height: 196px;
-  background: #00BEA2;
+  width: 316px;
+  height: 48px;
+  background: black;
   color: white;
   border-radius: 8px;
   text-align: center;
@@ -158,40 +159,36 @@
 }
 
 .feedbackBannerContainer::before {
-    display: flex;
-    content: '';
-    background-image: url(https://s.kontur.ru/common/products/features-v2/black/icon-11-other-talkmagic.svg);
-    width: 68px;
-    position: relative;
-    height: 68px;
-    top: -8px;
-    left: 36px;
-    filter: brightness(0) invert(1);
+  display: flex;
+  content: '';
+  background-image: url(https://s.kontur.ru/common/products/features-v2/black/icon-11-other-talkmagic.svg);
+  width: 64px;
+  position: relative;
+  height: 68px;
+  top: -4px;
+  transform: scale(0.5);
+  filter: brightness(0) invert(1);
 }
 
 .feedbackLink,
 .feedbackLink:visited {
   display: flex;
   color: white;
-  text-decoration: none;
-  background-color: black;
   border-radius: 8px;
   padding: 4px;
 }
 
 .feedbackLink:hover,
 .feedbackLink:focus-visible {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  text-decoration: underline;
 }
 
 .feedbackBannerCloseButton {
   all: unset;
   cursor: pointer;
-  background: white;
-  color: black;
+  color: orangered;
   display: flex;
   place-content: center;
-  padding: 8px;
   border-radius: 8px;
 }
 
@@ -202,4 +199,10 @@
 
 .hiddenFeedbackBannerContainer {
   display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .feedbackBannerContainer {
+    display: none;
+  }
 }
