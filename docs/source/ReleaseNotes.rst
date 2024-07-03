@@ -15,7 +15,7 @@
 		- в структуре :doc:`proto/SignatureV3` в поле ``PowerOfAttorneyAttachmentStatus``;
 
 	- в структуру :doc:`proto/SignatureInfo` добавили поле ``CertificateSubjectType`` с типом владельца сертификата.
-	- в структуру :doc:`PowerOfAttorneyValidationStatusNamedId <PowerOfAttorneyValidationStatus>` добавлено значение ``IsNotAttached``.
+	- в структуру :doc:`PowerOfAttorneyValidationStatusNamedId <proto/PowerOfAttorneyValidationStatus>` добавлено значение ``IsNotAttached``.
 
 
 26.06.2024
