@@ -5,7 +5,7 @@
 27.06.2024
 ----------
 
-**SDK**: `C# 2.19.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.19.1>`__ | `Java 3.20.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.20.1>`__
+**SDK**: `C# 2.20.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.20.1>`__ | `Java 3.20.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.20.2>`__
 
 - Реализовали возможность проверки приложенности машиночитаемой доверенности (МЧД) к подписи (подробно в инструкции :doc:`instructions/powerofattorney`):
 
