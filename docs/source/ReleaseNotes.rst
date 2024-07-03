@@ -2,7 +2,7 @@
 =====================
 
 
-27.06.2024
+03.07.2024
 ----------
 
 **SDK**: `C# 2.20.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.20.1>`__ | `Java 3.20.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.20.2>`__
