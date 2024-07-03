@@ -190,7 +190,7 @@
   bottom: 56px;
 }
 
-.feedbackFooterLink:active {
+.feedbackFooterLink:visited {
   color: #2ca08b;
 }
 
