@@ -2,6 +2,21 @@
 =====================
 
 
+27.06.2024
+----------
+
+**SDK**: `C# 2.19.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.19.1>`__ | `Java 3.20.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.20.1>`__
+
+- Реализовали возможность проверки статуса машиночитаемой доверенности (МЧД) к подписи:
+
+	- добавили структуру :doc:`proto/PowerOfAttorneyAttachmentStatus` для хранения статуса МЧД для подписи; значение статуса возвращается:
+
+		- в структуре :doc:`proto/Entity message` в поле ``PowerOfAttorneyAttachmentStatus``;
+		- в структуре :doc:`proto/SignatureV3` в поле ``PowerOfAttorneyAttachmentStatus``;
+
+	- в структуру :doc:`proto/SignatureInfo` добавили поле ``CertificateSubjectType`` с типом владельца сертификата.
+
+
 26.06.2024
 ----------
 
