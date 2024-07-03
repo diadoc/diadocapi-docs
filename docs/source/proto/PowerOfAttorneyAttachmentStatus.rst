@@ -1,7 +1,7 @@
 PowerOfAttorneyAttachmentStatus
 ===============================
 
-Структура ``PowerOfAttorneyAttachmentStatus`` представляет собой статус машиночитаемой доверенности (МЧД) к подписи.
+Структура ``PowerOfAttorneyAttachmentStatus`` представляет собой статус приложенности машиночитаемой доверенности (МЧД) к подписи.
 
 .. code-block:: protobuf
 

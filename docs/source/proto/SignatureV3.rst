@@ -26,7 +26,7 @@ SignatureV3
 - ``VerificationResult`` — результат проверки подписи, представленный структурой :doc:`SignatureVerificationResult`. Возвращается в ответе методов, если в запросе был установлен флаг ``InjectEntityContent=true``.
 - ``DeliveredAt`` — метка времени доставки подписи, представленная структурой :doc:`Timestamp`.
 - ``PowerOfAttorney`` — информация о машиночитаемой доверенности и ее статусе, представленная структурой :doc:`SignaturePowerOfAttorney`.
-- ``PowerOfAttorneyAttachmentStatus`` — статус машиночитаемой доверенности к подписи, представленный структурой :doc:`PowerOfAttorneyAttachmentStatus`.
+- ``PowerOfAttorneyAttachmentStatus`` — статус приложенности машиночитаемой доверенности к подписи, представленный структурой :doc:`PowerOfAttorneyAttachmentStatus`.
 
 
 ----

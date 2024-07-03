@@ -329,7 +329,7 @@ Entity
 	- ``MovedFromDepartment`` — подразделение, в которое переместили документ.
 	- ``MovedToDepartment`` — подразделение, из которого переместили документ.
 
-- ``PowerOfAttorneyAttachmentStatus`` — статус машиночитаемой доверенности (МЧД) к подписи, представленный структурой :doc:`PowerOfAttorneyAttachmentStatus`. Возвращается только для сущностей с типом ``Signature``.
+- ``PowerOfAttorneyAttachmentStatus`` — статус приложенности машиночитаемой доверенности (МЧД) к подписи, представленный структурой :doc:`PowerOfAttorneyAttachmentStatus`. Возвращается только для сущностей с типом ``Signature``.
 
 
 ----
