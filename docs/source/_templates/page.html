@@ -29,18 +29,26 @@
         }) 
       }, 100);
 
+      // закомментировать строчку чтобы убрать показ баннера у пользователей документации
       addFeedbackBanner();
+
+      // эта строчка создает ссылку в футере (сделана разными вызовами чтобы можно было включать показ независимо от баннера)
+      addFeedbackLinkInFooter();
     });
 
-    // Создание баннера обратной связи
-    function addFeedbackBanner() {
+    const getFormLink = () => {
+      const site = window.location.href;
+      const formUrl = new URL('https://forms.kontur.ru/form/59f74360-79cd-4309-93c1-f98cea15b7b5');
+
+      // знание о том с какой страницы документации был совершен переход
+      formUrl.searchParams.append('site', site);
+
+      return formUrl;
+    }
+
+    const addFeedbackBanner = () => {
       if (window.localStorage.getItem("feedbackBanner") === "hidden") {
         return;
-      }
-
-      // поправить после того как Аня скажет как будет формирование ссылки идти
-      const getFormLink = () => {
-        return "https://forms.kontur.ru/form/59f74360-79cd-4309-93c1-f98cea15b7b5";
       }
 
       // обработчик закрытия баннера обратной связи
@@ -68,9 +76,22 @@
       feedbackBannerContainer.appendChild(feedbackLink);
       feedbackBannerContainer.appendChild(feedbackBannerCloseButton);
 
-      feedbackBannerContainer.className = "feedbackBannerContainer"
+      feedbackBannerContainer.className = "feedbackBannerContainer";
 
       document.body.appendChild(feedbackBannerContainer);
+    }
+
+    const addFeedbackLinkInFooter = () => {
+      const feedbackFooterLinkNode = document.createElement("a");
+      const feedbackFooterTextNode = document.createTextNode("Оставить обратную связь для этой страницы документации");
+      const footer = document.querySelector("div[role='contentinfo']");
+
+      feedbackFooterLinkNode.appendChild(feedbackFooterTextNode);
+      feedbackFooterLinkNode.className = "feedbackFooterLink";
+      feedbackFooterLinkNode.href = getFormLink();
+      feedbackFooterLinkNode.target = "_blank";
+
+      footer.appendChild(feedbackFooterLinkNode);
     }
 </script>
 {% endblock %}
