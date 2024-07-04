@@ -24,8 +24,8 @@
 	:maxdepth: 1
 	:titlesonly:
 
-	howtostart/overview
 	howtostart/integrationChoise
+	howtostart/overview
 	howtostart/integration
 	howtostart/quickstart
 
@@ -37,8 +37,8 @@
 	DataModel
 	entities/index
 	instructions/index
+	authorization
 	DataStructures
-	Authorization
 	index_api
 	docflows/index
 	howto/index
