@@ -401,6 +401,8 @@ redirects = {
     "proto/CertificateInfoV2": "CertificateList.html",
 
     # redirect obsolete methods
+    "http/Authenticate": "obsolete/Authenticate.html",
+    "http/AuthenticateConfirm": "obsolete/AuthenticateConfirm.html",
     "http/AutoSignReceipts": "obsolete/AutoSignReceipts.html",
     "http/AutoSignReceiptsResult": "obsolete/AutoSignReceiptsResult.html",
     "http/DetectDocumentTypes": "obsolete/DetectDocumentTypes.html",

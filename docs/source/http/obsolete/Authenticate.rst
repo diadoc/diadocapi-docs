@@ -1,6 +1,9 @@
 Authenticate
 ============
 
+.. warning::
+	Метод устарел. Рекомендуемый способ авторизации описан в инструкции :doc:`../../Authorization`.
+
 Метод ``Authenticate`` предназначен для аутентификации пользователя в Диадоке.
 
 Версии метода:
@@ -19,7 +22,7 @@ Authenticate v3
 	:queryparam type: способ аутентификации. Параметр не может быть пустым. Может принимать значения:
 
 		- ``password`` — логин и пароль,
-		- ``certificate`` — :doc:`сертификат <../entities/certificate>`,
+		- ``certificate`` — :doc:`сертификат <../../entities/certificate>`,
 		- ``sid`` — auth.sid.
 
 	:requestheader Authorization: данные, необходимые для авторизации. В заголовке нужно передать ``DiadocAuth ddauth_api_client_id``.
@@ -204,7 +207,7 @@ SDK
 .. rubric:: См. также
 
 *Инструкции:*
-	- :doc:`Авторизация <../Authorization>`
+	- :doc:`../../Authorization`
 
 *Другие методы для аутентификации:*
 	- :doc:`AuthenticateConfirm` — возвращает авторизационный токен при аутентификации по сертификату

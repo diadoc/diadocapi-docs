@@ -1,6 +1,9 @@
 AuthenticateConfirm
 ===================
 
+.. warning::
+	Метод устарел. Рекомендуемый способ авторизации описан в инструкции :doc:`../../Authorization`.
+
 Метод ``AuthenticateConfirm`` возвращает авторизационный токен после аутентификации по сертификату методом :doc:`Authenticate`.
 
 .. http:post:: /V2/AuthenticateConfirm
@@ -38,7 +41,7 @@ AuthenticateConfirm
 .. rubric:: См. также
 
 *Инструкции:*
-	- :doc:`../Authorization`
+	- :doc:`../../Authorization`
 
 *Другие методы для аутентификации:*
 	- :doc:`Authenticate` — аутентифицирует пользователя в Диадоке
