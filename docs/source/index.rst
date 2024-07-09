@@ -35,10 +35,10 @@
 	:titlesonly:
 
 	DataModel
+	Authorization
+	DataStructures
 	entities/index
 	instructions/index
-	DataStructures
-	Authorization
 	index_api
 	docflows/index
 	howto/index
