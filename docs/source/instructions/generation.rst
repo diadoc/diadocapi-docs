@@ -520,24 +520,24 @@ XSD-схемы для каждой настройки редактировани
 
  .. code-block:: xml
 
-	<xs:complexType name="PowerOfAttorney">
-		<xs:sequence>
-			<xs:element name="FullId" minOccurs="0">
-				<xs:complexType>
-					<xs:attribute name="RegistrationNumber" use="required" type="guid"/>
-					<xs:attribute name="IssuerInn" use="required" type="inn"/>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute name="UseDefault" use="required">
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:enumeration value="true" />
-					<xs:enumeration value="false" />
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="PowerOfAttorney">
+    <xs:sequence>
+      <xs:element name="FullId" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="RegistrationNumber" use="required" type="guid"/>
+          <xs:attribute name="IssuerInn" use="required" type="inn"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="UseDefault" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true" />
+          <xs:enumeration value="false" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
 
 
 **Пример тела запроса метода GenerateTitleXml (UserDataXml) для формата 820:**
@@ -546,51 +546,37 @@ XSD-схемы для каждой настройки редактировани
 
  .. code-block:: xml
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<UniversalTransferDocumentWithHyphens Function="СЧФ"
-	DocumentDate="01.08.2019"
-	DocumentNumber="140"
-	DocumentCreator="1"
-	DocumentCreatorBase="1"
-	CircumFormatInvoice="1"
-	Currency="643" >
-		<Sellers>
-			<Seller>
-				<OrganizationDetails OrgType="2"
-				Inn="114500647890"
-				FnsParticipantId="2BM-participantId1"
-				OrgName="ИП Продавец Иван Иванович">
-					<Address>
-						<RussianAddress Region="02"/>
-					</Address>
-				</OrganizationDetails>
-			</Seller>
-		</Sellers>
-		<Buyers>
-			<Buyer>
-				<OrganizationReference OrgType="1" BoxId="53d55d52-9317-4ad4-a7d9-5e9dd3cd6367"/>
-			</Buyer>
-		</Buyers>
-		<Table TotalWithVatExcluded="0" Vat="0" Total="0">
-			<Item Product="Товарная позиция"
-			Unit="796"
-			Quantity="0"
-			Price="0"
-			TaxRate="без НДС"
-			SubtotalWithVatExcluded="0"
-			Vat="0"
-			Subtotal="0"
-			Excise="10"/>
-		</Table>
-		<TransferInfo OperationInfo="Товары переданы"/>
-		<Signers>
-			<SignerReference BoxId="74ef3a00-c625-3ef0-9b50-65bf7f96b9ae" CertificateThumbprint="8A80C2723DBC4F0A94F8CEE21C0A15A68A80C272">
-				<PowerOfAttorney UseDefault="false">
-					<FullId RegistrationNumber="4F73C574-CF7C-4664-91B9-48185BC66A27" IssuerInn="114500647890" />
-				</PowerOfAttorney> 
-			</SignerReference>
-		</Signers>
-	</UniversalTransferDocumentWithHyphens>
+  <?xml version="1.0" encoding="utf-8"?>
+  <UniversalTransferDocumentWithHyphens Function="СЧФ" DocumentDate="01.08.2019" DocumentNumber="140" DocumentCreator="1" DocumentCreatorBase="1" CircumFormatInvoice="1" Currency="643" >
+      <Sellers>
+          <Seller>
+              <OrganizationDetails OrgType="2"
+              Inn="114500647890"
+              FnsParticipantId="2BM-participantId1"
+              OrgName="ИП Продавец Иван Иванович">
+                  <Address>
+                      <RussianAddress Region="02"/>
+                  </Address>
+              </OrganizationDetails>
+          </Seller>
+      </Sellers>
+      <Buyers>
+          <Buyer>
+              <OrganizationReference OrgType="1" BoxId="1f208d03-2a60-4f64-91b1-b7aad54cfaf3"/>
+          </Buyer>
+      </Buyers>
+      <Table TotalWithVatExcluded="0" Vat="0" Total="0">
+        <Item Product="Товарная позиция" Unit="796" Quantity="0" Price="0" TaxRate="без НДС" SubtotalWithVatExcluded="0" Vat="0" Subtotal="0" Excise="10"/>
+      </Table>
+      <TransferInfo OperationInfo="Товары переданы"/>
+      <Signers>
+        <SignerReference BoxId="09ae254c-5cd0-4082-84de-7ccb46d86f82" CertificateThumbprint="dec5fe8a0dc3e11b04de55c1eb272ba2f36e655a">
+          <PowerOfAttorney UseDefault="false">
+            <FullId RegistrationNumber="c8a8949a-4907-4c36-9f48-7efb2fba1382" IssuerInn="3812125023" />
+          </PowerOfAttorney>
+        </SignerReference>
+      </Signers>
+  </UniversalTransferDocumentWithHyphens>
 
 **Пример тела ответа метода GenerateTitleXml:**
 
@@ -598,63 +584,63 @@ XSD-схемы для каждой настройки редактировани
 
  .. code-block:: xml
 
-	HTTP/1.1 200 OK
+  HTTP/1.1 200 OK
 
-	<?xml version="1.0" encoding="windows-1251"?>
-	<Файл ИдФайл="ON_NSCHFDOPPR_2BM-9670670494-967001000-202201240241297341956_2BM-participantId1_20220303_c1ffd60b-0925-4e08-a133-cc55e9fc5b3b" ВерсФорм="5.01" ВерсПрог="Diadoc 1.0">
-		<СвУчДокОбор ИдОтпр="2BM-participantId1" ИдПол="2BM-9670670494-967001000-202201240241297341956">
-			<СвОЭДОтпр ИННЮЛ="6663003127" ИдЭДО="2BM" НаимОрг="АО &quot;ПФ &quot;СКБ Контур&quot;" />
-		</СвУчДокОбор>
-		<Документ КНД="1115131" ВремИнфПр="09.16.16" ДатаИнфПр="03.03.2022" НаимЭконСубСост="1" Функция="СЧФ" ОснДоверОргСост="1">
-			<СвСчФакт НомерСчФ="140" ДатаСчФ="01.08.2019" КодОКВ="643">
-				<СвПрод>
-					<ИдСв>
-						<СвИП ИННФЛ="114500647890">
-							<ФИО Фамилия="Продавец" Имя="Иван" Отчество="Иванович" />
-						</СвИП>
-					</ИдСв>
-					<Адрес>
-						<АдрРФ КодРегион="02" />
-					</Адрес>
-				</СвПрод>
-				<СвПокуп>
-					<ИдСв>
-						<СвЮЛУч НаимОрг="Документация-получатель" ИННЮЛ="9670670494" КПП="967001000" />
-					</ИдСв>
-					<Адрес>
-						<АдрРФ Индекс="777777" КодРегион="50" Город="г. Москва" />
-					</Адрес>
-				</СвПокуп>
-				<ДопСвФХЖ1 НаимОКВ="Российский рубль" ОбстФормСЧФ="1" />
-			</СвСчФакт>
-			<ТаблСчФакт>
-				<СведТов НомСтр="1" НаимТов="Товарная позиция" ОКЕИ_Тов="796" КолТов="0" ЦенаТов="0.00" СтТовБезНДС="0.00" НалСт="без НДС" СтТовУчНал="0.00">
-					<Акциз>
-						<СумАкциз>10.00</СумАкциз>
-					</Акциз>
-					<СумНал>
-						<СумНал>0.00</СумНал>
-					</СумНал>
-					<ДопСведТов НаимЕдИзм="шт" />
-				</СведТов>
-				<ВсегоОпл СтТовБезНДСВсего="0.00" СтТовУчНалВсего="0.00">
-					<СумНалВсего>
-						<СумНал>0.00</СумНал>
-					</СумНалВсего>
-				</ВсегоОпл>
-			</ТаблСчФакт>
-			<СвПродПер>
-				<СвПер СодОпер="Товары переданы">
-					<ОснПер НаимОсн="Без документа-основания" />
-				</СвПер>
-			</СвПродПер>
-			<Подписант ОснПолн="Должностные обязанности" ОблПолн="0" Статус="1">
-				<ЮЛ ИННЮЛ="114500647890" Должн="Сотрудник" НаимОрг="Тестовая организация">
-					<ФИО Фамилия="Тестовый" Имя="Сертификат" Отчество="Сертификатович" />
-				</ЮЛ>
-			</Подписант>
-		</Документ>
-	</Файл>
+  <?xml version="1.0" encoding="windows-1251"?>
+  <Файл ИдФайл="ON_NSCHFDOPPR_2BM-9147414342-757645784-202407101104400484330_2BM-participantId1_20240711_bb56a59f-f6da-4079-b195-d08225ec9001" ВерсФорм="5.01" ВерсПрог="Diadoc 1.0">
+    <СвУчДокОбор ИдОтпр="2BM-participantId1" ИдПол="2BM-9147414342-757645784-202407101104400484330">
+      <СвОЭДОтпр ИННЮЛ="6663003127" ИдЭДО="2BM" НаимОрг="АО &quot;ПФ &quot;СКБ Контур&quot;" />
+    </СвУчДокОбор>
+    <Документ КНД="1115131" ВремИнфПр="07.34.25" ДатаИнфПр="11.07.2024" НаимЭконСубСост="1" Функция="СЧФ" ОснДоверОргСост="1">
+      <СвСчФакт НомерСчФ="140" ДатаСчФ="01.08.2019" КодОКВ="643">
+        <СвПрод>
+          <ИдСв>
+            <СвИП ИННФЛ="114500647890">
+              <ФИО Фамилия="Продавец" Имя="Иван" Отчество="Иванович" />
+            </СвИП>
+          </ИдСв>
+          <Адрес>
+            <АдрРФ КодРегион="02" />
+          </Адрес>
+        </СвПрод>
+        <СвПокуп>
+          <ИдСв>
+            <СвЮЛУч НаимОрг="Документация-получатель" ИННЮЛ="9147414342" КПП="757645784" />
+          </ИдСв>
+          <Адрес>
+            <АдрРФ Индекс="620142" КодРегион="66" Город="Екатеринбург" Улица="Сажинская" Дом="11" />
+          </Адрес>
+        </СвПокуп>
+        <ДопСвФХЖ1 НаимОКВ="Российский рубль" ОбстФормСЧФ="1" />
+      </СвСчФакт>
+      <ТаблСчФакт>
+        <СведТов НомСтр="1" НаимТов="Товарная позиция" ОКЕИ_Тов="796" КолТов="0" ЦенаТов="0.00" СтТовБезНДС="0.00" НалСт="без НДС" СтТовУчНал="0.00">
+          <Акциз>
+            <СумАкциз>10.00</СумАкциз>
+          </Акциз>
+          <СумНал>
+            <СумНал>0.00</СумНал>
+          </СумНал>
+          <ДопСведТов НаимЕдИзм="шт" />
+        </СведТов>
+        <ВсегоОпл СтТовБезНДСВсего="0.00" СтТовУчНалВсего="0.00">
+          <СумНалВсего>
+            <СумНал>0.00</СумНал>
+          </СумНалВсего>
+        </ВсегоОпл>
+      </ТаблСчФакт>
+      <СвПродПер>
+        <СвПер СодОпер="Товары переданы">
+          <ОснПер НаимОсн="Без документа-основания" />
+        </СвПер>
+      </СвПродПер>
+      <Подписант ОснПолн="Должностные обязанности" ОблПолн="0" Статус="1">
+        <ЮЛ ИННЮЛ="3812125023" Должн="Работник" НаимОрг="ООО &quot;Еноты&quot;">
+          <ФИО Фамилия="Иванов" Имя="Петр" Отчество="Сергеевич" />
+        </ЮЛ>
+      </Подписант>
+    </Документ>
+  </Файл>
 
 
 Генерация титула с МЧД в содержимом документа
@@ -678,119 +664,119 @@ XSD-схемы для каждой настройки редактировани
 
  .. code-block:: xml
 
-	<xs:complexType name="PowerOfAttorney">
-		<xs:sequence>
-			<xs:element name="Electronic" type="Electronic" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Электронная доверенность</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Paper" type="Paper" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Бумажная доверенности</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="Electronic">
-		<xs:sequence>
-			<xs:choice>
-				<xs:element name="Storage" type="Storage">
-					<xs:annotation>
-						<xs:documentation>Автоматическое заполнение информации по доверенности на основе номера и ИНН</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element name="Manual" type="Manual">
-					<xs:annotation>
-						<xs:documentation>Ручное заполнение данных доверенности</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-			</xs:choice>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="Storage">
-		<xs:sequence>
-			<xs:element name="FullId" minOccurs="0">
-				<xs:complexType>
-					<xs:attribute name="RegistrationNumber" type="guid" use="required">
-						<xs:annotation>
-							<xs:documentation>Номер доверенности</xs:documentation>
-						</xs:annotation>
-					</xs:attribute>
-					<xs:attribute name="IssuerInn" type="inn" use="required">
-						<xs:annotation>
-							<xs:documentation>ИНН организации, выдавшей доверенность</xs:documentation>
-						</xs:annotation>
-					</xs:attribute>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute name="UseDefault" use="required">
-			<xs:annotation>
-				<xs:documentation>Автоматическое заполнение информации на основе доверенности, используемой сотрудником по умолчанию</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:enumeration value="true" />
-					<xs:enumeration value="false" />
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:complexType>
-	<xs:complexType name="Manual">
-		<xs:attribute name="RegistrationNumber" type="guid">
-			<xs:annotation>
-				<xs:documentation>Номер доверенности</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="RegistrationDate" type="date">
-			<xs:annotation>
-				<xs:documentation>Дата совершения (выдачи) доверенности</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="InternalNumber" type="string50">
-			<xs:annotation>
-				<xs:documentation>Внутренний регистрационный номер доверенности</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="InternalDate" type="date">
-			<xs:annotation>
-				<xs:documentation>Дата внутренней регистрации доверенности</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="SystemId" type="string500">
-			<xs:annotation>
-				<xs:documentation>Идентифицирующая информация об информационной системе, в которой осуществляется хранение доверенности</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-	</xs:complexType>
-	<xs:complexType name="Paper">
-		<xs:annotation>
-			<xs:documentation>Сведения о доверенности, используемой для подтверждения полномочий на бумажном носителе</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Person" type="Fio" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Фамилия, имя, отчество (при наличии) лица, подписавшего доверенность</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute name="InternalNumber" type="string50">
-			<xs:annotation>
-				<xs:documentation>Внутренний регистрационный номер доверенности</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="RegistrationDate" type="date">
-			<xs:annotation>
-				<xs:documentation>Дата совершения (выдачи) доверенности</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="IssuerInfo" type="string1000">
-			<xs:annotation>
-				<xs:documentation>Сведения о доверителе</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-	</xs:complexType>
+  <xs:complexType name="PowerOfAttorney">
+    <xs:sequence>
+      <xs:element name="Electronic" type="Electronic" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Электронная доверенность</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Paper" type="Paper" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Бумажная доверенности</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Electronic">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="Storage" type="Storage">
+          <xs:annotation>
+            <xs:documentation>Автоматическое заполнение информации по доверенности на основе номера и ИНН</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Manual" type="Manual">
+          <xs:annotation>
+            <xs:documentation>Ручное заполнение данных доверенности</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Storage">
+    <xs:sequence>
+      <xs:element name="FullId" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="RegistrationNumber" type="guid" use="required">
+            <xs:annotation>
+              <xs:documentation>Номер доверенности</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="IssuerInn" type="inn" use="required">
+            <xs:annotation>
+              <xs:documentation>ИНН организации, выдавшей доверенность</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="UseDefault" use="required">
+      <xs:annotation>
+        <xs:documentation>Автоматическое заполнение информации на основе доверенности, используемой сотрудником по умолчанию</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true" />
+          <xs:enumeration value="false" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="Manual">
+    <xs:attribute name="RegistrationNumber" type="guid">
+      <xs:annotation>
+        <xs:documentation>Номер доверенности</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="RegistrationDate" type="date">
+      <xs:annotation>
+        <xs:documentation>Дата совершения (выдачи) доверенности</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="InternalNumber" type="string50">
+      <xs:annotation>
+        <xs:documentation>Внутренний регистрационный номер доверенности</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="InternalDate" type="date">
+      <xs:annotation>
+        <xs:documentation>Дата внутренней регистрации доверенности</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="SystemId" type="string500">
+      <xs:annotation>
+        <xs:documentation>Идентифицирующая информация об информационной системе, в которой осуществляется хранение доверенности</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="Paper">
+    <xs:annotation>
+      <xs:documentation>Сведения о доверенности, используемой для подтверждения полномочий на бумажном носителе</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Person" type="Fio" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Фамилия, имя, отчество (при наличии) лица, подписавшего доверенность</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="InternalNumber" type="string50">
+      <xs:annotation>
+        <xs:documentation>Внутренний регистрационный номер доверенности</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="RegistrationDate" type="date">
+      <xs:annotation>
+        <xs:documentation>Дата совершения (выдачи) доверенности</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="IssuerInfo" type="string1000">
+      <xs:annotation>
+        <xs:documentation>Сведения о доверителе</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
 
 
 ----
