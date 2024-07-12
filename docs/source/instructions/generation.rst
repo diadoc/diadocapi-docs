@@ -568,7 +568,7 @@ XSD-схемы для каждой настройки редактировани
             </Table>
             <TransferInfo OperationInfo="Товары переданы"/>
             <Signers>
-                <SignerReference BoxId="09ae254c-5cd0-4082-84de-7ccb46d86f82" CertificateThumbprint="dec5fe8a0dc3e11b04de55c1eb272ba2f36e655a">
+                <SignerReference BoxId="09ae254c-5cd0-4082-84de-7ccb46d86f82" CertificateThumbprint="dec5fe8a9g83e11b04de55c1eb272ba2f36e655a">
                     <PowerOfAttorney UseDefault="false">
                         <FullId RegistrationNumber="c8a8949a-4907-4c36-9f48-7efb2fba1382" IssuerInn="3812125023" />
                     </PowerOfAttorney>
