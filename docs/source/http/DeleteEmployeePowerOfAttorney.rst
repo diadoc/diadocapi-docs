@@ -32,4 +32,4 @@ DeleteEmployeePowerOfAttorney
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/powerofattorney_seealso.txt
+.. include:: ../inline/seealso_powerofattorney.txt

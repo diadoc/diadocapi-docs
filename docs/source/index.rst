@@ -37,7 +37,7 @@
 	DataModel
 	entities/index
 	instructions/index
-	authorization
+	Authorization
 	DataStructures
 	index_api
 	docflows/index

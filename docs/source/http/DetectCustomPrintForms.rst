@@ -57,4 +57,4 @@ DetectCustomPrintForms
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/printform_seealso.txt
+.. include:: ../inline/seealso_printform.txt

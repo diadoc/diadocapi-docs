@@ -27,4 +27,4 @@ GetCounteragentGroup
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/counteragentgroup_seealso.txt
+.. include:: ../inline/seealso_counteragentgroup.txt
