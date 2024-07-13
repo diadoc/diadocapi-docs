@@ -21,7 +21,7 @@ PrepareDocumentsToSign
 
 	:response Body: Тело ответа содержит подготовленные к подписанию документы, представленные структурой :doc:`../proto/PrepareDocumentsToSignResponse`. Метод вернет только те документы, которые поддерживают подготовку к подписанию. Проверить возможность подготовки к подписанию можно с помощью свойства ``SupportsContentPatching`` структуры :ref:`document-version2` для типа этого документа, полученной методом :doc:`GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../instructions/getdoctypes`.
 
-Метод не меняет переданное содержимое документа. Он генерирует новое содержимое, помещает его во временное хранилище и возвращает указатель на него в поле ``PrepareDocumentsToSignResponse.DocumentPatchedContents.PatchedContentId``. Этот указатель можно использовать при отправке документа в поле ``PatchedContentId`` структуры :doc:`DocumentSenderSignature`.
+Метод не меняет переданное содержимое документа. Он генерирует новое содержимое, помещает его во временное хранилище и возвращает указатель на него в поле ``PrepareDocumentsToSignResponse.DocumentPatchedContents.PatchedContentId``. Этот указатель можно использовать при отправке документа в поле ``PatchedContentId`` в структурах :doc:`DocumentSignature` и :doc:`DocumentSenderSignature`.
 
 
 ----

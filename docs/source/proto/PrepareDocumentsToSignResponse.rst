@@ -3,6 +3,8 @@ PrepareDocumentsToSignResponse
 
 Структура ``PrepareDocumentsToSignResponse`` представляет собой документы, подготовленные к подписанию и отправке методом :doc:`../http/PrepareDocumentsToSign`.
 
+Подробнее про подготовку в подписанию в инструкции :doc:`../instructions/preparetosign`.
+
 .. code-block:: protobuf
 
     message PrepareDocumentsToSignResponse {
@@ -18,7 +20,7 @@ PrepareDocumentsToSignResponse
 - ``DocumentPatchedContents`` — список документов, подготовленных к подписанию и отправке. Каждый элемент списка представлен структурой ``DocumentPatchedContent`` с полями:
 
 	- ``DocumentId`` — идентификатор документа, подготовленного к подписанию и отправке, представленный структурой :doc:`DocumentId`.
-	- ``PatchedContentId`` — идентификатор содержимого документа, подготовленного к подписанию и отправке. Идентификатор можно использовать при вызове метода :doc:`../http/SendDraft` в поле ``PatchedContentId`` структуры :doc:`DocumentSenderSignature`.
+	- ``PatchedContentId`` — идентификатор содержимого документа, подготовленного к подписанию и отправке. Его можно использовать при отправке документа в поле ``PatchedContentId`` в структурах :doc:`DocumentSignature` и :doc:`DocumentSenderSignature`.
 	- ``Content`` — подготовленное к подписанию содержимое документа. Подпись под документом нужно формировать для этого содержимого.
 
 ----
