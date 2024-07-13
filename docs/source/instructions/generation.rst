@@ -533,6 +533,7 @@ XSD-схемы для каждой настройки редактировани
 
 *Инструкции:*
 	- :doc:`utd`
+	- :doc:`preparetosign`
 	- :doc:`../howto/tracing`
 	- :doc:`powerofattorney`
 
