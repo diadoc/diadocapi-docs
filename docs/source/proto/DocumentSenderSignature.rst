@@ -21,7 +21,7 @@ DocumentSenderSignature
 
 - ``SignWithTestSignature`` — параметр, который позволяет запросить формирование тестовой ЭП под пересылаемыми данными.
 
-- ``PatchedContentId`` — идентификатор содержимого документа, :doc:`подготовленного к подписанию <../instructions/preparetosign>`. Должен быть получен методом :doc:`../http/PrepareDocumentToSign` в поле ``PatchedContentId`` структуры :doc:`PrepareDocumentToSignResponse`.
+- ``PatchedContentId`` — идентификатор содержимого документа, :doc:`подготовленного к подписанию <../instructions/preparetosign>`. Должен быть получен методом :doc:`../http/PrepareDocumentsToSign` в поле ``PatchedContentId`` структуры :doc:`PrepareDocumentsToSignResponse`.
 
 - ``PowerOfAttorney`` — данные машиночитаемой доверенности, представленные структурой :doc:`PowerOfAttorneyToPost`.
 
