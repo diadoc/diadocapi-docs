@@ -20,3 +20,11 @@ PrepareDocumentsToSign
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
 	:response Body: Тело ответа содержит подготовленные к подписанию документы, представленные структурой :doc:`../proto/PrepareDocumentsToSignResponse`. Метод вернет только те документы, которые поддерживают подготовку к подписанию. Проверить возможность подготовки к подписанию можно с помощью свойства ``SupportsContentPatching`` структуры :ref:`document-version2` для типа этого документа, полученной методом :doc:`GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../instructions/getdoctypes`.
+
+
+----
+
+.. rubric:: См. также
+
+*Инструкции:*
+	- :doc:`../instructions/preparetosign`

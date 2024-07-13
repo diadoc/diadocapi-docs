@@ -4,8 +4,10 @@
 .. contents:: :local:
 	:depth: 3
 
+
 Получение служебных документов
 ------------------------------
+
 
 .. _service_get_InvoiceConfirmation:
 
@@ -148,7 +150,6 @@
 
 Полученный XML-файл нужно передать в поле ``CorrectionRequests`` структуры ``MessagePatchToPost``.
 
-.. _universal_signer:
 
 Универсальный подписант
 ~~~~~~~~~~~~~~~~~~~~~~~
