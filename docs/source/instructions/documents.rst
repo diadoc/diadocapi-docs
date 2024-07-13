@@ -9,8 +9,10 @@
 
 	getdoctypes
 	generation
+	preparetosign
 	docsend
 	docget
 	docservice
+	editingsettings
 	template
 	formal

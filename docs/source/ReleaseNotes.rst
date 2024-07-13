@@ -927,7 +927,7 @@
 ----------
 **SDK**: `C# 1.51.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.7>`__ | `Java 1.51.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.7>`__ | `C++ 1.51.7 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.7>`__
 
-- В структуре :doc:`proto/Document` добавлено поле ``EditingSettingId``, содержащее идентификатор :ref:`настройки редактирования <editing_settings>` документа, если он был создан из шаблона с возможностью редактирования полей.
+- В структуре :doc:`proto/Document` добавлено поле ``EditingSettingId``, содержащее идентификатор :doc:`настройки редактирования <instructions/editingsettings>` документа, если он был создан из шаблона с возможностью редактирования полей.
 - В структуре :doc:`proto/OrganizationUserPermissions` добавлено поле ``CanCreateDocuments``, указывающее, может ли пользователь создавать документы и работать с черновиками.
 
 
