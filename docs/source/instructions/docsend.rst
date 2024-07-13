@@ -4,8 +4,6 @@
 .. contents:: :local:
 	:depth: 3
 
-Работать с документами можно только внутри :doc:`сообщения <../entities/message>`.
-
 
 .. _doc_send:
 
