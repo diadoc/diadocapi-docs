@@ -47,17 +47,11 @@
 
 	.. tab:: УПД 970
 
-		- ``documentTypeNamedId = UniversalTransferDocument``,
-		- ``documentFunction = СЧФДОП``,
-		- ``documentVersion = utd970_05_02_01``,
-		- ``titleIndex = 0`` (титул продавца).
+		.. include:: ../include/generate_utd970_05_02_01_title0_params.txt
 
 	.. tab:: УПД 820
 
-		- ``documentTypeNamedId = UniversalTransferDocument``,
-		- ``documentFunction = СЧФДОП``,
-		- ``documentVersion = utd820_05_01_02_hyphen``,
-		- ``titleIndex = 0`` (титул продавца).
+		.. include:: ../include/generate_utd820_05_01_02_hyphen_title0_params.txt
 
 Кроме этого нужно подготовить содержимое титула — упрощенный XML-файл UserDataXml. Подробнее см. :doc:`../instructions/generation`.
 
@@ -69,21 +63,11 @@
 
 	.. tab:: УПД 970
 
-		.. code-block:: http
-
-			POST /GenerateTitleXml?boxId={{boxId}}&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd970_05_02_01&titleIndex=0 HTTP/1.1
-			Host: diadoc-api.kontur.ru
-			Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
-			Content-Type: application/xml; charset=utf-8
+		.. literalinclude:: ../include/generate_utd970_05_02_01_title0_query.txt
 
 	.. tab:: УПД 820
 
-		.. code-block:: http
-
-			POST /GenerateTitleXml?boxId={{boxId}}&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_02_hyphen&titleIndex=0 HTTP/1.1
-			Host: diadoc-api.kontur.ru
-			Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
-			Content-Type: application/xml; charset=utf-8
+		.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title0_query.txt
 
 **Пример тела запроса метода GenerateTitleXml (UserDataXml):**
 
@@ -93,13 +77,13 @@
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/generate_utd970_05_02_01_title0_body.xml
+			.. literalinclude:: ../include/generate_utd970_05_02_01_title0_body.xml
 
 	.. tab:: УПД 820
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/generate_utd820_05_01_02_hyphen_title0_body.xml
+			.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title0_body.xml
 
 **Пример тела ответа метода GenerateTitleXml (титул продавца):**
 
@@ -109,14 +93,14 @@
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/generate_utd970_05_02_01_title0_resp.xml
+			.. literalinclude:: ../include/generate_utd970_05_02_01_title0_resp.xml
 				:encoding: windows-1251
 
 	.. tab:: УПД 820
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/generate_utd820_05_01_02_hyphen_title0_resp.xml
+			.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title0_resp.xml
 				:encoding: windows-1251
 
 
@@ -133,14 +117,14 @@
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/postmessage_utd970_05_02_01_body.xml
+			.. literalinclude:: ../include/postmessage_utd970_05_02_01_body.xml
 				:language: json
 
 	.. tab:: УПД 820
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/postmessage_utd820_05_01_02_hyphen_body.xml
+			.. literalinclude:: ../include/postmessage_utd820_05_01_02_hyphen_body.xml
 				:language: json
 
 После отправки титула продавца Диадок автоматически формирует подтверждение оператора о дате получения документа, а покупатель формирует извещение о получении титула и отправляет его продавцу. О том, как получить эти служебные документы, написано в инструкциях:
@@ -263,23 +247,17 @@ HTTP-запрос на получение УПД будет выглядеть �
 
 Чтобы сгенерировать титул покупателя, нужно получить необходимую информацию из метода :doc:`../http/GetDocumentTypes`. Инструкция о получении данных для титула из метода ``GetDocumentTypes`` приведена в разделе :ref:`doctype_title`.
 
-Из ответа метода ``GetDocumentTypes`` для УПД в 820 формате возьмем те же значения для параметров метода ``GenerateTitleXml``, что и для титула продавца, но номер титула будет другой:
+Из ответа метода ``GetDocumentTypes`` для УПД возьмем те же значения для параметров метода ``GenerateTitleXml``, что и для титула продавца, но номер титула будет другой:
 
 .. tabs::
 
 	.. tab:: УПД 970
 
-		- ``documentTypeNamedId`` = ``UniversalTransferDocument``,
-		- ``documentFunction`` = ``СЧФ``,
-		- ``documentVersion`` = ``utd970_05_02_01``,
-		- ``titleIndex`` = ``1`` (титул покупателя).
+		.. include:: ../include/generate_utd970_05_02_01_title1_params.txt
 
 	.. tab:: УПД 820
 
-		- ``documentTypeNamedId`` = ``UniversalTransferDocument``,
-		- ``documentFunction`` = ``СЧФДОП``,
-		- ``documentVersion`` = ``utd820_05_01_02_hyphen``,
-		- ``titleIndex`` = ``1`` (титул покупателя).
+		.. include:: ../include/generate_utd820_05_01_02_hyphen_title1_params.txt
 
 Кроме этого нужно подготовить содержимое титула — упрощенный XML-файл UserDataXml. Подробнее см. :doc:`../instructions/generation`.
 
@@ -291,21 +269,11 @@ HTTP-запрос на получение УПД будет выглядеть �
 
 	.. tab:: УПД 970
 
-		.. code-block:: http
-
-			POST /GenerateTitleXml?boxId={{boxId}}&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd970_05_02_01&titleIndex=1&letterId={{letterId}}&documentId={{documentId}} HTTP/1.1
-			Host: diadoc-api.kontur.ru
-			Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
-			Content-Type: application/xml; charset=utf-8
+		.. literalinclude:: ../include/generate_utd970_05_02_01_title1_query.txt
 
 	.. tab:: УПД 820
 
-		.. code-block:: http
-
-			POST /GenerateTitleXml?boxId={{boxId}}&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_02_hyphen&titleIndex=1&letterId={{letterId}}&documentId={{documentId}} HTTP/1.1
-			Host: diadoc-api.kontur.ru
-			Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
-			Content-Type: application/xml; charset=utf-8
+		.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title1_query.txt
 
 **Пример тела запроса метода GenerateTitleXml (UserDataXml):**
 
@@ -315,13 +283,13 @@ HTTP-запрос на получение УПД будет выглядеть �
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/generate_utd970_05_02_01_title1_body.xml
+			.. literalinclude:: ../include/generate_utd970_05_02_01_title1_body.xml
 
 	.. tab:: УПД 820
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/generate_utd820_05_01_02_hyphen_title1_body.xml
+			.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title1_body.xml
 
 **Пример тела ответа метода GenerateTitleXml (титул покупателя):**
 
@@ -331,14 +299,14 @@ HTTP-запрос на получение УПД будет выглядеть �
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/generate_utd970_05_02_01_title1_resp.xml
+			.. literalinclude:: ../include/generate_utd970_05_02_01_title1_resp.xml
 				:encoding: windows-1251
 
 	.. tab:: УПД 820
 
 		.. container:: toggle
 
-			.. literalinclude:: ../inline/generate_utd820_05_01_02_hyphen_title1_resp.xml
+			.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title1_resp.xml
 				:encoding: windows-1251
 
 
