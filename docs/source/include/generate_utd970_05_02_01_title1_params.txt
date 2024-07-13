@@ -1,0 +1,4 @@
+- ``documentTypeNamedId`` = ``UniversalTransferDocument``,
+- ``documentFunction`` = ``СЧФ``,
+- ``documentVersion`` = ``utd970_05_02_01``,
+- ``titleIndex`` = ``1`` (титул покупателя).

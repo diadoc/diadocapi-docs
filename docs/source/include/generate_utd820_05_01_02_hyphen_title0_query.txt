@@ -1,0 +1,4 @@
+POST /GenerateTitleXml?boxId={{boxId}}&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd820_05_01_02_hyphen&titleIndex=0 HTTP/1.1
+Host: diadoc-api.kontur.ru
+Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
+Content-Type: application/xml; charset=utf-8

@@ -22,4 +22,4 @@ GetGeneratedPrintForm
 
 .. rubric:: См. также
 
-.. include:: ../inline/seealso_printform.txt
+.. include:: ../include/seealso_printform.txt

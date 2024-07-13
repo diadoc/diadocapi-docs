@@ -27,4 +27,4 @@ RegisterPowerOfAttorney
 
 .. rubric:: См. также
 
-.. include:: ../inline/seealso_powerofattorney.txt
+.. include:: ../include/seealso_powerofattorney.txt

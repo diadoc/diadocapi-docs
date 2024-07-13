@@ -1,0 +1,4 @@
+POST /GenerateTitleXml?boxId={{boxId}}&documentTypeNamedId=UniversalTransferDocument&documentFunction=СЧФДОП&documentVersion=utd970_05_02_01&titleIndex=1&letterId={{letterId}}&documentId={{documentId}} HTTP/1.1
+Host: diadoc-api.kontur.ru
+Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
+Content-Type: application/xml; charset=utf-8

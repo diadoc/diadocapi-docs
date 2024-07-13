@@ -66,4 +66,4 @@ GetNewEvents
 
 .. rubric:: См. также
 
-.. include:: ../inline/seealso_event.txt
+.. include:: ../include/seealso_event.txt

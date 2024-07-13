@@ -36,6 +36,6 @@ GenerateForwardedDocumentPrintForm
 
 .. rubric:: См. также
 
-.. include:: ../inline/seealso_printform.txt
+.. include:: ../include/seealso_printform.txt
 
-.. include:: ../inline/seealso_forwardeddocument.txt
+.. include:: ../include/seealso_forwardeddocument.txt
