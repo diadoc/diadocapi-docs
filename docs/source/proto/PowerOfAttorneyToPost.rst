@@ -29,9 +29,9 @@ PowerOfAttorneyToPost
 В структуре ``PowerOfAttorneyToPost`` можно указать только одно из перечисленных ниже значений, иначе метод отправки вернет ошибку:
 
 	- ``FullId``,
+	- ``UseDefault = true``,
 	- ``Content``,
 	- ``Contents``,
-	- ``UseDefault = true``,
 	- ``UseDocumentContent = true``.
 
 Если одновременно указны флаги ``SendAsFile = true`` и ``UseDocumentContent = true``, то МЧД будет передана в содержимом документа.

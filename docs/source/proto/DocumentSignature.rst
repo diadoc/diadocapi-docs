@@ -16,9 +16,9 @@ DocumentSignature
         optional PowerOfAttorneyToPost PowerOfAttorney = 9;
     }
 
-- ``ParentEntityId`` — идентификатор подписываемых данных в отправляемом сообщении. Должен соответствовать содержимому поля :doc:`Entity.EntityId <Entity message>` какой-либо сущности :doc:`Entity <Entity message>` в отправляемом сообщении :doc:`Message`. Набор сущностей в сообщении и их идентификаторы можно получить методом :doc:`../http/PostMessage` при создании сообщения или с помощью метода :doc:`../http/GetMessage`.
+- ``ParentEntityId`` — идентификатор подписываемых данных документа в отправляемом сообщении. Должен соответствовать содержимому поля :doc:`Entity.EntityId <Entity message>` какой-либо сущности :doc:`Entity <Entity message>` в отправляемом сообщении :doc:`Message`. Набор сущностей в сообщении и их идентификаторы можно получить методом :doc:`../http/PostMessage` при создании сообщения или с помощью метода :doc:`../http/GetMessage`.
 
-- ``Signature`` — ЭП, представленная в формате :rfc:`CMS SignedData <5652#section-5>` в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__-кодировке. В некоторых случаях может отсутствовать.
+- ``Signature`` — содержимое электронной подписи, представленное в формате :rfc:`CMS SignedData <5652#section-5>` в `DER <http://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf>`__-кодировке. В некоторых случаях может отсутствовать.
 
 - ``SignWithTestSignature`` — флаг, который позволяет запросить формирование тестовой ЭП.
 
@@ -26,7 +26,7 @@ DocumentSignature
 
 - ``SignatureNameOnShelf`` — имя подписи на :doc:`полке документов<../entities/shelf>`.
 
-- ``PatchedContentId`` — идентификатор патча документа.
+- ``PatchedContentId`` — идентификатор содержимого документа, :doc:`подготовленного к подписанию <../instructions/preparetosign>`. Должен быть получен методом :doc:`../http/PrepareDocumentToSign` в поле ``PatchedContentId`` структуры :doc:`PrepareDocumentToSignResponse`.
 
 - ``Labels`` — :doc:`метки <../entities/label>` подписи.
 
