@@ -43,7 +43,7 @@ GetOrganizationsByInnListResponse
 		- ``IsRejectedByMe`` — организация разорвала отношения партнерства или отклонила запрос на установление отношения партнерства.
 		- ``NotInCounteragentList`` — организации нет в списке контрагентов.
 
-	- ``LastEventTimestampTicks`` — :doc:`метка времени <Timestamp>` последнего взаимодействия с контрагентом.
+	- ``LastEventTimestampTicks`` — :doc:`время <Timestamp>` последнего взаимодействия с контрагентом.
 
 	- ``MessageFromCounteragent`` — сообщение, пришедшее от контрагента вместе с приглашением.
 

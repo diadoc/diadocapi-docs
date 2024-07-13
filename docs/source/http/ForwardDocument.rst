@@ -46,7 +46,7 @@ ForwardDocument
 
 		..
 
-		- ``ForwardTimestamp`` — метка времени пересылки документа, представленная структурой :doc:`../proto/Timestamp`.
+		- ``ForwardTimestamp`` — время пересылки документа, представленная структурой :doc:`../proto/Timestamp`.
 		- ``ForwardedDocumentId`` — идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
 
 Метод пересылает документ ``ForwardDocumentRequest.DocumentId`` из ящика ``boxId`` третьей стороне в ящик ``ForwardDocumentRequest.ToBoxId``. Адресат пересылки получает снапшот состояния документа на момент времени пересылки.

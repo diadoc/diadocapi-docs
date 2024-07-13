@@ -35,9 +35,9 @@ Message
 
 -  *MessageId* - уникальный идентификатор сообщения или черновика.
 
--  *TimestampTicks* - :doc:`метка времени <Timestamp>` создания сообщения.
+-  *TimestampTicks* - :doc:`время <Timestamp>` создания сообщения.
 
--  *LastPatchTimestampTicks* - :doc:`метка времени <Timestamp>` последнего патча (дополнения), примененного к данному сообщению.
+-  *LastPatchTimestampTicks* - :doc:`время <Timestamp>` последнего патча (дополнения), примененного к данному сообщению.
 
 -  *FromBoxId* - идентификатор ящика отправителя сообщения.
 

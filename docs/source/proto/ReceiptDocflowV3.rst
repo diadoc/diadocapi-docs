@@ -17,7 +17,7 @@ ReceiptDocflowV3
 
 - *IsFinished* - признак того, что документооборот по извещению о получении завершен, т. е. не требует дальнейших действий
 - :doc:`ReceiptAttachment <SignedAttachmentV3>` - данные о файле извещения о получении и подписи под ним
-- :doc:`SentAt <Timestamp>` - метка времени отправки извещения о получении
-- :doc:`DeliveredAt <Timestamp>` - метка времени доставки извещения о получении
+- :doc:`SentAt <Timestamp>` - время отправки извещения о получении
+- :doc:`DeliveredAt <Timestamp>` - время доставки извещения о получении
 - :doc:`Confirmation <ConfirmationDocflow>` - информация о подтверждении оператором даты доставки извещения
 - :doc:`GeneralReceiptStatus` - статус извещения о получении
