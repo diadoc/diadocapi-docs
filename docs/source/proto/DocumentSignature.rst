@@ -26,7 +26,7 @@ DocumentSignature
 
 - ``SignatureNameOnShelf`` — имя подписи на :doc:`полке документов<../entities/shelf>`.
 
-- ``PatchedContentId`` — идентификатор содержимого документа, :doc:`подготовленного к подписанию <../instructions/preparetosign>`. Должен быть получен методом :doc:`../http/PrepareDocumentToSign` в поле ``PatchedContentId`` структуры :doc:`PrepareDocumentToSignResponse`.
+- ``PatchedContentId`` — идентификатор содержимого документа, :doc:`подготовленного к подписанию <../instructions/preparetosign>`. Должен быть получен методом :doc:`../http/PrepareDocumentsToSign` в поле ``PatchedContentId`` структуры :doc:`PrepareDocumentsToSignResponse`.
 
 - ``Labels`` — :doc:`метки <../entities/label>` подписи.
 
