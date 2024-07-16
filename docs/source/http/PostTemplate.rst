@@ -25,3 +25,10 @@ PostTemplate
 
 	:response Body: Тело ответа содержит отправленное сообщение, сериализованное в протобуфер :doc:`../proto/Template`.
 
+
+----
+
+.. rubric:: См. также
+
+*Инструкции:*
+	- :doc:`../instructions/template`

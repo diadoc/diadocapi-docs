@@ -576,9 +576,13 @@ XSD-схемы для каждой настройки редактировани
 .. rubric:: См. также
 
 *Инструкции:*
-	- :doc:`utd`
+	- :doc:`getdoctypes`
+	- :doc:`parsing`
+	- :doc:`preparetosign`
+	- :doc:`editingsettings`
 	- :doc:`../howto/tracing`
 	- :doc:`powerofattorney`
+	- :doc:`utd`
 
 *Методы для работы с титулами:*
 	- :doc:`../http/GenerateTitleXml` — генерирует XML-файл любого титула для любого типа документа
