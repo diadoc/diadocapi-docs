@@ -266,4 +266,7 @@ Document
 .. rubric:: Смотри также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/GetDocument`.
+	- в структуре :doc:`DocumentList`
+	- в структуре :doc:`Entity message`
+	- в теле ответа метода :doc:`../http/GetDocument`
+	- идентификатор ``documentId`` используется при вызове многих методов API для указания документа
