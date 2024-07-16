@@ -245,7 +245,51 @@ XSD-схемы для каждой настройки редактировани
 
 Кроме дополнительных данных в UserDataXml генерация титула с прослеживаемыми товарами ничем не отличается от обычного титула и производится по тому же алгоритму.
 
-Пример UserDataXml с прослеживаемыми товарами приведен в разделе :ref:`generate_sender_title`.
+**Пример HTTP-запроса метода GenerateTitleXml:**
+
+.. tabs::
+
+	.. tab:: УПД 970
+
+		.. literalinclude:: ../include/generate_utd970_05_02_01_title0_query.txt
+
+	.. tab:: УПД 820
+
+		.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title0_query.txt
+
+**Пример тела запроса метода GenerateTitleXml (UserDataXml):**
+
+.. tabs::
+
+	.. tab:: УПД 970
+
+		.. container:: toggle
+
+			.. literalinclude:: ../include/generate_utd970_05_02_01_title0_body.xml
+
+	.. tab:: УПД 820
+
+		.. container:: toggle
+
+			.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title0_body.xml
+
+**Пример тела ответа метода GenerateTitleXml (титул отправителя):**
+
+.. tabs::
+
+	.. tab:: УПД 970
+
+		.. container:: toggle
+
+			.. literalinclude:: ../include/generate_utd970_05_02_01_title0_resp.xml
+				:encoding: windows-1251
+
+	.. tab:: УПД 820
+
+		.. container:: toggle
+
+			.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title0_resp.xml
+				:encoding: windows-1251
 
 
 .. _generate_title_xml_poa:
