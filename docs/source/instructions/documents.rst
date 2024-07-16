@@ -11,10 +11,11 @@
 
 	getdoctypes
 	generation
+	parsing
 	preparetosign
+	editingsettings
 	docsend
 	docget
 	docservice
-	editingsettings
 	template
 	formal
