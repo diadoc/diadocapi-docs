@@ -913,7 +913,7 @@
 ----------
 **SDK**: `C# 1.51.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.9>`__ | `Java 1.51.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.9>`__ | `C++ 1.51.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.9>`__
 
-- В структуре :doc:`proto/obsolete/Docflow` добавлено поле :doc:`proto/Docflow_RoamingNotification`, содержащее данные о доставке документа в роуминг.
+- В структуре :doc:`proto/obsolete/Docflow` добавлено поле :doc:`proto/RoamingNotification`, содержащее данные о доставке документа в роуминг.
 
 
 25.06.2018

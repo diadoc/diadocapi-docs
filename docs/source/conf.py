@@ -391,6 +391,7 @@ redirects = {
     "http/Organizations/GetOrganizationFeatures": "../GetOrganizationFeatures.html",
     "http/utd/ExtendedSignerDetailsV2": "../ExtendedSignerDetailsV2.html",
 
+    "proto/Docflow_RoamingNotification": "RoamingNotification.html",
     "proto/Labels": "../entities/label.html",
     "proto/OrganizationUser": "OrganizationUsersList.html",
     "proto/Resolution": "ResolutionInfo.html",
