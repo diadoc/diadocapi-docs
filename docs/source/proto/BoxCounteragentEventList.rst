@@ -69,3 +69,9 @@ BoxCounteragentEventList
 
 *Структура используется:*
 	- в теле ответа метода :doc:`../http/GetCounteragentEvents`
+
+*Определение:*
+	- :doc:`../entities/counteragent`
+
+*Инструкции:*
+	- :doc:`../instructions/counteragentevents`
