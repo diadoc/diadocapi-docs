@@ -7,6 +7,8 @@
 
 Для получения событий по контрагентам используйте метод :doc:`../http/GetCounteragentEvents`. Он вернет в ответе структуру :doc:`../proto/BoxCounteragentEventList`, содержащую информацию о контрагенте, с которым произошло событие, и о самом событии.
 
+Метод возвращает только некоторые типы событий, они указаны в перечислении :doc:`EventTypes <../proto/BoxCounteragentEventList>`.
+
 **Пример HTTP-запроса метода GetCounteragentEvents:**
 
 .. code-block:: http
