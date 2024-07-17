@@ -829,7 +829,7 @@
 ----------
 **SDK**: `C# 1.55.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.55.7>`__ | `Java 1.55.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.55.7>`__ | `C++ 1.55.7 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.55.7>`__
 
-- Добавлен метод :doc:`http/UpdateMyUser` для редактирования данных пользователя.
+- Добавлен метод :doc:`http/obsolete/UpdateMyUser` для редактирования данных пользователя.
 
 
 02.10.2018
