@@ -2,7 +2,7 @@ TovTorgInfo
 ===========
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../../http/obsolete/GenerateTorg12XmlForSeller`.
+	Структура используется в устаревшем методе :doc:`../../http/obsolete/GenerateTorg12XmlForSeller`.
 
 .. code-block:: protobuf
 
