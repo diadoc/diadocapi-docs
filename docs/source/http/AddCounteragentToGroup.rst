@@ -23,9 +23,8 @@ AddCounteragentToGroup
 
 Добавить контрагентов в группу может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
 
-Метод ``AddCounteragentToGroup`` добавляет в группу только контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``, иначе метод вернет ошибку ``409 (Conflict )``.
+Метод ``AddCounteragentToGroup`` добавляет в группу только контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``, иначе метод вернет ошибку ``409 (Conflict )``. Узнать статус контрагента можно с помощью метода :doc:`GetOrganizationsByInnList`.
 
-Узнать статус контрагента можно с помощью метода :doc:`GetOrganizationsByInnList`.
 
 ----
 
