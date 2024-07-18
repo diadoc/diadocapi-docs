@@ -5,164 +5,115 @@
 
 Контрагентов, с которыми установлены партнерские отношения, можно распределять по группам.
 
-По умолчанию все контрагенты в группе могут отправлять документы в любое подразделение организации. Но вы можете указать для каждой группы контрагентов, в какие подразделения смогут отправлять документы контрагенты из этой группы. Это может быть полезно в случае, если разные подразделения организации работают с документами от разных контрагентов. 
+По умолчанию все контрагенты в группе могут отправлять документы в любое подразделение организации. Но вы можете указать для каждой группы контрагентов подразделения, в которые смогут отправлять документы контрагенты из этой группы. Это может быть полезно в случае, если разные подразделения организации работают с документами от разных контрагентов.
+
+.. note::
+	Описанные ниже методы доступны только сотрудникам с разрешением ``CanManageCounteragents``, которое позволяет видеть списки контрагентов и работать с ними.
 
 
 Создание группы контрагентов
 ----------------------------
 
-Чтобы создать группу контрагентов, администратор ящика должен выполнить следующие действия:
+Чтобы создать группу контрагентов, выполните следующие действия:
 
-	#. С помощью метода :doc:`../http/CreateCounteragentGroup` создать группу и указать, в какие подразделения контрагенты группы смогут отправлять документы. В ответе метод вернет информацию о созданной группе.
-	#. С помощью метода :doc:`../http/AddCounteragentToGroup` добавить контрагентов в созданную группу. Вызвать метод нужно для каждого контрагента, которого вы хотите добавить в группу.
+	#. С помощью метода :doc:`../http/CreateCounteragentGroup` создайте группу и укажите, в какие подразделения контрагенты группы смогут отправлять документы. В ответе метод вернет информацию о созданной группе.
+	#. С помощью метода :doc:`../http/AddCounteragentToGroup` добавьте контрагентов в созданную группу. Вызвать метод нужно для каждого контрагента, которого вы хотите добавить в группу.
 
 **Пример HTTP-запроса метода CreateCounteragentGroup:**
 
-.. code-block:: http
-
-	POST /CreateCounteragentGroup?boxId={{boxId}} HTTP/1.1
-	Host: diadoc-api.kontur.ru
-	Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
-	Accept: application/json; charset=utf-8
+.. literalinclude:: ../include/сreateCounteragentGroup_query.txt
 
 **Пример тела запроса метода CreateCounteragentGroup:**
 
-.. code-block:: json
-
-    {
-        "Name": "Группа",
-        "Departments": {
-            "DepartmentIds": [
-                "6d710055-9b5d-4bc0-ba2f-9e54adda034e"
-            ]
-        }
-    }
+.. literalinclude:: ../include/сreateCounteragentGroup_body.txt
+	:language: json
 
 **Пример ответа метода CreateCounteragentGroup:**
 
-.. code-block:: json
-
-    {
-        "CounteragentGroupId": "ecd591dd-b56f-4178-ab4a-8a5532f231f7",
-        "Name": "Группа",
-        "Departments": {
-            "DepartmentIds": [
-                "6d710055-9b5d-4bc0-ba2f-9e54adda034e"
-            ]
-        }
-    }
+.. literalinclude:: ../include/сreateCounteragentGroup_resp.txt
+	:language: json
 
 **Пример HTTP-запроса метода AddCounteragentToGroup:**
 
-.. code-block:: http
-
-	POST /AddCounteragentToGroup?boxId={{boxId}}&counteragentGroupId=ecd591dd-b56f-4178-ab4a-8a5532f231f7&counteragentBoxId={{counteragentBoxId}} HTTP/1.1
-	Host: diadoc-api.kontur.ru
-	Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
+.. literalinclude:: ../include/addCounteragentToGroup_query.txt
 
 
 Получение списка групп контрагентов
 -----------------------------------
 
-Чтобы отредактировать, удалить или получить информацию о конкретной группе, нужно получить ее идентификатор ``CounteragentGroupId``. Это можно сделать с помощью метода ``GetCounteragentGroups``. Метод возвращает идентификатор группы, название и список подразделений, в которое контрагенты группы могут отправлять документы.
+Чтобы отредактировать, удалить или получить информацию о конкретной группе, нужно знать ее идентификатор. Получить идентификаторы и информацию обо всех группах организации можно с помощью метода :doc:`../http/GetCounteragentGroups`. Метод возвращает список всех существующих групп в указанной организации, включая группу по умолчанию.
 
 **Пример HTTP-запроса метода GetCounteragentGroups:**
 
-.. code-block:: http
-
-    GET /GetCounteragentGroups?boxId={{boxId}} HTTP/1.1
-    Host: diadoc-api.kontur.ru
-    Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
+.. literalinclude:: ../include/getCounteragentGroups_query.txt
 
 **Пример ответа метода GetCounteragentGroups:**
 
-.. code-block:: json
+.. container:: toggle
 
-    {
-        "Groups": [
-            {
-                "CounteragentGroupId": "00000000-0000-0000-0000-000000000000",
-                "Name": "По умолчанию"
-            },
-            {
-                "CounteragentGroupId": "df6218d0-59bd-44ad-8d56-6e4bfe5fdd2b",
-                "Name": "Группа"
-            },
-            {
-                "CounteragentGroupId": "982e047f-bc5c-44e4-a24b-d1ba93f2fd6f",
-                "Name": "Новая группа 3",
-                "Departments": {
-                    "DepartmentIds": [
-                        "16703d96-93a5-43a8-b2b6-c9c2f5b89451"
-                    ]
-                }
-            },
-            {
-                "CounteragentGroupId": "2691abaa-a8ec-4fd5-b2d3-894b434e9643",
-                "Name": "Новая группа 4",
-                "Departments": {
-                    "DepartmentIds": [
-                        "1da985dd-611f-4b2c-8938-211943f0706e"
-                    ]
-                }
-            }
-        ],
-        "TotalCount": 4
-    }
+	.. literalinclude:: ../include/getCounteragentGroups_resp.txt
+		:language: json
 
-Редактирование группы контрагентов
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-С помощью метода :doc:`../http/UpdateCounteragentGroup` можно изменить название группы и список подразделений, в которое контрагенты группы могут отправлять документы.
+Получение информации о группе контрагентов
+------------------------------------------
 
-**Пример HTTP-запроса метода UpdateCounteragentGroup:**
+Чтобы получить информацию о группе контрагентов по ее идентификатору, используйте метод :doc:`../http/GetCounteragentGroup`.
 
-.. code-block:: http
+**Пример HTTP-запроса метода GetCounteragentGroup:**
 
-    POST /UpdateCounteragentGroup?boxId={{boxId}}&counteragentGroupId=35263ada-3620-4225-86e6-9a4bd1797fdc HTTP/1.1
-    Host: diadoc-api.kontur.ru
-    Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
+.. literalinclude:: ../include/getCounteragentGroup_query.txt
 
-**Пример тела запроса метода UpdateCounteragentGroup:**
+**Пример тела ответа метода GetCounteragentGroup:**
 
-.. code-block:: json
+.. literalinclude:: ../include/getCounteragentGroup_resp.txt
+	:language: json
 
-    {
-        "Name": "Группа22",
-        "GroupDepartment": [
-            {
-                "DepartmentId": "16703d96-93a5-43a8-b2b6-c9c2f5b89451"
-            }
-        ]
-    }
 
 Получение списка контрагентов группы
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
-При удалении группы, всем контрагентам из нее назначается группа «по умолчанию»: контрагенты смогут отправлять документы в любое подразделение организации. Чтобы проверить, какие контрагенты состоят в группе и, при необходимости, добавить их в новую, используйте метод ``GetCounteragentsFromGroup``.
+Чтобы получить информацию о контрагентах, состоящих в группе, используйте метод :doc:`../http/GetCounteragentsFromGroup`. По идентификатору группы он вернет список контрагентов этой группы.
 
 **Пример HTTP-запроса метода GetCounteragentsFromGroup:**
 
-.. code-block:: http
-
-    GET /GetCounteragentsFromGroup?boxId={{boxId}}&counteragentGroupId=2691abaa-a8ec-4fd5-b2d3-894b434e9643 HTTP/1.1
-    Host: diadoc-api.kontur.ru
-    Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
+.. literalinclude:: ../include/getCounteragentsFromGroup_query.txt
 
 **Пример тела ответа метода GetCounteragentsFromGroup:**
 
-.. code-block:: json
-
-    {
-        "CounteragentBoxId": [
-            "63ea3407-215c-46ba-99f8-9d8e600233e7"
-        ],
-        "TotalCount": 1,
-        "AfterIndexKey": "08D5F86E341FB6DE0734EA635C21BA4699F89D8E600233E7"
-    }
+.. literalinclude:: ../include/getCounteragentsFromGroup_resp.txt
+	:language: json
 
 
-** группа по умолчанию **
+Редактирование группы контрагентов
+----------------------------------
+
+Чтобы изменить название или список подразделений, в которые контрагенты группы могут отправлять документы, используйте метод :doc:`../http/UpdateCounteragentGroup`. На странице метода описаны все случаи редактирования подразделений группы.
+
+**Пример HTTP-запроса метода UpdateCounteragentGroup:**
+
+.. literalinclude:: ../include/updateCounteragentGroup_query.txt
+
+**Пример тела запроса метода UpdateCounteragentGroup:**
+
+.. literalinclude:: ../include/updateCounteragentGroup_newstruct_body.txt
+	:language: json
+
+**Пример тела ответа метода UpdateCounteragentGroup:**
+
+.. literalinclude:: ../include/updateCounteragentGroup_newstruct_resp.txt
+	:language: json
+
+
+Удаление группы контрагентов
+----------------------------
+
+Чтобы удалить группу контрагентов, используйте метод :doc:`../http/DeleteCounteragentGroup`. После удаления группы все контрагенты, находящиеся в ней, будут перемещены в группу «По умолчанию».
+
+**Пример HTTP-запроса метода DeleteCounteragentGroup:**
+
+.. literalinclude:: ../include/deleteCounteragentGroup_query.txt
+
 
 ----
 
@@ -172,14 +123,13 @@
 	- :doc:`../entities/counteragent`
 
 *Методы для работы с группами контрагентов:*
-	- :doc:`../http/AddCounteragentToGroup` — добавляет контрагентов в группу
+	- :doc:`../http/AddCounteragentToGroup` — добавляет контрагента в группу
 	- :doc:`../http/CreateCounteragentGroup` — создает группу контрагентов
-
-	- :doc:`../http/UpdateCounteragentGroup` — редактирует группу контрагентов
 	- :doc:`../http/DeleteCounteragentGroup` — удаляет группу контрагентов
-	- :doc:`../http/GetCounteragentGroups` — возвращает список групп контрагентов
 	- :doc:`../http/GetCounteragentGroup` — возвращает информацию о группе контрагентов
+	- :doc:`../http/GetCounteragentGroups` — возвращает список групп контрагентов
 	- :doc:`../http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе
+	- :doc:`../http/UpdateCounteragentGroup` — изменяет параметры группы контрагентов
 
 *Структуры для работы с группами контрагентов:*
 	- :doc:`../proto/CounteragentGroup` — хранит информацию о группе контрагентов

@@ -1,0 +1,4 @@
+{
+    "CounteragentGroupId": "ecd591dd-b56f-4178-ab4a-8a5532f231f7",
+    "Name": "Новое имя"
+}

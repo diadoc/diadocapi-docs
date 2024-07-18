@@ -1,0 +1,22 @@
+{
+    "Groups": [
+        {
+            "CounteragentGroupId": "00000000-0000-0000-0000-000000000000",
+            "Name": "По умолчанию"
+        },
+        {
+            "CounteragentGroupId": "ecd591dd-b56f-4178-ab4a-8a5532f231f7",
+            "Name": "Группа",
+            "Departments": {
+                "DepartmentIds": [
+                    "6d710055-9b5d-4bc0-ba2f-9e54adda034e"
+                ]
+            }
+        },
+        {
+            "CounteragentGroupId": "db0c29b8-bbd3-42a0-aa8b-beba1aeabdf4",
+            "Name": "Группа2"
+        }
+    ],
+    "TotalCount": 3
+}

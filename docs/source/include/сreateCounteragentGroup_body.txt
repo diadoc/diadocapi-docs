@@ -1,0 +1,8 @@
+{
+    "Name": "Группа",
+    "Departments": {
+        "DepartmentIds": [
+            "6d710055-9b5d-4bc0-ba2f-9e54adda034e"
+        ]
+    }
+}

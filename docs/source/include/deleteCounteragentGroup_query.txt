@@ -1,0 +1,3 @@
+POST /DeleteCounteragentGroup?boxId={{boxId}}&counteragentGroupId=db0c29b8-bbd3-42a0-aa8b-beba1aeabdf4 HTTP/1.1
+Host: diadoc-api.kontur.ru
+Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}

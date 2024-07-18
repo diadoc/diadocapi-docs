@@ -35,7 +35,25 @@ CreateCounteragentGroup
 
 	:response Body: Тело ответа содержит структуру :doc:`../proto/CounteragentGroup`.
 
-Создать группу контрагентов может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
+.. include:: ../include/accessMethod_counteragentGroups.txt
+
+
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/сreateCounteragentGroup_query.txt
+
+**Пример тела запроса:**
+
+.. literalinclude:: ../include/сreateCounteragentGroup_body.txt
+	:language: json
+
+**Пример ответа:**
+
+.. literalinclude:: ../include/сreateCounteragentGroup_resp.txt
+	:language: json
 
 
 ----
