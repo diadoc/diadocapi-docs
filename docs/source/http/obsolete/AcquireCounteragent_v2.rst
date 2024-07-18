@@ -1,5 +1,5 @@
-AcquireCounteragent
-===================
+AcquireCounteragent (V2)
+========================
 
 .. warning::
 	Эта версия метода устарела. Используйте новую версию метода :doc:`../AcquireCounteragent`.

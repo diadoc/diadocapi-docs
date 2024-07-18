@@ -1,5 +1,5 @@
-GetDocflowsByPacketId
-======================
+GetDocflowsByPacketId (V2)
+==========================
 
 .. warning::
 	Эта версия метода устарела. Используйте новую версию метода :doc:`../GetDocflowsByPacketId_V3`.

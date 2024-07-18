@@ -1,5 +1,5 @@
-SearchDocflows
-==============
+SearchDocflows (V2)
+===================
 
 .. warning::
 	Эта версия метода устарела. Используйте новую версию метода :doc:`../SearchDocflows_V3`.
