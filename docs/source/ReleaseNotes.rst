@@ -70,20 +70,20 @@
 
 	- Реализовали методы:
 
-		- :doc:`http/CreateCounteragentGroup` — создает группу контрагентов,
-		- :doc:`http/UpdateCounteragentGroup` — редактирует группу контрагентов,
-		- :doc:`http/DeleteCounteragentGroup` — удаляет группу контрагентов,
-		- :doc:`http/AddCounteragentToGroup` — добавляет контрагента в группу,
-		- :doc:`http/GetCounteragentGroups` — возвращает список групп контрагентов,
-		- :doc:`http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе,
-		- :doc:`http/GetCounteragentGroup` — возвращает информацию о группе контрагентов.
+		- :doc:`http/AddCounteragentToGroup` — добавляет контрагента в группу
+		- :doc:`http/CreateCounteragentGroup` — создает группу контрагентов
+		- :doc:`http/DeleteCounteragentGroup` — удаляет группу контрагентов
+		- :doc:`http/GetCounteragentGroup` — возвращает информацию о группе контрагентов
+		- :doc:`http/GetCounteragentGroups` — возвращает список групп контрагентов
+		- :doc:`http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе
+		- :doc:`http/UpdateCounteragentGroup` — изменяет параметры группы контрагентов
 
 	- Добавили структуры:
 
-		- :doc:`proto/CounteragentGroup` — представляет собой группу контрагентов,
-		- :doc:`proto/DepartmentsInGroup` — представляет собой список идентификаторов подразделений, в которые группа контрагентов может отправлять документы.
+		- :doc:`proto/CounteragentGroup` — хранит информацию о группе контрагентов
+		- :doc:`proto/DepartmentsInGroup` — хранит список идентификаторов подразделений, в которые группа контрагентов может отправлять документы
 
-	- Добавили поле ``CounteragentGroupId`` в структуры :doc:`proto/Counteragent` и :doc:`proto/GetOrganizationsByInnListResponse`. В поле возвращается идентификатор группы, в которую добавлен контрагент.
+	- Добавили поле ``CounteragentGroupId`` в структуры :doc:`proto/Counteragent` и :doc:`proto/GetOrganizationsByInnListResponse`. В нем возвращается идентификатор группы, в которую добавлен контрагент.
 
 
 06.03.2024
