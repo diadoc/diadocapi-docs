@@ -55,10 +55,10 @@ BoxCounteragentEventList
 		- ``CounteragentRejectedInvitation`` — контрагент отклонил мое приглашение;
 		- ``IBrokeUpWithCounteragent`` — я разорвал отношения с контрагентом;
 		- ``CounteragentBrokeUpWithMe`` — контрагент разорвал отношения со мной;
-		- ``IForgotCounteragent`` — 11;
-		- ``CounteragentForgotMe`` — 12;
-		- ``IMadeCounteragent`` — 13;
-		- ``CounteragentMadeMe`` — 14;
+		- ``IForgotCounteragent`` — отношения с контрагентом разорваны, статус установлен вручную или автоматически;
+		- ``CounteragentForgotMe`` — отношения с контрагентом разорваны, статус установлен вручную или автоматически;
+		- ``IMadeCounteragent`` — отношения с контрагентом установлены, статус установлен вручную или автоматически;
+		- ``CounteragentMadeMe`` — отношения с контрагентом установлены, статус установлен вручную или автоматически.
 
 - ``TotalCount`` — количество событий, удовлетворяющих запросу.
 - ``TotalCountType`` — параметр, указывающий, является ли значение ``TotalCount`` точным или подсчет был ограничен максимальным количеством событий в ответе. Принимает значения из перечисления :doc:`../proto/TotalCountType`.
