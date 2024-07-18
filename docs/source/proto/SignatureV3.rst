@@ -15,6 +15,7 @@ SignatureV3
         optional SignatureVerificationResult VerificationResult = 6;
         optional Timestamp DeliveredAt = 7;
         optional SignaturePowerOfAttorney PowerOfAttorney = 8;
+        optional PowerOfAttorneyAttachmentStatus PowerOfAttorneyAttachmentStatus = 9;
     }
 
 - ``Cms`` — информация о содержимом оригинальной подписи, представленная структурой :doc:`Entity`.
@@ -25,6 +26,8 @@ SignatureV3
 - ``VerificationResult`` — результат проверки подписи, представленный структурой :doc:`SignatureVerificationResult`. Возвращается в ответе методов, если в запросе был установлен флаг ``InjectEntityContent=true``.
 - ``DeliveredAt`` — время доставки подписи, представленная структурой :doc:`Timestamp`.
 - ``PowerOfAttorney`` — информация о машиночитаемой доверенности и ее статусе, представленная структурой :doc:`SignaturePowerOfAttorney`.
+- ``PowerOfAttorneyAttachmentStatus`` — статус приложенности машиночитаемой доверенности к подписи, представленный структурой :doc:`PowerOfAttorneyAttachmentStatus`.
+
 
 ----
 
