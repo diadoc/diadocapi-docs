@@ -2,7 +2,7 @@ GetDocflowsByPacketId
 ======================
 
 .. warning::
-	Метод относится к устаревшей версии Docflow API. Используйте метод :doc:`../GetDocflowsByPacketId_V3` последней версии :doc:`../../Docflow API` — V3.
+	Эта версия метода устарела. Используйте новую версию метода — :doc:`../GetDocflowsByPacketId_V3`.
 
 Метод ``GetDocflowsByPacketId`` возвращает список документов, находящихся в пакете.
 
