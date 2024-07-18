@@ -114,3 +114,16 @@
 	- ``DocumentTypeDescriptionV2.Functions[].Versions[].Titles[].SignerInfo.SignerUserDataXsdUrl`` — ссылка для получения XSD-схемы упрощенного XML-фала подписанта: ``/GetContent?typeNamedId=UniversalTransferDocument&function=СЧФ&version=utd970_05_02_01&titleIndex=0&contentType=SignerUserContractXsd``.
 
 Чтобы получить XSD-схему для формирования XML-блока подписанта, вызовите метод  ``GetContent`` по ссылке из поля ``SignerUserDataXsdUrl``. В ответ метод вернет файл XSD-схемы SignerUserData.xsd.
+
+
+----
+
+.. rubric:: См. также
+
+*Инструкции:*
+	- :doc:`generation`
+	- :doc:`parsing`
+	- :doc:`utd`
+
+*Методы для работы с типами документов:*
+	- :doc:`../http/GetDocumentTypes` — возвращает описание типов документов, доступных в ящике

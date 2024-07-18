@@ -1,0 +1,15 @@
+{
+    "FromBoxId": "{{boxId_sender}}",
+    "ToBoxId": "{{boxId_recipient}}",
+    "DocumentAttachments": [
+        {
+            "SignedContent": {
+                "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",        // содержимое XML-файла в кодировке base-64
+                "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW"         // содержимое файла подписи в кодировке base-64
+            },
+            "TypeNamedId": "UniversalTransferDocument",
+            "Function": "СЧФДОП",
+            "Version": "utd820_05_01_02_hyphen"
+        }
+    ]
+}

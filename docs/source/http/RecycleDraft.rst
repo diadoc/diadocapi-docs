@@ -27,4 +27,4 @@ RecycleDraft
 *Определение:*
 	- :doc:`../entities/draft`
 
-.. include:: ../reused_text/draft_seealso.txt
+.. include:: ../include/seealso_draft.txt

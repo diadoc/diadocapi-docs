@@ -34,4 +34,4 @@ GeneratePrintForm
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/printform_seealso.txt
+.. include:: ../include/seealso_printform.txt

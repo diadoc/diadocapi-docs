@@ -17,7 +17,7 @@ SenderTitleDocflow
 
 - *IsFinished* - признак того, что документооборот по титулу отправителя завершен, т. е. не требует дальнейших действий
 - :doc:`Attachment <SignedAttachmentV3>` - данные о файле титула отправителя и подписи под ним
-- :doc:`SentAt <Timestamp>` - метка времени отправки титула отправителя
-- :doc:`DeliveredAt <Timestamp>` - метка времени доставки титула отправителя в ящик получателя
+- :doc:`SentAt <Timestamp>` - время отправки титула отправителя
+- :doc:`DeliveredAt <Timestamp>` - время доставки титула отправителя в ящик получателя
 - :doc:`RoamingNotification` - данные о доставке документа в роуминг
 - :doc:`SenderSignatureStatus` - статус подписи отправителя

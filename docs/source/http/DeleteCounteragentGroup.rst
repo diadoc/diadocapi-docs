@@ -28,4 +28,4 @@ DeleteCounteragentGroup
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/counteragentgroup_seealso.txt
+.. include:: ../include/seealso_counteragentgroup.txt

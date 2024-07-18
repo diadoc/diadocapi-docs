@@ -76,7 +76,7 @@ DocumentVersion
     }
 
 - ``Version`` — идентификатор версии. Уникальный в рамках функции документа.
-- ``SupportsContentPatching``— флаг, указывающий, что тип поддерживает :ref:`подготовку к подписанию <doc_prepare_to_sign>` документа.
+- ``SupportsContentPatching``— флаг, указывающий, что тип поддерживает :doc:`подготовку к подписанию <../../instructions/preparetosign>` документа.
 - ``SupportsEncrypting`` — флаг, указывающий, что тип поддерживает отправку зашифрованных документов.
 - ``SupportsPredefinedRecipientTitle``— флаг, указывающий, что тип поддерживает отправкуа :doc:`предопределенного титула получателя <../../howto/example_predefined_recipient_title>`.
 - ``SupportsAmendmentRequest``— флаг, указывающий, что тип поддерживает отправку запрос на уточнение.

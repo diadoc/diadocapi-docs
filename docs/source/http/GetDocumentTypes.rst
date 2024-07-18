@@ -29,3 +29,11 @@
 		- ``DocumentTypes`` — список типов документов, представленных структурой :doc:`../proto/DocumentTypeDescriptionV2`.
 		
 Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../instructions/getdoctypes`.
+
+
+----
+
+.. rubric:: См. также
+
+*Инструкции:*
+	- :doc:`../instructions/getdoctypes`

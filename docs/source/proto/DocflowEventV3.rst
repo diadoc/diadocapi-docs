@@ -1,33 +1,35 @@
 DocflowEventV3
 ==============
 
+Структура ``DocflowEventV3`` представляет собой событие, возвращаемое методом :doc:`../http/GetDocflowEvents_V3`.
+
 .. code-block:: protobuf
 
-   message DocflowEventV3
-   {
-       optional string EventId = 1;
-       optional Timestamp Timestamp = 2;
-       optional DocumentId DocumentId = 3;
-       optional bytes IndexKey = 4;
-       optional DocumentWithDocflowV3 Document = 5;
-       optional string PreviousEventId = 6;
-       optional DocumentWithDocflowV3 PreviousDocumentState = 7;
-   }
+    message DocflowEventV3
+    {
+        optional string EventId = 1;
+        optional Timestamp Timestamp = 2;
+        optional DocumentId DocumentId = 3;
+        optional bytes IndexKey = 4;
+        optional DocumentWithDocflowV3 Document = 5;
+        optional string PreviousEventId = 6;
+        optional DocumentWithDocflowV3 PreviousDocumentState = 7;
+    }
 
-Структура представляет одно событие, возвращаемое методом :doc:`../http/GetDocflowEvents_V3`.
+- ``EventId`` — идентификатор события.
+- ``Timestamp`` — время возникновения события, представленное структурой :doc:`Timestamp`.
+- ``DocumentId`` — идентификатор документа, с которым произошло событие, представленный структурой :doc:`DocumentId`.
+- ``IndexKey`` — ключ события. Используется для постраничной выгрузки событий; позволяет указать, с какого события выгружать очередную страницу.
+- ``Document`` — полное состояние документа после возникновения данного события, представленное структурой :doc:`Document <DocumentWithDocflowV3>`.
+- ``PreviousEventId`` — идентификатор предыдущего события по текущему документу.
+- ``PreviousDocumentState`` - полное состояние документа после возникновения предыдущего события — до возникновения данного события, представленное стурктурой :doc:`PreviousDocumentState <DocumentWithDocflowV3>`. 
 
--  *EventId* - идентификатор события.
+Чтобы узнать изменения, произошедшие с документом в связи с данным событием, нужно сравнить значения полей ``Document`` и ``PreviousDocumentState``.
 
--  :doc:`Timestamp` - метка времени возникновения события.
 
--  :doc:`DocumentId` - идентификатор документа, с которым произошло событие.
+----
 
--  *IndexKey* - ключ события. Используется для постраничной выгрузки и позволяет указать, с какого события выгружать очередную страницу.
+.. rubric:: См. также
 
--  :doc:`Document <DocumentWithDocflowV3>` - полное состояние документа после возникновения данного события.
-
--  *PreviousEventId* - идентификатор предыдущего события по данному документу.
-
--  :doc:`PreviousDocumentState <DocumentWithDocflowV3>` - полное состояние документа после возникновения предыдущего события (т.е. до возникновения данного события). 
-
-Сравнивая содержимое полей *Document* и *PreviousDocumentState*, можно составить картину изменений, которые произошли с документом.
+*Структура используется:*
+	- в структуре :doc:`GetDocflowEventsResponseV3`

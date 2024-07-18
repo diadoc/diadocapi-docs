@@ -2,7 +2,7 @@ InvoiceCorrectionInfo
 =====================
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../../http/obsolete/GenerateInvoiceXml`.
+	Структура используется в устаревшем методе :doc:`../../http/obsolete/GenerateInvoiceXml`.
 
 .. code-block:: protobuf
 

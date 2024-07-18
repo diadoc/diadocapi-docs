@@ -11,7 +11,7 @@ PowerOfAttorneyValidationStatus
         optional string StatusText = 3;
         repeated PowerOfAttorneyValidationError Errors = 4;
     }
- 
+
     enum Severity {
         UnknownSeverity = 0;
         Info = 1;
@@ -19,15 +19,16 @@ PowerOfAttorneyValidationStatus
         Warning = 3;
         Error = 4;
     }
-  
+
     enum PowerOfAttorneyValidationStatusNamedId {
         UnknownStatus = 0;
         CanNotBeValidated = 1;
         IsValid = 2;
         IsNotValid = 3;
         ValidationError = 4;
+        IsNotAttached = 5;
     }
-  
+
     message PowerOfAttorneyValidationError {
         required string Code = 1;
         required string Text = 2;
@@ -43,11 +44,12 @@ PowerOfAttorneyValidationStatus
 
 - ``StatusNamedId`` — текстовый идентификатор статуса, значение из перечисления ``PowerOfAttorneyValidationStatusNamedId``:
 
-		- ``UnknownStatus`` — значение по умолчанию.
-		- ``CanNotBeValidated`` — не удалось передать МЧД на валидацию. Ошибка может возникнуть в случае, когда файл МЧД некорректный или из него не удалось получить необходимые данные для проверки — данные о доверенности, о доверителе, о представителе из подписи и т.п.
-		- ``IsValid`` — все проверки выполнены без ошибок.
-		- ``IsNotValid`` — среди МЧД есть хотя бы одна невалидная.
-		- ``ValidationError`` — МЧД была передана на валидацию, но во время выполнения проверок произошла внутренняя ошибка.
+		- ``UnknownStatus`` — значение по умолчанию;
+		- ``CanNotBeValidated`` — не удалось передать МЧД на валидацию. Ошибка может возникнуть в случае, когда файл МЧД некорректный или из него не удалось получить необходимые данные для проверки — данные о доверенности, о доверителе, о представителе из подписи и т.п.;
+		- ``IsValid`` — все проверки выполнены без ошибок;
+		- ``IsNotValid`` — среди МЧД есть хотя бы одна невалидная;
+		- ``ValidationError`` — МЧД была передана на валидацию, но во время выполнения проверок произошла внутренняя ошибка;
+		- ``IsNotAttached`` — МЧД не приложена к подписи, возвращается только для общего (сводного) статуса МЧД.
 
 - ``StatusText`` — удобочитаемый текст статуса.
 - ``Errors`` — список ошибок, представленных структурой ``PowerOfAttorneyValidationError`` с полями:

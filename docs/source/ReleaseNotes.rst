@@ -2,10 +2,26 @@
 =====================
 
 
+03.07.2024
+----------
+
+**SDK**: `C# 2.20.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.20.1>`__ | `Java 3.20.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.20.2>`__
+
+- Реализовали возможность проверки приложенности машиночитаемой доверенности (МЧД) к подписи (подробно в инструкции :doc:`instructions/powerofattorney`):
+
+	- добавили структуру :doc:`proto/PowerOfAttorneyAttachmentStatus` для хранения статуса приложенности МЧД к подписи; значение возвращается:
+
+		- в структуре :doc:`proto/Entity message` в поле ``PowerOfAttorneyAttachmentStatus``;
+		- в структуре :doc:`proto/SignatureV3` в поле ``PowerOfAttorneyAttachmentStatus``;
+
+	- в структуру :doc:`proto/SignatureInfo` добавили поле ``CertificateSubjectType`` с типом владельца сертификата.
+	- в структуру :doc:`PowerOfAttorneyValidationStatusNamedId <proto/PowerOfAttorneyValidationStatus>` добавлено значение ``IsNotAttached``.
+
+
 26.06.2024
 ----------
 
-**SDK**: `C# 2.19.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.19.0>`__ | `Java 3.19.0<https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.19.0>`__
+**SDK**: `C# 2.19.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.19.0>`__ | `Java 3.19.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.19.0>`__
 
 - Расширили структуру :doc:`proto/Address`: в структуру ``RussianAddress`` добавили поле ``OtherInformation``.
 
@@ -829,7 +845,7 @@
 ----------
 **SDK**: `C# 1.55.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.55.7>`__ | `Java 1.55.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.55.7>`__ | `C++ 1.55.7 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.55.7>`__
 
-- Добавлен метод :doc:`http/UpdateMyUser` для редактирования данных пользователя.
+- Добавлен метод :doc:`http/obsolete/UpdateMyUser` для редактирования данных пользователя.
 
 
 02.10.2018
@@ -913,7 +929,7 @@
 ----------
 **SDK**: `C# 1.51.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.9>`__ | `Java 1.51.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.9>`__ | `C++ 1.51.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.9>`__
 
-- В структуре :doc:`proto/obsolete/Docflow` добавлено поле :doc:`proto/Docflow_RoamingNotification`, содержащее данные о доставке документа в роуминг.
+- В структуре :doc:`proto/obsolete/Docflow` добавлено поле :doc:`proto/RoamingNotification`, содержащее данные о доставке документа в роуминг.
 
 
 25.06.2018
@@ -927,7 +943,7 @@
 ----------
 **SDK**: `C# 1.51.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.7>`__ | `Java 1.51.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.7>`__ | `C++ 1.51.7 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.7>`__
 
-- В структуре :doc:`proto/Document` добавлено поле ``EditingSettingId``, содержащее идентификатор :ref:`настройки редактирования <editing_settings>` документа, если он был создан из шаблона с возможностью редактирования полей.
+- В структуре :doc:`proto/Document` добавлено поле ``EditingSettingId``, содержащее идентификатор :doc:`настройки редактирования <instructions/editingsettings>` документа, если он был создан из шаблона с возможностью редактирования полей.
 - В структуре :doc:`proto/OrganizationUserPermissions` добавлено поле ``CanCreateDocuments``, указывающее, может ли пользователь создавать документы и работать с черновиками.
 
 

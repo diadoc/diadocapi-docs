@@ -61,7 +61,7 @@ GetForwardedDocumentEvents
 		- ``TotalCount`` — общее количество событий, соответствующих заданным параметрам.
 		- ``Events`` — список событий, представленных структурой ``ForwardedDocumentEvent`` с полями:
 
-			- ``Timestamp`` — метка времени возникновения события, представленная структурой :doc:`../proto/Timestamp`.
+			- ``Timestamp`` — время возникновения события, представленная структурой :doc:`../proto/Timestamp`.
 			- ``ForwardedDocumentId`` — идентификатор пересланного документа, представленный структурой :doc:`ForwardedDocumentId <../proto/ForwardedDocument>`.
 			- ``IndexKey`` — ключ, используемый для постраничного получения списка событий. Может передаваться в качестве параметра запроса ``AfterIndexKey``.
 			- ``ForwardedDocument`` — пересланный документ, представленный структурой :doc:`../proto/ForwardedDocument`.
@@ -105,4 +105,4 @@ GetForwardedDocumentEvents
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/event_seealso.txt
+.. include:: ../include/seealso_event.txt

@@ -37,4 +37,4 @@ UpdateEmployeePowerOfAttorney
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/powerofattorney_seealso.txt
+.. include:: ../include/seealso_powerofattorney.txt

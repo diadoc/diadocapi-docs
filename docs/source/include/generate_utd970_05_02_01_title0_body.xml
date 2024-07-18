@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UniversalTransferDocument Function="СЧФДОП" DocumentDate="01.02.2023" DocumentNumber="123" Currency="643" Uid="UID" ApprovedStructureAdditionalInfoFields="1111.2222.0000" DocumentName="Документ о передаче товаров (работ, услуг, имущественных прав)" SenderFnsParticipantId="2BM-9681265956-968101000-202207281000014689156" RecipientFnsParticipantId="2BM-9677800047-967701000-202207281004154081709" FileIdSeller="СвСчФакт-ИмяФайлИспрПрод" FileIdBuyer="СвСчФакт-ИмяФайлИспрПок" CurrencyRate="12" GovernmentContractInfo="1234567890123456789012345" DocumentCreator="Документ-НаимЭконСубСост" CircumFormat="12345" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <Sellers>
+        <Seller>
+            <OrganizationDetails Okpo="0166273597" Okopf="12200" FullNameOkopf="СвПрод-ПолнНаимОПФ" Department="СвПрод-СтруктПодр" OrganizationAdditionalInfo="СвПрод-ИнфДляУчаст" ShortOrgName="СвПрод-СокрНаим" OtherContactInfo="Контакт-ИнКонт" CorrespondentAccount="30101810500000000641" BankAccountNumber="49634485849155" BankName="СИБИРСКИЙ БАНК ПАО СБЕРБАНК" BankId="045004641" OrgType="2" OrgName="СвЮЛУч-НаимОрг" Inn="9103624367" Kpp="187245452">
+                <Phones>
+                    <Phone>8-343-123-4567</Phone>
+                </Phones>
+                <Emails>
+                    <Email>email@google.com</Email>
+                </Emails>
+                <Address>
+                    <RussianAddress Region="72" ZipCode="344249" Territory="Тюмень" City="Тюмень" Locality="АдрРФ-НаселПункт" Street="АдрРФ-Улица" Building="АдрРФ-Дом" Block="АдрРФ-Корпус" Apartment="АдрРФ-Кварт" OtherInfo="АдрРФ-ИныеСвед"/>
+                </Address>
+            </OrganizationDetails>
+        </Seller>
+    </Sellers>
+    <Shippers>
+        <Shipper>
+            <OrganizationDetails Okpo="76098674" Okopf="12000" FullNameOkopf="ГрузОтпр-ПолнНаимОПФ" Department="ГрузОтпр-СтруктПодр" OrganizationAdditionalInfo="ГрузОтпр-ИнфДляУчаст" ShortOrgName="ГрузОтпр-СокрНаим" OrgType="1" OrgName="Иванов Иван Иванович" Inn="753381367749" Ogrn="421319982803452" OgrnDate="12.12.2012" IndividualEntityRegistrationCertificate="СвИП-СвГосРегИП" OrganizationOrPersonInfo="СвИП-ИныеСвед">
+                <Address>
+                    <GarAddress AddressCode="03510210-e5f3-4bc6-bbd2-24d7fe25b3ed" Region="72" ZipCode="450133" LandPlot="ЗемелУчасток">
+                        <MunicipalTerritory Type="1" NameOrNumber="МуниципРайон-Наим"/>
+                        <UrbanSettlement Type="1" NameOrNumber="ГородСелПоселен-Наим"/>
+                        <Locality Type="НаселенПункт" NameOrNumber="НаселенПункт-Наим"/>
+                        <ElementPlanningStructure Type="ЭлПланСтруктур" NameOrNumber="ЭлПланСтруктур-Наим"/>
+                        <ElementRoadNetwork Type="ЭлУлДорСети" NameOrNumber="ЭлУлДорСети-Наим"/>
+                        <Buildings>
+                            <Building Type="Здание" NameOrNumber="Здание-Номер"/>
+                        </Buildings>
+                        <RoomBuilding Type="ПомещЗдания" NameOrNumber="ПомещЗдания-Номер"/>
+                        <RoomApartment Type="ПомещКвартиры" NameOrNumber="ПомещКвартиры-Номер"/>
+                    </GarAddress>
+                </Address>
+            </OrganizationDetails>
+        </Shipper>
+    </Shippers>
+    <Consignees>
+        <Consignee>
+            <OrganizationDetails Okpo="18989253" Okopf="12000" FullNameOkopf="ГрузПолуч-ПолнНаимОПФ" Department="ГрузПолуч-СтруктПодр" OrganizationAdditionalInfo="ГрузПолуч-ИнфДляУчаст" ShortOrgName="ГрузПолуч-СокрНаим" BankAccountNumber="569712456874" BankName="ЗАО Сбербанк России, отделение на Московской 11" BankId="012345671" OrgType="3" OrgName="Петров Петр Петрович" Inn="518191632595" PersonStatusId="1" OrganizationOrPersonInfo="СвФЛУч-ИныеСвед">
+                <Address>
+                    <ForeignAddress Country="112" Address="АдрИнф-АдрТекст"/>
+                </Address>
+            </OrganizationDetails>
+        </Consignee>
+    </Consignees>
+    <PaymentDocuments>
+        <Document Number="СЧФ/123/456" Date="01.02.2023" Total="1000"/>
+    </PaymentDocuments>
+    <DocumentShipments>
+        <DocumentShipment DocumentName="Документ о передаче товаров (работ, услуг, имущественных прав)" DocumentNumber="123" DocumentDate="01.02.2023">
+            <IdentificationDetails Inn="1978337389"/>
+        </DocumentShipment>
+    </DocumentShipments>
+    <Buyers>
+        <Buyer>
+            <OrganizationDetails Okpo="74047744" Okopf="12200" FullNameOkopf="СвПокуп-ПолнНаимОПФ" Department="СвПокуп-СтруктПодр" OrganizationAdditionalInfo="СвПокуп-ИнфДляУчаст" ShortOrgName="СвПокуп-СокрНаим" OrgType="2" OrgName="СвЮЛУч-НаимОрг" Inn="1234567894" Kpp="667301001">
+                <Address>
+                    <ForeignAddress Country="112" Address="АдрИнф-АдрТекст"/>
+                </Address>
+            </OrganizationDetails>
+        </Buyer>
+    </Buyers>
+    <CommitmentTypes>
+        <CommitmentType CommitmentTypeCode="1" CommitmentTypeName="ВидОбяз-НаимВидОбяз"/>
+    </CommitmentTypes>
+    <SellerInfoCircumPublicProc DateStateContract="02.02.2022" NumberStateContract="5" SellerTreasuryCode="0160"/>
+    <FactorInfo>
+        <OrganizationDetails Okpo="74047744" Okopf="12000" FullNameOkopf="СвФактор-ПолнНаимОПФ" Department="СвФактор-СтруктПодр" OrganizationAdditionalInfo="СвФактор-ИнфДляУчаст" ShortOrgName="СвФактор-СокрНаим" OrgType="1" OrgName="ФИО-Фамилия ФИО-Имя ФИО-Отчество" Inn="916363626153" Ogrn="421032906553286" OgrnDate="21.08.2019" OrganizationOrPersonInfo="СвИП-ИныеСвед">
+            <Address>
+                <RussianAddress Region="72" ZipCode="344249" Territory="Тюмень" City="Тюмень" Locality="АдрРФ-НаселПункт" Street="АдрРФ-Улица" Building="АдрРФ-Дом" Block="АдрРФ-Корпус" Apartment="АдрРФ-Кварт" OtherInfo="АдрРФ-ИныеСвед"/>
+            </Address>
+        </OrganizationDetails>
+    </FactorInfo>
+    <MainAssignMonetaryClaim DocumentName="ОснУстДенТреб-РеквНаимДок" DocumentNumber="144" DocumentDate="04.04.2004">
+        <IdentificationDetails Inn="342265432525"/>
+    </MainAssignMonetaryClaim>
+    <AccompanyingDocuments>
+        <AccompanyingDocument DocumentName="СопрДокФХЖ-РеквНаимДок" DocumentNumber="876" DocumentDate="05.05.2005">
+            <IdentificationDetails StatusId="PhysicalPerson" Country="112" OrgName="ДаннИно-Наим" LegalEntityId="ДаннИно-Идентиф" OrganizationOrPersonInfo="ДаннИно-ИныеСвед"/>
+        </AccompanyingDocument>
+    </AccompanyingDocuments>
+    <AdditionalInfoId InfoFileId="5b0a8e80-1a7b-4194-a64d-60ca9f10dd82">
+        <AdditionalInfo Id="ТекстИнф-Идентиф" Value="ТекстИнф-Идентиф"/>
+    </AdditionalInfoId>
+    <Table TotalWithVatExcluded="8965" Vat="456.00" Total="10000">
+        <Item TaxRate="TwentyPercent" Product="СведТов-НаимТов" Unit="113" UnitName="м" Quantity="16" Price="200" SubtotalWithVatExcluded="654" Vat="1000.000000000000000" RestoredVat="550" Subtotal="784.8" ItemMark="5" AdditionalProperty="Приз" ItemToRelease="102" ItemKind="СортТов" ItemSeries="ДопСведТов-СерияТов" Gtin="10000057074365" ItemTypeCode="1111111111" ProductTypeCode="676">
+            <CustomsDeclarations>
+                <CustomsDeclaration Country="980" DeclarationNumber="123456"/>
+            </CustomsDeclarations>
+            <AccompanyingDocuments>
+                <AccompanyingDocument DocumentName="СопрДокТов-РеквНаимДок" DocumentNumber="144" DocumentDate="04.04.2004">
+                    <IdentificationDetails Inn="342265432525"/>
+                </AccompanyingDocument>
+            </AccompanyingDocuments>
+            <DepreciationInfo DepreciationGroup="13" Okof="165" UsefulPeriod="23" ActualPeriod="100"/>
+            <ItemTracingInfos>
+                <ItemTracingInfo RegNumberUnit="10001000/010123/1234567/001" Unit="778" Quantity="30" PriceWithVatExcluded="100"/>
+            </ItemTracingInfos>
+            <ItemIdentificationNumbers>
+                <ItemIdentificationNumber TransPackageId="НомСредИдентТов-ИдентТрансУпак" QuantityMark="100" BatchMarkCode="111">
+                    <Unit>НомСредИдентТов-КИЗ</Unit>
+                </ItemIdentificationNumber>
+            </ItemIdentificationNumbers>
+        </Item>
+        <Item TaxRate="TwentyPercent" Product="Product2 &gt; 2.0 мм" Unit="778" UnitName="уп" Quantity="114.100" Price="516.67" SubtotalWithVatExcluded="58951.67" Vat="1000" RestoredVat="1345" Subtotal="70742.00" ItemMark="5" AdditionalProperty="ДопП" ItemVendorCode="ДопСведТов-КодТов" ItemToRelease="505" ItemCharact="ДопСведТов-ХарактерТов" ItemArticle="ДопСведТов-АртикулТов" ItemKind="СортТов" ItemSeries="ДопСведТов-СерияТов" Gtin="10000057074365" ItemTypeCode="1111111111">
+            <CustomsDeclarations>
+                <CustomsDeclaration Country="178" DeclarationNumber="555555"/>
+            </CustomsDeclarations>
+            <DepreciationInfo DepreciationGroup="12" Okof="165" UsefulPeriod="234" ActualPeriod="100"/>
+        </Item>
+    </Table>
+    <TransferInfo OperationInfo="СвПер-СодОпер" OperationType="СвПер-ВидОпер" TransferDate="15.02.2024" TransferStartDate="16.02.2024" TransferEndDate="16.02.2024">
+        <CreatedThingTransferDocument DocumentName="ДокПерВещ-РеквНаимДок" DocumentNumber="098" DocumentDate="03.02.2024">
+            <IdentificationDetails Inn="4620212891"/>
+        </CreatedThingTransferDocument>
+        <TransferBases>
+            <TransferBase DocumentName="ОснПер-РеквНаимДок" DocumentNumber="567" DocumentDate="14.02.2024">
+                <IdentificationDetails Inn="144647873819"/>
+            </TransferBase>
+        </TransferBases>
+        <OtherIssuer LastName="Иванов" FirstName="Иван" MiddleName="Иванович" Position="ПредОргПер-Должность" EmployeeInfo="ПредОргПер-ИныеСвед" OrganizationName="ПредОргПер-НаимОргПер">
+            <EmployeeBase DocumentName="ОснПолнПредПер-РеквНаимДок" DocumentNumber="098" DocumentDate="03.02.2024">
+                <IdentificationDetails Inn="4620212891"/>
+            </EmployeeBase>
+            <OrganizationBase DocumentName="ОснДоверОргПер-РеквНаимДок" DocumentNumber="098" DocumentDate="03.02.2024">
+                <IdentificationDetails Inn="4620212891"/>
+            </OrganizationBase>
+        </OtherIssuer>
+        <AdditionalInfoId InfoFileId="9c3adc2b-a085-4acd-af8c-3494290d782c">
+            <AdditionalInfo Id="Идентиф1в" Value="Значен1в"/>
+            <AdditionalInfo Id="Идентиф2в" Value="Значен2в"/>
+        </AdditionalInfoId>
+    </TransferInfo>
+    <Signers>
+        <Signer SignerPowersConfirmationMethod="6">
+            <Fio FirstName="Иван" LastName="Иванов" MiddleName="Иванович"/>
+            <Position PositionSource="Manual">Должность</Position>
+        </Signer>
+    </Signers>
+    <DocumentCreatorBase DocumentName="ОснДоверОргСост-РеквНаимДок" DocumentNumber="123" DocumentDate="01.02.2023">
+        <IdentificationDetails StatusId="PhysicalPerson" Country="112" OrgName="ДаннИно-Наим" LegalEntityId="ДаннИно-Идентиф" OrganizationOrPersonInfo="ДаннИно-ИныеСвед"/>
+    </DocumentCreatorBase>
+</UniversalTransferDocument>

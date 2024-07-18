@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UniversalTransferDocumentBuyerTitle AcceptanceDate="06.07.2024" DocumentCreator="Тестовая организация">
+    <ContentOperCode TotalCode="1" />
+    <Employee Position="Покупатель" LastName="Иванов" FirstName="Иван" MiddleName="Иванович" />
+    <Signers>
+        <Signer SignerPowersConfirmationMethod="6">
+            <Fio FirstName="Иван" LastName="Подписант" MiddleName="Иванович" />
+            <Position PositionSource="Manual">Сотрудник</Position>
+        </Signer>
+    </Signers>
+</UniversalTransferDocumentBuyerTitle>

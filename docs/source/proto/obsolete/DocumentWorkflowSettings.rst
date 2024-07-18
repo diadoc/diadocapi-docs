@@ -2,7 +2,7 @@
 ========================
 
 .. warning::
-	Структура используется устаревшим методом :ref:`GetWorkflowsSettings_v1`.
+	Структура используется в устаревшем методе :ref:`GetWorkflowsSettings_v1`.
 
 Структура ``DocumentWorkflowSettings`` используется для хранения информации о свойствах вида документооборота :doc:`../../proto/DocumentWorkflow`.
 

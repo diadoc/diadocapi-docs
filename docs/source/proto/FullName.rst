@@ -23,5 +23,5 @@ FullName
 	- в структуре :doc:`EmployeeToCreateByLogin <EmployeeToCreate>`
 	- в структуре :doc:`PowerOfAttorneyConfidant <PowerOfAttorney>`
 	- в структуре :doc:`PowerOfAttorneyIssuerPhysicalEntity <PowerOfAttorney>`
-	- в структуре :doc:`UserFullNamePatch <UserToUpdate>`
 	- в структуре :doc:`UserV2`
+	- в устаревшей структуре :doc:`UserFullNamePatch <obsolete/UserToUpdate>`

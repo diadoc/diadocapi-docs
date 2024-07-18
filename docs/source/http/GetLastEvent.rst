@@ -35,4 +35,4 @@ GetLastEvent
 
 .. rubric:: См. также
 
-.. include:: ../reused_text/event_seealso.txt
+.. include:: ../include/seealso_event.txt

@@ -2,7 +2,7 @@ AutoSignReceiptsResult
 ======================
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../../http/obsolete/AutoSignReceiptsResult`.
+	Структура используется в устаревшем методе :doc:`../../http/obsolete/AutoSignReceiptsResult`.
 
 Структура ``AutoSignReceiptsResult`` представляет собой состояние задачи на подписание извещений о получении ``InvoiceReceipt``.
 

@@ -10,7 +10,7 @@ UserV2
        required bool IsRegistered = 4;
     }
 
-Структура *UserV2* содержит информацию о пользователе. Возвращается методами :doc:`V2/GetMyUser <../http/GetMyUser>`, :doc:`../http/UpdateMyUser`.
+Структура *UserV2* содержит информацию о пользователе. Возвращается методами :doc:`V2/GetMyUser <../http/GetMyUser>`, :doc:`../http/obsolete/UpdateMyUser`.
 
 - *UserId* - идентификатор пользователя в системе;
 - *Login* - логин пользователя;

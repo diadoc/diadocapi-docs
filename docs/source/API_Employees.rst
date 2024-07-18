@@ -17,7 +17,6 @@ HTTP-интерфейс
    http/GetOrganizationUsers
    http/GetSubscriptions
    http/UpdateEmployee
-   http/UpdateMyUser
    http/UpdateSubscriptions
    http/GetMyCertificates
 
