@@ -2,7 +2,7 @@ SearchDocflowsResponse
 ======================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/SearchDocflowsResponseV3` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../SearchDocflowsResponseV3`.
 
 Структура ``SearchDocflowsResponse`` представляет собой результат поиска документов методом :doc:`../../http/obsolete/SearchDocflows`.
 

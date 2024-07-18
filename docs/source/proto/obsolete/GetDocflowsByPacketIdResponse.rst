@@ -2,7 +2,7 @@ GetDocflowsByPacketIdResponse
 =============================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/GetDocflowsByPacketIdResponseV3` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../GetDocflowsByPacketIdResponseV3`.
 
 Структура ``GetDocflowsByPacketIdResponse`` представляет собой список документов, полученных методом :doc:`../../http/obsolete/GetDocflowsByPacketId`.
 

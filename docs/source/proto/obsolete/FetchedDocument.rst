@@ -2,7 +2,7 @@ FetchedDocument
 ===============
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
+	Структура используется внутри устаревшей структуры :doc:`GetDocflowsByPacketIdResponse`.
 
 Структура ``FetchedDocument`` представляет собой один документ из списка, возвращаемого методом :doc:`../../http/obsolete/GetDocflowsByPacketId`.
 

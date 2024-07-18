@@ -2,7 +2,7 @@ InboundUniversalTransferDocumentDocflow
 =======================================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
+	Структура используется внутри устаревшей структуры :doc:`Docflow`.
 
 Структура ``InboundUniversalTransferDocumentDocflow`` представляет собой информацию о документообороте входящего УПД.
 

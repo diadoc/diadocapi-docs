@@ -2,7 +2,7 @@ GetDocflowBatchResponse
 =======================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/GetDocflowBatchResponseV3` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../GetDocflowBatchResponseV3`.
 
 Структура ``GetDocflowBatchResponse`` представляет собой список документов с информацией о документообороте по каждому из них, полученных методом :doc:`../../http/obsolete/GetDocflows`.
 

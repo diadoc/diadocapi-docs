@@ -2,7 +2,7 @@ ParseTorg12BuyerTitleXml
 =========================
 
 .. warning::
-	Метод устарел. Для парсинга документов используйте метод :doc:`../../http/ParseTitleXml`.
+	Метод устарел. Для парсинга документов используйте метод :doc:`../ParseTitleXml`.
 
 .. http:post:: /ParseTorg12BuyerTitleXml
 

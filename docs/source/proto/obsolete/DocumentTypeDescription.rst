@@ -2,7 +2,7 @@
 =======================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/DocumentTypeDescriptionV2` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../DocumentTypeDescriptionV2`.
 
 На этой странице, помимо ``DocumentTypeDescription``, описаны следующие структуры:
 

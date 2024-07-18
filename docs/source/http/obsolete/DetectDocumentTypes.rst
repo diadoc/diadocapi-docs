@@ -2,7 +2,7 @@ DetectDocumentTypes
 ===================
 
 .. warning::
-	Метод устарел. Для определения типов используйте метод :doc:`../../http/DetectDocumentTitles`.
+	Метод устарел. Для определения типов используйте метод :doc:`../DetectDocumentTitles`.
 
 Метод ``DetectDocumentTypes`` определяет возможные типы указанного документа.
 

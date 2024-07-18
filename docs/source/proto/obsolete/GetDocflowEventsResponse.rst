@@ -2,7 +2,7 @@ GetDocflowEventsResponse
 ========================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/GetDocflowEventsResponseV3` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../GetDocflowEventsResponseV3`.
 
 Структура ``GetDocflowEventsResponse`` представляет собой список событий, полученных методом :doc:`../../http/obsolete/GetDocflowEvents`.
 

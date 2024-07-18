@@ -2,7 +2,7 @@ RevocationDocflow
 =================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/RevocationDocflowV3` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../RevocationDocflowV3`.
 
 Структура ``RevocationDocflow`` представляет информацию об аннулировании документа.
 

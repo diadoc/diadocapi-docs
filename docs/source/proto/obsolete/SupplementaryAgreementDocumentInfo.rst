@@ -2,7 +2,7 @@ SupplementaryAgreementDocumentInfo
 ==================================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
+	Структура используется внутри устаревшей структуры :doc:`DocumentInfo`.
 
 Структура ``SupplementaryAgreementDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>` ``SupplementaryAgreement``.
 
