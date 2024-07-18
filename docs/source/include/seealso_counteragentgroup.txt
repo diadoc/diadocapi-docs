@@ -2,7 +2,7 @@
 	- :doc:`../entities/counteragent`
 
 *Инструкции:*
-	- :doc:`../instructions/counteragents`
+	- :doc:`../instructions/counteragentgroups`
 
 *Методы для работы с группами контрагентов:*
 	- :doc:`AddCounteragentToGroup` — добавляет контрагентов в группу
