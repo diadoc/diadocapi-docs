@@ -1,5 +1,5 @@
-GetDocflowsByPacketId (версия 3)
-================================
+GetDocflowsByPacketId (V3)
+==========================
 
 Метод ``GetDocflowsByPacketId`` возвращает список документов, находящихся в пакете.
 
