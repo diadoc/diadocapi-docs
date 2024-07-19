@@ -31,7 +31,7 @@ GetCounteragentGroups
 		- ``Groups`` — список групп контрагентов. Каждый элемент списка представлен структурой :doc:`../proto/CounteragentGroup`.
 		- ``TotalCount`` — количество групп контрагентов.
 
-.. include:: ../include/accessMethod_counteragentGroups.txt
+.. include:: ../include/accessMethod_required_manageCounteragents.txt
 
 Метод не возвращает удаленные группы контрагентов.
 

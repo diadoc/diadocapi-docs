@@ -44,7 +44,7 @@ UpdateCounteragentGroup
 
 	:response Body: Тело ответа содержит структуру :doc:`../proto/CounteragentGroup`.
 
-.. include:: ../include/accessMethod_counteragentGroups.txt
+.. include:: ../include/accessMethod_required_admin_manageCounteragents.txt
 
 
 Примеры использования

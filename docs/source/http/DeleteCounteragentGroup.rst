@@ -20,7 +20,7 @@ DeleteCounteragentGroup
 	:statuscode 409: нельзя удалить группу по умолчанию.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-.. include:: ../include/accessMethod_counteragentGroups.txt
+.. include:: ../include/accessMethod_required_admin_manageCounteragents.txt
 
 После удаления группы все контрагенты, находящиеся в ней, будут перемещены в группу «По умолчанию».
 
