@@ -36,3 +36,10 @@ GetCounteragentCertificates
 			- ``RawCertificateData`` — сертификат, сериализованный в массив байтов в DER-кодировке.
 
 Организация имеет право запрашивать список сертификатов контрагента ``counteragentOrgId``, если у нее включена возможность отправки зашифрованных документов. Эта возможность указана в поле :doc:`Organization.Box.EncryptedDocumentsAllowed <../proto/Box>`.
+
+
+----
+
+.. rubric:: См. также
+
+.. include:: ../include/seealso_counteragents.txt

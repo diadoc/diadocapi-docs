@@ -1,0 +1,13 @@
+*Определение:*
+	- :doc:`../entities/counteragent`
+
+*Инструкции:*
+	- :doc:`../instructions/counteragents`
+
+*Методы для работы с группами контрагентов:*
+	- :doc:`AcquireCounteragent` — отправляет контрагенту приглашение к партнерским отношениям
+	- :doc:`AcquireCounteragentResult` — возвращает идентификатор приглашенной организации
+	- :doc:`BreakWithCounteragent` — разрывает отношения с контрагентом
+	- :doc:`GetCounteragent` — возвращает информацию о контрагенте
+	- :doc:`GetCounteragentCertificates` — возвращает сертификаты контрагента
+	- :doc:`GetCounteragents` — возвращает контрагентов по указанным параметрам
