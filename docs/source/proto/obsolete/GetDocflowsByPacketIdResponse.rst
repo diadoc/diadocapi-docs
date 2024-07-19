@@ -4,7 +4,7 @@ GetDocflowsByPacketIdResponse
 .. warning::
 	Структура устарела. Вместо нее используется структура :doc:`../GetDocflowsByPacketIdResponseV3`.
 
-Структура ``GetDocflowsByPacketIdResponse`` представляет собой список документов, полученных методом :doc:`../../http/obsolete/GetDocflowsByPacketId`.
+Структура ``GetDocflowsByPacketIdResponse`` представляет собой список документов, полученных методом :doc:`../../http/obsolete/GetDocflowsByPacketId_v2`.
 
 .. code-block:: protobuf
 
@@ -22,4 +22,4 @@ GetDocflowsByPacketIdResponse
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/GetDocflowsByPacketId`
+	- в теле ответа метода :doc:`../../http/obsolete/GetDocflowsByPacketId_v2`

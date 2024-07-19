@@ -4,7 +4,7 @@ FetchedDocument
 .. warning::
 	Структура используется внутри устаревшей структуры :doc:`GetDocflowsByPacketIdResponse`.
 
-Структура ``FetchedDocument`` представляет собой один документ из списка, возвращаемого методом :doc:`../../http/obsolete/GetDocflowsByPacketId`.
+Структура ``FetchedDocument`` представляет собой один документ из списка, возвращаемого методом :doc:`../../http/obsolete/GetDocflowsByPacketId_v2`.
 
 .. code-block:: protobuf
 
@@ -15,7 +15,7 @@ FetchedDocument
    }
 
 - ``DocumentWithDocflow`` — информация о документе — метаданные и состояние документооборота. Представлена структрурой :doc:`DocumentWithDocflow`.
-- ``IndexKey`` — ключ, используемый для постраничной загрузки документов из одного пакета. При передаче в метод :doc:`../../http/obsolete/GetDocflowsByPacketId` позволяет пропустить те документы, которые были выгружены ранее, до данного документа включительно.
+- ``IndexKey`` — ключ, используемый для постраничной загрузки документов из одного пакета. При передаче в метод :doc:`../../http/obsolete/GetDocflowsByPacketId_v2` позволяет пропустить те документы, которые были выгружены ранее, до данного документа включительно.
 
 ----
 

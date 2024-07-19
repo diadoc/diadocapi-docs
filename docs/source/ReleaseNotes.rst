@@ -530,7 +530,6 @@
 - Следующие методы теперь могут возвращать неточное количество событий ``TotalCount``:
 
  - :doc:`http/GetNewEvents`
- - :doc:`http/obsolete/GetDocflowEvents`
  - :doc:`http/GetDocflowEvents_V3`
  - :doc:`http/GetForwardedDocumentEvents`
 

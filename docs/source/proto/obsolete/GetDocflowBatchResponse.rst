@@ -4,7 +4,7 @@ GetDocflowBatchResponse
 .. warning::
 	Структура устарела. Вместо нее используется структура :doc:`../GetDocflowBatchResponseV3`.
 
-Структура ``GetDocflowBatchResponse`` представляет собой список документов с информацией о документообороте по каждому из них, полученных методом :doc:`../../http/obsolete/GetDocflows`.
+Структура ``GetDocflowBatchResponse`` представляет собой список документов с информацией о документообороте по каждому из них, полученных методом :doc:`../../http/obsolete/GetDocflows_v2`.
 
 .. code-block:: protobuf
 
@@ -20,4 +20,4 @@ GetDocflowBatchResponse
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/GetDocflows`
+	- в теле ответа метода :doc:`../../http/obsolete/GetDocflows_v2`

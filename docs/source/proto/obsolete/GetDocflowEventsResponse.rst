@@ -4,7 +4,7 @@ GetDocflowEventsResponse
 .. warning::
 	Структура устарела. Вместо нее используется структура :doc:`../GetDocflowEventsResponseV3`.
 
-Структура ``GetDocflowEventsResponse`` представляет собой список событий, полученных методом :doc:`../../http/obsolete/GetDocflowEvents`.
+Структура ``GetDocflowEventsResponse`` представляет собой список событий, полученных методом :doc:`../../http/obsolete/GetDocflowEvents_v2`.
 
 .. code-block:: protobuf
 
@@ -24,4 +24,4 @@ GetDocflowEventsResponse
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/GetDocflowEvents`
+	- в теле ответа метода :doc:`../../http/obsolete/GetDocflowEvents_v2`
