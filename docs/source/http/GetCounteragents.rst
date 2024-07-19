@@ -56,3 +56,7 @@ GetCounteragents
 .. rubric:: См. также
 
 .. include:: ../include/seealso_counteragents.txt
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/GetCounteragents`
+	- :doc:`obsolete/GetCounteragents_v2`

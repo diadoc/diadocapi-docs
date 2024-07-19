@@ -57,3 +57,11 @@ SDK
             break;
         request.FirstIndex += response.Documents.Count;
     }
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/SearchDocflows_v2`

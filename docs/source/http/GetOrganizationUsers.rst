@@ -18,3 +18,11 @@ GetOrganizationUsers
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
 	:response Body: Тело ответа содержит список всех пользователей организации, представленный структурой :doc:`../proto/OrganizationUsersList`.
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/GetOrganizationUsers`

@@ -29,3 +29,7 @@ GetCounteragent
 .. rubric:: См. также
 
 .. include:: ../include/seealso_counteragents.txt
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/GetCounteragent`
+	- :doc:`obsolete/GetCounteragent_v2`

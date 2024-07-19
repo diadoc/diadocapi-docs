@@ -60,3 +60,11 @@ SDK
     var response = api.Docflow.GetDocflows(token, boxId, request);
     foreach (var doc in response.Documents)
         Console.Out.WriteLine(doc.Docflow.SenderTitle.IsFinished);
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/GetDocflows_v2`

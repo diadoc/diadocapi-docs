@@ -57,3 +57,11 @@ SDK
         if (response.NextPageIndexKey == null)
             break;
     }
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/GetDocflowsByPacketId_v2`
