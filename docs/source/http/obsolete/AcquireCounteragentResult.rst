@@ -1,9 +1,12 @@
 AcquireCounteragentResult
 =========================
 
+.. warning::
+	Эта версия метода устарела. Используйте новую версию метода :doc:`../AcquireCounteragentResult`.
+
 Метод ``AcquireCounteragentResult`` возвращает идентификатор приглашенной организации.
 
-.. http:get:: V2/AcquireCounteragentResult
+.. http:get:: /AcquireCounteragentResult
 
 	:queryparam taskId: идентификатор операции, полученный методом :doc:`AcquireCounteragent`.
 
@@ -21,28 +24,21 @@ AcquireCounteragentResult
 
 	:responseheader Retry-After: если в ответе содержится HTTP-заголовок ``Retry-After``, то предыдущий вызов этого метода с таким же идентификатором операции еще не завершен. В этом случае следует повторить вызов через указанное в заголовке время (в секундах), чтобы убедиться, что операция завершилась без ошибок.
 	
-	:response Body: Тело ответа содержит результат выполнения операции, представленный структурой ``AcquireCounteragentResultV2``:
+	:response Body: Тело ответа содержит результат выполнения операции, представленный структурой ``AcquireCounteragentResult``:
 
 		.. code-block:: protobuf
 
-		    message AcquireCounteragentResultV2 {
-		        required string BoxId = 1;
+		    message AcquireCounteragentResult {
+		        required string OrgId = 1;
 		        optional DocumentId InvitationDocumentId = 2;
 		    }
 
 		..
 
-		- ``BoxId`` — идентификатор ящика приглашенной организации.
+		- ``orgId`` — идентификатор приглашенной организации.
 		- ``InvitationDocumentId`` — ссылка на документ, отправленный вместе с приглашением. Представлена структурой :doc:`../proto/DocumentId`. Заполняется независимо от наличия доступа к документу.
 
 Если отправить приглашение контрагенту не удалось, то метод вернет ошибку ``409 (Conflict)``. Возможные причины ошибки:
 
 - не удалось создать организацию, если приглашение отправлялось в незарегистрированную организацию;
 - не удалось проверить подпись, если приглашение отправлялось с вложенным файлом.
-
-
-----
-
-.. rubric:: См. также
-
-.. include:: ../include/seealso_counteragents.txt
