@@ -24,7 +24,7 @@ GetCounteragents
 
 	:response Body: Тело ответа содержит список контрагентов организации ``myOrgId``, находящихся в статусе ``counteragentStatus``, представленный структурой :doc:`CounteragentList <../../proto/Counteragent>`. В поле ``CounteragentList.TotalCount`` указано количество всех контрагентов, удовлетворяющих запросу.
 
-Пользователь имеет право запрашивать и производить действия со списком контрагентов организации ``myOrgId``, если у него есть доступ к ящику этой организации.
+.. include:: ../../include/accessMethod_required_box.txt
 
 Список ``CounteragentList.Counteragents`` может содержать не более 100 элементов. Чтобы получить остальные элементы, вызовите метод ``GetCounteragents`` с теми же параметрами и с указанием ``afterIndexKey``. В зависимости от значения параметра ``afterIndexKey`` метод работает следующим образом:
 

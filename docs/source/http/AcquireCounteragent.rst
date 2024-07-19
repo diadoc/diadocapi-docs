@@ -60,7 +60,7 @@ AcquireCounteragent
 	
 	:response Body: Тело ответа содержит идентификатор операции ``taskId`` в структуре :doc:`../proto/AsyncMethodResult`. По этому идентификатору с помощью метода :doc:`AcquireCounteragentResult` можно узнать результат обработки запроса.
 
-Пользователь может работать со списком контрагентов организации только если у него есть доступ к ящику этой организации.
+.. include:: ../include/accessMethod_required_manageCounteragents.txt
 
 В случае с роуминговым оператором используйте метод :doc:`GetRoamingOperators`, чтобы узнать, поддерживает ли он автоматическую обработку приглашений.
 

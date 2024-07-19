@@ -24,4 +24,4 @@ GetCounteragent (V2)
 
 	:response Body: Тело ответа содержит информацию о контрагенте с идентификатором ``counteragentOrgId`` для организации ``myOrgId``, представленную структурой :doc:`../../proto/Counteragent`. Вложенная в нее структура :doc:`Counteragent.Organization.Departments <../../proto/Organization>` содержит только видимые подразделения и их родительские подразделения.
 
-Пользователь имеет право запрашивать и производить действия со списком контрагентов организации ``myOrgId``, если у него есть доступ к ящику этой организации.
+.. include:: ../../include/accessMethod_required_box.txt
