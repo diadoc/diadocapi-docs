@@ -5,7 +5,7 @@ BreakWithCounteragent
 
 Чтобы отозвать приглашение с вложением, сгенерируйте запрос методом :doc:`GenerateRevocationRequestXml` и отправьте его методом :doc:`PostMessagePatch`.
 
-.. http:post:: V2/BreakWithCounteragent
+.. http:post:: /V2/BreakWithCounteragent
 
 	:queryparam myBoxId: идентификатор :doc:`ящика <../../entities/box>` организации, от имени которой производится разрыв отношения партнерства.
 	:queryparam counteragentBoxId: идентификатор :doc:`ящика <../../entities/box>` организации контрагента.

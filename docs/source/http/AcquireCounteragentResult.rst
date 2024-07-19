@@ -3,7 +3,7 @@ AcquireCounteragentResult
 
 Метод ``AcquireCounteragentResult`` возвращает идентификатор приглашенной организации.
 
-.. http:get:: V2/AcquireCounteragentResult
+.. http:get:: /V2/AcquireCounteragentResult
 
 	:queryparam taskId: идентификатор операции, полученный методом :doc:`AcquireCounteragent`.
 
@@ -20,7 +20,7 @@ AcquireCounteragentResult
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
 	:responseheader Retry-After: если в ответе содержится HTTP-заголовок ``Retry-After``, то предыдущий вызов этого метода с таким же идентификатором операции еще не завершен. В этом случае следует повторить вызов через указанное в заголовке время (в секундах), чтобы убедиться, что операция завершилась без ошибок.
-	
+
 	:response Body: Тело ответа содержит результат выполнения операции, представленный структурой ``AcquireCounteragentResultV2``:
 
 		.. code-block:: protobuf

@@ -7,7 +7,7 @@ AcquireCounteragent
 
 	:queryparam myBoxId: идентификатор :doc:`ящика <../../entities/box>` организации, от имени которой производится инициация отношения партнерства.
 	:queryparam myDepartmentId: идентификатор подразделения, от имени которого производится инициация отношения партнерства. Необязательный параметр.
-	
+
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
 	:request Body: Тело запроса должно содержать структуру ``AcquireCounteragentRequest``:

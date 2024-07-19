@@ -7,9 +7,9 @@ GetCounteragent
 
 	:queryparam myBoxId: идентификатор :doc:`ящика <../../entities/box>` организации, для которой осуществляется поиск контрагента.
 	:queryparam counteragentBoxId: идентификатор :doc:`ящика <../../entities/box>` организации контрагента.
-	
+
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
-	
+
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
 	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
