@@ -4,9 +4,9 @@ BreakWithCounteragent
 .. warning::
 	Эта версия метода устарела. Используйте новую версию метода :doc:`../BreakWithCounteragent`.
 
-Метод ``BreakWithCounteragent`` разрывает отношения между :doc:`контрагентами <../entities/counteragent>`, а также для отзывает или отклоняет приглашения к партнерству без вложения.
+Метод ``BreakWithCounteragent`` разрывает отношения между :doc:`контрагентами <../../entities/counteragent>`, а также для отзывает или отклоняет приглашения к партнерству без вложения.
 
-Чтобы отозвать приглашение с вложением, сгенерируйте запрос методом :doc:`GenerateRevocationRequestXml` и отправьте его методом :doc:`PostMessagePatch`.
+Чтобы отозвать приглашение с вложением, сгенерируйте запрос методом :doc:`../GenerateRevocationRequestXml` и отправьте его методом :doc:`../PostMessagePatch`.
 
 .. http:post:: /BreakWithCounteragent
 
@@ -14,13 +14,13 @@ BreakWithCounteragent
 	:queryparam counteragentOrgId: идентификатор организации контрагента.
 	:queryparam comment: текст комментария к операции. Необязательный параметр, длина не более 5000 символов.
 
-	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
+	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../../Authorization>`.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
 	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
 	:statuscode 402: у организации с указанным идентификатором ``myOrgId`` закончилась подписка на API.
-	:statuscode 403: доступ к списку контрагентов организации ``myOrgId`` с предоставленным авторизационным токеном запрещен или у пользователя нет права работать со списками контрагентов (см. :doc:`OrganizationUserPermissions.CanManageCounteragents <../proto/OrganizationUserPermissions>`).
+	:statuscode 403: доступ к списку контрагентов организации ``myOrgId`` с предоставленным авторизационным токеном запрещен или у пользователя нет права работать со списками контрагентов (см. :doc:`OrganizationUserPermissions.CanManageCounteragents <../../proto/OrganizationUserPermissions>`).
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 409: метод используется для отзыва приглашения с вложением.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
