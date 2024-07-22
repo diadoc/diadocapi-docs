@@ -18,6 +18,37 @@
 	- в структуру :doc:`PowerOfAttorneyValidationStatusNamedId <proto/PowerOfAttorneyValidationStatus>` добавлено значение ``IsNotAttached``.
 
 
+28.06.2024
+----------
+
+**SDK**: `C# 2.20.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.20.0>`__ | `Java 3.20.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.20.0>`__
+
+- Для методов, принимающих в качестве параметра идентификатор организации, добавили новые версии, позволяющие работать с идентификатором ящика. Мы рекомендуем использовать новые версии методов. Старые версии методов отметили как устаревшие.
+
+	- добавили новые версии методов:
+
+		- :doc:`http/AcquireCounteragent`
+		- :doc:`http/AcquireCounteragentResult`
+		- :doc:`http/BreakWithCounteragent`
+		- :doc:`http/GetCounteragent`
+		- :doc:`http/GetCounteragentCertificates`
+		- :doc:`http/GetCounteragents`
+		- :doc:`http/GetOrganizationUsers`
+
+	- перенесли в устаревшие прежние версии методов:
+
+		- :doc:`http/obsolete/AcquireCounteragent`
+		- :doc:`http/obsolete/AcquireCounteragent_v2`
+		- :doc:`http/obsolete/AcquireCounteragentResult`
+		- :doc:`http/obsolete/BreakWithCounteragent`
+		- :doc:`http/obsolete/GetCounteragent`
+		- :doc:`http/obsolete/GetCounteragent_v2`
+		- :doc:`http/obsolete/GetCounteragentCertificates`
+		- :doc:`http/obsolete/GetCounteragents`
+		- :doc:`http/obsolete/GetCounteragents_v2`
+		- :doc:`http/obsolete/GetOrganizationUsers`
+
+
 26.06.2024
 ----------
 
@@ -70,20 +101,20 @@
 
 	- Реализовали методы:
 
-		- :doc:`http/CreateCounteragentGroup` — создает группу контрагентов,
-		- :doc:`http/UpdateCounteragentGroup` — редактирует группу контрагентов,
-		- :doc:`http/DeleteCounteragentGroup` — удаляет группу контрагентов,
-		- :doc:`http/AddCounteragentToGroup` — добавляет контрагента в группу,
-		- :doc:`http/GetCounteragentGroups` — возвращает список групп контрагентов,
-		- :doc:`http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе,
-		- :doc:`http/GetCounteragentGroup` — возвращает информацию о группе контрагентов.
+		- :doc:`http/AddCounteragentToGroup` — добавляет контрагента в группу
+		- :doc:`http/CreateCounteragentGroup` — создает группу контрагентов
+		- :doc:`http/DeleteCounteragentGroup` — удаляет группу контрагентов
+		- :doc:`http/GetCounteragentGroup` — возвращает информацию о группе контрагентов
+		- :doc:`http/GetCounteragentGroups` — возвращает список групп контрагентов
+		- :doc:`http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе
+		- :doc:`http/UpdateCounteragentGroup` — изменяет параметры группы контрагентов
 
 	- Добавили структуры:
 
-		- :doc:`proto/CounteragentGroup` — представляет собой группу контрагентов,
-		- :doc:`proto/DepartmentsInGroup` — представляет собой список идентификаторов подразделений, в которые группа контрагентов может отправлять документы.
+		- :doc:`proto/CounteragentGroup` — хранит информацию о группе контрагентов
+		- :doc:`proto/DepartmentsInGroup` — хранит список идентификаторов подразделений, в которые группа контрагентов может отправлять документы
 
-	- Добавили поле ``CounteragentGroupId`` в структуры :doc:`proto/Counteragent` и :doc:`proto/GetOrganizationsByInnListResponse`. В поле возвращается идентификатор группы, в которую добавлен контрагент.
+	- Добавили поле ``CounteragentGroupId`` в структуры :doc:`proto/Counteragent` и :doc:`proto/GetOrganizationsByInnListResponse`. В нем возвращается идентификатор группы, в которую добавлен контрагент.
 
 
 06.03.2024
@@ -530,6 +561,7 @@
 - Следующие методы теперь могут возвращать неточное количество событий ``TotalCount``:
 
  - :doc:`http/GetNewEvents`
+ - :doc:`http/obsolete/GetDocflowEvents`
  - :doc:`http/GetDocflowEvents_V3`
  - :doc:`http/GetForwardedDocumentEvents`
 
