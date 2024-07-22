@@ -51,8 +51,7 @@
         return;
       }
 
-      // обработчик закрытия баннера обратной связи
-      // @param feedbackBannerContainer HTMLDivElement контейнер баннера обратной связи
+      /** Обработчик закрытия баннера обратной связи @param feedbackBannerContainer HTMLDivElement контейнер баннера обратной связи */
       const onCloseFeedbackBanner = (feedbackBannerContainer) => {
         feedbackBannerContainer.className = "hiddenFeedbackBannerContainer"
         window.localStorage.setItem("feedbackBanner", "hidden");
@@ -82,16 +81,29 @@
     }
 
     const addFeedbackLinkInFooter = () => {
+      const feedbackFooterDescriptionNode = document.createElement("p");
       const feedbackFooterLinkNode = document.createElement("a");
-      const feedbackFooterTextNode = document.createTextNode("Оставить обратную связь для этой страницы документации");
+
+      // Ссылка на форму
+      const feedbackFooterLinkTextNode = document.createTextNode("обратную связь");
+      // Текст до ссылки (описание)
+      const feedbackFooterDescriptionTextNode = document.createTextNode("Столкнулись с проблемой или нашли ошибку? Оставьте нам ");
+
       const footer = document.querySelector("div[role='contentinfo']");
 
-      feedbackFooterLinkNode.appendChild(feedbackFooterTextNode);
+      // Текст описания в контейнер описания
+      feedbackFooterDescriptionNode.appendChild(feedbackFooterDescriptionTextNode);
+      // Текст ссылки в контейнер ссылки
+      feedbackFooterLinkNode.appendChild(feedbackFooterLinkTextNode);
+      // Ссылку в контейнер описания
+      feedbackFooterDescriptionNode.appendChild(feedbackFooterLinkNode);
+
       feedbackFooterLinkNode.className = "feedbackFooterLink";
       feedbackFooterLinkNode.href = getFormLink();
       feedbackFooterLinkNode.target = "_blank";
 
-      footer.appendChild(feedbackFooterLinkNode);
+      // Вставка первым ребенком (до Copyright)
+      footer.insertBefore(feedbackFooterDescriptionNode, footer.firstChild);
     }
 </script>
 {% endblock %}
