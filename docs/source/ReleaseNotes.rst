@@ -35,7 +35,7 @@
 		- :doc:`http/GetCounteragents`
 		- :doc:`http/GetOrganizationUsers`
 
-	- перенесли в устаревшие прежние версии методов:
+	- перенесли в раздел «Устаревшие методы» прежние версии методов:
 
 		- :doc:`http/obsolete/AcquireCounteragent`
 		- :doc:`http/obsolete/AcquireCounteragent_v2`
