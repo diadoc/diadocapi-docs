@@ -14,7 +14,6 @@
 
 .. toctree::
 	:caption: История изменений
-	:hidden:
 	:titlesonly:
 
 	ReleaseNotes
