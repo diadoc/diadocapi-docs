@@ -2,9 +2,9 @@ DocflowEvent
 ============
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/DocflowEventV3` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../DocflowEventV3`.
 
-Структура ``DocflowEvent`` представляет одно событие, полученное методом :doc:`../../http/obsolete/GetDocflowEvents`.
+Структура ``DocflowEvent`` представляет одно событие, полученное методом :doc:`../../http/obsolete/GetDocflowEvents_v2`.
 
 .. code-block:: protobuf
 

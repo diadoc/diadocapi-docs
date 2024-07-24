@@ -1,5 +1,5 @@
-GetDocflows (версия 3)
-======================
+GetDocflows (V3)
+================
 
 Метод ``GetDocflows`` возвращает список документов с информацией о документообороте по их идентификаторам. Для каждого документа возвращаются данные, которые характеризуют его текущее состояние: информация о документообороте и метаданные.
 
@@ -60,3 +60,11 @@ SDK
     var response = api.Docflow.GetDocflows(token, boxId, request);
     foreach (var doc in response.Documents)
         Console.Out.WriteLine(doc.Docflow.SenderTitle.IsFinished);
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/GetDocflows_v2`

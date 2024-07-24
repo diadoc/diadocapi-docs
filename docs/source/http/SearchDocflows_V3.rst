@@ -1,5 +1,5 @@
-SearchDocflows (версия 3)
-=========================
+SearchDocflows (V3)
+===================
 
 Метод ``SearchDocflows`` производит поиск документа по строке запроса.
 
@@ -57,3 +57,11 @@ SDK
             break;
         request.FirstIndex += response.Documents.Count;
     }
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/SearchDocflows_v2`

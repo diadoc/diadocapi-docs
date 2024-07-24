@@ -2,7 +2,7 @@ GenerateTorg12XmlForSeller
 ==========================
 
 .. warning::
-	Метод устарел. Для генерации документов используйте метод :doc:`../../http/GenerateTitleXml`.
+	Метод устарел. Для генерации документов используйте метод :doc:`../GenerateTitleXml`.
 
 .. http:post:: /GenerateTorg12XmlForSeller
 

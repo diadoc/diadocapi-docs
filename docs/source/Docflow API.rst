@@ -76,10 +76,10 @@ HTTP-интерфейс версии 3
    :maxdepth: 2
    :titlesonly:
 
-   http/obsolete/GetDocflows
-   http/obsolete/GetDocflowsByPacketId
-   http/obsolete/SearchDocflows
-   http/obsolete/GetDocflowEvents
+   http/obsolete/GetDocflows_v2
+   http/obsolete/GetDocflowsByPacketId_v2
+   http/obsolete/SearchDocflows_v2
+   http/obsolete/GetDocflowEvents_v2
    
 Структуры
 ~~~~~~~~~

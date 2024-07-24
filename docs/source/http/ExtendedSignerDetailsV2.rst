@@ -116,3 +116,11 @@ ExtendedSignerDetails
          "SignerStatus": "SellerEmployee",
          "SignerPowersBase": "Должностные обязанности"
       }
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/ExtendedSignerDetails`

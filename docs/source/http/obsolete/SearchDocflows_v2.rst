@@ -1,8 +1,8 @@
-SearchDocflows
-==============
+SearchDocflows (V2)
+===================
 
 .. warning::
-	Метод относится к устаревшей версии Docflow API. Используйте метод :doc:`../SearchDocflows_V3` последней версии :doc:`../../Docflow API` — V3.
+	Эта версия метода устарела. Используйте новую версию метода :doc:`../SearchDocflows_V3`.
 
 Метод ``SearchDocflows`` производит поиск документа по строке запроса.
 

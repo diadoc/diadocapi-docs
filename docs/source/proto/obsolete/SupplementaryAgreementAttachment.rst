@@ -2,7 +2,7 @@ SupplementaryAgreementAttachment
 ================================
 
 .. warning::
-	Структура устарела. При заполнении структуры :doc:`../../proto/MessageToPost` используйте структуру :doc:`../../proto/DocumentAttachment`.
+	Структура устарела. При заполнении структуры :doc:`../MessageToPost` используйте структуру :doc:`../DocumentAttachment`.
 
 .. code-block:: protobuf
 

@@ -3,7 +3,7 @@ GetDocflowEventsResponseV3
 
 .. code-block:: protobuf
 
-   message GetDocflowEventsResponse
+   message GetDocflowEventsResponseV3
    {
        optional int32 TotalCount = 1;
        repeated DocflowEventV3 Events = 2;
