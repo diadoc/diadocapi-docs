@@ -22,10 +22,7 @@
 
 **SDK**: `C# 2.21.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.21.0>`__
 
-- Реализовали возможность работы с :doc:`лентой событий по контрагентам <instructions/counteragentevents>`:
-
-	- реализовали метод :doc:`http/GetCounteragentEvents` для получения событий по контрагентам,
-	- добавили структуру :doc:`proto/BoxCounteragentEventList` для хранения информации о событиях по контрагентам.
+- Реализовали возможность получить изменения из :doc:`ленты событий по контрагентам <instructions/counteragentevents>`: метод :doc:`http/GetCounteragentEvents` теперь возвращает в структуре :doc:`BoxCounteragentEvent <proto/BoxCounteragentEventList>` не только текущее состояние отношений с контрагентом, но и изменения, которые произошли в этих отношениях.
 
 
 28.06.2024
