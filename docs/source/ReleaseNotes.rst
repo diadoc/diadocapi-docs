@@ -1,6 +1,16 @@
 ﻿История изменений API
 =====================
 
+09.07.2024
+----------
+
+**SDK**: `C# 2.21.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.21.0>`__
+
+- Реализовали возможность работы с :doc:`лентой событий по контрагентам <instructions/counteragentevents>`:
+
+	- реализовали метод :doc:`http/GetCounteragentEvents` для получения событий по контрагентам,
+	- добавили структуру :doc:`proto/BoxCounteragentEventList` для хранения информации о событиях по контрагентам.
+
 
 03.07.2024
 ----------
