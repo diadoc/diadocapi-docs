@@ -1,0 +1,7 @@
+{
+    "CounteragentBoxId": [
+        "1f208d03-2a60-4f64-91b1-b7aad54cfaf3"
+    ],
+    "TotalCount": 1,
+    "AfterIndexKey": "08DCA6534D6F9E72038D201F602A644F91B1B7AAD54CFAF3"
+}

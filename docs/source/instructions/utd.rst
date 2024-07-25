@@ -117,14 +117,14 @@
 
 		.. container:: toggle
 
-			.. literalinclude:: ../include/postmessage_utd970_05_02_01_body.xml
+			.. literalinclude:: ../include/postmessage_utd970_05_02_01_body.txt
 				:language: json
 
 	.. tab:: УПД 820
 
 		.. container:: toggle
 
-			.. literalinclude:: ../include/postmessage_utd820_05_01_02_hyphen_body.xml
+			.. literalinclude:: ../include/postmessage_utd820_05_01_02_hyphen_body.txt
 				:language: json
 
 После отправки титула продавца Диадок автоматически формирует подтверждение оператора о дате получения документа, а покупатель формирует извещение о получении титула и отправляет его продавцу. О том, как получить эти служебные документы, написано в инструкциях:

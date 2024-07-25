@@ -21,7 +21,21 @@ GetCounteragentGroup
 
 	:response Body: Тело ответа содержит структуру :doc:`../proto/CounteragentGroup`.
 
-Получить информацию о группе контрагентов может только сотрудник организации с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
+.. include:: ../include/accessMethod_required_manageCounteragents.txt
+
+
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/getCounteragentGroup_query.txt
+
+**Пример тела ответа:**
+
+.. literalinclude:: ../include/getCounteragentGroup_resp.txt
+	:language: json
+
 
 ----
 
