@@ -33,8 +33,11 @@ SignatureV3
 
 .. rubric:: См. также
 
+*Определение:*
+	- :doc:`../entities/signature`
+
 *Структура используется:*
-	- в теле ответа метода :doc:`../http/GetDocflowEvents_V3`
-	- в теле ответа метода :doc:`../http/GetDocflows_V3`
-	- в теле ответа метода :doc:`../http/GetDocflowsByPacketId_V3`
-	- в теле ответа метода :doc:`../http/SearchDocflows_V3`
+	- в структуре :doc:`ApprovementSignatureV3 <ResolutionEntitiesV3>`
+	- в структуре :doc:`ParticipantResponseDocflow`
+	- в структуре :doc:`RevocationResponseDocflow <RevocationDocflowV3>`
+	- в структуре :doc:`SignedAttachmentV3`
