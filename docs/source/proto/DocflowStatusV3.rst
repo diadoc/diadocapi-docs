@@ -30,15 +30,16 @@ DocflowStatusV3
 
 - ``PowerOfAttorneyGeneralStatus`` — информация о сводном статусе по всем машиночитаемым доверенностям (МЧД), представленная структурой :doc:`PowerOfAttorneyValidationStatus`. Сводный статус формируется на основании всех МЧД, которые были приложены к документу при совершении действий с ним, например: подписание, ИоП, аннулирование, согласующая подпись и т.п. Сводный статус формируется по следующим правилам:
 
-	- если среди МЧД есть хотя бы одна невалидная, то ``StatusNamedId=IsNotValid``;
-	- если не получилось выполнить проверку из-за ошибки валидации МЧД, то ``StatusNamedId=CanNotBeValidated``;
-	- если при проверке возникли ошибки валидации МЧД, то ``StatusNamedId=ValidationError``;
-	- если все проверки выполнены без ошибок, то ``StatusNamedId=IsValid``.
+	- если хотя бы для одной подписи под документом требуется МЧД, т.е. :doc:`PowerOfAttorneyAttachmentStatus.StatusName <PowerOfAttorneyAttachmentStatus>` = ``PowerOfAttorneyRequired``, то ``StatusNamedId = IsNotAttached``;
+	- если среди МЧД есть хотя бы одна невалидная, то ``StatusNamedId = IsNotValid``;
+	- если не получилось выполнить проверку из-за ошибки валидации МЧД, то ``StatusNamedId = CanNotBeValidated``;
+	- если при проверке возникли ошибки валидации МЧД, то ``StatusNamedId = ValidationError``;
+	- если все проверки выполнены без ошибок, то ``StatusNamedId = IsValid``.
 
 - ``GeneralRoamingSendingStatus`` — статус отправки МЧД в роуминг, представленный структурой :doc:`RoamingSendingStatus`. Статус отправки в роуминг формируется на основании всех МЧД, которые были приложены к документу при совершении действий с ним, например: подписание, ИоП, аннулирование, согласующая подпись и т.п. Статус формируется по следующим правилам:
 
-	- если все МЧД отправлены в роуминг, то ``StatusNamedId=IsSent``;
-	- если отправлены не все, то ``StatusNamedId=SendingError``.
+	- если все МЧД отправлены в роуминг, то ``StatusNamedId = IsSent``;
+	- если отправлены не все, то ``StatusNamedId = SendingError``.
 
 ----
 
