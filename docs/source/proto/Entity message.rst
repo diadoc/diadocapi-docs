@@ -6,11 +6,12 @@ Entity
 .. code-block:: protobuf
 
     message Entity {
-        optional EntityType EntityType = 1 [default = UnknownEntityType];
+        required EntityType EntityType = 1;
         required string EntityId = 2;
+        optional string AuthorUserId = 33;
         optional string ParentEntityId = 3;
         optional Content Content = 4;
-        optional AttachmentType AttachmentType = 5 [default = UnknownAttachmentType];
+        required AttachmentType AttachmentType = 5;
         optional string FileName = 6;
         optional bool NeedRecipientSignature = 7 [default = false];
         optional string SignerBoxId = 8;
@@ -33,13 +34,12 @@ Entity
         optional string Version = 26;
         optional TemplateTransformationInfo TemplateTransformationInfo = 27;
         optional TemplateRefusalInfo TemplateRefusalInfo = 28;
-        optional OuterDocflowInfo OuterDocflow = 29;
+        optional OuterDocflows.OuterDocflowInfo OuterDocflow = 29;
         optional RevocationRequestInfo RevocationRequestInfo = 30;
         optional string ContentTypeId = 31;
-        optional PowerOfAtorneyInfo PowerOfAttorneyInfo = 32;
-        optional string AuthorUserId = 33;
+        optional PowerOfAttorneyInfo PowerOfAttorneyInfo = 32;
         optional MoveDocumentInfo MoveDocumentInfo = 34;
-        optional PowerOfAttorneyAttachmentStatus PowerOfAttorneyAttachmentStatus = 35;
+        optional Docflow.PowerOfAttorneyAttachmentStatus PowerOfAttorneyAttachmentStatus = 35;
     }
 
     enum EntityType {
@@ -294,7 +294,7 @@ Entity
 
 - ``Version`` — идентификатор версии документа.
 
-- ``TemplateTransformationInfos`` — информация о документе, созданном на основе шаблона. Возвращается только для сущностей с типом ``Attachment`` с типом вложения ``TemplateTransformation``.
+- ``TemplateTransformationInfo`` — информация о документе, созданном на основе шаблона, представленная структурой :doc:`TemplateTransformationInfo`. Возвращается только для сущностей с типом ``Attachment`` с типом вложения ``TemplateTransformation``.
 
 - ``TemplateRefusalInfo`` — информация об отклонении или отзыве шаблона, представленная структурой :doc:`TemplateRefusalInfo`. Возвращается только для сущностей с типом ``Attachment`` с типом вложения ``TemplateRefusal``.
 
