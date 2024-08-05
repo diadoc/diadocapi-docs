@@ -24,6 +24,8 @@ CertificateList
         optional string UserShortName = 12;
         optional bool IsDefault = 13;
         optional CertificateSubjectType SubjectType = 14;
+        repeated CertificateUsage Usages = 15;
+        optional DssCertificateType DssType = 16;
     }
 
     enum CertificateType {
@@ -32,12 +34,27 @@ CertificateList
         DSS = 2;
         KonturCertificate = 3;
     }
-	
+
     enum CertificateSubjectType {
         UnknownCertificateSubjectType = 0;
         LegalEntity = 1;
         IndividualEntity = 2;
         PhysicalPerson = 3;
+    }
+
+    enum CertificateUsage {
+        UnknownUsage = 0;
+        KonturCertificateUsage = 1;
+        TokenUsage = 2;
+        DssUsage = 3;
+    }
+
+    enum DssCertificateType {
+        UnknownDssType = 0;
+        MyDss = 1;
+        KSignServer = 2;
+        KSignRutoken = 3;
+        KSignMobile = 4;
     }
 
 - ``Certificates`` — список сертификатов. Каждый элемент списка представлен структурой ``CertificateInfoV2`` с полями: 
@@ -67,6 +84,21 @@ CertificateList
 		- ``LegalEntity`` — представитель юридического лица;
 		- ``IndividualEntity`` — индивидуальный предприниматель;
 		- ``PhysicalPerson`` — физическое лицо.
+
+	- ``Usages`` — , каждый элемент списка принимает значение из перечисления ``CertificateUsage``:
+
+		- ``UnknownUsage`` — ;
+		- ``KonturCertificateUsage`` — ;
+		- ``TokenUsage`` — ;
+		- ``DssUsage`` — ;
+
+	- ``DssType`` — , принимает значение из перечисления ``DssCertificateType``:
+
+		- ``UnknownDssType`` — ;
+		- ``MyDss`` — ;
+		- ``KSignServer`` — ;
+		- ``KSignRutoken`` — ;
+		- ``KSignMobile`` — ;
 
 
 ----
