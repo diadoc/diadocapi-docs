@@ -410,272 +410,257 @@ SDK
 Порядок согласно приказу `N 174Н <https://normativ.kontur.ru/document?moduleId=1&documentId=268278>`_ (утратил силу с 01.07.2021)
 ---------------------------------------------------------------------------------------------------------------------------------
 
-.. raw:: html
+.. collapse:: Подробнее
 
-   <details>
-   <summary><a>Подробнее</a></summary>
+	Порядок документооборота со стороны Покупателя:
 
-Порядок документооборота со стороны Покупателя:
+	#. Продавец отправляет счет-фактуру Покупателю.
 
-#. Продавец отправляет счет-фактуру Покупателю.
+	#. Диадок формирует подтверждение оператора о дате отправки счета-фактуры, подписывает его и направляет Покупателю.
 
-#. Диадок формирует подтверждение оператора о дате отправки счета-фактуры, подписывает его и направляет Покупателю.
+	#. Покупатель получает счет-фактуру и подтверждение оператора и отправляет в ответ подписанные извещение о получении счета-фактуры и извещение о получении подтверждения.
 
-#. Покупатель получает счет-фактуру и подтверждение оператора и отправляет в ответ подписанные извещение о получении счета-фактуры и извещение о получении подтверждения.
+	#. Диадок формирует подтверждение оператора о дате отправки извещения о получении счета-фактуры, подписывает его и направляет Покупателю.
 
-#. Диадок формирует подтверждение оператора о дате отправки извещения о получении счета-фактуры, подписывает его и направляет Покупателю.
+	#. Покупатель получает подтверждение оператора и отправляет в ответ подписанное извещение о получении подтверждения.
 
-#. Покупатель получает подтверждение оператора и отправляет в ответ подписанное извещение о получении подтверждения.
+	**Поиск счета-фактуры**
 
-Поиск счета-фактуры
-~~~~~~~~~~~~~~~~~~~ 
+	Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`search_invoice`).
 
-Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`search_invoice`).
+	**Получение счета-фактуры и подтверждения оператора**
 
-Получение счета-фактуры и подтверждения оператора
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`receive_confirmation`).
 
-Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`receive_confirmation`).
+	**Формирование извещения о получении подтверждения оператора**
 
-Формирование извещения о получении подтверждения оператора
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-После того, как покупатель получил подтверждение оператора, он должен отправить в ответ подписанное извещение :doc:`InvoiceReceipt  <../proto/Entity message>` о получении подтверждения.
+	После того, как покупатель получил подтверждение оператора, он должен отправить в ответ подписанное извещение :doc:`InvoiceReceipt  <../proto/Entity message>` о получении подтверждения.
 
-Извещение о получении подтверждения оператора представляется структурой :doc:`Entity <../proto/Entity message>`.
+	Извещение о получении подтверждения оператора представляется структурой :doc:`Entity <../proto/Entity message>`.
 
-Последовательность действий для формирования извещения о получении подтверждения оператора аналогична последовательности действий для формирования извещения о получении СФ (см. :ref:`create_invoice_receipt`).
+	Последовательность действий для формирования извещения о получении подтверждения оператора аналогична последовательности действий для формирования извещения о получении СФ (см. :ref:`create_invoice_receipt`).
 
-За исключением того, что в attachmentId нужно указать идентификатор полученного подтверждения оператора.
+	За исключением того, что в attachmentId нужно указать идентификатор полученного подтверждения оператора.
 
-Отправка извещения о получении подтверждения оператора
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	**Отправка извещения о получении подтверждения оператора**
 
-Полученное на предыдущем этапе извещение нужно подписать и отправить. 
+	Полученное на предыдущем этапе извещение нужно подписать и отправить. 
 
-Последовательность действий для отправки сформированного извещения о получении подтверждения оператора аналогична последовательности действий для отправки сформированного извещения о получении СФ (см. :ref:`send_receipt`).
+	Последовательность действий для отправки сформированного извещения о получении подтверждения оператора аналогична последовательности действий для отправки сформированного извещения о получении СФ (см. :ref:`send_receipt`).
 
-За исключением того, что в поле ParentEntityId нужно указать идентификатор (EntityId) подтверждения оператора, полученного на предыдущем шаге.
+	За исключением того, что в поле ParentEntityId нужно указать идентификатор (EntityId) подтверждения оператора, полученного на предыдущем шаге.
 
-Формирование извещения о получении счета-фактуры
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	**Формирование извещения о получении счета-фактуры**
 
-Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`create_invoice_receipt`).
+	Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`create_invoice_receipt`).
 
-Отправка извещения о получении счета-фактуры
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	**Отправка извещения о получении счета-фактуры**
 
-Полученное на предыдущем этапе извещение нужно подписать и отправить. Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`send_receipt`).
+	Полученное на предыдущем этапе извещение нужно подписать и отправить. Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`send_receipt`).
 
-Подтверждение оператора о дате отправки извещения о получении счета-фактуры
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	**Подтверждение оператора о дате отправки извещения о получении счета-фактуры**
 
-После того, как покупатель сформировал и отправил извещение о дате получении СФ, оператор в ответ должен сформировать подтверждение оператора о дате отправки извещения о получении СФ.
+	После того, как покупатель сформировал и отправил извещение о дате получении СФ, оператор в ответ должен сформировать подтверждение оператора о дате отправки извещения о получении СФ.
 
-Это подтверждение покупатель должен получить, затем сформировать извещение о получении подтверждения оператора, подписать его и отправить.
+	Это подтверждение покупатель должен получить, затем сформировать извещение о получении подтверждения оператора, подписать его и отправить.
 
-Получение подтверждения оператора описано в разделе :ref:`receive_confirmation`.
+	Получение подтверждения оператора описано в разделе :ref:`receive_confirmation`.
 
-Формирование извещения о получении подтверждения оператора аналогично формированию извещения о получении СФ (см. :ref:`create_invoice_receipt`). За исключением того, что в attachmentId нужно указать идентификатор полученного подтверждения оператора.
+	Формирование извещения о получении подтверждения оператора аналогично формированию извещения о получении СФ (см. :ref:`create_invoice_receipt`). За исключением того, что в attachmentId нужно указать идентификатор полученного подтверждения оператора.
 
-Подписание и отправка извещения о получении подтверждения оператора аналогичны действиям по подписанию и отправке извещения о получении СФ (см. :ref:`send_receipt`). За исключением того, что в поле ParentEntityId нужно указать идентификатор (EntityId) подтверждения оператора.
+	Подписание и отправка извещения о получении подтверждения оператора аналогичны действиям по подписанию и отправке извещения о получении СФ (см. :ref:`send_receipt`). За исключением того, что в поле ParentEntityId нужно указать идентификатор (EntityId) подтверждения оператора.
 
-После того, как покупатель сформировал все необходимые извещения, счет-фактура перейдет в статус *InboundFinished*
+	После того, как покупатель сформировал все необходимые извещения, счет-фактура перейдет в статус *InboundFinished*
 
-Запрос на исправление или корректировку по счету-фактуре
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	**Запрос на исправление или корректировку по счету-фактуре**
 
-Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`create_correction_request`).
+	Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`create_correction_request`).
 
-SDK
-~~~~~~~~~~~~~~~~~~~~
+	**SDK**
 
-Пример кода на C# для получения счета фактуры:
+	Пример кода на C# для получения счета фактуры:
 
-.. code-block:: csharp
+	.. code-block:: csharp
 
-	//Для работы с документами в Диадоке необходим авторизационный токен.
-	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
-	public static string AuthTokenCert;
+		//Для работы с документами в Диадоке необходим авторизационный токен.
+		//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
+		public static string AuthTokenCert;
 
-	public static string BoxId = "идентификатор ящика получателя";
+		public static string BoxId = "идентификатор ящика получателя";
 
-	//Для работы с документом необходимо знать его уникальный идентификатор.
-	//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.
+		//Для работы с документом необходимо знать его уникальный идентификатор.
+		//Узнать идентификатор можно, например, выполнив поиск документов по заданным параметрам.
 
-	//Получение списка всех счетов-фактур, по которым не завершен документооборот
-	public static DocumentList SearchInboundInvoicesDocumentsWithNotFinishedDocflow()
-	{
-		//Параметры, по которым осуществляется фильтрация
-		var filterCategory = "Invoice.InboundNotFinished";
-		var counteragentBoxId = "идентификатор ящика отправителя";
-
-		return Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
-	}
-
-	//Получение сообщения, содержащего счет-фактуру
-	public static Message GetInvoice()
-	{
-		//Выбираем конкретный документ из полученного ранее списка.
-		//Например, самый первый.
-		var document = SearchInboundInvoicesDocumentsWithNotFinishedDocflow().Documents[0];
-
-		//Получение счета-фактуры
-		return Api.GetMessage(AuthTokenCert, BoxId, document.MessageId, document.EntityId);
-	}
-
-	//Получение подтверждения оператора, формирование и отправка извещения о получении подтверждения
-	public static void GetInvoiceConfirmationAndSendInvoiceReceipt(Message invoiceMessage)
-	{
-		//Выбор первого вложения типа InvoiceConfirmation, к которому нет извещения о получении
-		var confirmationEntities = invoiceMessage.Entities
-			.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceConfirmation);
-		var receiptEntitiesParentIds = invoiceMessage.Entities
-			.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceReceipt)
-			.Select(receiptEntity => receiptEntity.ParentEntityId);
-		var confirmationEntityWithoutReceiptId = confirmationEntities
-			.First(confirmationEntity => !receiptEntitiesParentIds
-				.Contains(confirmationEntity.EntityId)).EntityId;
-
-		var receipt = Api.GenerateReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
+		//Получение списка всех счетов-фактур, по которым не завершен документооборот
+		public static DocumentList SearchInboundInvoicesDocumentsWithNotFinishedDocflow()
 		{
-			//Подпись получателя, см. "Как авторизоваться в системе"
-			SignerCertificate = ReadCertContent("путь к сертификату"),
-			SignerDetails = new SignerDetails()
-			{
-				//Заполняется согласно структуре SignerDetails
-			}
-		});
+			//Параметры, по которым осуществляется фильтрация
+			var filterCategory = "Invoice.InboundNotFinished";
+			var counteragentBoxId = "идентификатор ящика отправителя";
 
-		var receiptAttachment = new ReceiptAttachment()
+			return Api.GetDocuments(AuthTokenCert, BoxId, filterCategory, counteragentBoxId);
+		}
+
+		//Получение сообщения, содержащего счет-фактуру
+		public static Message GetInvoice()
 		{
-			ParentEntityId = confirmationEntityId,
-			SignedContent = new SignedContent()
+			//Выбираем конкретный документ из полученного ранее списка.
+			//Например, самый первый.
+			var document = SearchInboundInvoicesDocumentsWithNotFinishedDocflow().Documents[0];
+
+			//Получение счета-фактуры
+			return Api.GetMessage(AuthTokenCert, BoxId, document.MessageId, document.EntityId);
+		}
+
+		//Получение подтверждения оператора, формирование и отправка извещения о получении подтверждения
+		public static void GetInvoiceConfirmationAndSendInvoiceReceipt(Message invoiceMessage)
+		{
+			//Выбор первого вложения типа InvoiceConfirmation, к которому нет извещения о получении
+			var confirmationEntities = invoiceMessage.Entities
+				.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceConfirmation);
+			var receiptEntitiesParentIds = invoiceMessage.Entities
+				.FindAll(entity => entity.AttachmentType == AttachmentType.InvoiceReceipt)
+				.Select(receiptEntity => receiptEntity.ParentEntityId);
+			var confirmationEntityWithoutReceiptId = confirmationEntities
+				.First(confirmationEntity => !receiptEntitiesParentIds
+					.Contains(confirmationEntity.EntityId)).EntityId;
+
+			var receipt = Api.GenerateReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
 			{
-				Content = receipt.Content,
 				//Подпись получателя, см. "Как авторизоваться в системе"
-				Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
-			}
-		};
-
-		var receiptPatch = new MessagePatchToPost()
-		{
-			BoxId = BoxId,
-			MessageId = invoiceMessage.MessageId,
-			Receipts =
-			{
-				receiptAttachment
-			}
-		};
-
-		Api.PostMessagePatch(AuthTokenCert, receiptPatch);
-	}
-
-	//Формирование и отправка извещения о получении счета-фактуры
-	public static void SendinvoiceReceipt(Entity invoiceDocument)
-	{
-		var receipt = Api.GenerateReceiptXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, new Signer()
-		{
-			//Подпись получателя, см. "Как авторизоваться в системе"
-			SignerCertificate = ReadCertContent("путь к сертификату"),
-			SignerDetails = new SignerDetails()
-			{
-				//Заполняется согласно структуре SignerDetails
-			}
-		});
-
-		var receiptAttachment = new ReceiptAttachment()
-		{
-			ParentEntityId = invoiceDocument.EntityId,
-			SignedContent = new SignedContent()
-			{
-				Content = receipt.Content,
-				//Подпись получателя, см. "Как авторизоваться в системе"
-				Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
-			}
-		};
-
-		var receiptPatch = new MessagePatchToPost()
-		{
-			BoxId = BoxId,
-			MessageId = invoiceDocument.MessageId,
-			Receipts =
-			{
-				receiptAttachment
-			}
-		};
-
-		Api.PostMessagePatch(AuthTokenCert, receiptPatch);
-	}
-
-	public static void Main()
-	{
-		var invoiceMessage = GetInvoice();
-		var invoiceDocument = invoiceMessage.Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);
-
-		//Отправка извещения о получении подтверждения оператора для счета-фактуры
-		GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
-
-		//Отправка извещения о получении счета-фактуры
-		SendinvoiceReceipt(invoiceDocument);
-
-		//Отправка извещения о получении подтверждения оператора для извещения о получении счета-фактуры
-		GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
-	}
-
-Пример кода на C# для отправки уведомления об уточнении счета-фактуры:
-
-.. code-block:: csharp
-
-	//формирование уведомления об уточнении счета-фактуры
-	public static GeneratedFile GetInvoiceCorrectionRequest(Document invoiceDocument)
-	{
-		var invoiceCorrectionRequestInfo = new InvoiceCorrectionRequestInfo()
-		{
-			ErrorMessage = "Текст уведомления об уточнении",
-			Signer = new Signer()
-			{
-				//Подпись отправителя, см. "Как авторизоваться в системе"
 				SignerCertificate = ReadCertContent("путь к сертификату"),
 				SignerDetails = new SignerDetails()
 				{
 					//Заполняется согласно структуре SignerDetails
 				}
-			}
-		};
-		return Api.GenerateInvoiceCorrectionRequestXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, invoiceCorrectionRequestInfo);
-	}
+			});
 
-	//Отправка уведомления об уточнении счета-фактуры
-	public static void SendInvoiceCorrectionRequest(Document invoiceDocument)
-	{
-		var invoiceCorrectionRequest = GetInvoiceCorrectionRequest(invoiceDocument);
-
-		var messagePatchToPost = new MessagePatchToPost
-		{
-			MessageId = invoiceDocument.MessageId,
-			CorrectionRequests =
+			var receiptAttachment = new ReceiptAttachment()
 			{
-				new CorrectionRequestAttachment
+				ParentEntityId = confirmationEntityId,
+				SignedContent = new SignedContent()
 				{
-					ParentEntityId = invoiceDocument.EntityId,
-					SignedContent = new SignedContent //файл подписи
+					Content = receipt.Content,
+					//Подпись получателя, см. "Как авторизоваться в системе"
+					Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
+				}
+			};
+
+			var receiptPatch = new MessagePatchToPost()
+			{
+				BoxId = BoxId,
+				MessageId = invoiceMessage.MessageId,
+				Receipts =
+				{
+					receiptAttachment
+				}
+			};
+
+			Api.PostMessagePatch(AuthTokenCert, receiptPatch);
+		}
+
+		//Формирование и отправка извещения о получении счета-фактуры
+		public static void SendinvoiceReceipt(Entity invoiceDocument)
+		{
+			var receipt = Api.GenerateReceiptXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, new Signer()
+			{
+				//Подпись получателя, см. "Как авторизоваться в системе"
+				SignerCertificate = ReadCertContent("путь к сертификату"),
+				SignerDetails = new SignerDetails()
+				{
+					//Заполняется согласно структуре SignerDetails
+				}
+			});
+
+			var receiptAttachment = new ReceiptAttachment()
+			{
+				ParentEntityId = invoiceDocument.EntityId,
+				SignedContent = new SignedContent()
+				{
+					Content = receipt.Content,
+					//Подпись получателя, см. "Как авторизоваться в системе"
+					Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
+				}
+			};
+
+			var receiptPatch = new MessagePatchToPost()
+			{
+				BoxId = BoxId,
+				MessageId = invoiceDocument.MessageId,
+				Receipts =
+				{
+					receiptAttachment
+				}
+			};
+
+			Api.PostMessagePatch(AuthTokenCert, receiptPatch);
+		}
+
+		public static void Main()
+		{
+			var invoiceMessage = GetInvoice();
+			var invoiceDocument = invoiceMessage.Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);
+
+			//Отправка извещения о получении подтверждения оператора для счета-фактуры
+			GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
+
+			//Отправка извещения о получении счета-фактуры
+			SendinvoiceReceipt(invoiceDocument);
+
+			//Отправка извещения о получении подтверждения оператора для извещения о получении счета-фактуры
+			GetInvoiceConfirmationAndSendInvoiceReceipt(invoiceMessage);
+		}
+
+	Пример кода на C# для отправки уведомления об уточнении счета-фактуры:
+
+	.. code-block:: csharp
+
+		//формирование уведомления об уточнении счета-фактуры
+		public static GeneratedFile GetInvoiceCorrectionRequest(Document invoiceDocument)
+		{
+			var invoiceCorrectionRequestInfo = new InvoiceCorrectionRequestInfo()
+			{
+				ErrorMessage = "Текст уведомления об уточнении",
+				Signer = new Signer()
+				{
+					//Подпись отправителя, см. "Как авторизоваться в системе"
+					SignerCertificate = ReadCertContent("путь к сертификату"),
+					SignerDetails = new SignerDetails()
 					{
-						Content = invoiceCorrectionRequest.Content,
-						//Подпись получателя, см. "Как авторизоваться в системе"
-						Signature = Crypt.Sign(invoiceCorrectionRequest.Content, ReadCertContent("путь к сертификату"))
+						//Заполняется согласно структуре SignerDetails
 					}
 				}
-			}
-		};
-		Api.PostMessagePatch(AuthTokenCert, messagePatchToPost);
-	}
+			};
+			return Api.GenerateInvoiceCorrectionRequestXml(AuthTokenCert, BoxId, invoiceDocument.MessageId, invoiceDocument.EntityId, invoiceCorrectionRequestInfo);
+		}
 
-	public static void Main()
-	{
-		var invoiceDocument = GetInvoice().Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);;
-		SendInvoiceCorrectionRequest(invoiceDocument);
-	}
+		//Отправка уведомления об уточнении счета-фактуры
+		public static void SendInvoiceCorrectionRequest(Document invoiceDocument)
+		{
+			var invoiceCorrectionRequest = GetInvoiceCorrectionRequest(invoiceDocument);
 
-.. raw:: html
+			var messagePatchToPost = new MessagePatchToPost
+			{
+				MessageId = invoiceDocument.MessageId,
+				CorrectionRequests =
+				{
+					new CorrectionRequestAttachment
+					{
+						ParentEntityId = invoiceDocument.EntityId,
+						SignedContent = new SignedContent //файл подписи
+						{
+							Content = invoiceCorrectionRequest.Content,
+							//Подпись получателя, см. "Как авторизоваться в системе"
+							Signature = Crypt.Sign(invoiceCorrectionRequest.Content, ReadCertContent("путь к сертификату"))
+						}
+					}
+				}
+			};
+			Api.PostMessagePatch(AuthTokenCert, messagePatchToPost);
+		}
 
-   </details>
+		public static void Main()
+		{
+			var invoiceDocument = GetInvoice().Entities.First(entity => entity.AttachmentType == AttachmentType.Invoice);;
+			SendInvoiceCorrectionRequest(invoiceDocument);
+		}
