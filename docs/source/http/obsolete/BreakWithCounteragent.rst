@@ -25,7 +25,7 @@ BreakWithCounteragent
 	:statuscode 409: метод используется для отзыва приглашения с вложением.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Метод доступен только сотрудникам с доступом к ящику и разрешением :doc:`OrganizationUserPermissions.CanManageCounteragents <../../proto/OrganizationUserPermissions>`, которое позволяет видеть списки контрагентов и работать с ними.
+.. include:: ../../include/accessMethod_required_manageCounteragents.txt
 
 Метод работает по следующим правилам:
 
