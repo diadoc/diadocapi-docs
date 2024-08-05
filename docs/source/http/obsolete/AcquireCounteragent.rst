@@ -25,7 +25,7 @@ AcquireCounteragent
 	:statuscode 409: требуется заявка на роуминг для отправки приглашения роуминговому контрагенту (подробнее https://www.diadoc.ru/roaming).
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-.. include:: ../../include/accessMethod_required_manageCounteragents.txt
+Метод доступен только сотрудникам с доступом к ящику и разрешением :doc:`OrganizationUserPermissions.CanManageCounteragents <../../proto/OrganizationUserPermissions>`, которое позволяет видеть списки контрагентов и работать с ними.
 
 В случае с роуминговым оператором используйте метод :doc:`../GetRoamingOperators`, чтобы узнать, поддерживает ли он автоматическую обработку приглашений.
 
