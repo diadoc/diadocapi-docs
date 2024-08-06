@@ -11,49 +11,14 @@
 
 **Пример HTTP-запроса метода GetCounteragentEvents:**
 
-.. code-block:: http
-
-	GET /V1/GetCounteragentEvents?boxId={{boxId}} HTTP/1.1
-	Host: diadoc-api.kontur.ru
-	Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
-	Accept: application/json; charset=utf-8
+.. literalinclude:: ../include/getCounteragentEvents_query.txt
 
 **Пример тела ответа метода GetCounteragentEvents:**
 
-.. code-block:: json
+.. container:: toggle
 
-    {
-        "Events": [
-            {
-                "EventId": "765de718-442e-11ef-8007-828b06413688",
-                "Counteragent": {
-                    "CounteragentBoxId": "09ae254c-5cd0-4082-84de-7ccb46d86f82",
-                    "Status": "IsRejectedByMe",
-                    "EventTimestampTicks": 638568119816675479,
-                    "LastEventComment": "удаление из списка контрагентов",
-                    "MessageToCounteragent": "удаление из списка контрагентов"
-                },
-                "IndexKey": "CNymUlqSJxhMJa4J0FyCQITefMtG2G+C",
-                "EventTypes": [
-                    "IBrokeUpWithCounteragent"
-                ]
-            },
-            {
-                "EventId": "7c313a39-442e-11ef-8010-9fb6f747d48a",
-                "Counteragent": {
-                    "CounteragentBoxId": "09ae254c-5cd0-4082-84de-7ccb46d86f82",
-                    "Status": "IsInvitedByMe",
-                    "EventTimestampTicks": 638568119914355510
-                },
-                "IndexKey": "CNymUmBlejlMJa4J0FyCQITefMtG2G+C",
-                "EventTypes": [
-                    "IInvitedCounteragent"
-                ]
-            }
-        ],
-        "TotalCount": 2,
-        "TotalCountType": "Equal"
-    }
+	.. literalinclude:: ../include/getCounteragentEvents_resp.txt
+		:language: json
 
 В указанном выше примере произошло два события:
 
@@ -87,8 +52,4 @@
 *Определение:*
 	- :doc:`../entities/counteragent`
 
-*Методы для работы с событиями по контрагентам:*
-	- :doc:`../http/GetCounteragentEvents` — возвращает список событий по изменению отношений с контрагентами
-
-*Структуры для работы с событиями по контрагентам:*
-	- :doc:`../proto/BoxCounteragentEventList` — представляет собой список событий по изменению отношений
+.. include:: ../include/seealso_instr_counteragentevent.txt
