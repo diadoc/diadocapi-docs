@@ -21,34 +21,8 @@
 	- :doc:`../instructions/counteragentgroups`
 	- :doc:`../instructions/counteragentevents`
 
-*Методы для работы с контрагентами:*
-	- :doc:`../http/AcquireCounteragent` — отправляет контрагенту приглашение к обмену документами
-	- :doc:`../http/AcquireCounteragentResult` — возвращает идентификатор приглашенной организации
-	- :doc:`../http/BreakWithCounteragent` — разрывает отношения между контрагентами, а также отзывает или отклоняет приглашение к обмену документами
-	- :doc:`../http/GetCounteragent` — возвращает информацию о контрагенте
-	- :doc:`../http/GetCounteragentCertificates` — возвращает сертификаты контрагента
-	- :doc:`../http/GetCounteragentEvents` — возвращает список событий по изменению отношений с контрагентами
-	- :doc:`../http/GetCounteragents` — осуществляет поиск контрагентов по указанным параметрам
+.. include:: ../include/seealso_instr_counteragent.txt
 
-*Структуры для работы с контрагентами:*
-	- :doc:`../proto/CounteragentInfo` — содержит информацию о контрагенте
-	- :doc:`../proto/CounteragentStatus` — представляет собой статус контрагента
+.. include:: ../include/seealso_instr_counteragentgroup.txt
 
-*Методы для работы с группами контрагентов:*
-	- :doc:`../http/AddCounteragentToGroup` — добавляет контрагентов в группу
-	- :doc:`../http/CreateCounteragentGroup` — создает группу контрагентов
-	- :doc:`../http/DeleteCounteragentGroup` — удаляет группу контрагентов
-	- :doc:`../http/GetCounteragentGroup` — возвращает информацию о группе контрагентов
-	- :doc:`../http/GetCounteragentGroups` — возвращает список групп контрагентов
-	- :doc:`../http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе
-	- :doc:`../http/UpdateCounteragentGroup` — редактирует группу контрагентов
-
-*Структуры для работы с группами контрагентов:*
-	- :doc:`../proto/CounteragentGroup` — хранит информацию о группе контрагентов
-	- :doc:`../proto/DepartmentsInGroup` — хранит список идентификаторов подразделений, в которые группа контрагентов может отправлять документы
-
-*Методы для работы с событиями по контрагентам:*
-	- :doc:`../http/GetCounteragentEvents` — возвращает список событий по изменению отношений с контрагентами
-
-*Структуры для работы с событиями по контрагентам:*
-	- :doc:`../proto/BoxCounteragentEventList` — представляет собой список событий по изменению отношений
+.. include:: ../include/seealso_instr_counteragentevent.txt
