@@ -1,7 +1,7 @@
 BreakWithCounteragent
 =====================
 
-Метод ``BreakWithCounteragent`` разрывает отношения между :doc:`контрагентами <../entities/counteragent>`, а также для отзывает или отклоняет приглашения к партнерству без вложения.
+Метод ``BreakWithCounteragent`` разрывает отношения с :doc:`контрагентом <../entities/counteragent>`, а также для отзывает или отклоняет приглашения к партнерству без вложения.
 
 Чтобы отозвать приглашение с вложением, сгенерируйте запрос методом :doc:`GenerateRevocationRequestXml` и отправьте его методом :doc:`PostMessagePatch`.
 
@@ -32,11 +32,19 @@ BreakWithCounteragent
 	- Если партнерских отношений между организациями ``myBoxId`` и ``counteragentBoxId`` нет или они уже разорваны, то после вызова метода ничего не произойдет.
 
 
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/breakWithCounteragent_query.txt
+
+
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragents.txt
+.. include:: ../include/seealso_method_counteragent.txt
 
 *Устаревшие версии метода:*
 	- :doc:`obsolete/BreakWithCounteragent`

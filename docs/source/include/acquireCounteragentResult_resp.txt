@@ -1,0 +1,7 @@
+{
+    "BoxId": "1f208d03-2a60-4f64-91b1-b7aad54cfaf3",
+    "InvitationDocumentId": {
+        "MessageId": "88d108be-27ec-4808-8a38-8062e7cf4988",
+        "EntityId": "ce1d22da-f9e8-4c4c-af34-09bc94ad1fdd"
+    }
+}

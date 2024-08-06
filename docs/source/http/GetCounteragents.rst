@@ -36,11 +36,6 @@ GetCounteragents
 
 .. include:: ../include/accessMethod_required_box.txt
 
-Список ``CounteragentList.Counteragents`` может содержать не более 100 элементов. Чтобы получить остальные элементы, вызовите метод ``GetCounteragents`` с теми же параметрами и дополнительно укажите параметр ``afterIndexKey``. В зависимости от значения параметра ``afterIndexKey`` метод работает следующим образом:
-
-	- Если в запросе отсутствует параметр ``afterIndexKey``, метод вернет начало списка контрагентов, удовлетворяющих фильтру. Если в списке контрагентов меньше 100 элементов, метод вернет список полностью.
-	- Если в запросе указан параметр ``afterIndexKey``, метод вернет список контрагентов, следующих за контрагентом с параметром ``afterIndexKey``. Контрагент с параметром ``afterIndexKey`` в этот список не попадает. Ключ контрагента указан в поле ``IndexKey`` структуры :doc:`../proto/Counteragent`.
-
 Параметр ``counteragentStatus`` предназначен для фильтрации результатов поиска. Если параметр ``counteragentStatus`` не задан, метод вернет весь список контрагентов. Значения статусов контрагента описаны в перечислении :doc:`CounteragentStatus <../proto/Counteragent>`. В качестве параметра ``counteragentStatus`` можно передавать следующие значения:
 
 	- ``IsMyCounteragent``,
@@ -48,14 +43,34 @@ GetCounteragents
 	- ``IsInvitedByMe``,
 	- ``Rejected``.
 
+Список ``CounteragentList.Counteragents`` может содержать не более 100 элементов. Чтобы получить остальные элементы, вызовите метод ``GetCounteragents`` с теми же параметрами и дополнительно укажите параметр ``afterIndexKey``. В зависимости от значения параметра ``afterIndexKey`` метод работает следующим образом:
+
+	- Если в запросе отсутствует параметр ``afterIndexKey``, метод вернет начало списка контрагентов, удовлетворяющих фильтру. Если в списке контрагентов меньше 100 элементов, метод вернет список полностью.
+	- Если в запросе указан параметр ``afterIndexKey``, метод вернет список контрагентов, следующих за контрагентом с параметром ``afterIndexKey``. Контрагент с параметром ``afterIndexKey`` в этот список не попадает. Ключ контрагента указан в поле ``IndexKey`` структуры :doc:`../proto/Counteragent`.
+
 Во вложенной структуре :doc:`Counteragent.Organization <../proto/Organization>` поле ``Departments`` будет пустым.
+
+
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/getCounteragents_query.txt
+
+**Пример тела ответа:**
+
+.. container:: toggle
+
+	.. literalinclude:: ../include/getCounteragents_resp.txt
+		:language: json
 
 
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragents.txt
+.. include:: ../include/seealso_method_counteragent.txt
 
 *Устаревшие версии метода:*
 	- :doc:`obsolete/GetCounteragents`

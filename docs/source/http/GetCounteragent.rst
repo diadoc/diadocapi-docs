@@ -24,11 +24,26 @@ GetCounteragent
 .. include:: ../include/accessMethod_required_box.txt
 
 
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/getCounteragent_query.txt
+
+**Пример тела ответа:**
+
+.. container:: toggle
+
+	.. literalinclude:: ../include/getCounteragent_resp.txt
+		:language: json
+
+
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragents.txt
+.. include:: ../include/seealso_method_counteragent.txt
 
 *Устаревшие версии метода:*
 	- :doc:`obsolete/GetCounteragent`

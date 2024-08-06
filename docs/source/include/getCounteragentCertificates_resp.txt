@@ -1,0 +1,7 @@
+{
+    "Certificates": [
+        {
+            "RawCertificateData": "MIIIyjCCCHegAwIBAgIRAdD...Brfw=="
+        }
+    ]
+}

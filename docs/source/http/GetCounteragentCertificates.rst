@@ -40,11 +40,24 @@ GetCounteragentCertificates
 Организация имеет право запрашивать список сертификатов контрагента ``counteragentBoxId``, если у нее включена возможность отправки зашифрованных документов. Эта возможность указана в поле :doc:`Organization.Box.EncryptedDocumentsAllowed <../proto/Box>`.
 
 
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/getCounteragentCertificates_query.txt
+
+**Пример тела ответа:**
+
+.. literalinclude:: ../include/getCounteragentCertificates_resp.txt
+	:language: json
+
+
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragents.txt
+.. include:: ../include/seealso_method_counteragent.txt
 
 *Устаревшие версии метода:*
 	- :doc:`obsolete/GetCounteragentCertificates`

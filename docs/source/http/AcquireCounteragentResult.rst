@@ -41,11 +41,24 @@ AcquireCounteragentResult
 - не удалось проверить подпись, если приглашение отправлялось с вложенным файлом.
 
 
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/acquireCounteragentResult_query.txt
+
+**Пример тела ответа:**
+
+.. literalinclude:: ../include/acquireCounteragentResult_resp.txt
+	:language: json
+
+
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragents.txt
+.. include:: ../include/seealso_method_counteragent.txt
 
 *Устаревшие версии метода:*
 	- :doc:`obsolete/AcquireCounteragentResult`

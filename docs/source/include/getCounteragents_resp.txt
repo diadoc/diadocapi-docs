@@ -1,0 +1,61 @@
+{
+    "TotalCount": 1,
+    "Counteragents": [
+        {
+            "LastEventTimestamp": "2024-08-06T12:36:38.8979088Z",
+            "IndexKey": "40623A7CD898B2EA038D201F602A644F91B1B7AAD54CFAF3",
+            "Organization": {
+                "OrgIdGuid": "72c3b5bf-3a9f-4fb5-a3ef-112cb2b3a8dc",
+                "OrgId": "72c3b5bf-3a9f-4fb5-a3ef-112cb2b3a8dc",
+                "Inn": "9147414342",
+                "Kpp": "757645784",
+                "FullName": "Ромашка",
+                "ShortName": "Ромашка",
+                "JoinedDiadocTreaty": true,
+                "Boxes": [
+                    {
+                        "BoxId": "2a208d032a604f6491b1b7aad54cfaf3@diadoc.ru",
+                        "BoxIdGuid": "2a208d03-2a60-4f64-91b1-b7aad54cfaf3",
+                        "Title": "Ромашка",
+                        "InvoiceFormatVersion": "v5_02",
+                        "EncryptedDocumentsAllowed": false
+                    }
+                ],
+                "Ogrn": "9130523523154",
+                "FnsParticipantId": "2BM-9147414342-757645784-202407101104400484330",
+                "Address": {
+                    "RussianAddress": {
+                        "ZipCode": "620142",
+                        "Region": "66",
+                        "City": "Екатеринбург",
+                        "Street": "Сажинская",
+                        "Building": "11"
+                    },
+                    "AddressCode": ""
+                },
+                "Departments": [],
+                "IfnsCode": "6174",
+                "IsPilot": false,
+                "IsActive": true,
+                "IsTest": false,
+                "IsBranch": false,
+                "IsRoaming": false,
+                "IsEmployee": false,
+                "InvitationCount": 0,
+                "SearchCount": 0,
+                "Sociability": "AllOrganizations",
+                "IsForeign": false,
+                "HasCertificateToSign": true
+            },
+            "CurrentStatus": "IsMyCounteragent",
+            "LastEventTimestampTicks": 638585445988979088,
+            "MessageToCounteragent": "Примите приглашение к сотрудничеству",
+            "InvitationDocumentId": {
+                "MessageId": "215a68d5-28a0-4c6a-b9ec-cdba1530fd49",
+                "EntityId": "ad810ad2-8d4f-4fd9-9321-5359dfc0a37a"
+            },
+            "CounteragentGroupId": "ecd591dd-b56f-4178-ab4a-8a5532f231f7"
+        }
+    ],
+    "TotalCountType": "Equal"
+}

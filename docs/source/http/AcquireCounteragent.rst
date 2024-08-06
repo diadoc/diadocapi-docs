@@ -78,11 +78,29 @@ AcquireCounteragent
 	- Если между организациями ``myBoxId`` и контрагентом отношение партнерства уже установлено или есть исходящий запрос от организации ``myBoxId`` к организации контрагента, то в результате выполнения метода ничего не произойдет.
 
 
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/acquireCounteragent_query.txt
+
+**Пример тела запроса:**
+
+.. literalinclude:: ../include/acquireCounteragent_body.txt
+	:language: json
+
+**Пример тела ответа:**
+
+.. literalinclude:: ../include/acquireCounteragent_resp.txt
+	:language: json
+
+
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragents.txt
+.. include:: ../include/seealso_method_counteragent.txt
 
 *Устаревшие версии метода:*
 	- :doc:`obsolete/AcquireCounteragent`
