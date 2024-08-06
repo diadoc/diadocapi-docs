@@ -85,20 +85,20 @@ CertificateList
 		- ``IndividualEntity`` — индивидуальный предприниматель;
 		- ``PhysicalPerson`` — физическое лицо.
 
-	- ``Usages`` — , каждый элемент списка принимает значение из перечисления ``CertificateUsage``:
+	- ``Usages`` — список типов сертификата. Может быть пустым. Каждый элемент списка принимает значение из перечисления ``CertificateUsage``:
 
-		- ``UnknownUsage`` — ;
-		- ``KonturCertificateUsage`` — ;
-		- ``TokenUsage`` — ;
-		- ``DssUsage`` — ;
+		- ``UnknownUsage`` — неизвестный тип сертификата;
+		- ``KonturCertificateUsage`` — Контур.Сертификат;
+		- ``TokenUsage`` — сертификат на железном носителе;
+		- ``DssUsage`` — DSS-сертификат.
 
-	- ``DssType`` — , принимает значение из перечисления ``DssCertificateType``:
+	- ``DssType`` — тип DSS сертификата. Если используется не DSS-сертификат, значение будет пустым. Принимает значение из перечисления ``DssCertificateType``:
 
-		- ``UnknownDssType`` — ;
-		- ``MyDss`` — ;
-		- ``KSignServer`` — ;
-		- ``KSignRutoken`` — ;
-		- ``KSignMobile`` — ;
+		- ``UnknownDssType`` — неизвестный тип сертификата;
+		- ``MyDss`` — MyDss-сертификат;
+		- ``KSignServer`` — КПодпись.Сервер;
+		- ``KSignRutoken`` — КПодпись.Рутокен;
+		- ``KSignMobile`` — КПодпись.Мобильный.
 
 
 ----
