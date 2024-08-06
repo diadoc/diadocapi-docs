@@ -38,4 +38,4 @@ AddCounteragentToGroup
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragentgroup.txt
+.. include:: ../include/seealso_method_counteragentgroup.txt

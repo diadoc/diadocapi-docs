@@ -67,7 +67,7 @@ GetNewEvents
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_event.txt
+.. include:: ../include/seealso_method_event.txt
 
 *Устаревшие версии метода:*
 	- :doc:`obsolete/GetNewEvents_v4`

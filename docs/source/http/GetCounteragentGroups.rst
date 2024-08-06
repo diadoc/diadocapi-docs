@@ -15,7 +15,7 @@ GetCounteragentGroups
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.
 	:statuscode 401: в запросе отсутствует HTTP-заголовок ``Authorization`` или в этом заголовке содержатся некорректные авторизационные данные.
 	:statuscode 402: у организации с указанным идентификатором ``boxId`` закончилась подписка на API.
-	:statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен или запрос сделан не от имени сотрудника организации с разрешением ``CanManageCounteragents``.
+	:statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен или у пользователя нет права работать со списком контрагентов (см. :doc:`OrganizationUserPermissions.CanManageCounteragents <../proto/OrganizationUserPermissions>`).
 	:statuscode 405: используется неподходящий HTTP-метод.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
@@ -55,4 +55,4 @@ GetCounteragentGroups
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragentgroup.txt
+.. include:: ../include/seealso_method_counteragentgroup.txt
