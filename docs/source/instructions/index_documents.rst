@@ -18,4 +18,4 @@
 	docget
 	docservice
 	template
-	formal
+	index_formal
