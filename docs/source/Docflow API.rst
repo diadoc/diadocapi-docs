@@ -34,7 +34,6 @@ HTTP-интерфейс версии 3
    proto/DocflowEventV3
    proto/DocflowStatusV3
    proto/DocflowStatusModelV3
-   proto/DocumentDateAndNumber
    proto/DocumentDirection
    proto/DocumentId
    proto/DocumentInfoV3
@@ -93,6 +92,7 @@ HTTP-интерфейс версии 3
    proto/obsolete/ContractDocumentInfo
    proto/obsolete/Docflow
    proto/obsolete/DocflowEvent
+   proto/obsolete/DocumentDateAndNumber
    proto/obsolete/DocumentInfo
    proto/obsolete/DocumentType
    proto/obsolete/DocumentWithDocflow
