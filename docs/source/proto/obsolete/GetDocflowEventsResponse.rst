@@ -19,9 +19,10 @@ GetDocflowEventsResponse
 - ``Events`` — список событий, представленных структурой :doc:`DocflowEvent`.
 - ``TotalCountType`` — параметр, указывающий, является ли значение ``TotalCount`` точным или подсчет был ограничен. Представлен структурой :doc:`../TotalCountType`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/GetDocflowEvents_v2`
+	- в теле ответа устаревшего метода :doc:`../../http/obsolete/GetDocflowEvents_v2`

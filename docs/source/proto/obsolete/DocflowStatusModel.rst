@@ -21,9 +21,10 @@ DocflowStatusModel
 
 - ``StatusHint`` — дополнительный текст статуса.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocflowStatus`
+	- в устаревшей структуре :doc:`DocflowStatus`

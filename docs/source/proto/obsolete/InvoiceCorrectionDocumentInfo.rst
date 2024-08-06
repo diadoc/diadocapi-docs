@@ -2,7 +2,7 @@ InvoiceCorrectionDocumentInfo
 =============================
 
 .. warning::
-	Структура используется внутри устаревшей структуры :doc:`DocumentInfo`.
+	Структура устарела`.
 
 Структура ``InvoiceCorrectionDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>` ``InvoiceCorrection`` или ``InvoiceCorrectionRevision``.
 
@@ -25,13 +25,14 @@ InvoiceCorrectionDocumentInfo
 - ``VatInc`` — сумма налога, всего к увеличению.
 - ``VatDec`` — сумма налога, всего к уменьшению.
 - ``CurrencyCode`` — код валюты.
-- ``OriginalInvoiceDateAndNumber`` — дата и номер исходного счета-фактуры, представленные структурой :doc:`../DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на счет-фактуру.
-- ``OriginalInvoiceRevisionDateAndNumber`` — дата и номер исходного исправления счета-фактуры, представленные структурой :doc:`../DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на исправление счета-фактуры.
-- ``OriginalInvoiceCorrectionDateAndNumber`` — дата и номер исходной корректировки счета-фактуры, представленные структурой :doc:`../DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на корректировку счета-фактуры.
+- ``OriginalInvoiceDateAndNumber`` — дата и номер исходного счета-фактуры, представленные структурой :doc:`DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на счет-фактуру.
+- ``OriginalInvoiceRevisionDateAndNumber`` — дата и номер исходного исправления счета-фактуры, представленные структурой :doc:`DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на исправление счета-фактуры.
+- ``OriginalInvoiceCorrectionDateAndNumber`` — дата и номер исходной корректировки счета-фактуры, представленные структурой :doc:`DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на корректировку счета-фактуры.
+
 
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentInfo`
+	- в устаревшей структуре :doc:`DocumentInfo`

@@ -2,7 +2,7 @@ InvoiceDocumentInfo
 ===================
 
 .. warning::
-	Структура используется внутри устаревшей структуры :doc:`DocumentInfo`.
+	Структура устарела.
 
 Структура ``InvoiceDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>` ``Invoice`` или ``InvoiceRevision``.
 
@@ -19,11 +19,12 @@ InvoiceDocumentInfo
 - ``Total`` — сумма с учетом НДС, всего по документу.
 - ``Vat`` — сумма НДС, всего по документу.
 - ``CurrencyCode`` — код валюты.
-- ``OriginalInvoiceDateAndNumber`` — дата и номер исходного счета-фактуры, представленные структурой :doc:`../DocumentDateAndNumber`. Заполняется только для документов с типом ``InvoiceRevision``.
+- ``OriginalInvoiceDateAndNumber`` — дата и номер исходного счета-фактуры, представленные структурой :doc:`DocumentDateAndNumber`. Заполняется только для документов с типом ``InvoiceRevision``.
+
 
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentInfo`
+	- в устаревшей структуре :doc:`DocumentInfo`

@@ -2,7 +2,7 @@ UniversalTransferDocumentInfo
 =============================
 
 .. warning::
-	Структура используется внутри устаревшей структуры :doc:`DocumentInfo`.
+	Структура устарела.
 
 Структура ``UniversalTransferDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>` ``UniversalTransferDocument`` и ``UniversalTransferDocumentRevision``.
 
@@ -23,11 +23,12 @@ UniversalTransferDocumentInfo
 - ``CurrencyCode`` — код валюты.
 - ``Grounds`` — описание оснований для данного документа.
 - ``Function`` — функция документа, представленная структурой :doc:`FunctionType <UniversalTransferDocumentSellerTitleInfo>`.
-- ``OriginalDocumentDateAndNumber`` — дата и номер исходного УПД, представленные структурой :doc:`../DocumentDateAndNumber`. Заполняется только для ``UniversalTransferDocumentRevision``.
+- ``OriginalDocumentDateAndNumber`` — дата и номер исходного УПД, представленные структурой :doc:`DocumentDateAndNumber`. Заполняется только для ``UniversalTransferDocumentRevision``.
+
 
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentInfo`
+	- в устаревшей структуре :doc:`DocumentInfo`

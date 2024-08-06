@@ -56,9 +56,10 @@ Docflow
    - ``InboundUniversalTransferDocumentDocflow`` — документооборот входящего УПД, представленный структурой :doc:`InboundUniversalTransferDocumentDocflow` — для документов с типом ``UniversalTransferDocument``, ``UniversalTransferDocumentRevision``, ``UniversalCorrectionDocument``, ``UniversalCorrectionDocumentRevision``.
    - ``OutboundUniversalTransferDocumentDocflow`` — документооборот исходящего УПД, представленный структурой :doc:`OutboundUniversalTransferDocumentDocflow` — для документов с типом ``UniversalTransferDocument``, ``UniversalTransferDocumentRevision``, ``UniversalCorrectionDocument``, ``UniversalCorrectionDocumentRevision``.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentWithDocflow`
+	- в устаревшей структуре :doc:`DocumentWithDocflow`

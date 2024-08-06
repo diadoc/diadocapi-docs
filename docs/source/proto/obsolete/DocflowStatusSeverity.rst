@@ -2,7 +2,7 @@ DocflowStatusSeverity
 =====================
 
 .. warning::
-	Структура используется внутри устаревшей структуры :doc:`DocflowStatusModel`.
+	Структура устарела.
 
 .. code-block:: protobuf
 
@@ -17,9 +17,10 @@ DocflowStatusSeverity
 
 Возможные уровни критичности статуса документа.
 
+
 ----
 
 .. rubric:: См. также
 
 *Перечисление используется:*
-	- в структуре :doc:`DocflowStatusModel`
+	- в устаревшей структуре :doc:`DocflowStatusModel`

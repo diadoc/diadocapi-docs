@@ -2,7 +2,7 @@ InboundInvoiceReceiptDocflow
 ============================
 
 .. warning::
-	Структура используется внутри устаревших структур.
+	Структура устарела.
 
 Структура ``InboundInvoiceReceiptDocflow`` представляет собой информацию об извещении о получении (ИоП) в рамках документооборота входящего счета-фактуры.
 
@@ -19,10 +19,11 @@ InboundInvoiceReceiptDocflow
 - ``ReceiptAttachment`` — информация о файле ИоП, представленная структурой :ref:`ReceiptAttachment`.
 - ``ConfirmationDocflow`` — информация о подтверждении оператора на данное ИоП, представленная структурой :doc:`InvoiceConfirmationDocflow`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`InboundInvoiceDocflow`
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`InboundInvoiceDocflow`
+	- в устаревшей структуре :doc:`InboundUniversalTransferDocumentDocflow`

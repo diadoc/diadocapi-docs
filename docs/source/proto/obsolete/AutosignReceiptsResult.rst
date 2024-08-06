@@ -17,9 +17,10 @@ AutoSignReceiptsResult
 - ``SignedReceiptsCount`` — количество подписанных извещений.
 - ``NextBatchKey`` — идентификатор следующей пачки извещений для подписания.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/AutoSignReceiptsResult`
+	- в теле ответа устаревшего метода :doc:`../../http/obsolete/AutoSignReceiptsResult`

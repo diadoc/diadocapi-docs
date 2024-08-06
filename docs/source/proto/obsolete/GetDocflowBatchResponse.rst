@@ -15,9 +15,10 @@ GetDocflowBatchResponse
 
 - ``Documents`` — список документов, представленных структурой :doc:`DocumentWithDocflow`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/GetDocflows_v2`
+	- в теле ответа устаревшего метода :doc:`../../http/obsolete/GetDocflows_v2`

@@ -2,7 +2,7 @@ RecipientSignatureDocflow
 =========================
 
 .. warning::
-	Структура используется внутри устаревших структур.
+	Структура устарела.
 
 Структура ``RecipientSignatureDocflow`` представляет собой информацию об ответной подписи, поставленной контрагентом под документом.
 
@@ -19,10 +19,11 @@ RecipientSignatureDocflow
 - ``RecipientSignature`` — информация о содержимом подписи, результатах его проверки, и пр. Представлена структурой :doc:`../Signature`.
 - ``DeliveryTimestamp`` — время доставки подписи контрагенту, представленное структурой :doc:`../Timestamp`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`BilateralDocflow`
-	- в структуре :doc:`RevocationDocflow`
+	- в устаревшей структуре :doc:`BilateralDocflow`
+	- в устаревшей структуре :doc:`RevocationDocflow`

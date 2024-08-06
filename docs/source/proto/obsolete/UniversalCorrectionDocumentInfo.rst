@@ -2,7 +2,7 @@ UniversalCorrectionDocumentInfo
 ===============================
 
 .. warning::
-	Структура используется внутри устаревшей структуры :doc:`DocumentInfo`.
+	Структура устарела.
 
 Структура ``UniversalCorrectionDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>` ``UniversalCorrectionDocument`` и ``UniversalCorrectionDocumentRevision``.
 
@@ -29,13 +29,14 @@ UniversalCorrectionDocumentInfo
 - ``CurrencyCode`` — код валюты.
 - ``Grounds`` — описание оснований для данного документа.
 - ``Function`` — функция документа, описывается структурой :doc:`FunctionType <UniversalTransferDocumentSellerTitleInfo>`.
-- ``OriginalDocumentDateAndNumber`` — дата и номер исходного УПД, представленные структурой :doc:`../DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на УПД. 
-- ``OriginalDocumentRevisionDateAndNumber`` — дата и номер исходного исправления УПД, представленные структурой :doc:`../DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на исправление УПД.
-- ``OriginalDocumentCorrectionDateAndNumber`` — дата и номер исходной УКД, представленные структурой :doc:`../DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на УКД.
+- ``OriginalDocumentDateAndNumber`` — дата и номер исходного УПД, представленные структурой :doc:`DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на УПД. 
+- ``OriginalDocumentRevisionDateAndNumber`` — дата и номер исходного исправления УПД, представленные структурой :doc:`DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на исправление УПД.
+- ``OriginalDocumentCorrectionDateAndNumber`` — дата и номер исходной УКД, представленные структурой :doc:`DocumentDateAndNumber`. Заполняется только если корректировка была сформирована на УКД.
+
 
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentInfo`
+	- в устаревшей структуре :doc:`DocumentInfo`

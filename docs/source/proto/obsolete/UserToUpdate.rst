@@ -40,4 +40,4 @@ UserToUpdate
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле запроса метода :doc:`../../http/obsolete/UpdateMyUser`
+	- в теле запроса устаревшего метода :doc:`../../http/obsolete/UpdateMyUser`

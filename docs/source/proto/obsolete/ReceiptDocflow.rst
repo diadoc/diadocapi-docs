@@ -2,7 +2,7 @@ ReceiptDocflow
 ==============
 
 .. warning::
-	Структура используется внутри устаревших структур.
+	Структура устарела.
 
 Структура ``ReceiptDocflow`` представляет собой информацию об извещении о получении (ИоП) документа.
 
@@ -17,17 +17,18 @@ ReceiptDocflow
 - ``IsFinished`` — признак того, что документооборот ИоП завершен. Принимает значение ``true`` в случае если ИоП имеет корректную подпись и на него было получено подтверждение оператора с корректной подписью.
 - ``ReceiptAttachment`` — информация о файле извещения, представленная структурой :doc:`../SignedAttachment`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`BilateralDocflow`
-	- в структуре :doc:`InboundInvoiceDocflow`
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`
-	- в структуре :doc:`InvoiceConfirmationDocflow`
-	- в структуре :doc:`InvoiceCorrectionRequestDocflow`
-	- в структуре :doc:`OutboundInvoiceDocflow`
-	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`
-	- в структуре :doc:`UnilateralDocflow`
-	- в структуре :doc:`XmlBilateralDocflow`
+	- в устаревшей структуре :doc:`BilateralDocflow`
+	- в устаревшей структуре :doc:`InboundInvoiceDocflow`
+	- в устаревшей структуре :doc:`InboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`InvoiceConfirmationDocflow`
+	- в устаревшей структуре :doc:`InvoiceCorrectionRequestDocflow`
+	- в устаревшей структуре :doc:`OutboundInvoiceDocflow`
+	- в устаревшей структуре :doc:`OutboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`UnilateralDocflow`
+	- в устаревшей структуре :doc:`XmlBilateralDocflow`

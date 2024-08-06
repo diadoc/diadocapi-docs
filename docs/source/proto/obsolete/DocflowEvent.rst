@@ -29,9 +29,10 @@ DocflowEvent
 
 Сравнивая содержимое полей ``Document`` и ``PreviousDocumentState``, можно составить картину изменений, которые произошли с документом.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`GetDocflowEventsResponse`
+	- в устаревшей структуре :doc:`GetDocflowEventsResponse`

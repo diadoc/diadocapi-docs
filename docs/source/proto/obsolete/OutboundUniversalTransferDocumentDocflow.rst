@@ -2,7 +2,7 @@ OutboundUniversalTransferDocumentDocflow
 ========================================
 
 .. warning::
-	Структура используется внутри устаревшей структуры :doc:`Docflow`.
+	Структура устарела.
 
 Структура ``OutboundUniversalTransferDocumentDocflow`` представляет собой информацию о документообороте исходящего УПД.
 
@@ -47,9 +47,10 @@ OutboundUniversalTransferDocumentDocflow
 - ``CanDocumentBeReceipted`` — признак того, что для документа можно отправить извещение о получении. Принимает значение ``true`` для входящих документов, по которым корректные извещения ранее не отправлялись.
 - ``CanDocumentBeSignedOrRejectedByRecipient`` — признак того, что получатель может подписать документ или отказать в подписании.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`Docflow`
+	- в устаревшей структуре :doc:`Docflow`

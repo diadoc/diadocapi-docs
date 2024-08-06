@@ -2,7 +2,7 @@ RecipientSignatureRejectionDocflow
 ==================================
 
 .. warning::
-	Структура используется внутри устаревших структур.
+	Структура устарела.
 
 Структура ``RecipientSignatureRejectionDocflow`` представляет собой информацию об отказе контрагента в подписании документа. Отказ является подписанным файлом установленного формата.
 
@@ -19,13 +19,14 @@ RecipientSignatureRejectionDocflow
 - ``RecipientSignatureRejectionAttachment`` — информация о файле отказа, представленная структурой :doc:`../SignedAttachment`.
 - ``DeliveryTimestamp`` — время доставки отказа, представленное структурой :doc:`../Timestamp`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`BilateralDocflow`
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`
-	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`
-	- в структуре :doc:`RevocationDocflow`
-	- в структуре :doc:`XmlBilateralDocflow`
+	- в устаревшей структуре :doc:`BilateralDocflow`
+	- в устаревшей структуре :doc:`InboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`OutboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`RevocationDocflow`
+	- в устаревшей структуре :doc:`XmlBilateralDocflow`

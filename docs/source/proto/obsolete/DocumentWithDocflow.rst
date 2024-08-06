@@ -29,13 +29,14 @@ DocumentWithDocflow
 - ``SubordinateDocumentIds`` — идентификаторы документов, которые ссылаются на данный документ, представленные структурой :doc:`../DocumentId`.
 - ``ForwardDocumentEvents`` — события по перемещению данного документа, представленные структурой :doc:`../ForwardDocumentEvent`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocflowEvent`
-	- в структуре :doc:`FetchedDocument`
 	- в структуре :doc:`../ForwardedDocument`
-	- в структуре :doc:`GetDocflowBatchResponse`
-	- в структуре :doc:`SearchDocflowsResponse`
+	- в устаревшей структуре :doc:`DocflowEvent`
+	- в устаревшей структуре :doc:`FetchedDocument`
+	- в устаревшей структуре :doc:`GetDocflowBatchResponse`
+	- в устаревшей структуре :doc:`SearchDocflowsResponse`

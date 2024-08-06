@@ -2,7 +2,7 @@ ContractDocumentInfo
 ====================
 
 .. warning::
-	Структура используется внутри устаревшей структуры :doc:`DocumentInfo`.
+	Структура устарела.
 
 Структура ``ContractDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>` ``Contract``.
 
@@ -17,9 +17,10 @@ ContractDocumentInfo
 - ``ContractPrice`` — цена, указанная в договоре.
 - ``ContractType`` — тип договора.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentInfo`
+	- в устаревшей структуре :doc:`DocumentInfo`
