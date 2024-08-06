@@ -30,3 +30,9 @@ CounteragentStatus
 *Перечисление используется:*
 	- в структуре :doc:`Counteragent`
 	- в структуре :doc:`CounteragentInfo`
+
+*Определение:*
+	- :doc:`../entities/counteragent`
+
+*Инструкции:*
+	- :doc:`../instructions/counteragents`

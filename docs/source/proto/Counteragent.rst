@@ -52,5 +52,4 @@ Counteragent
 
 *Инструкции:*
 	- :doc:`../instructions/counteragents`
-	- :doc:`../instructions/counteragentgroups`
 

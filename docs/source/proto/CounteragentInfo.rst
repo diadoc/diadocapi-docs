@@ -31,3 +31,9 @@ CounteragentInfo
 
 *Структура используется:*
 	- в структуре :doc:`BoxCounteragentEvent <BoxCounteragentEventList>`
+
+*Определение:*
+	- :doc:`../entities/counteragent`
+
+*Инструкции:*
+	- :doc:`../instructions/counteragents`
