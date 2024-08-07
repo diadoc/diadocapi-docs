@@ -92,13 +92,20 @@ CertificateList
 		- ``TokenUsage`` — сертификат на железном носителе;
 		- ``DssUsage`` — DSS-сертификат.
 
-	- ``DssType`` — тип DSS сертификата. Если используется не DSS-сертификат, значение будет пустым. Принимает значение из перечисления ``DssCertificateType``:
+	- ``DssType`` — тип DSS-сертификата. Если используется не DSS-сертификат, значение будет пустым. Принимает значение из перечисления ``DssCertificateType``:
 
 		- ``UnknownDssType`` — неизвестный тип сертификата;
 		- ``MyDss`` — MyDss-сертификат;
 		- ``KSignServer`` — КПодпись.Сервер;
 		- ``KSignRutoken`` — КПодпись.Рутокен;
 		- ``KSignMobile`` — КПодпись.Мобильный.
+
+С помощью значений параметров ``Usages`` и ``DssType`` можно определить :doc:`тип сертификата <../entities/certificate>`:
+
+	- если ``CertificateType = Token`` и ``Usages = Token; DSS`` — то это сертификат Рутокен ЭЦП 3.0 (NFC);
+	- если ``CertificateType = Token``, а ``Usages`` не содержит элемента ``DSS`` — то это сертификат Рутокен ЭЦП 2.0;
+	- если ``CertificateType = KonturCertificate``, а ``Usages = KonturCertificateUsage`` — то это Контур.Сертификат;
+	- если ``CertificateType = DSS``, а ``Usages = DssUsage`` — то это DSS-сертификат;
 
 
 ----
