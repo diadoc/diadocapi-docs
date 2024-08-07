@@ -37,7 +37,7 @@ GetCounteragentCertificates
 
 .. include:: ../include/accessMethod_required_box.txt
 
-Организация имеет право запрашивать список сертификатов контрагента ``counteragentBoxId``, если у нее включена возможность отправки зашифрованных документов. Эта возможность указана в поле :doc:`Organization.Box.EncryptedDocumentsAllowed <../proto/Box>`.
+.. include:: ../include/access_required_encryptedDocumentsAllowed.txt
 
 
 Примеры использования
