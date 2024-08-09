@@ -1,10 +1,10 @@
 ﻿История изменений API
 =====================
 
-10.08.2024
+09.08.2024
 ----------
 
-**SDK**: `C# 2.20.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.20.1>`__ | `Java 3.20.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.20.2>`__
+**SDK**: `C# 2.22.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.22.0>`__ | `Java 3.21.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.21.0>`__
 
 - Расширили структуру :doc:`CertificateInfoV2 <proto/CertificateList>`, чтобы предоставить возможность определять тип используемого сертификата:
 
