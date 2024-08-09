@@ -24,6 +24,8 @@ CertificateList
         optional string UserShortName = 12;
         optional bool IsDefault = 13;
         optional CertificateSubjectType SubjectType = 14;
+        repeated CertificateUsage Usages = 15;
+        optional DssCertificateType DssType = 16;
     }
 
     enum CertificateType {
@@ -32,12 +34,27 @@ CertificateList
         DSS = 2;
         KonturCertificate = 3;
     }
-	
+
     enum CertificateSubjectType {
         UnknownCertificateSubjectType = 0;
         LegalEntity = 1;
         IndividualEntity = 2;
         PhysicalPerson = 3;
+    }
+
+    enum CertificateUsage {
+        UnknownUsage = 0;
+        KonturCertificateUsage = 1;
+        TokenUsage = 2;
+        DssUsage = 3;
+    }
+
+    enum DssCertificateType {
+        UnknownDssType = 0;
+        MyDss = 1;
+        KSignServer = 2;
+        KSignRutoken = 3;
+        KSignMobile = 4;
     }
 
 - ``Certificates`` — список сертификатов. Каждый элемент списка представлен структурой ``CertificateInfoV2`` с полями: 
@@ -67,6 +84,28 @@ CertificateList
 		- ``LegalEntity`` — представитель юридического лица;
 		- ``IndividualEntity`` — индивидуальный предприниматель;
 		- ``PhysicalPerson`` — физическое лицо.
+
+	- ``Usages`` — список типов сертификата. Может быть пустым. Каждый элемент списка принимает значение из перечисления ``CertificateUsage``:
+
+		- ``UnknownUsage`` — неизвестный тип сертификата;
+		- ``KonturCertificateUsage`` — Контур.Сертификат;
+		- ``TokenUsage`` — сертификат на железном носителе;
+		- ``DssUsage`` — мобильный сертификат.
+
+	- ``DssType`` — тип мобильного сертификата. Если используется не мобильный сертификат, значение будет пустым. Принимает значение из перечисления ``DssCertificateType``:
+
+		- ``UnknownDssType`` — неизвестный тип сертификата;
+		- ``MyDss`` — MyDss-сертификат;
+		- ``KSignServer`` — КПодпись.Сервер;
+		- ``KSignRutoken`` — КПодпись.Рутокен;
+		- ``KSignMobile`` — КПодпись.Мобильный.
+
+С помощью значений параметров ``Usages`` и ``DssType`` можно определить :doc:`тип сертификата <../entities/certificate>`:
+
+	- если ``CertificateType = Token`` и ``Usages = Token; DSS`` — то это сертификат Рутокен ЭЦП 3.0 (NFC);
+	- если ``CertificateType = Token``, а ``Usages`` не содержит элемента ``DSS`` — то это сертификат Рутокен ЭЦП 2.0;
+	- если ``CertificateType = KonturCertificate``, а ``Usages = KonturCertificateUsage`` — то это Контур.Сертификат;
+	- если ``CertificateType = DSS``, а ``Usages = DssUsage`` — то это мобильный сертификат;
 
 
 ----
