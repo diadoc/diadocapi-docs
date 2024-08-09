@@ -266,7 +266,7 @@ Entity
 	- ``UniversalCorrectionDocument``
 	- ``UniversalTransferDocumentRevision``
 
-- ``RawCreationDate`` — время создания сущности, представленное структурой :doc:`Timestamp`.
+- ``RawCreationDate`` — время создания сущности, целое число тиков (100-наносекундных интервалов), прошедших с момента времени 00:00:00 01.01.0001.
 
 - ``ResolutionInfo`` — информация о согласовании, представленная структурой :doc:`ResolutionInfo`. Возвращается только для сущностей с типом ``Attachment`` с типом вложения ``Resolution``.
 
