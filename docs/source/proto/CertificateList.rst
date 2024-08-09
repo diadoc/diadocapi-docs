@@ -90,9 +90,9 @@ CertificateList
 		- ``UnknownUsage`` — неизвестный тип сертификата;
 		- ``KonturCertificateUsage`` — Контур.Сертификат;
 		- ``TokenUsage`` — сертификат на железном носителе;
-		- ``DssUsage`` — DSS-сертификат.
+		- ``DssUsage`` — мобильный сертификат.
 
-	- ``DssType`` — тип DSS-сертификата. Если используется не DSS-сертификат, значение будет пустым. Принимает значение из перечисления ``DssCertificateType``:
+	- ``DssType`` — тип мобильного сертификата. Если используется не мобильный сертификат, значение будет пустым. Принимает значение из перечисления ``DssCertificateType``:
 
 		- ``UnknownDssType`` — неизвестный тип сертификата;
 		- ``MyDss`` — MyDss-сертификат;
@@ -105,7 +105,7 @@ CertificateList
 	- если ``CertificateType = Token`` и ``Usages = Token; DSS`` — то это сертификат Рутокен ЭЦП 3.0 (NFC);
 	- если ``CertificateType = Token``, а ``Usages`` не содержит элемента ``DSS`` — то это сертификат Рутокен ЭЦП 2.0;
 	- если ``CertificateType = KonturCertificate``, а ``Usages = KonturCertificateUsage`` — то это Контур.Сертификат;
-	- если ``CertificateType = DSS``, а ``Usages = DssUsage`` — то это DSS-сертификат;
+	- если ``CertificateType = DSS``, а ``Usages = DssUsage`` — то это мобильный сертификат;
 
 
 ----
