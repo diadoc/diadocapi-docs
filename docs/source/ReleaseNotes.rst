@@ -562,7 +562,7 @@
 
 - Добавлен метод :doc:`http/PostTemplatePatch`, который позволяет отправлять дополнения к шаблонам документов.
 - Добавлена возможность с помощью этого метода и структуры :ref:`TemplateRefusalAttachment <template-refusal-attachment>` выполнить отзыв или отклонение шаблона.
-- В структуры :doc:`proto/Entity message` и :doc:`DocumentTemplateInfo <DocumentInfoV3>` добавлена информация об отзыве и отклонении шаблона.
+- В структуры :doc:`proto/Entity message` и :doc:`DocumentTemplateInfo <proto/DocumentInfoV3>` добавлена информация об отзыве и отклонении шаблона.
 
 
 13.12.2019
