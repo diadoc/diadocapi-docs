@@ -1,6 +1,8 @@
 DocumentList
 ============
 
+Структура ``DocumentList`` представляет собой список документов.
+
 .. code-block:: protobuf
 
     message DocumentList {
@@ -8,13 +10,20 @@ DocumentList
         repeated Document Documents = 2;
         optional bool HasMoreResults = 3;
     }
-        
 
-Структура данных DocumentList представляет собой список документов, возвращаемый методом :doc:`../http/GetDocuments` или методом :doc:`../http/GetDocumentsByMessageId`.
-Каждый элемент списка DocumentList.Documents представлен структурой :doc:`Document`.
+- ``TotalCount`` — общее количество документов, соответствующих заданным параметрам. В ответе метода :doc:`../http/GetDocuments` принимает значение в зависимости от количества найденных документов:
 
-Для метода :doc:`../http/GetDocumentsByMessageId` всегда возвращаются все доступные для сотрудника документы из сообщения. Признак HasMoreResults будет всегда принимать значение false.
+	- если документов больше 1000, то значение ``TotalCount`` будет равным 1000, а признак ``HasMoreResults`` будет иметь значение ``true``;
+	- если документов меньше 1000, то в поле ``TotalCount`` вернется точное количество документов, а признак ``HasMoreResults`` будет иметь значение ``false``.
 
-Для метода :doc:`../http/GetDocuments` поле DocumentList.TotalCount содержит общее количество документов, удовлетворяющих фильтру. Если количество документов превышает 1000, значение TotalCount всегда будет возвращаться равным 1000 и признак HasMoreResults=true. Если документов менее 1000, в TotalCount будет возвращаться точное количество документов, признак HasMoreResults = false. 
+- ``Documents`` — список документов, представленный структурой :doc:`Document`.
+- ``HasMoreResults`` — признак того, что найденных документов больше 1000, и в списке ``Documents`` содержатся не все найденные документы. В ответе метода :doc:`../http/GetDocumentsByMessageId` всегда имеет значение ``false``.
 
 
+----
+
+.. rubric:: См. также
+
+*Структура используется:*
+	- в теле ответа метода :doc:`../http/GetDocuments`
+	- в теле ответа метода :doc:`../http/GetDocumentsByMessageId`
