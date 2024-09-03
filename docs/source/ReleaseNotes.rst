@@ -1,16 +1,18 @@
 ﻿История изменений API
 =====================
 
-09.08.2024
+04.09.2024
 ----------
 
-**SDK**: `C# 2.22.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.22.0>`__ | `Java 3.21.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.21.0>`__
+**SDK**: `C# 2.23.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.23.0>`__ | `Java 3.22.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.22.0>`__
 
-- Изменили отображение результатов проверки МЧД. Для этого расширили структуру :doc:`proto/PowerOfAttorneyValidationStatus`:
+- Изменили отображение результатов проверки МЧД. Для этого расширили структуру :doc:`proto/PowerOfAttorneyValidationStatus` (новые поля будут заполняться после переключения на новый протокол валидации МЧД, которое произойдет ориентировочно в середине сентября):
 
 	- добавили поле ``ValidationProtocol`` с типом :ref:`ValidationProtocol`,
 	- добавили поле ``OperationError`` с типом :ref:`PowerOfAttorneyValidationError`,
 	- в перечисление ``PowerOfAttorneyValidationStatusNamedId`` добавили значение ``HasWarnings``.
+
+- Свойство ``Errors`` структуры :doc:`proto/PowerOfAttorneyValidationStatus` объявили устаревшим.
 
 
 09.08.2024

@@ -81,18 +81,26 @@ ValidationProtocol
     }
 
     message ValidationCheckResult {
-        required string Status = 1;
+        optional PowerOfAttorneyValidationCheckStatus Status = 1;
         required string Name = 2;
         optional PowerOfAttorneyValidationError Error = 3;
     }
 
+    enum PowerOfAttorneyValidationCheckStatus {
+	    UnknownCheckStatus = 0;
+	    Ok = 1;
+	    Warning = 2;
+	    Error = 3;
+    }
+
 - ``CheckResults`` — результат проверки МЧД, представленный структурой ``ValidationCheckResult`` с полями:
 
-	- ``Status`` — результат выполнения проверки. Принимает одно из следующих значений:
+	- ``Status`` — результат выполнения проверки, значение из перечисления ``PowerOfAttorneyValidationCheckStatus``:
 
-		- ``ok`` — проверка пройдена,
-		- ``warning`` — есть предупреждение,
-		- ``error`` — есть ошибка.
+		- ``UnknownCheckStatus`` — значение по умолчанию;
+		- ``Ok`` — проверка пройдена;
+		- ``Warning`` — есть предупреждение;
+		- ``Error`` — есть ошибка.
 
 	- ``Name`` — текстовый идентификатор проверки.
 	- ``Error`` — информация об ошибке или предупреждении, представленная структурой :ref:`PowerOfAttorneyValidationError`.
