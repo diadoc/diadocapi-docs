@@ -1,15 +1,22 @@
 PowerOfAttorneyValidationStatus
 ===============================
 
+На этой странице, помимо ``PowerOfAttorneyValidationStatus``, описаны следующие структуры:
+
+.. contents:: :local:
+
+
 Структура ``PowerOfAttorneyValidationStatus`` предназначена для хранения информации о статусе проверки машиночитаемой доверенности (МЧД).
 
 .. code-block:: protobuf
 
     message PowerOfAttorneyValidationStatus {
-        optional Severity Severity = 1 [default = UnknownSeverity];
-        optional PowerOfAttorneyValidationStatusNamedId StatusNamedId = 2 [default = UnknownStatus];
+        required Severity Severity = 1;
+        required PowerOfAttorneyValidationStatusNamedId StatusNamedId = 2;
         optional string StatusText = 3;
-        repeated PowerOfAttorneyValidationError Errors = 4;
+        repeated PowerOfAttorneyValidationError Errors = 4 [deprecated = true];
+        optional ValidationProtocol ValidationProtocol = 5;
+        optional PowerOfAttorneyValidationError OperationError = 6;
     }
 
     enum Severity {
@@ -27,12 +34,9 @@ PowerOfAttorneyValidationStatus
         IsNotValid = 3;
         ValidationError = 4;
         IsNotAttached = 5;
+        HasWarnings = 6;
     }
 
-    message PowerOfAttorneyValidationError {
-        required string Code = 1;
-        required string Text = 2;
-    }
 
 - ``Severity`` — критичность статуса, значение из перечисления ``Severity``:
 
@@ -49,13 +53,76 @@ PowerOfAttorneyValidationStatus
 		- ``IsValid`` — все проверки выполнены без ошибок;
 		- ``IsNotValid`` — среди МЧД есть хотя бы одна невалидная;
 		- ``ValidationError`` — МЧД была передана на валидацию, но во время выполнения проверок произошла внутренняя ошибка;
-		- ``IsNotAttached`` — МЧД не приложена к подписи, возвращается только для общего (сводного) статуса МЧД.
+		- ``IsNotAttached`` — МЧД не приложена к подписи, возвращается только для общего (сводного) статуса МЧД;
+		- ``HasWarnings`` — часть проверок не может быть выполнена или была выполнена с предупреждениями.
 
 - ``StatusText`` — удобочитаемый текст статуса.
-- ``Errors`` — список ошибок, представленных структурой ``PowerOfAttorneyValidationError`` с полями:
+- ``Errors`` — поле устарело, используйте значение поля ``OperationError``.
+- ``ValidationProtocol`` — протокол валидации с результатами выполнения проверок, представленный структурой :ref:`ValidationProtocol`. Возвращается в случае, когда ``StatusNamedId`` принимает значение:
 
-	- ``Code`` — код ошибки.
-	- ``Text`` — текст ошибки.
+	- ``IsValid``,
+	- ``IsNotValid``,
+	- ``HasWarnings``.
+
+- ``OperationError`` — описание ошибки, произошедшей в процессе выполнения операции, представленное структурой :ref:`PowerOfAttorneyValidationError`. Возвращается в случае, если ``StatusNamedId`` принимает значение ``ValidationError`` или ``CanNotBeValidated``.
+
+
+.. _ValidationProtocol:
+
+ValidationProtocol
+------------------
+
+Структура ``ValidationProtocol`` представляет собой протокол валидации, содержащий результат выполнения проверок МЧД.
+
+.. code-block:: protobuf
+
+    message ValidationProtocol {
+        repeated ValidationCheckResult CheckResults = 1;
+    }
+
+    message ValidationCheckResult {
+        optional PowerOfAttorneyValidationCheckStatus Status = 1;
+        required string Name = 2;
+        optional PowerOfAttorneyValidationError Error = 3;
+    }
+
+    enum PowerOfAttorneyValidationCheckStatus {
+	    UnknownCheckStatus = 0;
+	    Ok = 1;
+	    Warning = 2;
+	    Error = 3;
+    }
+
+- ``CheckResults`` — результат проверки МЧД, представленный структурой ``ValidationCheckResult`` с полями:
+
+	- ``Status`` — результат выполнения проверки, значение из перечисления ``PowerOfAttorneyValidationCheckStatus``:
+
+		- ``UnknownCheckStatus`` — значение по умолчанию;
+		- ``Ok`` — проверка пройдена;
+		- ``Warning`` — есть предупреждение;
+		- ``Error`` — есть ошибка.
+
+	- ``Name`` — текстовый идентификатор проверки.
+	- ``Error`` — информация об ошибке или предупреждении, представленная структурой :ref:`PowerOfAttorneyValidationError`.
+
+
+.. _PowerOfAttorneyValidationError:
+
+PowerOfAttorneyValidationError
+------------------------------
+
+Структура ``PowerOfAttorneyValidationError`` хранит информацию об ошибке, произошедшей при выполнении проверки МЧД.
+
+.. code-block:: protobuf
+
+    message PowerOfAttorneyValidationError {
+        required string Code = 1;
+        required string Text = 2;
+    }
+
+- ``Code`` — код ошибки.
+- ``Text`` — текст ошибки.
+
 
 ----
 
