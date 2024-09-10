@@ -38,7 +38,7 @@ PowerOfAttorneyValidationStatus
     }
 
 
-- ``Severity`` — критичность статуса, значение из перечисления ``Severity``:
+- ``Severity`` — критичность статуса, принимает значение из перечисления ``Severity``:
 
 		- ``UnknownSeverity`` — значение по умолчанию;
 		- ``Info`` — информация;
@@ -46,7 +46,7 @@ PowerOfAttorneyValidationStatus
 		- ``Warning`` — предупреждение;
 		- ``Error`` — ошибка.
 
-- ``StatusNamedId`` — текстовый идентификатор статуса, значение из перечисления ``PowerOfAttorneyValidationStatusNamedId``:
+- ``StatusNamedId`` — текстовый идентификатор статуса, принимает значение из перечисления ``PowerOfAttorneyValidationStatusNamedId``:
 
 		- ``UnknownStatus`` — значение по умолчанию;
 		- ``CanNotBeValidated`` — не удалось передать МЧД на валидацию. Ошибка может возникнуть в случае, когда файл МЧД некорректный или из него не удалось получить необходимые данные для проверки — данные о доверенности, о доверителе, о представителе из подписи и т.п.;
@@ -87,18 +87,18 @@ ValidationProtocol
     }
 
     enum PowerOfAttorneyValidationCheckStatus {
-	    UnknownCheckStatus = 0;
-	    Ok = 1;
-	    Warning = 2;
-	    Error = 3;
+        UnknownCheckStatus = 0;
+        Ok = 1;
+        Warning = 2;
+        Error = 3;
     }
 
 - ``CheckResults`` — результат проверки МЧД, представленный структурой ``ValidationCheckResult`` с полями:
 
-	- ``Status`` — результат выполнения проверки, значение из перечисления ``PowerOfAttorneyValidationCheckStatus``:
+	- ``Status`` — результат выполнения проверки, принимает значение из перечисления ``PowerOfAttorneyValidationCheckStatus``:
 
 		- ``UnknownCheckStatus`` — значение по умолчанию;
-		- ``Ok`` — проверка пройдена;
+		- ``Ok`` — проверка успешно пройдена;
 		- ``Warning`` — есть предупреждение;
 		- ``Error`` — есть ошибка.
 

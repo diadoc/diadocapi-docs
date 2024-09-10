@@ -6,13 +6,14 @@
 
 **SDK**: `C# 2.23.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.23.0>`__ | `Java 3.22.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.22.0>`__
 
-- Изменили отображение результатов проверки МЧД. Для этого расширили структуру :doc:`proto/PowerOfAttorneyValidationStatus` (новые поля будут заполняться после переключения на новый протокол валидации МЧД, которое произойдет ориентировочно в середине сентября):
+- Изменили отображение результатов проверки МЧД. Для этого внесли изменения в структуру :doc:`proto/PowerOfAttorneyValidationStatus`:
 
 	- добавили поле ``ValidationProtocol`` с типом :ref:`ValidationProtocol`,
 	- добавили поле ``OperationError`` с типом :ref:`PowerOfAttorneyValidationError`,
-	- в перечисление ``PowerOfAttorneyValidationStatusNamedId`` добавили значение ``HasWarnings``.
+	- в перечисление ``PowerOfAttorneyValidationStatusNamedId`` добавили значение ``HasWarnings``,
+	- поле ``Errors`` отметили устаревшим и не рекомендуем его к использованию.
 
-- Свойство ``Errors`` структуры :doc:`proto/PowerOfAttorneyValidationStatus` объявили устаревшим.
+   Эти поля будут заполняться после перехода на новый способ валидации МЧД, который произойдет в середине сентября.
 
 
 09.08.2024
