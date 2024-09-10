@@ -102,8 +102,8 @@ CertificateList
 
 С помощью значений параметров ``Usages`` и ``DssType`` можно определить :doc:`тип сертификата <../entities/certificate>`:
 
-	- если ``CertificateType = Token`` и ``Usages = Token; DSS`` — то это сертификат Рутокен ЭЦП 3.0 (NFC);
-	- если ``CertificateType = Token``, а ``Usages`` не содержит элемента ``DSS`` — то это сертификат Рутокен ЭЦП 2.0;
+	- если ``CertificateType = Token`` и ``Usages = TokenUsage; DssUsage`` — то это сертификат Рутокен ЭЦП 3.0 (NFC);
+	- если ``CertificateType = Token``, а ``Usages`` не содержит элемента ``DssUsage`` — то это сертификат Рутокен ЭЦП 2.0;
 	- если ``CertificateType = KonturCertificate``, а ``Usages = KonturCertificateUsage`` — то это Контур.Сертификат;
 	- если ``CertificateType = DSS``, а ``Usages = DssUsage`` — то это мобильный сертификат;
 
