@@ -17,6 +17,7 @@ PowerOfAttorneyInfo
 - ``SendingStatus`` — статус отправки МЧД в роуминг. Представлен структурой :doc:`RoamingSendingStatus`.
 - ``SendingType`` — способ передачи МЧД. Принимает значения из перечисления :doc:`PowerOfAttorneySendingType`.
 
+
 ----
 
 .. rubric:: См. также
