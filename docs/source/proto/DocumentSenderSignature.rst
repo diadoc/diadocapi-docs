@@ -34,5 +34,5 @@ DocumentSenderSignature
 	- в структуре :doc:`DraftToSend`
 
 *Определение:*
-	- :doc:`../entities/signature
+	- :doc:`../entities/signature`
 	- :doc:`../entities/draft`
