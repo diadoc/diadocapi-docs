@@ -40,7 +40,7 @@
 
 4. :ref:`Обновите авторизационный токен <auth_refresh_token>` ``access_token`` до истечении времени жизни.
 
-Для некоторых языков разработки в открытом доступе существуют готовые библиотеки или реализации интеграции с OpenID Connect: например, `JS <https://www.npmjs.com/package/oidc-client>`__, `.Net <https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect>`__ и `Java <https://mvnrepository.com/artifact/org.springframework.security/spring-security-openid>`__
+Для некоторых языков разработки в открытом доступе существуют готовые библиотеки или реализации интеграции с OpenID Connect: например, `JS <https://www.npmjs.com/package/openid-client>`__, `.Net <https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect>`__ и `Java <https://mvnrepository.com/artifact/org.springframework.security/spring-security-openid>`__
 
 Примеры реализации аутентификации через OpenID Connect в клиентском приложении можно найти по следующим ссылкам:
 	- `ASP.NET Core приложение с OIDC-аутентификацией <https://git.skbkontur.ru/diadoc/integration-samples/-/tree/master/Diadoc.Integration/SampleWebApp.Oidc>`__
@@ -65,8 +65,6 @@
 
 		**Параметры запроса**
 
-		Все передаваемые параметры должны быть в формате url_encoded.
-
 		``Content-type: application/x-www-form-urlencoded``
 		
 		- ``response_type`` — ответ, который нужно получить от OpenID Провайдера. Укажите значение ``code``.
@@ -78,6 +76,8 @@
 
 		- ``redirect_uri`` — ссылка, на которую будет перенаправлен пользователь после аутентификации.
 		- ``nonce`` — строка, предназначенная для проверки того, что запрос связан с будущим ``Access Token``. Она должна вернутся при получении ``Access Token``.
+
+		Все передаваемые параметры должны быть в формате url_encoded.
 
 		**Пример запроса**
 
@@ -103,8 +103,6 @@
 
 		**Параметры запроса**
 
-		Все передаваемые параметры должны быть в формате url_encoded.
-
 		``Content-type: application/x-www-form-urlencoded``
 
 		- ``grant_type`` — способ запроса токена. Укажите значение ``authorization_code``.
@@ -112,6 +110,8 @@
 		- ``client_id`` — идентификатор приложения, выданный при его регистрации.
 		- ``client_secret`` — ключ приложения, выданный при его регистрации.
 		- ``redirect_uri`` — ссылка, на которую получен код подтверждения.
+
+		Все передаваемые параметры должны быть в формате url_encoded.
 
 		**Пример запроса**
 
@@ -161,7 +161,7 @@
 
 Время жизни ``refresh_token`` — 30 суток. После этого пользователю придется снова авторизовываться в OpenID Провайдере.
 
-.. collapse:: Описание запроса
+ .. collapse:: Описание запроса
 
 	**Параметры запроса**
 
@@ -195,7 +195,6 @@
 		    "token_type": "Bearer",
 		    "refresh_token": "fd672752f8e9c4a8eb083fb2375b3126ae37dc69a0cf46953ef9a6e3f5a692df"
 		}
-
 
 .. note::
 	Подробная инструкция по обновлению токена приведена на странице `Обновление Access Token <https://developer.kontur.ru/Docs/html/schemes/using_refresh.html>`__.
