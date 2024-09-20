@@ -35,7 +35,7 @@
 
 		GET /GetMyOrganizations
 		Host: diadoc-api.kontur.ru
-		Authorization: Bearer {{token}}
+		Authorization: Bearer {{access_token}}
 		Accept: application/json
 
 4. :ref:`Обновите авторизационный токен <auth_refresh_token>` ``access_token`` до истечении времени жизни.
