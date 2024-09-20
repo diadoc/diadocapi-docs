@@ -11,7 +11,7 @@ RoamingNotification
         required bool IsSuccess = 2;
     }
 
-- ``Notification`` — описание ошибки доставки, представленное структурой :doc:`Entity`. Может отсутствовать.
+- ``Notification`` — описание ошибки доставки, представленное структурой :doc:`Entity`.
 - ``IsSuccess`` — флаг, означающий успешную доставку документа в роуминг.
 
 

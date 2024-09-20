@@ -13,7 +13,7 @@ DocumentWithDocflowV3
 
     message LastEvent
     {
-        required EventId = 1;
+        required string EventId = 1;
         required Timestamp Timestamp = 2;
     }
 
