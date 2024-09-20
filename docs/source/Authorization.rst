@@ -6,7 +6,7 @@
 
 Чтобы работать с API Диадока, нужно авторизоваться. Сейчас Диадок поддерживает две схемы авторизации:
 
-	- :ref:`с помощью OpenID Connect <auth_oidc>` — рекомендуемый способ авторизации;
+	- :ref:`с помощью OpenID Connect <auth_oidc>` — рекомендуемый способ аутентификации;
 	- :ref:`с помощью методов Диадока <auth_authenticate>` — нерекомендуемый устаревший способ авторизации.
 
 
@@ -15,24 +15,30 @@
 Аутентификация через OpenID Connect
 -----------------------------------
 
-.. note::
-	Подробная информация о порядке работы с OpenId Connect приведена на странице :doc:`oidc`.
-
 Диадок предоставляет возможность аутентифицироваться в продукте по протоколу `OpenID Connect <https://openid.net/connect/>`__. Для этого:
 
 1. Оставьте заявку на `странице интеграции <https://www.diadoc.ru/integrations/api>`__. После этого с вами свяжется менеджер и предоставит вам доступ в `Кабинет интегратора <https://integrations.testkontur.ru/)>`__. Там вы сможете получить:
 
 	- идентификатор приложения ``client_id``;
-	- ключ разработчика ``client_secret`` — секретный ключ, не передавайте его третьим лицам.
+	- ключ приложения ``client_secret`` — секретный ключ, не передавайте его третьим лицам.
 
 2. :ref:`Получите авторизационный токен <auth_get_token>` ``access_token``, используя ``client_id`` и ``client_secret``.
 3. Используйте авторизационный токен ``access_token`` в заголовке ``Authorization`` при вызовах методов API Диадока:
 
-	::
+   ::
 
-		Authorization: Bearer <access_token>
+    Authorization: Bearer <access_token>
 
 4. :ref:`Обновите авторизационный токен <auth_refresh_token>` ``access_token`` до истечении времени жизни.
+
+Для некоторых языков разработки в открытом доступе существуют готовые библиотеки или реализации интеграции с OpenID Connect: например, `JS <https://www.npmjs.com/package/oidc-client>`__, `.Net <https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect>`__ и `Java <https://mvnrepository.com/artifact/org.springframework.security/spring-security-openid>`__
+
+Примеры реализации аутентификации через OpenID Connect в клиентском приложении можно найти по следующим ссылкам:
+	- `ASP.NET Core приложение с OIDC-аутентификацией <https://git.skbkontur.ru/diadoc/integration-samples/-/tree/master/Diadoc.Integration/SampleWebApp.Oidc>`__
+	- `Express.js приложение с OIDC-аутентификацией на базе express-openid-connect <https://git.skbkontur.ru/diadoc/integration-samples/-/tree/master/js/express-openid>`__
+
+.. note::
+	Подробная информация о порядке работы с OpenId Connect приведена на странице :doc:`oidc`.
 
 
 .. _auth_get_token:
@@ -40,38 +46,103 @@
 Получение токена
 ~~~~~~~~~~~~~~~~
 
-.. note::
-	Подробная инструкция по получению токена приведена на странице `Аутентификация в приложении и авторизация в продукты Контура <https://developer.kontur.ru/Docs/html/schemes/auth_and_authorize.html>`__.
-
 Чтобы получить авторизационный токен ``access_token``, выполните следующие шаги:
 
 1. Получите временный код авторизации ``authorization_code``.
 
- Для этого перенаправьте пользователя из интеграционного решения на страницу авторизации Authorization Endpoint с помощью запроса в сервис OpenID Провайдера. Все передаваемые параметры должны быть в формате url_encoded. В запросе укажите в параметре ``scope`` следующие значения для доступа к данным Диадока:
+   Для этого перенаправьте пользователя из интеграционного решения на страницу авторизации ``Authorization Endpoint`` с помощью запроса в сервис OpenID Провайдера.
 
-  - ``Diadoc.PublicAPI.Staging`` — для работы с тестовым пространством Диадока;
-  - ``Diadoc.PublicAPI`` — для работы с продуктовым пространством Диадока.
+   .. collapse:: Описание запроса
 
- В ответе метод вернет временный код авторизации ``authorization_code``.
+		**Параметры запроса**
+
+		Все передаваемые параметры должны быть в формате url_encoded.
+
+		``Content-type: application/x-www-form-urlencoded``
+		
+		- ``response_type`` — ответ, который нужно получить от OpenID Провайдера. Укажите значение ``code``.
+		- ``client_id`` — идентификатор приложения, выданный при его регистрации.
+		- ``scope`` — список прав доступа, которые необходимы приложению в текущей сессии. Укажите следующие значения для доступа к данным Диадока:
+
+			- ``Diadoc.PublicAPI.Staging`` — для работы с тестовым пространством Диадока;
+			- ``Diadoc.PublicAPI`` — для работы с продуктовым пространством Диадока.
+
+		- ``redirect_uri`` — ссылка, на которую будет перенаправлен пользователь после аутентификации.
+		- ``nonce`` — строка, предназначенная для проверки того, что запрос связан с будущим ``Access Token``. Она должна вернутся при получении ``Access Token``.
+
+		**Пример запроса**
+
+		::
+
+			http://identity.testkontur.ru/connect/authorize?
+				response_type=code
+				&scope=openid Diadoc.PublicAPI.Staging
+				&client_id=yourClientId
+				&redirect_uri=http://www.example.com/
+				&state=af0ifjsldkj
+				&nonce=n-0S6_WzA2Mj
+
+		**Ответ**
+
+		OpenID Провайдер перенаправит пользователя на адрес, указанный в параметре ``redirect_uri`` с кодом подтверждения ``code``, и вернет временный код авторизации ``authorization_code``.
 
 2. Обменяйте временный код авторизации ``authorization_code`` на ``access_token``.
 
- Выполните запрос на Token Endpoint сервиса OpenID Провайдера. В запросе укажите:
+   Для этого выполните запрос на ``Token Endpoint`` сервиса OpenID Провайдера.
 
-  - ``authorization_code`` — временный код авторизации,
-  - ``client_id`` — идентификатор приложения,
-  - ``client_secret`` — ключ приложения.
+   .. collapse:: Описание запроса
 
- В ответе метод вернет ``access_token`` и ``refresh_token``, который необходим для :ref:`обновления токена <auth_refresh_token>` ``access_token`` по истечении срока его жизни. Срок жизни ``access_token`` будет указан в ответе в поле ``expires_in``.
+		**Параметры запроса**
+
+		Все передаваемые параметры должны быть в формате url_encoded.
+
+		``Content-type: application/x-www-form-urlencoded``
+
+		- ``grant_type`` — способ запроса токена. Укажите значение ``authorization_code``.
+		- ``authorization_code`` — временный код авторизации, полученный в запросе аутентификации.
+		- ``client_id`` — идентификатор приложения, выданный при его регистрации.
+		- ``client_secret`` — ключ приложения, выданный при его регистрации.
+		- ``redirect_uri`` — ссылка, на которую получен код подтверждения.
+
+		**Пример запроса**
+
+		::
+
+			POST /token
+			Content-type: application/x-www-form-urlencoded
+
+			grant_type=authorization_code
+			code=SplxlOBeZQQYbYS6WxSbIA
+			client_id=yourClientId
+			client_secret=yourClientSecret
+			redirect_uri=http://www.example.com
+
+		**Ответ**
+
+		В ответе метод вернет ``access_token`` и ``refresh_token``, который необходим для :ref:`обновления токена <auth_refresh_token>` ``access_token`` по истечении срока его жизни. Срок жизни ``access_token`` будет указан в ответе в поле ``expires_in``.
+
+		**Пример ответа**
+
+		::
+
+			200 OK
+			Content-type: application/json
+
+			{
+			    "access_token": "AAAAAAAAAAAAAAAAA",
+			    "token_type": "Bearer",
+			    "expires_in": 3600,
+			    "id_token": "eyJhbGciOifQ.ewogI3pAKfQ.ggW8hq-rvKMzqg"
+			}
+
+.. note::
+	Подробная инструкция по получению токена приведена в `документации OpenID Провайдера <https://developer.kontur.ru/Docs/html/schemes/auth_and_authorize.html#rst-murkup-authorize-by-code>`__.
 
 
 .. _auth_refresh_token:
 
 Обновление токена
 ~~~~~~~~~~~~~~~~~
-
-.. note::
-	Подробная инструкция по обновлению токена приведена на странице `Обновление Access Token <https://developer.kontur.ru/Docs/html/schemes/using_refresh.html>`__.
 
 Время жизни авторизационного токена ``access_token`` — 24 часа. До истечения этого времени его нужно обновить, иначе методы API будут возвращать ошибки, а пользователю вновь придется авторизовываться в OpenID Провайдере.
 
@@ -80,6 +151,45 @@
 Чтобы обновить авторизационный токен ``access_token``, используйте ``refresh_token``, полученный вместе с ним при запросе. Для этого в интеграционном решении выполните запрос на Token Endpoint сервиса OpenID Провайдера.
 
 Время жизни ``refresh_token`` — 30 суток. После этого пользователю придется снова авторизовываться в OpenID Провайдере.
+
+.. collapse:: Описание запроса
+
+	**Параметры запроса**
+
+	- ``grant_type`` — способ запроса токена. Укажите значение ``refresh_token``.
+	- ``client_id`` — идентификатор приложения, выданный при его регистрации.
+	- ``client_secret`` — ключ приложения, выданный при его регистрации.
+	- ``refresh_token`` — токен, полученный в результате запроса на ``Token Endpoint``.
+
+	**Пример запроса**
+
+	::
+
+		POST /token
+		Content-type: application/x-www-form-urlencoded
+
+		grant_type=refresh_token
+		&client_id=yourClientId
+		&client_secret=yourClientSecret
+		&refresh_token=1487e3f7ce5aea612e2d7727ded76ad574e30643046ae2c247ae9c94c6b61e71
+
+	**Пример ответа**
+
+	::
+
+		200 OK
+		Content-type: application/json
+
+		{
+		    "access_token": "811d583cf85deb7ab67bd91b96a9a4bafb63d6a062d7dd72f81601b84c19dc40",
+		    "expires_in": 86400,
+		    "token_type": "Bearer",
+		    "refresh_token": "fd672752f8e9c4a8eb083fb2375b3126ae37dc69a0cf46953ef9a6e3f5a692df"
+		}
+
+
+.. note::
+	Подробная инструкция по обновлению токена приведена на странице `Обновление Access Token <https://developer.kontur.ru/Docs/html/schemes/using_refresh.html>`__.
 
 
 .. _auth_authenticate:

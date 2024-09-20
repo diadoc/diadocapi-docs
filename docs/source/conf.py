@@ -24,7 +24,8 @@ extensions = [
     'sphinx.ext.graphviz',
     'sphinxcontrib.httpdomain',
     'sphinx_reredirects',
-    'sphinx_tabs.tabs'
+    'sphinx_tabs.tabs',
+    'sphinx_toolbox.collapse'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
