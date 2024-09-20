@@ -63,7 +63,6 @@ DocumentInfoV3
         required string BoxId = 1;
         optional string AuthorUserId = 2;
         optional string AuthorName = 3;
-        optional string Comment = 4;
     }
 
 - ``FullVersion`` — тип, функция и версия документа, представленные структурой :doc:`FullVersion`.
