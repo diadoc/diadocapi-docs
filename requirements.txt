@@ -3,5 +3,6 @@ sphinx-rtd-theme
 sphinxcontrib-httpdomain
 sphinx_reredirects
 sphinx-tabs
+sphinx-toolbox
 recommonmark
 docutils == 0.19
