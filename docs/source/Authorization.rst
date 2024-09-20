@@ -29,6 +29,15 @@
 
     Authorization: Bearer <access_token>
 
+   .. collapse:: Пример вызова метода
+
+	::
+
+		GET /GetMyOrganizations
+		Host: diadoc-api.kontur.ru
+		Authorization: Bearer {{token}}
+		Accept: application/json
+
 4. :ref:`Обновите авторизационный токен <auth_refresh_token>` ``access_token`` до истечении времени жизни.
 
 Для некоторых языков разработки в открытом доступе существуют готовые библиотеки или реализации интеграции с OpenID Connect: например, `JS <https://www.npmjs.com/package/oidc-client>`__, `.Net <https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect>`__ и `Java <https://mvnrepository.com/artifact/org.springframework.security/spring-security-openid>`__
