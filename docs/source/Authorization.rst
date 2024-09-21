@@ -84,12 +84,12 @@
 		::
 
 			http://identity.testkontur.ru/connect/authorize?
-				response_type=code
-				&scope=openid Diadoc.PublicAPI.Staging
-				&client_id=yourClientId
-				&redirect_uri=http://www.example.com/
-				&state=af0ifjsldkj
-				&nonce=n-0S6_WzA2Mj
+			response_type=code
+			&scope=openid Diadoc.PublicAPI.Staging
+			&client_id={{client_id}}
+			&redirect_uri=http://www.example.com/
+			&state=af0ifjsldkj
+			&nonce=n-0S6_WzA2Mj
 
 		**Ответ**
 
@@ -122,8 +122,8 @@
 
 			grant_type=authorization_code
 			code=SplxlOBeZQQYbYS6WxSbIA
-			client_id=yourClientId
-			client_secret=yourClientSecret
+			client_id={{client_id}}
+			client_secret={{client_secret}}
 			redirect_uri=http://www.example.com
 
 		**Ответ**
@@ -138,7 +138,7 @@
 			Content-type: application/json
 
 			{
-			    "access_token": "AAAAAAAAAAAAAAAAA",
+			    "access_token": "811d58...40",
 			    "token_type": "Bearer",
 			    "expires_in": 3600,
 			    "id_token": "eyJhbGciOifQ.ewogI3pAKfQ.ggW8hq-rvKMzqg"
@@ -178,9 +178,9 @@
 		Content-type: application/x-www-form-urlencoded
 
 		grant_type=refresh_token
-		&client_id=yourClientId
-		&client_secret=yourClientSecret
-		&refresh_token=1487e3f7ce5aea612e2d7727ded76ad574e30643046ae2c247ae9c94c6b61e71
+		&client_id={{client_id}}
+		&client_secret={{client_secret}}
+		&refresh_token={{refresh_token}}
 
 	**Пример ответа**
 
@@ -190,10 +190,10 @@
 		Content-type: application/json
 
 		{
-		    "access_token": "811d583cf85deb7ab67bd91b96a9a4bafb63d6a062d7dd72f81601b84c19dc40",
+		    "access_token": "811d58...40",
 		    "expires_in": 86400,
 		    "token_type": "Bearer",
-		    "refresh_token": "fd672752f8e9c4a8eb083fb2375b3126ae37dc69a0cf46953ef9a6e3f5a692df"
+		    "refresh_token": "fd6727...df"
 		}
 
 .. note::
