@@ -193,7 +193,7 @@
 		    "access_token": "811d58...40",
 		    "expires_in": 86400,
 		    "token_type": "Bearer",
-		    "refresh_token": "fd6727...df"
+		    "refresh_token": "fa6724...df"
 		}
 
 .. note::
