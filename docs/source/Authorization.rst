@@ -277,5 +277,5 @@
 	- :doc:`oidc`
 
 *Методы для аутентификации:*
-    - :doc:`http/obsolete/Authenticate` — аутентифицирует пользователя в Диадоке
-    - :doc:`http/obsolete/AuthenticateConfirm` — возвращает авторизационный токен при аутентификации по сертификату
+	- :doc:`http/obsolete/Authenticate` — аутентифицирует пользователя в Диадоке
+	- :doc:`http/obsolete/AuthenticateConfirm` — возвращает авторизационный токен при аутентификации по сертификату
