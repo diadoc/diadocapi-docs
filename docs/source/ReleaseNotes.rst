@@ -1142,7 +1142,7 @@
 ----------
 **SDK**: `C# 1.47.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.47.1>`__ | `Java 1.47.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.47.1>`__ | `C++ 1.47.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.47.1>`__
 
-- В структуре :doc:`../proto/User`, которая возвращается методом :doc:`http/GetMyUser`, изменилась структура ``CertificateInfo``. В нее добавлены поля:
+- В структуре :doc:`../proto/obsolete/User`, которая возвращается методом :doc:`http/GetMyUser`, изменилась структура ``CertificateInfo``. В нее добавлены поля:
 
  - ``OrganizationName`` — наименование организации, на которую выдан сертификат,
  - ``Inn`` — ИНН организации, на которую выдан сертификат.

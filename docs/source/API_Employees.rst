@@ -37,5 +37,5 @@ HTTP-интерфейс
    proto/OrganizationUserPermissions
    proto/Subscription
    proto/SubscriptionsToUpdate
-   proto/User
+   proto/obsolete/User
    proto/UserV2

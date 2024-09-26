@@ -498,6 +498,7 @@ redirects = {
     "proto/TrustConnectionRequestAttachment": "obsolete/TrustConnectionRequestAttachment.html",
     "proto/UnilateralDocflow": "obsolete/UnilateralDocflow.html",
     "proto/UnilateralDocumentMetadata": "obsolete/UnilateralDocumentMetadata.html",
+    "proto/User": "obsolete/User.html",
     "proto/XmlBilateralDocflow": "obsolete/XmlBilateralDocflow.html",
     "proto/XmlDocumentAttachment": "obsolete/XmlDocumentAttachment.html",
     "proto/UserToUpdate": "obsolete/UserToUpdate.html",
