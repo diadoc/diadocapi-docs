@@ -12,7 +12,7 @@ ExtendedSignerDetails
 Заполнение данных
 -----------------
 
-Во второй версии метода *ExtendedSignerDetails* параметры *buyer* и *correction* заменены на один параметр целочисленного типа :doc:`../proto/DocumentTitleType``.
+Во второй версии метода *ExtendedSignerDetails* параметры *buyer* и *correction* заменены на один параметр целочисленного типа :doc:`../proto/DocumentTitleType`.
 
 .. http:post:: /V2/ExtendedSignerDetails
 
