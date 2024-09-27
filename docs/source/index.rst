@@ -25,6 +25,7 @@
 
 	howtostart/integrationChoise
 	howtostart/overview
+	howtostart/deprecationPolicy
 	howtostart/integration
 	howtostart/quickstart
 
