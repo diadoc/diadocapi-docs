@@ -1,7 +1,8 @@
 ExternalServiceAuthInfo
 =======================
 
-.. warning:: Эта структура удалена из API. Она возвращалась методом :doc:`../http/GetExternalServiceAuthInfo`.
+.. warning::
+	Эта структура удалена из API. Она возвращалась методом :doc:`../../http/obsolete/GetExternalServiceAuthInfo`.
 
 .. code-block:: protobuf
 
@@ -10,7 +11,7 @@ ExternalServiceAuthInfo
          optional string Thumbprint = 2;
     }
 
-Структура данных *ExternalServiceAuthInfo* представляет собой аутентификационную информацию, возвращаемую методом :doc:`../http/GetExternalServiceAuthInfo`.
+Структура данных *ExternalServiceAuthInfo* представляет собой аутентификационную информацию, возвращаемую методом :doc:`../../http/obsolete/GetExternalServiceAuthInfo`.
 
 Структура данных *ExternalServiceAuthInfo* содержит следующую информацию:
 
