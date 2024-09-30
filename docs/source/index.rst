@@ -27,6 +27,7 @@
 	howtostart/overview
 	howtostart/integration
 	howtostart/quickstart
+	howtostart/deprecationPolicy
 
 .. toctree::
 	:caption: Руководство по работе с API
