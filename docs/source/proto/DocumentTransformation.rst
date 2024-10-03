@@ -1,7 +1,7 @@
 DocumentTransformation
 ======================
 
-Структура ``DocumentTransformation`` хранит информацию о документе для трансформации из шаблона.
+Структура ``DocumentTransformation`` хранит информацию о документе, который нужно трансформировать из шаблона.
 
 .. code-block:: protobuf
 

@@ -19,14 +19,6 @@ PowerOfAttorneyValidationStatus
         optional PowerOfAttorneyValidationError OperationError = 6;
     }
 
-    enum Severity {
-        UnknownSeverity = 0;
-        Info = 1;
-        Success = 2;
-        Warning = 3;
-        Error = 4;
-    }
-
     enum PowerOfAttorneyValidationStatusNamedId {
         UnknownStatus = 0;
         CanNotBeValidated = 1;
@@ -38,13 +30,7 @@ PowerOfAttorneyValidationStatus
     }
 
 
-- ``Severity`` — критичность статуса, принимает значение из перечисления ``Severity``:
-
-		- ``UnknownSeverity`` — значение по умолчанию;
-		- ``Info`` — информация;
-		- ``Success`` — успешно;
-		- ``Warning`` — предупреждение;
-		- ``Error`` — ошибка.
+- ``Severity`` — критичность статуса, принимает значение из перечисления :doc:`Severity`.
 
 - ``StatusNamedId`` — текстовый идентификатор статуса, принимает значение из перечисления ``PowerOfAttorneyValidationStatusNamedId``:
 

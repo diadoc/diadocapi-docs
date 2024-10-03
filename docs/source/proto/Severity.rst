@@ -19,11 +19,11 @@ Severity
 - ``Warning`` — от участников документооборота требуются дополнительные действия.
 - ``Error`` — произошла ошибка.
 
+
 ----
 
 .. rubric:: См. также
 
 *Перечисление используется:*
-	- в структуре :doc:`DocflowStatusModelV3`
 	- в структуре :doc:`PowerOfAttorneyValidationStatus`
 	- в структуре :doc:`RoamingSendingStatus`
