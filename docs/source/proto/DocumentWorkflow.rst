@@ -25,8 +25,8 @@
 
 *Структура используется:*
 	- в структуре :ref:`document-version2`
-	- в структуре :ref:`document-version` (устарела)
 	- идентификатор ``Id`` используется в структурах :doc:`DocumentAttachment` и :doc:`TemplateDocumentAttachment`.
+	- в устаревшей структуре :ref:`document-version`
 
 *Инструкции:*
 	- :doc:`../docflows/Workflows`

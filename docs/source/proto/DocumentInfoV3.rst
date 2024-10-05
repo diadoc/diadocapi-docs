@@ -94,7 +94,7 @@ DocumentInfoV3
 - ``TemplateInfo`` — информация о шаблоне. Заполняется, если ``MessageType = Template``. Представлена структурой ``DocumentTemplateInfo`` с полями:
 
 	- ``LetterParticipants`` — информация об отправителе и получателе письма, которое можно создать на основе шаблона. Представлена структурой :doc:`DocumentParticipants`.
-	- ``TemplateTransformationInfos`` — список идентификаторов писем, созданных на основе шаблона и содержащих данный документ. Представлены структурой ``TemplateTransformationInfo`` с полями:
+	- ``TemplateTransformationInfos`` — список идентификаторов писем, созданных на основе шаблона и содержащих данный документ. Каждый элемент списка представлен структурой ``TemplateTransformationInfo`` с полями:
 
 		- ``TransformationId`` — идентификатор преобразования из шаблона.
 		- ``TransformedToLetterId`` — список идентификаторов письма и документа, созданных на основе шаблона. Представлены структурой :doc:`DocumentId`.
