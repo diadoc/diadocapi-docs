@@ -1,6 +1,26 @@
 ﻿История изменений API
 =====================
 
+27.09.2024
+----------
+
+- В API Диадока отмечены устаревшими следующие эндпойнты:
+
+	- ``PostDraft``
+	- ``SendMessage``
+	- ``Recognize`` (`C# SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/IDiadocApi.cs#L148>`__, `COM SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/ComDiadocApi.cs#L254>`__)
+	- ``GetRecognized`` (`C# SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/IDiadocApi.cs#L149>`__, `COM SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/ComDiadocApi.cs#L255>`__)
+	- ``Devices``
+	- :doc:`http/obsolete/GetExternalServiceAuthInfo` (`C# SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/IDiadocApi.cs#L252>`__, `Java SDK <https://github.com/diadoc/diadocsdk-java/blob/049e9a77683d5d30263200360bcb4b5fa2b01277/src/main/java/Diadoc/Api/auth/AuthenticateClient.java#L123>`__) 
+
+  Теперь в ответе эти методы возвращают заголовки ``Sunset`` и ``Link``. Подробнее на странице :doc:`howtostart/deprecationPolicy`.
+
+  **Они будут удалены из API 07 апреля 2025.**
+
+  - Если вы используете эти методы API или SDK в своих интеграционных решениях, удалите их. После удаления методов из SDK решение, использующее эти методы, перестанет компилироваться.
+  - В ответ на любые запросы эти методы возвращают ошибку ``410 (Gone)`` и не выполняют никаких операций. Если вы завязываете свое интеграционное решение на обработку кода ошибки ``410 (Gone)``, измените эту обработку.
+
+
 04.09.2024
 ----------
 
