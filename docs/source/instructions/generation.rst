@@ -236,12 +236,12 @@ XSD-схемы для каждой настройки редактировани
 
 Чтобы указать в титуле :doc:`прослеживаемые товары <../howto/tracing>`, заполните в UserDataXml блок ``ItemTracingInfos`` элементами ``ItemTracingInfo``:
 
-	- ``RegNumberUnit`` — регистрационный номер партии товаров [`НомТовПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239773>`__];
-	- ``Unit`` — единица количественного учета товара, используемая в целях осуществления прослеживаемости [`ЕдИзмПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239774>`__];
-	- ``UnitName`` — наименование единицы количественного учета товара, используемой в целях осуществления прослеживаемости [`НаимЕдИзмПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239775>`__];
-	- ``Quantity`` — количество товара в единицах измерения прослеживаемого товара [`КолВЕдПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239776>`__];
-	- ``ItemAddInfo`` — дополнительный показатель для идентификации товаров, подлежащих прослеживаемости [`ДопИнфПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239777>`__];
-	- ``PriceWithVatExcluded`` — стоимость товара, подлежащего прослеживаемости, без налога на добавленную стоимость, в рублях [`СтТовБезНДСПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=464695&rangeId=6488112>`__] — обязательный параметр для УПД 970 формата.
+	- ``RegNumberUnit`` — регистрационный номер партии товаров [`НомТовПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239773>`__];
+	- ``Unit`` — единица количественного учета товара, используемая в целях осуществления прослеживаемости [`ЕдИзмПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239774>`__];
+	- ``UnitName`` — наименование единицы количественного учета товара, используемой в целях осуществления прослеживаемости [`НаимЕдИзмПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239775>`__];
+	- ``Quantity`` — количество товара в единицах измерения прослеживаемого товара [`КолВЕдПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239776>`__];
+	- ``ItemAddInfo`` — дополнительный показатель для идентификации товаров, подлежащих прослеживаемости [`ДопИнфПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239777>`__];
+	- ``PriceWithVatExcluded`` — стоимость товара, подлежащего прослеживаемости, без налога на добавленную стоимость, в рублях [`СтТовБезНДСПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695&rangeId=6488112>`__] — обязательный параметр для УПД 970 формата.
 
 Кроме дополнительных данных в UserDataXml генерация титула с прослеживаемыми товарами ничем не отличается от обычного титула и производится по тому же алгоритму.
 
@@ -440,9 +440,9 @@ XSD-схемы для каждой настройки редактировани
 
 Для некоторых форматов документов можно передавать информацию о :doc:`машиночитаемой доверенности <powerofattorney>` (МЧД) в содержимом документа. Сейчас это следующие форматы:
 
-	- акт сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document?moduleId=1&documentId=425482>`_,
-	- акт о приемке выполненных работ КС-2 формата, утвержденного приказом `№ ЕД-7-26/691@ <https://normativ.kontur.ru/document?moduleId=1&documentId=431929>`__,
-	- документы формата, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__.
+	- акт сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=425482>`_,
+	- акт о приемке выполненных работ КС-2 формата, утвержденного приказом `№ ЕД-7-26/691@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=431929>`__,
+	- документы формата, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695>`__.
 
 Для генерации документа с МДЧ в содержимом заполните блок ``PowerOfAttorney`` в XSD-схеме универсального подписанта конкретного формата документа.
 

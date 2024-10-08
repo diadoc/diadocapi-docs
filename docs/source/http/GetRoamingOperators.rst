@@ -24,9 +24,9 @@ GetRoamingOperators
 - ``EnableRevocationV2`` — аннулирование версии 1.02.
 - ``SupportsAutoInvitation`` — автоматическая обработка приглашений или автороуминг. Чтобы установить отношения с контрагентом, пользователю достаточно отправить приглашение. Заявку на роуминг отправлять не нужно.
 - ``SupportsPowerOfAttorney`` — поддержка работы с машиночитаемой доверенностью.
-- ``SupportsReconciliationAct`` — получение акта сверки в формате, утвержденном приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document?moduleId=1&documentId=425482>`__.
-- ``SupportsTorg2``— получение акта об установленном расхождении ТОРГ-2 в формате, утвержденном приказом `№ ММВ-7-15/423@ <https://normativ.kontur.ru/document?moduleId=1&documentId=348230>`__.
-- ``SupportsPerformedWorkAcceptanceCertificate`` — получение акта о приемке выполненных работ КС-2 в формате, утвержденном приказом `№ ЕД-7-26/691 <https://normativ.kontur.ru/document?moduleId=1&documentId=431929>`__.
+- ``SupportsReconciliationAct`` — получение акта сверки в формате, утвержденном приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=425482>`__.
+- ``SupportsTorg2``— получение акта об установленном расхождении ТОРГ-2 в формате, утвержденном приказом `№ ММВ-7-15/423@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=348230>`__.
+- ``SupportsPerformedWorkAcceptanceCertificate`` — получение акта о приемке выполненных работ КС-2 в формате, утвержденном приказом `№ ЕД-7-26/691 <https://normativ.kontur.ru/document/last?moduleId=1&documentId=431929>`__.
 - ``SupportPowerOfAttorneyFiles`` — поддержка работы с машиночитаемой доверенностью в виде файла.
 - ``SupportPowerOfAttorneyDelegationChain`` — поддержка работы с машиночитаемой доверенностью, выпущенной в порядке передоверия.
 

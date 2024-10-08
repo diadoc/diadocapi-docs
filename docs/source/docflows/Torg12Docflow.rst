@@ -6,15 +6,15 @@
 
 .. note:: Подробнее про электронные накладные можно прочитать на `сайте Диадока <https://www.diadoc.ru/docs/forms/first-documents/nakladnaya>`__. 
 
-Формат товарной накладной утвержден `приказом № ММВ-7-10/551@ <https://normativ.kontur.ru/document?moduleId=1&documentId=339634>`__. XSD-схемы для генерации титулов электронной накладной:
+Формат товарной накладной утвержден `приказом № ММВ-7-10/551@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=339634>`__. XSD-схемы для генерации титулов электронной накладной:
 
 	- :download:`XSD-схема титула продавца электронной накладной <../xsd/DP_TOVTORGPR_1_992_01_05_01_04.xsd>`,
 	- :download:`XSD-схема титула покупателя электронной накладной <../xsd/DP_TOVTORGPOK_1_992_02_05_01_04.xsd>`.
 
 Универсальный передаточный документ можно использовать как первичный документ, подтверждающий совершение хозяйственной операции. Формат УПД утвержден следующими приказами:
 
-	- `№ ММВ-7-15/820@ <https://normativ.kontur.ru/document?moduleId=1&documentId=328588>`__ (действует до 01.04.2025),
-	- `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__.
+	- `№ ММВ-7-15/820@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588>`__ (действует до 01.04.2025),
+	- `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695>`__.
 
 XSD-схемы для генерации титула исполнителя электронной накладной:
 

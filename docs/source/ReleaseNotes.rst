@@ -93,7 +93,7 @@
 21.05.2024
 ----------
 
-- Реализовали работу с документами формата, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__:
+- Реализовали работу с документами формата, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695>`__:
 
 	- добавили версии ``utd970_05_02_01`` для всех документов, поддерживающих новый формат: УПД, счета-фактуры, акты и накладные,
 	- добавили XSD-схемы для генерации документов, их можно получить с помощью метода :doc:`http/GetDocumentTypes` или скачать на страницах :doc:`docflows/Torg12Docflow` и :doc:`docflows/AktDocflow`,
@@ -161,7 +161,7 @@
 ----------
 **SDK**: `C# 2.14.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.6>`__ | `Java 3.15.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.7>`__
 
-- Добавили возможность указать расширенные данные подписанта для УПД, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__:
+- Добавили возможность указать расширенные данные подписанта для УПД, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695>`__:
 
 	- в перечисление :doc:`proto/DocumentTitleType` добавили значения ``Utd970Seller = 12`` и ``Utd970Buyer = 13`` для титула продавца и покупателя УПД формата приказа 970 соответственно;
 	- в поле ``ExtendedDocumentTitleType`` структуры :ref:`signer-info2` добавили значения 12 и 13 для титула продавца и покупателя УПД формата приказа 970 соответственно;
@@ -177,14 +177,14 @@
 02.02.2024
 ----------
 
-- Добавили возможность передать МЧД в содержимом документа для акта о приемке выполненных работ КС-2 формата, утвержденного приказом `№ ЕД-7-26/691@ <https://normativ.kontur.ru/document?moduleId=1&documentId=431929>`__.
+- Добавили возможность передать МЧД в содержимом документа для акта о приемке выполненных работ КС-2 формата, утвержденного приказом `№ ЕД-7-26/691@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=431929>`__.
 
 
 20.12.2023
 ----------
 **SDK**: `C# 2.14.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.5>`__ | `Java 3.15.5 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.5>`__
 
-- Добавлена возможность передать машиночитаемую доверенность в содержимом документа. МЧД в содержимом можно передать только для акта сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document?moduleId=1&documentId=425482>`__:
+- Добавлена возможность передать машиночитаемую доверенность в содержимом документа. МЧД в содержимом можно передать только для акта сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=425482>`__:
 
 	- в структуру :doc:`proto/PowerOfAttorneyToPost` добавлен флаг  ``UseDocumentContent``;
 	- в перечисление :doc:`proto/PowerOfAttorneySendingType` добавлено значение ``DocumentContent``. Значение будет возвращаться, если МЧД передали в содержимом документа.
@@ -724,7 +724,7 @@
 ----------
 **SDK**: `C# 1.72.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.72.0>`__ | `Java 2.8.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.8.0>`__ | `C++ 1.70.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.70.0>`__
 
-- Добавлена поддержка формата `приказа №820 <https://normativ.kontur.ru/document?moduleId=1&documentId=328588>`__:
+- Добавлена поддержка формата `приказа №820 <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588>`__:
 
  - через метод :doc:`http/GetDocumentTypes` можно найти версии с идентификатором ``utd820_05_01_01`` для всех типов документов, поддерживающих новый формат: счета-фактуры, акты, накладные, УПД, иУПД.
  - для генерации и парсинга документов новой версии доступны только обобщенные методы:
