@@ -13,6 +13,7 @@ PowerOfAttorneySignedContent
 - ``Content`` — файл МЧД, представленный структурой :doc:`Content_v3`.
 - ``Signature`` — файл подписи под МЧД, представленный структурой :doc:`Content_v3`.
 
+
 ----
 
 .. rubric:: См. также

@@ -23,6 +23,7 @@ PowerOfAttorneyFullId
 	- в структуре :doc:`PowerOfAttorneyToPost`
 	- в структуре :doc:`PowerOfAttorneyToRegister`
 	- в структуре :doc:`SignaturePowerOfAttorney`
+	- в структуре ``PowerOfAttorneyContentV2``, возвращаемой методом :doc:`../http/GetPowerOfAttorneyContent`
 
 *Инструкции:*
 	- :doc:`../instructions/powerofattorney`
