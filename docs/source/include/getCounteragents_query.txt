@@ -1,3 +1,4 @@
 GET /V3/GetCounteragents?myBoxId={{myBoxId}}&counteragentStatus=IsMyCounteragent&query=Ромашка HTTP/1.1
 Host: diadoc-api.kontur.ru
 Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
+Accept: application/json; charset=utf-8
