@@ -1,7 +1,7 @@
 ﻿DocumentWorkflow
 ================
 
-Структура ``DocumentWorkflow`` представляет вид документооборота для конкретной :ref:`версии документа <document-version2>`.
+Структура ``DocumentWorkflow`` представляет вид документооборота для конкретной :ref:`версии документа <DocumentVersionV2>`.
 
 Подробно о видах документооборота написано на странице :doc:`../docflows/Workflows`.
 
@@ -24,9 +24,9 @@
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :ref:`document-version2`
+	- в структуре :ref:`DocumentVersionV2`
 	- идентификатор ``Id`` используется в структурах :doc:`DocumentAttachment` и :doc:`TemplateDocumentAttachment`.
-	- в устаревшей структуре :ref:`document-version`
+	- в устаревшей структуре :ref:`DocumentVersion`
 
 *Инструкции:*
 	- :doc:`../docflows/Workflows`

@@ -15,13 +15,13 @@ DocumentParticipants
 
 
 
-- ``Sender`` — отправитель документа, представленный структурой :ref:`document-participant`.
-- ``Proxy`` — промежуточный получатель документа, представленный структурой :ref:`document-participant`.
-- ``Recipient`` — получатель документа, представленный структурой :ref:`document-participant`.
+- ``Sender`` — отправитель документа, представленный структурой :ref:`DocumentParticipant`.
+- ``Proxy`` — промежуточный получатель документа, представленный структурой :ref:`DocumentParticipant`.
+- ``Recipient`` — получатель документа, представленный структурой :ref:`DocumentParticipant`.
 - ``IsInternal`` — признак того, что документ является внутренним.
 
 
-.. _document-participant:
+.. _DocumentParticipant:
 
 DocumentParticipant
 -------------------

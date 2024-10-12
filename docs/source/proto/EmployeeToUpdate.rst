@@ -1,6 +1,13 @@
 EmployeeToUpdate
 ================
 
+На этой странице, помимо ``EmployeeToCreate``, описаны следующие структуры и перечисления:
+
+.. contents:: :local:
+
+
+Структура ``EmployeeToUpdate`` содержит информацию для изменения данных сотрудника.
+
 .. code-block:: protobuf
 
     message EmployeeToUpdate
@@ -10,18 +17,19 @@ EmployeeToUpdate
         optional EmployeeCanBeInvitedForChatPatch CanBeInvitedForChat = 3;
     }
 
-Структура содержит информацию о данных сотрудника, которые необходимо изменить. Принимается методом :doc:`../http/UpdateEmployee`.
+- ``Permissions`` — информация о разрешениях сотрудника, представленные структурой :ref:`EmployeePermissionsPatch`.
+- ``Position`` — информация о должности сотрудника, представленная структурой :ref:`EmployeePositionPatch`.
+- ``CanBeInvitedForChat`` — информация о необходимости отображать сотрудника в списке получателей сообщений в веб-интерфейсе, представленная структурой :ref:`EmployeeCanBeInvitedForChatPatch`.
 
-- :ref:`Permissions <employee-permissions-patch>` - структура для изменения разрешений
-- :ref:`Position <employee-position-patch>` - структура для изменения должности
-- :ref:`CanBeInvitedForChat <employee-can-be-invited-to-chat-patch>` - структура для изменения необходимости отображать сотрудника в списке получателей Сообщений в веб-интерфейсе
+Нужно заполнить только те данные, которые требуется изменить.
 
-Необходимо заполнить только те поля структуры, которые соотвествуют данным, требующим изменения.
 
-.. _employee-permissions-patch:
+.. _EmployeePermissionsPatch:
 
 EmployeePermissionsPatch
 ------------------------
+
+Структура ``EmployeePermissionsPatch`` содержит информацию для изменения :doc:`разрешений сотрудника <EmployeePermissions>`.
 
 .. code-block:: protobuf
 
@@ -35,85 +43,22 @@ EmployeePermissionsPatch
         optional AuthorizationPermissionPatch AuthorizationPermission = 6;
     }
 
-Структура содержит информацию о настройках :doc:`разрешений сотрудника <EmployeePermissions>`, которые необходимо изменить.
+- ``Department`` — информация о подразделении сотрудника, представленная структурой :ref:`EmployeeDepartmentPatch`.
+- ``IsAdministrator`` — информация о праве сотрудника администрировать организацию, представленная стркутурой :ref:`EmployeeIsAdministratorPatch`.
+- ``DocumentAccessLevel`` — информация об уровне доступа сотрудника к документам, представленная структрой :ref:`EmployeeDocumentAccessLevelPatch`.
+- ``SelectedDepartments`` — информация о подразделениях, к которым сотрудник имеет доступ, представленная структурой :ref:`EmployeeSelectedDepartmentsPatch`. Имеет смысл только в случае, если ``DocumentAccessLevel = SelectedDepartments``.
+- ``Actions`` — информация о действиях сотрудника, права на которые нужно добавить или убрать, представленная структурой :doc:`EmployeePermissions`.
+- ``AuthorizationPermission`` — информация об ограничениях доступа сотрудника к сервису, представленная структурой :ref:`AuthorizationPermissionPatch`.
 
-- :ref:`Department <employee-department-patch>` - структура для изменения подразделения
-- :ref:`IsAdministrator <employee-is-administrator-patch>` - структура для изменения права администрировать организацию
-- :ref:`DocumentAccessLevel <employee-document-access-level-patch>` - структура для изменения уровня доступа к документам
-- :ref:`SelectedDepartments <employee-selected-departments-patch>` - структура для изменения списка подразделений, к которым имеет доступ сотрудник (играет роль только в случае *DocumentAccessLevel = SelectedDepartments*)
-- :doc:`Actions <EmployeePermissions>` - действия сотрудника, права на которые требуется добавить или убрать
-- :ref:`AuthorizationPermission <authorization-permission-patch>` - структура с информацией о наличии ограничения доступа сотрудника к сервису
+Нужно заполнить только те данные, которые требуется изменить.
 
-Необходимо заполнить только те поля структуры, которые соотвествуют данным, требующим изменения.
 
-.. _employee-department-patch:
-
-EmployeeDepartmentPatch
-~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: protobuf
-
-    message EmployeeDepartmentPatch
-    {
-        required string DepartmentId = 1;
-    }
-
-Структура для изменения подразделения сотрудника.
-
-- *DepartmentId* - идентификатор подразделения, в которое необходимо переместить сотрудника
-
-.. _employee-is-administrator-patch:
-
-EmployeeIsAdministratorPatch
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: protobuf
-
-    message EmployeeDepartmentPatch
-    {
-        required bool IsAdministrator = 1;
-    }
-
-Структура для изменения права сотрудника администрировать организацию.
-
-- *IsAdministrator* - имеет ли право сотрудник администрировать организацию
-
-.. _employee-document-access-level-patch:
-
-EmployeeDocumentAccessLevelPatch
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: protobuf
-
-    message EmployeeDocumentAccessLevelPatch
-    {
-        required DocumentAccessLevel DocumentAccessLevel = 1;
-    }
-
-Структура для изменения уровня доступа сотрудника к документам.
-
-- :doc:`DocumentAccessLevel` - новый уровень доступа к документам
-
-.. _employee-selected-departments-patch:
-
-EmployeeSelectedDepartmentsPatch
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: protobuf
-
-    message EmployeeSelectedDepartmentsPatch
-    {
-        repeated string SelectedDepartmentIds = 1;
-    }
-
-Структура для изменения списка подразделений, к которым имеет доступ сотрудник (играет роль только в случае *DocumentAccessLevel = SelectedDepartments*).
-
-- *SelectedDepartmentIds* - новый список подразделений, к которым имеет доступ сотрудник
-
-.. _employee-position-patch:
+.. _EmployeePositionPatch:
 
 EmployeePositionPatch
 ---------------------
+
+Структура ``EmployeePositionPatch`` содержит информацию для изменения должности сотрудника.
 
 .. code-block:: protobuf
 
@@ -122,14 +67,15 @@ EmployeePositionPatch
         optional string Position = 1;
     }
 
-Структура для изменения должности сотрудника.
+- ``Position`` — должность сотрудника.
 
-- *Position* - новая должность сотрудника
 
-.. _employee-can-be-invited-to-chat-patch:
+.. _EmployeeCanBeInvitedForChatPatch:
 
 EmployeeCanBeInvitedForChatPatch
 --------------------------------
+
+Структура ``EmployeeCanBeInvitedForChatPatch`` содержит информацию для изменения необходимости отображать сотрудника в списке получателей cообщений в веб-интерфейсе.
 
 .. code-block:: protobuf
 
@@ -138,15 +84,83 @@ EmployeeCanBeInvitedForChatPatch
         required bool CanBeInvitedForChat = 1;
     }
 
-Структура для изменения необходимости отображать сотрудника в списке получателей Сообщений в веб-интерфейсе.
-
-- *CanBeInvitedForChat* - нужно ли отображать сотрудника в списке получателей Сообщений в веб-интерфейсе
+- ``CanBeInvitedForChat`` — флаг, указывающий, нужно ли отображать сотрудника в списке получателей сообщений в веб-интерфейсе.
 
 
-.. _authorization-permission-patch:
+.. _EmployeeDepartmentPatch:
+
+EmployeeDepartmentPatch
+-----------------------
+
+Структура ``EmployeeDepartmentPatch`` содержит информацию для изменения подразделения сотрудника.
+
+.. code-block:: protobuf
+
+    message EmployeeDepartmentPatch
+    {
+        required string DepartmentId = 1;
+    }
+
+- ``DepartmentId`` — идентификатор подразделения, в которое нужно переместить сотрудника.
+
+
+.. _EmployeeIsAdministratorPatch:
+
+EmployeeIsAdministratorPatch
+----------------------------
+
+Структура ``EmployeeIsAdministratorPatch`` содержит информацию для изменения права сотрудника администрировать организацию.
+
+.. code-block:: protobuf
+
+    message EmployeeDepartmentPatch
+    {
+        required bool IsAdministrator = 1;
+    }
+
+- ``IsAdministrator`` — флаг, указывающий, имеет ли сотрудник право администрировать организацию.
+
+
+.. _EmployeeDocumentAccessLevelPatch:
+
+EmployeeDocumentAccessLevelPatch
+--------------------------------
+
+Структура ``EmployeeDocumentAccessLevelPatch`` содержит информацию для изменения уровня доступа сотрудника к документам.
+
+.. code-block:: protobuf
+
+    message EmployeeDocumentAccessLevelPatch
+    {
+        required DocumentAccessLevel DocumentAccessLevel = 1;
+    }
+
+- ``DocumentAccessLevel`` — уровень доступа сотрудника к документам, представленный структурой :doc:`DocumentAccessLevel`.
+
+
+.. _EmployeeSelectedDepartmentsPatch:
+
+EmployeeSelectedDepartmentsPatch
+--------------------------------
+
+Структура ``EmployeeSelectedDepartmentsPatch`` содержит информацию для изменения списка подразделений, к которым сотрудник имеет доступ.
+
+.. code-block:: protobuf
+
+    message EmployeeSelectedDepartmentsPatch
+    {
+        repeated string SelectedDepartmentIds = 1;
+    }
+
+- ``SelectedDepartmentIds`` — список подразделений, к которым имеет доступ сотрудник.
+
+
+.. _AuthorizationPermissionPatch:
 
 AuthorizationPermissionPatch
 ----------------------------
+
+Структура ``AuthorizationPermissionPatch`` содержит информацию для изменения данных об ограничениях доступа сотрудника к сервису.
 
 .. code-block:: protobuf
 
@@ -156,8 +170,18 @@ AuthorizationPermissionPatch
         optional string Comment = 2;
     }
 
-Структура для изменения данных об ограничении доступа пользователя к сервису.
+- ``IsBlocked`` — флаг, указывающий на наличие ограничения доступа сотрудника к сервису. Принимает значения:
 
-- *IsBlocked* - флаг наличия ограничения доступа пользователя к сервису (``false`` - доступ разрешен, ``true`` - доступ ограничен)
+	- ``true`` — доступ ограничен,
+	- ``false`` — доступ разрешен.
 
-- *Comment* - причина ограничения доступа пользователя к сервису. Длина не более 500 символов.
+- ``Comment`` — причина ограничения доступа сотрудника к сервису. Длина не более 500 символов.
+
+
+
+----
+
+.. rubric:: См. также
+
+*Структура используется:*
+	- в теле запроса метода :doc:`../http/UpdateEmployee`

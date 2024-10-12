@@ -34,10 +34,10 @@
 	- ``Internal`` — внутренний документооборот.
 
 - ``RequiresFnsRegistration`` — флаг, указывающий, что для работы требуется заявление участника ЭДО.
-- ``Functions`` — список функций документа. Каждая функция представлена структурой :ref:`document-function`.
+- ``Functions`` — список функций документа. Каждая функция представлена структурой :ref:`DocumentFunction`.
 
 
-.. _document-function:
+.. _DocumentFunction:
 
 DocumentFunction
 ----------------
@@ -52,10 +52,10 @@ DocumentFunction
     }
 
 - ``Name`` — строковой идентификатор функции. Уникальный в рамках типа документа.
-- ``Versions`` — cписок версий документа. Каждая версия представлена структурой :ref:`document-version`.
+- ``Versions`` — cписок версий документа. Каждая версия представлена структурой :ref:`DocumentVersion`.
 
 
-.. _document-version:
+.. _DocumentVersion:
 
 DocumentVersion
 ---------------
@@ -80,12 +80,12 @@ DocumentVersion
 - ``SupportsEncrypting`` — флаг, указывающий, что тип поддерживает отправку зашифрованных документов.
 - ``SupportsPredefinedRecipientTitle``— флаг, указывающий, что тип поддерживает отправкуа :doc:`предопределенного титула получателя <../../howto/example_predefined_recipient_title>`.
 - ``SupportsAmendmentRequest``— флаг, указывающий, что тип поддерживает отправку запрос на уточнение.
-- ``Titles`` — список титулов документов. Каждый титул представлен структурой :ref:`document-title`.
+- ``Titles`` — список титулов документов. Каждый титул представлен структурой :ref:`DocumentTitle`.
 - ``IsActual`` — флаг, указывающий, что версия документа актуальна.
 - ``Workflows`` — список видов документооборота для текущего типа. Каждый вид представлен структурой :doc:`../DocumentWorkflow`.
 
 
-.. _document-title:
+.. _DocumentTitle:
 
 DocumentTitle
 -------------
@@ -108,12 +108,12 @@ DocumentTitle
 - ``IsFormal`` — флаг, указывающий, что титул является формализованным.
 - ``XsdUrl``— URL-путь метода, возвращающего файл XSD-схемы титула.
 - ``UserDataXsdUrl`` — URL-путь метода, возвращающего XSD-схему ``UserDataXsd`` для генерации титула с помощью метода :doc:`../../http/GenerateTitleXml`. Если отсутствует, то генерация титула под этим индексом не реализована.
-- ``SignerInfo`` — информация о подписанте титула, представленная структурой :ref:`signer-info`.
-- ``MetadataItems`` — метаданные документа, представленные структурой :ref:`document-metadata-item`.
-- ``EncryptedMetadataItems`` — метаданные зашифрованного документа, представленные структурой :ref:`document-metadata-item`.
+- ``SignerInfo`` — информация о подписанте титула, представленная структурой :ref:`SignerInfo`.
+- ``MetadataItems`` — метаданные документа, представленные структурой :ref:`DocumentMetadataItem`.
+- ``EncryptedMetadataItems`` — метаданные зашифрованного документа, представленные структурой :ref:`DocumentMetadataItem`.
 
 
-.. _signer-info:
+.. _SignerInfo:
 
 SignerInfo
 ----------
@@ -142,7 +142,7 @@ SignerInfo
 - ``ExtendedDocumentTitleType`` — тип титула документа, для которого нужно заполнить дополнительные данные о подписанте. Представлен структурой :doc:`../DocumentTitleType`. Для типов подписанта ``None`` и ``Signer`` значение всегда равно ``Absent``.
 
 
-.. _document-metadata-item:
+.. _DocumentMetadataItem:
 
 DocumentMetadataItem
 --------------------

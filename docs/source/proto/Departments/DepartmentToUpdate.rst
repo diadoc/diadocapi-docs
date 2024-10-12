@@ -14,13 +14,14 @@ DeprtmentToUpdate
 
 Структура *DeprtmentToUpdate* содержит информацию для редактирования подразделения.
 
-- :ref:`ParentDepartment <parent-department-patch>`- патч идентификатора родительского подразделения.
-- :ref:`Name <department-naming-patch>` - патч названия подразделения.
-- :ref:`Kpp <department-kpp-patch>` - патч кпп подразделения.
-- :ref:`Address <department-address-patch>` - патч адреса подразделения.
-- :ref:`Routing <department-routing-patch>` - патч типа доступной маршрутизации.
+- :ref:`ParentDepartment <ParentDepartmentPatch>`- патч идентификатора родительского подразделения.
+- :ref:`Name <DepartmentNamingPatch>` - патч названия подразделения.
+- :ref:`Kpp <DepartmentKppPatch>` - патч кпп подразделения.
+- :ref:`Address <DepartmentAddressPatch>` - патч адреса подразделения.
+- :ref:`Routing <DepartmentRoutingPatch>` - патч типа доступной маршрутизации.
 
-.. _parent-department-patch:
+
+.. _ParentDepartmentPatch:
 
 ParentDepartmentPatch
 ---------------------
@@ -36,7 +37,8 @@ ParentDepartmentPatch
 
 - *ParentDepartmentId* - новое значение родительского подразделения.
 
-.. _department-naming-patch:
+
+.. _DepartmentNamingPatch:
 
 DepartmentNamingPatch
 ---------------------
@@ -54,7 +56,8 @@ DepartmentNamingPatch
 - *Name* - новое название подразделения.
 - *Abbreviation* - новое короткое название подразделения.
 
-.. _department-kpp-patch:
+
+.. _DepartmentKppPatch:
 
 DepartmentKppPatch
 ------------------
@@ -70,7 +73,8 @@ DepartmentKppPatch
 
 - *Kpp* - новое КПП подразделения.
 
-.. _department-address-patch:
+
+.. _DepartmentAddressPatch:
 
 DepartmentAddressPatch
 ----------------------
@@ -86,7 +90,8 @@ DepartmentAddressPatch
 
 - :doc:`Address <../Address>` - новый адрес подразделения.
 
-.. _department-routing-patch:
+
+.. _DepartmentRoutingPatch:
 
 DepartmentRoutingPatch
 ----------------------

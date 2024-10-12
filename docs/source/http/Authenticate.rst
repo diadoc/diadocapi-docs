@@ -11,7 +11,7 @@ Authenticate
 
 .. _Authenticate_v3:
 
-Authenticate v3
+Authenticate V3
 ---------------
 
 .. http:post:: /V3/Authenticate

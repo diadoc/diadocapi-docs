@@ -45,4 +45,4 @@ DocumentTitleType
 
 *Перечисление используется:*
 	- в параметре запроса метода :doc:`../http/ExtendedSignerDetailsV2`
-	- в устаревшей структуре :ref:`SignerInfo <signer-info>`
+	- в устаревшей структуре :ref:`SignerInfo`

@@ -49,5 +49,5 @@
 	- в структуре :ref:`RequestedSignatureRejection`
 	- в структуре :ref:`RevocationRequestAttachment`
 	- в структуре :ref:`SignatureVerification`
-	- в структуре :ref:`template-refusal-attachment`
+	- в структуре :ref:`TemplateRefusalAttachment`
 	- в структуре :ref:`XmlSignatureRejectionAttachment`

@@ -42,24 +42,6 @@ OrganizationUserPermissions
 
 -  *CanCreateDocuments* - может ли пользователь создавать и редактировать документы и черновики
 
--  :ref:`AuthorizationPermission <organization-user-authorization-permission>` - данные о наличии ограничения доступа пользователя к сервису
+-  :doc:`AuthorizationPermission <AuthorizationPermission>` - данные о наличии ограничения доступа пользователя к сервису
 
 -  *CanDeleteRestoreDocuments* - может ли пользователь удалять документы и черновики, восстанавливать документы
-
-.. _organization-user-authorization-permission:
-
-AuthorizationPermission
------------------------
-
-.. code-block:: protobuf
-
-    message AuthorizationPermission {
-        required bool IsBlocked = 1;
-        optional string Comment = 2;
-    }
-
-Структура данных *AuthorizationPermission* содержит информацию о наличии ограничений доступа сотрудника к сервису.
-
-    - *IsBlocked* - флаг наличия ограничения доступа пользователя к сервису (``false`` - доступ разрешен, ``true`` - доступ ограничен)
-
-    - *Comment* - причина ограничения доступа пользователя. Длина не более 500 символов.

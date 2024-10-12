@@ -23,11 +23,11 @@ EmployeePermissions
 - ``IsAdministrator`` — флаг, означающий, что сотрудник является администратором и может редактировать структуру и реквизиты организации, добавлять и редактировать информацию о других сотрудниках.
 - ``DocumentAccessLevel`` — уровень доступа к документам, представленый перечислением :doc:`DocumentAccessLevel`.
 - ``SelectedDepartmentIds`` — список идентификаторов подразделений, к которым сотрудник имеет доступ. Заполняется только в случае, если ``DocumentAccessLevel = SelectedDepartments``.
-- ``Actions`` — список с информацией о том, на выполнение каких действий сотрудник имеет право. Каждый элемент списка представлен структурой :ref:`employee_actions`.
-- ``AuthorizationPermission`` - информация о наличии ограничения доступа пользователя к сервису, представленная структурой :ref:`authorization-permission`.
+- ``Actions`` — список с информацией о том, на выполнение каких действий сотрудник имеет право. Каждый элемент списка представлен структурой :ref:`EmployeeAction`.
+- ``AuthorizationPermission`` - информация о наличии ограничения доступа пользователя к сервису, представленная структурой :doc:`AuthorizationPermission`.
 
 
-.. _employee_actions:
+.. _EmployeeAction:
 
 EmployeeAction
 --------------
@@ -51,29 +51,6 @@ EmployeeAction
 	- ``ManageCounteragents`` — пидеть списки контрагентов и работать с ними.
 
 - ``IsAllowed`` — флаг, указывающий, разрешено ли сотруднику это действие.
-
-
-.. _authorization-permission:
-
-AuthorizationPermission
------------------------
-
-Структура ``AuthorizationPermission`` содержит информацию о наличии ограничений доступа сотрудника к сервису.
-
-.. code-block:: protobuf
-
-    message AuthorizationPermission
-    {
-        required bool IsBlocked = 1;
-        optional string Comment = 2;
-    }
-
-- ``IsBlocked`` — флаг, указывающий на наличие ограничения доступа пользователя к сервису. Принимает значение:
-
-	- ``false`` — доступ разрешен,
-	- ``true`` — доступ ограничен.
-
-- ``Comment`` — причина ограничения доступа пользователя к сервису. Длина не более 500 символов.
 
 
 ----

@@ -184,7 +184,7 @@
 - Добавили возможность указать расширенные данные подписанта для УПД, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695>`__:
 
 	- в перечисление :doc:`proto/DocumentTitleType` добавили значения ``Utd970Seller = 12`` и ``Utd970Buyer = 13`` для титула продавца и покупателя УПД формата приказа 970 соответственно;
-	- в поле ``ExtendedDocumentTitleType`` структуры :ref:`signer-info2` добавили значения 12 и 13 для титула продавца и покупателя УПД формата приказа 970 соответственно;
+	- в поле ``ExtendedDocumentTitleType`` структуры :ref:`SignerInfoV2` добавили значения 12 и 13 для титула продавца и покупателя УПД формата приказа 970 соответственно;
 	- в перечисления :doc:`proto/SignerType`, :doc:`proto/SignerStatus` и :doc:`proto/SignerPowers` добавили значение -1: в УПД нового формата нет полей с типом, статусом и областью полномочий подписанта.
 
 
@@ -289,8 +289,8 @@
 ----------
 **SDK**: `C# 2.11.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.7>`__
 
-- В структуре :ref:`signer-info2` для поля ``SignerType`` добавлено новое значение — универсальный подписант.
-- В структуре :ref:`signer-info2` добавлено поле ``SignerUserDataXsdUrl``, которое содержит URL-путь метода, возвращающего файл XSD-схемы упрощенного XML подписанта.
+- В структуре :ref:`SignerInfoV2` для поля ``SignerType`` добавлено новое значение — универсальный подписант.
+- В структуре :ref:`SignerInfoV2` добавлено поле ``SignerUserDataXsdUrl``, которое содержит URL-путь метода, возвращающего файл XSD-схемы упрощенного XML подписанта.
 - В структурах :doc:`DraftDocumentToPatch <proto/PrepareDocumentsToSignRequest>`, :doc:`DocumentToPatch <proto/PrepareDocumentsToSignRequest>` и :doc:`ContentToPatch <proto/PrepareDocumentsToSignRequest>` добавлено поле ``SignerContent``.
 
 
@@ -376,7 +376,7 @@
 
 - Реализована отправка документов с машиночитаемой доверенностью (МЧД).
 
- При отправке документов методами :doc:`http/PostMessage`, :doc:`http/PostMessagePatch` и :doc:`http/SendDraft` теперь можно указать МЧД. Для этого изменены структуры :doc:`proto/SignedContent`, :doc:`proto/DocumentSignature` и :doc:`proto/DocumentSenderSignature`, которые теперь могут хранить информацию о МЧД в новой структуре :doc:`proto/PowerOfAttorneyToPost`.
+  При отправке документов методами :doc:`http/PostMessage`, :doc:`http/PostMessagePatch` и :doc:`http/SendDraft` теперь можно указать МЧД. Для этого изменены структуры :doc:`proto/SignedContent`, :doc:`proto/DocumentSignature` и :doc:`proto/DocumentSenderSignature`, которые теперь могут хранить информацию о МЧД в новой структуре :doc:`proto/PowerOfAttorneyToPost`.
 
 - Реализовано получение машиночитаемой доверенности (МЧД).
 
@@ -401,11 +401,11 @@
 	 
 - Реализована генерция титулов с машиночитаемой доверенностью (МЧД).
 
- Метод :doc:`http/GenerateTitleXml` теперь может генерировать :ref:`титулы с МЧД <generate_title_xml_poa>`.
- 
+  Метод :doc:`http/GenerateTitleXml` теперь может генерировать :ref:`титулы с МЧД <generate_title_xml_poa>`.
+
 - Реализована подготовка к подписанию документа с машиночитаемой доверенностью (МЧД).
- 
- Метод :doc:`http/PrepareDocumentsToSign` теперь может подготовить к подписанию документ с МЧД. Для этого в структуру :doc:`proto/ExtendedSigner` включена структура :doc:`proto/PowerOfAttorneyToPost`, содержащая данные о МЧД.
+
+  Метод :doc:`http/PrepareDocumentsToSign` теперь может подготовить к подписанию документ с МЧД. Для этого в структуру :doc:`proto/ExtendedSigner` включена структура :doc:`proto/PowerOfAttorneyToPost`, содержащая данные о МЧД.
 
 
 26.01.2022
@@ -596,7 +596,7 @@
 **SDK**: `C# 1.87.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.87.0>`__ | `Java 2.21.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.21.0>`__ | `C++ 1.82.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.82.0>`__
 
 - Добавлен метод :doc:`http/PostTemplatePatch`, который позволяет отправлять дополнения к шаблонам документов.
-- Добавлена возможность с помощью этого метода и структуры :ref:`TemplateRefusalAttachment <template-refusal-attachment>` выполнить отзыв или отклонение шаблона.
+- Добавлена возможность с помощью этого метода и структуры :ref:`TemplateRefusalAttachment` выполнить отзыв или отклонение шаблона.
 - В структуры :doc:`proto/Entity message` и :doc:`DocumentTemplateInfo <proto/DocumentInfoV3>` добавлена информация об отзыве и отклонении шаблона.
 
 
