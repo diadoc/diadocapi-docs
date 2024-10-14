@@ -3,17 +3,6 @@ Authenticate
 
 Метод ``Authenticate`` предназначен для аутентификации пользователя в Диадоке.
 
-Версии метода:
-
-	- :ref:`Authenticate_v3`.
-	- Authenticate v2 — устаревшая версия.
-	- Authenticate — устаревшая версия.
-
-.. _Authenticate_v3:
-
-Authenticate V3
----------------
-
 .. http:post:: /V3/Authenticate
 
 	:queryparam type: способ аутентификации. Параметр не может быть пустым. Может принимать значения:
