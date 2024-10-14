@@ -19,9 +19,6 @@ sys.path.append(os.path.abspath('exts'))
 # ones.
 
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.graphviz',
     'sphinxcontrib.httpdomain',
     'sphinx_reredirects',
     'sphinx_tabs.tabs',
