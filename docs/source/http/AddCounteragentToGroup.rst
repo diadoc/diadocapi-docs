@@ -21,14 +21,21 @@ AddCounteragentToGroup
 	:statuscode 409: с контрагентом не установлены партнерские отношения.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Добавить контрагентов в группу может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
+.. include:: ../include/accessMethod_required_admin_manageCounteragents.txt
 
-Метод ``AddCounteragentToGroup`` добавляет в группу только контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``, иначе метод вернет ошибку ``409 (Conflict )``.
+Метод ``AddCounteragentToGroup`` добавляет в группу только контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``, иначе возвращает ошибку ``409 (Conflict )``. Узнать статус контрагента можно с помощью метода :doc:`GetOrganizationsByInnList`.
 
-Узнать статус контрагента можно с помощью метода :doc:`GetOrganizationsByInnList`.
+
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/addCounteragentToGroup_query.txt
+
 
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragentgroup.txt
+.. include:: ../include/seealso_method_counteragentgroup.txt

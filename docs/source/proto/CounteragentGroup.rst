@@ -1,7 +1,7 @@
 CounteragentGroup
 =================
 
-Структура ``CounteragentGroup`` представляет собой группу контрагентов.
+Структура ``CounteragentGroup`` хранит информацию о группе контрагентов.
 
 .. code-block:: protobuf
 
@@ -15,6 +15,7 @@ CounteragentGroup
 - ``Name`` — название группы контрагентов.
 - ``Departments``— список подразделений, в которые группы могут отправлять документы. Представлен структурой :doc:`DepartmentsInGroup`. Если отстутствует, контрагенты группы могут отправлять документы в любое подразделение.
 
+
 ----
 
 .. rubric:: См. также
@@ -24,3 +25,9 @@ CounteragentGroup
 	- в теле ответа метода :doc:`../http/CreateCounteragentGroup`
 	- в теле ответа метода :doc:`../http/GetCounteragentGroup`
 	- в теле ответа метода :doc:`../http/UpdateCounteragentGroup`
+
+*Определение:*
+	- :doc:`../entities/counteragent`
+
+*Инструкции:*
+	- :doc:`../instructions/counteragentgroups`

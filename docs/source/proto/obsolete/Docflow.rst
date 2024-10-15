@@ -2,7 +2,7 @@ Docflow
 =======
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/DocflowV3` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../DocflowV3`.
 
 Структура ``Docflow`` представляет состояние документооборота для одного документа.
 
@@ -42,7 +42,7 @@ Docflow
 - ``CanDocumentBeRevokedUnilaterallyBySender`` — признак того, что документ может быть отозван отправителем в одностороннем порядке.
 - ``PacketId`` — идентификатор пакета, в котором в данный момент находится документ.
 - ``CustomData`` — список пользовательских данных (:doc:`тегов <../../entities/tag>`), привязанных к документу. Каждый тег представлен структурой :doc:`../CustomDataItem`.
-- ``RoamingNotification`` — данные о доставке документа в роуминг, представленные структурой :doc:`../Docflow_RoamingNotification`.
+- ``RoamingNotification`` — данные о доставке документа в роуминг, представленные структурой :doc:`../RoamingNotification`.
 
 -  Поля, заполняющиеся в зависимости от типа документа:
 
@@ -56,9 +56,10 @@ Docflow
    - ``InboundUniversalTransferDocumentDocflow`` — документооборот входящего УПД, представленный структурой :doc:`InboundUniversalTransferDocumentDocflow` — для документов с типом ``UniversalTransferDocument``, ``UniversalTransferDocumentRevision``, ``UniversalCorrectionDocument``, ``UniversalCorrectionDocumentRevision``.
    - ``OutboundUniversalTransferDocumentDocflow`` — документооборот исходящего УПД, представленный структурой :doc:`OutboundUniversalTransferDocumentDocflow` — для документов с типом ``UniversalTransferDocument``, ``UniversalTransferDocumentRevision``, ``UniversalCorrectionDocument``, ``UniversalCorrectionDocumentRevision``.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentWithDocflow`
+	- в устаревшей структуре :doc:`DocumentWithDocflow`

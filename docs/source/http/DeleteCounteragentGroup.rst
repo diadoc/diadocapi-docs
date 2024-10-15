@@ -20,12 +20,22 @@ DeleteCounteragentGroup
 	:statuscode 409: нельзя удалить группу по умолчанию.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
-Удалить группу контрагентов может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
+.. include:: ../include/accessMethod_required_admin_manageCounteragents.txt
 
-При удалении группы всем контрагентам, находящимся в этой группе, назначается группа "по умолчанию".
+После удаления группы все контрагенты, находящиеся в ней, будут перемещены в группу «По умолчанию».
+
+
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/deleteCounteragentGroup_query.txt
+
+
 
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragentgroup.txt
+.. include:: ../include/seealso_method_counteragentgroup.txt

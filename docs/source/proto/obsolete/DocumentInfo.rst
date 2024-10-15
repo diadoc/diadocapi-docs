@@ -2,7 +2,7 @@ DocumentInfo
 ============
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/DocumentInfoV3` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../DocumentInfoV3`.
 
 Структура ``DocumentInfo`` представляет собой метаданные документа — данные, которые не меняются в течение его жизненного цикла.
 
@@ -37,7 +37,7 @@ DocumentInfo
 - ``FromDepartmentId`` — идентификатор подразделения-отправителя документа.
 - ``ToDepartmentId`` — идентификатор подразделения-получателя документа.
 - ``CounteragentBoxId`` — идентификатор ящика контрагента.
-- ``DocumentDateAndNumber`` — дата и номер документа, представленные структурой :doc:`../DocumentDateAndNumber`.
+- ``DocumentDateAndNumber`` — дата и номер документа, представленные структурой :doc:`DocumentDateAndNumber`.
 - ``AttachmentVersion`` — идентификатор версии документа. Поле устарело, вместо него используйте поле ``Version``.
 - ``Version`` — идентификатор версии документа.
 
@@ -52,9 +52,10 @@ DocumentInfo
    - ``UniversalTransferDocumentInfo`` — поле со структурой :doc:`UniversalTransferDocumentInfo` для документов ``UniversalTransferDocument``, ``UniversalTransferDocumentRevision``.
    - ``UniversalCorrectionDocumentInfo`` — поле со структурой :doc:`UniversalCorrectionDocumentInfo` для документов ``UniversalCorrectionDocument``, ``UniversalCorrectionDocumentRevision``.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentWithDocflow`
+	- в устаревшей структуре :doc:`DocumentWithDocflow`

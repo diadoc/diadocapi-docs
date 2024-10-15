@@ -124,7 +124,7 @@
 
 *Инструкции:*
 	- :doc:`generation`
-	- :doc:`preparetosign`
+	- :doc:`parsing`
 
 *Методы для работы с типами документов:*
-	- :doc:`../http/GetDocumentTypes` — возвращает описание типов документов
+	- :doc:`../http/GetDocumentTypes` — возвращает описание типов документов, доступных в ящике

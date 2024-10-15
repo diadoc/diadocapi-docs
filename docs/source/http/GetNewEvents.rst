@@ -62,8 +62,14 @@ GetNewEvents
 
 Сохраните в своем интеграционном решении идентификатор ``BoxEvent.IndexKey`` для конкретного ящика. При следующем вызове метода ``GetNewEvents`` укажите его в параметре ``afterIndexKey``: так вы сможете узнать, какие изменения произошли в ящике с момента последнего вызова.
 
+
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_event.txt
+.. include:: ../include/seealso_method_event.txt
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/GetNewEvents_v4`
+	- :doc:`obsolete/GetNewEvents_v5`
+	- :doc:`obsolete/GetNewEvents_v6`

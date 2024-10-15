@@ -2,7 +2,7 @@ AcceptanceCertificateInfo
 =========================
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../../http/obsolete/GenerateAcceptanceCertificateXmlForBuyer`.
+	Структура используется в устаревшем методе :doc:`../../http/obsolete/GenerateAcceptanceCertificateXmlForBuyer`.
 
 .. code-block:: protobuf
 

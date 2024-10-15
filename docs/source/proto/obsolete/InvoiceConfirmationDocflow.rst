@@ -2,7 +2,7 @@ InvoiceConfirmationDocflow
 ==========================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
+	Структура устарела.
 
 Структура ``InvoiceConfirmationDocflow`` представляет собой информацию о подтверждении оператора в рамках документооборота счета-фактуры.
 
@@ -19,13 +19,14 @@ InvoiceConfirmationDocflow
 - ``ConfirmationAttachment`` — информация о файле подтверждения, представленная структурой :doc:`../SignedAttachment`.
 - ``ReceiptDocflow`` — информация об извещении о получении данного подтверждения, представленная структурой :doc:`ReceiptDocflow`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`InboundInvoiceDocflow`
-	- в структуре :doc:`InboundInvoiceReceiptDocflow`
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`
-	- в структуре :doc:`OutboundInvoiceDocflow`
-	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`InboundInvoiceDocflow`
+	- в устаревшей структуре :doc:`InboundInvoiceReceiptDocflow`
+	- в устаревшей структуре :doc:`InboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`OutboundInvoiceDocflow`
+	- в устаревшей структуре :doc:`OutboundUniversalTransferDocumentDocflow`

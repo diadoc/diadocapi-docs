@@ -1,0 +1,7 @@
+{
+    "Name": "Новое имя",
+    "GroupDepartments":
+    {
+        "AnyDepartment": "true"
+    }
+}

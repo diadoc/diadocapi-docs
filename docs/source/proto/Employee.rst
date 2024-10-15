@@ -1,6 +1,8 @@
 Employee
 ========
 
+Структура ``Employee`` хранит информацию о сотруднике организации.
+
 .. code-block:: protobuf
 
     message Employee {
@@ -11,10 +13,24 @@ Employee
        optional Timestamp CreationTimestamp = 5;
     }
 
-Структура содержит информацию о сотруднике организации. Возвращается методами :doc:`../http/GetEmployee`, :doc:`../http/CreateEmployee`, :doc:`../http/UpdateEmployee`, :doc:`../http/GetMyEmployee`.
+- ``User`` — информация о пользователе, представленная структурой :doc:`UserV2`.
+- ``Permissions`` — информация о правах сотрудника, представленная структурой :doc:`EmployeePermissions`.
+- ``Position`` — должность сотрудника/
+- ``CanBeInvitedForChat`` — флаг, означающий, что сотрудник отображается в списке получателей сообщений в веб-интерфейсе.
+- ``CreationTimestamp`` — дата создания сотрудника, представленная структурой :doc:`Timestamp`.
 
- - :doc:`User <UserV2>` - информация о пользователе
- - :doc:`Permissions <EmployeePermissions>` - права сотрудника
- - *Position* - должность сотрудника
- - *CanBeInvitedForChat* - сотрудник отображается в списке получателей Сообщений в веб-интерфейсе
- - :doc:`CreationTimestamp <Timestamp>` - дата создания сотрудника
+
+----
+
+.. rubric:: См. также
+
+*Структура используется:*
+	- в структуре :doc:`EmployeeList`
+	- в теле ответа метода :doc:`../http/CreateEmployee`
+	- в теле ответа метода :doc:`../http/GetEmployee`
+	- в теле ответа метода :doc:`../http/GetMyEmployee`
+	- в теле ответа метода :doc:`../http/UpdateEmployee`
+	- в устаревшей структуре :doc:`TovTorgBuyerTitleInfo <obsolete/TovTorgInfo>`
+	- в устаревшей структуре :doc:`TovTorgTransferInfo <obsolete/TovTorgInfo>`
+	- в устаревшей структуре :doc:`TransferInfo <obsolete/UniversalTransferDocumentSellerTitleInfo>`
+	- в устаревшей структуре :doc:`obsolete/UniversalTransferDocumentBuyerTitleInfo`

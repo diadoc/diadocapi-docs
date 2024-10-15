@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="EditionViewModel">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="SellerBankDetails">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation>Сведения о банковских реквизитах продавца</xs:documentation>
+						</xs:annotation>
+						<xs:attribute name="CorrespondentAccount" use="optional">
+							<xs:annotation>
+								<xs:documentation>КорСчет - Корреспондентский счёт</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="20" />
+									<xs:pattern value="^[0-9]{20}$" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+
+						<xs:attribute name="BankAccountNumber" use="optional">
+							<xs:annotation>
+								<xs:documentation>НомерСчета - номер банковского счета</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="20"/>
+									<xs:pattern value="^[0-9]{20}$" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+
+						<xs:attribute name="BankName" use="optional">
+							<xs:annotation>
+								<xs:documentation>НаимБанк - название банка</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="1000"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+
+						<xs:attribute name="BankId" use="optional">
+							<xs:annotation>
+								<xs:documentation>БИК</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="9"/>
+									<xs:pattern value="^[0-9]{9}$" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+
+			<xs:attribute name="DocumentNumber" use="required">
+				<xs:annotation>
+					<xs:documentation>НомерДок - номер УПД</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="1000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

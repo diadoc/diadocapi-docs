@@ -1,7 +1,7 @@
 UpdateCounteragentGroup
 =======================
 
-Метод ``UpdateCounteragentGroup`` позволяет редактировать группу контрагентов.
+Метод ``UpdateCounteragentGroup`` изменяет параметры группы контрагентов.
 
 .. http:post:: /UpdateCounteragentGroup
 
@@ -39,21 +39,53 @@ UpdateCounteragentGroup
 	:statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен или запрос сделан не от имени администратора.
 	:statuscode 404: не найдена группа контрагентов с идентификатором ``CounteragentGroupId`` или не найдены подразделения с идентификатором ``DepartmentId``.
 	:statuscode 405: используется неподходящий HTTP-метод.
-	:statuscode 409: группа контрагентов с наименованием ``Name`` уже существует.
+	:statuscode 409: группа контрагентов с названием ``Name`` уже существует.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
 	:response Body: Тело ответа содержит структуру :doc:`../proto/CounteragentGroup`.
 
-Изменить группу контрагентов может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
+.. include:: ../include/accessMethod_required_admin_manageCounteragents.txt
 
-Изменить список подразделений, в которые группа может отправлять документы, можно одним из следующих способов:
 
-	- Чтобы добавить или удалить подразделения, передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и обновленным списком подразделений.
-	- Чтобы изменить список подразделений на «любое подразделение», передайте структуру ``CounteragentGroupDepartmentPatch`` только с флагом ``AnyDepartment = true``.
-	- Чтобы указать список конкретных подразделений для группы с разрешением отправлять документы в любое подразделение, передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и списком подразделений.
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/updateCounteragentGroup_query.txt
+
+Изменить список подразделений, в которые группа может отправлять документы, можно одним из способов:
+
+1. Передайте структуру ``CounteragentGroupDepartmentPatch`` с флагом ``AnyDepartment = false`` и списком подразделений, чтобы:
+
+   - задать список подразделений для группы, которая сейчас может отправлять документы в любое подразделение,
+   - изменить список подразделений для группы с уже указанными подразделениями.
+
+   **Пример тела запроса:**
+
+   .. literalinclude:: ../include/updateCounteragentGroup_newstruct_body.txt
+      :language: json
+
+   **Пример тела ответа:**
+
+   .. literalinclude:: ../include/updateCounteragentGroup_newstruct_resp.txt
+      :language: json
+
+2. Передайте структуру ``CounteragentGroupDepartmentPatch`` только с флагом ``AnyDepartment = true``, чтобы изменить список подразделений на «любое подразделение», .
+
+   **Пример тела запроса:**
+
+   .. literalinclude:: ../include/updateCounteragentGroup_anydep_body.txt
+      :language: json
+
+   **Пример тела ответа:**
+
+   .. literalinclude:: ../include/updateCounteragentGroup_anydep_resp.txt
+      :language: json
+
 
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragentgroup.txt
+.. include:: ../include/seealso_method_counteragentgroup.txt

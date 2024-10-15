@@ -2,9 +2,9 @@ GetDocflowEventsResponse
 ========================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Вместо нее используется структура :doc:`../../proto/GetDocflowEventsResponseV3` последней версии :doc:`../../Docflow API` — V3.
+	Структура устарела. Вместо нее используется структура :doc:`../GetDocflowEventsResponseV3`.
 
-Структура ``GetDocflowEventsResponse`` представляет собой список событий, полученных методом :doc:`../../http/obsolete/GetDocflowEvents`.
+Структура ``GetDocflowEventsResponse`` представляет собой список событий, полученных методом :doc:`../../http/obsolete/GetDocflowEvents_v2`.
 
 .. code-block:: protobuf
 
@@ -19,9 +19,10 @@ GetDocflowEventsResponse
 - ``Events`` — список событий, представленных структурой :doc:`DocflowEvent`.
 - ``TotalCountType`` — параметр, указывающий, является ли значение ``TotalCount`` точным или подсчет был ограничен. Представлен структурой :doc:`../TotalCountType`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/GetDocflowEvents`
+	- в теле ответа устаревшего метода :doc:`../../http/obsolete/GetDocflowEvents_v2`

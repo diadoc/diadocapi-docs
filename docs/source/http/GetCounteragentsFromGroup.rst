@@ -35,12 +35,26 @@ GetCounteragentsFromGroup
 		- ``TotalCount`` — количество контрагентов в группе.
 		- ``AfterIndexKey`` — ключ для постраничного получения списка контрагентов.
 
-Получить список контрагентов в группе может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
+.. include:: ../include/accessMethod_required_admin_manageCounteragents.txt
 
 Метод вернет только идентификаторы контрагентов со статусом ``CounteragentStatus = IsMyCounteragent``. Узнать статус контрагента можно с помощью метода :doc:`GetOrganizationsByInnList`.
+
+
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/getCounteragentsFromGroup_query.txt
+
+**Пример тела ответа:**
+
+.. literalinclude:: ../include/getCounteragentsFromGroup_resp.txt
+	:language: json
+
 
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragentgroup.txt
+.. include:: ../include/seealso_method_counteragentgroup.txt

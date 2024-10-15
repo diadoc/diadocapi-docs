@@ -61,10 +61,11 @@ DocumentType
 - ``UniversalCorrectionDocument`` — универсальный корректировочный документ (УКД).
 - ``UniversalCorrectionDocumentRevision`` — исправление универсального корректировочного документа.
 
+
 ----
 
 .. rubric:: См. также
 
 *Перечисление используется:*
 	- в структуре :doc:`../Document`
-	- в структуре :doc:`DocumentInfo`
+	- в устаревшей структуре :doc:`DocumentInfo`

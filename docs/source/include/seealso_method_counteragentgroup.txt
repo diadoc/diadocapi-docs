@@ -1,0 +1,14 @@
+*Определение:*
+	- :doc:`../entities/counteragent`
+
+*Инструкции:*
+	- :doc:`../instructions/counteragentgroups`
+
+*Методы для работы с группами контрагентов:*
+	- :doc:`AddCounteragentToGroup` — добавляет контрагента в группу
+	- :doc:`CreateCounteragentGroup` — создает группу контрагентов
+	- :doc:`DeleteCounteragentGroup` — удаляет группу контрагентов
+	- :doc:`GetCounteragentGroup` — возвращает информацию о группе контрагентов
+	- :doc:`GetCounteragentGroups` — возвращает список групп контрагентов
+	- :doc:`GetCounteragentsFromGroup` — возвращает список контрагентов в группе
+	- :doc:`UpdateCounteragentGroup` — изменяет параметры группы контрагентов

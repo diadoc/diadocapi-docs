@@ -38,6 +38,7 @@ RoamingSendingStatus
 	- ``Code`` — код ошибки.
 	- ``Text`` — текст ошибки.
 
+
 ----
 
 .. rubric:: См. также

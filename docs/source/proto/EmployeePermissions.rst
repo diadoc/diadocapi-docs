@@ -1,6 +1,13 @@
 EmployeePermissions
 ===================
 
+На этой странице, помимо ``EmployeePermissions``, описаны следующие структуры и перечисления:
+
+.. contents:: :local:
+
+
+Структура ``EmployeePermissions`` хранит информацию о правах сотрудника организации.
+
 .. code-block:: protobuf
 
     message EmployeePermissions {
@@ -12,19 +19,20 @@ EmployeePermissions
         optional AuthorizationPermission AuthorizationPermission = 6;
     }
 
-Структура *EmployeePermissions* содержит информацию о правах сотрудника организации. Как часть структуры :doc:`Employee` возвращается методами :doc:`../http/GetEmployee`, :doc:`../http/CreateEmployee`, :doc:`../http/UpdateEmployee`.
+- ``UserDepartmentId`` — идентификатор подразделения организации, в котором состоит сотрудник. Для головного подразделения будет иметь значение ``00000000-0000-0000-0000-000000000000``.
+- ``IsAdministrator`` — флаг, означающий, что сотрудник является администратором и может редактировать структуру и реквизиты организации, добавлять и редактировать информацию о других сотрудниках.
+- ``DocumentAccessLevel`` — уровень доступа к документам, представленый перечислением :doc:`DocumentAccessLevel`.
+- ``SelectedDepartmentIds`` — список идентификаторов подразделений, к которым сотрудник имеет доступ. Заполняется только в случае, если ``DocumentAccessLevel = SelectedDepartments``.
+- ``Actions`` — список с информацией о том, на выполнение каких действий сотрудник имеет право. Каждый элемент списка представлен структурой :ref:`EmployeeAction`.
+- ``AuthorizationPermission`` - информация о наличии ограничения доступа пользователя к сервису, представленная структурой :doc:`AuthorizationPermission`.
 
-- *UserDepartmentId* - идентификатор подразделения организации, в котором состоит сотрудник. В случае головного подразделения содержит значение 00000000-0000-0000-0000-000000000000
-- *IsAdministrator* - может ли сотрудник редактировать структуру и реквизиты организации, добавлять и редактировать других сотрудников
-- :doc:`DocumentAccessLevel` - уровень доступа к документам
-- *SelectedDepartmentIds* - список подразделений, к которым имеет доступ сотрудник (заполняется только в случае *DocumentAccessLevel = SelectedDepartments*).
-- :ref:`Actions <actions>` - информация о том, какие действия имеет право выполнять сотрудник
-- :ref:`AuthorizationPermission <authorization-permission>` - информация о наличии ограничения доступа пользователя к сервису
 
-.. _actions:
+.. _EmployeeAction:
 
 EmployeeAction
 --------------
+
+Структура ``EmployeeAction`` содержит информацию о том, может ли сотрудник совершить конкретное действие.
 
 .. code-block:: protobuf
 
@@ -33,37 +41,22 @@ EmployeeAction
         required bool IsAllowed = 2;
     }
 
-Структура *EmployeeAction* содержит информацию о том, может ли сотрудник совершить конкретное действие.
+- ``Name`` — строковой идентификатор действия. Принимает одно из следующих значений:
 
-- *Name* - строковой идентификатор действия
-- *IsAllowed* - разрешено ли действие
+	- ``CreateDocuments`` — создавать и редактировать документы и черновики;
+	- ``DeleteRestoreDocuments`` — удалять документы и черновики, восстанавливать документы;
+	- ``SignDocuments`` — подписывать документы;
+	- ``AddResolutions`` — согласовывать документы;
+	- ``RequestResolutions`` — передавать на подпись и согласование;
+	- ``ManageCounteragents`` — пидеть списки контрагентов и работать с ними.
 
-.. csv-table:: Действия сотрудников
-   :header: "Идентификатор", "Описание"
-   :widths: 2, 10
+- ``IsAllowed`` — флаг, указывающий, разрешено ли сотруднику это действие.
 
-   "CreateDocuments", "Создавать и редактировать документы и черновики"
-   "DeleteRestoreDocuments", "Удалять документы и черновики, восстанавливать документы"
-   "SignDocuments", "Подписывать документы"
-   "AddResolutions", "Согласовывать документы"
-   "RequestResolutions", "Передавать на подпись и согласование"
-   "ManageCounteragents", "Видеть списки контрагентов и работать с ними"
 
-.. _authorization-permission:
+----
 
-AuthorizationPermission
------------------------
+.. rubric:: См. также
 
-.. code-block:: protobuf
-
-    message AuthorizationPermission
-    {
-        required bool IsBlocked = 1;
-        optional string Comment = 2;
-    }
-
-Структура *AuthorizationPermission* содержит информацию о наличии ограничений доступа сотрудника к сервису.
-
-- *IsBlocked* - флаг наличия ограничения доступа пользователя к сервису (``false`` - доступ разрешен, ``true`` - доступ ограничен)
-
-- *Comment* - причина ограничения доступа пользователя к сервису. Длина не более 500 символов.
+*Структура используется:*
+	- в структуре :doc:`Employee`
+	- в структуре :doc:`EmployeeToCreate`

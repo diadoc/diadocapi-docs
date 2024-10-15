@@ -1,0 +1,12 @@
+*Методы для работы с группами контрагентов:*
+	- :doc:`../http/AddCounteragentToGroup` — добавляет контрагентов в группу
+	- :doc:`../http/CreateCounteragentGroup` — создает группу контрагентов
+	- :doc:`../http/DeleteCounteragentGroup` — удаляет группу контрагентов
+	- :doc:`../http/GetCounteragentGroup` — возвращает информацию о группе контрагентов
+	- :doc:`../http/GetCounteragentGroups` — возвращает список групп контрагентов
+	- :doc:`../http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе
+	- :doc:`../http/UpdateCounteragentGroup` — редактирует группу контрагентов
+
+*Структуры для работы с группами контрагентов:*
+	- :doc:`../proto/CounteragentGroup` — хранит информацию о группе контрагентов
+	- :doc:`../proto/DepartmentsInGroup` — хранит список идентификаторов подразделений, в которые группа контрагентов может отправлять документы

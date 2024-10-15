@@ -2,7 +2,7 @@ BuyerTitleDocflow
 =================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
+	Структура устарела.
 
 Структура ``BuyerTitleDocflow`` представляет собой информацию об ответной подписи под двусторонним формализованным документом (титул покупателя). Ответная подпись в этом случае является подписанным формализованным файлом установленного формата.
 
@@ -21,11 +21,12 @@ BuyerTitleDocflow
 - ``SendTimestamp`` — время отправки титула покупателя, представленное структурой :doc:`../Timestamp`.
 - ``DeliveryTimestamp`` — время доставки титула покупателя, представленное структурой :doc:`../Timestamp`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`
-	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`
-	- в структуре :doc:`XmlBilateralDocflow`
+	- в устаревшей структуре :doc:`InboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`OutboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`XmlBilateralDocflow`

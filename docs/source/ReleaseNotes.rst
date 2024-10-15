@@ -1,6 +1,106 @@
 ﻿История изменений API
 =====================
 
+27.09.2024
+----------
+
+- В API Диадока отмечены устаревшими следующие эндпойнты:
+
+	- ``PostDraft``
+	- ``SendMessage``
+	- ``Recognize`` (`C# SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/IDiadocApi.cs#L148>`__, `COM SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/ComDiadocApi.cs#L254>`__)
+	- ``GetRecognized`` (`C# SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/IDiadocApi.cs#L149>`__, `COM SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/ComDiadocApi.cs#L255>`__)
+	- ``Devices``
+	- :doc:`http/obsolete/GetExternalServiceAuthInfo` (`C# SDK <https://github.com/diadoc/diadocsdk-csharp/blob/6168f1d6e68beb375bb1453f2056223f8a20c06a/src/IDiadocApi.cs#L252>`__, `Java SDK <https://github.com/diadoc/diadocsdk-java/blob/049e9a77683d5d30263200360bcb4b5fa2b01277/src/main/java/Diadoc/Api/auth/AuthenticateClient.java#L123>`__) 
+
+  Теперь в ответе эти методы возвращают заголовки ``Sunset`` и ``Link``. Подробнее на странице :doc:`howtostart/deprecationPolicy`.
+
+  **Они будут удалены из API 07 апреля 2025.**
+
+  - Если вы используете эти методы API или SDK в своих интеграционных решениях, удалите их. После удаления методов из SDK решение, использующее эти методы, перестанет компилироваться.
+  - В ответ на любые запросы эти методы возвращают ошибку ``410 (Gone)`` и не выполняют никаких операций. Если вы завязываете свое интеграционное решение на обработку кода ошибки ``410 (Gone)``, измените эту обработку.
+
+
+04.09.2024
+----------
+
+**SDK**: `C# 2.23.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.23.0>`__ | `Java 3.22.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.22.0>`__
+
+- Изменили отображение результатов проверки МЧД. Для этого внесли изменения в структуру :doc:`proto/PowerOfAttorneyValidationStatus`:
+
+	- добавили поле ``ValidationProtocol`` с типом :ref:`ValidationProtocol`,
+	- добавили поле ``OperationError`` с типом :ref:`PowerOfAttorneyValidationError`,
+	- в перечисление ``PowerOfAttorneyValidationStatusNamedId`` добавили значение ``HasWarnings``,
+	- поле ``Errors`` отметили устаревшим и не рекомендуем его к использованию.
+
+  Эти поля будут заполняться после перехода на новый способ валидации МЧД, который произойдет в середине сентября.
+
+
+09.08.2024
+----------
+
+**SDK**: `C# 2.22.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.22.0>`__ | `Java 3.21.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.21.0>`__
+
+- Расширили структуру :doc:`CertificateInfoV2 <proto/CertificateList>`, чтобы предоставить возможность определять тип используемого сертификата:
+
+	- добавили поле ``Usages``, которое хранит тип сертификата,
+	- добавили поле ``DssType``, которое хранит тип мобильного сертификата.
+
+
+18.07.2024
+----------
+
+**SDK**: `C# 2.20.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.20.1>`__ | `Java 3.20.2 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.20.2>`__
+
+- Реализовали возможность проверки приложенности машиночитаемой доверенности (МЧД) к подписи (подробно в инструкции :doc:`instructions/powerofattorney`):
+
+	- добавили структуру :doc:`proto/PowerOfAttorneyAttachmentStatus` для хранения статуса приложенности МЧД к подписи; значение возвращается:
+
+		- в структуре :doc:`proto/Entity message` в поле ``PowerOfAttorneyAttachmentStatus``;
+		- в структуре :doc:`proto/SignatureV3` в поле ``PowerOfAttorneyAttachmentStatus``;
+
+	- в структуру :doc:`proto/SignatureInfo` добавили поле ``CertificateSubjectType`` с типом владельца сертификата.
+	- в структуру :doc:`PowerOfAttorneyValidationStatusNamedId <proto/PowerOfAttorneyValidationStatus>` добавлено значение ``IsNotAttached``.
+
+
+09.07.2024
+----------
+
+**SDK**: `C# 2.21.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.21.0>`__
+
+- Реализовали возможность получить изменения из :doc:`ленты событий по контрагентам <instructions/counteragentevents>`: метод :doc:`http/GetCounteragentEvents` теперь возвращает в структуре :doc:`BoxCounteragentEvent <proto/BoxCounteragentEventList>` не только текущее состояние отношений с контрагентом, но и изменения, которые произошли в этих отношениях.
+
+
+28.06.2024
+----------
+
+**SDK**: `C# 2.20.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.20.0>`__ | `Java 3.20.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.20.0>`__
+
+- Для методов, принимающих в качестве параметра идентификатор организации, добавили новые версии, позволяющие работать с идентификатором ящика. Мы рекомендуем использовать новые версии методов. Старые версии методов отметили как устаревшие.
+
+	- добавили новые версии методов:
+
+		- :doc:`http/AcquireCounteragent`
+		- :doc:`http/AcquireCounteragentResult`
+		- :doc:`http/BreakWithCounteragent`
+		- :doc:`http/GetCounteragent`
+		- :doc:`http/GetCounteragentCertificates`
+		- :doc:`http/GetCounteragents`
+		- :doc:`http/GetOrganizationUsers`
+
+	- перенесли в раздел «Устаревшие методы» прежние версии методов:
+
+		- :doc:`http/obsolete/AcquireCounteragent`
+		- :doc:`http/obsolete/AcquireCounteragent_v2`
+		- :doc:`http/obsolete/AcquireCounteragentResult`
+		- :doc:`http/obsolete/BreakWithCounteragent`
+		- :doc:`http/obsolete/GetCounteragent`
+		- :doc:`http/obsolete/GetCounteragent_v2`
+		- :doc:`http/obsolete/GetCounteragentCertificates`
+		- :doc:`http/obsolete/GetCounteragents`
+		- :doc:`http/obsolete/GetCounteragents_v2`
+		- :doc:`http/obsolete/GetOrganizationUsers`
+
 
 26.06.2024
 ----------
@@ -13,7 +113,7 @@
 21.05.2024
 ----------
 
-- Реализовали работу с документами формата, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__:
+- Реализовали работу с документами формата, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695>`__:
 
 	- добавили версии ``utd970_05_02_01`` для всех документов, поддерживающих новый формат: УПД, счета-фактуры, акты и накладные,
 	- добавили XSD-схемы для генерации документов, их можно получить с помощью метода :doc:`http/GetDocumentTypes` или скачать на страницах :doc:`docflows/Torg12Docflow` и :doc:`docflows/AktDocflow`,
@@ -54,20 +154,20 @@
 
 	- Реализовали методы:
 
-		- :doc:`http/CreateCounteragentGroup` — создает группу контрагентов,
-		- :doc:`http/UpdateCounteragentGroup` — редактирует группу контрагентов,
-		- :doc:`http/DeleteCounteragentGroup` — удаляет группу контрагентов,
-		- :doc:`http/AddCounteragentToGroup` — добавляет контрагента в группу,
-		- :doc:`http/GetCounteragentGroups` — возвращает список групп контрагентов,
-		- :doc:`http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе,
-		- :doc:`http/GetCounteragentGroup` — возвращает информацию о группе контрагентов.
+		- :doc:`http/AddCounteragentToGroup` — добавляет контрагента в группу
+		- :doc:`http/CreateCounteragentGroup` — создает группу контрагентов
+		- :doc:`http/DeleteCounteragentGroup` — удаляет группу контрагентов
+		- :doc:`http/GetCounteragentGroup` — возвращает информацию о группе контрагентов
+		- :doc:`http/GetCounteragentGroups` — возвращает список групп контрагентов
+		- :doc:`http/GetCounteragentsFromGroup` — возвращает список контрагентов в группе
+		- :doc:`http/UpdateCounteragentGroup` — изменяет параметры группы контрагентов
 
 	- Добавили структуры:
 
-		- :doc:`proto/CounteragentGroup` — представляет собой группу контрагентов,
-		- :doc:`proto/DepartmentsInGroup` — представляет собой список идентификаторов подразделений, в которые группа контрагентов может отправлять документы.
+		- :doc:`proto/CounteragentGroup` — хранит информацию о группе контрагентов
+		- :doc:`proto/DepartmentsInGroup` — хранит список идентификаторов подразделений, в которые группа контрагентов может отправлять документы
 
-	- Добавили поле ``CounteragentGroupId`` в структуры :doc:`proto/Counteragent` и :doc:`proto/GetOrganizationsByInnListResponse`. В поле возвращается идентификатор группы, в которую добавлен контрагент.
+	- Добавили поле ``CounteragentGroupId`` в структуры :doc:`proto/Counteragent` и :doc:`proto/GetOrganizationsByInnListResponse`. В нем возвращается идентификатор группы, в которую добавлен контрагент.
 
 
 06.03.2024
@@ -81,10 +181,10 @@
 ----------
 **SDK**: `C# 2.14.6 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.6>`__ | `Java 3.15.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.7>`__
 
-- Добавили возможность указать расширенные данные подписанта для УПД, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__:
+- Добавили возможность указать расширенные данные подписанта для УПД, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695>`__:
 
 	- в перечисление :doc:`proto/DocumentTitleType` добавили значения ``Utd970Seller = 12`` и ``Utd970Buyer = 13`` для титула продавца и покупателя УПД формата приказа 970 соответственно;
-	- в поле ``ExtendedDocumentTitleType`` структуры :ref:`signer-info2` добавили значения 12 и 13 для титула продавца и покупателя УПД формата приказа 970 соответственно;
+	- в поле ``ExtendedDocumentTitleType`` структуры :ref:`SignerInfoV2` добавили значения 12 и 13 для титула продавца и покупателя УПД формата приказа 970 соответственно;
 	- в перечисления :doc:`proto/SignerType`, :doc:`proto/SignerStatus` и :doc:`proto/SignerPowers` добавили значение -1: в УПД нового формата нет полей с типом, статусом и областью полномочий подписанта.
 
 
@@ -97,14 +197,14 @@
 02.02.2024
 ----------
 
-- Добавили возможность передать МЧД в содержимом документа для акта о приемке выполненных работ КС-2 формата, утвержденного приказом `№ ЕД-7-26/691@ <https://normativ.kontur.ru/document?moduleId=1&documentId=431929>`__.
+- Добавили возможность передать МЧД в содержимом документа для акта о приемке выполненных работ КС-2 формата, утвержденного приказом `№ ЕД-7-26/691@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=431929>`__.
 
 
 20.12.2023
 ----------
 **SDK**: `C# 2.14.5 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.14.5>`__ | `Java 3.15.5 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F3.15.5>`__
 
-- Добавлена возможность передать машиночитаемую доверенность в содержимом документа. МЧД в содержимом можно передать только для акта сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document?moduleId=1&documentId=425482>`__:
+- Добавлена возможность передать машиночитаемую доверенность в содержимом документа. МЧД в содержимом можно передать только для акта сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=425482>`__:
 
 	- в структуру :doc:`proto/PowerOfAttorneyToPost` добавлен флаг  ``UseDocumentContent``;
 	- в перечисление :doc:`proto/PowerOfAttorneySendingType` добавлено значение ``DocumentContent``. Значение будет возвращаться, если МЧД передали в содержимом документа.
@@ -189,8 +289,8 @@
 ----------
 **SDK**: `C# 2.11.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F2.11.7>`__
 
-- В структуре :ref:`signer-info2` для поля ``SignerType`` добавлено новое значение — универсальный подписант.
-- В структуре :ref:`signer-info2` добавлено поле ``SignerUserDataXsdUrl``, которое содержит URL-путь метода, возвращающего файл XSD-схемы упрощенного XML подписанта.
+- В структуре :ref:`SignerInfoV2` для поля ``SignerType`` добавлено новое значение — универсальный подписант.
+- В структуре :ref:`SignerInfoV2` добавлено поле ``SignerUserDataXsdUrl``, которое содержит URL-путь метода, возвращающего файл XSD-схемы упрощенного XML подписанта.
 - В структурах :doc:`DraftDocumentToPatch <proto/PrepareDocumentsToSignRequest>`, :doc:`DocumentToPatch <proto/PrepareDocumentsToSignRequest>` и :doc:`ContentToPatch <proto/PrepareDocumentsToSignRequest>` добавлено поле ``SignerContent``.
 
 
@@ -276,7 +376,7 @@
 
 - Реализована отправка документов с машиночитаемой доверенностью (МЧД).
 
- При отправке документов методами :doc:`http/PostMessage`, :doc:`http/PostMessagePatch` и :doc:`http/SendDraft` теперь можно указать МЧД. Для этого изменены структуры :doc:`proto/SignedContent`, :doc:`proto/DocumentSignature` и :doc:`proto/DocumentSenderSignature`, которые теперь могут хранить информацию о МЧД в новой структуре :doc:`proto/PowerOfAttorneyToPost`.
+  При отправке документов методами :doc:`http/PostMessage`, :doc:`http/PostMessagePatch` и :doc:`http/SendDraft` теперь можно указать МЧД. Для этого изменены структуры :doc:`proto/SignedContent`, :doc:`proto/DocumentSignature` и :doc:`proto/DocumentSenderSignature`, которые теперь могут хранить информацию о МЧД в новой структуре :doc:`proto/PowerOfAttorneyToPost`.
 
 - Реализовано получение машиночитаемой доверенности (МЧД).
 
@@ -301,11 +401,11 @@
 	 
 - Реализована генерция титулов с машиночитаемой доверенностью (МЧД).
 
- Метод :doc:`http/GenerateTitleXml` теперь может генерировать :ref:`титулы с МЧД <generate_title_xml_poa>`.
- 
+  Метод :doc:`http/GenerateTitleXml` теперь может генерировать :ref:`титулы с МЧД <generate_title_xml_poa>`.
+
 - Реализована подготовка к подписанию документа с машиночитаемой доверенностью (МЧД).
- 
- Метод :doc:`http/PrepareDocumentsToSign` теперь может подготовить к подписанию документ с МЧД. Для этого в структуру :doc:`proto/ExtendedSigner` включена структура :doc:`proto/PowerOfAttorneyToPost`, содержащая данные о МЧД.
+
+  Метод :doc:`http/PrepareDocumentsToSign` теперь может подготовить к подписанию документ с МЧД. Для этого в структуру :doc:`proto/ExtendedSigner` включена структура :doc:`proto/PowerOfAttorneyToPost`, содержащая данные о МЧД.
 
 
 26.01.2022
@@ -496,8 +596,8 @@
 **SDK**: `C# 1.87.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions%2F1.87.0>`__ | `Java 2.21.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions%2F2.21.0>`__ | `C++ 1.82.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions%2F1.82.0>`__
 
 - Добавлен метод :doc:`http/PostTemplatePatch`, который позволяет отправлять дополнения к шаблонам документов.
-- Добавлена возможность с помощью этого метода и структуры :ref:`TemplateRefusalAttachment <template-refusal-attachment>` выполнить отзыв или отклонение шаблона.
-- В структуры :doc:`proto/Entity message` и :ref:`DocumentTemplateInfo <document-template-info>` добавлена информация об отзыве и отклонении шаблона.
+- Добавлена возможность с помощью этого метода и структуры :ref:`TemplateRefusalAttachment` выполнить отзыв или отклонение шаблона.
+- В структуры :doc:`proto/Entity message` и :doc:`DocumentTemplateInfo <proto/DocumentInfoV3>` добавлена информация об отзыве и отклонении шаблона.
 
 
 13.12.2019
@@ -514,7 +614,6 @@
 - Следующие методы теперь могут возвращать неточное количество событий ``TotalCount``:
 
  - :doc:`http/GetNewEvents`
- - :doc:`http/obsolete/GetDocflowEvents`
  - :doc:`http/GetDocflowEvents_V3`
  - :doc:`http/GetForwardedDocumentEvents`
 
@@ -645,7 +744,7 @@
 ----------
 **SDK**: `C# 1.72.0 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.72.0>`__ | `Java 2.8.0 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/2.8.0>`__ | `C++ 1.70.0 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.70.0>`__
 
-- Добавлена поддержка формата `приказа №820 <https://normativ.kontur.ru/document?moduleId=1&documentId=328588>`__:
+- Добавлена поддержка формата `приказа №820 <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588>`__:
 
  - через метод :doc:`http/GetDocumentTypes` можно найти версии с идентификатором ``utd820_05_01_01`` для всех типов документов, поддерживающих новый формат: счета-фактуры, акты, накладные, УПД, иУПД.
  - для генерации и парсинга документов новой версии доступны только обобщенные методы:
@@ -829,7 +928,7 @@
 ----------
 **SDK**: `C# 1.55.7 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.55.7>`__ | `Java 1.55.7 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.55.7>`__ | `C++ 1.55.7 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.55.7>`__
 
-- Добавлен метод :doc:`http/UpdateMyUser` для редактирования данных пользователя.
+- Добавлен метод :doc:`http/obsolete/UpdateMyUser` для редактирования данных пользователя.
 
 
 02.10.2018
@@ -913,7 +1012,7 @@
 ----------
 **SDK**: `C# 1.51.9 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.51.9>`__ | `Java 1.51.9 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.51.9>`__ | `C++ 1.51.9 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.51.9>`__
 
-- В структуре :doc:`proto/obsolete/Docflow` добавлено поле :doc:`proto/Docflow_RoamingNotification`, содержащее данные о доставке документа в роуминг.
+- В структуре :doc:`proto/obsolete/Docflow` добавлено поле :doc:`proto/RoamingNotification`, содержащее данные о доставке документа в роуминг.
 
 
 25.06.2018
@@ -1063,7 +1162,7 @@
 ----------
 **SDK**: `C# 1.47.1 <https://github.com/diadoc/diadocsdk-csharp/releases/tag/versions/1.47.1>`__ | `Java 1.47.1 <https://github.com/diadoc/diadocsdk-java/releases/tag/versions/1.47.1>`__ | `C++ 1.47.1 <https://github.com/diadoc/diadocsdk-cpp/releases/tag/versions/1.47.1>`__
 
-- В структуре :doc:`../proto/User`, которая возвращается методом :doc:`http/GetMyUser`, изменилась структура ``CertificateInfo``. В нее добавлены поля:
+- В структуре :doc:`../proto/obsolete/User`, которая возвращается методом :doc:`http/GetMyUser`, изменилась структура ``CertificateInfo``. В нее добавлены поля:
 
  - ``OrganizationName`` — наименование организации, на которую выдан сертификат,
  - ``Inn`` — ИНН организации, на которую выдан сертификат.

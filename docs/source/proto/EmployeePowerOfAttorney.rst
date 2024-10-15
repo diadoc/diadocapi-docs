@@ -13,6 +13,7 @@ EmployeePowerOfAttorney
 - ``PowerOfAttorney`` — информация о доверенности, представленная структурой :doc:`PowerOfAttorney`.
 - ``IsDefault`` — флаг, указывающий, является ли данная МЧД доверенностью по умолчанию.
 
+
 ----
 
 .. rubric:: См. также

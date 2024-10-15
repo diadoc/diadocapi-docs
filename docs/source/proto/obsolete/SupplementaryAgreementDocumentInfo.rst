@@ -2,7 +2,7 @@ SupplementaryAgreementDocumentInfo
 ==================================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
+	Структура устарела.
 
 Структура ``SupplementaryAgreementDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>` ``SupplementaryAgreement``.
 
@@ -17,13 +17,14 @@ SupplementaryAgreementDocumentInfo
     }
 
 - ``ContractType`` — тип договора.
-- ``ContractDocumentDateAndNumber`` — номер и дата договора, представленные структурой :doc:`../DocumentDateAndNumber`.
-- ``DocumentDateAndNumber`` — номер и дата документа, представленные структурой :doc:`../DocumentDateAndNumber`.
+- ``ContractDocumentDateAndNumber`` — номер и дата договора, представленные структурой :doc:`DocumentDateAndNumber`.
+- ``DocumentDateAndNumber`` — номер и дата документа, представленные структурой :doc:`DocumentDateAndNumber`.
 - ``Total`` — цена дополнительного соглашения к договору.
+
 
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentInfo`
+	- в устаревшей структуре :doc:`DocumentInfo`

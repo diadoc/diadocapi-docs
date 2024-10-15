@@ -17,7 +17,6 @@ HTTP-интерфейс
    http/GetOrganizationUsers
    http/GetSubscriptions
    http/UpdateEmployee
-   http/UpdateMyUser
    http/UpdateSubscriptions
    http/GetMyCertificates
 
@@ -38,5 +37,5 @@ HTTP-интерфейс
    proto/OrganizationUserPermissions
    proto/Subscription
    proto/SubscriptionsToUpdate
-   proto/User
+   proto/obsolete/User
    proto/UserV2

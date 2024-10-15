@@ -12,26 +12,7 @@ ExtendedSignerDetails
 Заполнение данных
 -----------------
 
-Во второй версии метода *ExtendedSignerDetails* параметры *buyer* и *correction* заменены на один параметр целочисленного типа *documentTitleType*. Возможные значения параметра представлены ниже:
-
-::
-
-    DocumentTitleType {
-        UtdSeller = 0;            // Данные для титула продавца УПД
-        UtdBuyer = 1;             // Данные для титула покупателя УПД
-        UcdSeller = 2;            // Данные для титула продавца УКД
-        UcdBuyer = 3;             // Данные для титула покупателя УКД
-        TovTorg551Seller = 4;     // Данные для титула продавца 551
-        TovTorg551Buyer = 5;      // Данные для титула покупателя 551
-        AccCert552Seller = 6;     // Данные для титула исполнителя 552
-        AccCert552Buyer = 7;      // Данные для титула заказчика 552
-        Utd820Buyer = 8;          // Данные для титула покупателя УПД формата приказа 820
-        Torg2Buyer = 9;           // Данные для титула покупателя Торг-2
-        Torg2AdditionalInfo = 10; // Данные для титула продавца Торг-2
-        Ucd736Buyer = 11;         // Данные для титула покупателя УКД формата приказа 736
-        Utd970Seller =12;         // Данные для титула продавца УПД формата приказа 970
-        Utd970Buyer=13;           // Данные для титула покупателя УПД формата приказа 970
-    }
+Во второй версии метода *ExtendedSignerDetails* параметры *buyer* и *correction* заменены на один параметр целочисленного типа :doc:`../proto/DocumentTitleType`.
 
 .. http:post:: /V2/ExtendedSignerDetails
 
@@ -116,3 +97,11 @@ ExtendedSignerDetails
          "SignerStatus": "SellerEmployee",
          "SignerPowersBase": "Должностные обязанности"
       }
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/ExtendedSignerDetails`

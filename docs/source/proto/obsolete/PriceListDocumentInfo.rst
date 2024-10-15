@@ -2,7 +2,7 @@ PriceListDocumentInfo
 =====================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
+	Структура устарела.
 
 Структура ``PriceListDocumentInfo`` представляет собой метаданные документов, имеющих :doc:`тип <DocumentType>` ``PriceList``.
 
@@ -15,11 +15,12 @@ PriceListDocumentInfo
     }
 
 - ``PriceListEffectiveDate`` — дата вступления в силу ценового листа в формате «ДД.ММ.ГГГГ».
-- ``ContractDocumentDateAndNumber`` - дата составления и номер договора, к которому относится ценовой лист, представленные структурой :doc:`../DocumentDateAndNumber`.
+- ``ContractDocumentDateAndNumber`` - дата составления и номер договора, к которому относится ценовой лист, представленные структурой :doc:`DocumentDateAndNumber`.
+
 
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`DocumentInfo`
+	- в устаревшей структуре :doc:`DocumentInfo`

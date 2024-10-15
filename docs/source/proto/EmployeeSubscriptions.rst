@@ -1,12 +1,21 @@
 EmployeeSubscriptions
 =====================
 
+Структура ``EmployeeSubscriptions`` содержит информацию о подписках сотрудника на почтовые уведомления.
+
 .. code-block:: protobuf
 
     message EmployeeSubscriptions {
         repeated Subscription Subscriptions = 1;
     }
 
-Структура содержит информацию о подписках сотрудника на почтовые уведомления. Возвращается методами :doc:`../http/GetSubscriptions`, :doc:`../http/UpdateSubscriptions`.
+- ``Subscriptions`` — список статусов подписок на конкретные уведомления, представленных структурой :doc:`Subscription`.
 
-- :doc:`Subscriptions <Subscription>` - статусы подписок на конкретные уведомления
+
+----
+
+.. rubric:: См. также
+
+*Структура используется:*
+	- в теле ответа метода :doc:`../http/GetSubscriptions`
+	- в теле ответа метода :doc:`../http/UpdateSubscriptions`

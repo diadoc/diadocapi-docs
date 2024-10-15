@@ -6,7 +6,7 @@ GenerateTitleXml
 .. http:post:: /GenerateTitleXml
 
 	:queryparam boxId: идентификатор :doc:`ящика <../entities/box>` организации.
-	:queryparam documentTypeNamedId: уникальный строковый идентификатор типа документа.
+	:queryparam documentTypeNamedId: строковый идентификатор типа документа.
 	:queryparam documentFunction: строковый идентификатор функции, уникальный в рамках типа документа.
 	:queryparam documentVersion: строковый идентификатор версии, уникальный в рамках функции типа документа.
 	:queryparam titleIndex: числовой идентификатор титула документа.
@@ -17,7 +17,7 @@ GenerateTitleXml
 
 	:requestheader Authorization: данные, необходимые для :doc:`авторизации <../Authorization>`.
 
-	:request Body: Тело запроса должно содержать упрощенный XML-файл ``UserDataXsd``, соответствующий XSD-схеме контракта для генерации титула. XSD-схему контракта можно получить с помощью ссылки из поля ``UserDataXsdUrl`` контракта :ref:`DocumentTitle <document-title2>`, полученного методом :doc:`GetDocumentTypes`.
+	:request Body: Тело запроса должно содержать упрощенный XML-файл ``UserDataXsd``, соответствующий XSD-схеме контракта для генерации титула. XSD-схему контракта можно получить с помощью ссылки из поля ``UserDataXsdUrl`` контракта :ref:`DocumentTitleV2`, полученного методом :doc:`GetDocumentTypes`.
 
 	:statuscode 200: операция успешно завершена.
 	:statuscode 400: данные в запросе имеют неверный формат или отсутствуют обязательные параметры.

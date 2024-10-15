@@ -2,7 +2,7 @@ AutoSignReceiptsResult
 ======================
 
 .. warning::
-	Структура используется устаревшим методом :doc:`../../http/obsolete/AutoSignReceiptsResult`.
+	Структура используется в устаревшем методе :doc:`../../http/obsolete/AutoSignReceiptsResult`.
 
 Структура ``AutoSignReceiptsResult`` представляет собой состояние задачи на подписание извещений о получении ``InvoiceReceipt``.
 
@@ -17,9 +17,10 @@ AutoSignReceiptsResult
 - ``SignedReceiptsCount`` — количество подписанных извещений.
 - ``NextBatchKey`` — идентификатор следующей пачки извещений для подписания.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в теле ответа метода :doc:`../../http/obsolete/AutoSignReceiptsResult`
+	- в теле ответа устаревшего метода :doc:`../../http/obsolete/AutoSignReceiptsResult`

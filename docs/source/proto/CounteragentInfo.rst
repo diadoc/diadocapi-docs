@@ -1,7 +1,7 @@
 CounteragentInfo
 ================
 
-Структура ``CounteragentInfo`` содержит информацию о :doc:`контрагенте <../entities/counteragent>`.
+Структура ``CounteragentInfo`` хранит информацию о :doc:`контрагенте <../entities/counteragent>`.
 
 .. code-block:: protobuf
 
@@ -31,3 +31,9 @@ CounteragentInfo
 
 *Структура используется:*
 	- в структуре :doc:`BoxCounteragentEvent <BoxCounteragentEventList>`
+
+*Определение:*
+	- :doc:`../entities/counteragent`
+
+*Инструкции:*
+	- :doc:`../instructions/counteragents`

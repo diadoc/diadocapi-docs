@@ -1,5 +1,5 @@
-GetDocflowEvents (версия 3)
-===========================
+GetDocflowEvents (V3)
+=====================
 
 Метод ``GetDocflowEvents`` возвращает список событий, произошедших с документами в указанном ящике. Под событием понимается появление нового документа или изменение уже существующего.
 
@@ -61,3 +61,11 @@ SDK
         Console.Out.WriteLine("Events count: {0} (of total {1})", response.Events.Count, response.TotalCount);
         request.AfterIndexKey = response.Events.Last().IndexKey;
     }
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/GetDocflowEvents_v2`

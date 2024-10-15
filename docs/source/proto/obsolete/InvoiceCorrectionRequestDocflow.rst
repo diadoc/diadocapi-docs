@@ -2,7 +2,7 @@ InvoiceCorrectionRequestDocflow
 ===============================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
+	Структура устарела.
 
 Структура ``InvoiceCorrectionRequestDocflow`` представляет собой информацию об уведомлении об уточнении (УоУ) счета-фактуры.
 
@@ -19,12 +19,13 @@ InvoiceCorrectionRequestDocflow
 - ``CorrectionRequestAttachment`` — информация о файле УоУ, представленная структурой :doc:`../SignedAttachment`.
 - ``ReceiptDocflow`` — информация об извещении о получении данного запроса, представленная структурой :doc:`ReceiptDocflow`.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`InboundInvoiceDocflow`
-	- в структуре :doc:`InboundUniversalTransferDocumentDocflow`
-	- в структуре :doc:`OutboundInvoiceDocflow`
-	- в структуре :doc:`OutboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`InboundInvoiceDocflow`
+	- в устаревшей структуре :doc:`InboundUniversalTransferDocumentDocflow`
+	- в устаревшей структуре :doc:`OutboundInvoiceDocflow`
+	- в устаревшей структуре :doc:`OutboundUniversalTransferDocumentDocflow`

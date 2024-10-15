@@ -30,15 +30,34 @@ CreateCounteragentGroup
 	:statuscode 403: доступ к ящику с предоставленным авторизационным токеном запрещен или запрос сделан не от имени администратора.
 	:statuscode 404: не найдены подразделения с идентификатором ``DepartmentId`` или подразделение было удалено.
 	:statuscode 405: используется неподходящий HTTP-метод.
-	:statuscode 409: группа контрагентов с наименованием ``name`` уже существует.
+	:statuscode 409: группа контрагентов с названием ``Name`` уже существует.
 	:statuscode 500: при обработке запроса возникла непредвиденная ошибка.
 
 	:response Body: Тело ответа содержит структуру :doc:`../proto/CounteragentGroup`.
 
-Создать группу контрагентов может только администратор ящика с разрешением ``CanManageCounteragents``, позволяющим видеть списки контрагентов и работать с ними.
+.. include:: ../include/accessMethod_required_admin_manageCounteragents.txt
+
+
+Примеры использования
+---------------------
+
+**Пример HTTP-запроса:**
+
+.. literalinclude:: ../include/сreateCounteragentGroup_query.txt
+
+**Пример тела запроса:**
+
+.. literalinclude:: ../include/сreateCounteragentGroup_body.txt
+	:language: json
+
+**Пример ответа:**
+
+.. literalinclude:: ../include/сreateCounteragentGroup_resp.txt
+	:language: json
+
 
 ----
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_counteragentgroup.txt
+.. include:: ../include/seealso_method_counteragentgroup.txt

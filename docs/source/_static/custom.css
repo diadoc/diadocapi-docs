@@ -128,3 +128,130 @@
 .toggle .switcher:hover:after {
   background: #f8f8f8;
 }
+
+.feedbackBannerContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 12px;
+  width: 262px;
+  height: 80px;
+  background: #2ca08b;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  transition: .2s ease-in scale;
+  animation: open 1s ease-in;
+}
+
+.feedbackBannerContainer::before {
+  content: '';
+  height: 80px;
+  width: 102px;
+  background-image: url(https://s.kontur.ru/common/products/features-v2/black/icon-11-other-talkmagic.svg);
+  background-repeat: no-repeat;
+  filter: brightness(0) invert(1);
+}
+
+.feedbackBannerContainer a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.feedbackBannerContainer a:focus-visible {
+  text-decoration: underline;
+  outline: 2px solid black;
+  color: white;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.feedbackFooterLink::after {
+  display: inline-block;
+  content: '';
+  width: 64px;
+  position: relative;
+  height: 70px;
+  transform: scale(0.5);
+  top: 20px;
+  right: 8px;
+}
+
+.feedbackLink,
+.feedbackLink:visited {
+  display: flex;
+  color: white;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.feedbackLink:hover,
+.feedbackLink:focus-visible {
+  text-decoration: underline;
+}
+
+.feedbackFooterLink {
+  color: #2ca08b;
+  position: relative;
+}
+
+.feedbackFooterLink:visited {
+  color: #2ca08b;
+}
+
+.feedbackFooterLink:hover {
+  color: #2dc4a8;
+  text-decoration: underline;
+}
+
+.feedbackBannerCloseButton {
+  all: unset;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  place-content: center;
+  border-radius: 8px;
+  width: 32px;
+  transform: scale(1.5);
+  transition: .2s linear;
+}
+
+.feedbackBannerCloseButton:hover {
+  transform: scale(1.6);
+}
+
+.feedbackBannerCloseButton:focus-visible {
+  outline: 2px solid white;
+}
+
+.hiddenFeedbackBannerContainer {
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .feedbackBannerContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .feedbackFooterLink {
+    bottom: 0px;
+  }
+
+  .feedbackFooterLink::after {
+    display: none;
+  }
+}

@@ -2,7 +2,7 @@ UnilateralDocumentMetadata
 ==========================
 
 .. warning::
-	Структура используется в устаревших полях структуры :doc:`../Document`.
+	Структура устарела.
 
 .. code-block:: protobuf
 

@@ -236,16 +236,60 @@ XSD-схемы для каждой настройки редактировани
 
 Чтобы указать в титуле :doc:`прослеживаемые товары <../howto/tracing>`, заполните в UserDataXml блок ``ItemTracingInfos`` элементами ``ItemTracingInfo``:
 
-	- ``RegNumberUnit`` — регистрационный номер партии товаров [`НомТовПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239773>`__];
-	- ``Unit`` — единица количественного учета товара, используемая в целях осуществления прослеживаемости [`ЕдИзмПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239774>`__];
-	- ``UnitName`` — наименование единицы количественного учета товара, используемой в целях осуществления прослеживаемости [`НаимЕдИзмПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239775>`__];
-	- ``Quantity`` — количество товара в единицах измерения прослеживаемого товара [`КолВЕдПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239776>`__];
-	- ``ItemAddInfo`` — дополнительный показатель для идентификации товаров, подлежащих прослеживаемости [`ДопИнфПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=328588&rangeId=239777>`__];
-	- ``PriceWithVatExcluded`` — стоимость товара, подлежащего прослеживаемости, без налога на добавленную стоимость, в рублях [`СтТовБезНДСПрослеж <https://normativ.kontur.ru/document?moduleId=1&documentId=464695&rangeId=6488112>`__] — обязательный параметр для УПД 970 формата.
+	- ``RegNumberUnit`` — регистрационный номер партии товаров [`НомТовПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239773>`__];
+	- ``Unit`` — единица количественного учета товара, используемая в целях осуществления прослеживаемости [`ЕдИзмПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239774>`__];
+	- ``UnitName`` — наименование единицы количественного учета товара, используемой в целях осуществления прослеживаемости [`НаимЕдИзмПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239775>`__];
+	- ``Quantity`` — количество товара в единицах измерения прослеживаемого товара [`КолВЕдПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239776>`__];
+	- ``ItemAddInfo`` — дополнительный показатель для идентификации товаров, подлежащих прослеживаемости [`ДопИнфПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=328588&rangeId=239777>`__];
+	- ``PriceWithVatExcluded`` — стоимость товара, подлежащего прослеживаемости, без налога на добавленную стоимость, в рублях [`СтТовБезНДСПрослеж <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695&rangeId=6488112>`__] — обязательный параметр для УПД 970 формата.
 
 Кроме дополнительных данных в UserDataXml генерация титула с прослеживаемыми товарами ничем не отличается от обычного титула и производится по тому же алгоритму.
 
-Пример UserDataXml с прослеживаемыми товарами приведен в разделе :ref:`generate_sender_title`.
+**Пример HTTP-запроса метода GenerateTitleXml:**
+
+.. tabs::
+
+	.. tab:: УПД 970
+
+		.. literalinclude:: ../include/generate_utd970_05_02_01_title0_query.txt
+
+	.. tab:: УПД 820
+
+		.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title0_query.txt
+
+**Пример тела запроса метода GenerateTitleXml (UserDataXml):**
+
+.. tabs::
+
+	.. tab:: УПД 970
+
+		.. container:: toggle
+
+			.. literalinclude:: ../include/generate_utd970_05_02_01_title0_body.xml
+
+	.. tab:: УПД 820
+
+		.. container:: toggle
+
+			.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title0_body.xml
+
+**Пример тела ответа метода GenerateTitleXml (титул отправителя):**
+
+.. tabs::
+
+	.. tab:: УПД 970
+
+		.. container:: toggle
+
+			.. literalinclude:: ../include/generate_utd970_05_02_01_title0_resp.xml
+				:encoding: windows-1251
+
+	.. tab:: УПД 820
+
+		.. container:: toggle
+
+			.. literalinclude:: ../include/generate_utd820_05_01_02_hyphen_title0_resp.xml
+				:encoding: windows-1251
 
 
 .. _generate_title_xml_poa:
@@ -396,9 +440,9 @@ XSD-схемы для каждой настройки редактировани
 
 Для некоторых форматов документов можно передавать информацию о :doc:`машиночитаемой доверенности <powerofattorney>` (МЧД) в содержимом документа. Сейчас это следующие форматы:
 
-	- акт сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document?moduleId=1&documentId=425482>`_,
-	- акт о приемке выполненных работ КС-2 формата, утвержденного приказом `№ ЕД-7-26/691@ <https://normativ.kontur.ru/document?moduleId=1&documentId=431929>`__,
-	- документы формата, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document?moduleId=1&documentId=464695>`__.
+	- акт сверки формата, утвержденного приказом `№ ЕД-7-26/405@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=425482>`_,
+	- акт о приемке выполненных работ КС-2 формата, утвержденного приказом `№ ЕД-7-26/691@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=431929>`__,
+	- документы формата, утвержденного приказом `№ ЕД-7-26/970@ <https://normativ.kontur.ru/document/last?moduleId=1&documentId=464695>`__.
 
 Для генерации документа с МДЧ в содержимом заполните блок ``PowerOfAttorney`` в XSD-схеме универсального подписанта конкретного формата документа.
 
@@ -532,10 +576,13 @@ XSD-схемы для каждой настройки редактировани
 .. rubric:: См. также
 
 *Инструкции:*
-	- :doc:`utd`
+	- :doc:`getdoctypes`
+	- :doc:`parsing`
 	- :doc:`preparetosign`
+	- :doc:`editingsettings`
 	- :doc:`../howto/tracing`
 	- :doc:`powerofattorney`
+	- :doc:`utd`
 
 *Методы для работы с титулами:*
 	- :doc:`../http/GenerateTitleXml` — генерирует XML-файл любого титула для любого типа документа

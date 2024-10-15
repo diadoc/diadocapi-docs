@@ -1,0 +1,4 @@
+GET /GetCounteragentsFromGroup?boxId={{boxId}}&counteragentGroupId=ecd591dd-b56f-4178-ab4a-8a5532f231f7 HTTP/1.1
+Host: diadoc-api.kontur.ru
+Authorization: DiadocAuth ddauth_api_client_id={{apiKey}}, ddauth_token={{token}}
+Accept: application/json; charset=utf-8

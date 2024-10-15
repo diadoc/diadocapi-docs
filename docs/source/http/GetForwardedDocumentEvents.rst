@@ -105,4 +105,4 @@ GetForwardedDocumentEvents
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_event.txt
+.. include:: ../include/seealso_method_event.txt

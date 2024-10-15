@@ -1,5 +1,5 @@
-GetDocflowsByPacketId (версия 3)
-================================
+GetDocflowsByPacketId (V3)
+==========================
 
 Метод ``GetDocflowsByPacketId`` возвращает список документов, находящихся в пакете.
 
@@ -57,3 +57,11 @@ SDK
         if (response.NextPageIndexKey == null)
             break;
     }
+
+
+----
+
+.. rubric:: См. также
+
+*Устаревшие версии метода:*
+	- :doc:`obsolete/GetDocflowsByPacketId_v2`

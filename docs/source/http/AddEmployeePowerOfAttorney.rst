@@ -31,4 +31,4 @@ AddEmployeePowerOfAttorney
 
 .. rubric:: См. также
 
-.. include:: ../include/seealso_powerofattorney.txt
+.. include:: ../include/seealso_method_powerofattorney.txt

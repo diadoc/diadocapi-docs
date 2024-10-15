@@ -1,7 +1,7 @@
 CounteragentStatus
 ==================
 
-Перечисление ``CounteragentStatus`` представляет собой статус контрагента.
+Перечисление ``CounteragentStatus`` представляет собой статус :doc:`контрагента <../entities/counteragent>`.
 
 .. code-block:: protobuf
 
@@ -30,3 +30,9 @@ CounteragentStatus
 *Перечисление используется:*
 	- в структуре :doc:`Counteragent`
 	- в структуре :doc:`CounteragentInfo`
+
+*Определение:*
+	- :doc:`../entities/counteragent`
+
+*Инструкции:*
+	- :doc:`../instructions/counteragents`

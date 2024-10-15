@@ -28,16 +28,100 @@
           }
         }) 
       }, 100);
+
+      // закомментировать строчку чтобы убрать показ баннера у пользователей документации
+      addFeedbackBanner();
+
+      // эта строчка создает ссылку в футере (сделана разными вызовами чтобы можно было включать показ независимо от баннера)
+      addFeedbackLinkInFooter();
     });
-    /*
-    $(document).ready(function() {
-        $(".toggle > *").hide();
-        $(".toggle .header").show();
-        $(".toggle .header").click(function() {
-            $(this).parent().children().not(".header").toggle(400);
-            $(this).parent().children(".header").toggleClass("open");
-        })
-    });
-    */
+
+    const getFormLink = () => {
+      const site = window.location.href;
+      const formUrl = new URL('https://forms.kontur.ru/form/59f74360-79cd-4309-93c1-f98cea15b7b5');
+
+      // знание о том с какой страницы документации был совершен переход
+      formUrl.searchParams.append('site', site);
+
+      return formUrl;
+    }
+
+    const addFeedbackBanner = () => {
+      if (window.localStorage.getItem("feedbackBanner") === "hidden") {
+        return;
+      }
+
+      /** Обработчик закрытия баннера обратной связи @param feedbackBannerContainer HTMLDivElement контейнер баннера обратной связи */
+      const onCloseFeedbackBanner = (feedbackBannerContainer) => {
+        feedbackBannerContainer.className = "hiddenFeedbackBannerContainer"
+        window.localStorage.setItem("feedbackBanner", "hidden");
+      }
+
+      const feedbackBannerContainer = document.createElement("div");
+      const feedbackBannerCloseButton = document.createElement("button");
+      const feedbackLink = document.createElement("a");
+      const feedbackDescriptionTextNode = document.createTextNode("Оставить обратную связь");
+      const feedbackCloseTextNode = document.createTextNode("х");
+
+      feedbackLink.className = "feedbackLink";
+      feedbackLink.href = getFormLink();
+      feedbackLink.appendChild(feedbackDescriptionTextNode);
+      feedbackLink.onclick = () => onCloseFeedbackBanner(feedbackBannerContainer);
+
+      feedbackBannerCloseButton.className = "feedbackBannerCloseButton";
+      feedbackBannerCloseButton.onclick = () => onCloseFeedbackBanner(feedbackBannerContainer);
+      feedbackBannerCloseButton.appendChild(feedbackCloseTextNode);
+
+      feedbackBannerContainer.appendChild(feedbackLink);
+      feedbackBannerContainer.appendChild(feedbackBannerCloseButton);
+
+      feedbackBannerContainer.className = "feedbackBannerContainer";
+
+      document.body.appendChild(feedbackBannerContainer);
+    }
+
+    const addFeedbackLinkInFooter = () => {
+      const feedbackFooterDescriptionNode = document.createElement("p");
+      const feedbackFooterLinkNode = document.createElement("a");
+
+      // Ссылка на форму
+      const feedbackFooterLinkTextNode = document.createTextNode("обратную связь");
+      // Текст до ссылки (описание)
+      const feedbackFooterDescriptionTextNode = document.createTextNode("Столкнулись с проблемой в документации или нашли ошибку? Оставьте нам ");
+
+      const footer = document.querySelector("div[role='contentinfo']");
+
+      // Текст описания в контейнер описания
+      feedbackFooterDescriptionNode.appendChild(feedbackFooterDescriptionTextNode);
+      // Текст ссылки в контейнер ссылки
+      feedbackFooterLinkNode.appendChild(feedbackFooterLinkTextNode);
+      // Ссылку в контейнер описания
+      feedbackFooterDescriptionNode.appendChild(feedbackFooterLinkNode);
+
+      feedbackFooterLinkNode.className = "feedbackFooterLink";
+      feedbackFooterLinkNode.href = getFormLink();
+      feedbackFooterLinkNode.target = "_blank";
+
+      // Вставка первым ребенком (до Copyright)
+      footer.insertBefore(feedbackFooterDescriptionNode, footer.firstChild);
+    }
 </script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(98087990, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/98087990" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
 {% endblock %}

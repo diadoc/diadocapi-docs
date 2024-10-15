@@ -9,9 +9,10 @@ TemplatePatchToPost
         repeated TemplateRefusalAttachment Refusals = 1;
     }
 
-- :ref:`Refusals <template-refusal-attachment>` - список отклонений или отзывов документов шаблона.
+- :ref:`Refusals <TemplateRefusalAttachment>` - список отклонений или отзывов документов шаблона.
 
-.. _template-refusal-attachment:
+
+.. _TemplateRefusalAttachment:
 
 TemplateRefusalAttachment
 -------------------------

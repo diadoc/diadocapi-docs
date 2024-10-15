@@ -3,8 +3,8 @@
 
 Рассмотрим последовательность действий к функциям интеграторского интерфейса Диадока, которые требуется совершить продавцу при отправке счета-фактуры (СФ), корректировочного счета-фактуры (КСФ), исправления счета-фактуры (ИСФ).
 
-Порядок согласно приказу `N 14Н <https://normativ.kontur.ru/document?moduleId=1&documentId=385831>`_
-------------------------------------------------------------------------------------------------------
+Порядок согласно приказу `N 14Н <https://normativ.kontur.ru/document/last?moduleId=1&documentId=385831>`_
+---------------------------------------------------------------------------------------------------------
 
 Порядок документооборота со стороны продавца:
 
@@ -27,7 +27,7 @@
 Если на стороне интеграционного решения не предусмотрено функциональности для формирования XML-документов, соответствующих утвержденным форматам, то продавец может сгенерировать СФ/ИСФ/КСФ/ИКСФ, используя метод :doc:`../http/GenerateTitleXml`.
 
 В теле запроса должен содержаться упрощенный XML-файл, соответствующий XSD-схеме контракта для генерации титула.
-XSD-схема контракта, необходимого для генерации титула, может быть получена с помощью ссылки, доступной в поле *UserDataXsdUrl* контракта :ref:`document-title2`, который можно получить с помощью метода-справочника :doc:`../http/GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../instructions/getdoctypes`.
+XSD-схема контракта, необходимого для генерации титула, может быть получена с помощью ссылки, доступной в поле *UserDataXsdUrl* контракта :ref:`DocumentTitleV2`, который можно получить с помощью метода-справочника :doc:`../http/GetDocumentTypes`. Инструкция о получении данных из метода ``GetDocumentTypes`` приведена на странице :doc:`../instructions/getdoctypes`.
 
 В теле ответа содержится сгенерированный XML-файл титула, построенный на основании данных из запроса. Файл изготавливается в соответствии с XSD-схемой соответствующего титула документа.
 
@@ -238,270 +238,256 @@ SDK
 	    var invoiceReceipt = GetInvoiceReceipt(invoiceMessageWithReceipt);
 	}
 
-Порядок согласно приказу `N 174Н <https://normativ.kontur.ru/document?moduleId=1&documentId=268278>`_ (утратил силу с 01.07.2021)
----------------------------------------------------------------------------------------------------------------------------------
+Порядок согласно приказу `N 174Н <https://normativ.kontur.ru/document/last?moduleId=1&documentId=268278>`_ (утратил силу с 01.07.2021)
+--------------------------------------------------------------------------------------------------------------------------------------
 
-.. raw:: html
+.. collapse:: Подробнее
 
-   <details>
-   <summary><a>Подробнее</a></summary>
+	Порядок документооборота со стороны продавца:
 
-Порядок документооборота со стороны продавца:
+	#. Продавец формирует счет-фактуру, подписывает и направляет Покупателю.
 
-#. Продавец формирует счет-фактуру, подписывает и направляет Покупателю.
+	#. Диадок формирует подтверждение оператора о дате получения счета-фактуры, подписывает его и направляет Продавцу.
 
-#. Диадок формирует подтверждение оператора о дате получения счета-фактуры, подписывает его и направляет Продавцу.
+	#. Продавец получает подтверждение оператора и отправляет в ответ подписанное извещение о получении подтверждения.
 
-#. Продавец получает подтверждение оператора и отправляет в ответ подписанное извещение о получении подтверждения.
+	#. Продавец получает извещение о получении счета-фактуры от Покупателя.
 
-#. Продавец получает извещение о получении счета-фактуры от Покупателя.
+	**Формирование счета-фактуры**
 
-Формирование счета-фактуры
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`create_invoice`).
 
-Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`create_invoice`).
+	**Отправка счета-фактуры**
 
-Отправка счета-фактуры
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`send_invoice`).
 
-Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`send_invoice`).
+	**Получение подтверждения оператора**
 
-Получение подтверждения оператора
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`receive_confirmation_seller`).
 
-Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`receive_confirmation_seller`).
+	**Формирование извещения о получении подтверждения оператора**
 
-Формирование извещения о получении подтверждения оператора
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	После того, как продавец получил подтверждение оператора, он должен отправить в ответ подписанное извещение :doc:`InvoiceReceipt<../proto/Entity message>` о получении подтверждения.
 
-После того, как продавец получил подтверждение оператора, он должен отправить в ответ подписанное извещение :doc:`InvoiceReceipt<../proto/Entity message>` о получении подтверждения.
+	Извещение о получении подтверждения оператора представляется структурой :doc:`Entity<../proto/Entity message>`, где значение полей ``EntityType`` и ``AttachmentType`` должно быть *Attachment/InvoiceReceipt*.
 
-Извещение о получении подтверждения оператора представляется структурой :doc:`Entity<../proto/Entity message>`, где значение полей ``EntityType`` и ``AttachmentType`` должно быть *Attachment/InvoiceReceipt*.
+	В API Диадока есть метод, который позволяет сформировать извещение о получении подтверждения оператора - :doc:`../http/GenerateReceiptXml`, при вызове этого метода нужно корректно указать GET-параметры ``boxId``, ``messageId``, ``attachmentId`` и передать в тело запроса данные о подписанте генерируемого извещения в виде сериализованной структуры :doc:`../proto/Signer`.
 
-В API Диадока есть метод, который позволяет сформировать извещение о получении подтверждения оператора - :doc:`../http/GenerateReceiptXml`, при вызове этого метода нужно корректно указать GET-параметры ``boxId``, ``messageId``, ``attachmentId`` и передать в тело запроса данные о подписанте генерируемого извещения в виде сериализованной структуры :doc:`../proto/Signer`.
+	``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``attachmentId`` - идентификатор подтверждение оператора. Их можно взять из структуры :doc:`../proto/Message`.
 
-``BoxId`` - это идентификатор ящика отправителя, ``messageId`` - идентификатор отправленного сообщения с СФ/ИСФ/КСФ/ИКСФ, ``attachmentId`` - идентификатор подтверждение оператора. Их можно взять из структуры :doc:`../proto/Message`.
+	Например, HTTP-запрос для формирования извещение о получении подтверждения оператора выглядит следующим образом:
 
-Например, HTTP-запрос для формирования извещение о получении подтверждения оператора выглядит следующим образом:
+	::
 
-::
+		POST /GenerateReceiptXml?boxId=db32772b-9256-49a8-a133-fda593fda38a&messageId=a9093c56-7c48-4ab1-bc87-efb04e7d4400&attachmentId=f80738a3-b0bc-426a-aadf-6967ec1b53df HTTP/1.1
+		Host: diadoc-api.kontur.ru
+		Content-Type: application/json charset=utf-8
+		Accept: application/json
+		Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
 
-    POST /GenerateReceiptXml?boxId=db32772b-9256-49a8-a133-fda593fda38a&messageId=a9093c56-7c48-4ab1-bc87-efb04e7d4400&attachmentId=f80738a3-b0bc-426a-aadf-6967ec1b53df HTTP/1.1
-    Host: diadoc-api.kontur.ru
-    Content-Type: application/json charset=utf-8
-    Accept: application/json
-    Authorization: DiadocAuth ddauth_api_client_id=testClient-8ee1638deae84c86b8e2069955c2825a
+	Пример структуры в теле запроса, содержащей данные о подписанте генерируемого извещения :doc:`../proto/Signer`:
 
-Пример структуры в теле запроса, содержащей данные о подписанте генерируемого извещения :doc:`../proto/Signer`:
+	.. code-block:: json
 
-.. code-block:: json
+	   {
+		   "SignerCertificate": "",
+		   "SignerDetails ": {
+			"Surname": "Иванов",
+			"FirstName": "Иван",
+			"Patronymic": "Иванович",
+			"JobTitle": "QA",
+			"Inn": "1234567",
+			"SoleProprietorRegistrationCertificate": "",
+		   },
+	   }
 
-   {
-       "SignerCertificate": "",
-       "SignerDetails ": {
-        "Surname": "Иванов",
-        "FirstName": "Иван",
-        "Patronymic": "Иванович",
-        "JobTitle": "QA",
-        "Inn": "1234567",
-        "SoleProprietorRegistrationCertificate": "",
-       },
-   }
+	В теле ответа содержится XML-файл с извещением о получении документа ``attachmentId`` из сообщения ``messageId`` в ящике ``boxId``.
 
-В теле ответа содержится XML-файл с извещением о получении документа ``attachmentId`` из сообщения ``messageId`` в ящике ``boxId``.
+	**Отправка извещения о получении подтверждения оператора**
 
-Отправка извещения о получении подтверждения оператора
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Полученное на предыдущем этапе извещение нужно подписать и отправить. Подписание извещения происходит на стороне клиента, после того как извещение подписано, его нужно отправить вместе с файлом подписи воспользовавшись методом :doc:`../http/PostMessagePatch`.
 
-Полученное на предыдущем этапе извещение нужно подписать и отправить. Подписание извещения происходит на стороне клиента, после того как извещение подписано, его нужно отправить вместе с файлом подписи воспользовавшись методом :doc:`../http/PostMessagePatch`.
+	Для этого нужно подготовить структуру :doc:`../proto/MessagePatchToPost` следующим образом:
 
-Для этого нужно подготовить структуру :doc:`../proto/MessagePatchToPost` следующим образом:
+	-  в значение атрибута *BoxId* указываем идентификатор ящика отправителя,
 
--  в значение атрибута *BoxId* указываем идентификатор ящика отправителя,
+	-  в значение атрибута *MessageId* указываем идентификатор модифицируемого сообщения,
 
--  в значение атрибута *MessageId* указываем идентификатор модифицируемого сообщения,
+	-  для передачи XML-файла извещения нужно использовать атрибут *Receipts*, описываемый структурой :ref:`ReceiptAttachment`
 
--  для передачи XML-файла извещения нужно использовать атрибут *Receipts*, описываемый структурой :ref:`ReceiptAttachment`
+	  -  в поле *ParentEntityId* нужно указать идентификатор (*EntityId*) подтверждения оператора, полученный на предыдущем шаге,
 
-  -  в поле *ParentEntityId* нужно указать идентификатор (*EntityId*) подтверждения оператора, полученный на предыдущем шаге,
+	  -  внутри структуры *ReceiptAttachment* находится вложенная структура *SignedContent*,
 
-  -  внутри структуры *ReceiptAttachment* находится вложенная структура *SignedContent*,
+	  -  сам XML-файл нужно передать в атрибут *Content*, подпись продавца в атрибут *Signature*
 
-  -  сам XML-файл нужно передать в атрибут *Content*, подпись продавца в атрибут *Signature*
+	.. code-block:: protobuf
 
-.. code-block:: protobuf
-
-    message MessagePatchToPost {
-        required string BoxId = 1;
-        required string MessageId = 2;
-        repeated ReceiptAttachment Receipts = 3;
-    }
-
-    message ReceiptAttachment  {
-        required string ParentEntityId  = 1;
-        required SignedContent SignedContent = 2;
-
-    }
-
-    message SignedContent {
-        optional bytes Content = 1;
-        optional bytes Signature = 2;
-    }
-
-Пример структуры в теле запроса, содержащей данные о передаваемом извещении :doc:`../proto/MessagePatchToPost`:
-
-.. code-block:: json
-
-    {
-      "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
-      "MessageId": "a9093c56-7c48-4ab1-bc87-efb04e7d4400",
-      "Receipts":
-      [
-        {
-          "ParentEntityId":"f80738a3-b0bc-426a-aadf-6967ec1b53df",
-          "SignedContent":
-            {
-              "Content": "...",
-              "Signature": "...",
-            },
-          "Comment": "Подписание извещения о получении подтверждения оператора",
-        }
-     ]
-    }
-
-Получение извещения о получении счета-фактуры
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`receive_receipt`).
-
-SDK
-~~~~~~~~~~~~
-
-Пример кода на C# для отправки счета-фактуры:
-
-.. code-block:: csharp
-
-	//Для работы с документами в Диадоке необходим авторизационный токен.
-	//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
-	public static string AuthTokenCert;
-
-	public static string BoxId = "идентификатор ящика отправителя";
-
-	//Формирование счета-фактуры
-	public static GeneratedFile GenerateInvoiceXml()
-	{
-		var content = new InvoiceInfo()
-		{
-			//Заполняется согласно структуре InvoiceInfo
-		};
-		return Api.GenerateInvoiceXml(AuthTokenCert, content);
-	}
-
-	//Отправка счета-фактуры
-	public static Message SendInvoiceXml()
-	{
-		var invoice = GenerateInvoiceXml();
-		var messageAttachment = new XmlDocumentAttachment
-		{
-			SignedContent = new SignedContent
-			{
-				Content = invoice.Content,
-				//Подпись отправителя, см. "Как авторизоваться в системе"
-				Signature = Crypt.Sign(invoice.Content, ReadCertContent("путь к сертификату"))
-			}
-		};
-		var messageToPost = new MessageToPost
-		{
-			FromBoxId = BoxId,
-			ToBoxId = "идентификатор ящика получателя",
-			Invoices =
-			{
-				messageAttachment
-			}
-		};
-		return Api.PostMessage(AuthTokenCert, messageToPost);
-	}
-
-	//Получение подтверждения оператора, формирование и отправка извещения о получении
-	public static void GetInvoiceConfirmationAndSendReceipt(Message invoiceMessage)
-	{
-		var confirmationEntityId = "";
-
-		foreach (var entity in invoiceMessage.Entities)
-		{
-			if (entity.AttachmentType == AttachmentType.InvoiceConfirmation)
-			{
-				confirmationEntityId = entity.EntityId;
-				break;
-			}
+		message MessagePatchToPost {
+			required string BoxId = 1;
+			required string MessageId = 2;
+			repeated ReceiptAttachment Receipts = 3;
 		}
 
-		var receipt = Api.GenerateReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
-		{
-			//Подпись отправителя, см. "Как авторизоваться в системе"
-			SignerCertificate = ReadCertContent("путь к сертификату"),
-			SignerDetails = new SignerDetails()
-			{
-				//Заполняется согласно структуре SignerDetails
-			}
-		});
+		message ReceiptAttachment  {
+			required string ParentEntityId  = 1;
+			required SignedContent SignedContent = 2;
 
-		var receiptAttachment = new ReceiptAttachment()
-		{
-			ParentEntityId = confirmationEntityId,
-			SignedContent = new SignedContent()
-			{
-				Content = receipt.Content,
-				//Подпись отправителя, см. "Как авторизоваться в системе"
-				Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
-			}
-		};
-
-		var receiptPatch = new MessagePatchToPost()
-		{
-			BoxId = BoxId,
-			MessageId = invoiceMessage.MessageId,
-			Receipts =
-			{
-				receiptAttachment
-			}
-		};
-
-		Api.PostMessagePatch(AuthTokenCert, receiptPatch);
-	}
-
-	//Получение извещения о получении счета-фактуры
-	public static byte[] GetInvoiceReceipt(Message invoiceMessage)
-	{
-		var receiptEntityId = "";
-		foreach (var entity in invoiceMessage.Entities)
-		{
-			if (entity.AttachmentType == AttachmentType.InvoiceReceipt &&
-				entity.ParentEntityId == invoiceMessage.Entities[0].EntityId)
-				receiptEntityId = entity.EntityId;
 		}
-		return Api.GetEntityContent(AuthTokenCert, BoxId, invoiceMessage.MessageId, receiptEntityId);
-	}
 
-	public static void Main()
-	{
-		var invoiceMessage = SendInvoiceXml();
+		message SignedContent {
+			optional bytes Content = 1;
+			optional bytes Signature = 2;
+		}
 
-		//Оператор формирует подтверждение в течение нескольких секунд.
-		//Для получения сообщения с подтверждением необходимо вызвать метод GetMessage()
-		var invoiceMessageWithConfirmation = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
+	Пример структуры в теле запроса, содержащей данные о передаваемом извещении :doc:`../proto/MessagePatchToPost`:
 
-		GetInvoiceConfirmationAndSendReceipt(invoiceMessageWithConfirmation);
+	.. code-block:: json
 
-		//Технический документ можно получить в виде массива байтов.
-		//Для получения сообщения с новыми вложениями необходимо снова вызвать метод GetMessage()
-		var invoiceMessageWithReceipt = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
-		var invoiceMessageWithReceipt = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
+		{
+		  "BoxId": "db32772b-9256-49a8-a133-fda593fda38a",
+		  "MessageId": "a9093c56-7c48-4ab1-bc87-efb04e7d4400",
+		  "Receipts":
+		  [
+			{
+			  "ParentEntityId":"f80738a3-b0bc-426a-aadf-6967ec1b53df",
+			  "SignedContent":
+				{
+				  "Content": "...",
+				  "Signature": "...",
+				},
+			  "Comment": "Подписание извещения о получении подтверждения оператора",
+			}
+		 ]
+		}
 
-		//Технический документ можно получить в виде массива байтов.
-		var invoiceReceipt = GetInvoiceReceipt(invoiceMessageWithReceipt);
-	}
+	**Получение извещения о получении счета-фактуры**
 
-.. raw:: html
+	Действия аналогичны инструкции для обмена СФ по 14Н (см. :ref:`receive_receipt`).
 
-   </details>
+	**SDK**
+
+	Пример кода на C# для отправки счета-фактуры:
+
+	.. code-block:: csharp
+
+		//Для работы с документами в Диадоке необходим авторизационный токен.
+		//Подробнее о получении авторизационного токена можно узнать в разделе "Как авторизоваться в системе".
+		public static string AuthTokenCert;
+
+		public static string BoxId = "идентификатор ящика отправителя";
+
+		//Формирование счета-фактуры
+		public static GeneratedFile GenerateInvoiceXml()
+		{
+			var content = new InvoiceInfo()
+			{
+				//Заполняется согласно структуре InvoiceInfo
+			};
+			return Api.GenerateInvoiceXml(AuthTokenCert, content);
+		}
+
+		//Отправка счета-фактуры
+		public static Message SendInvoiceXml()
+		{
+			var invoice = GenerateInvoiceXml();
+			var messageAttachment = new XmlDocumentAttachment
+			{
+				SignedContent = new SignedContent
+				{
+					Content = invoice.Content,
+					//Подпись отправителя, см. "Как авторизоваться в системе"
+					Signature = Crypt.Sign(invoice.Content, ReadCertContent("путь к сертификату"))
+				}
+			};
+			var messageToPost = new MessageToPost
+			{
+				FromBoxId = BoxId,
+				ToBoxId = "идентификатор ящика получателя",
+				Invoices =
+				{
+					messageAttachment
+				}
+			};
+			return Api.PostMessage(AuthTokenCert, messageToPost);
+		}
+
+		//Получение подтверждения оператора, формирование и отправка извещения о получении
+		public static void GetInvoiceConfirmationAndSendReceipt(Message invoiceMessage)
+		{
+			var confirmationEntityId = "";
+
+			foreach (var entity in invoiceMessage.Entities)
+			{
+				if (entity.AttachmentType == AttachmentType.InvoiceConfirmation)
+				{
+					confirmationEntityId = entity.EntityId;
+					break;
+				}
+			}
+
+			var receipt = Api.GenerateReceiptXml(AuthTokenCert, BoxId, invoiceMessage.MessageId, confirmationEntityId, new Signer()
+			{
+				//Подпись отправителя, см. "Как авторизоваться в системе"
+				SignerCertificate = ReadCertContent("путь к сертификату"),
+				SignerDetails = new SignerDetails()
+				{
+					//Заполняется согласно структуре SignerDetails
+				}
+			});
+
+			var receiptAttachment = new ReceiptAttachment()
+			{
+				ParentEntityId = confirmationEntityId,
+				SignedContent = new SignedContent()
+				{
+					Content = receipt.Content,
+					//Подпись отправителя, см. "Как авторизоваться в системе"
+					Signature = Crypt.Sign(receipt.Content, ReadCertContent("путь к сертификату"))
+				}
+			};
+
+			var receiptPatch = new MessagePatchToPost()
+			{
+				BoxId = BoxId,
+				MessageId = invoiceMessage.MessageId,
+				Receipts =
+				{
+					receiptAttachment
+				}
+			};
+
+			Api.PostMessagePatch(AuthTokenCert, receiptPatch);
+		}
+
+		//Получение извещения о получении счета-фактуры
+		public static byte[] GetInvoiceReceipt(Message invoiceMessage)
+		{
+			var receiptEntityId = "";
+			foreach (var entity in invoiceMessage.Entities)
+			{
+				if (entity.AttachmentType == AttachmentType.InvoiceReceipt &&
+					entity.ParentEntityId == invoiceMessage.Entities[0].EntityId)
+					receiptEntityId = entity.EntityId;
+			}
+			return Api.GetEntityContent(AuthTokenCert, BoxId, invoiceMessage.MessageId, receiptEntityId);
+		}
+
+		public static void Main()
+		{
+			var invoiceMessage = SendInvoiceXml();
+
+			//Оператор формирует подтверждение в течение нескольких секунд.
+			//Для получения сообщения с подтверждением необходимо вызвать метод GetMessage()
+			var invoiceMessageWithConfirmation = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
+
+			GetInvoiceConfirmationAndSendReceipt(invoiceMessageWithConfirmation);
+
+			//Технический документ можно получить в виде массива байтов.
+			//Для получения сообщения с новыми вложениями необходимо снова вызвать метод GetMessage()
+			var invoiceMessageWithReceipt = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
+			var invoiceMessageWithReceipt = Api.GetMessage(AuthTokenCert, BoxId, invoiceMessage.MessageId);
+
+			//Технический документ можно получить в виде массива байтов.
+			var invoiceReceipt = GetInvoiceReceipt(invoiceMessageWithReceipt);
+		}

@@ -1,0 +1,14 @@
+*Методы для работы с контрагентами:*
+	- :doc:`../http/AcquireCounteragent` — отправляет контрагенту приглашение к партнерским отношениям
+	- :doc:`../http/AcquireCounteragentResult` — возвращает идентификатор приглашенной организации
+	- :doc:`../http/BreakWithCounteragent` — разрывает отношения с контрагентом
+	- :doc:`../http/GetCounteragent` — возвращает информацию о контрагенте
+	- :doc:`../http/GetCounteragentCertificates` — возвращает сертификаты контрагента
+	- :doc:`../http/GetCounteragentEvents` — возвращает список событий по изменению отношений с контрагентами
+	- :doc:`../http/GetCounteragents` — осуществляет поиск контрагентов по указанным параметрам
+
+*Структуры для работы с контрагентами:*
+	- :doc:`../proto/Counteragent` — представляет собой данные контрагента
+	- :doc:`../proto/CounteragentInfo` — содержит информацию о контрагенте
+	- :doc:`../proto/CounteragentStatus` — представляет собой статус контрагента
+

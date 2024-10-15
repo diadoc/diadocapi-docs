@@ -36,7 +36,8 @@ Counteragent
 
 	Список статусов, для которых возвращается документ, может быть расширен в будущем. 
 
-- ``CounteragentGroupId`` — идентификатор группы, в которую добавлен контрагент. Возвращается, если статус контрагента ``CounteragentStatus = IsMyCounteragent``. Группа контрагентов представлена структурой :doc:`CounteragentGroup`.
+- ``CounteragentGroupId`` — идентификатор группы, в которую добавлен контрагент. Возвращается, если статус контрагента ``CounteragentStatus = IsMyCounteragent``. Инструкция по работе с группами контрагентов приведена  на странице :doc:`../instructions/counteragentgroups`.
+
 
 ----
 
@@ -49,6 +50,6 @@ Counteragent
 *Определение:*
 	- :doc:`../entities/counteragent`
 
-*Руководства:*
+*Инструкции:*
 	- :doc:`../instructions/counteragents`
 

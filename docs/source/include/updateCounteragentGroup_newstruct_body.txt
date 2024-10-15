@@ -1,0 +1,13 @@
+{
+    "Name": "Новое имя",
+    "GroupDepartments":
+    {
+        "AnyDepartment": "false",
+        "Departments": {
+            "DepartmentIds": [
+                "b651ed54-04d8-4ca8-99b5-960fba733147",
+                "32cb2cd3-ed3a-403a-b220-7dfd59c757db"
+            ]
+        }
+    }
+}

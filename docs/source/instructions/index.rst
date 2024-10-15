@@ -9,8 +9,8 @@
 	:maxdepth: 3
 	:titlesonly:
 
-	counteragents
-	documents
+	index_counteragents
+	index_documents
 	powerofattorney
 	docflow
 

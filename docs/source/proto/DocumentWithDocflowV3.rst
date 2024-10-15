@@ -1,6 +1,8 @@
 DocumentWithDocflowV3
 =====================
 
+Структура ``DocumentWithDocflowV3`` хранит информацию о документе — метаданные и состояние документооборота.
+
 .. code-block:: protobuf
 
     message DocumentWithDocflowV3
@@ -13,19 +15,27 @@ DocumentWithDocflowV3
 
     message LastEvent
     {
-        required EventId = 1;
+        required string EventId = 1;
         required Timestamp Timestamp = 2;
     }
 
-Структура *DocumentWithDocflowV3* представляет информацию о документе (метаданные и состояние документооборота), возвращаемую методами :doc:`../http/GetDocflows_V3`, :doc:`../http/GetDocflowsByPacketId_V3`, :doc:`../http/SearchDocflows_V3`.
+- ``DocumentId`` — идентификатор документа, представленный структурой :doc:`DocumentId`.
+- ``LastEvent`` — информация о последнем событии в сообщении, представленная структурой ``LastEvent`` с полями:
 
--  :doc:`DocumentId` - идентификатор документа.
--  *LastEvent* - информация о последнем событии в сообщении
--  :doc:`DocumentInfo <DocumentInfoV3>` - метаданные документа.
--  :doc:`Docflow <DocflowV3>` - информация о состоянии документооборота.
+	- ``EventId`` — идентификатор последнего события в сообщении, которое было учтено при формировании данной структуры. Это событие может относиться к другому документу из того же сообщения.
+	- ``Timestamp`` — время последнего учтенного события, представленное структурой :doc:`Timestamp`.
 
-Структура *LastEvent* представляет информацию о последнего событии в сообщении
+- ``DocumentInfo`` — метаданные документа, представленные структурой :doc:`DocumentInfoV3`.
+- ``Docflow`` — информация о состоянии документооборота, представленная структурой :doc:`DocflowV3`.
 
--  *EventId* - идентификатор последнего события в сообщении, которое было учтено при формировании данной структуры. Это событие может относиться и к другому документу из того же письма.
--  :doc:`Timestamp <Timestamp>` - время последнего учтенного события.
 
+
+----
+
+.. rubric:: См. также
+
+*Структура используется:*
+	- в структуре :doc:`DocflowEventV3`
+	- в структуре :doc:`FetchedDocumentV3`
+	- в структуре :doc:`GetDocflowBatchResponseV3`
+	- в структуре :doc:`SearchDocflowsResponseV3`

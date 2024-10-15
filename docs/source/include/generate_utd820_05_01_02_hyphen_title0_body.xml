@@ -15,7 +15,11 @@
         </Buyer>
     </Buyers>
     <Table TotalWithVatExcluded="0" Vat="0" Total="0">
-        <Item Product="Товарная позиция" Unit="796" Quantity="0" Price="0" TaxRate="без НДС" SubtotalWithVatExcluded="0" Vat="0" Subtotal="0" Excise="10"/>
+        <Item Product="Товарная позиция" Unit="796" Quantity="0" Price="0" TaxRate="без НДС" SubtotalWithVatExcluded="0" Vat="0" Subtotal="0" Excise="10">
+            <ItemTracingInfos>
+                <ItemTracingInfo RegNumberUnit="10001000/010123/1234567/001" Unit="778" Quantity="30"/>
+            </ItemTracingInfos>
+        </Item>
     </Table>
     <TransferInfo OperationInfo="Товары переданы"/>
     <Signers>

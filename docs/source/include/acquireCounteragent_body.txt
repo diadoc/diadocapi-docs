@@ -1,0 +1,11 @@
+{
+    "BoxId": "{{counteragentBoxId}}",
+    "MessageToCounteragent": "Примите приглашение к сотрудничеству",
+    "InvitationDocument": {
+        "FileName": "invitation",
+        "SignedContent": {
+            "Content": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0...NC50Ls+",
+            "Signature": "MIIN5QYJKoZIhvcNAQcCoIIN1jCCDdIA...kA9MJfsplqgW",
+        }
+    }
+}

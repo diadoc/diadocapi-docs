@@ -1,0 +1,1 @@
+Метод доступен только сотрудникам с доступом к ящику и разрешением :doc:`OrganizationUserPermissions.CanManageCounteragents <../proto/OrganizationUserPermissions>`, которое позволяет видеть списки контрагентов и работать с ними.

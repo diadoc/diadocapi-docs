@@ -2,7 +2,7 @@ InboundUniversalTransferDocumentDocflow
 =======================================
 
 .. warning::
-	Структура относится к устаревшей версии Docflow API. Используйте последнюю версию :doc:`../../Docflow API` — V3.
+	Структура устарела.
 
 Структура ``InboundUniversalTransferDocumentDocflow`` представляет собой информацию о документообороте входящего УПД.
 
@@ -45,9 +45,10 @@ InboundUniversalTransferDocumentDocflow
 - ``CanDocumentBeReceipted`` — признак того, что для документа можно отправить извещение о получении. Принимает значение ``true`` для входящих документов, по которым корректные извещения ранее не отправлялись.
 - ``CanDocumentBeSignedOrRejectedByRecipient`` — признак того, что получатель может подписать документ или отказать в подписании.
 
+
 ----
 
 .. rubric:: См. также
 
 *Структура используется:*
-	- в структуре :doc:`Docflow`
+	- в устаревшей структуре :doc:`Docflow`
